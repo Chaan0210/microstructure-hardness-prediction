@@ -1,0 +1,438 @@
+{
+  "study": "159 mathematical and implementation audit",
+  "UTC": "2026-10-04T13:47:33.155230+00:00",
+  "existing_source_review": {
+    "028": "TV+ridge linking+complement component22summaries. Label operation only for counts/areas/shapes/network; never same-component separated-pair curve.",
+    "054": "All pixels on sampled straight segment occupied, versus any4-neighbor path forC2. For axial integerlag same mask/domain: L2<=C2<=S2; inequality not claimed for054interpolateddiagonals.",
+    "055": "Counts ofcomponents/holes underdistance excursions; not distance-conditioned within-component paircounts.",
+    "130": "Centered endpoint pair/triple products; never asks whether endpoints sharea connectedcomponent. Current matchedS2 is rawprobability onexactC2mask/lags, NOT retry130triplebank.",
+    "other_source": "src/microstructure_v2/features.py andextra.py inspected:autocorrelations,componentmarginalshapes/areas,not C2. Source searches foundno directC2implementation.",
+    "proof": "Deterministic homometric masks have identical all-vectorS2 and same componentarea multiset/zero-levelBetti butdifferentC2. U-shapefixture path withoutstraightline. BFSindependentverification. No claim jointly independentofallpast descriptors or useful hardnesssignal."
+  },
+  "mathematics": {
+    "domain": "D_delta={x:x and x+delta inside observed256square}; no periodic extension.",
+    "C2": "sum_{x in D_delta} 1[label4(x)=label4(x+delta)>0]/|D_delta|",
+    "S2": "sum_{x in D_delta} M(x)M(x+delta)/|D_delta|",
+    "decomposition": "S2=C2+D2 where D2 counts occupied endpoints in DIFFERENT components. D2 not trained as an extra feature.",
+    "lineal_relation": "For axialintegerdisplacements under same4connectivity/window: L2<=C2<=S2 because straightoccupiedpath implies connected endpoints implies bothoccupied. A U-shaped path shows first implication is not equivalence.",
+    "component_area_relation": "Summing unnormalized same-component paircounts over ALLvectorlags (orderedpairsincludingzero) gives sum_k n_k^2. Areas constrain thissum butnot its distribution overdistances/directions.",
+    "S3_limit": "A finite endpointtriple product doesnot test the intervening/globalpath. Didnotprove C2independentofall130S3features jointly; do notoverstatefixture.",
+    "empirical_independence_limit": "Nonidenticalstatistic andconstructive S2counterexample establish representationaldistinction, not additionalhardnesssignal orindependenceofalllearnedDINO/CNN/morphologyfeatures."
+  },
+  "synthetic_independent_checks": {
+    "passed": true,
+    "BFS_independent_max_error": 3.469446951953614e-18,
+    "D4_exact": true,
+    "empty_full_ties_checkerboard_boundary_tested": true,
+    "straight_line_implies_4connected": true,
+    "U_path_connected_without_straight_line": true,
+    "homometric": {
+      "P": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "Q": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "all_displacement_S2_equal": true,
+      "component_area_multisets": [
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          1,
+          1,
+          7
+        ]
+      ],
+      "zero_level_Betti": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "scaled_fixture_same_proposed_S2_different_C2": true,
+      "C2_r4_axis_mean": [
+        9.300595238095238e-05,
+        6.200396825396825e-05
+      ]
+    },
+    "limits": "Does not prove independence from all028shape summaries or all055distance-Betti or all130S3 features jointly. Homometric fixture proves S2 plus sizes/counts/zero-levelBetti insufficient. Finite sampledpoint occupancy is not a path test."
+  },
+  "fixed_image_extraction": {
+    "definition": {
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ],
+      "threshold_method": "Each rawuint8image linearquantile, low<=threshold, complement>threshold;tiesretained. No dataset/label fit.",
+      "sides": [
+        "low",
+        "complement"
+      ],
+      "connectivity": 4,
+      "distances_native_pixels": [
+        4,
+        16,
+        64
+      ],
+      "directions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "summary": "axis mean and populationstd,36features per arm. No diagonals/interpolation. D4invariant; orientation relative toload discarded.",
+      "rationale": "Three fixed inherited20/50/80quantiles and sparse4/16/64pixel lags span short/intermediate/quarter-image separations. No image/target outcome used tochoose them.",
+      "interpretation": "Estimated binary-region connectivity statistics; NOT identified physical phases, grains, pores, true material topology or mechanicalcausality."
+    },
+    "all400_input_hashes_checked": true,
+    "independent_BFS_on3_real_images_all6masks_each": true,
+    "max_error": 0.0,
+    "D4_on3_real_images": true,
+    "constant_columns": {
+      "s2": 0,
+      "c2": 0
+    },
+    "S2_C2_feature_RMS_difference": 0.05659671471777816,
+    "fraction_min_median_max_in_order_q_then_side": [
+      [
+        0.2000732421875,
+        0.7779083251953125,
+        0.5000457763671875,
+        0.462982177734375,
+        0.800048828125,
+        0.1695556640625
+      ],
+      [
+        0.20702362060546875,
+        0.7929763793945312,
+        0.5102996826171875,
+        0.4897003173828125,
+        0.8090133666992188,
+        0.19098663330078125
+      ],
+      [
+        0.2220916748046875,
+        0.7999267578125,
+        0.537017822265625,
+        0.4999542236328125,
+        0.8304443359375,
+        0.199951171875
+      ]
+    ],
+    "component_count_min_median_max_in_order_q_then_side": [
+      [
+        254.0,
+        33.0,
+        362.0,
+        192.0,
+        283.0,
+        1056.0
+      ],
+      [
+        2362.5,
+        639.0,
+        2448.0,
+        2016.0,
+        711.0,
+        3466.0
+      ],
+      [
+        6575.0,
+        1355.0,
+        4397.0,
+        4298.0,
+        1190.0,
+        6596.0
+      ]
+    ],
+    "axis_probability_mean_by_q_side_distance": {
+      "s2": [
+        [
+          [
+            0.08969588991195433,
+            0.05522517903645837,
+            0.045909423828125
+          ],
+          [
+            0.6747500077504955,
+            0.640464823404948,
+            0.6314656066894532
+          ]
+        ],
+        [
+          [
+            0.32630861312624004,
+            0.2819611002604168,
+            0.26935719807942726
+          ],
+          [
+            0.3040013679625497,
+            0.25933571370442715,
+            0.2465988922119141
+          ]
+        ],
+        [
+          [
+            0.6872368512834818,
+            0.6686256917317707,
+            0.6643739064534505
+          ],
+          [
+            0.0669923425099206,
+            0.04710764567057291,
+            0.04104688008626302
+          ]
+        ]
+      ],
+      "c2": [
+        [
+          [
+            0.06703367203000993,
+            0.021790405273437494,
+            0.0018641662597656248
+          ],
+          [
+            0.657104666573661,
+            0.5917798868815105,
+            0.5652422587076825
+          ]
+        ],
+        [
+          [
+            0.2828126743861608,
+            0.20039878336588537,
+            0.14371571858723958
+          ],
+          [
+            0.25526310996403756,
+            0.12669240315755195,
+            0.05267267862955726
+          ]
+        ],
+        [
+          [
+            0.6685828799293154,
+            0.6377977498372401,
+            0.6295653279622395
+          ],
+          [
+            0.03733346121651789,
+            0.005687011718750004,
+            6.909688313802083e-05
+          ]
+        ]
+      ]
+    },
+    "interpretation": "Thousands ofcomponents can occur underrawquantile4connectivity; this is threshold-dependentbinaryfragmentation. Counts/paths are NOT independentlyverified materialphases orgrains. No threshold/connectivity/denoisingvariants were chosen from these diagnostics."
+  },
+  "execution": {
+    "neural_fits": 0,
+    "development_residual_model_objects": 1800,
+    "development_nonnull_fits": 1440,
+    "outer_poison_blocks": 6,
+    "outer_poison_model_objects": 120,
+    "outer_poison_nonnull_fits": 96,
+    "inner_poison_model_objects": 30,
+    "inner_poison_nonnull_fits": 24,
+    "prior45_anchors_and_all_upstream_models_reused": true,
+    "feature_seconds": 4.970018915948458,
+    "partition_fit_seconds": {
+      "original": 3.914531958056614,
+      "20261031": 3.8978631660575047,
+      "20261101": 3.866718375007622
+    },
+    "feature_benchmark": {
+      "first10_seconds": 0.4950330409919843,
+      "projected400_seconds": 19.80134999845177,
+      "RSS_bytes": 312016896,
+      "passed": true
+    },
+    "fit_benchmark": {
+      "first_armblock_seconds": 0.131971292081289,
+      "projected90_blocks_seconds": 11.877476312220097,
+      "RSS_bytes": 530808832,
+      "passed": true
+    },
+    "all_saved_residual_models_independently_verified": 1800,
+    "max_independent_regression_error": 1.0302869668521453e-13,
+    "bootstrap_weight_loops_exact": true,
+    "outer_label_poison_exact": true,
+    "inner_label_poison_exact": true,
+    "upstream_training_scope_certificate_sha256": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b"
+  },
+  "decision": {
+    "study": "159 C2 versus same-mask S2",
+    "advance": false,
+    "validation_passed": true,
+    "RMSE_by_partition": {
+      "original": {
+        "reference018": 12.811945280526919,
+        "s2": 12.812262112439942,
+        "c2": 12.821477279102323
+      },
+      "20261031": {
+        "reference018": 12.645872618239814,
+        "s2": 12.663194128880473,
+        "c2": 12.6574986270244
+      },
+      "20261101": {
+        "reference018": 13.048624416802191,
+        "s2": 13.074091065435535,
+        "c2": 13.06985263825896
+      }
+    },
+    "pooled_MSE": {
+      "reference018": 164.77687843957662,
+      "s2": 165.14746772362605,
+      "c2": 165.14119969915546
+    },
+    "pooled_RMSE": {
+      "reference018": 12.836544645642636,
+      "s2": 12.850971470033931,
+      "c2": 12.850727594154172
+    },
+    "conditional_gain_CI95": {
+      "reference018": [
+        -0.03629410944551932,
+        0.007503077647297417
+      ],
+      "s2": [
+        -0.02508401125200992,
+        0.024192025104960137
+      ]
+    },
+    "same400_adaptive_history": true,
+    "no_variants_if_failure": true,
+    "current_best": "018",
+    "test_or_holdout_read": false,
+    "new_CSV": false,
+    "cost": 0,
+    "plan_sha256": "2fc75f3d558ec96d1bf9bfb46a77da33d6243c4d084fc8476003fc09037b1969"
+  },
+  "closed_without_variants": true,
+  "source_hashes": {
+    "cluster_pair_features_159.py": "fdaab978425c29770075b1c316fa236b7cb05afb02df513a41a443a0e43b746e",
+    "cluster_pair_159.py": "2cbc449e5526b015899d39ff4525501c0955e98ddac95709173352f7d39b3289",
+    "directional_energy_148.py": "63d606f90d837cbe6aadecef90a9f0c583b45e20a6832dd4d293d7e131bf0000",
+    "bootstrap_selector_144.py": "d9f55f8e50cd7327efb8d45d433b8c16f3ede19265c436dffcd024e69b45abc3",
+    "connected_grain_features.py": "1b0374672595d13639ed1caf397c54dbb73c59bea79137250a6a4cfae3fee186",
+    "lineal_features_054.py": "22a0a1cee7d22dac759642741050489c64233965217d59ec5394d731ca573162",
+    "betti_features_055.py": "88f58ce16e2e3d64b508d7f4dfc2b96f5a15a68aef6721091484a60ee96d7e7a",
+    "binary_threepoint_features_130.py": "6917d04001a00cc0cc0112585876bf7bc2e0fe088fcd0a8832e6aa31c3878f01",
+    "src/microstructure_v2/features.py": "199c6d5a5ff4fd30191d98cf3db0613616c121100514cc5df24bf53b8d630ee9",
+    "src/microstructure_v2/extra.py": "b59aacf672c65de5af59c26e26930e707b004fd53a8eb4ad74f7bb5f28a19bc9",
+    "reports/nested-selector-146-audit.json": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+    "reports/aligned-crossfit-158-summary.json": "cd409149a428f80d13f2f8cf49b0de30d66f19d3c6ae2db5617927dc0871aa39",
+    "reports/candidate020-summary.json": "af1540287040d96929222a5328275de61899f8e065afb9abcb295879ecbe0b05",
+    "artifacts/run-001/split_manifest.json": "35293da0fda17e745939c316619f58281f50636c34696988e1b869bd9cc46193",
+    "artifacts/nested-calibration-074/extraction.json": "9ced9fa46890029bb27db8d25d9351fb3fed35f999340544327847f150cb541b",
+    "artifacts/bootstrap-selector-144/original/report.json": "1d6d0fc65062dd04c1762abad44b757c1d4cd07fcb4336dec13aaaa3dc087625",
+    "artifacts/bootstrap-selector-144/original/predictions.npz": "ec2ac0b3d80a62c63f542f5d6c537c911045f93846fdd21df945a85fc22957ef",
+    "artifacts/bootstrap-selector-144/validation-original.json": "9cb3c3a727b629e4d677333ce6e63c3f317de2a89bc0c7b5635aec7c119599df",
+    "artifacts/bootstrap-selector-144/20261031/report.json": "b348271c8e759ed750d167357ad69f0d731a11dca7070e5c14c4079b5140e2b8",
+    "artifacts/bootstrap-selector-144/20261031/predictions.npz": "bf886dfa0c9c799b73e7c3f1c596bca4f88d67ea5db5faf7f718eb0f31386501",
+    "artifacts/bootstrap-selector-144/validation-20261031.json": "44be855488a748d43236a52cda3c3aba8e4d73475d77044eb9977453547c3412",
+    "artifacts/bootstrap-selector-144/20261101/report.json": "f60fac49edcf5970e936d98d7a3f0166c4a5538836a8211c414285b2100345dd",
+    "artifacts/bootstrap-selector-144/20261101/predictions.npz": "dc919a907efa6c9ff4242320701c0d21c09c389982b92ba58a3df3d9bc12ee1f",
+    "artifacts/bootstrap-selector-144/validation-20261101.json": "73eee032bfd1de09b25356115ca27da206786c9a59c8fea707660d6b7b209691"
+  },
+  "artifact_sha256": {
+    "artifacts/cluster-pair-159/plan.json": "2fc75f3d558ec96d1bf9bfb46a77da33d6243c4d084fc8476003fc09037b1969",
+    "artifacts/cluster-pair-159/fixtures.json": "6894b87ed215191f4e44d9caf5399bae8671c206eccfd8ba1c38e63b410df4c9",
+    "artifacts/cluster-pair-159/features.npz": "522de20dd454ea1293f53ef540dd6d96e81f9526c450d4fb6fd80f5f7a47fd0b",
+    "artifacts/cluster-pair-159/extraction.json": "efaa6ec56e998d597754c399ed0f96af337eb63b06e39cda55dcfffe97b76092",
+    "artifacts/cluster-pair-159/decision.json": "1eb24d7437d1415f77d6128febd3e05b3a35d11efd78faab0e0770e93479ed9d",
+    "artifacts/cluster-pair-159/validation-original.json": "1c9bf86664f4b29ab04e3fb9969cc2246cc8b126671d1edf6a45c9d896a0bfae",
+    "artifacts/cluster-pair-159/validation-20261031.json": "e6323d44f81fa9d5601ec6dde7fce96690af964d6a676b4134f391b4ddbe9698",
+    "artifacts/cluster-pair-159/validation-20261101.json": "3dce2fb382e6239574197e4d64bc77f3d04a3b19872f55903652c1b627e1046c"
+  },
+  "new_full500_fit": false,
+  "holdout_test_read": false,
+  "CSV_generated": false,
+  "uploaded": false,
+  "installs": 0,
+  "cost": 0,
+  "remaining_execution_blockers": []
+}

@@ -1,0 +1,280 @@
+{
+  "study": "122 twolegacy-single-removal followup",
+  "status": "candidate014_configuration_locked",
+  "decision": {
+    "candidate": "014",
+    "eligible": true,
+    "selected_configuration": "no_baseline795",
+    "selection": "MinimumpooleduntrimmedMSEamongexact4authorizedstructures;ties1e-10preferfewerlegacybranches. No allpartition/fold/CIgate.",
+    "pooled_MSE": {
+      "full013": 171.1392971222956,
+      "no_legacy_physics": 167.7320280393038,
+      "no_baseline795": 166.2887997064064,
+      "no_compact26": 170.753536959675
+    },
+    "pooled_RMSE": {
+      "full013": 13.082021904976907,
+      "no_legacy_physics": 12.951140028557479,
+      "no_baseline795": 12.895301458531568,
+      "no_compact26": 13.067269682671855
+    },
+    "selected_008_component_order": [
+      "baseline",
+      "kernel",
+      "cnn",
+      "Smean",
+      "Bmean"
+    ],
+    "selected_008_normalized_weights": [
+      0.0,
+      0.3,
+      0.3,
+      0.2,
+      0.2
+    ],
+    "formula": ".9*train-only-affine(selected008mixture)+.1*existingBshort+mean3honestselectedphysics57residuals",
+    "scope": "Chosenafterseeing121and122onsame400;exploratorypostselectionrecipe,notindependentvalidation. Former100mayenterfinal500fitonly;noholdoutsubgroupscore/testtuning.",
+    "authorization": "Parent explicitlyrequestedbestjustifiedconfigurationfull500andcandidate014CSV;retain013andcoordinateuploadwithparent.",
+    "locked_utc": "2026-10-04T03:11:05.660177+00:00"
+  },
+  "all_configurations": [
+    {
+      "configuration": "full013",
+      "pooled_MSE": 171.1392971222956,
+      "pooled_RMSE": 13.082021904976907,
+      "RMSE_change_vs013": 0.0,
+      "ID_cluster95_RMSE_change_CI": [
+        0.0,
+        0.0
+      ],
+      "per_partition": [
+        {
+          "split": "original",
+          "RMSE": 13.045536327781294,
+          "RMSE_change_vs013": 0.0,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "split": "20261031",
+          "RMSE": 12.9664932798119,
+          "RMSE_change_vs013": 0.0,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "split": "20261101",
+          "RMSE": 13.23260840922976,
+          "RMSE_change_vs013": 0.0,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "frozen_trainmean_replacement_RMSE": 13.082021904976905
+    },
+    {
+      "configuration": "no_legacy_physics",
+      "pooled_MSE": 167.7320280393038,
+      "pooled_RMSE": 12.951140028557479,
+      "RMSE_change_vs013": -0.13088187641942817,
+      "ID_cluster95_RMSE_change_CI": [
+        -0.4028445454823729,
+        0.15172459854265255
+      ],
+      "per_partition": [
+        {
+          "split": "original",
+          "RMSE": 13.05125085261727,
+          "RMSE_change_vs013": 0.005714524835976675,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            -0.28773307762983186,
+            0.31011341244744856
+          ]
+        },
+        {
+          "split": "20261031",
+          "RMSE": 12.707777681522563,
+          "RMSE_change_vs013": -0.25871559828933677,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            -0.5634299895599495,
+            0.05336529536269432
+          ]
+        },
+        {
+          "split": "20261101",
+          "RMSE": 13.090963360156707,
+          "RMSE_change_vs013": -0.14164504907305364,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            -0.4662929955124611,
+            0.1896709121270536
+          ]
+        }
+      ],
+      "frozen_trainmean_replacement_RMSE": 14.26169939241775
+    },
+    {
+      "configuration": "no_baseline795",
+      "pooled_MSE": 166.2887997064064,
+      "pooled_RMSE": 12.895301458531568,
+      "RMSE_change_vs013": -0.1867204464453387,
+      "ID_cluster95_RMSE_change_CI": [
+        -0.37699501002601754,
+        0.005398326107926067
+      ],
+      "per_partition": [
+        {
+          "split": "original",
+          "RMSE": 12.968699771878843,
+          "RMSE_change_vs013": -0.07683655590245131,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            -0.2532222782162811,
+            0.1041914689730525
+          ]
+        },
+        {
+          "split": "20261031",
+          "RMSE": 12.668260572562595,
+          "RMSE_change_vs013": -0.29823270724930495,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            -0.5102455813805992,
+            -0.08350040263966296
+          ]
+        },
+        {
+          "split": "20261101",
+          "RMSE": 13.04585755754465,
+          "RMSE_change_vs013": -0.18675085168510996,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            -0.41219618447330114,
+            0.04106883190656195
+          ]
+        }
+      ],
+      "frozen_trainmean_replacement_RMSE": 13.593111485094404
+    },
+    {
+      "configuration": "no_compact26",
+      "pooled_MSE": 170.753536959675,
+      "pooled_RMSE": 13.067269682671855,
+      "RMSE_change_vs013": -0.014752222305052243,
+      "ID_cluster95_RMSE_change_CI": [
+        -0.10850016613103901,
+        0.0815848804526738
+      ],
+      "per_partition": [
+        {
+          "split": "original",
+          "RMSE": 13.002402400420806,
+          "RMSE_change_vs013": -0.043133927360488045,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            -0.17857669111286634,
+            0.09603625838073045
+          ]
+        },
+        {
+          "split": "20261031",
+          "RMSE": 12.954714186126992,
+          "RMSE_change_vs013": -0.011779093684907593,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            -0.11986535034931664,
+            0.09706532703385842
+          ]
+        },
+        {
+          "split": "20261101",
+          "RMSE": 13.242866874371138,
+          "RMSE_change_vs013": 0.010258465141378181,
+          "paired_ID_bootstrap95_RMSE_change_CI": [
+            -0.08067439517607071,
+            0.10221434083366797
+          ]
+        }
+      ],
+      "frozen_trainmean_replacement_RMSE": 13.240395750968647
+    }
+  ],
+  "validation": {
+    "partitions": {
+      "original": {
+        "passed": true,
+        "models_reloaded": 480,
+        "choices_recomputed": 30,
+        "independent_OLS_and_kernel_max_error": 6.394884621840902e-14,
+        "exact_no_residual_equals011": true,
+        "frozen_intervention_independently_verified": true,
+        "source_indices_and_removed_paths_audited": true,
+        "report_sha256": "269e21d380566d5878606d740b1aba0d83ee55f82ec66a59882b9706cc68c4e8"
+      },
+      "20261031": {
+        "passed": true,
+        "models_reloaded": 480,
+        "choices_recomputed": 30,
+        "independent_OLS_and_kernel_max_error": 5.684341886080802e-14,
+        "exact_no_residual_equals011": true,
+        "frozen_intervention_independently_verified": true,
+        "source_indices_and_removed_paths_audited": true,
+        "report_sha256": "bae313e969d4ac2ba59ab9304ff9a93eaa85280596bb9501cd3c3a930935cc94"
+      },
+      "20261101": {
+        "passed": true,
+        "models_reloaded": 480,
+        "choices_recomputed": 30,
+        "independent_OLS_and_kernel_max_error": 6.394884621840902e-14,
+        "exact_no_residual_equals011": true,
+        "frozen_intervention_independently_verified": true,
+        "source_indices_and_removed_paths_audited": true,
+        "report_sha256": "a66f8bb73b484e097d21f0b44526a1e86f94de6e2211d0936612ab17940c45fe"
+      }
+    },
+    "models_reloaded": 1440,
+    "replay": {
+      "passed": true,
+      "max_prediction_replay_error": 5.684341886080802e-14,
+      "tolerance": 1e-10,
+      "arms": {
+        "no_baseline795": {
+          "outer_label_and_removed_path_interventions_passed": true,
+          "inner_label_fixed5fits_passed": true,
+          "calibrators_and_choices_exact": true
+        },
+        "no_compact26": {
+          "outer_label_and_removed_path_interventions_passed": true,
+          "inner_label_fixed5fits_passed": true,
+          "calibrators_and_choices_exact": true
+        }
+      },
+      "upstream112_training_certificate_reused": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+      "source_sha256": "27dc16eeba33986954a5db8ad224078b7a36fe12d4f6be268bcd562084a99856"
+    }
+  },
+  "selection_bias": "Same400andknown3partitions;121resultmotivated122andjointremovalwasalreadyknown. Nestedfitsprotectcurrenttraining/selectiononly. Conditionalbootstrapignoresresearchselectionandrefittinguncertainty;noPublic/privategainguarantee.",
+  "zeroing_vs_refit": "Frozeninterventionreplacesremovedoutputsbyoutertrainingtargetmeanbutretainsoldcalibratorandoldresidual. Refitproceduredeletesbranchthroughallnestedanchors,renormalizesweights,refitsaffineandresidualtargets/models. Theyareseparateestimands;rawweightzeroing isnotfeatureimportance.",
+  "full500_next": "Reuseverifiedremainingbasepredictorstrainedonall500and075/114middle/deepOOF;refitall500calibrator,3anchorcalibrators,and3residualselectors/modelsunderlockedmask. Newneuraltrainingunnecessarybecauseindependentremainingbranchesunchanged. Testonlyafterlockedfit/validation.",
+  "scope": {
+    "new_packages": 0,
+    "cost": 0,
+    "new_submission_CSV_yet": false,
+    "uploaded": false,
+    "prior_test_artifact_inspection": "Duringimplementationinspection,headersandfirstrowofprevious008/011componentCSVsweredisplayed. No testlabels, fitting, ranking, thresholdorconfigurationdecisionusedthosevalues. No newtestinferencebeforelock;candidatechoiceusesdevelopmentOOFonly."
+  },
+  "evidence_sha256": {
+    "artifacts/component-single-ablation-122/original/predictions.npz": "541fe2d3c3085f0b4ce855a20b8c50d248d489b7692bf454b67111b9c626b400",
+    "artifacts/component-single-ablation-122/original/report.json": "269e21d380566d5878606d740b1aba0d83ee55f82ec66a59882b9706cc68c4e8",
+    "artifacts/component-single-ablation-122/validation-original.json": "7556f777c3c4a6fd7a36a07c50cbfb720b317675a5daa73092f6760df254bec0",
+    "artifacts/component-single-ablation-122/20261031/predictions.npz": "8171bc261689d24b962a1240b978e2fd67284dd0a7e3b2a13284f9c9de31296e",
+    "artifacts/component-single-ablation-122/20261031/report.json": "bae313e969d4ac2ba59ab9304ff9a93eaa85280596bb9501cd3c3a930935cc94",
+    "artifacts/component-single-ablation-122/validation-20261031.json": "3470b325264934c50165a244d67de12e8dad3723d03afc6be32ac5bc714bb3fa",
+    "artifacts/component-single-ablation-122/20261101/predictions.npz": "c0ab721e0cdcf710be090659f981940a11acaaa3e97c1cc7f90134ec0d37c7ba",
+    "artifacts/component-single-ablation-122/20261101/report.json": "a66f8bb73b484e097d21f0b44526a1e86f94de6e2211d0936612ab17940c45fe",
+    "artifacts/component-single-ablation-122/validation-20261101.json": "d5421071bbacd8e105631596f3dc40b0d53f57ce9acd95bb46e32ce1dcbab180",
+    "artifacts/component-single-ablation-122/plan.json": "d1f1e45d83a432749720ae3c4a2c87109facbe7cdcf2ea811a58217c842f9541",
+    "artifacts/component-single-ablation-122/decision.json": "d8413f5aa31f227163de9ecccfdfac38839057dc503f6d64ae8d69172fe22be3"
+  },
+  "source_sha256": "953cfb7153b2e4058883d27a62a4e1acb6c82edcca1e5db6f5be5b9aaa976b7b"
+}

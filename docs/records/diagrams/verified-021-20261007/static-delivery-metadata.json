@@ -1,0 +1,32 @@
+{
+  "skill_path": ".agents/skills/diagram-design",
+  "skill_revision": "d1376371965f513d99cc9ec388835d255c5c88d5",
+  "skill_version": "2.6",
+  "template": "assets/template.html",
+  "references": [
+    "references/type-architecture.md",
+    "references/output-spec.md",
+    "references/style-guide.md",
+    "references/export.md"
+  ],
+  "format": "self-contained static HTML with inline SVG and diagram-only PNG",
+  "style": "user-selected light / dark gray / coral",
+  "canvas": "fit; 1600x1040 overall and 1600x1160 detail, presentation-size typography",
+  "renderer": "existing Google Chrome headless via DevTools pipe; deviceScaleFactor=2",
+  "renderer_deviation": "Playwright absent; existing Chrome CDP used instead, no dependencies installed",
+  "fonts": "Offline system-font fallbacks: Apple SD Gothic Neo / AppleMyungjo / Menlo; no remote font requests",
+  "self_check": {
+    "overall-021.html": "OK",
+    "detail-018.html": "OK"
+  },
+  "geometry_verifier": "not shipped in installed skill scripts; browser text bounds and visual routing inspected",
+  "visual_qa": "Both PNGs viewed. No Korean text clipping, overlap, or missing characters observed; connectors orthogonal and no transit through unrelated boxes.",
+  "fidelity": "Base4 collapsed into one node; nested training described in caption. Full inference ordering and model dimensions retained.",
+  "files": {
+    "overall-021.html": "58938e5e42ac5cbb81757fdd36b0c1d41b819413addc9c11cc47736ee465db36",
+    "overall-021.png": "c819067d8abd2ad5185fccb28494c869e216e7c7958f19e77c9964183438cf00",
+    "detail-018.html": "59569e634f84d431381e9f22b6604cc991a85b136392fbfed729bbcc5042aa66",
+    "detail-018.png": "0b5bd915103cb7792be3e7cdf9ff221701d9284a689528ccb6e5c1cacba05ff4",
+    "static-render-qa.json": "5eca235531775b55e3c6b6bc3b5fe39fd7789b0987dffeecd049477a19ff341a"
+  }
+}

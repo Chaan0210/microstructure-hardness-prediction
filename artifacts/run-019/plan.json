@@ -1,0 +1,45 @@
+{
+  "hypothesis": "Native Fourier angular coherence and tile texture heterogeneity missing from global descriptors; no extra baseline power bands",
+  "panels": [
+    "native28",
+    "compact26+native28"
+  ],
+  "models": [
+    "native28 nested KRR",
+    "combined54 nested KRR",
+    "combined54 fixed ET300 minleaf3 maxfeatures0.8",
+    "combined54 fixed HGB200 leaves7 minleaf20 l2=10 lr0.05"
+  ],
+  "kernel_inner_grid": {
+    "bandwidth": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "alpha": [
+      0.01,
+      0.1,
+      1.0
+    ]
+  },
+  "ensemble_weights": {
+    "baseline": 0.5,
+    "cnn": 0.25,
+    "new_feature_model": 0.25
+  },
+  "cnn_choices": [
+    "original seed20261003",
+    "prespecified equal3seeds run018"
+  ],
+  "scope": "development400 original folds only; no holdout/test access",
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  },
+  "source_sha256": {
+    "native_regression.py": "ae70a5a8a73d87276b21cd5e35784bfd3f756162c86fc7cc2d3cb01375d9a590",
+    "native_texture_features.py": "e5c061688ad86f00c7532b1c3f3a349ee113abf92f5f387b32f4001a6054988a",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc"
+  }
+}

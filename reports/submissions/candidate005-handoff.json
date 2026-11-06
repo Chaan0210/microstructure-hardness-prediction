@@ -1,0 +1,95 @@
+{
+  "status": "ready_for_parent_coordinated_submission_not_uploaded",
+  "candidate": "artifacts/submission-candidate-005.csv",
+  "sha256": "473ef271d35b2c18185690471e2ffbada07a01cf31d07be4c2d489bd76e67ff4",
+  "model_directory": "artifacts/final-model-041",
+  "rows": 1000,
+  "columns": [
+    "ID",
+    "hardness"
+  ],
+  "sample_order_exact": true,
+  "duplicate_ids": 0,
+  "nan_inf_count": 0,
+  "negative_or_outside_train_label_range": {
+    "baseline": {
+      "negative_count": 0,
+      "below_train_min": 0,
+      "above_train_max": 0,
+      "beyond_one_training_label_span": 0
+    },
+    "cnn": {
+      "negative_count": 0,
+      "below_train_min": 0,
+      "above_train_max": 0,
+      "beyond_one_training_label_span": 0
+    },
+    "kernel": {
+      "negative_count": 0,
+      "below_train_min": 0,
+      "above_train_max": 0,
+      "beyond_one_training_label_span": 0
+    },
+    "baseline_base_et": {
+      "negative_count": 0,
+      "below_train_min": 0,
+      "above_train_max": 0,
+      "beyond_one_training_label_span": 0
+    },
+    "baseline_base_ridge": {
+      "negative_count": 0,
+      "below_train_min": 0,
+      "above_train_max": 0,
+      "beyond_one_training_label_span": 0
+    },
+    "baseline_morph_ridge": {
+      "negative_count": 0,
+      "below_train_min": 0,
+      "above_train_max": 0,
+      "beyond_one_training_label_span": 0
+    },
+    "candidate003": {
+      "negative_count": 0,
+      "below_train_min": 0,
+      "above_train_max": 0,
+      "beyond_one_training_label_span": 0
+    },
+    "dino504": {
+      "negative_count": 0,
+      "below_train_min": 0,
+      "above_train_max": 0,
+      "beyond_one_training_label_span": 0
+    },
+    "ensemble005": {
+      "negative_count": 0,
+      "below_train_min": 0,
+      "above_train_max": 0,
+      "beyond_one_training_label_span": 0
+    }
+  },
+  "final_range": [
+    168.40131945414367,
+    231.59236866078726
+  ],
+  "training_label_range": [
+    151.9798276392398,
+    264.1213029015716
+  ],
+  "ensemble": {
+    "unchanged_candidate003": 0.75,
+    "new_full500_DINO504": 0.25
+  },
+  "selected_lambda": 1.0,
+  "selected_alpha": 1152.0,
+  "test_fit": false,
+  "clipping": false,
+  "full_regressor_reload_max_error": 0.0,
+  "cpu_end_to_end_max_error": 3.4241587570704723e-05,
+  "verification_report": "reports/candidate005-verification.json",
+  "reproduction_command": ".venv/bin/python -I -B verify_candidate005.py",
+  "preserved_best003_sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+  "fit040_note": "Preserved abortedfloat32precisionguard attempt;final041retrainedinfloat64matching039CV. Frozen500featurecacheonlyreused,notoldregressor.",
+  "uploaded": false,
+  "running_work": [],
+  "cost": 0
+}

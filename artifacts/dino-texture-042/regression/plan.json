@@ -1,0 +1,34 @@
+{
+  "hypothesis": "005globalCLS/mean/std discards where patchfeatures change. Per-channel normalized semivariograms atlags1,4 encode local-boundary coherence/scale without learning newbackboneparameters.",
+  "descriptor": "Existing504global1152 + normalizedhorizontal/verticalsquaredpatchdifferences atlags1,4 (2x384) =1920. Averageaxes preservesalignmentmagnitudebutdoesnotaddabsoluteorientationfeatures.",
+  "normalization": "(horizontalMSE+verticalMSE)/(4*(perchannelpatchvariance+1e-4)); globalpatchstd retained separately.",
+  "physical_scale": "504upsamplingof256means14pixelmodelpatch≈7.1nativepixels;lags1/4≈7.1/28.4nativepixels. No physicalunitsavailable.",
+  "architecture": "SameofficialfrozenoriginalDINOv2;finalnormalizedpatchtokens36x36;no finetuning ornewweights",
+  "anti_overfit": "Onefeaturepanelonly; StandardScaler+Ridgealpha=lambda*p;lambda(.1,1,10) selectedinner3foldonly; no extraoptimizer/epochs,ensembleweighttuning ordataaugmentation",
+  "comparison": "005reference=.75samefold003+.25matchedglobal504Ridge;new=.75samefold003+.25newtextureRidge. Sameoriginal+bothpredefinedrepartitions;no optionalgridexpansion.",
+  "inner": "GroupKFold3shuffle seed20261120+outerfold,as039;allpreprocessingfitinner/outertrainonly",
+  "scope": "Development400only, noholdout/test/Publicmodelselection. Syntheticunitfixturesonlytestdescriptorandnevertrainregressors.",
+  "rotation_note": "Descriptor aggregation invariantforrotation/reflectionofalreadycomputedtokenmaps; DINOinput orientation invariance isnotclaimedorassumed.",
+  "limits": "Reused400andpartitionscarryhistoricalselectionbias;these arenotindependentvalidation.",
+  "source_sha256": {
+    "dino_texture_042.py": "abcc42db466f0fb10502ad57db939c09fac7e7a1103ceffd88dccd7ab8a551b9",
+    "dino_spatial_039.py": "6a5a2546cf3266dd67fcaccae2dfe978bc431349cec2d5ab784b9a065e79c692",
+    "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353"
+  },
+  "protected": {
+    "artifacts/submission-candidate-005.csv": "473ef271d35b2c18185690471e2ffbada07a01cf31d07be4c2d489bd76e67ff4",
+    "artifacts/submission-candidate-005.manifest.json": "9cef5f5031d4a2881b0d72bd078569bf77b16d5c8438be87e0b8b40537c47717",
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/dino-spatial-039/candidate-design.json": "1675f7a1e9ddae89388136220e9b3c626e90b1ccdf6169f5585cd14d7f1de072",
+    "artifacts/final-model-041/report.json": "39347ff815fdb22357e237adbd5f4a97674bfd85cc5cf7962978f261b892695e",
+    "artifacts/final-model-041/train_features.npz": "81d47f46cca3143d71e8488048b3f3e919bfcfbc064e0436d74d047e24d2d0bd",
+    "artifacts/final-model-041/test_features.npz": "6c20185c58f124ee98dfea562f10d675bad9908899739943eeb0f7a66acbded7",
+    "artifacts/final-model-041/decision.json": "a92a43fb0fbc51a5ae6b9e25abcca3edc4ecac8e3853bafa61be2eb48c631f0e",
+    "artifacts/final-model-041/dino-regressor.joblib": "81eb64ac92d7bdb244e132860ea7470dbc0711e7d9ccaf353cc47990af32bad7"
+  },
+  "regression_source_sha256": {
+    "dino_texture_cv_042.py": "9357248a3101dd1501f3107e652683874699866e6188563754f5dc3aed7a3a78",
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5"
+  },
+  "feature_sha256": "245ca56d223c4ded5b800830f88209e1641a16a8d17afb81d610b4440c3934be"
+}

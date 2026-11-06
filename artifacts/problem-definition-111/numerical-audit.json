@@ -1,0 +1,123 @@
+{
+  "utc": "2026-10-03T17:56:23.918286+00:00",
+  "patch_projection": {
+    "S": {
+      "shape": [
+        384,
+        196
+      ],
+      "rank_tests": {
+        "float32": {
+          "rank": 196,
+          "tolerance": 0.00019755178557274945
+        },
+        "float64": {
+          "rank": 196,
+          "tolerance": 3.679688751189959e-13
+        }
+      },
+      "largest_singular": 4.315584606431902,
+      "smallest_singular": 0.022654950527963943,
+      "condition": 190.4919015870283,
+      "equal_pixel_mean_std_fixture_embedding_L2_difference": 13.48360265970034,
+      "manual_vs_conv_max_error": 8.881784197001252e-16,
+      "patch_norm": "Identity",
+      "meaning": "Learned pre-transformer linear patch map, using stored float32 normalization constants cast to float64. Full column rank distinguishes all real-valued 14x14 grayscale patches in exact arithmetic at this stage; not full network invertibility or predictive sufficiency."
+    },
+    "B": {
+      "shape": [
+        768,
+        196
+      ],
+      "rank_tests": {
+        "float32": {
+          "rank": 196,
+          "tolerance": 0.0004095334502057271
+        },
+        "float64": {
+          "rank": 196,
+          "tolerance": 7.628154944735153e-13
+        }
+      },
+      "largest_singular": 4.4731973654470885,
+      "smallest_singular": 0.08770096443140343,
+      "condition": 51.005110313762444,
+      "equal_pixel_mean_std_fixture_embedding_L2_difference": 19.855262470930178,
+      "manual_vs_conv_max_error": 1.3322676295501878e-15,
+      "patch_norm": "Identity",
+      "meaning": "Learned pre-transformer linear patch map, using stored float32 normalization constants cast to float64. Full column rank distinguishes all real-valued 14x14 grayscale patches in exact arithmetic at this stage; not full network invertibility or predictive sufficiency."
+    }
+  },
+  "box_downsampling": {
+    "input_unequal_pixels": 32768,
+    "output_max_difference": 0,
+    "output_unique_values": [
+      128
+    ],
+    "meaning": "Exact collision for two binary patterns under current BOX256to128 downsampling. Does not prove grain-size loss across all branches; DINO and native descriptors receive other representations."
+  },
+  "token_moments": {
+    "mean_equal": true,
+    "std_equal": true,
+    "adjacent_squared_difference_original": 4.0,
+    "adjacent_squared_difference_permuted": 12.0,
+    "meaning": "Abstract tokens only: moment pooling forgets token order. DINO tokens already encode position and global context; input patch permutations need not yield token permutations, and CLS is also retained."
+  },
+  "alignment": {
+    "circular_region_arbitrary_equal_angle_unweighted_order": 1.0,
+    "elongation_weighted_order": 0.0,
+    "rotation_of_angles_magnitude_error": 1.1102230246251565e-16,
+    "current_compact26_source": "grain_features.py:43 / compact_regression.py:44 uses area-only weighting",
+    "already_tested_weighted_sources": [
+      "denoised_grain_features.py:78",
+      "connected_grain_features.py:123"
+    ],
+    "meaning": "No useful orientation for circles; weighted order encodes both shape anisotropy and coherence, not pure angular concentration. Absolute orientation rotates while order magnitude stays constant; no claim target invariant."
+  },
+  "CNN_support": {
+    "conv_only_receptive_width_at_input_resolution": 33,
+    "stride_at_input_resolution": 16,
+    "current128_map_side": 8,
+    "nominal_native_width_excluding_norm": 66,
+    "native_stride": 32,
+    "GN_distant_fixture_effect": 0.9713200412796109,
+    "qualification": "33 input pixels is convolution-only support. GroupNorm aggregates across spatial positions per sample/group, coupling distant locations even before global pooling; full effective dependence is not restricted to this width. BOX support yields nominal 66 native pixels excluding global normalization."
+  },
+  "DINO_scale": {
+    "native_image_side": 256,
+    "resized_side": 504,
+    "common_scale": 1.96875,
+    "token_grid_side": 36,
+    "patch_stride_native_equivalent": 7.111111111111111,
+    "meaning": "Same fixed scale across all images preserves relative pixel-scale differences, not per-image size normalization. Bicubic interpolation adds no independent detail; physical length calibration unknown."
+  },
+  "source_sha256": {
+    "problem_definition_111.py": "6d0d8f97f3147acaaf86289c7fdc66ad2c0e08ea2b42e4fc046256a13353f86a",
+    "candidate_pipeline.py": "7495e2b0c6ff14d163cc6bc539798b94f20605f4c02d3cb3305363422ecc1b28",
+    "candidate008_pipeline.py": "57204586a6e7f96dee7b5a172ca6e4e163b479ec7d37e6f9988d48029448f2e5",
+    "candidate009_pipeline.py": "46d65ec53837ae031990eae5eafe32c0706226eb799d390dcfdb33c7c117cd71",
+    "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+    "cnn_experiment.py": "054b27a4b4dd806e31ac1dbd653e5d0866712c349afdabf338c1b6e5df417b20",
+    "grain_features.py": "0b2dcc4d9a528718c418ee784ccb0dee836f8887fbe12989139aab4a0ed705e0",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "latent_features.py": "9b003e8da3f1e488d88af97b9395a80ffb5bc82785adbad1b378f0d869a9978a",
+    "native_texture_features.py": "e5c061688ad86f00c7532b1c3f3a349ee113abf92f5f387b32f4001a6054988a",
+    "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+    "connected_grain_features.py": "1b0374672595d13639ed1caf397c54dbb73c59bea79137250a6a4cfae3fee186",
+    "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353",
+    "dino_spatial_039.py": "6a5a2546cf3266dd67fcaccae2dfe978bc431349cec2d5ab784b9a065e79c692",
+    "dinob_062.py": "209407c04766b687696d8a06ae158c3af4912a7b399d153301238a34074a56f9",
+    "dino_texture_042.py": "abcc42db466f0fb10502ad57db939c09fac7e7a1103ceffd88dccd7ab8a551b9",
+    "dino_multilayer_044.py": "9a4b8348112809e63eb1b341087f05582efd932c62e89174e6becd3d821dae67",
+    "src/microstructure/features.py": "24732babe8c725149a0e1a9b84a1e9c0328a8e4d3d42be64a9d89ad85f10cb83",
+    "src/microstructure_v2/features.py": "199c6d5a5ff4fd30191d98cf3db0613616c121100514cc5df24bf53b8d630ee9",
+    "src/microstructure_v2/extra.py": "b59aacf672c65de5af59c26e26930e707b004fd53a8eb4ad74f7bb5f28a19bc9"
+  },
+  "seconds": 1.9060093750013039,
+  "preservation": {
+    "protected_files": 20,
+    "previous_reports": 200,
+    "packages": 26,
+    "unchanged": true
+  }
+}

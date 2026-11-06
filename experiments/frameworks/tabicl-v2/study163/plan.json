@@ -1,0 +1,43 @@
+{
+  "study": 163,
+  "previous_study162_n_estimators": 1,
+  "parameters": {
+    "n_estimators": 8,
+    "batch_size": 1,
+    "kv_cache": false,
+    "use_amp": false,
+    "n_jobs": 2,
+    "device": "cpu",
+    "model_path": "experiments/tabicl-v2/downloads/tabicl-regressor-v2-20260212.ckpt",
+    "allow_auto_download": false,
+    "random_state": 42,
+    "use_fa3": false,
+    "disk_offload_dir": "experiments/tabicl-v2/offload",
+    "norm_methods": [
+      "none",
+      "power"
+    ],
+    "feat_shuffle_method": "latin",
+    "outlier_threshold": 4.0
+  },
+  "arms": [
+    "compact26",
+    "dinob_pca64",
+    "compact26_dinob_pca64"
+  ],
+  "preprocessing": "Same as162. Compact26 raw; DINO-B6912: StandardScaler fit on outer train then full-SVD PCA64 fit on outer train; concatenate these for90. TabICL internal normalizers fitted on train only. No synthetic sample augmentation. Eight deterministic ensemble transformations from seed42, Latin feature permutation, none/power normalization.",
+  "benchmark": "original compact26 fold0; CPU n_jobs2. fit+predict<60s and process peak RSS<4e9 bytes required before continuation; same limit checked after each fold. batch_size1 unchanged.",
+  "fixed_blend": "0.8 reference018 + 0.2 TabICL; no fitted blend weights",
+  "resplit_gate": "original fixed20blend improves RMSE by at least0.01 and >=3/5 folds; qualifying arms only",
+  "continuation_gate": "improvement at least0.01 on each of all3 split RMSE plus >=3/5 fold gains per split; otherwise no full500/test. Any learned combination requires separate honest nesting.",
+  "sources": {
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/dinob-062/development_features.npz": "3ce775f1398f91d4c55a795c89f0ad06ed37c7eba4e8380c9e080475e83998d3",
+    "artifacts/bootstrap-selector-144/original/predictions.npz": "ec2ac0b3d80a62c63f542f5d6c537c911045f93846fdd21df945a85fc22957ef"
+  },
+  "frozen_engine_sha256": "5d7112d01175c960446bdb85b70e6bf97158f9f95a1b02603d4a2ecf97b7c415",
+  "wrapper_sha256": "bc1c3ff2a7e32391b7fd85149ac5705245968178a93c6238323cb588fa25048d",
+  "environment": "Existing isolated .venv and checkpoint; no installation or downloads",
+  "excluded": "holdout100 and test untouched; no new raw image access",
+  "limitations": "same adaptive400 development IDs; resplits not independent data; benchmark fold has seen prior model selection"
+}

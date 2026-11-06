@@ -1,0 +1,436 @@
+{
+  "study": "112 validation-rule audit and fully nested011/pooling mixtures",
+  "completed_utc": "2026-10-04T00:37:54.205233+00:00",
+  "status": "completed_fixed_procedure_not_promoted",
+  "selection_audit": {
+    "hypothesis_vs_gate": "092/093 supports a selected weak pooling hypothesis; failed operational gates didnotrefuteallattention. Fixed10can be suboptimal for somebranches, but doesnotjustify globallyoptimizedOOFperformance claims.",
+    "limited_quadratic_audit": {
+      "original": {
+        "attention": {
+          "reference011": 13.0539977718711,
+          "branch_RMSE": 14.231527644939877,
+          "mean_control_RMSE": 14.595534378382094,
+          "mean_residual_times_delta": 7.788681767561152,
+          "mean_delta_squared": 47.706884815794616,
+          "MSE_change_at_w01": -1.0806675053542842,
+          "positive_gain_weight_interval_intersect_0_1": [
+            0.0,
+            0.3265223372951195
+          ],
+          "stationary_weight_diagnostic_only": 0.16326116864755974,
+          "no_optimized_RMSE_reported": true
+        },
+        "independent_physics57": {
+          "branch_RMSE": 14.13237462297155,
+          "mean_residual_times_delta": -1.7101471411391025,
+          "mean_delta_squared": 25.89686037371644,
+          "MSE_change_at_w01": 0.6009980319649849,
+          "positive_gain_weight_interval_intersect_0_1": null,
+          "stationary_weight_diagnostic_only": 0.0,
+          "no_optimized_RMSE_reported": true,
+          "scope": "One existing original prediction vector; no physics weight scan or new fitting."
+        }
+      },
+      "20261031": {
+        "attention": {
+          "reference011": 13.015176056591201,
+          "branch_RMSE": 14.333621858158327,
+          "mean_control_RMSE": 14.45815059256264,
+          "mean_residual_times_delta": 6.780866250538961,
+          "mean_delta_squared": 49.619640289687226,
+          "MSE_change_at_w01": -0.85997684721092,
+          "positive_gain_weight_interval_intersect_0_1": [
+            0.0,
+            0.27331380118643356
+          ],
+          "stationary_weight_diagnostic_only": 0.13665690059321678,
+          "no_optimized_RMSE_reported": true
+        }
+      },
+      "20261101": {
+        "attention": {
+          "reference011": 13.272377948565081,
+          "branch_RMSE": 14.557471274343957,
+          "mean_control_RMSE": 14.716945880109092,
+          "mean_residual_times_delta": 6.373530109642438,
+          "mean_delta_squared": 48.511013713077745,
+          "MSE_change_at_w01": -0.7895958847977101,
+          "positive_gain_weight_interval_intersect_0_1": [
+            0.0,
+            0.2627663131238275
+          ],
+          "stationary_weight_diagnostic_only": 0.13138315656191374,
+          "no_optimized_RMSE_reported": true
+        }
+      }
+    },
+    "weight_interval_qualification": "Positivegain intervals listed in audit are endpoint bounds: strictimprovement requiresw>0 andw<2A/B,intersect[0,1];endpoint0 is unchangedincumbent. No globaloptimalRMSE was used as a validation result.",
+    "curve_review": "092 online training loss falls but includes dropout and a decaying learning rate; training fit remains much better than heldout. This does not establish that longer training improves generalization.057 already inner-selected5/15/40/100 epochs and selected100/100/100/5/40, with worse007 ensemble. Do not rerun duration search merely because loss decreases.",
+    "physics_direct_vs_residual": "Physics57 existingdirect predictor hasnegative mean(r*d) onoriginal400; no positiveconvexweightimproves thatsavedvector. This doesnotruleoutphysicsresidualtraining.047jointkernel trainedtargets,notcrossfit011residuals; cnn_residual.py is a residualarchitecture,notresiduallabellearning. No extra physicsfamily was trained in112.",
+    "historical_reuse": {
+      "same_observations": 400,
+      "repartitions": 3,
+      "011_residual_correlation": [
+        [
+          1.0,
+          0.9801385431589897,
+          0.981402323277119
+        ],
+        [
+          0.9801385431589899,
+          0.9999999999999999,
+          0.9783444683280567
+        ],
+        [
+          0.9814023232771188,
+          0.9783444683280567,
+          1.0
+        ]
+      ],
+      "independent_observations_not_1200": true
+    },
+    "nuisance_training_size": "Innermost008 has142/143trainingrows, middle011 about213/214,outer320. Calibration andmixtureweights canchange withtraining size. Theouter evaluation measures thisspecifiednestedprocedure; no posthocweighttransfercorrection was made."
+  },
+  "fixed_comparison": "011 versus train-onlyalpha attention mixture versus train-onlyalpha parameter-matchedmean mixture. No extra optimizer/architecture search.",
+  "results": [
+    {
+      "split": "original",
+      "incumbent011_RMSE": 13.0539977718711,
+      "nested_attention_RMSE": 13.101452501186104,
+      "nested_mean_RMSE": 13.15887125191968,
+      "old_fixed10_attention_RMSE_diagnostic_only": 13.012539733759176,
+      "primary_untrimmed_MSE_gain": -1.2411998128199855,
+      "RMSE_gain": -0.04745472931500494,
+      "attention_alphas": [
+        0.271392632084664,
+        0.16575250728847565,
+        0.0,
+        0.10203055550243463,
+        0.30980053278783126
+      ],
+      "mean_alphas": [
+        0.290249205173896,
+        0.12980833612360757,
+        0.0,
+        0.05509303341937645,
+        0.20507483187913148
+      ],
+      "conditional95_RMSE_gain_CI": [
+        -0.20608690108756123,
+        0.10981537467102812
+      ],
+      "fixed092_other395_RMSE_gain_diagnostic_only": -0.11587605154416458
+    },
+    {
+      "split": "20261031",
+      "incumbent011_RMSE": 13.015176056591201,
+      "nested_attention_RMSE": 13.024436230519905,
+      "nested_mean_RMSE": 13.032658485858992,
+      "old_fixed10_attention_RMSE_diagnostic_only": 12.982096553979792,
+      "primary_untrimmed_MSE_gain": -0.24113133881465387,
+      "RMSE_gain": -0.009260173928703708,
+      "attention_alphas": [
+        0.0,
+        0.08120491042943583,
+        0.12281919766297655,
+        0.17147970915398467,
+        0.20588216875139773
+      ],
+      "mean_alphas": [
+        0.0,
+        0.0792386275118555,
+        0.0890519495368988,
+        0.13406801754307443,
+        0.16542850706164094
+      ],
+      "conditional95_RMSE_gain_CI": [
+        -0.11239683278807656,
+        0.1047434679504714
+      ],
+      "fixed092_other395_RMSE_gain_diagnostic_only": -0.06510936621255325
+    },
+    {
+      "split": "20261101",
+      "incumbent011_RMSE": 13.272377948565081,
+      "nested_attention_RMSE": 13.258519780250458,
+      "nested_mean_RMSE": 13.280086788229475,
+      "old_fixed10_attention_RMSE_diagnostic_only": 13.242598707382134,
+      "primary_untrimmed_MSE_gain": 0.3676696462639768,
+      "RMSE_gain": 0.013858168314623498,
+      "attention_alphas": [
+        0.19629392826396866,
+        0.15543327967254908,
+        0.26127184461357505,
+        0.08422353761098249,
+        0.1979159018294722
+      ],
+      "mean_alphas": [
+        0.15932754575778013,
+        0.10054267272137131,
+        0.21125917822188406,
+        0.029927745637262658,
+        0.1844096291879436
+      ],
+      "conditional95_RMSE_gain_CI": [
+        -0.11494669928004154,
+        0.1482113232232108
+      ],
+      "fixed092_other395_RMSE_gain_diagnostic_only": -0.04984649654448248
+    }
+  ],
+  "decision": {
+    "eligible_for_locked_full500_candidate": false,
+    "criterion": "All3 pooled untrimmed attention-mixture MSE below unchanged011; independentvalidationpassed. No fold-count,minimumgain,CIortrimminggate.",
+    "results": [
+      {
+        "split": "original",
+        "incumbent011_RMSE": 13.0539977718711,
+        "nested_attention_RMSE": 13.101452501186104,
+        "nested_mean_RMSE": 13.15887125191968,
+        "old_fixed10_attention_RMSE_diagnostic_only": 13.012539733759176,
+        "primary_untrimmed_MSE_gain": -1.2411998128199855,
+        "RMSE_gain": -0.04745472931500494,
+        "attention_alphas": [
+          0.271392632084664,
+          0.16575250728847565,
+          0.0,
+          0.10203055550243463,
+          0.30980053278783126
+        ],
+        "mean_alphas": [
+          0.290249205173896,
+          0.12980833612360757,
+          0.0,
+          0.05509303341937645,
+          0.20507483187913148
+        ],
+        "conditional95_RMSE_gain_CI": [
+          -0.20608690108756123,
+          0.10981537467102812
+        ],
+        "fixed092_other395_RMSE_gain_diagnostic_only": -0.11587605154416458
+      },
+      {
+        "split": "20261031",
+        "incumbent011_RMSE": 13.015176056591201,
+        "nested_attention_RMSE": 13.024436230519905,
+        "nested_mean_RMSE": 13.032658485858992,
+        "old_fixed10_attention_RMSE_diagnostic_only": 12.982096553979792,
+        "primary_untrimmed_MSE_gain": -0.24113133881465387,
+        "RMSE_gain": -0.009260173928703708,
+        "attention_alphas": [
+          0.0,
+          0.08120491042943583,
+          0.12281919766297655,
+          0.17147970915398467,
+          0.20588216875139773
+        ],
+        "mean_alphas": [
+          0.0,
+          0.0792386275118555,
+          0.0890519495368988,
+          0.13406801754307443,
+          0.16542850706164094
+        ],
+        "conditional95_RMSE_gain_CI": [
+          -0.11239683278807656,
+          0.1047434679504714
+        ],
+        "fixed092_other395_RMSE_gain_diagnostic_only": -0.06510936621255325
+      },
+      {
+        "split": "20261101",
+        "incumbent011_RMSE": 13.272377948565081,
+        "nested_attention_RMSE": 13.258519780250458,
+        "nested_mean_RMSE": 13.280086788229475,
+        "old_fixed10_attention_RMSE_diagnostic_only": 13.242598707382134,
+        "primary_untrimmed_MSE_gain": 0.3676696462639768,
+        "RMSE_gain": 0.013858168314623498,
+        "attention_alphas": [
+          0.19629392826396866,
+          0.15543327967254908,
+          0.26127184461357505,
+          0.08422353761098249,
+          0.1979159018294722
+        ],
+        "mean_alphas": [
+          0.15932754575778013,
+          0.10054267272137131,
+          0.21125917822188406,
+          0.029927745637262658,
+          0.1844096291879436
+        ],
+        "conditional95_RMSE_gain_CI": [
+          -0.11494669928004154,
+          0.1482113232232108
+        ],
+        "fixed092_other395_RMSE_gain_diagnostic_only": -0.04984649654448248
+      }
+    ],
+    "limits": "Current study is explicitly selected after seeing092/093 and many other results. Nested fusion protects present coefficient fitting, not historical candidate selection. Three repartitions reuse same400 with highly correlated residuals and are not three independent studies. No Public-based tuning.",
+    "validation_replay": {
+      "passed": true,
+      "all_outside_innertrain_labels_perturbed": 187,
+      "max_prediction_error": 2.842170943040401e-14,
+      "all18_deep_MLP_and3_head_states_exact": true,
+      "includes_outer80_and_inner107_heldout": true,
+      "source_sha256": "f0030bcdd0107950345a3f95d35f9df6b8f9bb69120e5a3781c9a7fc72ce8c15"
+    },
+    "locked_recipe_not_yet_finalfit": false,
+    "decision_utc": "2026-10-04T00:37:54.204756+00:00"
+  },
+  "verification": {
+    "partitions": {
+      "original": {
+        "passed": true,
+        "split": "original",
+        "deep008_cells": 45,
+        "deep_models": {
+          "CNN": 45,
+          "MLP": 270,
+          "baseline_pipelines": 135,
+          "KRR": 45
+        },
+        "new_heads_reloaded": 45,
+        "all_group_disjoint_splits_and_train_normalizers_verified": true,
+        "inner_KRR_selections_refitted": 45,
+        "max_CNN_CPU_MPS_error": 1.52587890625e-05,
+        "max_new_head_MPS_reload_error": 0.0,
+        "max_new_head_CPU_MPS_error": 6.705928655037496e-06,
+        "independent_scalar_optimizer_max_objective_error": 2.842170943040401e-14,
+        "alpha0_exactly011": true,
+        "report_sha256": "0afa746318c10b00436009bd4f43181d8a66a26a25cb10a17445da5774a3d962",
+        "seconds": 18.4732695830171,
+        "source_sha256": "f0030bcdd0107950345a3f95d35f9df6b8f9bb69120e5a3781c9a7fc72ce8c15"
+      },
+      "20261031": {
+        "passed": true,
+        "split": "20261031",
+        "deep008_cells": 45,
+        "deep_models": {
+          "CNN": 45,
+          "MLP": 270,
+          "baseline_pipelines": 135,
+          "KRR": 45
+        },
+        "new_heads_reloaded": 45,
+        "all_group_disjoint_splits_and_train_normalizers_verified": true,
+        "inner_KRR_selections_refitted": 45,
+        "max_CNN_CPU_MPS_error": 3.0517578125e-05,
+        "max_new_head_MPS_reload_error": 0.0,
+        "max_new_head_CPU_MPS_error": 1.735985969730791e-05,
+        "independent_scalar_optimizer_max_objective_error": 5.684341886080802e-14,
+        "alpha0_exactly011": true,
+        "report_sha256": "e48d0836450cc4e538c31d02e0786122e7a329b6e1d0417627a27766fe62e838",
+        "seconds": 18.0815739579848,
+        "source_sha256": "f0030bcdd0107950345a3f95d35f9df6b8f9bb69120e5a3781c9a7fc72ce8c15"
+      },
+      "20261101": {
+        "passed": true,
+        "split": "20261101",
+        "deep008_cells": 45,
+        "deep_models": {
+          "CNN": 45,
+          "MLP": 270,
+          "baseline_pipelines": 135,
+          "KRR": 45
+        },
+        "new_heads_reloaded": 45,
+        "all_group_disjoint_splits_and_train_normalizers_verified": true,
+        "inner_KRR_selections_refitted": 45,
+        "max_CNN_CPU_MPS_error": 1.52587890625e-05,
+        "max_new_head_MPS_reload_error": 0.0,
+        "max_new_head_CPU_MPS_error": 9.694200201693093e-06,
+        "independent_scalar_optimizer_max_objective_error": 2.842170943040401e-14,
+        "alpha0_exactly011": true,
+        "report_sha256": "16256da1ce767f02c94843e80d6f7ea7ae996c52fa270ff9cdc43b618ee6f53d",
+        "seconds": 18.081263125000987,
+        "source_sha256": "f0030bcdd0107950345a3f95d35f9df6b8f9bb69120e5a3781c9a7fc72ce8c15"
+      }
+    },
+    "label_perturbation_replay": {
+      "passed": true,
+      "all_outside_innertrain_labels_perturbed": 187,
+      "max_prediction_error": 2.842170943040401e-14,
+      "all18_deep_MLP_and3_head_states_exact": true,
+      "includes_outer80_and_inner107_heldout": true,
+      "source_sha256": "f0030bcdd0107950345a3f95d35f9df6b8f9bb69120e5a3781c9a7fc72ce8c15"
+    },
+    "incumbent_head_training_exact_replay": {
+      "passed": true,
+      "new_wrapper_12epoch_state_exact_incumbent": true,
+      "prediction_reload_error": 0.0,
+      "incumbent_checkpoint_sha256": "7e407df45cf03b5f2dcd8d0822adf08ab0744fa0dec897d5b25b9357a10c9ab4",
+      "new_report_sha256": "b74af61cc0a39d68b3d9e0decd50f63e06bd50571a4211ce9f149c4e3793628b",
+      "source_sha256": "146f65d6a0ea3c9fd52b4c42893b5e49869e15edd07371203f7ad5d9c57fdcd9"
+    },
+    "deep008_training_cells": 135,
+    "new_inner_heads": 135,
+    "full_deep_model_counts": {
+      "CNN": 135,
+      "S_B_MLP": 810,
+      "baseline_pipelines": 405,
+      "KRR": 135
+    },
+    "strict_train_local_preprocessing": true,
+    "alpha_zero_exact_incumbent": true,
+    "independent_scalar_optimization": true
+  },
+  "resource": {
+    "benchmark": {
+      "first_cell_reused": true,
+      "seconds": 57.03694854199421,
+      "projected45cells_seconds": 2566.6626843897393,
+      "rss_bytes": 2272722944,
+      "mps_bytes": 44695552,
+      "resource_pass": true
+    },
+    "fit_seconds": 2489.131207208964,
+    "validation_seconds_excluding_replay": 54.63610666600289,
+    "packages_unchanged": 26,
+    "cost": 0
+  },
+  "scope": {
+    "new_install": false,
+    "holdout_test_selection": false,
+    "public_score_selection": false,
+    "upload": false,
+    "best011_preserved": true
+  },
+  "best011_CSV_SHA256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "next_execution": "Do not retry attention ratios/epochs. A concrete still-untested axis is physics57 regression on strictly crossfit011 residuals, using112 nestedanchor caches for leakage-safe training targets. Beforeanymodel, specify a single residuallearner andtrain-localregularization; distinguish it fromfaileddirectphysics57 or047jointtargetkernel. This is the next proposal, not executed in112 andnotproofitwillhelp.",
+  "remaining_limits": [
+    "Historicalselectionbiaspersists despitecorrectcurrentnesting.",
+    "No independentunseenlabelconfirmation within authorizeddevelopment400; existingholdout stayssealedforselection.",
+    "Failure ofthisspecifiednestedprocedure doesnotexhaustattention,physicalresidualmodeling,orallpossibleimprovements."
+  ],
+  "execution_blockers": [],
+  "evidence_sha256": {
+    "artifacts/nested-fusion-112/original/report.json": "0afa746318c10b00436009bd4f43181d8a66a26a25cb10a17445da5774a3d962",
+    "artifacts/nested-fusion-112/original/predictions.npz": "717a17dbd9eda471113761320f0d2e5113883a5e51d6833c7dd117bd83638910",
+    "artifacts/nested-fusion-112/validation-original.json": "b6d20f26c26b343fe5bfb59e2308e68a52fb9cd430952234231dee9217a2ecf5",
+    "artifacts/nested-fusion-112/20261031/report.json": "e48d0836450cc4e538c31d02e0786122e7a329b6e1d0417627a27766fe62e838",
+    "artifacts/nested-fusion-112/20261031/predictions.npz": "1556a7f08d3e1fc38b8c5efc812b772d847253e2f83685b81ce532807d522bc5",
+    "artifacts/nested-fusion-112/validation-20261031.json": "f62be34bc1f010b22e77d5a57dd3550ac7bba75b56c9374a693756da0ea31761",
+    "artifacts/nested-fusion-112/20261101/report.json": "16256da1ce767f02c94843e80d6f7ea7ae996c52fa270ff9cdc43b618ee6f53d",
+    "artifacts/nested-fusion-112/20261101/predictions.npz": "0db660a492610d0c30cf521e4087101e4b9fa844e3b6ed45432d7d820d7db2ff",
+    "artifacts/nested-fusion-112/validation-20261101.json": "522b60ec92c2436bb693f927d8731f4c87122e2c2ae32b5b925b38b2632f6dad",
+    "artifacts/nested-fusion-112/plan.json": "838d4be37d8fa1413ed78588d49918d87549615519f54bfee73ac65190036478",
+    "artifacts/nested-fusion-112/selection-audit.json": "edd1f52d8407591760019379d658633e80e3987c1b044d266a9d38f44b10ab29",
+    "artifacts/nested-fusion-112/decision.json": "f27f000f42c163b6c927ff45ebf8d24601672bd26733a5f6aa25d55c1a6264da",
+    "artifacts/nested-fusion-112/validation-replay.json": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8"
+  },
+  "source_sha256": {
+    "nested_fusion_112.py": "00384ff73f0f7da2d11b705956cd0686a753b294686b353c69a72d396677b575",
+    "validate_nested_fusion_112.py": "f0030bcdd0107950345a3f95d35f9df6b8f9bb69120e5a3781c9a7fc72ce8c15",
+    "validate_nested_fusion_112_control.py": "146f65d6a0ea3c9fd52b4c42893b5e49869e15edd07371203f7ad5d9c57fdcd9",
+    "summarize_nested_fusion_112.py": "dddd806aff7d2ce38c6ca448b315199d995fe989296edd75501d63268ca999a6"
+  },
+  "README_change": {
+    "utc": "2026-10-04T00:37:54.206726+00:00",
+    "before_backup": "reports/README-before-112.md",
+    "before_sha256": "edb3727edd539413466863e2e137d063c6cfac03fef9072382c5f6b9ea39ab5e",
+    "after_sha256": "8cad31fc5cbf3510ca367b856716eb2db4bcbecb0e1ccaaac8f07e4a94a36b2b",
+    "reason": "Appendcompleted112 fixedvalidationprocedure; preserveallpriorrecords"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "bundles_verified": 105,
+  "kernel_independent_solves": 105,
+  "kernel_max_error": 3.129230208287481e-11,
+  "all630_heads_independent_functional_predictions_max_error": 4.3767822148765845e-06,
+  "CNN_fresh_reload_different_batch_bundles": 9,
+  "CNN_max_error": 1.52587890625e-05,
+  "078_middle_DINOmean_reproduction_max_error": 5.684341886080802e-14,
+  "subset_and_outer_group_exclusion_verified": true,
+  "foldtrain_scalers_targets_verified_in_main_replay": true,
+  "MSE_diversity_covariance_identities_verified": true,
+  "partitions": [
+    {
+      "split": "original",
+      "bundles": 35,
+      "all_finite": true,
+      "078_middle_DINOmean_max_error": 5.684341886080802e-14
+    },
+    {
+      "split": "20261031",
+      "bundles": 35,
+      "all_finite": true,
+      "078_middle_DINOmean_max_error": 5.684341886080802e-14
+    },
+    {
+      "split": "20261101",
+      "bundles": 35,
+      "all_finite": true,
+      "078_middle_DINOmean_max_error": 5.684341886080802e-14
+    }
+  ],
+  "upstream_training_leakage_certificates_reused": {
+    "reports/nested-calibration-074-validation.json": "024454780fbb26efa882fb3fba8bea5eb9a8182d4d934dd98010243bf7605f69",
+    "artifacts/nested-fusion-112/validation-replay.json": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+    "reports/dinob-complement-064-validation.json": "1bf3a72f165e5bf20e1e92d9633d2bf72dd92cee8d713d6de0abed0a38ae7a0f"
+  },
+  "report_sha256": {
+    "original": "c48894db7e5164eea08aac8c77c0afef27c88f69ebe7d6793ab51eb66a7d7dc7",
+    "20261031": "05497900d32de52f18b31a9d09e9084906329c74b106a90f071bece9cad36adc",
+    "20261101": "05fab3b71eff868675dc962756666fc4df69660435fdc3ef82e179e6f14844fe"
+  },
+  "source_sha256": "9b346d3e10aee55bacb512a1018b6a881be8cc50ae3f35d702786b3a280741ce",
+  "seconds": 8.345352541073225,
+  "new_training": false,
+  "holdout_test_access": false
+}

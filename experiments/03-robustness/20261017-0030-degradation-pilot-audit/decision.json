@@ -1,0 +1,45 @@
+{
+  "stageB_warranted": false,
+  "primary": {
+    "ridge_R3 vs ridge_R1": {
+      "advance": false,
+      "checks": {
+        "dMSE_negative": false,
+        "bootstrap_fraction_at_least95": false,
+        "all_partitions_benefit": false,
+        "four_original_folds": false,
+        "top5_removed_benefit": false,
+        "beats_duplicate": false,
+        "beats_valid_shuffle": true
+      }
+    },
+    "log_R3 vs log_R1": {
+      "advance": false,
+      "checks": {
+        "dMSE_negative": false,
+        "bootstrap_fraction_at_least95": false,
+        "all_partitions_benefit": false,
+        "four_original_folds": false,
+        "top5_removed_benefit": false,
+        "beats_duplicate": true,
+        "beats_valid_shuffle": true
+      }
+    },
+    "tab_T2 vs tab_T0": {
+      "advance": false,
+      "checks": {
+        "dMSE_negative": false,
+        "bootstrap_fraction_at_least95": false,
+        "all_partitions_benefit": false,
+        "four_original_folds": false,
+        "top5_removed_benefit": false,
+        "beats_duplicate": false,
+        "beats_valid_shuffle": null
+      }
+    }
+  },
+  "incumbent": "082",
+  "rollback": "076",
+  "new_candidate": false,
+  "notes": "No Tab shuffled-label control was planned; applicable controls are used, and every primary already fails its benefit criteria."
+}

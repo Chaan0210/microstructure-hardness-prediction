@@ -1,0 +1,663 @@
+{
+  "study": 169,
+  "status": "completed_no_promotion",
+  "candidate": false,
+  "best_retained": "018",
+  "prior_duplicate_audit": {
+    "files_scanned": 638,
+    "matching_snippets": [
+      {
+        "file": "summarize_nested_fusion_112.py",
+        "snippet": "143trainingrows, middle011 about213/214,outer320. Calibration andmixtureweights canchange withtraining size. Theouter evaluation measures thisspecifiednestedprocedure; no posthoc"
+      },
+      {
+        "file": "summarize_cnn_update_budget_128.py",
+        "snippet": "ouldrun1600updates, nor thatwhole014 improves. No newcandidate ormixtureweight evaluated.','scheduler_limit':'400and800 complete the same normalizedcosineprogress anduse5 equally"
+      },
+      {
+        "file": "domain_risk_audit_126.py",
+        "snippet": "escriptive top40 most adverse-change overlap. No subgroup is removed, reweighted or corrected.','uncertainty':'10000 paired ID cluster bootstrap draws seed20271105, all three pre"
+      },
+      {
+        "file": "finalize_candidate018.py",
+        "snippet": "OOFglobalweightfit.','interpretation':'Bootstrapfrequencies areprocedureweights,notposteriorprobabilities. Fixedseed/draws/candidates; nohyperparametersearch. Diagnosticselection"
+      },
+      {
+        "file": "component_single_ablation_122.py",
+        "snippet": "/candidate014; preserve013.','arms':list(ARMS),'method':'Exact121mixtureweights/renormalization/nestedaffine/honestresidual5-wayselection. Onlyremovedmaskchanges. Keep.9affine+.1"
+      },
+      {
+        "file": "baseline_diagnostics_124.py",
+        "snippet": "standalonebaselinecanberedundantwithothermodels.','014gainchangesmixtureweights,calibrationandresidualfunctions;cannotattributeallgaintoaunique795featurefailure.','Same400histori"
+      },
+      {
+        "file": "dinob_multiscale_066.py",
+        "snippet": "ate. Fold-majority and bootstrapSD are diagnostics, NOTgates. No mixtureweight optimization or alternatecandidate selection.','resource':'ExistinguvCPU2threads/MPS. Benchmark3B25"
+      },
+      {
+        "file": "validate_seed_052.py",
+        "snippet": "seeds':list(s.SEEDS),'seed_selection':'Allthreefixedseeds,noomissionorreweighting','head_config':h.CONFIG,'effective_auxiliary_weight':0.,'unused_classifier':'Retainedforidentica"
+      },
+      {
+        "file": "summarize_cnn_seed_mean_133.py",
+        "snippet": "014. Cachedraw4wayisdiagnosticonly,notfull014.','No bestseedselection,reweighting,2seedsubsetfallback,newseedextension,D4inferenceorRidgechanges.','Conditionalbootstrapomitsfitan"
+      },
+      {
+        "file": "reports/cnn-update-budget-128-summary.json",
+        "snippet": "ouldrun1600updates, nor thatwhole014 improves. No newcandidate ormixtureweight evaluated.\","
+      },
+      {
+        "file": "reports/baseline124-weights125-summary.json",
+        "snippet": "    \"014gainchangesmixtureweights,calibrationandresidualfunctions;cannotattributeallgaintoaunique795featurefailure.\","
+      },
+      {
+        "file": "reports/cnn-seed-mean-133-summary.json",
+        "snippet": "    \"No bestseedselection,reweighting,2seedsubsetfallback,newseedextension,D4inferenceorRidgechanges.\","
+      },
+      {
+        "file": "reports/nested-fusion-112-summary.json",
+        "snippet": "143trainingrows, middle011 about213/214,outer320. Calibration andmixtureweights canchange withtraining size. Theouter evaluation measures thisspecifiednestedprocedure; no posthoc"
+      },
+      {
+        "file": "reports/candidate018-summary.json",
+        "snippet": "  \"interpretation\": \"Bootstrapfrequencies areprocedureweights,notposteriorprobabilities. Fixedseed/draws/candidates; nohyperparametersearch. Diagnosticselection"
+      },
+      {
+        "file": "artifacts/component-single-ablation-122/plan.json",
+        "snippet": "  \"method\": \"Exact121mixtureweights/renormalization/nestedaffine/honestresidual5-wayselection. Onlyremovedmaskchanges. Keep.9affine+.1"
+      },
+      {
+        "file": "artifacts/dinob-multiscale-066/plan.json",
+        "snippet": "ate. Fold-majority and bootstrapSD are diagnostics, NOTgates. No mixtureweight optimization or alternatecandidate selection.\","
+      },
+      {
+        "file": "artifacts/domain-risk-audit-126/plan.json",
+        "snippet": "escriptive top40 most adverse-change overlap. No subgroup is removed, reweighted or corrected.\","
+      }
+    ],
+    "finding": "No direct density-dependent perexample trainingweight found; hitsensemble/selectorweighting orwarnings.058/120 lossalignment differsfromdensityweighting;051/131 representationobjectives differ."
+  },
+  "diagnostic": {
+    "large33_sparse_all3": 26,
+    "large33_outside_any": 4,
+    "withinID": {
+      "centered_density_abs_error_Pearson": -0.025425755676446945,
+      "centered_density_squared_error_Pearson": -0.008906838018496451,
+      "interpretation": "TargetfixedwithinID,butfoldtrainingcomposition,model/calibratorchangesconfound; threeoverlappingobservations perID,notcausal/n1200."
+    },
+    "label_quantiles": {
+      "min": 151.9798276392398,
+      "q05": 168.11931650312462,
+      "q10": 170.8030795922394,
+      "q25": 181.99045412981755,
+      "q50": 192.60157925382563,
+      "q75": 204.43784987760367,
+      "q90": 217.13551487761427,
+      "q95": 226.46802174178413,
+      "max": 264.1213029015716
+    },
+    "prediction_calibration_slopes": [
+      1.0507369838688796,
+      1.0085228653715106,
+      1.010240514252352
+    ],
+    "interpretation": "Lowtargetdensity overlapslargeerrors butcov(y,error)=var(error)+cov(pred,error) makeslabeltailtrendpartlyalgebraic. WeakwithinIDsupportassociation; DINOinterpolatestrain. Densitycausalitynotestablished. CNNin-samplesparseunderfit motivatesboundedinterventiononly."
+  },
+  "RMSE": {
+    "original": {
+      "reference018": 12.811945280526919,
+      "mse_CNN": 15.032317843077909,
+      "density_CNN": 14.992537210726317,
+      "mse_blend": 12.948476759678263,
+      "density_blend": 12.9279486705264
+    }
+  },
+  "pooled_RMSE": {
+    "reference018": 12.811945280526919,
+    "mse_CNN": 15.032317843077909,
+    "density_CNN": 14.992537210726317,
+    "mse_blend": 12.948476759678263,
+    "density_blend": 12.9279486705264
+  },
+  "original_gate": false,
+  "executed_partitions": [
+    "original"
+  ],
+  "design": {
+    "density": "ContinuousGaussianKDE bw=.4*trainlabelpopulationSD, train leave-one-out densities. mediantrainrho/rho exponent1/4; densityfloor.1median; rawclip[.8,1.25]; dividefulltrainrawmean. Weightmax/min<=1.5625. Originalactualweights~.90-1.20,ESS~317/320. No histogram quantilebins, no labelnoiseestimate, notexactpublishedLDSreplication.",
+    "loss": "mean(w_i*(pred_i-standardized_y_i)^2), fixedglobaltrainnormalization; no perbatchweightsum normalization/resampling or weightsatprediction. Ordinary control torchMSE.",
+    "paired_recipe": "Existing91,905parameterTinyCNN128BOX,80epochs/800updates,32batch,AdamW.002,wd.01,clip5,epochcosine to.0001,last5weightaverage;D4train,identityinfer. Seed20261003+fold. Identicalinit/order/D4/dropoutRNG/budget inpair. Pixel/targetmeanstd computedunweightedonlyT. No validationduringtraining/checkpointselection.",
+    "endpoint": "Unweightedwhole400RMSE primary. Both standaloneCNN andfixed.8*complete018+.2*newCNN computed forweighted/MSE. This fixedadditionalblend preserves018; it isnot replacingCNNinside018withstalecalibrators. No learnedglobalOOFweight or newnestedcalibrator.",
+    "gate": "OriginalweightedstandaloneRMSE<MSE AND weighted20%blendRMSE<both018andMSE20%blend, >=3/5 weightedblendfoldgainsvs018, validationpass. Onlythenbothknownresplits; pooleduntrimmedMSEbelowallmatchedreferences andreporteverypartition. No rescueweight/seed/lossstrength/architecturesearch.",
+    "subgroups": "TrainKDEq20threshold sparse/dense, trainyq10/q90 tails, outoftrainrange,166large33. Showcounts/bias/unweightedRMSE incldense/tailharms. Labelsusedonlypostfitdiagnostics,nevermodelinput."
+  },
+  "subgroup_unweighted_metrics": {
+    "original": {
+      "all": {
+        "reference018": {
+          "n": 400,
+          "RMSE": 12.811945280526919,
+          "bias_y_minus_pred": 0.2885487950972239
+        },
+        "mse_CNN": {
+          "n": 400,
+          "RMSE": 15.032317843077909,
+          "bias_y_minus_pred": 0.8207417951751199
+        },
+        "density_CNN": {
+          "n": 400,
+          "RMSE": 14.992537210726317,
+          "bias_y_minus_pred": 0.7658107267547097
+        },
+        "mse_blend": {
+          "n": 400,
+          "RMSE": 12.948476759678263,
+          "bias_y_minus_pred": 0.3949873951127925
+        },
+        "density_blend": {
+          "n": 400,
+          "RMSE": 12.9279486705264,
+          "bias_y_minus_pred": 0.3840011814287104
+        }
+      },
+      "sparse": {
+        "reference018": {
+          "n": 80,
+          "RMSE": 20.2741215725165,
+          "bias_y_minus_pred": 3.846070520388821
+        },
+        "mse_CNN": {
+          "n": 80,
+          "RMSE": 23.39223495567855,
+          "bias_y_minus_pred": 4.099841408636619
+        },
+        "density_CNN": {
+          "n": 80,
+          "RMSE": 22.996709219173383,
+          "bias_y_minus_pred": 4.201791291143944
+        },
+        "mse_blend": {
+          "n": 80,
+          "RMSE": 20.615437578264476,
+          "bias_y_minus_pred": 3.896824698038369
+        },
+        "density_blend": {
+          "n": 80,
+          "RMSE": 20.55667424174748,
+          "bias_y_minus_pred": 3.9172146745398337
+        }
+      },
+      "dense": {
+        "reference018": {
+          "n": 320,
+          "RMSE": 10.120396531496445,
+          "bias_y_minus_pred": -0.6008316362256754
+        },
+        "mse_CNN": {
+          "n": 320,
+          "RMSE": 12.06913669711843,
+          "bias_y_minus_pred": 0.0009668918097448298
+        },
+        "density_CNN": {
+          "n": 320,
+          "RMSE": 12.196641188907831,
+          "bias_y_minus_pred": -0.09318441434259891
+        },
+        "mse_blend": {
+          "n": 320,
+          "RMSE": 10.165124020841079,
+          "bias_y_minus_pred": -0.4804719306186015
+        },
+        "density_blend": {
+          "n": 320,
+          "RMSE": 10.16221467320857,
+          "bias_y_minus_pred": -0.49930219184907043
+        }
+      },
+      "lower": {
+        "reference018": {
+          "n": 43,
+          "RMSE": 19.345761818650093,
+          "bias_y_minus_pred": -16.855125707951768
+        },
+        "mse_CNN": {
+          "n": 43,
+          "RMSE": 20.5714162908807,
+          "bias_y_minus_pred": -18.140851831725147
+        },
+        "density_CNN": {
+          "n": 43,
+          "RMSE": 19.977553083198366,
+          "bias_y_minus_pred": -17.675378922817988
+        },
+        "mse_blend": {
+          "n": 43,
+          "RMSE": 19.35012349555749,
+          "bias_y_minus_pred": -17.11227093270645
+        },
+        "density_blend": {
+          "n": 43,
+          "RMSE": 19.234163426551966,
+          "bias_y_minus_pred": -17.01917635092502
+        }
+      },
+      "upper": {
+        "reference018": {
+          "n": 41,
+          "RMSE": 21.561520709805123,
+          "bias_y_minus_pred": 18.464345371685283
+        },
+        "mse_CNN": {
+          "n": 41,
+          "RMSE": 25.31569298221662,
+          "bias_y_minus_pred": 20.327086370086814
+        },
+        "density_CNN": {
+          "n": 41,
+          "RMSE": 25.291077760685123,
+          "bias_y_minus_pred": 20.128808454690475
+        },
+        "mse_blend": {
+          "n": 41,
+          "RMSE": 22.095827643182137,
+          "bias_y_minus_pred": 18.836893571365575
+        },
+        "density_blend": {
+          "n": 41,
+          "RMSE": 22.05735713692753,
+          "bias_y_minus_pred": 18.79723798828631
+        }
+      },
+      "middle": {
+        "reference018": {
+          "n": 316,
+          "RMSE": 9.825115557281496,
+          "bias_y_minus_pred": 0.2631384912712616
+        },
+        "mse_CNN": {
+          "n": 316,
+          "RMSE": 12.054084199789838,
+          "bias_y_minus_pred": 0.8700721698122464
+        },
+        "density_CNN": {
+          "n": 316,
+          "RMSE": 12.133731705322308,
+          "bias_y_minus_pred": 0.7629254358884431
+        },
+        "mse_blend": {
+          "n": 316,
+          "RMSE": 9.896233393561904,
+          "bias_y_minus_pred": 0.3845252269794484
+        },
+        "density_blend": {
+          "n": 316,
+          "RMSE": 9.904153766059173,
+          "bias_y_minus_pred": 0.36309588019468725
+        }
+      },
+      "outside_training_range": {
+        "reference018": {
+          "n": 3,
+          "RMSE": 33.90437197731881,
+          "bias_y_minus_pred": 11.033662999221852
+        },
+        "mse_CNN": {
+          "n": 3,
+          "RMSE": 39.40867465659395,
+          "bias_y_minus_pred": 13.832944231573967
+        },
+        "density_CNN": {
+          "n": 3,
+          "RMSE": 37.32534333974112,
+          "bias_y_minus_pred": 10.494880673631258
+        },
+        "mse_blend": {
+          "n": 3,
+          "RMSE": 34.69535462463397,
+          "bias_y_minus_pred": 11.593519245692269
+        },
+        "density_blend": {
+          "n": 3,
+          "RMSE": 34.42424573598071,
+          "bias_y_minus_pred": 10.925906534103717
+        }
+      },
+      "large33": {
+        "reference018": {
+          "n": 33,
+          "RMSE": 29.571979000365157,
+          "bias_y_minus_pred": 5.797121602523916
+        },
+        "mse_CNN": {
+          "n": 33,
+          "RMSE": 31.647237872062117,
+          "bias_y_minus_pred": 8.774253367789289
+        },
+        "density_CNN": {
+          "n": 33,
+          "RMSE": 31.399393364441096,
+          "bias_y_minus_pred": 9.625210140102263
+        },
+        "mse_blend": {
+          "n": 33,
+          "RMSE": 29.794342744775214,
+          "bias_y_minus_pred": 6.392547955576978
+        },
+        "density_blend": {
+          "n": 33,
+          "RMSE": 29.730090055078115,
+          "bias_y_minus_pred": 6.562739310039574
+        }
+      },
+      "large33_sparse": {
+        "reference018": {
+          "n": 26,
+          "RMSE": 29.705716703261405,
+          "bias_y_minus_pred": 6.9639705782802
+        },
+        "mse_CNN": {
+          "n": 26,
+          "RMSE": 32.735150219957404,
+          "bias_y_minus_pred": 10.180666855926653
+        },
+        "density_CNN": {
+          "n": 26,
+          "RMSE": 32.48643886748524,
+          "bias_y_minus_pred": 10.512038456737951
+        },
+        "mse_blend": {
+          "n": 26,
+          "RMSE": 30.109740295592026,
+          "bias_y_minus_pred": 7.60730983380948
+        },
+        "density_blend": {
+          "n": 26,
+          "RMSE": 30.06247798985004,
+          "bias_y_minus_pred": 7.673584153971739
+        }
+      }
+    }
+  },
+  "training_inference_metrics": {
+    "original": {
+      "interpretation": "Eachtrainrow countedonce pertrainingfold; overlappingin-sampleevaluations,not independentgeneralization.",
+      "groups": {
+        "all": {
+          "mse": {
+            "n": 1600,
+            "RMSE": 9.885685012399287,
+            "bias_y_minus_pred": 0.05538171636347435
+          },
+          "density": {
+            "n": 1600,
+            "RMSE": 10.44764750588225,
+            "bias_y_minus_pred": 0.0682377515960183
+          }
+        },
+        "sparse": {
+          "mse": {
+            "n": 320,
+            "RMSE": 14.696413724073297,
+            "bias_y_minus_pred": 0.7871598332498855
+          },
+          "density": {
+            "n": 320,
+            "RMSE": 14.698774327780377,
+            "bias_y_minus_pred": 0.7932584851358718
+          }
+        },
+        "dense": {
+          "mse": {
+            "n": 1280,
+            "RMSE": 8.256047245394576,
+            "bias_y_minus_pred": -0.12756281285812843
+          },
+          "density": {
+            "n": 1280,
+            "RMSE": 9.078996713525434,
+            "bias_y_minus_pred": -0.11301743178894508
+          }
+        },
+        "lower": {
+          "mse": {
+            "n": 160,
+            "RMSE": 14.456260765909684,
+            "bias_y_minus_pred": -12.505402953120218
+          },
+          "density": {
+            "n": 160,
+            "RMSE": 14.631157881928383,
+            "bias_y_minus_pred": -12.499326140376077
+          }
+        },
+        "upper": {
+          "mse": {
+            "n": 160,
+            "RMSE": 15.253169394835753,
+            "bias_y_minus_pred": 10.78211661275465
+          },
+          "density": {
+            "n": 160,
+            "RMSE": 15.129077242705701,
+            "bias_y_minus_pred": 10.479323682151623
+          }
+        },
+        "middle": {
+          "mse": {
+            "n": 1280,
+            "RMSE": 8.182489151568008,
+            "bias_y_minus_pred": 0.28463793800003884
+          },
+          "density": {
+            "n": 1280,
+            "RMSE": 9.003982624997157,
+            "bias_y_minus_pred": 0.3377974967730796
+          }
+        },
+        "large33": {
+          "mse": {
+            "n": 132,
+            "RMSE": 20.047456786353777,
+            "bias_y_minus_pred": 3.291406674230163
+          },
+          "density": {
+            "n": 132,
+            "RMSE": 20.610339947003443,
+            "bias_y_minus_pred": 3.0238330575087486
+          }
+        }
+      }
+    }
+  },
+  "complementarity": {
+    "original": {
+      "mse": {
+        "2mean_reference_error_times_correction": -1.3051537626849825,
+        "mean_correction_squared": 2.2119547620271045,
+        "MSE_gain_vs018": -3.5171085247120857,
+        "CNN_error_correlation_with018": 0.8695227973629696
+      },
+      "density": {
+        "2mean_reference_error_times_correction": -0.7008821884967747,
+        "mean_correction_squared": 2.285032768052535,
+        "MSE_gain_vs018": -2.985914956549294,
+        "CNN_error_correlation_with018": 0.863873079680525
+      },
+      "positive_fixed_blend_diagnostic": {
+        "mean_018_error_times_CNN_minus018": -1.7522054712419368,
+        "identity": "MSE018-MSE(p018+w*(pCNN-p018))=2*w*mean(e018*(pCNN-p018))-w\u00b2*mean((pCNN-p018)\u00b2)",
+        "conclusion": "The firstmoment isnegative. Onthese fixedoriginalOOFpredictions everyconstantpositivew worsensunweightedMSE. This algebraicdiagnostic needsno ratiosearch; doesnot addressnewfits/adaptiveweights/independentdata."
+      }
+    }
+  },
+  "conditional_IDcluster_gain_CI95": {
+    "reference018": [
+      -0.27640520814041214,
+      0.04524129311360484
+    ],
+    "mse_blend": [
+      -0.05170302749761277,
+      0.09478253651888363
+    ]
+  },
+  "actual_training_weights": [
+    {
+      "split": "original",
+      "fold": 0,
+      "arm": "mse",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "ESS": 320.0
+    },
+    {
+      "split": "original",
+      "fold": 0,
+      "arm": "density",
+      "min": 0.9046577554068881,
+      "max": 1.192623521531893,
+      "mean": 1.0000000000000002,
+      "ESS": 316.7511991646366
+    },
+    {
+      "split": "original",
+      "fold": 1,
+      "arm": "mse",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "ESS": 320.0
+    },
+    {
+      "split": "original",
+      "fold": 1,
+      "arm": "density",
+      "min": 0.9067288326081768,
+      "max": 1.19864704838941,
+      "mean": 0.9999999999999998,
+      "ESS": 316.8715695518419
+    },
+    {
+      "split": "original",
+      "fold": 2,
+      "arm": "mse",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "ESS": 320.0
+    },
+    {
+      "split": "original",
+      "fold": 2,
+      "arm": "density",
+      "min": 0.9043543575693599,
+      "max": 1.1982626945983155,
+      "mean": 1.0,
+      "ESS": 316.70787164545294
+    },
+    {
+      "split": "original",
+      "fold": 3,
+      "arm": "mse",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "ESS": 320.0
+    },
+    {
+      "split": "original",
+      "fold": 3,
+      "arm": "density",
+      "min": 0.9096177480125244,
+      "max": 1.1962191310067165,
+      "mean": 0.9999999999999998,
+      "ESS": 316.8789253648285
+    },
+    {
+      "split": "original",
+      "fold": 4,
+      "arm": "mse",
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "ESS": 320.0
+    },
+    {
+      "split": "original",
+      "fold": 4,
+      "arm": "density",
+      "min": 0.901024560841581,
+      "max": 1.1983029909450333,
+      "mean": 1.0,
+      "ESS": 316.55905919514123
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "models_reloaded": 10,
+    "MPS_reload_max_error": 0.0,
+    "CPU_MPS_max_error": 3.0517578125e-05,
+    "independent_weights_max_error": 4.440892098500626e-16,
+    "independent_density_max_error": 6.938893903907228e-18,
+    "heldout_label_replay": {
+      "outside_labels_changed": 80,
+      "prediction_max_error": 0.0,
+      "state_sha256_exact": true
+    },
+    "all_initialization_streams_budget_D4_and_dropout_matched": true,
+    "all_legacy_MSE_controls_reproduced": true,
+    "trainonly_norm_density_verified": true,
+    "all5state_averages_exact": true,
+    "loss_gradient_and_actual_loss_sentinels_verified": true
+  },
+  "main_fits": 10,
+  "additional_labelpoison_fits": 1,
+  "resources": {
+    "main_fit_seconds": 143.71800137599894,
+    "benchmark": {
+      "first_fit_seconds": 16.147813584000687,
+      "projected10fits_seconds": 161.47813584000687,
+      "RSS_bytes": 655851520,
+      "MPS_driver_bytes": 95436800,
+      "passed": true
+    }
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a"
+  },
+  "limitations": [
+    "LossweightsdependonY andchangeconditional-meanestimand; raretailgaincancostgeneralRMSE.",
+    "Same400adaptiveexploration; no causal proof/no independentvalidation.",
+    "Onefixedseedpairperfold; no robustnessclaim acrossnewseeds.",
+    "Existingtrainingresiduals reflect in-samplefit, not validation; ytailtrendhasselectioncomponent.",
+    "Fixed20percent addition measuresonecomplementarityrecipe,not a nestedreplacementof018CNN. Negativeoriginalcorrectionalignment additionallyrulesout a positiveconstantblendweight for these fixedpredictions only.",
+    "Trainingreportweight_summary describesproposed density weights; actualMSEweights areall1 verifiedinweights.npz andreportedhere."
+  ],
+  "new_installs_downloads": false,
+  "holdout_test_access": false,
+  "full500_newCSV_upload": false,
+  "remaining_blockers": [],
+  "evidence_sha256": {
+    "artifacts/label-density-169/plan.json": "8a5d3f6d4b5f21b8db9a9086e5258d96980d2a4d9716f73518b18afcd20e26f4",
+    "artifacts/label-density-169/diagnostic.json": "e9e0093e023ab6dbaed371add5121f180e7dd72ca8579aeab56944f7a668aef9",
+    "artifacts/label-density-169/original/report.json": "c6a6ca0bcea183a04037583e580b50956ae15188a4a28a4d4137dc87564aef20",
+    "artifacts/label-density-169/validation-original.json": "dead1247cb62013030b9e3d10f572e3c96694b2e6760c5196c3cfcd5898fdf3a",
+    "artifacts/label-density-169/validation-execution-amendment.json": "b73a802b3ff1113d493d015944089615cdae351505aced424ee7fdc6c3d2df5b"
+  },
+  "validation_execution_amendment": {
+    "passed": true,
+    "scope": "Final printing only: lockedvalidator callsjson.dumps withoutimportjson, afterall assertions andcompletedvalidation.jsonwrite. No model/density/loss/metric changes.",
+    "original_error_log_sha256": "cba7526d0e76bbd162b586c3ca6f7f3593811b6773b79cea4cea905cb3f9ff21",
+    "original_validation_sha256": "dead1247cb62013030b9e3d10f572e3c96694b2e6760c5196c3cfcd5898fdf3a",
+    "outside_label_replay_saved_states_predictions_weights_streams_exact_rechecked": true,
+    "additional_training": false,
+    "next_rerun_entrypoint": "resume_validation_169.py <split> injectsjsononlyifvalidationnotyetwritten",
+    "source_sha256": "863712debd126995dbfcadadd5beb568ee563998aac5cef2a89b494650899e4a"
+  }
+}

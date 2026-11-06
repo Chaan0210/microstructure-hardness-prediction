@@ -1,0 +1,194 @@
+{
+  "candidate": "012",
+  "source_study": "113",
+  "completed_utc": "2026-10-04T01:16:42.893880+00:00",
+  "status": "verified_exploratory_candidate_ready_for_parent_submission",
+  "operational_decision": "Parent explicitly directs pooled all3-partition untrimmed squared-error criterion; removes agent-imposed each-partition-improvement requirement. Earlier plan/decision preserved; this addendum records changed operational rule after results, not retroactive preregistration.",
+  "pooled_development": {
+    "split_count": 3,
+    "unique_IDs": 400,
+    "prediction_pairs": 1200,
+    "incumbent_MSE": 171.98589400721238,
+    "residual_MSE": 171.59775188917644,
+    "MSE_gain": 0.3881421180359439,
+    "incumbent_pooled_RMSE": 13.114339251644072,
+    "residual_pooled_RMSE": 13.099532506512453,
+    "pooled_RMSE_gain": 0.014806745131618726,
+    "ID_cluster_bootstrap_MSE_gain_CI95": [
+      -3.043342864695865,
+      3.882610959329958
+    ],
+    "ID_cluster_bootstrap_RMSE_gain_CI95": [
+      -0.11828747483843075,
+      0.14601381985317347
+    ],
+    "conditional_bootstrap_replicates": 10000,
+    "bootstrap_seed": 20271015,
+    "positive_ID_contributions": 179,
+    "top5_helpful_IDs_diagnostic": [
+      {
+        "ID": "TRAIN_000064",
+        "mean_squared_error_gain": 243.00977088016884
+      },
+      {
+        "ID": "TRAIN_000078",
+        "mean_squared_error_gain": 221.7465076799931
+      },
+      {
+        "ID": "TRAIN_000227",
+        "mean_squared_error_gain": 220.6669361879774
+      },
+      {
+        "ID": "TRAIN_000406",
+        "mean_squared_error_gain": 187.91715049532013
+      },
+      {
+        "ID": "TRAIN_000438",
+        "mean_squared_error_gain": 152.0429872499676
+      }
+    ],
+    "top5_harmful_IDs_diagnostic": [
+      {
+        "ID": "TRAIN_000206",
+        "mean_squared_error_gain": -148.006313896292
+      },
+      {
+        "ID": "TRAIN_000120",
+        "mean_squared_error_gain": -135.86796678162432
+      },
+      {
+        "ID": "TRAIN_000008",
+        "mean_squared_error_gain": -132.75189580526248
+      },
+      {
+        "ID": "TRAIN_000285",
+        "mean_squared_error_gain": -116.16234009868943
+      },
+      {
+        "ID": "TRAIN_000218",
+        "mean_squared_error_gain": -93.57592126943865
+      }
+    ],
+    "fixed092_other395_MSE_gain_diagnostic": -0.7149531042801199,
+    "largest5_gain_removed_MSE_gain_diagnostic": -2.2028519120988337,
+    "limits": "ID-cluster bootstrap retains all3 residuals per sampledID. Conditional on historically selected models andfixedfits;doesnotremove repeated400 selectionbias or representtraininguncertainty. No significanceclaim. Influenceexclusionsdiagnosticonly."
+  },
+  "training_procedure": "GroupKFold3 seed20270110 on500. Each333/334 anchor excludes its166/167 residual block. Anchor011=.9*nested-affine008+.1*shortB. Reuse exact075 middle008 fits; newly train3 deep008 insideeachanchor, fitOLS onlyanchorOOF; trainshortB sameanchor. Within each residualblock use3fold seed20271013+j selectingnone/Ridge1/Ridge.1, allstatistics trainlocal. Refitselected onwholeblock. Averageall3 includingzero. Full500011 retained unchanged.",
+  "unchanged_formula": "unchanged full500 candidate011 + mean of3 honest-block residual regressors; no shrinkage,clip,new ratio,or globalOOF residual fit",
+  "full500_training": {
+    "n_train": 500,
+    "new_deep008_fits": 9,
+    "new_CNN": 9,
+    "new_S_B_MLP": 54,
+    "new_shortB_heads": 3,
+    "reused_verified_middle008_fits": 3,
+    "reused_full500_incumbent011": true,
+    "selected_residuals": [
+      "ridge01",
+      "none",
+      "none"
+    ],
+    "residual_models_each_train_rows": [
+      167,
+      167,
+      166
+    ],
+    "seconds": 136.94852166698547,
+    "no_fullOOF_residual_fit": true,
+    "no_holdout_subgroup_score": true
+  },
+  "verification": {
+    "valid": true,
+    "candidate": "012",
+    "study": "113",
+    "CSV_SHA256": "a7263185b3071e9aa6403e6dbc5dc16ca6c8675826356eb915d60770e79fab14",
+    "rows": 1000,
+    "ID_order_exact": true,
+    "duplicates": 0,
+    "finite": true,
+    "range": [
+      160.1370088111353,
+      241.30871416158394
+    ],
+    "training_label_range": [
+      151.9798276392398,
+      264.1213029015716
+    ],
+    "outside_training_range": 0,
+    "clipping": false,
+    "reload_exact": true,
+    "independent_test_Ridge_max_error": 2.7533531010703882e-14,
+    "CSV_byte_exact": true,
+    "test_image_hashes_verified": 1000,
+    "fixed3_test_features_reextracted_exact": true,
+    "selected": [
+      "ridge01",
+      "none",
+      "none"
+    ],
+    "correction_RMS": 1.446432922854204,
+    "test_fit_or_selection": false,
+    "holdout_subgroup_scored": false,
+    "011_preserved": true,
+    "uploaded": false,
+    "cost": 0,
+    "training_validation_sha256": "e1d7a04db6c35b26f5670229146aa004d3300937ea216b03d3325c7a03d640a6",
+    "source_sha256": "4efd2a778724ddd224246232bb92beb7646710024e1ba41518092ba39a953c1d"
+  },
+  "CSV": {
+    "path": "artifacts/submission-candidate-012.csv",
+    "SHA256": "a7263185b3071e9aa6403e6dbc5dc16ca6c8675826356eb915d60770e79fab14",
+    "rows": 1000,
+    "prediction_range": [
+      160.1370088111353,
+      241.30871416158394
+    ],
+    "training_label_range": [
+      151.9798276392398,
+      264.1213029015716
+    ],
+    "outside_training_range": 0,
+    "correction_RMS": 1.446432922854204,
+    "correction_range": [
+      -3.1869407462557873,
+      6.8940878608959695
+    ]
+  },
+  "limitations": [
+    "Same400 observations repeatedly reused; pooled3 partitions are1200 prediction pairs,not1200 independent observations.",
+    "ID-cluster conditional95% interval includeszero; tiny average gain is exploratory,not significant or guaranteedPublic/private improvement.",
+    "Removing influential rows reverses gain; these are diagnostics,not selectiongates.",
+    "Production residualmodels use166/167 samples andanchors333/334 versus106/107 and213/214 in development; procedureunchanged buttraining-size transfer remains uncertain.",
+    "Each-partition gate was agent-imposed in113 writtenplan; parent explicitlysuperseded it afterresults. Prior records remain unchanged; no retroactive preregistrationclaim."
+  ],
+  "scope": {
+    "cost": 0,
+    "new_install": false,
+    "test_fit_or_tuning": false,
+    "uploaded": false,
+    "best011_preserved": true,
+    "prior_reports200_preserved": true,
+    "prior112_113_summaries_preserved": true,
+    "existing26_packages_unchanged": true
+  },
+  "next_action": "Parent handles separate submission after reviewing verification; no upload performed.",
+  "execution_blockers": [],
+  "best011_CSV_SHA256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "evidence_sha256": {
+    "artifacts/final-model-114/decision.json": "7d32429be490314e51ab466e04c8f7232c333ad026df35b9c967bab3e648edd1",
+    "artifacts/final-model-114/fit.json": "26f56195a84a7d6fe67fb41ba531e95667e38f06db771dd4d59a54179cea2a75",
+    "artifacts/final-model-114/training-validation.json": "e1d7a04db6c35b26f5670229146aa004d3300937ea216b03d3325c7a03d640a6",
+    "artifacts/submission-candidate-012.csv": "a7263185b3071e9aa6403e6dbc5dc16ca6c8675826356eb915d60770e79fab14",
+    "artifacts/submission-candidate-012.manifest.json": "0a4d63164ea42aecf2580393668d7cc4b84395b8681a77f90008a1d22320975e",
+    "reports/candidate012-residual-verification.json": "2eca331e5a9e1d54cc5ab6ab4d86b349527834302ce93504352c105a658cbe76",
+    "reports/residual-physics-113-pooled-addendum.json": "6cffa2a110c8077633ebc52c063409086832b65d8e7c2db2b6e9cf7b6ee9bd60",
+    "reports/residual-physics-113-pooled-validation.json": "38cd73ef6052798a0ea1fa6c2191791ae402c16fbe4170c5e8d9a2469a0f1171"
+  },
+  "source_sha256": "3943651af8a568d3b92d218db34ae3e9cc14c525eceb195d4e592931e8bc7963",
+  "README_change": {
+    "before_sha256": "6e0e0a183d56530bd4b4c12bef0ad82d3b666f5d499d6cb8fc5bd58c9dbd5047",
+    "after_sha256": "d022250f5b01b8259beca88b5976bc3c3a6bbd0483e9ebb2363ece13859d996f",
+    "backup": "reports/README-before-candidate012-residual.md",
+    "reason": "Appendparent-authorizedpooleddecision andverifiedCSV, preserveprior113gatehistory"
+  }
+}

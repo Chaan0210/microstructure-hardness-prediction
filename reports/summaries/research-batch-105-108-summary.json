@@ -1,0 +1,269 @@
+{
+  "task": "105 README correction and autonomous bounded research106-108",
+  "started_utc": "2026-10-03T16:34:55+00:00",
+  "completed_utc": "2026-10-03T17:14:43.769630+00:00",
+  "maximum_deadline_utc": "2026-10-03T18:34:55+00:00",
+  "elapsed_minutes": 39.812827166666665,
+  "status": "Completed three fixed hypotheses; no promoted candidate; best011 preserved.",
+  "actual_commands_succeeded": [
+    "amplitude_cnn_106.py prepare/benchmark/original",
+    "validate_amplitude_cnn_106.py original",
+    "representation_review_106.py",
+    "persistence_study_107.py prepare/extract/original",
+    "validate_persistence_107.py original",
+    "diagnose_persistence_107.py",
+    "threepoint_study_108.py prepare/extract/original",
+    "validate_threepoint_108.py original"
+  ],
+  "studies": {
+    "106": {
+      "reference011_RMSE": 13.0539977718711,
+      "matched_control_blend_RMSE": 13.08727917667893,
+      "primary_blend_RMSE": 13.097202750835429,
+      "gain_vs011": -0.0432049789643294,
+      "positive_folds_vs011": 0,
+      "advance": false,
+      "original_report": "artifacts/amplitude-cnn-106/original/report.json",
+      "independent_validation": "reports/amplitude-cnn-106-original-validation.json",
+      "validation": {
+        "passed": true,
+        "split": "original",
+        "models_verified": 10,
+        "reload_max_error": 0.0,
+        "CPU_MPS_prediction_max_error": 1.070737155828283e-05,
+        "foldtrain_normalizations_ids_verified": true,
+        "identical_initial_states_order_augmentation_verified_folds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "full_replay": {
+          "groupnorm": {
+            "full80epoch_state_exact": true,
+            "outer_validation_labels_perturbed": true
+          },
+          "affine": {
+            "full80epoch_state_exact": true,
+            "outer_validation_labels_perturbed": true
+          }
+        },
+        "advance": false,
+        "report_sha256": "85e3621e43d5f6d01ff5d710ad1a819d65dfc2ef28b0cd363cf7b5f91812e7b7",
+        "source_sha256": "27bd5e3028ff14ca1baf470a63bb179e327cb8dc2ff58bdf42c732c4e1c0f758",
+        "seconds": 89.97256212495267,
+        "holdout_test_used": false,
+        "cost": 0
+      },
+      "resplits_run": false,
+      "full500_fit": false,
+      "test_inference": false,
+      "candidate_created": false
+    },
+    "107": {
+      "reference011_RMSE": 13.0539977718711,
+      "matched_control_blend_RMSE": 13.124652703817043,
+      "primary_blend_RMSE": 24.04635545247622,
+      "gain_vs011": -10.99235768060512,
+      "positive_folds_vs011": 0,
+      "advance": false,
+      "original_report": "artifacts/persistence-107/original/report.json",
+      "independent_validation": "reports/persistence-107-original-validation.json",
+      "validation": {
+        "passed": true,
+        "split": "original",
+        "models_verified": 10,
+        "reload_max_error": 0.0,
+        "independent_dual_Ridge_max_error": 7.275957614183426e-12,
+        "outer_train_scaler_target_exact": true,
+        "original_fold0_botharms_complete_innerCV_and_outerfit_replay": 2,
+        "perturbed_outer_validation_labels_prediction_max_error": 0.0,
+        "report_sha256": "4808fb7c4a07f73553c8480e98e6c5b144232cf3d23535667f130f658ae9bc46",
+        "source_sha256": "19249fc2007ac3c5bb3e5beca6378efa109582043f757d89f10a4d6e1f5bd6cc",
+        "seconds": 0.28779333300190046,
+        "holdout_test_used": false
+      },
+      "resplits_run": false,
+      "full500_fit": false,
+      "test_inference": false,
+      "candidate_created": false
+    },
+    "108": {
+      "reference011_RMSE": 13.0539977718711,
+      "matched_control_blend_RMSE": 13.102693869973313,
+      "primary_blend_RMSE": 13.081205676895332,
+      "gain_vs011": -0.027207905024232204,
+      "positive_folds_vs011": 0,
+      "advance": false,
+      "original_report": "artifacts/threepoint-108/original/report.json",
+      "independent_validation": "reports/threepoint-108-original-validation.json",
+      "validation": {
+        "passed": true,
+        "split": "original",
+        "models_verified": 10,
+        "reload_max_error": 0.0,
+        "independent_kernel_prediction_max_error": 2.2453150450019166e-12,
+        "independent_inner_RMSE_max_error": 3.872457909892546e-13,
+        "inner_selections_all_recomputed": true,
+        "outer_train_scaler_target_verified": true,
+        "original_fold0_botharms_innerCV_outerfit_with_perturbed_validation_labels": [
+          "control57",
+          "triple85"
+        ],
+        "independent3_raw_feature_max_error": 8.673617379884035e-19,
+        "old26_unchanged": true,
+        "report_sha256": "79eb34d25365669b54107f64b4901c8f78470926d131c3b95b3e0c2037d48e37",
+        "source_sha256": "d85ffddba8a442ab038f1d749868ca2ab280651da308ccc935ce706cc5e0b9e5",
+        "seconds": 1.3015745829907246,
+        "holdout_test_used": false
+      },
+      "resplits_run": false,
+      "full500_fit": false,
+      "test_inference": false,
+      "candidate_created": false
+    }
+  },
+  "representation_review": {
+    "geometry_to_noise_ratio_descriptive": {
+      "groupnorm": 5.458736144950965,
+      "affine": 2.7394185335591708,
+      "frozen_DINO_B": 1.272666845052684
+    },
+    "finding": "On6toyfixtures affine-only CNN is more noise-sensitive than matchedGroupNorm. DINO also responds tonoise. These facts do not rank realhardnessmodels or prove actualsize/density/topology recovery.",
+    "limitations": [
+      "Only six deliberately simple known finite-window geometries.",
+      "Different layouts also differ in phase/intensity realizations; distance is not isolated size/topology sensitivity.",
+      "Larger ratio does not prove geometry recovery, real-noise robustness, or predict hardness gain.",
+      "Global moments are many-to-one; CNN stride16 loses exact fine arrangement. DINO tokens include position/context, but final pooling cannot reconstruct full topology."
+    ],
+    "no_synthetic_training": true
+  },
+  "persistence_failure": {
+    "largest_absolute_standardized_validation_feature": 148806.36358334098,
+    "explanation": "Standardizing extremely small Gaussian tail cells separately makes rare validation features enormous in standardized units. Finite raw arrays and exact training/reload do not ensure stable extrapolation. Column237 is highbirth/highlifetime squarecell; validbirth+life<=1 makes itsGaussian spillover verysmall. This is a feature scaling/design failure for this fixedpipeline, not a corrupted cache or changed model.",
+    "no_posthoc_refit": true
+  },
+  "threepoint_interpretation": "Adding3-site products improves matchedcontrolblend by0.021488 and4/5folds, but doesnotimprovebest011 inanyfold. Novel descriptorinformation and improvedweakbranchalone are insufficient grounds forsubmission.",
+  "stop_reason": "Completed a small batch of3 distinct fixedhypotheses, continuing twice after failure. Allfailedoriginalpredefinedcriteria, so noeligibleconfirmation/finalfit. This is a boundedresearchdecision, not a time/device/access blocker and not proof othermethods cannotwork. No additional labels or posthocparameter search used toforcea candidate.",
+  "remaining_uncertainty_and_useful_new_information": [
+    "Real grain/phase/pore masks or matched truegeometry on a small representative labeleddiagnostic subset would permit physicalfidelity checks.",
+    "Known noise/blur generator conditions or independentnoiserealizations ofidenticalgeometry would distinguish denoising fromfine-structure removal.",
+    "A label-generation rule specifyingwhetherabsoluteorientation/intensity/noise affecthardness wouldjustify nuisanceinvariances.",
+    "Thoseare informationneeds forphysicalclaims, not a claim that all empirical modeling requiresgeneratoraccess."
+  ],
+  "execution_blockers": [],
+  "best011": {
+    "last_parent_confirmed_public_RMSE": 11.7352685854,
+    "public_not_refetched": true,
+    "CSV": "artifacts/submission-candidate-011.csv",
+    "CSV_SHA256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "protected_files_verified": 20,
+    "all_protected_hashes_unchanged": true
+  },
+  "scope": {
+    "development_rows": 400,
+    "additional_holdout_samples_decoded": 0,
+    "test_samples_or_prediction_values_decoded": 0,
+    "protected_test_artifacts_hashed_only": true,
+    "full500_fit": false,
+    "new_submission_CSV": false,
+    "upload": false,
+    "raw_external_transfer": false,
+    "new_packages": 0,
+    "existing_packages_unchanged": 26,
+    "packages": {
+      "numpy": "2.5.3",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "cloudpickle": "3.1.2",
+      "filelock": "4.0.7",
+      "packaging": "26.3",
+      "tifffile": "2026.9.20",
+      "networkx": "3.7",
+      "joblib": "1.6.0",
+      "kymatio": "0.3.0",
+      "configparser": "7.2.0",
+      "torch": "2.14.0",
+      "appdirs": "1.4.4",
+      "sympy": "1.14.0",
+      "lazy-loader": "0.6",
+      "setuptools": "84.0.0",
+      "mpmath": "1.3.0",
+      "fsspec": "2026.9.0",
+      "jinja2": "3.1.6",
+      "markupsafe": "3.0.3",
+      "threadpoolctl": "3.7.0",
+      "typing-extensions": "4.16.0",
+      "imageio": "2.38.0",
+      "pillow": "12.3.0",
+      "scipy": "1.18.1",
+      "narwhals": "2.26.0"
+    },
+    "CPU_threads_per_process": 2,
+    "MPS_used_for106": true,
+    "cost": 0,
+    "new_background_training_processes": [],
+    "workspace": "."
+  },
+  "documentation": {
+    "original_preserved": {
+      "change": "105 README current011 lineage correction",
+      "utc": "2026-10-03T16:38:46.585539+00:00",
+      "original_backup": "reports/README-before-105.md",
+      "original_sha256": "f0b59bb3f6f67cfd3f2e7d49ccaacd0e56be6ee8b51eef50b5f740222bb5f006",
+      "new_readme_sha256": "c679fe5a2bb11c6041ba1fc2ab4bfeca1184b1f988e8449b757ef892d792c295",
+      "numeric_models_changed": false,
+      "changes": [
+        "Separate current011 fromhistorical004",
+        "Correct singleCNN identityinference andabsenceofTV31 in011",
+        "Document frozenS/B descriptors,009calibration and011head",
+        "Distinguish verifiedcachedreplay fromraw10testfeature checks",
+        "Preservehistoricalstatus andsubsequentpublicsubmission record",
+        "Correct installedofficialweights/packagehistory"
+      ],
+      "sources": [
+        "artifacts/pipeline-audit-103/report.json",
+        "reports/candidate011-public-submission.json",
+        "reports/pipeline-audit-103-patch-phase-104-summary.json"
+      ]
+    },
+    "followup": {
+      "utc": "2026-10-03T17:12:04.265036+00:00",
+      "change": "105 README followup: precise088-090 description and completed106-108 research outcomes",
+      "previous_record_sha256": "8d439ba1be5235ce8aabcfd7e905a7b8c62924b87bd80bd625fb439fe313bbcc",
+      "before_backup": "reports/README-before-105-followup.md",
+      "before_sha256": "c679fe5a2bb11c6041ba1fc2ab4bfeca1184b1f988e8449b757ef892d792c295",
+      "after_sha256": "603781238727ba5ae4d0aa0769c7ebc74d617d4c1cedcd1c632ba646bc41ae83",
+      "numeric_models_changed": false
+    }
+  },
+  "evidence_sha256": {
+    "README.md": "603781238727ba5ae4d0aa0769c7ebc74d617d4c1cedcd1c632ba646bc41ae83",
+    "reports/README-before-105.md": "f0b59bb3f6f67cfd3f2e7d49ccaacd0e56be6ee8b51eef50b5f740222bb5f006",
+    "reports/README-before-105-followup.md": "c679fe5a2bb11c6041ba1fc2ab4bfeca1184b1f988e8449b757ef892d792c295",
+    "reports/readme-update-105.json": "8d439ba1be5235ce8aabcfd7e905a7b8c62924b87bd80bd625fb439fe313bbcc",
+    "reports/readme-update-105-followup.json": "2abd0fd9331207579f36c4486f2f66287bc050ace7f249df39eb4b67c89945ca",
+    "artifacts/amplitude-cnn-106/plan.json": "8f225e4cad22a909a12dc440729eb41d668f7a5f5cb6c031cd98b0a2b22b7501",
+    "artifacts/amplitude-cnn-106/benchmark.json": "481a03b45f5295526f8306371801b70d5a6e3d574922ec01a502c24ed2ed5ea8",
+    "artifacts/amplitude-cnn-106/original/report.json": "85e3621e43d5f6d01ff5d710ad1a819d65dfc2ef28b0cd363cf7b5f91812e7b7",
+    "artifacts/amplitude-cnn-106/original/development_predictions.npz": "3092cc4318fea1a24c1d08df37207d15ec184386fddf9d1eb96fc88c9dfee9fd",
+    "reports/amplitude-cnn-106-original-validation.json": "fe03307b4679fd272cc846fcf070eb867f43c9be12bd8d83e44517863a25e8c3",
+    "artifacts/persistence-107/plan.json": "7ed49d895554dd9639cb71e7e07738354b018dc20f2c05bfcaea5aa178fda772",
+    "artifacts/persistence-107/benchmark.json": "32270b6983a735287b0a03a44b60c8a7a99b35d0005638d8228bdfb5b95d7736",
+    "artifacts/persistence-107/original/report.json": "4808fb7c4a07f73553c8480e98e6c5b144232cf3d23535667f130f658ae9bc46",
+    "artifacts/persistence-107/original/development_predictions.npz": "2c4a57004df2489a3314288a3a3c34011e8cefc87d3bb03fd48706b6be6c204f",
+    "reports/persistence-107-original-validation.json": "a630ac066f162870a5f4ccf48c2b1010731b17d3f80626a41b9fb967fcc99262",
+    "artifacts/persistence-107/extraction.json": "097a82f1653c6f6d487dcda3659f30743b1c253056aed4d1ebb12994b01226b3",
+    "artifacts/threepoint-108/plan.json": "edea95b17563cbec88d6d7735a7be2ba36cadc7904ef97323ac56f1fa346aea0",
+    "artifacts/threepoint-108/benchmark.json": "4b320c8555aec7977a419a89e673fb58af8acfd035c02dd921229db68f66b250",
+    "artifacts/threepoint-108/original/report.json": "79eb34d25365669b54107f64b4901c8f78470926d131c3b95b3e0c2037d48e37",
+    "artifacts/threepoint-108/original/development_predictions.npz": "9b573a2c0eac8fc35ee4510e664e185e296f244dc40009b764a794fe80453495",
+    "reports/threepoint-108-original-validation.json": "da1878eabb43088f6ad7d6438b5aba23119ccfe0f74984ac98a42b93a7ce6463",
+    "artifacts/threepoint-108/extraction.json": "aa8c18e483f681b1fea682741288468bbffe333bc62b44a3e8926c0583c3fae5",
+    "artifacts/amplitude-cnn-106/representation-review.json": "516e4fb381ccdaa9b8a09855f0ae4275f68b7f4dc66655a84d3e5355b4c37f45",
+    "artifacts/amplitude-cnn-106/representation-descriptors.npz": "589a2ae667fb432d6c011da6f28c687981f627b9b635947e0cb86f791ef4aa09",
+    "artifacts/persistence-107/failure-diagnosis.json": "7d5d44dc7715a5a56db07454dfc02ca302b9a989d523f41211c5dd8778b16981"
+  },
+  "source_sha256": "4f7286c848331b4677a1ab7e5c45fc9a74a4b520de0046bac94809cd66bd20e8"
+}

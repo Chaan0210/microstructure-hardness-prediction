@@ -1,0 +1,6 @@
+The4.2GBderived prefix tensor was removed after its experiments finished. All checkpoints, metadata, original frozen descriptors and measured results remain. The completed marker was moved to done-retired.npy so regeneration does not skip missing rows.
+
+From the project root, on this Mac with MPS:
+  experiments/grain-cellpose-220/.venv/bin/python experiments/supervised-renewal-20261018-0625/cpsam_cache.py
+
+This uses only the original provided training images and the pinned, unchanged eligible CPSAM checkpoint. No fitting or downloads occur. See cache-retirement.json for the original tensor hash and meta.json for source weights and preprocessing.

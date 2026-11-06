@@ -1,0 +1,43 @@
+{
+  "summary_path": "experiments/cnn-resolution-188/summary.json",
+  "summary_SHA256": "f689c80707d4592caa3560c6c17565bf48c220981bbec39bc901662e544c6281",
+  "decision": "no_consistent_resolution_signal_no_sweep_keep_best021",
+  "paired": {
+    "standalone": {
+      "RMSE224": 15.536521834495163,
+      "RMSE256": 15.423282665027568,
+      "gain224_minus256": 0.1132391694675956,
+      "fold_gains": [
+        0.6941643089787082,
+        0.07247672094560897,
+        0.13337051081256135,
+        -0.22821755455362513,
+        -0.14382167843182003
+      ],
+      "positive_folds": 3,
+      "conditional_group_bootstrap_CI95": [
+        -0.34823491334118695,
+        0.620779874192114
+      ]
+    },
+    "fixed10_blend": {
+      "RMSE224": 12.909168834878406,
+      "RMSE256": 12.89765130741817,
+      "gain224_minus256": 0.011517527460235044,
+      "fold_gains": [
+        0.05864952636021492,
+        0.006753579920941277,
+        0.01877330808193456,
+        -0.05209521206283618,
+        0.02069217759068387
+      ],
+      "positive_folds": 4,
+      "conditional_group_bootstrap_CI95": [
+        -0.037185141368029966,
+        0.06359877309159635
+      ]
+    }
+  },
+  "best021_preserved": true,
+  "newCSV_upload": false
+}

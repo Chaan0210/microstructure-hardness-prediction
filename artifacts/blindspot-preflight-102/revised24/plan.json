@@ -1,0 +1,171 @@
+{
+  "study": "102 revised24 label-free uniform-region noise diagnostic",
+  "created_utc": "2026-10-03T16:09:05.020356+00:00",
+  "supersedes": "Prior32 random train-only plan preserved but never run. The revised plan uses 24 noise-by-contrast selected images and iid controls before measurement.",
+  "ids": [
+    "TRAIN_000108",
+    "TRAIN_000322",
+    "TRAIN_000262",
+    "TRAIN_000427",
+    "TRAIN_000421",
+    "TRAIN_000032",
+    "TRAIN_000233",
+    "TRAIN_000456",
+    "TRAIN_000182",
+    "TRAIN_000046",
+    "TRAIN_000038",
+    "TRAIN_000416",
+    "TRAIN_000079",
+    "TRAIN_000087",
+    "TRAIN_000413",
+    "TRAIN_000131",
+    "TRAIN_000277",
+    "TRAIN_000294",
+    "TRAIN_000273",
+    "TRAIN_000289",
+    "TRAIN_000295",
+    "TRAIN_000328",
+    "TRAIN_000290",
+    "TRAIN_000395"
+  ],
+  "strata": [
+    {
+      "noise_bin": 0,
+      "contrast_bin": 0,
+      "available": 79,
+      "ids": [
+        "TRAIN_000108",
+        "TRAIN_000322",
+        "TRAIN_000262",
+        "TRAIN_000427"
+      ]
+    },
+    {
+      "noise_bin": 0,
+      "contrast_bin": 1,
+      "available": 28,
+      "ids": [
+        "TRAIN_000421",
+        "TRAIN_000032",
+        "TRAIN_000233",
+        "TRAIN_000456"
+      ]
+    },
+    {
+      "noise_bin": 1,
+      "contrast_bin": 0,
+      "available": 60,
+      "ids": [
+        "TRAIN_000182",
+        "TRAIN_000046",
+        "TRAIN_000038",
+        "TRAIN_000416"
+      ]
+    },
+    {
+      "noise_bin": 1,
+      "contrast_bin": 1,
+      "available": 44,
+      "ids": [
+        "TRAIN_000079",
+        "TRAIN_000087",
+        "TRAIN_000413",
+        "TRAIN_000131"
+      ]
+    },
+    {
+      "noise_bin": 2,
+      "contrast_bin": 0,
+      "available": 19,
+      "ids": [
+        "TRAIN_000277",
+        "TRAIN_000294",
+        "TRAIN_000273",
+        "TRAIN_000289"
+      ]
+    },
+    {
+      "noise_bin": 2,
+      "contrast_bin": 1,
+      "available": 90,
+      "ids": [
+        "TRAIN_000295",
+        "TRAIN_000328",
+        "TRAIN_000290",
+        "TRAIN_000395"
+      ]
+    }
+  ],
+  "noise_cutpoints": [
+    0.029070631735403994,
+    0.04651301077664634
+  ],
+  "contrast_cutpoint": 0.2392156862745098,
+  "selection": "Noise tertiles x mediancontrast within original outertrain320;4 smallest sha256(102b-24:+ID) ineachcell. Reuse097 label-free metadata. No outervalidation image/label access.",
+  "uniform_regions": "Native256 grayscale /255. Smooth guide G3 (Gaussian sigma3 reflect) only locates low-gradient regions; rank64 nonoverlapping32px tiles by p90 gradient ofG3, select four smallest (stable row-major ties). Reporteach selected tile p90-p10 guide span/noise proxy. Atleast2 selected tiles withspan<=1*HHsigma needed forimage tobe provisionally flat; not groundtruthflatness.",
+  "metrics": "For eachimage and fixedraw/TVweight1*HHsigma/GaussianSigma1 arms: sixcorrelations on selectedraw-guide tiles:3 horizontal/vertical/diagonal correlations ofnonoverlapping2x2HH (raw displacement2px), and3 corresponding correlations ofarm-minusGaussianSigma1 residual at1px. Pairvalues centered per tile then pooled; no pairs crossingtiles. Independently check np.corrcoef against dotproduct formula. Report signed values; correlate fine signal aswellasnoise.",
+  "iid_control": "16 fixed seed20271003+imageindex*100+rep draws: guideG3 + Normal(0,rawHHsigma) per pixel,clip[0,1],round8bit. Diagnostic only, never training. Rerunidenticalflat-region selection, noiseestimation,TV/smoothing andcorrelations. Guide isestimated,notcleantruth; controls calibrate artifacts underthissurrogate,notidentifyactualnoiselaw.",
+  "warning_gate": "Do not fitrestoration if fewerthan18/24 images have>=2 provisionallyflattiles OR >=6/24 images have anyraw HHdirection |rho| exceedingmaximum same-direction |rho| among16iidcontrols +.05. These are engineering safeguards,notpvalues. Even if bothclear, assesswhetherfine morphology andnoise remainconfounded; if unresolved stop peruser. Do notpick maskingradius orretune thresholds fromresults.",
+  "source": {
+    "paper": "https://proceedings.mlr.press/v97/batson19a.html",
+    "conditions": "Conditional unbiasedness plus noiseindependence betweenmasked coordinates andcomplement; predictor outputatmaskedJ independent oforiginalxJ."
+  },
+  "scope": "No fit,hardnesslabels,outervalidationimages,holdout/test,externalrawtransmission,newpackages,cost. Syntheticdata only iid diagnostics,notlearning.",
+  "sources": {
+    "blindspot_uniform_102b.py": "4e5afd752c112d8b915240225401ea4b281949b5f2488e11f5256eecea4a5049"
+  },
+  "inputs": {
+    "artifacts/run-001/split_manifest.json": "35293da0fda17e745939c316619f58281f50636c34696988e1b869bd9cc46193",
+    "artifacts/grain-visual-audit-097/all400_noise_contrast.csv": "84ad5e087a17fb8a40d82167b4c71e01a44ba49ab9b64a98a54570e5aa342b6e",
+    "artifacts/blindspot-preflight-102/plan.json": "f96d7e821d76fd1bc1c35fea89824d01c671bff7d1e62280561f1a40c3082bd3",
+    "reports/frame-features-101-summary.json": "f4e9cc32229759533f385ac52954c0cc375f0958fef89a6180f673dfe3d440ee"
+  },
+  "protected011": {
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-011.components.csv": "1e5d67fed120150f9a1f665eacdc5e5aca817a29e12bdba4aea27347e3380739",
+    "artifacts/submission-candidate-011.manifest.json": "497cc7377fcc35cb9f6142bc0ee9868fbc3fa50aa40bf10c7a45d6ef3931fe94",
+    "artifacts/submission-candidate-011.reproduced.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/final-model-086/decision.json": "83b779a44abf26db1b496b4d7aa2ce6cce0ea4e20cb9e147db331554cabee03f",
+    "artifacts/final-model-086/head/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/head/report.json": "1a46ff5c0e94c7e4797f62986347fd5e378a4829965ad4144a47f6c8afd07053",
+    "artifacts/final-model-086/head/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "artifacts/final-model-086/report.json": "d2d7eb583640ba97d422aa1bc0a53365954c9bba047610b7972815c50bb26608",
+    "artifacts/final-model-086/test_predictions.npz": "eb8b4af03053e3a82c19f3a7d7f2cf569eb46e9b764980cdc0b567bbbe1e1cbc",
+    "artifacts/final-model-086/validation-replay/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/validation-replay/report.json": "e87d4bce70bf24d7273a3c46693f0c6cfdab1ae252d8b3f6c30b52beb807317b",
+    "artifacts/final-model-086/validation-replay/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+    "verify_candidate011.py": "12147b31d5a4acdb8837c9a2f9ac9be4b3a102efde9eb357414a9cebb2cb73e9",
+    "finalize_candidate011.py": "9aef57b8930cdf5c0ee7205d08a6ca31f42052c29bb1af49d92b2b31c31fec52",
+    "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+    "reports/final-candidate011-summary.json": "168316e3c35fcbe00035c880df29f3b9eb3e76b6ff588ddce7a37922e84588ad",
+    "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+    "artifacts/frozen-complement-085/plan.json": "47ea467c9f5dacafc2bd1cabad34906c619f5d7f599ee0393a27b68266ab9ce0"
+  },
+  "image_sha256": {
+    "TRAIN_000108": "c45010e333971b4decea828c7c38b6780e317b9fd02a0cee6a9a27fa8ef12a6c",
+    "TRAIN_000322": "0470e3166a446c821df30ea5665b23ffb6ba9ce3a8fe7e8f43427609342fb58a",
+    "TRAIN_000262": "0791e815da878bbd3877d622c7422f0b54056a25a58d543b915963e37909b12e",
+    "TRAIN_000427": "40fe8e3f5db213f7346f0ed90a41fe901fd05da7c42a7af45cf6259eaadf940a",
+    "TRAIN_000421": "94b6af495f875f72f9b46728e3a23886db1571aac9920a29beb7090ecee5e59a",
+    "TRAIN_000032": "95054c2de9e7d0751f64711722043fbb9cfa615a94e9b08640e56be404a80204",
+    "TRAIN_000233": "b93f9b84ad5d20f1cd739f62032738fb9c1f29a08c883fd1e58618d90f120b50",
+    "TRAIN_000456": "6a23bc263950b03a096b3dab3074825017e62de980c1b7d034677aa986353797",
+    "TRAIN_000182": "b5a35fe1eed45e219f10b283581b9cab4ae8346aae61f3fd3e76acc995d93785",
+    "TRAIN_000046": "d4c1e10639792434b6d1dde70d12815065fa713c7db3d0a0f650ae29b49cc37d",
+    "TRAIN_000038": "eea6a79e0064bd5fa3dd5c3e33e95cc100db07968464425cb6f73c14b8105f5b",
+    "TRAIN_000416": "fdcc102703f6cd9ee94c7257ee8262dc98ffcc2251214f5a7e4ea01e9d4725ca",
+    "TRAIN_000079": "5c4c77dbceaf7ca2e0f912b2d60d319e1e9cf526bdbc0bdc7bc3ca4d8cde4b6b",
+    "TRAIN_000087": "292b3fc6da6b3ab6be294fd3d89a571625484eeb485c68084d7d0b2f057d4895",
+    "TRAIN_000413": "4abd0855ab5fb4300f8cd9bbe13b57bad35dc107481f2795f5a0a9616441ff40",
+    "TRAIN_000131": "2af192eccd3364af3c33f86d3b3145543efe7ae3cbd5fb83abec43bf5a219f23",
+    "TRAIN_000277": "5bbb3148728644f0b0f0bf6ac10d97595d4e8d48e0aa3ca6ef87ecbd254399d9",
+    "TRAIN_000294": "b15139231a0f7780cb15cfb2f1ef1ecc2270340c3c350460093a55f54a18d947",
+    "TRAIN_000273": "1c032fde58336c595cbf83d7be7d7f2824a99f67a882f2a173c851c63f99ebbe",
+    "TRAIN_000289": "7813165c89e86a8d6849fc44f2a6b0741f333c881f269375b77bdc8e73e76474",
+    "TRAIN_000295": "f2f2d43f16539276a504dc59c912cc00d71f0218cd0aba2c70922e8c16479dbc",
+    "TRAIN_000328": "a115b882fe4556974fef5c9eb09907a7e927ab93d01c91fe2f7c258fcfe9495a",
+    "TRAIN_000290": "1c78c8f0f976fade81b292b0dfb2b62fc7a38eb1913affe78aa7994a2ebb3455",
+    "TRAIN_000395": "671d23ade41fcf471afffe1e42d12e86b6fc8f069d81cb522f55dad4cd0accaf"
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "candidate": "034",
+ "weight": 0.75,
+ "n_train": 500,
+ "test_failed_segmentations": 1,
+ "pred_stats": {
+  "mean": 193.59559188073086,
+  "std": 13.187336170353614,
+  "min": 158.37731240193736,
+  "max": 260.547784842078
+ },
+ "corr_best021_vs_grain_test": 0.7906647728429661,
+ "rms_change_vs_021": 6.5714980002813626,
+ "rms_change_vs_023": 5.751148394586475,
+ "csv": "artifacts/submission-candidate-034.csv",
+ "csv_sha256": "1f5257e6949a73dceb4d4e2a38253540772eb37874ce0174d89b13181807aedc",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "uploaded": false,
+ "formula": "0.25*best021 + 0.75*mean over components (fallback best021 if n_obj<20)",
+ "components": [
+  {
+   "component": "v3.5@../push-400/feat-u1dmavg-train.npz@../push-400/feat-u1dmavg-test.npz",
+   "train_sha256": "51970206d43f0f989a9981123c03dcd9958e187fa592e9c2ee6e869cb6502c4e",
+   "test_sha256": "0bd1a5798cafd6ce2a974e5c363f97d5a782ed3aa270c927287f90ddae6e2674",
+   "n_train_rows": 500
+  }
+ ],
+ "component_corr": [
+  [
+   0.9999999999999999
+  ]
+ ],
+ "dev_evidence": "experiments/push-400/evidence-034.json (dev pooled fixed W0.75 10.191 vs 033 10.361; all 3 partitions better)",
+ "device": "mps"
+}

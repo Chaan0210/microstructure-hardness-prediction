@@ -1,0 +1,38 @@
+{
+  "candidates": [
+    "011",
+    "014",
+    "015"
+  ],
+  "train_rows": 500,
+  "selection": "historical fixed recipe only; no tuning",
+  "CNN_seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "MLP_seeds": [
+    20261128,
+    20261205,
+    20261219
+  ],
+  "middle_group_seed": 20270110,
+  "inner_kernel_seed": "20261005+offset",
+  "offset": "100*(middle+1); deep adds100*(deep+1)",
+  "short_seed": "20270215+offset",
+  "residual_selection_seed": "20271013+block",
+  "counts": {
+    "full_base_cells": 1,
+    "middle_base_cells": 3,
+    "deep_base_cells": 9,
+    "CNN_fits": 39,
+    "MLP_fits": 78,
+    "shortB_fits": 4,
+    "calibrators": 9,
+    "residual_candidate_blocks": 6
+  },
+  "kernel_final_selection": "Only development400 selects9-grid; final estimator fits500",
+  "full_training_executed_during_packaging": false,
+  "test_used": false,
+  "cost": 0
+}

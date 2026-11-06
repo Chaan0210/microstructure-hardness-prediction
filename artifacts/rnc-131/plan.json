@@ -1,0 +1,38 @@
+{
+  "study": "131 small paired CNN Rank-N-Contrast screen",
+  "utc": "2026-10-04T05:29:00.210296+00:00",
+  "novelty": "120 penalizes scalar ordering of frozen DINO head;043/083/084 supervised adaptation uses MSE/SmoothL1. No project supervised latent distance RNC found. Existing DINO pretraining is not this target-aware objective.",
+  "research": {
+    "paper": "https://arxiv.org/html/2210.01189v2",
+    "repository": "https://github.com/kaiwenzha/Rank-N-Contrast",
+    "loss_read": "https://raw.githubusercontent.com/kaiwenzha/Rank-N-Contrast/main/loss.py",
+    "read_only": true,
+    "external_code_downloaded_or_executed": false,
+    "formula": "Eq3 all i!=j, logsumexp over k!=i with |yi-yk|>=|yi-yj|, minus similarity(i,j); similarity=-Euclidean(z_i,z_j)/2. Ties included, no embedding normalization.",
+    "paper_difference": "Small TinyCNN128 and AdamW,64dim pre-dropout latent,400 development images,40epochs versus paper larger ResNets/400epochs/SGD/batch256. Fixed Ridge10 regressor instead of optimized iterative regressor. This is a constrained transfer screen, not reproduction."
+  },
+  "architecture": "Identical TinyCNN91905parameters; latent64afterSiLU beforeDropout. RNC optimizes encoder+hidden64; scalar65parameters dormant. MSE jointly trains scalarhead. Both execute dropout/head forward to keep RNG consumption paired.",
+  "encoder_budget": "40epochs,320train,16distinctimages x2 independently sampled batchD4views=32views/update;20updates/epoch=800;25600imageviews each. Same initial state,order,D4,dropout seed; AdamW .002->.0001 epochcosine wd.01 clip5. Fixed final state; no best epoch/weight averaging. Both same update/image budget, not equal FLOPs; RNC extra pair arithmetic measured.",
+  "downstream": "Freeze encoder; identity embeddings. StandardScaler fit320train only, Ridge(alpha10,fit_interceptTrue) on standardized trainingtarget. Identical exact solve perarm; no hyperparameter search/earlystop. No extra CNN backprop.",
+  "scope": "All label distances,normalization,encoder/Ridge fits outer320only. Existing group-separated original5fold. No holdout/test decode,inference,submission;014 unchanged.",
+  "screen": "Original5fold. Advance unchanged recipe to both known resplits only if RNC standalone RMSE<mse and raw4way RNC<both matchedMSE and legacyCNN raw4way. No rescue ratios/seeds/temperatures/epochs. Any positive screen still requires new honest full014 integration in a separate task.",
+  "raw4way": ".3KRR+.3newCNN+.2Smean3+.2Bmean3; cached outer honest predictions. NOT full014; no stale affine/residual use.",
+  "resources": "ExistingCPU2/MPS,firstpair reused benchmark; projected10fits<600sec,perfit<180sec,RSS<3GB,MPSdriver<3GB. No installs/payment/externaldata.",
+  "validation": "Independent equation/gradient fixtures including ties and collapse; everymodel MPS/CPU reload,independent SVD Ridge/scaler,pairedbudget hashes and group exclusion; fullfold0 botharms retrain after poisoning80outerlabels.",
+  "uncertainty": "Same400adaptivehistory,onepairedseed per fold,bootstrapconditionalfixedpredictions only;smallbudgetnegative cannotreject RNCgenerally.",
+  "hashes": {
+    "rnc_study_131.py": "00c8f08e4f95da3b00d2395b4ee65b09ed0785868cbe85168d9853aeda8b8051",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+    "ranking_objective_120.py": "1a5e509cc53a93dfc349bff1f20851b6868cc20af68c3c2d876698aacbf67a4e",
+    "cnn_orientation_129.py": "564098489bd0227f9e25aeb70f2b66ee6988b00b250b0e4063daf3c8a6ff2bd1",
+    "reports/binary-threepoint-130-summary-corrected.json": "8971d73bc0279b1419f07e3fc05ea293d27daed21aaaf64b5180bbe16aa3a25e",
+    "reports/binary-threepoint-130-provenance-correction.json": "b41820afd8f6e5aad7a65e363996a58a4b5b78ccc04ecdf02d70ce2c8d9a46c3",
+    "reports/ranking-objective-120-summary.json": "df92b768dbc5e13facac9f6ba4565992d32e804a565e6d77297e985abe7ababb",
+    "artifacts/nested-calibration-074/development_features.npz": "3847b24ee1708faf0cab928698a7892f8cc0f1c38394c1e2f29f76abd71f80b7",
+    "artifacts/nested-calibration-074/extraction.json": "9ced9fa46890029bb27db8d25d9351fb3fed35f999340544327847f150cb541b",
+    "reports/candidate014-summary.json": "8d665f1548b8a4cca36c28c4e6bb2aebee20b32c61fd38607010966b138daffc",
+    "reports/candidate014-verification.json": "11c584b84474c55c8cf52d8b68d9536e04c9c398107311c046956d0d899b50ca",
+    "artifacts/submission-candidate-014.csv": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0"
+  },
+  "cost": 0
+}

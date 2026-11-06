@@ -1,0 +1,95 @@
+{
+  "scope": "Development400 only: cached OOF/features and allowlisted training PNGs; independent source audit. No fitting, holdout/test reevaluation, upload, installation or payment.",
+  "public_result": {
+    "candidate004": 12.525784988,
+    "best003": 12.4479505141,
+    "change": 0.0778344739,
+    "rank": 24,
+    "participants": 38,
+    "daily_used": 3,
+    "daily_limit": 5,
+    "source_report": "reports/candidate004-public-submission.json",
+    "selection_use": "Public score recorded for reporting only; no model or weight changes derived from it"
+  },
+  "findings": [
+    {
+      "topic": "trees",
+      "conclusion": "Only ExtraTrees and a narrow HGB family have run. GBR/RF/CatBoost not evaluated. Cannot claim tree-family ceiling.",
+      "evidence": "reports/tree-audit-026.json"
+    },
+    {
+      "topic": "grain proxies",
+      "conclusion": "Weak/strong watershed prominence changes median count515 to90, with image rank correlation.188688. Diameter rank is more stable (.791494). Counts are not verified true grains.",
+      "evidence": "reports/development-audit-026.json"
+    },
+    {
+      "topic": "residuals",
+      "conclusion": "Candidate004 middle80% target RMSE9.76937, bottom/top10%21.13404/24.93633. Tail20% accounts for58.32% squared error. This is not a justification for unvalidated expansion or tail weights.",
+      "evidence": "reports/development-audit-026.json"
+    },
+    {
+      "topic": "segmentation errors",
+      "conclusion": "No ground-truth segmentation exists: only sensitivity can be measured. Diameter-setting range versus absolute residual Spearman .205126, versus signed residual .012559; unstable images are harder, but no correction direction established.",
+      "evidence": "reports/development-audit-026.json"
+    },
+    {
+      "topic": "color and metadata",
+      "conclusion": "All development400 PNGs are L/uint8/256x256 with IHDR-IDAT-IEND only. No dropped RGB information or hidden metadata channel found. Original and candidate004 share input preprocessing.",
+      "evidence": "reports/input-audit-026.json; exact final004 run022 OOF used"
+    },
+    {
+      "topic": "limits",
+      "conclusion": "Original CV improvement of004 (.17058) shrank to .06948/.05230 in two repartitions, each uncertainty interval includes zero; same400 rows are reused, not unseen independent validation. Public reversal cannot identify which component failed. No irreducible noise or prize-competitive ceiling is established."
+    },
+    {
+      "topic": "input stability",
+      "conclusion": "Final004 signed residual Spearman: PNGbytes .013925, rawmean -.023287, rawstd .011331, border4-minus-interior -.098632. BOX/raw std median .865393, gradient-energy ratio .607630; these are not causal information-loss measures.",
+      "evidence": "reports/input-audit-026.json"
+    }
+  ],
+  "failed_or_unconfirmed_hypotheses": [
+    "Additional phase-GMM descriptors: old/new kernel residual correlation .988; blend13.7478 worse than compact26 13.7057.",
+    "Native directional FFT/tile texture: three-seed identity blend13.6463 worse than control13.6125.",
+    "Stronger watershed prominence: more stable segmentation proxies, but original blend13.5422 versus weak13.5351; no confirmation gain established.",
+    "CNN multiseed+D4: original improvement did not consistently reproduce across freshfold splits (+.0174 and -.0152). More seeds are not prioritized.",
+    "All-stage moments and residual CNN variants did not beat selected baseline; resolution256 at40epochs does not establish the ceiling of native256 learning."
+  ],
+  "prioritized_next_controls": [
+    {
+      "priority": 1,
+      "hypothesis": "The shallow fixed HGB profile underfits numerical-feature interactions.",
+      "protocol": "Keep the compact57 panel fixed. Inner3 compares exactly existing HGB leaves7/leaf20/L2=10 against leaves15/leaf5/L2=1; same lr.05/200, no early-stop selection. Evaluate outer5 with train and validation curves. This is a capacity-profile control, not an isolated parameter ablation. Evaluate a predeclared blend; no Public fitting.",
+      "resource": "Existing sklearn, CPU2, cached features; estimated1-3min compute, not measured for new control."
+    },
+    {
+      "priority": 2,
+      "hypothesis": "Image noise and phase interiors generate false watershed basins; continuous dark-boundary topology should precede grain interior counting.",
+      "protocol": "Select16 development images by fixed noise/size-proxy strata without hardness/error selection. Compare existing masks against visible dark ridges and compact pores, with fixed geometric fixtures and perturbation stability. One boundary-connectivity feature panel only if QA supports it; then fixed KRR comparison. Never call visual plausibility ground truth.",
+      "resource": "Existing scipy/skimage CPU2. Previous400-image feature pass99sec; new algorithm must be benchmarked. Expected engineering review30-60min plus2-5min feature/fit compute, estimates not measured."
+    },
+    {
+      "priority": 3,
+      "hypothesis": "Native-resolution boundaries may require a matched training schedule; current128/80 versus256/40 confounds resolution with epochs.",
+      "protocol": "If morphology/control results support residual information, one same-structure/seed/fold 256px80 endpoint comparison against128px80 before any larger network. No new seeds, weights, intensity jitter or scale augmentation.",
+      "resource": "Existing torch MPS, sequential. Prior256/40 five-fold99.6sec suggests about3-4min compute at80epochs; benchmark first, estimate not measurement. Lower priority than CPU controls."
+    }
+  ],
+  "validation_policy_for_next_model": "Predeclare hypothesis and fixed ensemble before fitting. Tune only inside outer train folds, include prior baseline as comparator, report every fold and uncertainty. Repartitioning previously inspected development400 is a robustness check, not independent unseen validation. Do not open holdout/test for model selection. No auto-submission on a small CV gain.",
+  "optional_package": {
+    "name": "CatBoost",
+    "needed_now": false,
+    "incremental_hypothesis": "Ordered boosting and symmetric trees differ from current methods; numeric features mean categorical machinery is not a direct advantage. Official docs say Ordered can help small data and may be slower; CPU default is Plain.",
+    "installation_scope_if_later_approved": "Official PyPI package and required dependencies only in project .venv with .uv-cache; CPU only, binary wheel compatibility must be checked, no source build/toolchain/global installation. No install performed.",
+    "sources": [
+      "https://catboost.ai/docs/en/references/training-parameters/common#boosting_type",
+      "https://catboost.ai/docs/en/installation/python-installation-method-pip-install"
+    ]
+  },
+  "reproduction": [
+    ".venv/bin/python -I -B audit_development_026.py",
+    ".venv/bin/python -I -B audit_inputs_026.py"
+  ],
+  "running_training": [],
+  "remaining_blockers": "None for existing-package controls; new package installation would require separate approval. This audit has not established prize-level performance.",
+  "audit_correction": "Independent reviewer initially called intermediate run020 compact26+3CNN output004. Root noticed correlation mismatch and recomputed input diagnostics against exact run022 combined_kernel_multiseed_blend. No trained model or submission was affected."
+}

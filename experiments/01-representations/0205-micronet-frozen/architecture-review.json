@@ -1,0 +1,8 @@
+{
+  "SMP_resnet50_config_source": "{'encoder': ResNetEncoder, 'pretrained_settings': pretrained_settings['resnet50'], 'params': {'out_channels': (3, 64, 256, 512, 1024, 2048), 'block': Bottleneck, 'layers': [3, 4, 6, 3]}}",
+  "source_file_SHA256": "0c65e8a993f4270b388a5a7b9a4e2c76d04784aba1756a7831e6076b0a9ca243",
+  "verification": "공식 SMP는 torchvision ResNet/Bottleneck을 상속하고 fc·avgpool만 제거. v0.11.2와 현재 핵심 forward/생성 helper AST를 정규화해 비교했고 동일함. 실제 strict load 및 shape·stage·stride·BN 속성은 compatibility.json에서 검증.",
+  "remote_source_executed": false,
+  "historical_runtime_claim": "구버전 PyTorch 런타임을 실행하거나 모든 구버전 수치 결과와 bitwise 일치를 입증한 것은 아님. 이번 비교는 동일한 현재 torchvision 계산 구조에서 실시.",
+  "HF_version_label": "v1.0/v1.1 대응은 미확인이나 실제 사용 checkpoint는 revision과 SHA256으로 특정됨."
+}

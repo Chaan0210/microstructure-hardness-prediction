@@ -1,0 +1,69 @@
+{
+  "split_count": 3,
+  "unique_IDs": 400,
+  "prediction_pairs": 1200,
+  "incumbent_MSE": 171.98589400721238,
+  "residual_MSE": 171.59775188917644,
+  "MSE_gain": 0.3881421180359439,
+  "incumbent_pooled_RMSE": 13.114339251644072,
+  "residual_pooled_RMSE": 13.099532506512453,
+  "pooled_RMSE_gain": 0.014806745131618726,
+  "ID_cluster_bootstrap_MSE_gain_CI95": [
+    -3.043342864695865,
+    3.882610959329958
+  ],
+  "ID_cluster_bootstrap_RMSE_gain_CI95": [
+    -0.11828747483843075,
+    0.14601381985317347
+  ],
+  "conditional_bootstrap_replicates": 10000,
+  "bootstrap_seed": 20271015,
+  "positive_ID_contributions": 179,
+  "top5_helpful_IDs_diagnostic": [
+    {
+      "ID": "TRAIN_000064",
+      "mean_squared_error_gain": 243.00977088016884
+    },
+    {
+      "ID": "TRAIN_000078",
+      "mean_squared_error_gain": 221.7465076799931
+    },
+    {
+      "ID": "TRAIN_000227",
+      "mean_squared_error_gain": 220.6669361879774
+    },
+    {
+      "ID": "TRAIN_000406",
+      "mean_squared_error_gain": 187.91715049532013
+    },
+    {
+      "ID": "TRAIN_000438",
+      "mean_squared_error_gain": 152.0429872499676
+    }
+  ],
+  "top5_harmful_IDs_diagnostic": [
+    {
+      "ID": "TRAIN_000206",
+      "mean_squared_error_gain": -148.006313896292
+    },
+    {
+      "ID": "TRAIN_000120",
+      "mean_squared_error_gain": -135.86796678162432
+    },
+    {
+      "ID": "TRAIN_000008",
+      "mean_squared_error_gain": -132.75189580526248
+    },
+    {
+      "ID": "TRAIN_000285",
+      "mean_squared_error_gain": -116.16234009868943
+    },
+    {
+      "ID": "TRAIN_000218",
+      "mean_squared_error_gain": -93.57592126943865
+    }
+  ],
+  "fixed092_other395_MSE_gain_diagnostic": -0.7149531042801199,
+  "largest5_gain_removed_MSE_gain_diagnostic": -2.2028519120988337,
+  "limits": "ID-cluster bootstrap retains all3 residuals per sampledID. Conditional on historically selected models andfixedfits;doesnotremove repeated400 selectionbias or representtraininguncertainty. No significanceclaim. Influenceexclusionsdiagnosticonly."
+}

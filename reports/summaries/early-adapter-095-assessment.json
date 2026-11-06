@@ -1,0 +1,269 @@
+{
+  "study": "095 early versus late rank4 adapter",
+  "status": "completed_rejected",
+  "recorded_utc": "2026-10-02T13:23:26.820359+00:00",
+  "finished_utc": "2026-10-02T13:16:59.540048+00:00",
+  "finished_JST": "2026-10-02T22:16:59.540048+09:00",
+  "decision": "Reject this fixed early-adapter direction. The original gate failed; no resplits, late/frozen fallback, configuration search, full500 fit, test inference, candidate CSV, or upload.",
+  "scores": {
+    "frozen": {
+      "rmse": 14.100942648175844,
+      "fold_rmse": [
+        14.589439763783089,
+        13.002691916385388,
+        14.665671449000335,
+        13.38553921625962,
+        14.765046189639403
+      ]
+    },
+    "late": {
+      "rmse": 14.28242617564173,
+      "fold_rmse": [
+        14.666102640276407,
+        12.972703053248242,
+        15.04507338824748,
+        13.613125926885893,
+        14.996048325855575
+      ]
+    },
+    "early": {
+      "rmse": 14.301619811599785,
+      "fold_rmse": [
+        14.602312874479466,
+        13.112351154648609,
+        15.203805988289094,
+        13.57940185122184,
+        14.898472435931527
+      ]
+    },
+    "reference009": {
+      "rmse": 13.105157912721568,
+      "fold_rmse": [
+        13.025386023375454,
+        12.507824306370592,
+        14.197984111621984,
+        12.181376909479603,
+        13.51483530810461
+      ]
+    },
+    "reference011": {
+      "rmse": 13.0539977718711,
+      "fold_rmse": [
+        13.063217512187048,
+        12.38751393690129,
+        14.122591032877722,
+        12.1470942497908,
+        13.451269815048137
+      ]
+    },
+    "frozen_blend": {
+      "rmse": 13.073867675904582,
+      "fold_rmse": [
+        13.049415113877872,
+        12.434500191663178,
+        14.12553419002464,
+        12.12636473347457,
+        13.533167123837886
+      ]
+    },
+    "late_blend": {
+      "rmse": 13.100999264774037,
+      "fold_rmse": [
+        13.046571931448458,
+        12.457150160567476,
+        14.167705933869657,
+        12.171344915347204,
+        13.561775360022398
+      ]
+    },
+    "early_blend": {
+      "rmse": 13.101462065214434,
+      "fold_rmse": [
+        13.038651103202609,
+        12.462224018590007,
+        14.194560810553865,
+        12.169259690583072,
+        13.540740494128611
+      ]
+    }
+  },
+  "comparisons": {
+    "early_vs_late": {
+      "gain": -0.019193635958055566,
+      "fold_gains": [
+        0.0637897657969404,
+        -0.13964810140036654,
+        -0.15873260004161338,
+        0.03372407566405222,
+        0.0975758899240482
+      ],
+      "positive_folds": 3,
+      "bootstrap_sd": 0.10459697523638564,
+      "conditional_ci95": [
+        -0.22438903553415493,
+        0.18444195761584556
+      ]
+    },
+    "early_vs_frozen": {
+      "gain": -0.2006771634239417,
+      "fold_gains": [
+        -0.01287311069637731,
+        -0.10965923826322133,
+        -0.5381345392887589,
+        -0.19386263496222078,
+        -0.13342624629212452
+      ],
+      "positive_folds": 0,
+      "bootstrap_sd": 0.1529811611458588,
+      "conditional_ci95": [
+        -0.5040851497797483,
+        0.09690986923890889
+      ]
+    },
+    "earlyblend_vs_lateblend": {
+      "gain": -0.00046280044039725965,
+      "fold_gains": [
+        0.007920828245849165,
+        -0.005073858022530686,
+        -0.02685487668420805,
+        0.0020852247641318655,
+        0.021034865893787114
+      ],
+      "positive_folds": 3,
+      "bootstrap_sd": 0.01108557998317414,
+      "conditional_ci95": [
+        -0.02183927962215395,
+        0.02208751304819319
+      ]
+    },
+    "earlyblend_vs_frozenblend": {
+      "gain": -0.027594389309852474,
+      "fold_gains": [
+        0.010764010675263336,
+        -0.027723826926829176,
+        -0.06902662052922537,
+        -0.04289495710850133,
+        -0.007573370290725023
+      ],
+      "positive_folds": 1,
+      "bootstrap_sd": 0.016547573792076005,
+      "conditional_ci95": [
+        -0.06011865415027033,
+        0.004623362933281177
+      ]
+    },
+    "earlyblend_vs011": {
+      "gain": -0.04746429334333513,
+      "fold_gains": [
+        0.024566408984439292,
+        -0.07471008168871762,
+        -0.07196977767614321,
+        -0.02216544079227134,
+        -0.08947067908047401
+      ],
+      "positive_folds": 1,
+      "bootstrap_sd": 0.020719653144614075,
+      "conditional_ci95": [
+        -0.08837409534631159,
+        -0.008640962748188949
+      ]
+    },
+    "frozenblend_vs011": {
+      "gain": -0.019869904033482655,
+      "fold_gains": [
+        0.013802398309175956,
+        -0.046986254761888446,
+        -0.002943157146917841,
+        0.02072951631622999,
+        -0.08189730878974899
+      ],
+      "positive_folds": 2,
+      "bootstrap_sd": 0.016067292864462627,
+      "conditional_ci95": [
+        -0.05188307907823053,
+        0.01109795123295414
+      ]
+    }
+  },
+  "fixed395_gain_vs011": -0.03508711026234046,
+  "interpretation": "The early adapter changed block6/9/12 representations and received gradients through all 12 frozen blocks. It nevertheless lost to its matched frozen control and late control, and failed the prespecified practical promotion gate against 011. This single fixed trial does not rule out all possible early adaptation methods.",
+  "control_caveat": "All three new arms use microbatch1/effective16. Historical 011 used microbatch2, so its dropout stream differs; the paired new frozen control addresses this difference.",
+  "validation": {
+    "passed": true,
+    "models_verified": 15,
+    "max_MPS_reload_error": 0.0,
+    "max_CPU_raw_image_error": 0.00023213319360593232,
+    "foldtrain_scalers_targets_ids_exact": true,
+    "backbone_weights_unchanged": true,
+    "replay_scope": "Original fold0, each arm, first two effective updates with outer validation labels perturbed; state error0. Not full12epoch retraining replay."
+  },
+  "runtime_seconds": 8492.551937103271,
+  "training_seconds": 8378.909619125014,
+  "validation_seconds": 106.73832900001435,
+  "max_logged_conservative_memory_bytes": 5362122752,
+  "process_exit": {
+    "training": 0,
+    "validation": 0,
+    "runner_done": true,
+    "known_pids_absent": [
+      79428,
+      79429
+    ],
+    "matching_095_python_processes": [],
+    "checked_utc": "2026-10-02T13:23:26.820359+00:00"
+  },
+  "recovery": "The initial benchmark completed arm measurements but failed cleanup due to double deletion of loss. The preserved repair changed cleanup/output filenames only; identical configuration benchmark reran successfully. Full training and validation then exited0.",
+  "integrity": {
+    "protected011_files_verified": 20,
+    "all_checked_files": {
+      "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+      "artifacts/submission-candidate-011.components.csv": "1e5d67fed120150f9a1f665eacdc5e5aca817a29e12bdba4aea27347e3380739",
+      "artifacts/submission-candidate-011.manifest.json": "497cc7377fcc35cb9f6142bc0ee9868fbc3fa50aa40bf10c7a45d6ef3931fe94",
+      "artifacts/submission-candidate-011.reproduced.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+      "artifacts/final-model-086/decision.json": "83b779a44abf26db1b496b4d7aa2ce6cce0ea4e20cb9e147db331554cabee03f",
+      "artifacts/final-model-086/head/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+      "artifacts/final-model-086/head/report.json": "1a46ff5c0e94c7e4797f62986347fd5e378a4829965ad4144a47f6c8afd07053",
+      "artifacts/final-model-086/head/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+      "artifacts/final-model-086/report.json": "d2d7eb583640ba97d422aa1bc0a53365954c9bba047610b7972815c50bb26608",
+      "artifacts/final-model-086/test_predictions.npz": "eb8b4af03053e3a82c19f3a7d7f2cf569eb46e9b764980cdc0b567bbbe1e1cbc",
+      "artifacts/final-model-086/validation-replay/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+      "artifacts/final-model-086/validation-replay/report.json": "e87d4bce70bf24d7273a3c46693f0c6cfdab1ae252d8b3f6c30b52beb807317b",
+      "artifacts/final-model-086/validation-replay/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+      "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+      "verify_candidate011.py": "12147b31d5a4acdb8837c9a2f9ac9be4b3a102efde9eb357414a9cebb2cb73e9",
+      "finalize_candidate011.py": "9aef57b8930cdf5c0ee7205d08a6ca31f42052c29bb1af49d92b2b31c31fec52",
+      "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+      "reports/final-candidate011-summary.json": "168316e3c35fcbe00035c880df29f3b9eb3e76b6ff588ddce7a37922e84588ad",
+      "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+      "artifacts/frozen-complement-085/plan.json": "47ea467c9f5dacafc2bd1cabad34906c619f5d7f599ee0393a27b68266ab9ce0",
+      "early_adapter_095.py": "b698e78c8fb1e544138ad1b9ad30c5364d0687cc36504c4559c7e00094204e50",
+      "dinob_joint_084.py": "1f87129e3fbd695df60558e92c0463817f5cbdd7304b99ccc002dedf6c8093a6",
+      "dinob_adapter_080.py": "e3cf765f5a253098edc69f434e29756ff21ed6328db659bc5eabda8b186d2a5e",
+      "frozen_seed_088.py": "8ffd3bcc2da2bcb8417cb94d75697eabfd54e3840cd666b2f52a5f64adc4df7e",
+      "reports/candidate011-public-submission.json": "9220b3d414da739824cda4a76f7867603b14333b2cef5b0de82a5ec802473b71",
+      "reports/dinob-062-validation.json": "cee598d5f9c1d3f015e4410d916642fd479188483b3b8f16859a12001875edec",
+      "artifacts/dinob-adapter-080/prefix.json": "948bdbfee7563da88bf446f20a5f9be349228a03620c93978b7a781884ec79a5",
+      "reports/patch-replication-093-summary.json": "1f2c72128da7c0612064e29b3d9349aa8ea634ff973e9ea26da07b04b0b565ca",
+      "train_early_adapter_095.py": "1a9cfeb5b2ef79b1789e2146ba67cd98bfdeb6c203bb19c6c22d440c2ba7330e",
+      "validate_early_adapter_095.py": "1893756f945b65628ab217b652485cfb5a93eeb08950eb2dae92f963db39f74b",
+      "run_early_adapter_095.py": "c5840dd89a4306d9489d389c54e3cf5e54b4f31faf9329b25dbf07acdbf58101",
+      "early_adapter_095_benchmark_repair.py": "623b47f3b6d2e18e3f85c5c16549a931030c0ab96a29255ba50d3d0daa82dbcf",
+      "artifacts/early-adapter-095/plan.json": "ca84181bf4cdf5c09771adfda1020ba74988f4da9b115195eb29676c97d2ae86",
+      "artifacts/early-adapter-095/benchmark.json": "d57e33af9bea8940babcee4c9205491a082839e6cfd0c1d045ec91ff36b40a12",
+      "artifacts/early-adapter-095/benchmark-repair.json": "5805f8718b256f623c169d025a6f15297c0a4d6ebac594c929930e1720553c1b",
+      "artifacts/early-adapter-095/original/report.json": "bb66864ed0c352f30011fb99d54397686f2d2f86bab84f2c12f1f838b300c8c4",
+      "artifacts/early-adapter-095/original/development_predictions.npz": "3a88ed355d0ce29a39d2578a35be49e57df5bf22010335fe2b0a9b2884f96218"
+    },
+    "summary_sha256": "c40880bf9696cc46b51474fcb725e1141abe479e4dc1acb562e65e47931ab749",
+    "validation_sha256": "7f70557e8d99cfbe6d3b6e528862db58875c0091f5a73bb4605edddc59a3adeb"
+  },
+  "best": "011",
+  "best_csv_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "submission010_record": "reports/candidate010-public-submission.json",
+  "submission010_public_rmse": 11.8391045562,
+  "best011_public_rmse": 11.7352685854,
+  "remaining_submissions_today_parent_report": 0,
+  "holdout_or_test_selection_access": false,
+  "cost": 0,
+  "blockers": []
+}

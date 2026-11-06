@@ -1,0 +1,177 @@
+{
+  "study": 179,
+  "UTC": "2026-10-06T00:22:04.432274+00:00",
+  "outcome": "rejected_no_new_candidate",
+  "propose_new_candidate": false,
+  "original_gate_passed": false,
+  "partitions_run": [
+    "original"
+  ],
+  "RMSE": {
+    "original": {
+      "018": 12.811945280526919,
+      "021": 12.786200775750695,
+      "globalL": 13.897309666752351,
+      "B_replay": 12.811945280526919,
+      "L_swap018": 12.813108034745927,
+      "primary": 12.788492654890762
+    }
+  },
+  "comparisons": {
+    "original": {
+      "018": {
+        "gain": 0.02345262563615691,
+        "fold_gains": [
+          -0.04814241623756388,
+          0.07506666915656801,
+          0.0669958652395497,
+          0.05127346560940005,
+          -0.02657587868526079
+        ],
+        "positive_folds": 3
+      },
+      "021": {
+        "gain": -0.00229187914006701,
+        "fold_gains": [
+          -0.029367191146343785,
+          -0.007305322569759909,
+          0.021701645667958402,
+          0.0067568755491862476,
+          -0.004688298499182508
+        ],
+        "positive_folds": 2
+      }
+    }
+  },
+  "correlations": {
+    "original": {
+      "spatial_swap_delta_vs_globalL021_delta": 0.16093990130114236,
+      "spatial_swap_delta_vs_021_residual": -0.006785164598634959,
+      "spatial_swap_delta_vs_018_residual": 0.0011062208362811168,
+      "primary_vs_021_residual": 0.9999086637240717,
+      "primary_vs_018_residual": 0.99860365116497,
+      "primary_vs_globalL_residual": 0.9146551067024483,
+      "021_vs_globalL_residual": 0.9138546911603037,
+      "018_vs_globalL_residual": 0.8928852578124592,
+      "linear_R2_delta_vs_globalL_delta_descriptive_only": 0.025901651830821444,
+      "spatial_swap_delta_RMS": 0.17283342610551658
+    }
+  },
+  "pooled_RMSE": {
+    "018": 12.811945280526919,
+    "021": 12.786200775750695,
+    "primary": 12.788492654890762
+  },
+  "conditional_group_bootstrap_gain_CI95": {
+    "018": [
+      -0.050024799929829285,
+      0.09830925347925404
+    ],
+    "021": [
+      -0.02105834015184835,
+      0.016628883861770884
+    ]
+  },
+  "feature_validation": {
+    "passed": true,
+    "rows": 400,
+    "shape": [
+      400,
+      528
+    ],
+    "feature_sha256": "b56a573f75087a338734694ddb690c88f08487c69ec2c4b9a91591d2b0ae4cd2",
+    "projection_sha256": "dd75bded02f36ce2d615bc2a66638c2572712d1f7e9019f09a5b277e82d5237c",
+    "validation": {
+      "B_3cached_exact": true,
+      "B_independent_edge_max_error": 3.774758283725532e-15,
+      "CPU_MPS_spatial_max_error": 7.220715374733899e-06,
+      "L_independent_edge_max_error": 3.552713678800501e-15,
+      "token_grid_D4_invariant": true,
+      "whole_image_DINO_D4_invariance_claimed": false,
+      "shuffle_spatial_L2_changes": [
+        4.196692194337159,
+        3.6445027692519023,
+        4.230291442370989
+      ],
+      "shuffle_global_mean_std_invariant": true
+    },
+    "global_L_final_stats_exact400": true,
+    "raw400_hashes_exact": true,
+    "backbone_state_unchanged": true,
+    "smoke_repeat_exact": true,
+    "no_holdout_test_labels": true,
+    "seconds": 158.06050770800357
+  },
+  "validation": {
+    "original": {
+      "passed_validation": true,
+      "main_model_objects": 600,
+      "main_nonnull_fits": 480,
+      "outer0_poison_model_objects": 60,
+      "inner_heldout_poison_refits": 30,
+      "independent_max_error": 4.973799150320701e-14,
+      "all_B_inner_full_weights_predictions_exact": true,
+      "018_and021_control_exact": true,
+      "all_reload_exact": true,
+      "all_train_local_scaling_and_group_scopes_verified": true,
+      "outer_fold0_all3_Lblocks_poison_exact": true,
+      "upstream_neural_anchors_reused_with_exclusion_certificates": true,
+      "seconds": 7.491152624999813
+    }
+  },
+  "resource_summaries": {
+    "spatial-extraction-resources.json": {
+      "seconds": 158.03100691699365,
+      "peak_RSS": 2658320384,
+      "max_MPS": 2194341888,
+      "max_conservative_RSS_plus_MPS": 3433283584,
+      "swap_growth": 0,
+      "min_free_percent": 50
+    },
+    "readout-original-resources.json": {
+      "seconds": 7.487983458995586,
+      "peak_RSS": 429080576,
+      "max_MPS": 393216,
+      "max_conservative_RSS_plus_MPS": 429441024,
+      "swap_growth": 0,
+      "min_free_percent": 66
+    }
+  },
+  "source_SHA256": {
+    "plan.json": "a60fdd9f934c2c810d7bd7799ac8d95cd699cdc843bc9490b9fa3b608e305d3f",
+    "code-lock.json": "af235a33b8bc2d3154d1e01e27ac1d4046fa214dc3e42c3f74dc5f35a1fbce2d",
+    "readout-code-lock.json": "7d1e3dea8367a85edfb990d2a588464324aaab9cc3e23c0e94bbed77454da34d",
+    "feature-validation.json": "b43062f021879cfda71c27e93c7aa412feed72f34ec47158dd472fbbe7789a40",
+    "finalize.py": "17ba70018df97a250e993c2a16558f0f93f6925a9b1ddf477ac86a2d08ea9b9c"
+  },
+  "protected_files_unchanged": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a",
+    "reports/retraining-175-summary.json": "a84fdf0c8bdb90563a7bc7964545a1f1b342f719ef1411261a9638725fe31659",
+    "experiments/reproduction-018-175/run/plan.json": "d576415c959f34e01af6daf9230c47608ed3d79bf956f8bc522f8464b4b83090",
+    "deliverables/reproduction-018-v176.zip": "e93bd3f2bd9f11b40014d65997238495293b07ae0eac49d17490552c198797a6",
+    "reports/retraining-176-summary.json": "b7862b213a83360be98f926f566e466bb670de2b8f7ce768a53c1d297ce8b634",
+    "reports/dinol-177-summary.json": "676f5ff0bdfb4a7d0c017711d3cb5d6e29b1d1352b46450409bf95ef0819c655",
+    "experiments/dinol-177/plan.json": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4",
+    "experiments/dinol-177/features.npz": "bc27df3ab45184f565a99007316b4239dce8cab9abe782e4dc302c988e9b8b90",
+    "experiments/dinol-177/dinov2_vitl14_pretrain.pth": "d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428",
+    "artifacts/submission-candidate-021.csv": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+    "artifacts/submission-candidate-021.manifest.json": "4ba41d28974dc5f629cc1c9f10d9f7cbd108ccf89030e84bdd53b9f65e50f649",
+    "reports/candidate021-178-summary.json": "74b35bd660f01f0f7d91ae0a2eebece60de7490d434ec4ee3739f329fbc995e3"
+  },
+  "scope": "Development400, original5fold and gatedexistingresplits only. No holdout/test/full500/CSV/upload/install/download/cost. Existing raw400/Lweights/Btokens/physics/anchors reused as declared.",
+  "limitations": [
+    "Repeated same400 adaptive development; bootstrap is conditional, not independent generalization evidence.",
+    "Random projection rule/rank is matched; B andLchannelcoordinates are different.",
+    "Spatial graph energy measures contextual token differences, not proven physical grain boundaries.",
+    "No concatenation or ratio/layer/rank/seed tuning; one replacement contrast only.",
+    "021 browser submission/result remains parent-managed; no browser query here."
+  ],
+  "remaining_blockers": [],
+  "cost": 0
+}

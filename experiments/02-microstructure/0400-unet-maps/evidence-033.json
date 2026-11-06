@@ -1,0 +1,41 @@
+{
+ "candidate": "033",
+ "date": "2026-10-09",
+ "change": "vs 032: grain = equal mean of 3 components: TabPFN-v2(n32x3) on feat-u1phdrop, TabPFN-3.5(x3) on feat-u1phdrop, TabPFN-3.5(x3) on feat-u1m1sz (031 features + multi-task U-Net m1 size/elongation/phase cols). Fixed W=0.75.",
+ "harness": {
+  "u1phdrop": 10.426,
+  "u1m1sz": 10.4656,
+  "avg": 10.3988
+ },
+ "dev_fixed_w075": {
+  "cfg032": {
+   "original": 10.3893,
+   "p20261031": 10.3596,
+   "p20261101": 10.3977,
+   "pooled": 10.3822
+  },
+  "cfg033": {
+   "original": 10.3795,
+   "p20261031": 10.3322,
+   "p20261101": 10.3723,
+   "pooled": 10.3613
+  }
+ },
+ "rejected_same_session": {
+  "synthetic_degraded_rows_flag": "dev v2 grain 10.500/10.413/10.542 vs 10.516/10.575/10.498 (mixed); in 4-way mean pooled 10.362 (no gain)",
+  "heavy_unet_h1": "heavy-degradation phase recovery 0.8765 vs u1 0.873",
+  "per_grain_unet_count_frac": "rho not above u_ph_hard",
+  "gp_blend": "-0.01 harness"
+ },
+ "inputs": {
+  "u1phdrop_train": "d976a9e54de22a6080503f10703e404ef5222d46b865544df1626ccfc4bf2131",
+  "u1phdrop_test": "48d7e43c0d4eb34e42be997300f0524f2d683163e83cf4ece379de34bd09cba4",
+  "u1m1sz_train": "009ce142137b9f5990ee470e1982fe71866ee16531666d6e29736c0e6838df6f",
+  "u1m1sz_test": "10b105eb40094d3cb872c81fc996f56cedf0e65e6fb33c6a5484dbacf4c3d245",
+  "unet_u1": "34d154ca47fe4f003210ebd790422076d2ad815271956afe20a3a49df72f0d24",
+  "unet2_m1": "c9965a8608c7f7ad5e245d58dcee2096790b4bd8235a9c063d96e392b4e597bc"
+ },
+ "weight_rule": "fixed W=0.75",
+ "adopt": true,
+ "caveat": "gain 0.02 is small; component choice made after seeing dev of 3 combos."
+}

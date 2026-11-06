@@ -1,0 +1,173 @@
+{
+  "outcome": "Bounded research sequence through056 complete; preserve verified submittedbest007",
+  "public_history": [
+    {
+      "candidate": "002",
+      "public_rmse": 12.8862710295,
+      "source": "first-public-submission.json"
+    },
+    {
+      "candidate": "003",
+      "public_rmse": 12.4479505141,
+      "source": "candidate003-public-submission.json"
+    },
+    {
+      "candidate": "004",
+      "public_rmse": 12.525784988,
+      "source": "candidate004-public-submission.json"
+    },
+    {
+      "candidate": "005",
+      "public_rmse": 12.2763921367,
+      "source": "candidate005-public-submission.json"
+    },
+    {
+      "candidate": "006",
+      "public_rmse": 12.2224405924,
+      "source": "candidate006-public-submission.json"
+    },
+    {
+      "candidate": "007",
+      "public_rmse": 11.9686073575,
+      "source": "candidate007-public-submission.json"
+    }
+  ],
+  "public_gain_from002": 0.9176636719999998,
+  "public_relative_reduction_percent": 7.121250747397993,
+  "best": {
+    "candidate": "artifacts/submission-candidate-007.csv",
+    "sha256": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "public_rmse": 11.9686073575,
+    "previous_best_public_rmse": 12.2224405924,
+    "improvement": 0.2538332349,
+    "relative_improvement_percent": 2.0768,
+    "submitted_at_kst": "2026-10-02T01:29:00+09:00",
+    "submission_id": "3994957b-716a-4150-bdb6-05d5cfee7f38",
+    "rank_at_confirmation": 18,
+    "participants_at_confirmation": 53,
+    "daily_used_at_confirmation": 1,
+    "daily_limit": 5,
+    "remaining_at_confirmation": 4,
+    "source": "Parent-confirmed official submission by separate worker;notbrowser-recheckedhere",
+    "model_selection_use": false,
+    "url": "https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai",
+    "best_model": "artifacts/final-model-053",
+    "design": "artifacts/seed-stability-052/candidate-design.json",
+    "scope_note": "Creation manifests remain immutable; uploaded:false there describes creation-time state."
+  },
+  "development_partition_results": [
+    {
+      "split": "original",
+      "candidate007_rmse": 13.241596955038409,
+      "reference006_rmse": 13.423229237711903,
+      "gain": 0.18163228267349396
+    },
+    {
+      "split": "20261031",
+      "candidate007_rmse": 13.192251472226435,
+      "reference006_rmse": 13.439650797694618,
+      "gain": 0.24739932546818366
+    },
+    {
+      "split": "20261101",
+      "candidate007_rmse": 13.455677846832414,
+      "reference006_rmse": 13.610797519662416,
+      "gain": 0.1551196728300024
+    }
+  ],
+  "recipe": "0.75*unchanged003 +0.25*mean(3 fixed-seed regression-only MLP heads on frozen DINO blocks6/9/12 CLS+patchmean+populationstd, full504). 003=.5baseline+.25compactkernel+.25tinyCNN.",
+  "research_phases": [
+    {
+      "phase": "초기 수공 특징·형태·소형 CNN의 상보성",
+      "outcome": "002→003 개선. CPU feature baseline과 compact morphology kernel, 소형 CNN 고정 혼합이 첫 유효 후보. 004는 Public 악화하여003 보존.",
+      "evidence": [
+        "final-candidate003-summary.json",
+        "final-candidate004-summary.json",
+        "candidate003-public-submission.json",
+        "candidate004-public-submission.json"
+      ]
+    },
+    {
+      "phase": "구조량·비선형 회귀 강화",
+      "outcome": "규제 완화 HGB·얕은GBR, 경계 연결성, 부착 기공Hessian, nonzero-lag autocovariance는 반복분할에서 안정된 앙상블 개선을 보이지 못함. 더 강한 tree의 작은 훈련오차는 일반화 개선으로 이어지지 않음.",
+      "evidence": [
+        "tree-controls-027-summary.json",
+        "hypotheses-027-029-summary.json",
+        "pore-hypothesis-030-032-summary.json",
+        "autocov-033-034-summary.json"
+      ]
+    },
+    {
+      "phase": "직접 학습 CNN 구조와 해상도",
+      "outcome": "128/256, covariance pooling, morphology fusion, 채널/head축소·정규화는 원본CV 일부 개선이 다른분할에서 뒤집힘. best003 대체하지 않음.",
+      "evidence": [
+        "cnn-controls-summary.json",
+        "cnn-structure-035-summary.json",
+        "cnn-cov-controls-036-summary.json"
+      ]
+    },
+    {
+      "phase": "사전학습 DINO frozen 표현",
+      "outcome": "전체504px 표현과 blocks6/9/12 CLS·patchmean/std가 반복분할에서 개선되어005·006으로 발전. 새독립 픽셀정보 추가가 아니라 기존 미세조직의 backbone 공간척도 변화.",
+      "evidence": [
+        "dino-037-038-summary.json",
+        "dino-039-summary.json",
+        "dino-044-summary.json"
+      ]
+    },
+    {
+      "phase": "DINO 파생·결합 실험",
+      "outcome": "042 token공간차분,046D4집계,047형태공동회귀,048저차원supervised병목은 채택 근거 부족.043약한 마지막block미세조정은003혼합에서 작게 반복개선했지만044보다 명확한 대안이 되지 않았고 추가 가중치 탐색하지 않음.",
+      "evidence": [
+        "dino-042-summary.json",
+        "dino-043-summary.json",
+        "dino-044-summary.json",
+        "dino-046-summary.json",
+        "joint-047-summary.json",
+        "latent-048-summary.json"
+      ]
+    },
+    {
+      "phase": "역영상 생성 모델과 데이터량 진단",
+      "outcome": "049근사latent-region/blur/noise역추정은 구조 보존 검사 실패로 회귀 전 기각.050학습곡선은320장까지 데이터량 증가로 검증개선했으나 잡음하한이나 기술적 성능한계를 추정하지 못함.",
+      "evidence": [
+        "formation-049-summary.json",
+        "learning-curve-050-summary.json"
+      ]
+    },
+    {
+      "phase": "작은 nonlinear DINO 회귀 head",
+      "outcome": "051분위분류 보조손실 자체 효과는 불일치. 함께 고정 비교한 회귀전용MLP가 유망하여052의3seed·3분할에서 확인,007로 채택. seed를 골라 버리지 않고3개 균등유지.",
+      "evidence": [
+        "auxiliary-051-summary.json",
+        "seed-052-summary.json",
+        "candidate007-handoff.json"
+      ]
+    },
+    {
+      "phase": "마지막 독립 특징가설054~056",
+      "outcome": "Lineal120, signed-distanceBetti132, projectedDINO covariance528 모두 원본007혼합에서 악화. 미세 가중치 재탐색·후보생성·추가제출 없이 종료.",
+      "evidence": [
+        "lineal-054-summary.json",
+        "betti-055-summary.json",
+        "token-cov-056-summary.json"
+      ]
+    }
+  ],
+  "current_limits": [
+    "Public11.9686 and reported18/53 is not evidence of prize competitiveness; rank is a historical confirmation, not live rechecked.",
+    "Same400 observations informed many decisions. Three partitions check split sensitivity but are not independent unseen datasets.",
+    "MLP standalone training RMSE~0.6 versus development OOF~14 suggests large generalization gap; strong ensemble benefit does not remove it.",
+    "A minority of rows contributes much of measured007 gain; earlier removal-of-top10-benefit diagnostic still retained smaller gains on all3partitions.",
+    "No identified generator ground truth/noise floor; segmentation proxies often fail geometry or split robustness. No claim that the attainable performance ceiling is reached."
+  ],
+  "next_decision": "No evidence-backed new candidate from054-056. Do not continue seed/weight/feature sweeps or submit for tiny local differences. A genuinely new approach should first specify how it adds identifiable label-relevant information and how it will be validated despite reused400; official generator/label construction clarification would be higher-value evidence than unsupported package expansion. No external contact or download initiated.",
+  "artifacts_preserved": {
+    "candidate007": "artifacts/submission-candidate-007.csv",
+    "sha256": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "design": "artifacts/seed-stability-052/candidate-design.json",
+    "models": "artifacts/final-model-053"
+  },
+  "this_phase_scope": "Development400 only, CPU/MPS existinglocalpackages, cost0, noholdout/test/candidateCSV/upload",
+  "running_work": []
+}

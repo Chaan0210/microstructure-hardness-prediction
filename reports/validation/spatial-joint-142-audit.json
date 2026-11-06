@@ -1,0 +1,83 @@
+{
+  "audit": "142 source-and-existing-report audit of140/017",
+  "utc": "2026-10-04T11:50:27.646297+00:00",
+  "material_bug_found": false,
+  "requires_submission_hold_for_implementation_bug": false,
+  "scope": "Only existing source and JSON reports read; CSV bytes hashed for integrity without parsing predictions. No feature/model array loading, raw image/label read, training, inference, new test distribution analysis, retuning, install, network or upload.",
+  "representation": {
+    "formula": "Z=final_normalized_B_patch_tokens @ fixed_QR_Gaussian_projection(768x32,seed20271201); E=sum_edges[(Z_u-Z_v)(Z_u-Z_v)^T]/(2*2520); uppertriangle528=32diagonal+496offdiagonal; physics57+528=585.",
+    "projection": "QR is on generated Gaussian matrix only, not on dataset; saved same matrix used fortrain/test; no PCA/whitening/pooled-fit.",
+    "differences": {
+      "056": "ViT-S384 -> fixed nonorthogonal Gaussian32; whole-image centered covariance, all positions unordered.140 usesB768,orthonormal QR and explicit graph differences.140 unordered control sharesB/projection/528dim/residuallearner, isolating adjacency within140.",
+      "042": "ViT-S per-channel normalized marginal semivariograms atlags1/4 dividedbywithin-image variance+1e-4; no cross-channel entries; finalglobal1152 appended,Ridge targetregression.140 nearestneighbor jointchannelmatrix, no perimagevariance division, honest015residualselector.",
+      "070": "ViT-S 2x2/4x4 regional-mean variance normalizedbyglobalvariance, appendedtoS MLP; coarsepatch segregation, not jointneighborchanges.",
+      "092": "SameB finaltokencache but learned770->16 gatedpooling with explicitXY and supervisedattention versusmean.140 hasno XYinput orlearnedpooling; rawcache reused without092trainedchannelnormalizer."
+    },
+    "limits": "Related family ofsecond-order spatialstatistics, not entirely newphysicalobservable. Paired140 control doesnotattributeimprovementtoBversusS or QRversusGaussian. No physicalgrainboundary or causalhardnessclaim."
+  },
+  "alignment_boundary_rotation": {
+    "image": "256x256 L image -> full504x504 PILbicubic, repeatgray3channels, fixedImageNetmean/std; no crop oraddedimagepad.",
+    "token_order": "Conv2d kernel=stride14,paddingdefault0;504divisibleby14. BCHW flattenedspatially then transposed => rowmajor1296. CLS excluded, num_register_tokens=0;reshape36x36x32 recoverssamegrid.",
+    "position_encoding": "Official fixed learnedpositionembeddings areadded/interpolated byexistingbackbone; no newpositionregistration/reordering. Finaltokens retainglobalattention andpositioneffects.",
+    "edges": "36*35vertical+36*35horizontal=2520, eachundirectededgeonce. No wrap,diagonal,zero/reflectpad,orflattenedrow-endconnection. Cornersdegree2,borderedgesdegree3,interiordegree4 asfinitegriddefinition; not degree-normalized.",
+    "rotation": "No inputrotation/TTA/positionalignment at140/017. Sum ofhorizontal+verticaldifferenceouterproducts invariantunderD4 reindexingofalreadycomputedtokenmaps; doesNOT imply DINO inference isimage-rotationequivariant/invariant. No arbitrarytranslationinvarianceclaim.",
+    "scale": "One patchspacing14resizedpixels≈7.111nativepixels; DINO tokens useglobalcontext, notlocalgrainmeasurement."
+  },
+  "normalization_and_leakage": {
+    "fixed_or_per_image": "ImageNetconstants and pretrainedfrozenLayerNorm arefixed. Graphdifference features perimage, notfit acrossimages. Projection fixed independentlyofdata. No140 pooled092channelnormalization.",
+    "fold_train_only": "component_ablation_121.fit_block passes X[B[it]],res[it] to eachcandidate. MinMaxclip, StandardScaler, residualRMS, RBFgamma, kernelcentering/scale allfitonthatinnertrain. After selection refitonlyB. Newbankweight1/sqrt528 deterministicfromschema.",
+    "anchors": "Outer320/V80: affine frommiddleOOF; eachB106/107 residualtarget usesA213/214-only deepOOFcalibration and B-excludedbaseheads. A/B/V disjoint. Full500usesunchanged015 honestA333/334 andB166/167 anchors; no globalOOFresidualshortcut.",
+    "evidence": "Existingthreevalidationreports certify1440 newmodels withindependent maxerror<=6.49e-14, outer-labelpoisonexact; extra-validation30inner-heldout-targetpoisonfixedfits exact andanchorB-labelpoisonexact. Full50048models independentlyverifiedmaxerror3.96e-14."
+  },
+  "test_extrapolation": {
+    "implementation": "All3selectedmodels ridge01/rbf1/ridge1 use training-fittedMinMaxScaler(clip=True) BEFORE StandardScaler. Cliplimits areeachmodelownB166/167trainextrema, notall500or testextrema. No prediction-dependentfit ortestnormalization.",
+    "what_is_controlled": "Finite rawfeatureexcursions beyondowntrainingranges saturate atbounds; newresidualdoesnot linearly/quadratically grow withrawfeaturedistanceoutsidebox. RBF distancesalsoevaluatedonclippedcoordinates, withtraining-derivedkernelcenter/scale.",
+    "remaining_risk": "Featurewisetrainingbox includescombinationsnotobservedintraining. Clipping can loseamplitudeinformation orcause saturation. Distribution shift andboundary/positioneffects remain. No guaranteeofaccuracy orsafeperformance solelyfromfinitevalues. Smallresidualtrainingblocks andadaptivedevelopmentreuse remain.",
+    "evidence_existing_only": "Existing017report:1000finitepredictions,range161.7243949363977..236.69311018513167; modelreload/CSVbytesexact; CPU/MPSmax5.4175818604562664e-6; independentaffine/kernelmax1.4210854715202004e-13. Existing extractionreports:all1000pooledBdescriptors exact,3development rawreplays graphfeatureerror0. These establishconsistency,notabsenceofdistribution shift.",
+    "not_available": "Existing140/141reports do not give new528feature clipfrequency, distance-to-support, permodelkernel_scale ornewbankcontributionranges. No newtestarrayinspectionperformed; no claimzeroout-of-rangeorzeroshift.",
+    "metadata_clarification": "candidate017 manifest clipping:false anddecision no testclipping mean nofinalhardnessoutputclipping/no newtest-drivenclipping. ExistingfeatureMinMaxclip=True isactive andpredeclared. Ambiguousdocumentation, notnumericalbug; frozen016/017filesnotedited."
+  },
+  "outcome": "No materialimplementation/leakage/positionbug found in reviewedcode andexistingcertificates. Keep015best, preserve016/017, awaitparentPublicresult; nofurtherexperiment.",
+  "source_sha256": {
+    "spatial_joint_140.py": "d050b813cad2d9c7637bb1e20c5e263c6633565eba7963c4fdfcd4a380ac9e3e",
+    "candidate017_pipeline.py": "45d39d863e64b4cff8d26746913b9d50f98e09faa0631734a0c62bc9b5777382",
+    "candidate006_pipeline.py": "55ff99ad014351d9d574010e815542e94579a7afb988c60b212fe50ef075985e",
+    "dinob_062.py": "209407c04766b687696d8a06ae158c3af4912a7b399d153301238a34074a56f9",
+    "dinob_adapter_080.py": "e3cf765f5a253098edc69f434e29756ff21ed6328db659bc5eabda8b186d2a5e",
+    "patch_attention_092.py": "d716a5ddc52bc2032e816f3410c77ecc744729ff0c659348e18f3ac678fb9b5f",
+    "token_covariance_056.py": "8bd1a9a084945cbac59828401a0bf5f2e848acc624f81d6a83727b2409fba85c",
+    "dino_texture_042.py": "abcc42db466f0fb10502ad57db939c09fac7e7a1103ceffd88dccd7ab8a551b9",
+    "dinos_coarse_070.py": "694b43ccf99a6e2306f6e11852b070e4917e3932ac367825cc763b0501db5abd",
+    "component_ablation_121.py": "49979a38b2ebb96ec86d97d27e92d57e960be8a904e7ec9168b6e7cedbb4e858",
+    "residual_physics_113.py": "39f1c1c16bcb8d2d38c332d55eda44e57748e4a17b87ffdff37c7054e13d2554",
+    "nonlinear_residual_115.py": "63bd7f2bed66edba2916b017f3c8a8e0dfc80509302806808b06bf4d6b126fc9",
+    "validate_spatial_joint_extra_140.py": "97df7af76a4ed90685589d493ae529b6d7e63518da9df155fe16ba4ff0bbd518",
+    "vendor/dinov2-official/dinov2-7764ea0f912e53c92e82eb78a2a1631e92725fc8/dinov2/layers/patch_embed.py": "40da6add3d811198ea3e17cb99cdd4e5cda59e369efbbe3d18d89308618cf142",
+    "vendor/dinov2-official/dinov2-7764ea0f912e53c92e82eb78a2a1631e92725fc8/dinov2/models/vision_transformer.py": "7799a260f2d7d0fe197331d08502fb8c542f9b7424723650f6a39b64fa2639ea"
+  },
+  "evidence_sha256": {
+    "artifacts/spatial-joint-140/plan.json": "2228ead6c04708734517c4cf86f3ff9751a65493d25fdd591a935e46854dc65c",
+    "artifacts/spatial-joint-140/extraction.json": "8e35e8c7b0604c3cd48003d8d424be5267d78e8d1aff48bd59604a12c8fc5537",
+    "artifacts/spatial-joint-140/extra-validation.json": "5948c4f348de7d848bbb43f70170191f5cab4fe333c3070d68998ca706e50d95",
+    "artifacts/final-model-141/decision.json": "f190fe4d268113cd746803bfdb39ae61be664c0946cf416a034203782afc9281",
+    "artifacts/final-model-141/fit.json": "c7cff95a30330ea30d25fe63512f00e776be120c261ab52e7abb520f020a7521",
+    "artifacts/final-model-141/train-adjacent.json": "e24685f09b0b2f04bc2dd20146a08826f75bcf5dfbd095fbde8e8d70c8fdc5eb",
+    "artifacts/final-model-141/test-adjacent.json": "da6bdca56419fc973778dcd4e6313237adfea6e93804e2f1535ed9c36d4ff9e3",
+    "artifacts/final-model-141/training-validation.json": "482d6cd2d8ffe98bb29ace46dcfdbf775eb3a54ccb39e06728858bfd2c2c87ed",
+    "reports/candidate017-verification.json": "b2df1deb61c423a780560b83b606460830ac013d5b07a9cf5275bf90d2be953e",
+    "reports/candidate017-preservation.json": "581e4def3f406d4e9f4674f05584567e1ba8ad19cf251c911930cf3bf11e5a11",
+    "artifacts/spatial-joint-140/validation-original.json": "9d78b6d5917ee0017fbc812f2a56ed391e6fcac1ece123d8ccbd73ea2bae5443",
+    "artifacts/spatial-joint-140/validation-20261031.json": "bf05e07e8e0a973306e32c3b524e671efd4fc5ec183f7af3eb1f5de2cb8a647e",
+    "artifacts/spatial-joint-140/validation-20261101.json": "4721bfb07645a7ab23c146e5391ba8757fa0902eb924d8b58ea023e9111665aa"
+  },
+  "preserved_CSV_SHA256": {
+    "artifacts/submission-candidate-015.csv": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f",
+    "artifacts/submission-candidate-016.csv": "ceabcb7f019b7234e638510899ae98d2aacee08892f59650fd6cb16ff301cce0",
+    "artifacts/submission-candidate-017.csv": "4256a5d2636053f8f1d115f39b0265a66a10c3169bd4016309ecdd2b63c3be20"
+  },
+  "cost": 0,
+  "new_fits": 0,
+  "new_inference": 0,
+  "uploaded": false,
+  "remaining_blockers": []
+}

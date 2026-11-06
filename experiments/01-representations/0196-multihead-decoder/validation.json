@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "all10_models_reload_verified": true,
+  "checks": [
+    {
+      "fold": 0,
+      "arm": "mean",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 8.608274129073834e-06,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    },
+    {
+      "fold": 0,
+      "arm": "mha",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 8.608274129073834e-06,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    },
+    {
+      "fold": 1,
+      "arm": "mean",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 6.479048067831172e-06,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    },
+    {
+      "fold": 1,
+      "arm": "mha",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 1.5927659802628114e-05,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    },
+    {
+      "fold": 2,
+      "arm": "mean",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 5.35368576493056e-06,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    },
+    {
+      "fold": 2,
+      "arm": "mha",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 1.2848845869939396e-05,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    },
+    {
+      "fold": 3,
+      "arm": "mean",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 1.2866504960129532e-05,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    },
+    {
+      "fold": 3,
+      "arm": "mha",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 1.5010922453484454e-05,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    },
+    {
+      "fold": 4,
+      "arm": "mean",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 6.443340339501447e-06,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    },
+    {
+      "fold": 4,
+      "arm": "mha",
+      "updates": 400,
+      "MPS_reload_maxabs": 0.0,
+      "CPU_reload_maxabs": 2.792114148064684e-05,
+      "ID_order_seed_LR_gradients_verified": true,
+      "heldout_moments_y_poison_train_normalization_exact": true
+    }
+  ],
+  "max_MPS_reload_difference": 0.0,
+  "max_CPU_MPS_difference": 2.792114148064684e-05,
+  "allfold_train_only_normalization_and_initialstate_order_seed_LR_updates_verified": true,
+  "both_fold0_full20epoch_heldoutlabel_poison_replay_exact": true,
+  "poison_replay_note": "Artificial validation labels used only for leakage audit; any replay RMSE is not a scientific score or selection input.",
+  "all_scalar_metrics_folds_top5_gate_verified": true,
+  "max_independent_bootstrap_difference": 7.105427357601002e-15,
+  "network_attempts": 0,
+  "raw_image_holdout_test_access": false
+}

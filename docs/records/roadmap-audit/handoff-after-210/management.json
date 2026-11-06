@@ -1,0 +1,301 @@
+{
+  "updated_at_utc": "2026-10-07T00:52:39.288077+00:00",
+  "scope": "210 완료 후 인계·관리표 작성만. 새 실험 없음.",
+  "status_definition": "완료는 명시한 제한된 대조·구현·진단 수행을 뜻하며 전 설정 소진이나 문제 해결을 뜻하지 않는다.",
+  "status_counts": {
+    "부분": 9,
+    "완료": 18,
+    "미실시": 3
+  },
+  "roadmap_items": [
+    {
+      "number": 1,
+      "group": "A. 물리·영상 특징",
+      "item": "Watershed 크기 분포·d^-1/2",
+      "status": "부분",
+      "evidence": "**006** 직경 분포·평균 d^-1/2 구현, 결합 13.982731→13.871297이나 당시 기준 미달. **097** 약/강 분할 결정립 수 중앙값 515→90, 순위 상관 0.18869. **098** 측정 충실도 실패로 경도 회귀 미실행. **183** 안정성 통과 3/16, 역렌더링 경로 중단. [097–098](../../reports/grain-visual-audit-097-nlm098-summary.json), [183](../../reports/tessellation-diagnostic-183-summary.json)",
+      "duplicate_and_remaining": "구현 재작성·강한 평활화 반복은 중복. 실제 결정립 정답과 물리적 픽셀 길이 부재로 측정 정확성은 미해결. 205의 전이학습이나 206의 영상 구조 검사는 이를 해결하지 않았다. 측정 실패와 회귀 학습 실패를 구별한다."
+    },
+    {
+      "number": 2,
+      "group": "A. 물리·영상 특징",
+      "item": "어두운 상·기공 분율",
+      "status": "부분",
+      "evidence": "**001/006** 어두운 연결요소·3단계 밝기 상분율·기공 후보 구현. **030–032** Hessian 결합은 원본 13.705696→13.698557이나 재분할 두 개는 13.631811→13.670029, 13.729980→13.763447로 악화. [030–032](../../reports/pore-hypothesis-030-032-summary.json)",
+      "duplicate_and_remaining": "분율·Hessian 후보의 첫 도입은 중복. 어두운 상·경계·기공을 구분하는 정답은 없고, 205–210에서도 물리 분율의 정확성·경도 효과의 부호를 확정하지 못했다."
+    },
+    {
+      "number": 3,
+      "group": "A. 물리·영상 특징",
+      "item": "형상·배향",
+      "status": "완료",
+      "evidence": "**006** 종횡비·면적 가중 정렬·구조 텐서, **028–029** 연결경계 결합의 원본 13.705696→13.700540이나 첫 재분할 악화. **148** 방향 에너지 결합 원본 12.811945→12.817326, 마지막 재분할 13.048624→13.075719. [028–029](../../reports/hypotheses-027-029-summary.json), [148](../../reports/directional-energy-148-summary.json)",
+      "duplicate_and_remaining": "같은 형태 패널·방향 에너지 추가는 중복. 정렬의 강도와 절대 방향은 다름. 휴리스틱 특징의 예측력과 실제 형상 측정의 타당성은 별개."
+    },
+    {
+      "number": 4,
+      "group": "A. 물리·영상 특징",
+      "item": "FFT·2점통계·GLCM/LBP",
+      "status": "완료",
+      "evidence": "**001** 기본 519개에 FFT·자기상관·GLCM·LBP 포함. **033–034** ACF 결합은 세 분할 모두 악화, 원본 13.705696→13.755472. **159** S2/C2는 원본 12.811945→12.812262/12.821477이며 두 재분할도 악화. [기본 구현](../../src/microstructure/features.py), [033–034](../../reports/autocov-033-034-summary.json), [159](../../reports/cluster-pair-159-summary.json)",
+      "duplicate_and_remaining": "해당 통계 도입 자체는 새 전략이 아님. 개별 통계의 모든 조건부 기여를 분리한 결과는 아니므로 전체 계열의 무용성을 주장하지 않음."
+    },
+    {
+      "number": 5,
+      "group": "A. 물리·영상 특징",
+      "item": "화질 지표",
+      "status": "완료",
+      "evidence": "**068** 20개 화질 지표와 잔차 분석: 최대 signed-error 상관 크기 약 0.051, noise MAD–절대오차 상관 약 0.100. **126** 조건별 위험 진단. **165** 화질 게이트 전체 후단 재적합 12.81194528→12.81207222. **206** train-only 화질 구간별 증강 효과도 진단. [068–072](../../reports/diagnostic-research-068-072-summary.json), [165](../../reports/quality-gate-165-summary.json), [206](../../reports/contrast-augmentation-206-summary.json)",
+      "duplicate_and_remaining": "지표·진단은 완료, 화질 문제 해결은 미확인. 실제 잡음·열화의 원인 측정값이 아닌 대리값이다. 일반적인 잔차 재진단·같은 화질 게이트 반복을 제외한다."
+    },
+    {
+      "number": 6,
+      "group": "A. 물리·영상 특징",
+      "item": "GBM/Ridge 비교",
+      "status": "완료",
+      "evidence": "**001–005** 초기 같은 특징 후보군에 Ridge·Extra Trees·HistGradientBoosting 포함, 안정화 결합 원본 13.982731. **027** 같은 57개 패널: HGB OOF 14.845530, 완화형 HGB 15.556336, GBR 14.749213. Nested 보완 결합은 원본 13.705696→13.697511이나 첫 재분할 13.631811→13.677748로 악화. [초기 구현](../../src/microstructure/pipeline.py), [초기 표](../../reports/experiment-summary.csv), [027](../../reports/tree-controls-027-summary.json)",
+      "duplicate_and_remaining": "GBM/Ridge 계열의 첫 도입은 중복. Extra Trees는 GBM이 아니다. 027의 compact KRR 26개 대 tree 57개는 순수 회귀기 대조가 아니며, 새롭게 검증된 동일 물리 패널에서 Ridge–GBM을 완전 교차 비교했다는 뜻도 아니다. 205–210에는 추가 GBM 비교가 없다."
+    },
+    {
+      "number": 7,
+      "group": "B. 동결 백본·회귀기",
+      "item": "DINOv2 여러 층 특징",
+      "status": "완료",
+      "evidence": "**044** S의 여러 층 Ridge 결합: 원본 13.522452→13.423229, 두 재분할도 개선. B는 **062–066**, L은 **177**의 12/18/24층 특징 사용. **177** L MLP 고정 결합으로 원본 018 12.811945→021 12.786201. **181** L 중간층 단독 치환 12.926751로 기각. [044](../../reports/dino-044-summary.json), [177](../../reports/dinol-177-summary.json), [181](../../reports/midlayer-L-181-summary.json)",
+      "duplicate_and_remaining": "중간층 도입 자체와 종료된 L 표현 변형은 반복하지 않음. 모든 층 조합을 조사한 것은 아니며 층 탐색 확대 근거도 없음."
+    },
+    {
+      "number": 8,
+      "group": "B. 동결 백본·회귀기",
+      "item": "Ridge/SVR/KRR",
+      "status": "완료",
+      "evidence": "**037** 동결 S: all Ridge 14.989438, PCA64 RBF KRR 15.352353; 당시 003과의 결합은 13.693455/13.767414. **177** 최종 CLS PCA/SVR 결합 B 12.990629, L 12.912427로 미승격. **192** ConvNeXt 동일 EDF Ridge: PCA128 12.887708→full 12.889531로 악화. [037–038](../../reports/dino-037-038-summary.json), [KRR 구현](../../dino_regression_037.py), [177](../../reports/dinol-177-summary.json), [192](../../reports/pca-ridge-192-summary.json)",
+      "duplicate_and_remaining": "세 회귀기 계열은 이미 적용됨. 다만 백본×층×회귀기의 전체 교차 비교가 완료됐다는 뜻은 아님. 그런 격자 확장은 하지 않음."
+    },
+    {
+      "number": 9,
+      "group": "B. 동결 백본·회귀기",
+      "item": "ConvNeXt",
+      "status": "부분",
+      "evidence": "**190** 동결/head-only/last-stage 결합 12.952081/12.953058/12.958639. **191** mean→mean+std 12.929938→12.892809, **192** full Ridge 12.889531로 모두 021 미달. **210** 기존 마지막 stage LLRD 단독 16.764185→16.768129, 10% 추가 결합 12.958513. [190](../../reports/modern-backbones-190-summary.json), [191](../../reports/spatial-moments-191-summary.json), [192](../../reports/pca-ridge-192-summary.json), [210](../../reports/convnext-llrd-210-summary.json)",
+      "duplicate_and_remaining": "ConvNeXt 도입·이미 종료한 pooling/회귀기/LLRD 조건의 반복은 중복. 여러 중간 stage 특징의 동일 용량 대조는 미확인이나, 실패한 한 정책을 구제하려고 층·head·비율 탐색을 늘릴 근거는 부족하다."
+    },
+    {
+      "number": 10,
+      "group": "B. 동결 백본·회귀기",
+      "item": "D4 TTA",
+      "status": "완료",
+      "evidence": "**046** DINO 학습·추론 특징 D4 평균 결합 13.423229→13.460735, 추론만 평균 13.451132로 악화. **151** CNN 전체 nested D4 평균은 pooled 12.836545→12.823378로 당시 탐색 기준 통과했으나 한 재분할 악화. 후속 **후보019** Public 11.5451213945는 018 11.5230652779보다 나쁨. [046](../../reports/dino-046-summary.json), [151](../../reports/cnn-view-mean-151-summary.json), [019 기록](../../reports/candidate019-public-submission.json)",
+      "duplicate_and_remaining": "151을 전부 실패한 실험으로 뭉뚱그리지 않음. D4 적용은 중복이며 TTA 악화만으로 타깃 방향 의존성 또는 회전 불변성을 증명할 수 없음."
+    },
+    {
+      "number": 11,
+      "group": "B. 동결 백본·회귀기",
+      "item": "MicroNet",
+      "status": "완료",
+      "evidence": "**205** 같은 native256·동결 ResNet50·mean2048·Ridge EDF32에서 ImageNet 대 MicroNet. 단독 15.469001 대 15.874501, 10% 결합 12.868464 대 12.887703. MicroNet 결합의 021 대비 개선 −0.101502, CI [−0.192442, −0.009848]. Ridge 본 실험 10회·검증 30회, 신경망 학습 0회. [205](../../reports/micronet-frozen-205-summary.json)",
+      "duplicate_and_remaining": "이 가중치·동결 특징·회귀 복잡도 조건은 종료. 모든 MicroNet 활용법이나 사전학습 데이터 자체의 무효를 뜻하지 않는다. 실제 파일의 안전한 strict load·해시 확인은 완료됐고 v1.0/v1.1 대응은 미확인이다."
+    },
+    {
+      "number": 12,
+      "group": "C. CNN 학습·증강",
+      "item": "256 원해상도",
+      "status": "부분",
+      "evidence": "**009/010** Tiny128 80 epoch와 Tiny256 40 epoch를 실행했으나 예산이 달라 순수 해상도 대조가 아님. **188** ResNet 동일 12 epoch의 고정224→native256 비교: 단독 15.536522→15.423283, 고정 결합 12.909169→12.897651, 결합 개선 CI [-0.037185, 0.063599]. [009–011](../../reports/cnn-controls-summary.json), [188](../../reports/cnn-resolution-188-summary.json)",
+      "duplicate_and_remaining": "256이 미실시라는 전제는 틀림. 현재 TinyCNN128/80과 256/80의 정확한 대조는 별도 질문이나, 지금 해상도 탐색을 반복하지 않음. 고정 resize와 무작위 scale augmentation을 구별함."
+    },
+    {
+      "number": 13,
+      "group": "C. CNN 학습·증강",
+      "item": "낮은 LR·제한 미세조정",
+      "status": "완료",
+      "evidence": "**185** backbone 1e-5/head 3e-4, **186–187** optimizer/LR 통제. **189** layer3+4 확장 단독 15.489643·결합 12.872903으로 분기 종료. **210** 학습 층 수를 늘리지 않고 기존 ConvNeXt 세 블록의 평균 LR·실제 decay를 고정한 LLRD 대조 완료. [189](../../reports/cnn-unfreeze-189-summary.json), [210](../../reports/convnext-llrd-210-summary.json)",
+      "duplicate_and_remaining": "낮은 LR·제한 미세조정의 최초 도입은 중복. 이미 평가한 예산·정책 실패를 모든 백본·미세조정의 성능 한계로 일반화하지 않는다."
+    },
+    {
+      "number": 14,
+      "group": "C. CNN 학습·증강",
+      "item": "LLRD",
+      "status": "부분",
+      "evidence": "**210** 기존 ConvNeXt 마지막 세 블록만 ratio 0.8, 평균 LR 1e-5로 정규화하고 실제 weight decay를 대조와 일치시킴. 기술 대조 1회+후보 5회. OOF 개선 −0.003944, CI [−0.013212, 0.005392]. Train 3.808715→3.766645이나 OOF 16.764185→16.768129로 격차 0.046014 확대. [210](../../reports/convnext-llrd-210-summary.json)",
+      "duplicate_and_remaining": "마지막 stage 내부 한 정책은 완료·종료. 전체 backbone LLRD는 미실시이며, 한 비율의 실패를 LLRD 전체 실패로 보지 않는다. 비율 재탐색·학습 층 확대는 현재 권고하지 않는다."
+    },
+    {
+      "number": 15,
+      "group": "C. CNN 학습·증강",
+      "item": "EMA",
+      "status": "완료",
+      "evidence": "**207** 후반 5개 checkpoint 지수 평균은 단독 개선 +0.010181, CI [−0.027854, 0.047671]이며 전체 update EMA가 아님. **208** 800 update EMA β=0.99·warmup 0: 단독 +0.168108, 고정 첫 seed 치환 +0.003805. **209** 동일 정책의 기존 재분할 2개 추가 후 3분할 pooled 단독 +0.107652, CI [0.051598, 0.163877]; 고정 치환 −0.002041, CI [−0.007153, 0.003092]. [207](../../reports/checkpoint-averaging-207-summary.json), [208](../../reports/update-ema-208-summary.json), [209](../../reports/ema-repartition-209-summary.json)",
+      "duplicate_and_remaining": "**209 현재 관리 상태는 보류.** 단독 평균 개선은 있으나 최종 앙상블 채택 근거가 부족하다. 한 재분할의 단독 CI가 0을 포함했다. 모든 EMA가 실패했다는 뜻이 아니며 계수 탐색·nested 재학습을 자동 시작하지 않는다. [검토 후 상태](../209-status-after-review.md)"
+    },
+    {
+      "number": 16,
+      "group": "C. CNN 학습·증강",
+      "item": "타깃 표준화",
+      "status": "완료",
+      "evidence": "**007/009 이후 CNN**, **177**, **185**에서 fold train의 타깃 평균·표준편차 사용. **175** 605개 state·최종 OOF 12.8119452805 exact. **206/208–210**도 train-only 통계 및 변경 경로 검증. [175](../../reports/retraining-175-summary.json), [206](../../reports/contrast-augmentation-206-summary.json), [210](../../reports/convnext-llrd-210-summary.json)",
+      "duplicate_and_remaining": "표준화 도입은 중복. 표준화 제거 대조를 완료했다는 뜻은 아니며, 검증 타깃을 통계에 포함하지 않는 조건을 유지한다."
+    },
+    {
+      "number": 17,
+      "group": "C. CNN 학습·증강",
+      "item": "MSE/Huber",
+      "status": "부분",
+      "evidence": "현재 TinyCNN 및 **206/208/209**는 MSE. **058** 동결 DINO head의 SmoothL1→half-MSE는 결합 13.241597→13.242392. **185–190/210**은 SmoothL1 사용. [057–058](../../reports/optimization-057-058-summary.json), [현재 구현](../../frozen_validation.py), [210](../../experiments/convnext-llrd-210/plan.json)",
+      "duplicate_and_remaining": "손실 계열 도입은 중복이나, 현재 TinyCNN의 동일 경로에서 MSE↔Huber만 바꾼 대조는 확인되지 않았다. 058의 동결 head 결과를 CNN trunk 전체로 전이하지 않는다. 다음 세션 검토 1번으로만 제안하며 새 실험은 예약하지 않는다."
+    },
+    {
+      "number": 18,
+      "group": "C. CNN 학습·증강",
+      "item": "밝기 단일 증강",
+      "status": "미실시",
+      "evidence": "실행 번호·학습 ablation 결과 없음. **068/103**은 고정 affine 입력 정규화가 영상 간 밝기를 보존함을 확인한 진단이며 증강 실험이 아님. [068–072](../../reports/diagnostic-research-068-072-summary.json)",
+      "duplicate_and_remaining": "광도 변화가 합성 경도 라벨을 보존하는지 미확인. 밝기 신호가 이미 제거됐다는 전제로 추가하지 않음."
+    },
+    {
+      "number": 19,
+      "group": "C. CNN 학습·증강",
+      "item": "대비 단일 증강",
+      "status": "완료",
+      "evidence": "**206** 평균 보존·최대 5% 대비 감소 한 정책. 5-fold 대조/후보 10회+검증 재학습 2회. 단독 15.032318→15.049052, 개선 −0.016734, CI [−0.135060, 0.099335]. 고정 첫 seed 치환 12.786201→12.788777, 개선 −0.002577. [206](../../reports/contrast-augmentation-206-summary.json)",
+      "duplicate_and_remaining": "시험한 대비 감소 정책은 종료. 순위·gradient 부호 검사 통과가 경도 라벨 불변성이나 실제 결정립 측정 정확성의 증명은 아니다. 대비 증강 전체·밝기·감마·noise·blur의 실패로 확대 해석하지 않는다."
+    },
+    {
+      "number": 20,
+      "group": "C. CNN 학습·증강",
+      "item": "감마 단일 증강",
+      "status": "미실시",
+      "evidence": "실행 번호·결과 없음. 회귀 커널의 gamma는 영상 감마 변환과 무관함.",
+      "duplicate_and_remaining": "합성 이미지의 밝기 상 구분·경계 표현과 라벨을 보존하는 범위가 미해결."
+    },
+    {
+      "number": 21,
+      "group": "C. CNN 학습·증강",
+      "item": "Noise 단일 증강",
+      "status": "부분",
+      "evidence": "**110** native256에 고정 Gaussian σ=2/255를 추가한 뒤 동결 DINO 특징·head를 학습. 동일 예산 결합 13.053998→13.057268로 기각. [110](../../reports/input-noise-110-summary.json)",
+      "duplicate_and_remaining": "110 반복은 중복. trainable CNN의 매 batch noise ablation은 확인되지 않음. 110도 물리 구조·라벨 불변성을 증명하지 않음."
+    },
+    {
+      "number": 22,
+      "group": "C. CNN 학습·증강",
+      "item": "Blur 단일 증강",
+      "status": "미실시",
+      "evidence": "학습 시 blur만 추가한 ablation의 번호·결과 없음. **071/072** TV 잡음 제거 및 **098** NLM 측정 대조는 다른 작업이며 실패 기록이 있음. [068–072](../../reports/diagnostic-research-068-072-summary.json), [098](../../reports/grain-visual-audit-097-nlm098-summary.json)",
+      "duplicate_and_remaining": "복원 실패와 blur 증강 실패를 동일시하지 않음. 얇은 경계·상 분율 단서를 지워도 라벨이 보존되는지 확인 필요."
+    },
+    {
+      "number": 23,
+      "group": "검증·진단·재현성",
+      "item": "타깃 층화 반복 5-fold",
+      "status": "부분",
+      "evidence": "원본 및 기존 **20261031/20261101** 재분할은 GroupKFold 5-fold. **204/209**까지 반복 평가했으나 타깃 층화 실행 근거는 없음. 정확/D4 중복 그룹 사용, **160** 추가 생성 family는 미확정. [원본 분할](../../src/microstructure/pipeline.py), [재분할](../../frozen_validation.py), [209](../../reports/ema-repartition-209-summary.json)",
+      "duplicate_and_remaining": "반복 5-fold는 완료, 타깃 층화는 미실시. GroupKFold에 y를 전달해도 층화가 아니다. 층화의 목적은 경도 분포 균형·fold 변동 완화이며, 독립 검증 확보·선택 편향 해소·좋은 점수 찾기가 아니다. 분할과 모델을 동시에 바꾸거나 자동 재평가하지 않는다."
+    },
+    {
+      "number": 24,
+      "group": "검증·진단·재현성",
+      "item": "Seed 분산",
+      "status": "완료",
+      "evidence": "**052/088/133/202–204**에서 seed별 오차·상관·평균·분산을 조사. **133** CNN 3개 평균의 pooled 개선 0.035520, CI [-0.026805, 0.099789]. **202** 분할 간 예측 분산 25.6% 감소에도 단순화 RMSE 악화. **204**는 상단의 기각 결과. [133](../../reports/cnn-seed-mean-133-summary.json), [202](../../reports/simplification-202-summary.json), [204](../../reports/cnn-nested-204-summary.json)",
+      "duplicate_and_remaining": "일반적인 seed 확대·분산 재진단과 6개 seed 분기 반복을 제외. 분산 감소가 최종 오차 개선을 보장하지 않음."
+    },
+    {
+      "number": 25,
+      "group": "검증·진단·재현성",
+      "item": "실제 보조 타깃 컬럼",
+      "status": "완료",
+      "evidence": "기존 첫 줄 확인 기록은 **ID,hardness**. 독립된 추가 물성 타깃 컬럼 없음. **051/193–201**의 보조 CE는 hardness에서 train-only 구간을 만든 파생 타깃이다. **194** 개선 0.024696의 CI는 0 포함, **201** 고정 분기 종료. [헤더 확인 기록](../verification.json), [기존 등록부](../../reports/strategy-experiment-register.csv)",
+      "duplicate_and_remaining": "추가 컬럼 확인은 완료. 이번 인계에서는 원시 train.csv를 다시 열지 않았다. 파생 타깃과 실제 다중 물성 감독을 구별하며, 추가 타깃을 만들어냈다고 기록하지 않는다. 205–210에도 새 보조 타깃은 없다."
+    },
+    {
+      "number": 26,
+      "group": "검증·진단·재현성",
+      "item": "화질·형태별 OOF 잔차",
+      "status": "완료",
+      "evidence": "**024/068/094/126/166/199** 진단 완료. **166** 세 분할 공통 큰 오차 33개 ID, 시각 검토 27장. **199** 022 원본 이득의 73.1%가 상위 5개 순이득에 집중. **206** train-only 화질 3분위 진단: noise/contrast 낮음·중간·높음의 단독 개선 −0.185738/+0.123074/+0.009401, 고정 치환 −0.012271/+0.005124/−0.000825. [166](../../reports/failure-review-166-167-summary.json), [199](../../reports/submission022-diagnostic-199-summary.json), [206](../../reports/contrast-augmentation-206-summary.json)",
+      "duplicate_and_remaining": "**진단 완료와 문제 해결은 다르다.** 깨끗한 영상과 열화된 영상 모두 큰 오차 사례가 있으며 화질 인과성·라벨 오류는 미확정이다. 206도 최종 개선을 보이지 않았다. 포괄적 잔차 진단·이미지 재검토를 새 작업으로 반복하지 않는다."
+    },
+    {
+      "number": 27,
+      "group": "검증·진단·재현성",
+      "item": "Learning curve·오차 상관",
+      "status": "완료",
+      "evidence": "**050/127** 수행. **127** 저장 leaf 840개 재추론, 새 학습 0. CNN RMSE 142/143→213/214→320개에서 15.560772→14.985635→14.621919. 320개에서 CNN–S/B 오차 상관 0.690726/0.702737, S–B 0.886540. **128** 예산 통제에서 small400→small800은 15.418684→15.597598로 악화. [127 요약](../../reports/base-learning-curve-127-summary.json), [127 수치](../../reports/base-learning-curve-127-analysis.json), [128](../../reports/cnn-update-budget-128-summary.json)",
+      "duplicate_and_remaining": "기존 학습곡선·상관·예산 진단은 중복. 127은 표본·업데이트·seed가 함께 변한 곡선이며 현재021 전체를 작은 크기로 재학습한 곡선이 아님. 잡음 바닥을 식별하지 못함."
+    },
+    {
+      "number": 28,
+      "group": "검증·진단·재현성",
+      "item": "데이터 분리·재현성",
+      "status": "완료",
+      "evidence": "**175** 최종 개발 OOF exact, **204** R=021 exact. **190** Swin 재학습 exact 실패는 보존. **205–210** 각 변경 경로의 누출·재로드·대조 검증 완료. **206** 5개 대조 exact, **208** EMA와 optimizer 분리 검증, **209** 10개 기존 state/OOF/최종 main optimizer exact, **210** fold 0 기술 대조 exact. [175](../../reports/retraining-175-summary.json), [209](../../reports/ema-repartition-209-summary.json), [210](../../reports/convnext-llrd-210-summary.json)",
+      "duplicate_and_remaining": "검증은 해당 경로·환경 범위다. 201/190의 과거 update별 RNG 해시는 없어 이를 완전히 비교했다고 주장하지 않는다. 독립 생성 family·타 환경 exact·누적 선택 편향 해소는 미해결이며 기존 전체 검증을 반복하지 않는다."
+    },
+    {
+      "number": 29,
+      "group": "검증·진단·재현성",
+      "item": "OOF ensemble",
+      "status": "완료",
+      "evidence": "**121/133/140/144/177/202–204** 결합·nested 비교, 현재021 원본 OOF 12.786201. **204** 3→6 seed 전체 후단 재학습 pooled 개선 +0.005785, CI [−0.026274, 0.037320], 두 재분할 악화. **209** 고정 첫 seed 치환 pooled −0.002041. **210** 10% 추가 결합의 021 대비 −0.172312. [204](../../reports/cnn-nested-204-summary.json), [209](../../reports/ema-repartition-209-summary.json), [210](../../reports/convnext-llrd-210-summary.json)",
+      "duplicate_and_remaining": "204 분기는 반복하지 않는다. 고정 치환/추가 결합은 전체 후단 재학습이 아니며 각각 다른 비교다. 전역 OOF를 보고 가중치를 재선택하지 않았고 best021 유지·새 제출 없음. 209의 단독 개선만으로 완성 앙상블 개선을 주장하지 않는다."
+    },
+    {
+      "number": 30,
+      "group": "검증·진단·재현성",
+      "item": "코드·가중치 라이선스",
+      "status": "부분",
+      "evidence": "**135** original DINO S/B, **177** L의 실제 가중치 해시·출처·라이선스 기록 존재. **205** 특정 MicroNet 파일 SHA256 4c906df9…30bafd2 및 전달·보존된 MIT 출처와 strict load 확인. [135](../../reports/software-licenses-current-135.json), [177](../../reports/dinol-177-summary.json), [205](../../experiments/micronet-frozen-205/REPORT.md)",
+      "duplicate_and_remaining": "소프트웨어 라이선스와 개별 가중치 라이선스를 분리한다. 패키지 허가가 모든 가중치·대회 사용 허가를 뜻하지 않는다. MicroNet v1.0/v1.1 대응은 미확인. 이번 인계에서는 웹·규정을 새로 검증하지 않았다."
+    }
+  ],
+  "next_session_reviews": [
+    {
+      "priority": 1,
+      "review": "현재 TinyCNN의 MSE–Huber 단일 변경 대조가 실제로 누락됐는지 확인하고 설계 가능성을 검토한다.",
+      "basis": "058은 동결 DINO head, 185–190/210은 다른 사전학습 CNN이다. 현재 TinyCNN과 같은 입력·분할·seed·update·평균 경로의 손실 대조는 확인되지 않았다. 구조·데이터·증강 확대 없이 구분 가능한 질문이다.",
+      "stop_condition": "정확히 같은 대조 기록이 있으면 건너뛴다. 큰 오차를 라벨 오류로 전제하지 않고 Huber 임계값·목적을 사전에 설명할 수 없으면 보류한다.",
+      "scope": "다음 세션의 기록 확인과 단일 정책 설계 검토만 추천한다. 실행 승인·실험 번호 부여·계수 탐색·후단 재학습은 포함하지 않는다."
+    },
+    {
+      "priority": 2,
+      "review": "물리 측정의 정답·길이 스케일 또는 검증 가능한 생성 과정 자료의 확보 가능성을 확인한다.",
+      "basis": "097/098/183의 병목은 물리 측정의 안정성·충실도다. 205의 전이학습과 206의 순위·gradient 검사는 이를 해결하지 않았다. 정확한 측정 없이 회귀기만 바꾸면 측정 실패와 학습 실패를 분리할 수 없다.",
+      "stop_condition": "새로운 허용된 결정립/상 정답, 물리적 픽셀 길이 또는 생성 과정 근거가 없으면 종료된 segmentation·평활화·역렌더링을 반복하지 않는다.",
+      "scope": "확보 가능한 근거가 있는지 검토하는 단계다. 근거가 생기면 먼저 측정 정확성과 안정성을 별도로 정의한다. 외부 자료 검증은 별도 연구 범위이며 이 인계에서 외부 호출·다운로드·학습을 하지 않는다."
+    }
+  ],
+  "experiment_209_current_status": "보류",
+  "experiment_209_status_source": "reports/ema-repartition-209-status-after-review.json",
+  "best_candidate": "021",
+  "best_public_rmse_user_reported": 11.48785178,
+  "candidate022_public_rmse_user_reported": 11.5435627849,
+  "new_experiments_started": 0,
+  "original_files_modified": false,
+  "experiment_summaries": {
+    "205": {
+      "path": "reports/micronet-frozen-205-summary.json",
+      "sha256": "ffc93e2407fa273deef117c773f89b8e19e8fbfad5dd8f37bdffe87f7a17e840"
+    },
+    "206": {
+      "path": "reports/contrast-augmentation-206-summary.json",
+      "sha256": "c0f4f1f93e3e193ac376b7a3801bff4d888d1e2dddd1d37eba8959feecc06009"
+    },
+    "207": {
+      "path": "reports/checkpoint-averaging-207-summary.json",
+      "sha256": "faec62190b1e7b1ff11e45796a2fd455e304580d512851e4e776f08526c88e32"
+    },
+    "208": {
+      "path": "reports/update-ema-208-summary.json",
+      "sha256": "37a3fdccc324df1e5c0dc3ac7d88f54639e794e61ce32087ef9cb40bcf5e5c67"
+    },
+    "209": {
+      "path": "reports/ema-repartition-209-summary.json",
+      "sha256": "af14a8d1b0dbeaf378faa00eecdf718a4e60debe14f2c77cc45c43cd73774bb8"
+    },
+    "210": {
+      "path": "reports/convnext-llrd-210-summary.json",
+      "sha256": "0bb1208d555383981c2c91d08ec7d265fde3ec5cfc1dfa30f2d3333fdc448e55"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "recipe": {
+    "name": "adamw_low",
+    "optimizer": "AdamW",
+    "tail_lr": 1e-05,
+    "head_lr": 0.0001
+  },
+  "seconds": 42.45049145799567,
+  "updates": 168,
+  "train_n": 214,
+  "prediction_n": 106,
+  "initial_train_RMSE": 2.4013059724974672,
+  "final_train_RMSE": 1.1080591147615646,
+  "curve": [
+    {
+      "epoch": 0,
+      "train_RMSE": 2.4013059724974672
+    },
+    {
+      "epoch": 3,
+      "train_RMSE": 3.0892194793888867,
+      "train_augmented_mean_loss": 0.023198069918348833
+    },
+    {
+      "epoch": 6,
+      "train_RMSE": 2.200804671275504,
+      "train_augmented_mean_loss": 0.015531767763335395
+    },
+    {
+      "epoch": 9,
+      "train_RMSE": 1.476117752416421,
+      "train_augmented_mean_loss": 0.010323474468249414
+    },
+    {
+      "epoch": 12,
+      "train_RMSE": 1.1080591147615646,
+      "train_augmented_mean_loss": 0.008661811201212307
+    }
+  ],
+  "gradient_norm_min": 0.6717689633369446,
+  "gradient_norm_max": 10.507957458496094,
+  "gradient_clip_fraction": 0.9821428571428571,
+  "head_lr_first_last": [
+    0.0001,
+    1.1533337816991932e-05
+  ],
+  "tail_lr_first_last": [
+    1e-05,
+    1.1533337816991932e-06
+  ],
+  "same_model_reload_exact": true,
+  "BN_eval_affine_stats_unchanged": true,
+  "nontrainable_gradients_none": true,
+  "head_initial": "e95aca474a194033685aaa5dcd6aa8c0379ed6313f5701a8943bbc23cfae7f1f",
+  "order_sha256": "7f8ce41096db4ade707da69be79e6a674959a0445b8d9cc2658e392cbd3b0be4",
+  "model_sha256": "f4adc7bbbb9eca3349c21cd7d026704051f5ea09c82381966544a5e4794b8430",
+  "updates_sha256": "13f4c06aaba91689efa453eaa4ea11dbf68b6ed02ef237dbffc7424806f80b32",
+  "predictions_sha256": "40d0733ad7198292dd01c0877303a877366832481d8a77698ae4aa11b39bf963"
+}

@@ -1,0 +1,141 @@
+{
+  "study": "128 final decision",
+  "completed_utc": "2026-10-04T04:36:27.198121+00:00",
+  "decision": "Close the single fixed CNN budget comparison; retain014. No resplits because prespecified original screen failed.",
+  "results": {
+    "validation_RMSE": {
+      "small400": 15.418683992044917,
+      "small800": 15.597597929901633,
+      "large800": 14.7065959392644
+    },
+    "training_RMSE": {
+      "small400": 9.545295706630212,
+      "small800": 3.022689687189826,
+      "large800": 8.305693742986076
+    },
+    "contrasts": [
+      {
+        "contrast": "small_budget",
+        "reference": "small400",
+        "new": "small800",
+        "RMSE_gain": -0.1789139378567164,
+        "MSE_gain": -5.549245136329546,
+        "conditional_ID_cluster95_RMSE_gain_CI": [
+          -0.675087362043989,
+          0.3180678229098982
+        ],
+        "per_partition_RMSE_gain": [
+          -0.1789139378567164
+        ]
+      },
+      {
+        "contrast": "matched800_data",
+        "reference": "small800",
+        "new": "large800",
+        "RMSE_gain": 0.8910019906372337,
+        "MSE_gain": 27.001097062083602,
+        "conditional_ID_cluster95_RMSE_gain_CI": [
+          0.07364349314495178,
+          1.686196462910008
+        ],
+        "per_partition_RMSE_gain": [
+          0.8910019906372337
+        ]
+      }
+    ]
+  },
+  "interpretation_ko": [
+    "작은142장 집합에서400→800업데이트는 학습RMSE9.5453→3.0227로 낮췄지만 검증RMSE15.4187→15.5976으로 악화했다. 이 단일설정은 단순 장기학습을 지지하지 않는다. 악화 구간의 조건부 불확실성은0을 포함해 보편적 악화로 단정하지 않는다.",
+    "같은800업데이트에서320장 학습은 검증RMSE14.7066으로 작은집합보다0.8910 낮았다. 현재 근거는 추가최적화만으로 학습데이터 증가의 효과를 대체할 수 없다는 쪽이다. 모든epochs·CNN구조·물성예측 가능성의 상한을 주장하지 않는다.",
+    "128은 새 full32 배치·동일진행률cosine 절차의 진단이다. 원래142장의 부분배치 절차와 완전히 같은 모델은 아니며 기존CNN80은 따로 재현해 가중치·예측 오차0을 확인했다.",
+    "두800실행의LR·증강·초기가중치·dropout난수진행은 같고 모든배치는32장이다. 작은집합은 순열경계에서중복ID가생겨평균고유이미지가배치당31.716~31.759,큰집합은32였다. 이샘플링특성을 기록하며 이상적인다른샘플러로의 효과를 추정하지 않는다.",
+    "400/800은같은normalizedcosine종료점과동일한상대위치의5가중치평균을쓴다. 절대시간LR경로는늘어나므로 순수업데이트횟수만바꾼인과효과가아닌 고정예산+스케줄절차의비교다."
+  ],
+  "followup": {
+    "both_resplits_run": false,
+    "reason": "Original small800 failed to improve small400 under the predeclared screen. No posthoc epochs, LR, seed, sampler, width, or mixture tuning.",
+    "full320_longer_CNN_tested": false,
+    "014_integration_tested": false,
+    "new_candidate": false,
+    "keep014": true
+  },
+  "verification": {
+    "original": {
+      "passed": true,
+      "split": "original",
+      "models_reloaded": 15,
+      "MPS_reload_max_error": 0.0,
+      "CPU_MPS_max_error": 1.52587890625e-05,
+      "protocol_checks": [
+        {
+          "fold": 0,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        },
+        {
+          "fold": 1,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        },
+        {
+          "fold": 2,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        },
+        {
+          "fold": 3,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        },
+        {
+          "fold": 4,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        }
+      ],
+      "heldout_label_refit": {
+        "all258_outside_training_labels_changed": 258,
+        "prediction_max_error": 0.0,
+        "initialization_order_augmentation_unchanged": true,
+        "state_sha256_exact": true
+      },
+      "report_sha256": "639c72215ebbcf7111daf86e776a89926640057fbd47da8a2d23f3b3fdd8ad89",
+      "source_sha256": "63795edfe1b887642386f9a7d3826ea97cdaef9a2a90401fe836c9392082aaa3",
+      "seconds": 9.919182333047502
+    }
+  },
+  "actual_execution": {
+    "main_models": 15,
+    "legacy_reproduction_fits": 1,
+    "heldout_label_refits": 1,
+    "main_training_seconds": 171.68446450005285,
+    "new_packages": 0,
+    "cost": 0,
+    "holdout_test_access": false,
+    "full500_fit": false,
+    "new_candidate_CSV": false,
+    "uploaded": false
+  },
+  "selection_bias": "400knownimages; original5fold withonefixednestedpath andonepairedseedperfold. PairedIDbootstrap is conditional,not independentconfirmation oradjustmentforhistoricalsearch. Originalnegativeeffectdoesnotrequiretestingmorepartitions underthisscreen.",
+  "preservation": {
+    "014_CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "013_CSV_SHA256": "e2ea0111d8c6a262c71dd32ad3918db1a1d2189f1647db7a2d6399af83b51286",
+    "011_CSV_SHA256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "previous_reports_verified": 200,
+    "packages_unchanged": 26,
+    "all_frozen_inputs_sources_and_prior_models_verified": true
+  },
+  "execution_blockers": [],
+  "summary_sha256": "afe6167dd3d2bf240d3544819efd34f51aeda57c00e844498ea933de4b2f4506",
+  "source_sha256": "5e1d34207883dedb5ea8a31d5a5ee663dae0abce829066cb2763ee534df04847"
+}

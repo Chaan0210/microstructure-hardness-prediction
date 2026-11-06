@@ -1,0 +1,61 @@
+{
+  "arm": "early",
+  "checkpointing": false,
+  "adapter_parameters": 6144,
+  "trainable_parameters": 227393,
+  "initial_head_sha256": "450c16640aa9c175733696bdac3bac0955a47b0e4d099bd530a7a8ae83356b3a",
+  "initial_adapter_sha256": "aa8cf98f2913f707386a8f4bb73da09fe14d9166e88304e4728a0e478f6a7f86",
+  "zero_init_descriptor_max_error": 0.0,
+  "zero_init_standardized_prediction_error": 0.0,
+  "effective16_step_seconds": [
+    5.497805124963634,
+    5.288399250013754,
+    5.291025666985661
+  ],
+  "median_measured_effective16_seconds": 5.289712458499707,
+  "max_measured_effective16_seconds": 5.291025666985661,
+  "prediction_image_seconds_median": 0.12278016697382554,
+  "adapter_gradients_first3updates": [
+    {
+      "V.weight": 0.0,
+      "U.weight": 0.0980706438422203
+    },
+    {
+      "V.weight": 0.0021083892788738012,
+      "U.weight": 0.13797812163829803
+    },
+    {
+      "V.weight": 0.0034805869217962027,
+      "U.weight": 0.20205795764923096
+    }
+  ],
+  "block6_9_12_descriptor_delta_L2_after3updates": [
+    0.035247620195150375,
+    0.01865783892571926,
+    0.021084986627101898
+  ],
+  "early_graph": {
+    "embedding_adapter_output_and12block_output_gradient_norms": [
+      1.9547572135925293,
+      3.059117555618286,
+      2.7383768558502197,
+      2.8488080501556396,
+      2.134004831314087,
+      2.071009874343872,
+      2.1183817386627197,
+      0.4865163564682007,
+      0.4382442235946655,
+      0.421321302652359,
+      0.0805426612496376,
+      0.06366242468357086,
+      0.04756946861743927
+    ],
+    "all12blocks_carry_input_gradient": true,
+    "backbone_parameter_grads_absent": true
+  },
+  "memory": {
+    "rss_peak_bytes": 2739912704,
+    "mps_driver_bytes": 2573991936,
+    "conservative_sum_bytes": 5313904640
+  }
+}

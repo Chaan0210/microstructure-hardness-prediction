@@ -1,0 +1,333 @@
+{
+  "outcome": "Created and independently verified unsubmitted candidate010. Submitted best009 remains unchanged.",
+  "candidate": "010",
+  "submission_file": "artifacts/submission-candidate-010.csv",
+  "sha256": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5",
+  "model_directory": "artifacts/final-model-081",
+  "formula": "candidate009 + preserved009_slope*.125*(adapted_B_mean3 - frozen_B_mean3)",
+  "backbone_and_head_control": "Same existing3seedBMLP, foldtrainStandardScaler/targetstats, original pretrainedBweights frozen. All009 affine slopes/centers andweights unchanged; only B representation receives the adapter. No077or079calibration extension.",
+  "duplicate_audit": {
+    "043": "ViT-S14 lastblock fullparameters,8epochs1e-6 with fixed singlelayerRidge/MSE+anchor.",
+    "059": "ViT-S043 adaptedfeatures then unchangedMLP; no jointbackprop or newbackbone fit.",
+    "080": "ViT-B14 finalblock qkv/proj rank4 adapters trained through existing3MLPmean; no prior equivalentB experiment found."
+  },
+  "config": {
+    "rank": 4,
+    "alpha": 4,
+    "epochs": 8,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "lr": 0.0001,
+    "weight_decay": 0.1,
+    "anchor_weight": 1.0,
+    "clip": 1.0,
+    "seed": 20270201
+  },
+  "development_results": {
+    "original": {
+      "zero_adapter_numeric_control": {
+        "zero_adapter_009_RMSE": 13.105157896764707,
+        "zero_adapter_gain_vs_exact009": 1.595686072164426e-08,
+        "max_prediction_difference": 1.7642991281263676e-06,
+        "purpose": "Quantify CPU/MPS floating-point control differences separately from learned adapter gain."
+      },
+      "scores": {
+        "reference009": {
+          "rmse": 13.105157912721568,
+          "fold_rmse": [
+            13.025386023375454,
+            12.507824306370592,
+            14.197984111621984,
+            12.181376909479603,
+            13.51483530810461
+          ]
+        },
+        "frozenB": {
+          "rmse": 13.615777507504738,
+          "fold_rmse": [
+            13.650648366415224,
+            12.80647915614849,
+            14.045068523498623,
+            13.407892313668881,
+            14.126760079518114
+          ]
+        },
+        "adaptedB": {
+          "rmse": 13.628670149268476,
+          "fold_rmse": [
+            13.644909772140881,
+            12.84149629315753,
+            14.03926207660083,
+            13.417948801285664,
+            14.158864034990883
+          ]
+        },
+        "primary": {
+          "rmse": 13.10413742660317,
+          "fold_rmse": [
+            13.022136537716314,
+            12.506331297055734,
+            14.197201444500285,
+            12.180615553418216,
+            13.515909212552927
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0010204861183975567,
+        "fold_gains": [
+          0.00324948565913985,
+          0.0014930093148581847,
+          0.0007826671216992764,
+          0.000761356061387275,
+          -0.001073904448317009
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.0010019235802045006,
+        "conditional_ci95": [
+          -0.000928339851328408,
+          0.0030460946933190684
+        ]
+      },
+      "train_RMSE_before_pooled": 0.5059661954706801,
+      "train_RMSE_after_pooled": 0.38520389613665645,
+      "adapter_up_L2": [
+        0.15910461621406,
+        0.1614916187760051,
+        0.15009486543918796,
+        0.1497470986857589,
+        0.1672903906320059
+      ],
+      "total_folds_seconds": 390.8717249999754,
+      "max_RSS_bytes": 2909978624,
+      "max_MPS_driver_bytes": 1192919040
+    },
+    "20261031": {
+      "zero_adapter_numeric_control": {
+        "zero_adapter_009_RMSE": 13.082283261846532,
+        "zero_adapter_gain_vs_exact009": -1.7673849939114916e-08,
+        "max_prediction_difference": 1.5750926820601308e-06,
+        "purpose": "Quantify CPU/MPS floating-point control differences separately from learned adapter gain."
+      },
+      "scores": {
+        "reference009": {
+          "rmse": 13.082283244172682,
+          "fold_rmse": [
+            13.381109119932207,
+            14.258282229743807,
+            13.602704776447293,
+            11.723700529909848,
+            12.284105569029235
+          ]
+        },
+        "frozenB": {
+          "rmse": 13.967093172617764,
+          "fold_rmse": [
+            13.502110276748768,
+            13.956975680280312,
+            14.804788899095918,
+            13.138042313219065,
+            14.3702601307972
+          ]
+        },
+        "adaptedB": {
+          "rmse": 13.980048358931326,
+          "fold_rmse": [
+            13.528195418483007,
+            13.958986506447953,
+            14.813503914339096,
+            13.159668785010114,
+            14.377990272326743
+          ]
+        },
+        "primary": {
+          "rmse": 13.081449590263393,
+          "fold_rmse": [
+            13.381857154553895,
+            14.25568989266731,
+            13.602641433356888,
+            11.724159814164071,
+            12.281491944372723
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0008336539092894668,
+        "fold_gains": [
+          -0.000748034621688376,
+          0.0025923370764981968,
+          6.334309040489927e-05,
+          -0.00045928425422303576,
+          0.002613624656511604
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.0007381837041360899,
+        "conditional_ci95": [
+          -0.0006385062108988926,
+          0.002276819869854487
+        ]
+      },
+      "train_RMSE_before_pooled": 0.47177619760927114,
+      "train_RMSE_after_pooled": 0.36777509607152237,
+      "adapter_up_L2": [
+        0.15419993192037917,
+        0.17079330889287556,
+        0.14407256194183568,
+        0.14304454004922754,
+        0.16517381414997018
+      ],
+      "total_folds_seconds": 388.04460558498977,
+      "max_RSS_bytes": 2860777472,
+      "max_MPS_driver_bytes": 1192919040
+    },
+    "20261101": {
+      "zero_adapter_numeric_control": {
+        "zero_adapter_009_RMSE": 13.3051052728143,
+        "zero_adapter_gain_vs_exact009": 9.287626667742188e-09,
+        "max_prediction_difference": 1.53799604163396e-06,
+        "purpose": "Quantify CPU/MPS floating-point control differences separately from learned adapter gain."
+      },
+      "scores": {
+        "reference009": {
+          "rmse": 13.305105282101927,
+          "fold_rmse": [
+            13.849200001634694,
+            12.960759057914057,
+            12.948923572726505,
+            13.74037731629103,
+            12.995188583092828
+          ]
+        },
+        "frozenB": {
+          "rmse": 14.02485574576349,
+          "fold_rmse": [
+            14.677079552637498,
+            13.389320447678788,
+            13.47112184163994,
+            14.835679788209715,
+            13.682975142551932
+          ]
+        },
+        "adaptedB": {
+          "rmse": 14.032559793477807,
+          "fold_rmse": [
+            14.698476993028127,
+            13.389549525577829,
+            13.484216726676262,
+            14.82145632050504,
+            13.701778759801822
+          ]
+        },
+        "primary": {
+          "rmse": 13.303706910124971,
+          "fold_rmse": [
+            13.85099566441845,
+            12.95759347548424,
+            12.94690225276677,
+            13.73778685786814,
+            12.994026030679338
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0013983719769559144,
+        "fold_gains": [
+          -0.0017956627837563133,
+          0.0031655824298173485,
+          0.0020213199597343134,
+          0.0025904584228886307,
+          0.0011625524134899479
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.0008434989518041375,
+        "conditional_ci95": [
+          -0.00021456820718110948,
+          0.0030578932906989652
+        ]
+      },
+      "train_RMSE_before_pooled": 0.4745569998910041,
+      "train_RMSE_after_pooled": 0.3693896181599627,
+      "adapter_up_L2": [
+        0.16496669435403633,
+        0.16888229209028088,
+        0.14495323412530164,
+        0.14909938636772802,
+        0.15472333407531055
+      ],
+      "total_folds_seconds": 391.15667108196067,
+      "max_RSS_bytes": 2617294848,
+      "max_MPS_driver_bytes": 1192919040
+    }
+  },
+  "assessment": "All3developmentpartitions have positive but very small gains0.000834..0.001398RMSE, and everyconditionalCIincludeszero. StandaloneB worsened inall3partitions; only its fixed ensemble contribution improved. This is an exploratory low-priority submission candidate, not evidence of likely meaningful Public improvement or prize readiness. No newPublicscore exists.",
+  "verification": {
+    "valid": true,
+    "candidate": "010",
+    "rows": 1000,
+    "columns": [
+      "ID",
+      "hardness"
+    ],
+    "exact_sample_order": true,
+    "finite": true,
+    "duplicates": 0,
+    "submission_sha256": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5",
+    "CSV_byte_exact_reproduction": true,
+    "full1000_raw_image_reload_inference_exact": true,
+    "full500_training_replay_state_exact": true,
+    "all500_training_predictions_reload_exact": true,
+    "only18432_adapter_parameters_changed": true,
+    "all_original_B_weights_norm_and3MLP_heads_frozen": true,
+    "CPU_MPS_sample_max_error": 2.5291822993267488e-05,
+    "independent_full_ensemble_formula_max_error": 5.684341886080802e-14,
+    "unchanged009_calibrator_sha256": "7fa1f81d572bbb54159ea96f425c8a7b98f610c1fba7ca4480dad5afd36a9ac7",
+    "all1500_image_hashes_verified": true,
+    "best009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "protected009_files_verified": 60,
+    "prediction_range": [
+      162.15924798004568,
+      236.2252044588191
+    ],
+    "difference_from009_RMS": 0.013080354229874603,
+    "test_fit": false,
+    "holdout_scored": false,
+    "uploaded": false,
+    "cost": 0,
+    "seconds": 260.0000447909697,
+    "source_sha256": "b6ad7ff9883c584bf1e4bd2a934b0ee28ce329b508a303f9a696d12eead66bca"
+  },
+  "final_fit": "One rank4adapter trained on all500 after recipe lock,8fixedepochs. Existingfull500Bheads andallotherensemblecomponents/scalers/009affinecoefficients reused unchanged. Formerholdout not separatelyevaluated. Test1000 usedonlyforfinalinferenceandverification.",
+  "connection_recovery": {
+    "tool_transport_disconnected": true,
+    "original_process_later_terminated": true,
+    "termination_cause": "Unknown; no exitcode/traceback delivered.",
+    "completed3folds_preserved": true,
+    "unsaved2folds_recovered_same_recipe": true,
+    "interrupted_epoch1_objective_exactly_reproduced": true,
+    "recovery_record_sha256": "4906c2f4478cd19b6c3252321636f48caead69b1a8708155489a75fa1aacf34b",
+    "resolved": true
+  },
+  "best009": {
+    "public_rmse": 11.8406613479,
+    "sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "protected_files_verified": 60,
+    "remains_best_submitted": true
+  },
+  "scope": {
+    "cost": 0,
+    "new_install_or_download": false,
+    "holdout_test_selection": false,
+    "uploaded": false,
+    "upload_coordination": "Parent decides whether to spend a submission on this very small experimental change. No browser/upload action performed.",
+    "remaining_technical_blocker": null
+  },
+  "evidence_sha256": {
+    "reports/dinob-adapter-080-summary.json": "fe981c6d5f6976b7dac00044795c3bf669d2ddddccae3baf5b68edb32027be61",
+    "reports/dinob-adapter-080-validation.json": "7aa490921e5adaa086a8640267e2f703a1d3860b7ee4e298f86dc6eebfb19327",
+    "reports/candidate010-verification.json": "4ba0d2e6b9dc54d2f43030b819f73facef6192140817ba06ae17fa7b87e20d22",
+    "artifacts/final-model-081/decision.json": "17ed20ce1c3a95b78a45f4c9a55e0e7966c76ddf7d2e9516fa67f80fa7e4bd69",
+    "artifacts/final-model-081/report.json": "b162aade078fb930b3d6993d5e0108863c0b6f873326634f83964f5c4532c9a0",
+    "artifacts/submission-candidate-010.manifest.json": "7eaefab4bef33a743cefd676482078584929de44393e9826409a9b4caf58988c"
+  },
+  "source_sha256": "c7144a016587d941ea6fb011b05798e7428e4fa32724d48be953d65d82a60b98"
+}

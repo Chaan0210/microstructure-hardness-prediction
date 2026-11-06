@@ -1,0 +1,25 @@
+{
+ "candidate": "025",
+ "weight": 0.5,
+ "n_train": 500,
+ "test_failed_segmentations": 7,
+ "pred_stats": {
+  "mean": 193.84864093827125,
+  "std": 12.091912551995572,
+  "min": 161.45620941082507,
+  "max": 243.40630345323274
+ },
+ "corr_best021_vs_grain_test": 0.7989535670887871,
+ "rms_change_vs_021": 4.124506716837793,
+ "rms_change_vs_023": 2.9424483953467275,
+ "csv": "artifacts/submission-candidate-025.csv",
+ "csv_sha256": "6527c60a01d83b083fef115ecf45f393359f00f4d2b2061133f1a7e07d7ff285",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "uploaded": false,
+ "formula": "0.5*best021 + 0.5*TabPFN-v2(v3 grain features) (fallback best021 if n_obj<20)",
+ "tabpfn_weights_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+ "tabpfn_license": "Prior Labs License 1.1 (Apache-2.0 derivative + attribution clause)",
+ "n_estimators": 8,
+ "random_state": 0,
+ "dev_evidence": "explore-tabpfn.json arm C: pooled 3-partition OOF 11.750 vs v3 blend 11.872 (gain 0.121, CI [-0.024,0.263]); all 3 partitions better."
+}

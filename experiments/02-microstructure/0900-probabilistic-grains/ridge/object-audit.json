@@ -1,0 +1,201 @@
+{
+  "audit_passed": true,
+  "blocking_defects": [],
+  "checked_root_code": [
+    "common.py",
+    "extract_objects.py"
+  ],
+  "baseline_exact_match_independent_loader": true,
+  "baseline_rmse": 9.940240144126825,
+  "n_train_ids": 500,
+  "original_train_csv_order_and_labels_exact": true,
+  "n_objects": 134410,
+  "all_original_image_hashes_verified": true,
+  "mask_hash_verified": true,
+  "bank_hash_verified": true,
+  "all_offsets_weights_areas_finite_and_valid": true,
+  "max_bag_weight_sum_error": 2.805609256029129e-08,
+  "all_area_count_and_measurement_variance_formulas_verified": true,
+  "sample_original_pixel_checks": [
+    {
+      "id": "TRAIN_000001",
+      "n_objects": 130,
+      "noise_gray": 8.15418828762046,
+      "checked_objects": [
+        {
+          "object_index": 0,
+          "mask_label": 1,
+          "area": 604,
+          "interior_count": 528,
+          "pixel_mean": 158.78219696969697,
+          "pixel_population_std": 9.58553525278662,
+          "iid_pixel_mean_variance": 0.12592952013251268
+        },
+        {
+          "object_index": 65,
+          "mask_label": 66,
+          "area": 903,
+          "interior_count": 719,
+          "pixel_mean": 150.9095966620306,
+          "pixel_population_std": 8.476189655449481,
+          "iid_pixel_mean_variance": 0.09247675470092726
+        },
+        {
+          "object_index": 129,
+          "mask_label": 130,
+          "area": 88,
+          "interior_count": 66,
+          "pixel_mean": 136.56060606060606,
+          "pixel_population_std": 13.591584726964928,
+          "iid_pixel_mean_variance": 1.0074361610601015
+        }
+      ]
+    },
+    {
+      "id": "TRAIN_000019",
+      "n_objects": 1,
+      "noise_gray": 19.27353595255745,
+      "checked_objects": [
+        {
+          "object_index": 0,
+          "mask_label": 1,
+          "area": 65536,
+          "interior_count": 65536,
+          "pixel_mean": 151.229736328125,
+          "pixel_population_std": 21.78946904938059,
+          "iid_pixel_mean_variance": 0.0056681699846576625
+        }
+      ]
+    },
+    {
+      "id": "TRAIN_000332",
+      "n_objects": 871,
+      "noise_gray": 8.15418828762046,
+      "checked_objects": [
+        {
+          "object_index": 0,
+          "mask_label": 1,
+          "area": 86,
+          "interior_count": 59,
+          "pixel_mean": 144.28813559322035,
+          "pixel_population_std": 10.4412007353165,
+          "iid_pixel_mean_variance": 1.1269624852536728
+        },
+        {
+          "object_index": 435,
+          "mask_label": 436,
+          "area": 78,
+          "interior_count": 40,
+          "pixel_mean": 157.75,
+          "pixel_population_std": 9.797321062412928,
+          "iid_pixel_mean_variance": 1.6622696657491673
+        },
+        {
+          "object_index": 870,
+          "mask_label": 871,
+          "area": 41,
+          "interior_count": 26,
+          "pixel_mean": 163.34615384615384,
+          "pixel_population_std": 6.42676080446984,
+          "iid_pixel_mean_variance": 2.557337947306411
+        }
+      ]
+    },
+    {
+      "id": "TRAIN_000020",
+      "n_objects": 70,
+      "noise_gray": 4.447739065974797,
+      "checked_objects": [
+        {
+          "object_index": 0,
+          "mask_label": 1,
+          "area": 876,
+          "interior_count": 813,
+          "pixel_mean": 144.48462484624847,
+          "pixel_population_std": 5.68754468893713,
+          "iid_pixel_mean_variance": 0.024332574168509664
+        },
+        {
+          "object_index": 35,
+          "mask_label": 36,
+          "area": 1349,
+          "interior_count": 1134,
+          "pixel_mean": 147.18342151675486,
+          "pixel_population_std": 6.309328521202648,
+          "iid_pixel_mean_variance": 0.017444782009698727
+        },
+        {
+          "object_index": 69,
+          "mask_label": 70,
+          "area": 188,
+          "interior_count": 145,
+          "pixel_mean": 146.51724137931035,
+          "pixel_population_std": 8.116482547368411,
+          "iid_pixel_mean_variance": 0.13643022619998865
+        }
+      ]
+    },
+    {
+      "id": "TRAIN_000173",
+      "n_objects": 254,
+      "noise_gray": 20.014825796886583,
+      "checked_objects": [
+        {
+          "object_index": 0,
+          "mask_label": 1,
+          "area": 200,
+          "interior_count": 167,
+          "pixel_mean": 145.5808383233533,
+          "pixel_population_std": 22.369335657107204,
+          "iid_pixel_mean_variance": 2.398761986106088
+        },
+        {
+          "object_index": 127,
+          "mask_label": 128,
+          "area": 64,
+          "interior_count": 30,
+          "pixel_mean": 153.63333333333333,
+          "pixel_population_std": 19.431046177587955,
+          "iid_pixel_mean_variance": 13.35310838932389
+        },
+        {
+          "object_index": 253,
+          "mask_label": 254,
+          "area": 64,
+          "interior_count": 46,
+          "pixel_mean": 130.45652173913044,
+          "pixel_population_std": 17.711095173634163,
+          "iid_pixel_mean_variance": 8.708548949559058
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "severity": "limitation",
+      "topic": "measurement variance",
+      "finding": "intensity_se2 = noise_gray^2/interior_n is exactly implemented, but is an iid pixel-noise approximation; it excludes within-grain offsets, correlated pixel noise, segmentation error and noise-estimator uncertainty. Do not treat it as empirically calibrated total measurement variance."
+    },
+    {
+      "severity": "limitation",
+      "topic": "shared shade uncertainty",
+      "finding": "shade_se2 uses squared local smoothing weights times robust bright-grain spread. It omits common-reference uncertainty, grain covariance, bright-membership selection and centering correction covariance. Distribution kernels should include a sensitivity/control test; uncertainty values are proxies."
+    },
+    {
+      "severity": "limitation",
+      "topic": "frozen zero-shot provenance",
+      "finding": "segment.py and segment_v3.py invoke fixed Cellpose-SAM pretrained weights and no hardness target/fine-tuning; v3 coverage retry uses each image only. Provenance verifies cached mask hash, but this audit did not rerun segmentation or independently authenticate pretrained weights."
+    },
+    {
+      "severity": "limitation",
+      "topic": "segmentation selection",
+      "finding": "Objects under 12 pixels are omitted and weight normalization is over retained objects, with pore objects still present in object bags. Zero-shot segmentation quality may limit high-noise performance; coverage/fallback are retained."
+    },
+    {
+      "severity": "limitation",
+      "topic": "model evaluation",
+      "finding": "common.evaluate uses correct image-grouped resampling across three repeats, but intervals condition on reused development data/models. The baseline feature path contains legacy fitted features; the new object bank itself uses no fitted U-Net or fine-tuned mask input."
+    }
+  ],
+  "scope": "read-only audit of root and legacy inputs; only this report written"
+}

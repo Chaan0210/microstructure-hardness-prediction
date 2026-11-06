@@ -1,0 +1,48 @@
+"""Collect180 immutable comparison and independently reconstruct savedfold outputs."""
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[3]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import json,sys,hashlib
+from datetime import datetime,timezone
+import numpy as np,torch,joblib
+import runtime as f
+from study import Head,predict,load,transform,rmse
+R=f.R;P=f.P
+
+def main():
+ plan=f.check();assert f.sha(R/'plan.json')==f.read(R/'code-lock.json')['plan_sha256'];first=f.read(R/'original/report.json');splits=['original','20261031','20261101'] if first['advance'] else ['original'];reports={};details={};E={k:[] for k in ['021','SB_blend','SBL_blend']};verified=0;errors=[]
+ X={}
+ for k,n in {'S':'artifacts/dino-multilayer-044/development_features.npz','B':'artifacts/dinob-062/development_features.npz','L':'experiments/dinol-177/features.npz'}.items():
+  z=load(P/n);assert z['ids'].tolist()==plan['IDs'];X[k]=z['X'].astype(float).reshape(400,-1)
+ for split in splits:
+  r=f.read(R/split/'report.json');assert r['passed_validation'];z=load(R/split/'predictions.npz');assert f.sha(R/split/'predictions.npz')==r['predictions_sha256'];assert z['ids'].tolist()==plan['IDs'];np.testing.assert_array_equal(z['SBL_blend'],.9*z['018']+.1*z['SBL']);np.testing.assert_array_equal(z['SB_blend'],.9*z['018']+.1*z['SB']);np.testing.assert_array_equal(z['SBL'],z['SBL_seeds'].mean(0));np.testing.assert_array_equal(z['SB'],z['SB_seeds'].mean(0));d={'X':X}
+  for name,hh in r['fold_report_hashes'].items():
+   file=R/split/name;assert f.sha(file)==hh;br=f.read(file);arm=br['arm'];k=br['fold'];T=np.array(br['T']);V=np.array(br['V']);assert not set(T)&set(V);pp=file.parent/f'{arm}-preprocessing.joblib';assert f.sha(pp)==br['preprocessing_sha256'];obj=joblib.load(_repo_io(pp));np.testing.assert_array_equal(obj['train_indices'],T);ZZ=transform(d,arm,V,obj)
+   for si,(seed,log) in enumerate(zip(plan['model']['seeds'],br['heads'])):
+    path=file.parent/f'{arm}-{seed}.pt';assert f.sha(path)==log['checkpoint_sha256'];ck=torch.load(_repo_io(path),map_location='cpu',weights_only=True);np.testing.assert_array_equal(ck['T'].numpy(),T);np.testing.assert_array_equal(ck['V'].numpy(),V);assert ck['ym']==float(z['y'][T].mean()) and ck['ys']==float(z['y'][T].std());m=Head();m.load_state_dict(ck['model']);actual=predict(m,ZZ,ck['ym'],ck['ys']);np.testing.assert_array_equal(actual,z[arm+'_seeds'][si,V]);verified+=1
+  for key in E:E[key].append((z['y']-z[key])**2)
+  details[split]=[{'ID':str(i),'target':float(z['y'][j]),'fold':int(z['fold'][j]),'prediction021':float(z['021'][j]),'prediction_joint_SBL_blend':float(z['SBL_blend'][j]),'prediction_joint_SB_blend':float(z['SB_blend'][j]),'error021':float(z['y'][j]-z['021'][j]),'error_joint_SBL_blend':float(z['y'][j]-z['SBL_blend'][j])} for j,i in enumerate(z['ids']) if i in plan['failure33']['IDs']];assert len(details[split])==33;reports[split]=r
+ E={k:np.stack(v) for k,v in E.items()};pooled={k:float(np.sqrt(v.mean())) for k,v in E.items()};eligible=len(splits)==3 and all(r['RMSE']['SBL_blend']<min(r['RMSE']['021'],r['RMSE']['SB_blend']) for r in reports.values());resources={}
+ for p in R.glob('*-resources.json'):
+  a=f.read(p);q=a['trace'];resources[p.name]={'seconds':a['seconds'],'peak_RSS_bytes':max(v['peak_RSS'] for v in q),'peak_MPS_driver_bytes':max(v['MPS_driver'] for v in q),'max_conservative_RSS_plus_MPS':max(v['conservative_RSS_plus_MPS'] for v in q),'swap_growth_bytes':max(v['swap_bytes'] for v in q)-a['initial_swap_bytes'],'min_memory_free_percent':min(v['system_memory_free_percent'] for v in q)}
+ for n,hh in plan['protected'].items():assert f.sha(P/n)==hh
+ rec={'study':180,'UTC':datetime.now(timezone.utc).isoformat(),'status':'validated_proposal_only' if eligible else 'rejected_no_new_candidate','propose_candidate':eligible,'current_Public_best':'021','Public021_reported_by_parent':plan['Public_status'],'Public_used_to_tune':False,'duplicate_audit':f.read(R/'duplicate-audit.json'),'design':{k:plan[k] for k in ['fixed_preprocessing','model','paired','primary','gate']},'partitions_run':splits,'original_gate':first['advance'],'RMSE':{k:v['RMSE'] for k,v in reports.items()},'comparisons':{k:v['comparisons'] for k,v in reports.items()},'correlations':{k:v['correlations'] for k,v in reports.items()},'conditional_group_bootstrap_gain_CI95':{k:v['conditional_group_bootstrap_gain_CI95'] for k,v in reports.items()},'subgroups':{k:v['subgroups'] for k,v in reports.items()},'failure33_details':details,'pooled_RMSE':pooled,'validation':{k:{n:v[n] for n in ['passed_validation','main_head_fits','main_PCA_fits','bank_scaler_fit_calls','fresh_validation_head_replays','validation_extra_PCA_fits','total_head_fits','fold0_poison_replays','same_capacity_parameters','paired_initialization_and_orders','shared_SB_scalers_exact','all_reload_exact','CPU_MPS_max_error','manual_forward_max_error','PCA_eigen_max_error','manual_transform_max_error','all_training_scopes_checked','PCA_retained_variance','seconds']} for k,v in reports.items()},'second_process_reloaded_head_count':verified,'second_process_prediction_max_error':0.,'resources':resources,'implementation_repair':f.read(R/'implementation-repair.json'),'protected_files_unchanged':plan['protected'],'evidence_SHA256':{n:f.sha(R/n) for n in ['plan.json','duplicate-audit.json','code-lock.json','study.py','finalize.py']},'scope':'Existingcacheddevelopment400 only; no rawimage,holdout,test,full500,newCSV,upload,install,download,cost.','limitations':['Same400 adaptively reused; neither resplits nor conditionalbootstrap provide new independentvalidation.','Historicalfailure33 chosen from018errors acrossall3splits; subgroupdiagnostic only andnotindependentvalidation.','Equal readoutcapacity isolates utility ofL beforePCA but doesnotprove nonlinearinteraction as causalmechanism.','Study replaces021tenpercentbranch only;018independentS/Bcomponents remain.','Single fixed64PCA/32hidden/config; failuredoesnotexclude everyjointmodel, no rescue tuning authorized here.'],'remaining_blockers':[],'cost':0}
+ f.write(P/'reports/joint-readout-180-summary.json',rec)
+ with (R/'README.md').open('x') as ff:
+  ff.write('# Study180: fixed-capacity SB/SBL joint readout\n\n'+rec['status']+'; current Public best021 remains unchanged.\n\n')
+  ff.write('Duplicate audit: no prior identical frozen S/B/L joint low-dimensional MLP found. Negative controls060 S-PCA and066 B multiscale concat are retained explicitly in duplicate-audit.json. Prior084 joint means backbone/head finetuning, not feature fusion.177 demonstrated developmentL complementarity, which motivates this one limited comparison.\n\n')
+  for k in ['fixed_preprocessing','paired','primary','gate']:ff.write(plan[k]+'\n\n')
+  ff.write('Architecture:64 ->32 GELU ->Dropout0.25 ->1,2113 active trainable parameters;3fixedseeds,100epochs,AdamW0.0003cosine0.00001,wd0.01,batch64,SmoothL1beta1,target trainmean/std. No rank/width/ratio/epoch search. PCA and allscalers fitoutertrain only. No hyperparameter selection loop exists.\n\n')
+  ff.write('Results:\n\n```json\n'+json.dumps(rec['RMSE'],indent=2)+'\n```\n\n')
+  ff.write('All saved heads were replayed in a second process. PCA eigensystem/manual transforms, saved checkpoint/manual GELU/CPU-MPS outputs, sameinit/order controls andfold0 botharms3seed wholepipeline replays after outside-train labels/features perturbation passed. Failure33 are fixed historicaldiagnostic IDs, never trainingweights/features or selectiongate.\n\n')
+  ff.write('The firstattempt stopped beforeanyfit becauseSfeatures were stored400x3x1152; fixed rowmajorreshape matcheslegacy3456inputs. Originalsource/lock/error/log are retained. Query-relative numeric tolerance appliesonly to artificialverylargeheldoutfeaturepoison, ordinarytransform absolute1e-10 unchanged. No modelrecipe changes.\n\n')
+  ff.write('Executed commands from project root:\n\n```sh\n.venv/bin/python -B experiments/joint-readout-180/prepare.py\n.venv/bin/python -B experiments/joint-readout-180/study.py original\n')
+  for split in splits[1:]:ff.write(f'.venv/bin/python -B experiments/joint-readout-180/study.py {split}\n')
+  ff.write('.venv/bin/python -B experiments/joint-readout-180/finalize.py\n```\n\nCompletedoutputs useexclusivepaths. Originalpreparation, plan, code hashes, repairhistory, checkpoints and foldreports are retained forreview; do not rerunovercompletedartifacts. All inputs resideintheexistingproject; noportableexternalpackagecreated. Summary:reports/joint-readout-180-summary.json.\n')
+ with (P/'README.md').open('a') as ff:
+  ff.write('\n\n## 180 동일용량 SB/SBL joint PCA64 회귀 완료\n\n')
+  ff.write(f'기존060 S-PCA64 실패·066 B다중해상도concat 실패와구별되는 한가지 대조입니다. foldtrain은행별표준화·폭정규화→joint PCA64→train점수표준화→2113파라미터MLP32를양쪽에동일적용하고3seed·100epochs를고정했습니다.021의10%분기만joint예측으로교체했습니다. 원본021={first["RMSE"]["021"]:.12f},SB대조결합={first["RMSE"]["SB_blend"]:.12f},SBL결합={first["RMSE"]["SBL_blend"]:.12f}. 결과={rec["status"]},분할={splits}.\n\n')
+  ff.write('PCA/scaler train범위·eigen수식·동일초기값/순서·모든head재로딩·CPU/MPS·fold0전체6학습label/featurepoison 검증 통과. 실패33군은166의기존명단으로사후진단만. S캐시저장축수정은학습전오류였고원본·실패로그보존. 상세 `reports/joint-readout-180-summary.json`,재현 `experiments/joint-readout-180/README.md`.021/018보존,Public비율튜닝·holdout/test·새CSV·설치·다운로드·비용·업로드없음.\n')
+ print(json.dumps({'status':rec['status'],'RMSE':rec['RMSE'],'subgroups':rec['subgroups'],'resources':resources,'summary_SHA256':f.sha(P/'reports/joint-readout-180-summary.json'),'second_process_heads':verified},indent=2))
+if __name__=='__main__':main()

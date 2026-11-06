@@ -1,0 +1,320 @@
+{
+  "study": 184,
+  "completed_UTC": "2026-10-06T04:08:44.065449+00:00",
+  "status": "authorized_initial_private_benchmark_completed",
+  "decision": "Keep021. joint90 fixed5% blend has small original-only gain; any additional work requires parent review, no promotion.",
+  "benchmark": {
+    "passed": true,
+    "seconds_including_import_load_fit_save_reload": 45.271905000001425,
+    "projected5fold_seconds_conservative": 226.35952500000712,
+    "peak_RSS_bytes": 801472512,
+    "swap_growth": 0,
+    "finite": true,
+    "first_fold_report": {
+      "fold": 0,
+      "representation": "compact26",
+      "seed": 202710184,
+      "shape_train": [
+        320,
+        26
+      ],
+      "shape_validation": [
+        80,
+        26
+      ],
+      "fit_seconds": 0.04654883299372159,
+      "predict_seconds": 1.4873020829982124,
+      "reload_predict_seconds": 1.3742847079993226,
+      "fold_total_seconds": 3.1257072090011206,
+      "train_validation_groups_disjoint": true,
+      "all_preprocessing_train_only": true,
+      "reload_exact": true,
+      "foundation_unchanged": true,
+      "n_estimators": 1,
+      "network_attempts": 0,
+      "standalone_RMSE": 14.020916110473204,
+      "best021_RMSE": 12.824291360960531,
+      "blend05_RMSE": 12.826162735537363,
+      "model_sha256": "e3956f4c9abd7a41eaff5a1050a9db364aa1be7a5771a878385cac4434edbe4f",
+      "predictions_sha256": "92292d03fc8c40a8b4e8b1d9e218a8655cb5dd6e5f406c9c333b7c7835c15213"
+    },
+    "noholdout_test": true
+  },
+  "results": {
+    "compact26": {
+      "representation": "compact26",
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 14.51518231403731,
+        "blend05": 12.810935306566023
+      },
+      "blend05_gain": -0.02473453081532817,
+      "fold_blend_gains": [
+        -0.0018713745768312862,
+        -0.029528749367553786,
+        -0.025539493072153974,
+        -0.03598737802941265,
+        -0.03157136140928074
+      ],
+      "positive_folds": 0,
+      "residual_correlation_vs021": 0.9109492734253577,
+      "blend_update_RMS": 0.30149157406262955,
+      "all5_reload_exact": true,
+      "all5_train320_validation80": true,
+      "CPU_threads": 1,
+      "fold_report_sha256": {
+        "0": "4edd7e3e0f6d0a989c769eebe9620bb4dc8896061d2dc75f7e6f29eea6dcb45c",
+        "1": "9e14db193616f468cf629c5b4a62d796b5066ee5306da09377e2e5ef6d2de027",
+        "2": "6c34e42ba16d78ba8dfd90dc3262687479d1b78a14ca971b66abae066f3ee7c6",
+        "3": "d1f355255550fe984f4a7c2284f2e0be3f25a0b32fd25d05bfae66b4f7c2765d",
+        "4": "9559abea1746b114f8fe39319538468eab9c19e1dfbf6c64018b923e3e76d449"
+      },
+      "OOF_sha256": "eddd9c2d9afd227a77c3f434799bfde3249ea5da44e10cb17e91ef64aafd8d88",
+      "network_attempts": 0,
+      "all5_foundation_weights_unchanged": true,
+      "holdout_test_used": false,
+      "private_benchmark_not_submission": true
+    },
+    "DINO_L_PCA64": {
+      "representation": "DINO_L_PCA64",
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 14.112753913188486,
+        "blend05": 12.787628006058167
+      },
+      "blend05_gain": -0.0014272303074722714,
+      "fold_blend_gains": [
+        -0.04009540529073874,
+        0.0191111717345116,
+        0.027662780233253415,
+        0.022962083511167464,
+        -0.03597787392823726
+      ],
+      "positive_folds": 3,
+      "residual_correlation_vs021": 0.9059365301484615,
+      "blend_update_RMS": 0.30328420693129426,
+      "all5_reload_exact": true,
+      "all5_train320_validation80": true,
+      "CPU_threads": 1,
+      "fold_report_sha256": {
+        "0": "9f3f88cd66f985b58b3e39c5358ef1347a8db1cf8ba354daa244b05781183fe8",
+        "1": "e5d0f1225b3c9555520d926005e0171f66eb39e57c3ea352df6154ee49e49af2",
+        "2": "5d8204fe600c4189593cf74ec78b782ee376cb8aebb0c5fa3ad64441a94a79bb",
+        "3": "66f26885765b5bde03212d1ede20a26f4cd845d1f38c0f975c25d701d7059760",
+        "4": "758962dde4ad3e7d581b1ef78f198cf8c561414cd2f025c439180e1e5ef44172"
+      },
+      "OOF_sha256": "644071306a5999fd7f52a3d294b6b8a444c06d30902e393ac6f67f531f6f3a1d",
+      "network_attempts": 0,
+      "all5_foundation_weights_unchanged": true,
+      "holdout_test_used": false,
+      "private_benchmark_not_submission": true
+    },
+    "joint90": {
+      "representation": "joint90",
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 13.53209095409073,
+        "blend05": 12.77891863995301
+      },
+      "blend05_gain": 0.007282135797684219,
+      "fold_blend_gains": [
+        -0.014256244249663652,
+        0.004315291679310107,
+        0.028293020433318716,
+        0.022551984706804973,
+        -0.005113655785281779
+      ],
+      "positive_folds": 3,
+      "residual_correlation_vs021": 0.9336575318912474,
+      "blend_update_RMS": 0.24790665018021973,
+      "all5_reload_exact": true,
+      "all5_train320_validation80": true,
+      "CPU_threads": 1,
+      "fold_report_sha256": {
+        "0": "6d85caa9d64e15dbc9f58b068a120ef50a0042ee7ff5d71598fd24fe5fac4c46",
+        "1": "c1fefe559fbb30f619d57c3eefe77481dd498ebfc830a110d543518feeaea437",
+        "2": "919cd319f9cff9945e71fb9a7ca327ce3ac2905462916f8218a4d4a80e523218",
+        "3": "88866a262c562489e732a5cab82e02a86665e75714e8c157c244173e6de02d0e",
+        "4": "f539487cca3eace9559b6b9101beb09a4c7b94950e9046928423788d72ba2388"
+      },
+      "OOF_sha256": "d3520e551b6df401774b18bce4ac4da02624732a9c69d2cdc49d786534ad6571",
+      "network_attempts": 0,
+      "all5_foundation_weights_unchanged": true,
+      "holdout_test_used": false,
+      "private_benchmark_not_submission": true
+    }
+  },
+  "validation": {
+    "passed": true,
+    "saved_estimators_independently_inspected": 15,
+    "all15_CPU_1estimator_float32_lowmemory_ModelSpecs_v2": true,
+    "all15_training_feature_matrices_verified": true,
+    "PCA64_train320_variance_and_orthogonality_max_error": 4.092726157978177e-12,
+    "all3_OOF_ID_target_fold_group_alignment_and_metrics_exact": true,
+    "existing_environment_all_distribution_metadata_unchanged": true,
+    "protected_files_unchanged": 30,
+    "report_sha256": {
+      "compact26": "1cc81474740999d0921ff6a6312588f607397c4aa19d6d900c6dd641bdfa1b14",
+      "DINO_L_PCA64": "8fc1dad3e819ec7b5397e199ffc8affc5bc588809351bffb7881fba718049033",
+      "joint90": "86f72f5ccc48db6dfeef88380cfdb87ad07f9dd26b2050777ea66f16843cce45"
+    },
+    "no_extra_fit_or_predict_in_this_validation": true,
+    "network_attempts": 0
+  },
+  "loader": {
+    "passed": true,
+    "explicit_v2": true,
+    "architecture": "tabpfn.architectures.tabpfn_v2.TabPFNV2Config",
+    "criterion": "FullSupportBarDistribution",
+    "ModelSpecs_constructor": true,
+    "all_parameters_CPU_float32": true,
+    "missing_file_failed_before_download": true,
+    "network_attempts": 0,
+    "foundation_state_sha256": "ec639919bb573f8408545a9d2ba5a4cd0f2c03b07e16a91938f5c963b3b1c450"
+  },
+  "model_provenance": {
+    "weight_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+    "weight_bytes": 44390977,
+    "official_source": "https://huggingface.co/Prior-Labs/TabPFN-v2-reg/resolve/main/tabpfn-v2-regressor.ckpt",
+    "license_sha256": "08b1851b4b6136b5fb0cb124d3258e0d91e3e1623f1be5904b77e4d270d112d8",
+    "private_internal_benchmark_only": true,
+    "public_distribution_or_submission": false,
+    "model_files_downloaded": 1,
+    "authentication_used": false
+  },
+  "installation": {
+    "package": "tabpfn==9.1.0",
+    "required_wheel_packages": 57,
+    "originalPython": "3.13.3",
+    "new_torch": "2.14.1",
+    "LightGBM": {
+      "cwd": "experiments/tabpfn-v2",
+      "existing_environment_untouched": true,
+      "stage": "lightgbm_import",
+      "network_events": [],
+      "lightgbm_version": "4.7.0",
+      "lightgbm_import": true,
+      "seconds": 19.50619587500114,
+      "passed": true
+    },
+    "requirements_sha256": "40e519925b3df27d6a8899f7d680af9ca89984647af5288ed56f8e733e47675f",
+    "official_PyPI_only": true,
+    "system_install_or_library_path_change": false
+  },
+  "resources": {
+    "DINO_L_PCA64-resources": {
+      "stage_seconds": 42.491800709001836,
+      "peak_RSS_bytes": 1116405760,
+      "max_swap_growth_bytes": 0,
+      "elapsed_representation_seconds_at_last_sample": 42.46115487500356
+    },
+    "benchmark-resources": {
+      "stage_seconds": 46.779145000000426,
+      "peak_RSS_bytes": 801472512,
+      "max_swap_growth_bytes": 0,
+      "elapsed_representation_seconds_at_last_sample": 46.746459959002095
+    },
+    "compact26-resources": {
+      "stage_seconds": 23.21978350000427,
+      "peak_RSS_bytes": 855212032,
+      "max_swap_growth_bytes": 0,
+      "elapsed_representation_seconds_at_last_sample": 109.63883766700019
+    },
+    "joint90-resources": {
+      "stage_seconds": 51.2535412080033,
+      "peak_RSS_bytes": 983760896,
+      "max_swap_growth_bytes": 0,
+      "elapsed_representation_seconds_at_last_sample": 51.2253397079985
+    },
+    "verification-resources": {
+      "stage_seconds": 9.678519125001912,
+      "peak_RSS_bytes": 755351552,
+      "max_swap_growth_bytes": 0,
+      "elapsed_representation_seconds_at_last_sample": 9.657467042001372
+    }
+  },
+  "maximum_RSS_bytes": 1116405760,
+  "max_swap_growth_bytes": 0,
+  "measured_stage_seconds_total": 173.42278954201174,
+  "initial_experiment_wall_seconds_through_verification": 340.9219145419993,
+  "scope": {
+    "CPU_threads": 1,
+    "estimators": 1,
+    "dtype": "float32",
+    "fit_mode": "low_memory",
+    "preprocessing_workers": 1,
+    "development_rows": 400,
+    "train_perfold": 320,
+    "validation_perfold": 80,
+    "representations": 3,
+    "outerfits": 15,
+    "full400_training_same400_validation": false,
+    "all15_saved_reload_predictions_exact": true,
+    "foundation_weights_changed": false,
+    "network_attempts_during_fit_inference_validation": 0,
+    "holdout_test_images_or_labels_accessed": false,
+    "raw_images_accessed": false,
+    "resplits": false,
+    "full500": false,
+    "new_submission_CSV": false,
+    "upload_or_publication": false,
+    "new_auth_token_or_payment": false
+  },
+  "protected_files_unchanged": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a",
+    "reports/retraining-175-summary.json": "a84fdf0c8bdb90563a7bc7964545a1f1b342f719ef1411261a9638725fe31659",
+    "experiments/reproduction-018-175/run/plan.json": "d576415c959f34e01af6daf9230c47608ed3d79bf956f8bc522f8464b4b83090",
+    "deliverables/reproduction-018-v176.zip": "e93bd3f2bd9f11b40014d65997238495293b07ae0eac49d17490552c198797a6",
+    "reports/retraining-176-summary.json": "b7862b213a83360be98f926f566e466bb670de2b8f7ce768a53c1d297ce8b634",
+    "reports/dinol-177-summary.json": "676f5ff0bdfb4a7d0c017711d3cb5d6e29b1d1352b46450409bf95ef0819c655",
+    "experiments/dinol-177/plan.json": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4",
+    "experiments/dinol-177/features.npz": "bc27df3ab45184f565a99007316b4239dce8cab9abe782e4dc302c988e9b8b90",
+    "experiments/dinol-177/dinov2_vitl14_pretrain.pth": "d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428",
+    "artifacts/submission-candidate-021.csv": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+    "artifacts/submission-candidate-021.manifest.json": "4ba41d28974dc5f629cc1c9f10d9f7cbd108ccf89030e84bdd53b9f65e50f649",
+    "reports/candidate021-178-summary.json": "74b35bd660f01f0f7d91ae0a2eebece60de7490d434ec4ee3739f329fbc995e3",
+    "reports/spatial-L-179-summary.json": "3309c1c987838e95876d311039f682d37ce99aa0d8d55491a0d4922dcc791195",
+    "reports/joint-readout-180-summary.json": "ea6d74aa8e20c0a084d1aecc9643d238e10a3e9d347415c9a57cee42a82b7b77",
+    "reports/midlayer-L-181-summary.json": "44a8229400427b898004dd13e3b9fe157c358c4a7770e19865f2fe7f180575cd",
+    "reports/L-representation-closure-181.json": "6797336777424a32baa6dab4ba2f1c7222e8ef0d23b68c7198138cae459c7443",
+    "reports/candidate021-public-submission.json": "a8536bd1877f5de089fbb42289b41f7ac34059848f019907f1d79286d699a8dc",
+    "reports/wph-182-summary.json": "b0c3ecc8106c93c80ff8d0cfbceb3ef8fb4b6ed956552eee73bf711a954b0fda",
+    "reports/WPH-family-closure-182.json": "132cb75ecc36778bfe20330e5c6f88beb88c0b81c9862b8d22e56f43754d5ed3",
+    ".venv/pyvenv.cfg": "5604901b3b5de06e24eb9adfee3f318a5b7aa76fe177b64706ea7d642a28fb69",
+    "requirements.lock": "27612c5cc43cc1121a6387e8134f551e3c474df8f66e883df7e11b1a5d410cbd",
+    "requirements-cnn.lock": "45c3c58e899590baafa8a90872b715bf86f7d85d95b08adb62ef5fac96fd87b6",
+    "experiments/reproduction-018-176/requirements-current.lock": "c9953862d1b4cec1fa27953fbbac10875e967fddc5ecb9b3b5447b27dea6c20d",
+    "reports/tessellation-diagnostic-183-summary.json": "be8378971b89f1d4776d190f7ad79d62d470e323cba8ef9da4576ed48fbc65ee"
+  },
+  "original_environment_metadata_unchanged": true,
+  "original_environment_distribution_count": 26,
+  "limitations": [
+    "Allresultsreusehistoricallyresearcheddevelopment400; not independent confirmation.",
+    "Joint90gain0.007282RMSE,3/5positivefolds underonepredeclaredseedperfold andsingleestimator. No resplit/Publicconfirmation or claimofreliableimprovement.",
+    "CPUandoneestimatorbudget is a bounded initial recipe, not a general verdict onTabPFN or optimizedensembles.",
+    "Fixed5% combinationwaslockedbeforefirstfit; no alternativeweight orrepresentationtuning afterresults.",
+    "PrivateinternalbenchmarkunderretainedPriorLabsLicense1.1 only. No model/code/publicresultrelease orcompetition submission authorized."
+  ],
+  "plan_sha256": "692226e8e92243bdcbdf4c2bf5e3937f93f608b2d780d123db5ffcb3140ef330",
+  "source_sha256": {
+    "launch.py": "aae8de89056f20557d2072f429fde1e27d25d131ddc4135b044df3cae2808564",
+    "prepare_study.py": "aad1ffc64d9857737615a4586fd36dab8c7d7bd168e0e6eac2e5ab5ec15549b9",
+    "run.py": "f9132f5b6509bf113be825c155156409cdf226ec93b782d04940894240a5334b",
+    "validate.py": "3bc96baed7eff0d2cab676f571ec0f7f5f1ea5cf93b9a734400429272f142fd7",
+    "finalize.py": "be0c2f8908268aad634fe6f122ffccbaf3a523f08f95f09cc45d66eb52dc8f21"
+  },
+  "evidence_files": {
+    "authorization-and-preservation.json": "7134064d7fc1166ed59005271a55c6f77a4d32033e27811f9c7ad1654768332d",
+    "installed-packages.json": "f8ddfdbe190b31f20becc904b48fb24d66feb28a1c6a0feda3cd3324a3ff6831",
+    "model-provenance.json": "6712dc1df67cec64c4af3e2e2e2a0a87f6f53639b42a7e4771810e154eea3727",
+    "loader-validation.json": "7629094b1f3b834a8307b7be3a5ed39095b7ea3b73f8c3c866bbf9b2524dcad8",
+    "validation.json": "316bf1424195ab266a05711b2e9ac985550e927fcbea09ae7912f7dc650b2e72",
+    "requirements.lock": "40e519925b3df27d6a8899f7d680af9ca89984647af5288ed56f8e733e47675f"
+  }
+}

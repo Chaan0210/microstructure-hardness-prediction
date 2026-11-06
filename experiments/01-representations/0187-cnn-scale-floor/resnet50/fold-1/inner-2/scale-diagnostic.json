@@ -1,0 +1,33 @@
+{
+  "train_n": 214,
+  "validation_n": 106,
+  "worst_feature": 1092,
+  "worst_validation_ID": "TRAIN_000183",
+  "train_feature_mean": 5.569618054400155e-07,
+  "train_feature_std": 8.128589941013616e-06,
+  "train_feature_minmax": [
+    0.0,
+    0.00011918982636416331
+  ],
+  "train_feature_nonzero_count": 1,
+  "validation_feature_minmax": [
+    0.0,
+    0.1868310421705246
+  ],
+  "worst_validation_raw": 0.1868310421705246,
+  "old_validation_scaled_feature_minmax": [
+    -0.06851887098275296,
+    22984.365869662975
+  ],
+  "old_validation_maxabs_Z": 22984.365869662975,
+  "new_validation_maxabs_Z": 13.43829042419918,
+  "RMS_floor": 0.24282809868926022,
+  "new_scale_for_worst_feature": 0.24282809868926022,
+  "old_inverse_scale_amplification": 123022.56692201924,
+  "new_inverse_scale_amplification": 4.118139562092729,
+  "max_train_std_over_scale": 1.0,
+  "heldout_feature_and_label_poison_stats_exact": true,
+  "positive_global_unit_rescaling_invariance": true,
+  "formula": "r=sqrt(mean_j(var_train_j)); scale_j=max(sqrt(var_train_j),r); if r==0 scale_j=1; Z=(X-mean_train)/scale; variance ddof=0; fixed throughout adaptation",
+  "no_prediction_clipping": true
+}

@@ -1,0 +1,5 @@
+# Descriptive follow-through, fixed before outer comparison
+
+The first fold's training-only records show nonconstant but low-rank SSL embeddings. After all folds finish, diagnose.py will summarize all ten fitted representations, loss components, supervised train errors, same-V213/320-source transfer and worst082 changes. It will also fit one fixed-alpha100 Ridge noise readout to the already-saved frozen SSL/random representations on each T320 and evaluate image-derived noise on V80. This tests whether an obvious nuisance is represented; it does not establish that the nuisance exclusively explains hardness errors. It is a descriptive mechanistic probe, not a new hardness candidate or selection criterion.
+
+No outer hardness scores have been opened at this declaration. No encoder, hyperparameter, blend, seed or training count can change in response to these diagnostics. No new image model is trained. Their interpretation is limited to this compact encoder, weak local transform and short fixed budget; low rank or shared error is not proof of irreducible ambiguity.

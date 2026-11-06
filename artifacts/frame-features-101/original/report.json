@@ -1,0 +1,672 @@
+{
+  "split": "original",
+  "scores": {
+    "reference011": {
+      "rmse": 13.0539977718711,
+      "fold_rmse": [
+        13.063217512187048,
+        12.38751393690129,
+        14.122591032877722,
+        12.1470942497908,
+        13.451269815048137
+      ]
+    },
+    "control57": {
+      "rmse": 14.13237462297155,
+      "fold_rmse": [
+        13.878807760948273,
+        12.917385915123866,
+        15.920152707524373,
+        13.499576215620271,
+        14.263592760669267
+      ]
+    },
+    "control57_blend": {
+      "rmse": 13.076997203485996,
+      "fold_rmse": [
+        13.076195159529611,
+        12.391215447055307,
+        14.167729868251222,
+        12.18075469912928,
+        13.469032056326746
+      ]
+    },
+    "extension59": {
+      "rmse": 14.1283399981132,
+      "fold_rmse": [
+        13.877698928070044,
+        12.90921491950881,
+        15.887589060283101,
+        13.52497043482721,
+        14.26433618237539
+      ]
+    },
+    "extension59_blend": {
+      "rmse": 13.07734081347264,
+      "fold_rmse": [
+        13.07618412990744,
+        12.390593696562448,
+        14.165940858926254,
+        12.18443648002904,
+        13.469834351304815
+      ]
+    }
+  },
+  "gate": {
+    "advance": false,
+    "checks": {
+      "gain_ge_002": false,
+      "positive_folds_ge3": false,
+      "standalone_beats57": true,
+      "blend_beats57blend": false,
+      "fixed395_positive": false
+    },
+    "extension_blend_vs011": {
+      "gain": -0.02334304160154055,
+      "fold_gains": [
+        -0.012966617720392648,
+        -0.0030797596611584765,
+        -0.04334982604853188,
+        -0.03734223023823979,
+        -0.018564536256677755
+      ],
+      "positive_folds": 0
+    },
+    "extension_vs57": {
+      "gain": 0.0040346248583507105,
+      "fold_gains": [
+        0.001108832878228938,
+        0.008170995615055077,
+        0.03256364724127181,
+        -0.025394219206939184,
+        -0.0007434217061224047
+      ],
+      "positive_folds": 3
+    },
+    "extensionblend_vs57blend": {
+      "gain": -0.0003436099866434006,
+      "fold_gains": [
+        1.1029622170255493e-05,
+        0.0006217504928596185,
+        0.0017890093249679495,
+        -0.0036817808997611223,
+        -0.0008022949780688293
+      ],
+      "positive_folds": 3
+    },
+    "fixed395_gain_vs011": -0.015034318245097822
+  },
+  "old57_control_prediction_max_error": 0.0,
+  "inner_selection": {
+    "control57": [
+      {
+        "fold": 0,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.438526681080981
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.925906476863673
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.901275380706828
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.893402069013845
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 18.37671309905619
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 15.802179586264026
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.695386227088083
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.991600774174335
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.438526681080981
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.176280556286507
+          }
+        ]
+      },
+      {
+        "fold": 1,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.499283775105939
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.709799881237487
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.730289646548457
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.893289742666486
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 17.947604658277317
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 15.621264475613962
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.841295578949898
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.545690737840088
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.499283775105939
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.321172485085444
+          }
+        ]
+      },
+      {
+        "fold": 2,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 13.766663082262278
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.71267917621547
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.696452919048134
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.691206731122005
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 16.378951671893837
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.573146932718322
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.216722698142034
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 13.766663082262278
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 13.82640613487854
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.795912461169225
+          }
+        ]
+      },
+      {
+        "fold": 3,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.08430199594747
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.577229209898114
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.55830307100647
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.595960437556972
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 16.46569561247319
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.263713891544127
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.24592169423936
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.08430199594747
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.16890177297353
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.136967300072358
+          }
+        ]
+      },
+      {
+        "fold": 4,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.25009178583969
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.56387872417607
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.598230398650422
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.824427748964993
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 16.455974075096005
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.724578895518707
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.470352353785774
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.386830160569724
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.25009178583969
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.299440808374307
+          }
+        ]
+      }
+    ],
+    "extension59": [
+      {
+        "fold": 0,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.433044210178544
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.93329199758852
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.907616164773902
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.8963288327781
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 18.43620567974613
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 15.820153317658473
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.695086807523701
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 15.005531996621166
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.433044210178544
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.17581509836533
+          }
+        ]
+      },
+      {
+        "fold": 1,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.51376376223974
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.71727616724027
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.736972361393068
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.89676472897036
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 17.980138379791168
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 15.661675902977107
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.855367979753007
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.607745914025903
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.51376376223974
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.323560005865962
+          }
+        ]
+      },
+      {
+        "fold": 2,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 13.761538980828357
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.709738449556312
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.69401958130881
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.69043156673002
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 16.347850235321683
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.556340215646836
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.216447367330613
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 13.761538980828357
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 13.829252706912587
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.79653154460332
+          }
+        ]
+      },
+      {
+        "fold": 3,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.06931901421246
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.581498883161924
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.561731912818164
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.597381269617973
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 16.452487325699746
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.258692282720945
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.248353855735955
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.06931901421246
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.168543308896528
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.137167075788488
+          }
+        ]
+      },
+      {
+        "fold": 4,
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.26055852732804
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.567265200298614
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.601157252427075
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.82580304844775
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 16.456202113509413
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.72750170276112
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.479917783212
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.38726218384607
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.26055852732804
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.305349312707559
+          }
+        ]
+      }
+    ]
+  },
+  "models_sha256": {
+    "control57-fold0.joblib": "c2f4570de25b22aab4dec67f73f0b4491cd75cde2a67be5595c16e0dfcc11ec7",
+    "control57-fold1.joblib": "88dbae99b64cc1e925274bdd0ad6e91d7709fb378bca7ef9ba236b8dcf1f7019",
+    "control57-fold2.joblib": "d33bac34dce21223ddbebd5eda8a3efebdf37b2fe6982f2b3dcc4926a15992fb",
+    "control57-fold3.joblib": "097b35a4381fdf80f89572dc9a87fef92909aa3c6a6404d6fb72faef1fb03110",
+    "control57-fold4.joblib": "9442175af9f90eb0cc2583ee53a9583d8eabf0001d96f22bc2e00bb9ad73bc7c",
+    "extension59-fold0.joblib": "d5c78d9b2e7696d87f0f1a03d7c2a128053ca9193e51b3401d33b53543d1a8e5",
+    "extension59-fold1.joblib": "5912fbab261a2fa952325ed84f28791cb60ddb33989209a505d8ba381af0d980",
+    "extension59-fold2.joblib": "97ad90cab2c9e9158af7361f89fad07858aad4051402447a800d2e36bcf66d37",
+    "extension59-fold3.joblib": "8adab498338eaa0a3fc78e40672f3344ac10576828e91bdc0432f5a15da5c267",
+    "extension59-fold4.joblib": "c6235bc55d911e7e0d9846145678417b32a9c6f45c4c383453515980f2c77f19"
+  },
+  "predictions_sha256": "ab5ed793cc1a73accaf927f1878b75d3644867985c122b1bf42369a9659512f8",
+  "seconds": 0.7158007909893058,
+  "plan_sha256": "a842ca04630e89793df178ddb69635b30a0966797f7eda90cac23b9e5b521bf8",
+  "candidate_created": false
+}

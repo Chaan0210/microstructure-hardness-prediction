@@ -1,0 +1,254 @@
+{
+  "study": "126 train-only domain013-to014 residual-change audit",
+  "status": "audit_executed",
+  "per_partition": [
+    {
+      "split": "original",
+      "final": {
+        "condition": {
+          "n": 105,
+          "RMSE013": 12.023563214097022,
+          "RMSE014": 11.832984187579672,
+          "mean_MSE_change014_minus013": -4.546557579876561,
+          "mean_residual013": 0.8754716596619516,
+          "mean_residual014": 1.0906768632939814
+        },
+        "other": {
+          "n": 295,
+          "RMSE013": 13.390481014844525,
+          "RMSE014": 13.349642343585057,
+          "mean_MSE_change014_minus013": -1.0920311072725504,
+          "mean_residual013": 0.09073340274494898,
+          "mean_residual014": 0.039158426540315094
+        },
+        "condition_minus_other_MSE_change": -3.4545264726040106
+      },
+      "base_before_residual": {
+        "condition": {
+          "n": 105,
+          "RMSE013": 12.089157217554904,
+          "RMSE014": 11.869181803276739,
+          "mean_MSE_change014_minus013": -5.270245551524171,
+          "mean_residual013": 0.5717106372720756,
+          "mean_residual014": 0.8005582993198316
+        },
+        "other": {
+          "n": 295,
+          "RMSE013": 13.380637705785158,
+          "RMSE014": 13.339584893338094,
+          "mean_MSE_change014_minus013": -1.0969402869056475,
+          "mean_residual013": 0.15661702498382413,
+          "mean_residual014": 0.15143212561875208
+        },
+        "condition_minus_other_MSE_change": -4.173305264618524
+      },
+      "selected_conditions": [
+        "denoised_grain_range_interior_area_weighted_diam:low",
+        "noise_contrast_ratio:low",
+        "denoised_grain_median_boundary_fraction:high",
+        "image_std:high",
+        "denoised_grain_median_boundary_fraction:low"
+      ]
+    },
+    {
+      "split": "20261031",
+      "final": {
+        "condition": {
+          "n": 97,
+          "RMSE013": 9.968309757753008,
+          "RMSE014": 9.61755457158898,
+          "mean_MSE_change014_minus013": -6.869843489021718,
+          "mean_residual013": 0.47986693501299404,
+          "mean_residual014": 0.5851807703451415
+        },
+        "other": {
+          "n": 303,
+          "RMSE013": 13.7892387426435,
+          "RMSE014": 13.499992280623738,
+          "mean_MSE_change014_minus013": -7.893313524720009,
+          "mean_residual013": -0.010836217458566362,
+          "mean_residual014": -0.08095101697878844
+        },
+        "condition_minus_other_MSE_change": 1.023470035698291
+      },
+      "base_before_residual": {
+        "condition": {
+          "n": 97,
+          "RMSE013": 9.911349745265905,
+          "RMSE014": 9.590274044486405,
+          "mean_MSE_change014_minus013": -6.261497524632924,
+          "mean_residual013": 0.4377761925690363,
+          "mean_residual014": 0.6093368730992774
+        },
+        "other": {
+          "n": 303,
+          "RMSE013": 13.862733753518677,
+          "RMSE014": 13.630136647823772,
+          "mean_MSE_change014_minus013": -6.394762082597391,
+          "mean_residual013": 0.17234463301069566,
+          "mean_residual014": 0.10047808849796637
+        },
+        "condition_minus_other_MSE_change": 0.13326455796446712
+      },
+      "selected_conditions": [
+        "anisotropy1:high",
+        "noise_contrast_ratio:low",
+        "dark_largest_fraction:low",
+        "denoised_grain_range_interior_area_weighted_diam:low",
+        "dark_largest_fraction:low"
+      ]
+    },
+    {
+      "split": "20261101",
+      "final": {
+        "condition": {
+          "n": 95,
+          "RMSE013": 11.038918780777484,
+          "RMSE014": 10.78975138859191,
+          "mean_MSE_change014_minus013": -5.438992820980842,
+          "mean_residual013": -0.9328276722395497,
+          "mean_residual014": -0.4897071959861361
+        },
+        "other": {
+          "n": 305,
+          "RMSE013": 13.845077953494092,
+          "RMSE014": 13.672753801447481,
+          "mean_MSE_change014_minus013": -4.741987023331631,
+          "mean_residual013": 0.23113912925112598,
+          "mean_residual014": 0.14627751515851284
+        },
+        "condition_minus_other_MSE_change": -0.6970057976492114
+      },
+      "base_before_residual": {
+        "condition": {
+          "n": 95,
+          "RMSE013": 11.110551173443884,
+          "RMSE014": 10.864749360725884,
+          "mean_MSE_change014_minus013": -5.401568706321762,
+          "mean_residual013": -1.3225634112093343,
+          "mean_residual014": -0.8841214007169089
+        },
+        "other": {
+          "n": 305,
+          "RMSE013": 13.877118041019626,
+          "RMSE014": 13.736089291184973,
+          "mean_MSE_change014_minus013": -3.8942561089859655,
+          "mean_residual013": 0.3165094920448343,
+          "mean_residual014": 0.23039489325113408
+        },
+        "condition_minus_other_MSE_change": -1.5073125973357966
+      },
+      "selected_conditions": [
+        "denoised_grain_median_interior_area_fraction:high",
+        "noise_contrast_ratio:low",
+        "noise_contrast_ratio:low",
+        "denoised_grain_median_boundary_fraction:high",
+        "noise_contrast_ratio:low"
+      ]
+    }
+  ],
+  "pooled_final": {
+    "condition": {
+      "n": 297,
+      "RMSE013": 11.069803025226875,
+      "RMSE014": 10.814330249264914,
+      "mean_MSE_change014_minus013": -5.590800277155979,
+      "mean_residual013": 0.16785517878117215,
+      "mean_residual014": 0.42007212710661224
+    },
+    "other": {
+      "n": 903,
+      "RMSE013": 13.679313077287773,
+      "RMSE014": 13.509870360853338,
+      "mean_MSE_change014_minus013": -4.607009099392815,
+      "mean_residual013": 0.10407576339026328,
+      "mean_residual014": 0.03503678827039476
+    },
+    "condition_minus_other_MSE_change": -0.9837911777631634
+  },
+  "pooled_base_before_residual": {
+    "condition": {
+      "n": 297,
+      "RMSE013": 11.101233688091442,
+      "RMSE014": 10.844417729701743,
+      "mean_MSE_change014_minus013": -5.635993501346797,
+      "mean_residual013": -0.07794483660647236,
+      "mean_residual014": 0.19923489916197262
+    },
+    "other": {
+      "n": 903,
+      "RMSE013": 13.712018645115307,
+      "RMSE014": 13.572030459583265,
+      "mean_MSE_change014_minus013": -3.8194445281338814,
+      "mean_residual013": 0.21590015641876337,
+      "mean_residual014": 0.1610052938139663
+    },
+    "condition_minus_other_MSE_change": -1.8165489732129156
+  },
+  "conditional_ID_cluster95_change_contrast_CI": [
+    -8.274315450498307,
+    6.294487541471497
+  ],
+  "conditional_ID_cluster95_condition_mean_MSE_change_CI": [
+    -11.035198833728161,
+    -0.177126255487519
+  ],
+  "conditional_ID_cluster95_other_mean_MSE_change_CI": [
+    -10.604519773278911,
+    1.4110584704349627
+  ],
+  "selected_condition_counts": {
+    "anisotropy1:high": 1,
+    "dark_largest_fraction:low": 2,
+    "denoised_grain_median_boundary_fraction:high": 2,
+    "denoised_grain_median_boundary_fraction:low": 1,
+    "denoised_grain_median_interior_area_fraction:high": 1,
+    "denoised_grain_range_interior_area_weighted_diam:low": 2,
+    "image_std:high": 1,
+    "noise_contrast_ratio:low": 5
+  },
+  "train_selected_mean_MSE_change_contrast": 12.93708947188305,
+  "split_stability": [
+    {
+      "partitions": [
+        "original",
+        "20261031"
+      ],
+      "squared_error_change_Spearman": 0.5934614591341195,
+      "top40_adverse_change_overlap": 19,
+      "risk_flag_agreement": 0.685,
+      "risk_flag_Jaccard": 0.23170731707317074
+    },
+    {
+      "partitions": [
+        "original",
+        "20261101"
+      ],
+      "squared_error_change_Spearman": 0.5841977762361014,
+      "top40_adverse_change_overlap": 19,
+      "risk_flag_agreement": 0.715,
+      "risk_flag_Jaccard": 0.27388535031847133
+    },
+    {
+      "partitions": [
+        "20261031",
+        "20261101"
+      ],
+      "squared_error_change_Spearman": 0.59128400802505,
+      "top40_adverse_change_overlap": 13,
+      "risk_flag_agreement": 0.695,
+      "risk_flag_Jaccard": 0.2229299363057325
+    }
+  ],
+  "rule_fit_count": 15,
+  "predictions_sha256": "e0c04cdfaf73dfb50a0eba1fe27fe9cdfe98b189e8333fcae9740498364d9efa",
+  "rules_sha256": {
+    "original": "c1cbe7dcbde9cefb54905294bf0579448fe5ec386d38ad1f8aa741998664fb1d",
+    "20261031": "fa503bcb5f5b27adbd174b5ceb356c43d8bda297891d838799224dd56f5abdd8",
+    "20261101": "cf395fef660724d3af39e29d506359d795fd978a0e4f2b628b2aed5c00c5da20"
+  },
+  "plan_sha256": "8e6109eb97f600646b84b766f0da359a23b9225f64c555f5d61d84d90e36043a",
+  "source_sha256": "db36d60e6eb099b7802dcf3357736d6bdbf8d0c3e7268958115b3de3218928bf",
+  "seconds": 1.8757985419942997,
+  "limits": "These are paired honest errors of smaller pre-physics013/014 anchors, not cross-fitted complete013/014 residual errors. Final014-minus013 outer loss changes are the primary evaluation; changes in the pre-physics bases are a stage diagnostic. Training-size and model-stage mismatch are explicit. Pooling320 anchor errors is safe for this fixed outer risk procedure, not permission to cross-validate models on pooled residual labels. Same400 historically reused; conditional bootstrap does not validate causal image domains. No fitted prediction correction or claim of lower RMSE."
+}

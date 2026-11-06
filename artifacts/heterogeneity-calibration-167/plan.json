@@ -1,0 +1,41 @@
+{
+  "study": 167,
+  "hypothesis": "Image-scale brightness heterogeneity marks variation in common prediction-range compression. Correct one score\u00d7heterogeneity interaction rather than choose among similarly biased branches.",
+  "evidence": "166:33persistentlarge cases all targetoutside KRR/CNN/DINOmean hull on same side inall3splits; only3have persistenttop10%branchdisagreement. tile_mean_std highestquartile n100 RMSE15.38 and residual-on-score slopes .246,.266,.349; two sided errors cancel mean.",
+  "selected_single_feature": "tile_mean_std: std of64native32x32 tilemean intensities, cachedimage-local. Not truegrain variance or pureblur.",
+  "primary": "One standardized, train-orthogonalized product of centeredraw018mixture score and standardizedtile_mean_std. Orthogonalize product to[1,score,quality] oncurrentmetaOOFtrain; normalizeRMS; fitonlyone extra coefficient using mean squaredloss +1*coefficient\u00b2. Existingaffine retained;1/2OLS coefficient when nondegenerate. No sign constraint.",
+  "control": "Matched global score-squared term, orthogonalized against[1,score],same oneextra coefficient+lambda1 and same downstream018refits. Controlonly; never fallbackcandidate. This repeats known137basis only to distinguish qualityinteraction from generic curvature on current018.",
+  "duplicate_review": {
+    "073_074": "Globalaffine, no spatialquality interaction",
+    "137": "Score-only quadratic, represented by matchedcontrol",
+    "165": "Quality\u00d7CNN-other disagreement; cannot move common-mode when branchcontrast zero",
+    "113_140_149": "Physics/adjacency/intensity residualbanks; no this trainlocal scalar score\u00d7spatialheterogeneity calibration. Not claiming information independent of image/deepfeatures."
+  },
+  "nesting": "Reuse165 full018 honestnesting: outergate uses320middleOOF; eachA213/214 anchor usesdeepOOF from142/143, fits stats/projection/coefficient onlyA. RetainshortB.1. RefitB106/107 residual585 with5candidates/512bootstrap, no pooledglobalOOF residuals. Both arms same scopes/seeds.",
+  "resplit_gate": "OriginalinteractionRMSE below BOTH unchanged018 and matchedquadratic; >=3/5folds improve versus018; auditrequired. Only sameinteraction and matchedcontrol then evaluatedonboth existingresplits.",
+  "final_gate": "If extended pooleduntrimmedMSE belowbothcontrols, allsource/lineage/reload/poisonchecks passed. Same400posthoc exploration; no independent generalization claim.",
+  "failure": "Ifgatefails closeboth arms, no alternativetile size,feature,lambda,sign,scoretransformation orblend sweep; nofull500/test/newCSV.",
+  "resource": "ExistinguvCPU2, noinstall/download/externaldata, noimageextraction forfit. First pairedfold<120s each,RSS<4GB.",
+  "source_hashes": {
+    "heterogeneity_calibration_167.py": "1c33db474bfed4578084e77aafacc103865af43edc5f6201e4b6f79e515b01ea",
+    "quality_gate_165.py": "ca19757695bda8a75d45bbdaf0b905f8dc4f896448bd59c70866cf438539a9ee",
+    "artifacts/failure-review-166/report.json": "3091bcdde07c77c72a5f3119afba5121821c91eb7f8fe7d2d642ca74d27bced8",
+    "artifacts/failure-review-166/analysis-plan.json": "12dd02fa3bfc94fdd926cd90d7748e6c01d8bc7f6e10877a36470c8a5354e4ee",
+    "artifacts/image-diagnostics-094/image_metrics.npz": "ed8d07f20e4cc332d172a89ec10752561952cd6574511c11e7da7efca5eb76a1",
+    "artifacts/image-diagnostics-094/matching-locked.json": "da7f37cef1cff22d86bf4eaecc25ac3100f8b1bf08073a196cea62ec5407d573",
+    "reports/problem-definition-111-summary.json": "505d20d857d97d4b26776efd4bf76eab5c2bb6c37d1799ba5f732437409099dd",
+    "reports/quality-gate-165-summary.json": "4e23e7ba48bb456ce0a8442a97d85b93891efd8bbc91e460f71d25647990af8b",
+    "reports/nested-selector-146-audit.json": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b"
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a"
+  },
+  "visual_review": "27outcome-selected developmentimages viewed at originalpixelintensities. Visuallysimilarlynoisy controls hadsmallerrors; neither denoising nor predetermined phase/pore sign justified.",
+  "bias": "Hypothesis chosen after checking outcomes ofsame400/repeatedsplits and many prior experiments; any new gain explicitly exploratory."
+}

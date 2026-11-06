@@ -1,0 +1,10 @@
+{
+  "metadata_only": true,
+  "reason": "The final reporting loop rebound B to fold4; the poison test itself used fold0 correctly. Capture the fold0 source ID before that loop. No model, prediction, test assertion or metric changed.",
+  "original_reported_id": "TRAIN_000002",
+  "correct_id": "TRAIN_000002",
+  "current_verifier_sha256": "df000aa73f247e31928f341a219e76f87f1d6d8307925d441911fd2e108484b1",
+  "helper_note": "System python3 lacks NumPy; used the existing project .venv for the record repair. No installation.",
+  "observed_id_changed": false,
+  "note": "Both fold rows happened to name TRAIN_000002; the corrected scope capture prevents future metadata ambiguity."
+}

@@ -1,0 +1,152 @@
+{
+  "study": "046 DINO D4 symmetry mean",
+  "completed_at_utc": "2026-10-01T02:23:58.992928+00:00",
+  "decision": "Originalprimaryfailedpredeclaredgate;skiprepartitions,nodiagnosticfallback,tuning,candidateCSVorupload. Preservebest006.",
+  "results": {
+    "original": {
+      "scores": {
+        "control006": 13.895902699199368,
+        "d4mean": 13.738056768118016,
+        "tta_only": 13.771681900107064,
+        "control006_blend": 13.423229237711903,
+        "d4mean_blend": 13.46073472143051,
+        "tta_only_blend": 13.451132347101293,
+        "reference003": 13.705696031698212
+      },
+      "comparison": {
+        "gain": -0.037505483718607735,
+        "fold_gains": [
+          -0.016752485862369326,
+          -0.0713224271333992,
+          -0.08833373734312389,
+          0.035952284962855074,
+          -0.04103826860186466
+        ],
+        "bootstrap_sd": 0.05092268644969381,
+        "conditional_ci95": [
+          -0.13709418439662951,
+          0.06308299544518028
+        ]
+      },
+      "diagnostic": {
+        "control_DINO_view_std_quantiles": [
+          0.34815302986998103,
+          1.537288240418081,
+          2.095882236001583,
+          3.143647403553485,
+          4.878372802139339,
+          8.369101598154831
+        ],
+        "control_DINO_view_range_quantiles": [
+          1.087391738370087,
+          6.569289751701604,
+          14.789204617212107,
+          25.388844439834628
+        ],
+        "control_DINO_each_view_rmse": [
+          13.895902699199368,
+          13.991472869195793,
+          14.108366147213774,
+          14.012678871154622,
+          14.282472924353764,
+          14.032550091228405,
+          14.236419987464625,
+          14.152392813862972
+        ],
+        "view_sensitivity_abs006_residual_correlation": 0.1732015609246987,
+        "fold_train_target_bins": {
+          "low20": {
+            "rows": 81,
+            "006_rmse": 16.996149985014338,
+            "d4_rmse": 17.041010664554644,
+            "006_signed_prediction_error": 14.238298863863731,
+            "d4_signed_prediction_error": 14.287027897406416
+          },
+          "middle60": {
+            "rows": 236,
+            "006_rmse": 8.520447145601374,
+            "d4_rmse": 8.534153507371405,
+            "006_signed_prediction_error": 0.2878476391164749,
+            "d4_signed_prediction_error": 0.2544937751062759
+          },
+          "high20": {
+            "rows": 83,
+            "006_rmse": 19.494114771927965,
+            "d4_rmse": 19.56335797229886,
+            "006_signed_prediction_error": -15.552533768672044,
+            "d4_signed_prediction_error": -15.48120960754609
+          }
+        },
+        "meaning": "DINOcomponent sensitivity only;003component leftnative; bins fromeachfoldtrainquantiles;diagnosticnotfeature/weightselection"
+      },
+      "chosen_lambdas": {
+        "control006": [
+          0.1,
+          1.0,
+          0.1,
+          1.0,
+          1.0
+        ],
+        "d4mean": [
+          0.1,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "oof_sha256": "f6a58a73cea9f43b89a8ab10cd68e578313937b832f3b50435dc6a605a37435e",
+      "seconds": 0.7647967080119997
+    }
+  },
+  "analysis": {
+    "residual_correlation_with003": {
+      "control006": 0.8744189551065172,
+      "d4mean": 0.9026197316379136
+    },
+    "tail_rows": 164,
+    "tail_fraction": 0.41,
+    "tail_share_of006_squared_error": 0.7622816149671139,
+    "DINO_only_contribution_to_fixedblend_view_std_median": 0.5239705590003958,
+    "scope": "PosthocdevelopmentOOFdiagnostic;not usedforweights,transforms,featureselection,ornewmodels. Tailbinsfromeachfoldtraining20/80percentiles. Other003branchheldnative."
+  },
+  "verification": {
+    "models_reloaded": 10,
+    "max_reload_prediction_error": 0.0,
+    "CPU8view_feature_max_error": 5.6862831115722656e-05,
+    "D4_orbit_mean_permutation_error": 0.0,
+    "linear_TTA_feature_vs_prediction_mean_error": 2.842170943040401e-14,
+    "identity_descriptor_exact006": true,
+    "fold_preprocessing_groups_inner_splits_metrics_gate_checked": true,
+    "best006_protected": true,
+    "screen_advanced": false,
+    "extraction_seconds": 155.25011962500867,
+    "regression_seconds": 0.7647967080119997,
+    "limits": [
+      "D4 preserves relative imagegeometry but discardsabsoluteorientation/handedness; empiricalCVdoesnot prove labelinvariance.",
+      "Only DINO branch usesD4mean; unchanged003branchprevents claiming wholeensembleD4invariance.",
+      "Development400andpartitionsarehistoricallyreused;conditionalbootstrapomitsfittingandselectionuncertainty.",
+      "Orientationandtargetrangeerrorsareposthocdiagnostics,not causalproof or newtuning."
+    ],
+    "scope": "No holdout/testimagesorlabels,newpackages,cost,candidateCSV,upload. Existing006onlyhashedforpreservation."
+  },
+  "best006_sha256": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+  "public_record": "reports/candidate006-public-submission.json",
+  "public_used_for_model_selection": false,
+  "remaining_errors": [
+    "Largestobserved006OOFerrorconcentrationisintargettails:lowtargetsareoverpredicted,hightargetsunderpredicted;D4didnotresolvethis.",
+    "DINOorientationvariationexists,butweakassociationwithabsoluteensembleerrorandfailedfixedblendimprovementdonotidentifyitasdominanterrorsource.",
+    "D4standaloneimprovementisoffsetbyincreasedresidualcorrelationwith003;ensemblecomplementaritymatters.",
+    "Labelnoise/unobservedgeneratorvariablesversusmissingrecoverablemorphologyremainunresolved;tailbiasaloneisnotprooforjustificationformanualrangeexpansion."
+  ],
+  "limits": [
+    "D4 preserves relative imagegeometry but discardsabsoluteorientation/handedness; empiricalCVdoesnot prove labelinvariance.",
+    "Only DINO branch usesD4mean; unchanged003branchprevents claiming wholeensembleD4invariance.",
+    "Development400andpartitionsarehistoricallyreused;conditionalbootstrapomitsfittingandselectionuncertainty.",
+    "Orientationandtargetrangeerrorsareposthocdiagnostics,not causalproof or newtuning."
+  ],
+  "running_work": [],
+  "cost": 0,
+  "new_candidate": null,
+  "uploaded": false
+}

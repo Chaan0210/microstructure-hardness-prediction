@@ -1,0 +1,122 @@
+{
+  "anchors": [
+    {
+      "anchor": 0,
+      "n_query": 80,
+      "weights_frozen_from_original_B": [
+        0.0,
+        0.9900764882022957
+      ],
+      "A_base_A_CNN": {
+        "base_rmse": 9.632426255136341,
+        "new_rmse": 9.253385341517955,
+        "gain": 0.3790409136183861,
+        "delta_rms": 1.6891885708253325,
+        "delta_mse": -7.158495282020562,
+        "net_sse_gain": 572.6796225616449,
+        "top5_net_gain_share": 1.0598448478123028,
+        "gain_without_top5": -0.025521239173009747,
+        "top10_net_gain_share": 1.4538775990018915,
+        "gain_without_top10": -0.21619962810741455
+      },
+      "T_base_A_CNN": {
+        "base_rmse": 9.895928727722485,
+        "new_rmse": 9.553441055951069,
+        "gain": 0.3424876717714156,
+        "delta_rms": 1.7037815280374433,
+        "delta_mse": -6.66116937463169,
+        "net_sse_gain": 532.8935499705352,
+        "top5_net_gain_share": 1.2945065699336644,
+        "gain_without_top5": -0.11775497198821938,
+        "top10_net_gain_share": 1.7269969716489628,
+        "gain_without_top10": -0.32424182698352233
+      },
+      "T_base_T_CNN": {
+        "base_rmse": 9.895928727722485,
+        "new_rmse": 9.44786853347906,
+        "gain": 0.4480601942434248,
+        "delta_rms": 1.2858268996685467,
+        "delta_mse": -8.667185558259396,
+        "net_sse_gain": 693.3748446607517,
+        "top5_net_gain_share": 0.8076975275730248,
+        "gain_without_top5": 0.10055021896910965,
+        "top10_net_gain_share": 1.2231686025001347,
+        "gain_without_top10": -0.1322087397927767
+      },
+      "same_base_CNN_refit_effect": {
+        "base_rmse": 9.553441055951069,
+        "new_rmse": 9.44786853347906,
+        "gain": 0.10557252247200921,
+        "delta_rms": 0.9181934012467292,
+        "delta_mse": -2.006016183627704,
+        "net_sse_gain": 160.48129469021632,
+        "top5_net_gain_share": 1.813578931083981,
+        "gain_without_top5": -0.0960065783750359,
+        "top10_net_gain_share": 2.5660050594130266,
+        "gain_without_top10": -0.19913162072985457
+      },
+      "raw_context_change_rms": 0.32092227239049764,
+      "raw_CNN_refit_change_rms": 1.4988320482930326
+    },
+    {
+      "anchor": 1,
+      "n_query": 80,
+      "weights_frozen_from_original_B": [
+        0.0,
+        0.2002169977526421
+      ],
+      "A_base_A_CNN": {
+        "base_rmse": 9.434409077855314,
+        "new_rmse": 9.50854817978798,
+        "gain": -0.0741391019326656,
+        "delta_rms": 0.44816368412823954,
+        "delta_mse": 1.4044138390305325,
+        "net_sse_gain": -112.35310712244261,
+        "top5_net_gain_share": -0.948568118347711,
+        "gain_without_top5": -0.1688837616283756,
+        "top10_net_gain_share": -1.123722373063528,
+        "gain_without_top10": -0.19255658921115248
+      },
+      "T_base_A_CNN": {
+        "base_rmse": 9.14214893141938,
+        "new_rmse": 9.224187667412489,
+        "gain": -0.08203873599310896,
+        "delta_rms": 0.4486297249844399,
+        "delta_mse": 1.5067510393921615,
+        "net_sse_gain": -120.54008315137293,
+        "top5_net_gain_share": -0.8274884872620463,
+        "gain_without_top5": -0.1774824801042616,
+        "top10_net_gain_share": -0.995905297645505,
+        "gain_without_top10": -0.20368191586574724
+      },
+      "T_base_T_CNN": {
+        "base_rmse": 9.14214893141938,
+        "new_rmse": 9.127364356029652,
+        "gain": 0.01478457538972755,
+        "delta_rms": 0.3272573409818401,
+        "delta_mse": -0.27010699653191306,
+        "net_sse_gain": 21.608559722553043,
+        "top5_net_gain_share": 4.7237141592637535,
+        "gain_without_top5": -0.06293171802009567,
+        "top10_net_gain_share": 5.768295267294041,
+        "gain_without_top10": -0.08447429709218035
+      },
+      "same_base_CNN_refit_effect": {
+        "base_rmse": 9.224187667412489,
+        "new_rmse": 9.127364356029652,
+        "gain": 0.09682331138283651,
+        "delta_rms": 0.3240838535102743,
+        "delta_mse": -1.7768580359240744,
+        "net_sse_gain": 142.14864287392595,
+        "top5_net_gain_share": 0.8471189488118567,
+        "gain_without_top5": 0.01739521221329632,
+        "top10_net_gain_share": 1.1219225832348998,
+        "gain_without_top10": -0.014932160348786638
+      },
+      "raw_context_change_rms": 0.18555385723458126,
+      "raw_CNN_refit_change_rms": 2.1109529317079327
+    }
+  ],
+  "scope": "Two fixed pilot anchors; sameV80 within each contrast, not a new independent data sample.",
+  "interpretation": "T/A toT/T combines teacher targets, CNN training size and preprocessing/optimizer changes. It does not isolate those mechanisms individually."
+}

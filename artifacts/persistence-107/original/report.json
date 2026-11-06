@@ -1,0 +1,142 @@
+{
+  "split": "original",
+  "scores": {
+    "reference011": {
+      "rmse": 13.0539977718711,
+      "fold_rmse": [
+        13.063217512187048,
+        12.38751393690129,
+        14.122591032877722,
+        12.1470942497908,
+        13.451269815048137
+      ]
+    },
+    "curve": {
+      "rmse": 16.677518432204568,
+      "fold_rmse": [
+        16.429066966879656,
+        15.88594978655423,
+        17.759121828232242,
+        16.490820791472643,
+        16.765645969452393
+      ]
+    },
+    "curve_blend": {
+      "rmse": 13.124652703817043,
+      "fold_rmse": [
+        13.11903500427451,
+        12.48837976805967,
+        14.146219634776271,
+        12.27064738498432,
+        13.510348518911192
+      ]
+    },
+    "persistence": {
+      "rmse": 206.71859437577234,
+      "fold_rmse": [
+        20.399361419466427,
+        17.14820351854373,
+        460.66674044128695,
+        17.564616793909877,
+        20.74439590161969
+      ]
+    },
+    "persistence_blend": {
+      "rmse": 24.04635545247622,
+      "fold_rmse": [
+        13.282031968649147,
+        12.534510217787096,
+        47.14058802537431,
+        12.354186148985374,
+        13.518460649655772
+      ]
+    }
+  },
+  "gate": {
+    "advance": false,
+    "primary_vs011": {
+      "gain": -10.99235768060512,
+      "fold_gains": [
+        -0.2188144564620984,
+        -0.14699628088580674,
+        -33.01799699249659,
+        -0.20709189919457316,
+        -0.06719083460763464
+      ],
+      "positive_folds": 0
+    },
+    "primary_vscurveblend": {
+      "gain": -10.921702748659177,
+      "fold_gains": [
+        -0.16299696437463673,
+        -0.04613044972742664,
+        -32.99436839059804,
+        -0.08353876400105342,
+        -0.00811213074458017
+      ],
+      "positive_folds": 0
+    }
+  },
+  "conditional_gain_CI95": [
+    -24.671053172997574,
+    -0.054164224740083575
+  ],
+  "models_sha256": {
+    "curve-fold0.joblib": "a9b5493b222ddbc6fe33b168483ae046b84a26cf4f9e92f6b6391d3ee932b90c",
+    "curve-fold1.joblib": "9b69f4b09fa99f39ed2b197af0f4caf43f1c7ceb156098c760053cb5af414fef",
+    "curve-fold2.joblib": "345b2f66cf5fb776e08469ea50b4ea0caca861fd1ecb043e0973f68373c9492d",
+    "curve-fold3.joblib": "b98d91213ecfe367af527dccfd6e735b7c5adade7629e2b92c18459e2197421f",
+    "curve-fold4.joblib": "af6810e9ed7f7d57a696a4d4dc1a8bc73e6693cd5465674719fd2e36edf0ad8e",
+    "persistence-fold0.joblib": "6c6b16ac797b97ecbb3b62849b3018aa2f8d22fe051b0de475715bc320cbff24",
+    "persistence-fold1.joblib": "c892b6633ab98a64b9a8e4d94ce2e351e6abefa3361054acbe1f71991825c421",
+    "persistence-fold2.joblib": "5724d2320eaa825fa04037b069c1878b157fee8aa9b790fcde6559f2eeb99117",
+    "persistence-fold3.joblib": "6d6c81106be6806f073d3439cea3d650ea7217159a7acc7f30210891801ae8c0",
+    "persistence-fold4.joblib": "bbd64a26435112c8825f1d8d712ba849fb068037577b4076a4403675e9b264e5"
+  },
+  "selected": {
+    "curve-fold0.joblib": {
+      "alpha": 512.0,
+      "rmse": 16.20089436730836
+    },
+    "curve-fold1.joblib": {
+      "alpha": 5120.0,
+      "rmse": 17.07018499210517
+    },
+    "curve-fold2.joblib": {
+      "alpha": 512.0,
+      "rmse": 16.090549459086812
+    },
+    "curve-fold3.joblib": {
+      "alpha": 5120.0,
+      "rmse": 17.14819454167785
+    },
+    "curve-fold4.joblib": {
+      "alpha": 512.0,
+      "rmse": 16.340189272594017
+    },
+    "persistence-fold0.joblib": {
+      "alpha": 5120.0,
+      "rmse": 19.166446698666782
+    },
+    "persistence-fold1.joblib": {
+      "alpha": 5120.0,
+      "rmse": 248.93465940973945
+    },
+    "persistence-fold2.joblib": {
+      "alpha": 5120.0,
+      "rmse": 18.08804121629181
+    },
+    "persistence-fold3.joblib": {
+      "alpha": 5120.0,
+      "rmse": 21.886514848564563
+    },
+    "persistence-fold4.joblib": {
+      "alpha": 5120.0,
+      "rmse": 19.947921175438463
+    }
+  },
+  "predictions_sha256": "2c4a57004df2489a3314288a3a3c34011e8cefc87d3bb03fd48706b6be6c204f",
+  "plan_sha256": "7ed49d895554dd9639cb71e7e07738354b018dc20f2c05bfcaea5aa178fda772",
+  "seconds": 0.2328105000196956,
+  "candidate_created": false
+}

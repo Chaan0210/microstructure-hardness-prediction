@@ -1,0 +1,8 @@
+{
+  "public_numpy_import": "failed",
+  "exception": "ImportError: cannot import name sph_harm from scipy.special",
+  "cause": "kymatio.numpy eagerly imports unrelated3D frontend; SciPy1.18.1 lacks old sph_harm",
+  "recovery": "Import unchanged official2D frontend class directly; no library patches or dependency changes.",
+  "original_failed_test": "scattering_smoke_096.py",
+  "retry_test": "scattering_smoke_096_2d.py"
+}

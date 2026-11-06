@@ -1,0 +1,65 @@
+{
+  "hypothesis": "Absolute image-axis orientation may be nuisance for scalar hardness. D4 orbit averaging removes DINO orientation sensitivity while retaining the original images relative alignment and lengths. This is a hypothesis,not established labelinvariance.",
+  "risk": "D4 discards absolute orientation and handedness in final DINO descriptor. Relativealignment survives rigid image transforms but nonlinear descriptor averaging may still lose anisotropy information. Label/generator may encode absoluteorientation; measure heldout effect rather than assume.",
+  "views": [
+    [
+      0,
+      false
+    ],
+    [
+      1,
+      false
+    ],
+    [
+      2,
+      false
+    ],
+    [
+      3,
+      false
+    ],
+    [
+      0,
+      true
+    ],
+    [
+      1,
+      true
+    ],
+    [
+      2,
+      true
+    ],
+    [
+      3,
+      true
+    ]
+  ],
+  "preprocessing": "Native256rotation by0/90/180/270 then optionalhorizontalreflection;no crop/rescalejitter/intensitychange. Same504bicubicRGB/ImageNetnorm;frozen official DINO blocks6/9/12.",
+  "primary": "d4mean: float64mean of8fixed3456descriptors; same3456dimensions, no addedviewvariancefeatures. Train/regress on perimageorbitmean.",
+  "control": "control006: originalorientationmulti3 descriptor; recreate006samefoldOOF exactly.",
+  "diagnostic": "tta_only: samecontrol006trainfit applied to averaged features; linearRidge makes it equal to mean8viewpredictions. Diagnosticnoteligibleforpromotion; no bestview orweights selected.",
+  "regression": "StandardScaler+targetmean/std,Ridgealpha=lambda*3456; lambda(.1,1,10),innerGroupKFold3shuffle seed20261120+outerfold;allfittrainfoldonly.",
+  "ensemble": "Unchanged .75samefold003+.25DINO for primary/control/diagnostic. 003 remainsnative; completeensemble isNOTguaranteedD4invariant.",
+  "screen": "Original5fold primarygain over006>pairedbootstrapSD and>=3/5foldwins;onlythenbothexistingrepartitions. Screeningisacomputegate,not significance. No diagnostic fallback.",
+  "scope": "development400only,noholdout/testimagesorlabels,noexternaldata/packages/cost/candidateCSV/upload. Existingbest006fileshashedonlyforpreservation.",
+  "limits": "Historicallyreused400andpartitionscarrymodelselectionoptimism; publicscoresonlyrecordedhistory.",
+  "source_sha256": {
+    "dino_d4_046.py": "10a906ce8b3b56251ae483543ac2feed24ab41084e27462a30d56ab2df679ddb",
+    "dino_multilayer_044.py": "9a4b8348112809e63eb1b341087f05582efd932c62e89174e6becd3d821dae67",
+    "dino_spatial_039.py": "6a5a2546cf3266dd67fcaccae2dfe978bc431349cec2d5ab784b9a065e79c692",
+    "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353",
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.manifest.json": "ac411a5e58ee57af5c4a653e7e4296c543a89333ee1a929b576d6e67f7b20e68",
+    "artifacts/submission-candidate-006.components.csv": "3a41ca42fa66e10b9899fc2d25ccfa395d5b728e0cf00a9b213be1ad06e410a5",
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+    "artifacts/final-model-045/decision.json": "cae40d328c87ae4104ad70bdf18b9e8002b5a787ab98307c31a74f6e282f49eb",
+    "artifacts/final-model-045/report.json": "2d344e9f074aeebe45dfb99e001175aef8e6b8485bc85c51bc45af0ce4526e7c",
+    "artifacts/dino-multilayer-044/candidate-design.json": "b783348c7b39c8a457ddcf0f5b12f64a1fece8614886fe0d3706ce42411f703e",
+    "reports/candidate006-verification.json": "0a88d1adf8523c3646856edb25cb0d951dd1257a061342c8905da580f27d99ca",
+    "reports/dino-044-validation.json": "14ae9c212008ed0c013e392b0ba00425087901c0fb834c54a24da5b14037b13b"
+  }
+}

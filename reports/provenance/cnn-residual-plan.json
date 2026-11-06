@@ -1,0 +1,17 @@
+{
+  "variant": "ResidualMomentCNN, no activation normalization, mean/std across4stages",
+  "hypothesis": "Preserve amplitude and multiscale texture signals suppressed by GroupNorm; residual local processing",
+  "controlled_package": "Architecture changes as one prespecified package; not isolating each block effect",
+  "seed": 20261003,
+  "image_size": 128,
+  "epochs": 40,
+  "ensemble_weights": {
+    "baseline": 0.5,
+    "grain": 0.25,
+    "cnn": 0.25
+  },
+  "parameters": 205937,
+  "source_sha256": "9544d993c9c6b496edfab10bd819910f60b5c48e4bb15e3946c2412b94d40442",
+  "engine_sha256": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+  "license": "Original project source; PyTorch BSD3 library. No external model or weights."
+}

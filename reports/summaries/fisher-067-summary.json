@@ -1,0 +1,169 @@
+{
+  "completed_at_utc": "2026-10-02T04:42:19.656836+00:00",
+  "study": "067 single Fisher-vector pooling pilot",
+  "status": "Completed and rejected at original5fold screen. No resplits or candidate created.",
+  "novelty_audit": "NoFisher/VLAD found.048supervisedPLS4 compresses image-levelglobal3456 descriptors with labels, notlocalmotifs.056 uses unconditional projectedtoken covariance. phase_features GMM2 fits scalarintensities separately perimage for phaseproxy; no sharedpatchdictionary/Fisher.042semivariograms and066multiscaleconcatenation also distinct.",
+  "reference": {
+    "requested": "https://openaccess.thecvf.com/content_cvpr_2015/html/Cimpoi_Deep_Filter_Banks_2015_CVPR_paper.html",
+    "access": "CVFhtml/PDF tools failed403; read author arXiv1411.6836v2PDF method3.1 and descriptor details, plusOxford authorproject.",
+    "read_source": "https://arxiv.org/pdf/1411.6836",
+    "author_project": "https://www.robots.ox.ac.uk/~vgg/research/deeptex/",
+    "scope": "Cimpoi,Maji,Vedaldi CVPR2015 FV-CNN pools pretrained convolutional local descriptors for texture recognition. Not evidence forDINO,syntheticmicrostructuresorhardness; not a reproduction of their CNN/K64/descriptor settings."
+  },
+  "hypothesis": "Mixture-conditioned means/variances of pretrained local tokens can represent motif-distribution changes missed by single globalmean/std/projectedcovariance. This is an unproven transfer toDINO hardness.",
+  "fixed_configuration": {
+    "backbone": "ExistingfrozenDINO-S14",
+    "tokens": "Finalnormalized504px1296x384",
+    "dictionary_training": "64 fixedID-seeded uniformly sampledpatches peroutertrainimage only;320images=20480patches per5foldtrainingdictionary",
+    "PCA": 32,
+    "PCA_whitening": false,
+    "GMM_components": 8,
+    "GMM_covariance": "diagonal",
+    "Fisher_dimensions": 512,
+    "Fisher_terms": "mean+variance,nozerothorder",
+    "normalization": "signedsqrt thenL2",
+    "head": "FoldtrainStandardScaler + standardizedtarget Ridgealpha512",
+    "primary": "0.9*008+0.1*FisherRidge",
+    "sweeps": false
+  },
+  "scores": {
+    "reference008": {
+      "rmse": 13.209632611789585,
+      "fold_rmse": [
+        13.137584839949701,
+        12.597373711388418,
+        14.228655527464698,
+        12.44121172584094,
+        13.56258166849383
+      ]
+    },
+    "fisher512": {
+      "rmse": 15.381710806490343,
+      "fold_rmse": [
+        16.196176153306773,
+        14.14014070695794,
+        15.287332650594779,
+        14.989004442773728,
+        16.19730353224157
+      ]
+    },
+    "primary": {
+      "rmse": 13.272376312383063,
+      "fold_rmse": [
+        13.273553827862239,
+        12.601215927803729,
+        14.188584483974775,
+        12.513223514503446,
+        13.707855354665545
+      ]
+    }
+  },
+  "comparison": {
+    "gain": -0.06274370059347767,
+    "fold_gains": [
+      -0.13596898791253764,
+      -0.0038422164153111282,
+      0.040071043489922076,
+      -0.0720117886625058,
+      -0.14527368617171454
+    ],
+    "positive_folds": 1,
+    "bootstrap_sd": 0.038361081674770495,
+    "conditional_ci95": [
+      -0.13763741892778114,
+      0.012861803354994482
+    ]
+  },
+  "failure_evidence": {
+    "ensemble_worsening": 0.06274370059347767,
+    "worse_folds": 4,
+    "standalone_Fisher_RMSE": 15.381710806490343,
+    "Fisher008_residual_correlation": 0.8875109900761586,
+    "train_RMSE_byfold": [
+      11.36401246499641,
+      11.84135452435555,
+      11.015768579098394,
+      11.457351415188276,
+      10.981062974497032
+    ],
+    "interpretation": "Mixture-conditioned representation is distinct from prior unconditionalpooling and dictionarytrainingwasvalid,but this fixed512D/PCA32/GMM8/Ridge512/10% recipe worsened008 in4/5folds. Lowerresidualcorrelation alone didnot offset weakerstandalone prediction. Failure is scoped tothisfixedpilot, not allFisher representations or allregularization levels."
+  },
+  "selection": "Original primary pooledOOF RMSE strictlylower008 -> unchangedboth existingresplits; otherwise reject. All3 pooledRMSEstrictlylower008 plus reproducibility required forpromising candidate consideration. Foldcount/CI/standalone scoresdiagnostic, not gates/fallbacks.",
+  "screen_pass": false,
+  "resplits_run": false,
+  "candidate_created": false,
+  "resource": {
+    "extraction_seconds": 22.52021920902189,
+    "extraction_peak_rss_bytes": 1562116096,
+    "cache_bytes": 796262528,
+    "dictionary_benchmark": {
+      "dictionary_train_images": 320,
+      "patches_per_image": 64,
+      "fit_patch_count": 20480,
+      "dictionary_seconds": 0.2951436670264229,
+      "encode32_seconds": 0.05996024998603389,
+      "projected5fold_seconds": 5.2232339592592325,
+      "rss_peak_bytes": 910655488,
+      "gmm_converged": true,
+      "gmm_iterations": 16,
+      "pca_retained_variance": 0.8145786540220181,
+      "no_outerlabels_scored": true,
+      "resource_pass": true
+    },
+    "original5fold_seconds": 5.035298375005368,
+    "independent_validation_seconds": 26.095052415970713,
+    "GMM_iterations_byfold": [
+      16,
+      9,
+      15,
+      20,
+      40
+    ],
+    "all_GMM_converged": true
+  },
+  "verification": {
+    "passed": true,
+    "models_verified": 5,
+    "tokens_reextracted": 400,
+    "token_replay_error": 0.0,
+    "model_reload_error": 0.0,
+    "independent_posterior_sufficient_statistics_Fisher_error": 3.120613576573783e-13,
+    "fold0_fullPCA_GMM_refit_exact": true,
+    "trainID_patchsample_sha256_PCAmean_scaler_targetstats_verified": true,
+    "all_learning_outertrain_only": true,
+    "protected_file_count": 39
+  },
+  "best008": {
+    "file": "artifacts/submission-candidate-008.csv",
+    "sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+    "preserved": true,
+    "public_rmse": 11.8898307061,
+    "public_source": "Previouslyparentconfirmed;notqueriedorusedforselection."
+  },
+  "commands_completed": [
+    ".venv/bin/python -I -B fisher_experiment_067.py prepare",
+    ".venv/bin/python -I -B fisher_experiment_067.py benchmark_tokens",
+    ".venv/bin/python -I -B fisher_experiment_067.py extract",
+    ".venv/bin/python -I -B fisher_experiment_067.py benchmark_dictionary",
+    ".venv/bin/python -I -B fisher_experiment_067.py original",
+    ".venv/bin/python -I -B validate_fisher_067.py"
+  ],
+  "holdout_test_selection_access": false,
+  "protected_final_caches": "Hash-only integritychecks, not decoded forselection.",
+  "new_packages": 0,
+  "model_data_downloads": 0,
+  "cost": 0,
+  "uploaded": false,
+  "running_work": [],
+  "blockers": [],
+  "limitations": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "deliverables": {
+    "fisher_pooling_067.py": "18c8a3bcb1ae228480a5e9e5e33cc3f70f875db58b7d394d4544676c9dc5aa47",
+    "test_fisher_pooling_067.py": "a270a96e70894ce1999ed41f315860a8ffaa3dc6d1986739ff7e824d55a654d5",
+    "fisher_experiment_067.py": "f98103695e42525e13c4061d69fb267a4a72a141657583ab31329ec17752cbfb",
+    "validate_fisher_067.py": "079d544dea8f77259b4cda4cc79fd25c35549f56c2776d2ec9a56458b86782f4",
+    "artifacts/fisher-067/plan.json": "82eb9ccbba9a73bc36af2f75f2ad81bf065fe338cddb8e1eb1ea496be5b0f31b",
+    "artifacts/fisher-067/original/report.json": "354b8992cf0c612ae3b7a4a82fb24b465993344c8a4a450b612e8f0ebcd7ca0d",
+    "reports/fisher-067-validation.json": "7e0c20488281f609d23d27de29a08dd0881aa196f0351803d4f657e8e5b5a396"
+  }
+}

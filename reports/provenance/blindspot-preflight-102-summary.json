@@ -1,0 +1,303 @@
+{
+  "study": "102 resumed environment check and blindspot restoration prerequisite diagnosis",
+  "completed_utc": "2026-10-03T16:14:16.598210+00:00",
+  "status": "stop_noise2self_before_training_due_to_unresolved_signal_noise_separation",
+  "resumption": {
+    "latest_preexisting_record": "101 rejected original fixed-control comparison; no later experiment discovered",
+    "matching_existing_training_processes": 0,
+    "project_python": ".venv/bin/python",
+    "packages_unchanged": 26,
+    "best011_protected_files_verified": 20,
+    "development400_raw_hashes_verified_without_decoding_for_resumption": true,
+    "mps_sandbox_available": false,
+    "mps_authorized_local_execution_available": true,
+    "mps_small_matrix_smoke_passed": true,
+    "new_installs": false,
+    "cost": 0
+  },
+  "actual_exits": {
+    "resume_integrity_and_environment": 0,
+    "MPS_matrix_smoke": 0,
+    "initial32_plan_prepare_only": 0,
+    "revised24_plan_prepare": 0,
+    "revised24_diagnostic": 0,
+    "independent_validation": 0
+  },
+  "duplicate_audit": "No Noise2Self/Noise2Void/blindspot learned restorer in project source. TV022/071 and NLM098 are fixed image-local filters. Formation049 is per-image inverse Potts/blur/AR-noise optimization, not a learned masked-pixel predictor. Same high-level denoising objective, different estimator; not a guarantee of incremental signal.",
+  "references": [
+    {
+      "title": "Noise2Self: Blind Denoising by Self-Supervision",
+      "url": "https://proceedings.mlr.press/v97/batson19a.html",
+      "used_claim": "Conditional unbiasedness and noise independence are required for masked-risk interpretation; predictor must exclude masked targets."
+    }
+  ],
+  "plan_revision": "32-image plan was stored but no measurements ran. Parent then specified24 noise x contrast images and iid controls. Revised plan frozen before all measurements; original source/plan preserved.",
+  "selection": {
+    "images": 24,
+    "noise_bins": 3,
+    "contrast_bins": 2,
+    "images_per_cell": 4,
+    "source_population": "Original outerfold0 training320 only; cached label-free097 noise/contrast used forselection",
+    "outer_validation_decoded": false,
+    "hardness_labels_read": false,
+    "holdout_test_read": false,
+    "ids": [
+      "TRAIN_000108",
+      "TRAIN_000322",
+      "TRAIN_000262",
+      "TRAIN_000427",
+      "TRAIN_000421",
+      "TRAIN_000032",
+      "TRAIN_000233",
+      "TRAIN_000456",
+      "TRAIN_000182",
+      "TRAIN_000046",
+      "TRAIN_000038",
+      "TRAIN_000416",
+      "TRAIN_000079",
+      "TRAIN_000087",
+      "TRAIN_000413",
+      "TRAIN_000131",
+      "TRAIN_000277",
+      "TRAIN_000294",
+      "TRAIN_000273",
+      "TRAIN_000289",
+      "TRAIN_000295",
+      "TRAIN_000328",
+      "TRAIN_000290",
+      "TRAIN_000395"
+    ]
+  },
+  "diagnostic": {
+    "runtime_seconds": 7.934130290988833,
+    "iid_controls": 384,
+    "raw_TV_smoothing_all_retained": true,
+    "flat_images": 12,
+    "flat_images_required": 18,
+    "HH_warning_images": 1,
+    "warning_limit_less_than": 6,
+    "engineering_gate_clear": false,
+    "by_stratum": [
+      {
+        "noise_bin": 0,
+        "contrast_bin": 0,
+        "images": 4,
+        "provisionally_flat_images": 0,
+        "HH_warning_images": 1
+      },
+      {
+        "noise_bin": 0,
+        "contrast_bin": 1,
+        "images": 4,
+        "provisionally_flat_images": 0,
+        "HH_warning_images": 0
+      },
+      {
+        "noise_bin": 1,
+        "contrast_bin": 0,
+        "images": 4,
+        "provisionally_flat_images": 3,
+        "HH_warning_images": 0
+      },
+      {
+        "noise_bin": 1,
+        "contrast_bin": 1,
+        "images": 4,
+        "provisionally_flat_images": 1,
+        "HH_warning_images": 0
+      },
+      {
+        "noise_bin": 2,
+        "contrast_bin": 0,
+        "images": 4,
+        "provisionally_flat_images": 4,
+        "HH_warning_images": 0
+      },
+      {
+        "noise_bin": 2,
+        "contrast_bin": 1,
+        "images": 4,
+        "provisionally_flat_images": 4,
+        "HH_warning_images": 0
+      }
+    ],
+    "aggregate_correlations": {
+      "raw": {
+        "real_signed_correlation_median": [
+          -0.02251948778446649,
+          0.0030542491553356772,
+          0.0009816625722659403,
+          -0.1031871726644942,
+          -0.10418485358419789,
+          -0.031492892197987565
+        ],
+        "iid_signed_correlation_median": [
+          -0.0016616966122892764,
+          -0.0036711654387198657,
+          -0.0031737665725406214,
+          -0.17219323365102485,
+          -0.1722300068202868,
+          -0.08929289897003502
+        ],
+        "real_abs_correlation_p90": [
+          0.06979859574694558,
+          0.07474780841102933,
+          0.04618348453905385,
+          0.19858092302693564,
+          0.1916669941748781,
+          0.10895460857729859
+        ],
+        "iid_abs_correlation_p90": [
+          0.05285872459789082,
+          0.05128915129904356,
+          0.05193843523365419,
+          0.1934920500966546,
+          0.19377323399864285,
+          0.11441970343320455
+        ]
+      },
+      "TV": {
+        "real_signed_correlation_median": [
+          -0.08766896903043592,
+          -0.09170031761256425,
+          0.023019403394581285,
+          0.34657909859531666,
+          0.3109483202271437,
+          0.11044678503760688
+        ],
+        "iid_signed_correlation_median": [
+          -0.10380948469735884,
+          -0.10362782664729883,
+          0.03142079737414066,
+          0.25567632713776356,
+          0.26014486335669434,
+          0.03431390643519351
+        ],
+        "real_abs_correlation_p90": [
+          0.1789016509083571,
+          0.15130123922300623,
+          0.13907589322721844,
+          0.524759905408166,
+          0.5154382440201299,
+          0.31462816781556496
+        ],
+        "iid_abs_correlation_p90": [
+          0.1608098853375452,
+          0.16552043403927846,
+          0.08277764595670983,
+          0.34901938191734017,
+          0.3245752913946388,
+          0.12477205286508739
+        ]
+      },
+      "smoothing": {
+        "real_signed_correlation_median": [
+          -0.14859157715790458,
+          -0.14422553147635395,
+          0.09144106999386112,
+          0.6411844453319175,
+          0.6370690440796748,
+          0.4424043345995645
+        ],
+        "iid_signed_correlation_median": [
+          -0.31102278653840476,
+          -0.30727150082767873,
+          0.12018219763420135,
+          0.5604566366529529,
+          0.5591121999900478,
+          0.2611839381482516
+        ],
+        "real_abs_correlation_p90": [
+          0.27285045734348173,
+          0.2508585885202781,
+          0.43740246123564813,
+          0.7745721321114011,
+          0.7387806286905774,
+          0.6174270403109682
+        ],
+        "iid_abs_correlation_p90": [
+          0.34694395070728445,
+          0.35153093432277444,
+          0.17734329956361117,
+          0.5963758286374741,
+          0.5967118535501383,
+          0.32279961238954175
+        ]
+      }
+    }
+  },
+  "decision_ko": "균일 영역 확보 조건12/24<18/24로 선행 공학 기준을 통과하지 못했다. 원본의 비중첩HH 상관은 대부분 작고 iid대조보다 큰 경고는1/24에 그쳤다. 그1장도 균일 영역 조건을 충족하지 않는다. 상관 잡음이 입증됐다고 결론내리지 않는다. 이 단일관측 진단은 미세조직과 잡음을 충분히 구분하지 못하므로 요청대로 Noise2Self 복원 가설을 학습 전에 중단한다.",
+  "filter_artifact_evidence": "For iid controls, median horizontal/vertical correlation of raw-minus-Gaussian1 residual is -0.17219/-0.17223 although injected noise is independent. Actual raw residual medians -0.10319/-0.10418. Highpass/filter residual correlation alone cannot diagnose observation-noise dependence.",
+  "engineering_threshold_caveat": "18/24 coverage and HH excess .05 in>=6 images are fixed practical safeguards, not calibrated significance or scientifically universal thresholds. Low-noise cells have0/8 qualifyingimages, middle4/8, high8/8; stopping reflectslimiteduniform-region identifiability, not proof a blindspotCNN cannothelp.",
+  "not_executed": [
+    "restoration_model_fit",
+    "100_MPS_training_steps",
+    "hardness_CV",
+    "resplits",
+    "full500_fit",
+    "test_inference",
+    "candidateCSV",
+    "upload",
+    "mask_radius_or_threshold_search"
+  ],
+  "pilot_design_review_only": {
+    "status": "Not implemented or scheduled because diagnostic gate failed.",
+    "fold_boundary": "Any future learnedrestorer fits only currentoutertrainimages. No training, selfsupervisedearlystop, normalization, ornoiseestimation fromoutervalidation/holdout/test. Do notshare anall400 fittedrestorer/cache acrossouterfolds. If innerCV tunes downstreamsettings, learnedrestoration must also refit within eachinnertrain, or use afullyfixedhead withoutinnerselection.",
+    "blindspot_leakage_checks": "Masked outputs must not depend on originalmasked pixels. Mask before all data-dependent preprocessing; input-derived canonicalD4, perimagebrightnessstats, HH-noise hyperparameters orresidualskip can leakmasked targets. Use native[0,1] intensity, no removalofbrightness/contrast, and masked-target perturbation tests.",
+    "loss_comparison": "Rawidentity has zero self-reconstruction loss and is not a valid J-invariant comparator. Original/TV/smoothing remain fidelity controls; masked-risk comparisons require eachprediction andparameterchoice tobeJ-invariant.",
+    "resource": "Onlyafter feasibility, benchmark100 actualMPS trainingsteps with existingPyTorch. Reconsider scope ifprojectedperfold>30min ormemory>4GB. Matrixsmoke doesnot substitute fortrainingbenchmark.",
+    "fidelity": "No synthetic-image training. Existing knowngeometryfixtures may be heldout diagnostics only. Extra-noise reconstruction tests cannot alone establish removaloforiginalnoise. Do notadopt arbitrary20%/5% limits without a fixed measurable definition and assessmentbeforeoutputs. No posthoc relaxation."
+  },
+  "next_possible_step": {
+    "priority": "Establish official observation model or independent signal/noise evidence before reviving restoration.",
+    "specific_information": [
+      "Is noise injected before orafter blur/resampling?",
+      "Is noise independent per pixel, correlated, orsignal-dependent?",
+      "What clipping/quantization is applied, and is physicalpixel scale consistent?"
+    ],
+    "reason": "These facts distinguish a defensibleblindspot exclusion from destructive removalofthinboundaries. If unavailable retainrawinput/best011; neitherexpandmasks norrestartTV/NLM/101/calibration/head grids on this evidence. No independentnewrawrepresentationexperiment is justified bythis noise diagnostic alone."
+  },
+  "validation": {
+    "passed": true,
+    "selection24_reconstructed_without_labels": true,
+    "original_outer_fold0_images_excluded": true,
+    "raw_image_hashes_verified": 24,
+    "independent_full_pipeline_replays": 51,
+    "real_images_replayed": 3,
+    "iid_controls_replayed": 48,
+    "independent_max_error": 5.023759186428833e-15,
+    "gate_recomputed": false,
+    "prior32_plan_never_run": true,
+    "protected011_files_verified": 20,
+    "model_training": false,
+    "hardness_labels_read": false,
+    "holdout_test_read": false,
+    "report_sha256": "ce9456f15703a39dcb2222c1fa2d6e450cde0ccfb59c4c470a8efb8fcd035bfe",
+    "source_sha256": "bf5a7e9b524e4e51987e57963f476388f424f303dfd47cce725da75be1d6657d",
+    "seconds": 1.0854801250388846,
+    "cost": 0
+  },
+  "scope": {
+    "images_or_rawdata_transmitted": false,
+    "synthetic_data_used_for_training": false,
+    "hardness_labels_read": false,
+    "holdout_test_used": false,
+    "packages_installed": false,
+    "cost": 0
+  },
+  "best011": {
+    "unchanged": true,
+    "protected_files": 20,
+    "csv_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5"
+  },
+  "artifact_sha256": {
+    "artifacts/blindspot-preflight-102/plan.json": "f96d7e821d76fd1bc1c35fea89824d01c671bff7d1e62280561f1a40c3082bd3",
+    "artifacts/blindspot-preflight-102/revised24/plan.json": "38da24b7055a3b735c18b8a257fef75b3e21587ab16f8a1e40deef5a97d93659",
+    "artifacts/blindspot-preflight-102/revised24/report.json": "ce9456f15703a39dcb2222c1fa2d6e450cde0ccfb59c4c470a8efb8fcd035bfe",
+    "reports/blindspot-uniform-102b-validation.json": "01139cc5e221603b9136b372edd2bd19f033d8fbe3f8bc9f3fd412a7815f82c7",
+    "blindspot_preflight_102.py": "d0a645c77fc6cefd339665393e35a67d0878cad9005d139519faab4f0b8bf889",
+    "blindspot_uniform_102b.py": "4e5afd752c112d8b915240225401ea4b281949b5f2488e11f5256eecea4a5049",
+    "validate_blindspot_uniform_102b.py": "bf5a7e9b524e4e51987e57963f476388f424f303dfd47cce725da75be1d6657d"
+  },
+  "remaining_blocker": "Scientificidentifiability of noiseversusfine morphology; localexecution/MPS isoperational."
+}

@@ -1,0 +1,54 @@
+{
+ "candidate": "031",
+ "date": "2026-10-09",
+ "change": "vs 030: + 3 label-free pixel-U-Net second-phase columns (u_ph soft area fraction, u_ph_hard argmax fraction, u_ph_f32 spatial std of the 32px-smoothed phase fraction). U-Net (phase_unet.py u1 3000 0) trained on degraded clean TRAIN images (noise < train median, 219 imgs; per-grain intensity scatter, shading, blur 0-2.2, contrast 0.6-1, noise 0-24) to reproduce the clean zero-shot masks-v3 + features.py phase rule; D4 TTA at inference. No labels, no test images in training.",
+ "motivation": "noisy-half loss concentrated in fine/medium grains where segmentation mixes phase and matrix; U-Net phase fraction rho with hardness clean/mid/noisy 0.708/0.661/0.561 vs sp_frac_grains 0.625/0.608/0.443",
+ "harness": {
+  "cfg030_seedmean": 10.8839,
+  "cfg031_seedmean": 10.5491,
+  "cfg031_terciles": [
+   8.607,
+   9.484,
+   12.724
+  ],
+  "cfg030_terciles": [
+   8.717,
+   9.648,
+   13.315
+  ]
+ },
+ "dev_fixed_w075": {
+  "cfg030": {
+   "original": 10.713,
+   "p20261031": 10.7894,
+   "p20261101": 10.8349,
+   "pooled": 10.7792
+  },
+  "cfg031": {
+   "original": 10.4385,
+   "p20261031": 10.4157,
+   "p20261101": 10.4381,
+   "pooled": 10.4308
+  }
+ },
+ "inputs": {
+  "train_features": "experiments/push-400/feat-u1ph-train.npz",
+  "train_sha256": "644ebc074150e7bf8efd6c4deb6a70fc22fb120f98828fdf66c1aeb39b9e88d0",
+  "test_features": "experiments/push-400/feat-u1ph-test.npz",
+  "test_sha256": "2b6119e2462b575938cc8d1e03bddca257ef776d8860787217884f28cdfd622c",
+  "unet_weights": "experiments/push-400/unet-u1.pt",
+  "unet_sha256": "34d154ca47fe4f003210ebd790422076d2ad815271956afe20a3a49df72f0d24",
+  "unet_features": [
+   "experiments/push-400/unet-u1-train.npz",
+   "experiments/push-400/unet-u1-test.npz"
+  ],
+  "dev_results": [
+   "experiments/push-300/dev-u1ph-v2.json",
+   "experiments/push-300/dev-u1ph-v35.json"
+  ]
+ },
+ "adv_auc_unet_cols_train_vs_test": 0.498,
+ "weight_rule": "fixed W=0.75",
+ "adopt": true,
+ "caveat": "MPS training is not bit-deterministic: keep unet-u1.pt for reproduction."
+}

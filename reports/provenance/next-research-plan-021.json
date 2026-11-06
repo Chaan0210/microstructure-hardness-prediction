@@ -1,0 +1,24 @@
+{
+  "primary": "mean3_d4",
+  "weights": {
+    "baseline": 0.5,
+    "compact26kernel": 0.25,
+    "cnn": 0.25
+  },
+  "cnn_seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "new_split_seeds": [
+    20261031,
+    20261101
+  ],
+  "epoch": 80,
+  "views": "all8D4 equal average; then3seeds equal average",
+  "rejected_feature_extensions": "native28+compact26 KRR/ET/HGB did not improve current compact3seed on development folds",
+  "original_fold_rmse": 13.585046659194468,
+  "selection_uses_public_score": false,
+  "scope": "development400; oldholdout not read/evaluated",
+  "additional_hypothesis": "Adaptive TV denoising and gradient-minima watershed may reduce visually observed oversegmentation. Independent compact-feature ablation pending; will not modify frozen CNN confirmation."
+}

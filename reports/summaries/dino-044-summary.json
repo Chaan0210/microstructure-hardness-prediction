@@ -1,0 +1,338 @@
+{
+  "study": "044 frozen block6/9/12 descriptors",
+  "completed_at_utc": "2026-10-01T02:01:22.139836+00:00",
+  "results": {
+    "original": {
+      "scores": {
+        "control005": 14.543425199587686,
+        "multi3": 13.895902699199368,
+        "mid6": 14.101340183910468,
+        "control005_blend": 13.522452231767831,
+        "multi3_blend": 13.423229237711903,
+        "mid6_blend": 13.557262886866987,
+        "reference003": 13.705696031698212
+      },
+      "comparison": {
+        "gain": 0.09922299405592838,
+        "fold_gains": [
+          0.11049929530372538,
+          0.008138632768414311,
+          0.18871631715931514,
+          0.1400106963807719,
+          0.04270505434450911
+        ],
+        "bootstrap_sd": 0.04982870965429259,
+        "conditional_ci95": [
+          -0.0018288493917724572,
+          0.19399585195586902
+        ]
+      },
+      "chosen_lambdas": {
+        "control005": [
+          0.1,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "multi3": [
+          0.1,
+          1.0,
+          0.1,
+          1.0,
+          1.0
+        ],
+        "mid6": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "mean_train_rmse": {
+        "control005": 10.611280147629214,
+        "multi3": 8.96990706225245,
+        "mid6": 11.946752743407108
+      },
+      "oof_sha256": "ef7ce9e2773c8f90fb90a7b3ee1308dc3012df93a022158368a8c9f95c955942",
+      "seconds": 0.7315511659835465
+    },
+    "20261031": {
+      "scores": {
+        "control005": 14.225715205252632,
+        "multi3": 13.857610561021403,
+        "control005_blend": 13.484270679649033,
+        "multi3_blend": 13.439650797694618,
+        "reference003": 13.63181073293285
+      },
+      "comparison": {
+        "gain": 0.04461988195441435,
+        "fold_gains": [
+          -0.022505807308018433,
+          0.07816647340559157,
+          0.03175630098179205,
+          0.08348615352732836,
+          0.054885768323629236
+        ],
+        "bootstrap_sd": 0.031083908858101465,
+        "conditional_ci95": [
+          -0.01680797307414803,
+          0.10516264746459865
+        ]
+      },
+      "chosen_lambdas": {
+        "control005": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "multi3": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "mean_train_rmse": {
+        "control005": 11.570970986553336,
+        "multi3": 11.106803781601164
+      },
+      "oof_sha256": "cd6b71a47ee7d56c551fef563791c7674829dc535ed6d19c6b4614aeddbab9b6",
+      "seconds": 0.5394247500225902
+    },
+    "20261101": {
+      "scores": {
+        "control005": 14.67018389948982,
+        "multi3": 14.433870857700425,
+        "control005_blend": 13.651326599763685,
+        "multi3_blend": 13.610797519662416,
+        "reference003": 13.729980391208457
+      },
+      "comparison": {
+        "gain": 0.04052908010126899,
+        "fold_gains": [
+          0.020029550129024187,
+          0.08699317359424441,
+          0.006252197010548244,
+          0.03390650658403693,
+          0.05661252034402153
+        ],
+        "bootstrap_sd": 0.04357871573875378,
+        "conditional_ci95": [
+          -0.044289890068439954,
+          0.12611770249560034
+        ]
+      },
+      "chosen_lambdas": {
+        "control005": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "multi3": [
+          1.0,
+          1.0,
+          1.0,
+          0.1,
+          1.0
+        ]
+      },
+      "mean_train_rmse": {
+        "control005": 11.530929215687534,
+        "multi3": 10.00134647328679
+      },
+      "oof_sha256": "0ea86a87dc7c73705996e6aa42a88989c87b87360fc18dc1792102d2e7057604",
+      "seconds": 0.5679249580134638
+    }
+  },
+  "secondary_fixed_combination": {
+    "original": {
+      "formula": ".5*043blend+.5*044blend,predeclared,no fitting",
+      "combo_rmse": 13.448074362499407,
+      "adapted043_rmse": 13.49037538493683,
+      "comparison": {
+        "005": {
+          "gain": 0.07437786926842449,
+          "conditional_ci95": [
+            0.02284398461399677,
+            0.12555215332441155
+          ],
+          "fold_gains": [
+            0.08449783215038131,
+            0.013030519152252396,
+            0.12124426304026947,
+            0.09595670411868618,
+            0.053047060169451044
+          ]
+        },
+        "043": {
+          "gain": 0.04230102243742273,
+          "conditional_ci95": [
+            -0.006201482376833133,
+            0.08898588796782692
+          ],
+          "fold_gains": [
+            0.0541643437493633,
+            0.002572777960883954,
+            0.100211105811562,
+            0.0526889133748103,
+            -0.0019222490125461178
+          ]
+        },
+        "044": {
+          "gain": -0.02484512478750389,
+          "conditional_ci95": [
+            -0.07165106103314592,
+            0.02431016509078902
+          ],
+          "fold_gains": [
+            -0.026001463153344062,
+            0.004891886383838084,
+            -0.06747205411904567,
+            -0.04405399226208573,
+            0.010342005824941936
+          ]
+        }
+      },
+      "blend_residual_correlation043_044": 0.9974160349005664,
+      "prediction_changes_correlation": 0.08033124830211318
+    },
+    "20261031": {
+      "formula": ".5*043blend+.5*044blend,predeclared,no fitting",
+      "combo_rmse": 13.439372694035798,
+      "adapted043_rmse": 13.448969908704811,
+      "comparison": {
+        "005": {
+          "gain": 0.044897985613234326,
+          "conditional_ci95": [
+            0.009464035899109649,
+            0.08255983564263901
+          ],
+          "fold_gains": [
+            0.03649534262876308,
+            0.08401394430469722,
+            -0.01056873071168063,
+            0.05136415390250271,
+            0.06322580599866257
+          ]
+        },
+        "043": {
+          "gain": 0.009597214669012644,
+          "conditional_ci95": [
+            -0.025418044289722583,
+            0.04567338809394932
+          ],
+          "fold_gains": [
+            -0.05109434479658681,
+            0.0006441640027841089,
+            0.054511546426748936,
+            0.042180819295587924,
+            0.004579695329988809
+          ]
+        },
+        "044": {
+          "gain": 0.00027810365881997257,
+          "conditional_ci95": [
+            -0.03568019849811903,
+            0.03525326600561423
+          ],
+          "fold_gains": [
+            0.059001149936781516,
+            0.0058474708991056445,
+            -0.04232503169347268,
+            -0.03212199962482565,
+            0.00834003767503333
+          ]
+        }
+      },
+      "blend_residual_correlation043_044": 0.9985365935946751,
+      "prediction_changes_correlation": 0.015971380752650876
+    },
+    "20261101": {
+      "formula": ".5*043blend+.5*044blend,predeclared,no fitting",
+      "combo_rmse": 13.604511186305356,
+      "adapted043_rmse": 13.613023952868913,
+      "comparison": {
+        "005": {
+          "gain": 0.0468154134583294,
+          "conditional_ci95": [
+            -0.0029675434943790433,
+            0.0952870194537805
+          ],
+          "fold_gains": [
+            -0.0008855146450343909,
+            0.04698978147382249,
+            0.0909697962659628,
+            0.051154252615353,
+            0.04680835846797926
+          ]
+        },
+        "043": {
+          "gain": 0.00851276656355715,
+          "conditional_ci95": [
+            -0.03471256990608769,
+            0.050820151354688536
+          ],
+          "fold_gains": [
+            0.031826493070635564,
+            0.04735759363359726,
+            -0.07587718316163716,
+            0.01567824226747838,
+            0.022069836921517094
+          ]
+        },
+        "044": {
+          "gain": 0.006286333357060414,
+          "conditional_ci95": [
+            -0.036004470843760086,
+            0.04882182786904515
+          ],
+          "fold_gains": [
+            -0.020915064774058578,
+            -0.04000339212042192,
+            0.08471759925541456,
+            0.01724774603131607,
+            -0.009804161876042272
+          ]
+        }
+      },
+      "blend_residual_correlation043_044": 0.9978279665418223,
+      "prediction_changes_correlation": 0.19919016126054953
+    }
+  },
+  "validation": {
+    "models_reloaded": 35,
+    "regression_reload_max_error": 0.0,
+    "cpu_feature_max_error": 5.2928924560546875e-05,
+    "finalblock005_exact": true,
+    "fold_preprocessing_groups_inner_splits_ids_metrics_gate_verified": true,
+    "best005_and043_protected": true,
+    "extraction_seconds": 22.902107333007734,
+    "regression_seconds": 1.8389008740196005,
+    "scope": "Only development400; no holdout/test, new packages, cost, submissionCSV or upload.",
+    "limits": [
+      "Historical repeated selection on400andthe samepartitions remains optimistic.",
+      "Proportional Ridge alpha controls exactduplication but not effective rank/correlation.",
+      "Secondary043combination is predeclared but evaluated after main screen; not an independent validation or guaranteed Public improvement."
+    ]
+  },
+  "decision": "Retain044 as a modest consistently improving frozen representation; preserve005 submittedbest and043 design/models. Fixed043/044mixture does not clearly dominate044; no weight tuning,candidateCSV orupload.",
+  "model_complexity": "Same1152descriptorperlayer,3456primary; fold-onlystandardization and alpha=lambda*p. This controls literalduplication,not effective rank. Primarypredeclared;mid6diagnosticnoteligible.",
+  "scope": "Development400only; noholdout/test,packages,costorupload.",
+  "best005_sha256": "473ef271d35b2c18185690471e2ffbada07a01cf31d07be4c2d489bd76e67ff4",
+  "running_work": [],
+  "new_candidate": null,
+  "next_questions": [
+    "Does remainingerror reflect syntheticlabelnoise/unobservedgeneratorparameters or recoverable morphology? Currentdata do not establish a noise floor.",
+    "Can physically meaningful grain/phase/pore parameters be measured reliably through blur/noise? Prior connected-boundary/pore/covariance panels did not validate this.",
+    "Do block6/9/12 features improve morphology signal or merely encode nuisance contrast/noise? Need targeted development-only attribution/robustness diagnostics before larger training/search.",
+    "The three partitions reuse400historicallyinspectedimages; how much gain survives a genuinely prospective evaluation? Existing repeated CV cannot remove historical selection bias."
+  ],
+  "resource_conclusion": "No evidence that another package,largerpaidcomputeornewexternaldataisnecessary. No new installation requested. More compute alone is not justified by current modest marginal gains."
+}

@@ -1,0 +1,184 @@
+{
+  "computed_utc": "2026-10-19T00:30:35.319939+00:00",
+  "reference": "User-submitted sourceF38; Public score not used in this calculation.",
+  "reference_rmse": 8.977661203129443,
+  "variants": {
+    "replace_tab_block": {
+      "rmse": 8.966191527939781,
+      "gain": 0.011469675189662354,
+      "fold_gains": [
+        -0.0345398805432513,
+        0.10789092449979165,
+        -0.07099680598760827,
+        0.027678700333519046,
+        0.03936783245932851
+      ],
+      "positive_folds": 3,
+      "ci95": [
+        -0.06509088635218516,
+        0.08751179243105879
+      ],
+      "top10_positive_removed_gain": -0.055127772416236454,
+      "seed_gains": [
+        0.011111302402552425,
+        0.011826084396011183
+      ],
+      "positive_images": 215,
+      "checks": {
+        "gain_at_least_point_one": false,
+        "four_folds": false,
+        "positive_interval": false,
+        "positive_influence": false,
+        "both_seed_gains_positive": true
+      },
+      "passes_declared_resource_gate": false
+    },
+    "replace_linear_block": {
+      "rmse": 9.220107216443633,
+      "gain": -0.2424460133141899,
+      "fold_gains": [
+        -4.0565263507374993e-05,
+        -0.4149215396828989,
+        -0.39053275978289825,
+        -0.23142860893520734,
+        -0.18011399635979863
+      ],
+      "positive_folds": 0,
+      "ci95": [
+        -0.40535694348956397,
+        -0.07909488711307754
+      ],
+      "top10_positive_removed_gain": -0.3554342360033349,
+      "seed_gains": [
+        -0.24367734045033806,
+        -0.24117596959702503
+      ],
+      "positive_images": 190,
+      "checks": {
+        "gain_at_least_point_one": false,
+        "four_folds": false,
+        "positive_interval": false,
+        "positive_influence": false,
+        "both_seed_gains_positive": false
+      },
+      "passes_declared_resource_gate": false
+    },
+    "replace_both_blocks": {
+      "rmse": 9.211598335618051,
+      "gain": -0.2339371324886077,
+      "fold_gains": [
+        -0.04788155002350969,
+        -0.3254639087470874,
+        -0.4603271132959357,
+        -0.1861702825445981,
+        -0.14299580287126368
+      ],
+      "positive_folds": 0,
+      "ci95": [
+        -0.41174818372993194,
+        -0.057812859043343025
+      ],
+      "top10_positive_removed_gain": -0.3543783906346558,
+      "seed_gains": [
+        -0.23551849309081163,
+        -0.2323183598114653
+      ],
+      "positive_images": 193,
+      "checks": {
+        "gain_at_least_point_one": false,
+        "four_folds": false,
+        "positive_interval": false,
+        "positive_influence": false,
+        "both_seed_gains_positive": false
+      },
+      "passes_declared_resource_gate": false
+    }
+  },
+  "rows": 400,
+  "contexts": [
+    {
+      "fold": 0,
+      "train_rows": 320,
+      "query_rows": 25,
+      "query_source_overlap": 0,
+      "predictions_sha256": "369031f8b764f69a09956254ca151451366c07de557a8352dddf396e55f4cadc"
+    },
+    {
+      "fold": 1,
+      "train_rows": 320,
+      "query_rows": 25,
+      "query_source_overlap": 0,
+      "predictions_sha256": "3a7e914f8f2d1e6c448ee6230c8c345094db2f320bf1a35a629573a1e9ca729f"
+    },
+    {
+      "fold": 2,
+      "train_rows": 320,
+      "query_rows": 26,
+      "query_source_overlap": 0,
+      "predictions_sha256": "03d2be85d77ea786f674366e072ac4779b6e673be9f0faf96efe2b728dfd21f2"
+    },
+    {
+      "fold": 3,
+      "train_rows": 320,
+      "query_rows": 22,
+      "query_source_overlap": 0,
+      "predictions_sha256": "0ee535c45e97d1bd00201cfbf5fb25fa212e20c7ece15e8fb38a80354d9be967"
+    },
+    {
+      "fold": 4,
+      "train_rows": 320,
+      "query_rows": 26,
+      "query_source_overlap": 0,
+      "predictions_sha256": "aeaf45800f3569269f4b13a6ba4cb82091ccefbc0004f31bfade8a409e2c0121"
+    }
+  ],
+  "source_oof": [
+    {
+      "path": "source-h300/proper-original400-f0-s1811/system38-predictions.npz",
+      "sha256": "cd62184b63e0383b5dc775fbca4a61bad5c21b1e0016f963632f89a7f4f3cb73"
+    },
+    {
+      "path": "source-h300/proper-original400-f1-s1811/system38-predictions.npz",
+      "sha256": "e80da817663bb5cbba385443bc98fff07661b795ed9272680fb3870824e4f997"
+    },
+    {
+      "path": "source-h300/proper-original400-f2-s1811/system38-predictions.npz",
+      "sha256": "b74637d8f9af4667bf426fe143026200cfaae70667197eb8632b3607d4c8a1ee"
+    },
+    {
+      "path": "source-h300/proper-original400-f3-s1811/system38-predictions.npz",
+      "sha256": "909df8f485e0861e3ecc3a215b3dbd1756e9e92cf0c21b529b06d96ddb1e3765"
+    },
+    {
+      "path": "source-h300/proper-original400-f4-s1811/system38-predictions.npz",
+      "sha256": "1df8f1d6e53e3172f2d57ad0765e97bab64a74727fd26335ab099ec50f56479d"
+    },
+    {
+      "path": "source-h300/proper-original400-f0-s1823/system38-predictions.npz",
+      "sha256": "88e61e6c4716fb6ba4b3d9bb401fd53c144455a3d611157ca5cf845db8a2d64f"
+    },
+    {
+      "path": "source-h300/proper-original400-f1-s1823/system38-predictions.npz",
+      "sha256": "74a01b2a9f9403d510cb5641a503edc1295cf8e9126f9d60d9281ee86b1dc952"
+    },
+    {
+      "path": "source-h300/proper-original400-f2-s1823/system38-predictions.npz",
+      "sha256": "905a5a3b689c0a6ecb5b43002180cf98c20389382b28968618d120eb4ead3585"
+    },
+    {
+      "path": "source-h300/proper-original400-f3-s1823/system38-predictions.npz",
+      "sha256": "fbf2553d5745438a81381588d44537d9506d80e8b4291fae9d6912d007726101"
+    },
+    {
+      "path": "source-h300/proper-original400-f4-s1823/system38-predictions.npz",
+      "sha256": "59a2ea807183185638e611bec3c51baf51921ae203d50d3d748872c654297c61"
+    }
+  ],
+  "legacy076_sha256": "c5728dabd5c99ddc5e7c67b405dc8e75dcec3f1f0fc11478ef834af1a02da959",
+  "plan_sha256": "57774b4515c17d52b11be57e81cb1e4e7993ed4c5f5646101a950f6fe6d74163",
+  "all_rows_retained": true,
+  "test_inputs_read": false,
+  "weights_fitted": false,
+  "full_system_confirmation_passed": false,
+  "scope": "Matched original400 conditional development only. New source encoders exclude validation images; inherited representations remain globally trained and all labels reused. Fixed inherited block masses; no Public score fit or test-data selection."
+}

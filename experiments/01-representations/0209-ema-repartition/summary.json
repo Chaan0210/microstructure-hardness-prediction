@@ -1,0 +1,588 @@
+{
+  "study": 209,
+  "status": "기존 두 재분할에서 고정 EMA 정책 검증 완료",
+  "policy": {
+    "decay": 0.99,
+    "warmup_updates": 0,
+    "initialization": "E0 = theta0, 무작위 초기 모델의 학습 가능 파라미터를 CPU float32로 독립 복사",
+    "when": "각 main optimizer.step() 완료 직후에만 E_t=0.99*E_(t-1)+0.01*theta_t, t1..800",
+    "bias_correction": false,
+    "final_evaluation": "800번째 update 직후 E800 한 번. EMA checkpoint 추가 평균·best epoch 선택 없음.",
+    "reason": "명료한 고정100-update 시간 척도(약10epoch). 최적 decay라는 근거는 없으며 한 정책만 검증한다.",
+    "initial_weight_at800": 0.0003222223628802337,
+    "half_life_updates": 68.96756393652842,
+    "parameter_storage": "EMA는 학습 모델과 별도 CPU vector. 모델·gradient·optimizer에 되돌려 쓰지 않음.",
+    "buffers": "BatchNorm module 수0 및 named_buffers 비어 있음 확인 필수. GroupNorm4. 예기치 않은 buffer 또는 BN 발견 시 중단하고 재보정 정책을 추가하지 않음.",
+    "independent_verification": "같은 post-update theta_t를 사용한 float64 닫힌 가중 합 beta^800*theta0 + sum((1-beta)*beta^(800-t)*theta_t)를 병행 누산. 정책 추가 아님.",
+    "no_search": "decay·warmup·초기화·구간·평가 시점의 결과 기반 변경 없음"
+  },
+  "individual_partitions": {
+    "original": {
+      "standalone": {
+        "baseline_RMSE": 15.032317843077909,
+        "EMA_RMSE": 14.864210255122755,
+        "gain": 0.1681075879551539,
+        "conditional_CI95": [
+          0.09380168421759785,
+          0.2440200565844286
+        ],
+        "top5_removed_gain": 0.12454560196736253,
+        "top5_removed_IDs": [
+          "TRAIN_000224",
+          "TRAIN_000020",
+          "TRAIN_000382",
+          "TRAIN_000052",
+          "TRAIN_000125"
+        ],
+        "positive_ID_count": 226,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 15.249590276858356,
+            "EMA_RMSE": 15.03791615531731,
+            "gain": 0.21167412154104603
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 14.37046186697119,
+            "EMA_RMSE": 14.186391536796068,
+            "gain": 0.18407033017512298
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 15.484683471683876,
+            "EMA_RMSE": 15.445252031381525,
+            "gain": 0.03943144030235146
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 15.05074615048783,
+            "EMA_RMSE": 14.857890439601611,
+            "gain": 0.192855710886219
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 14.983068407032066,
+            "EMA_RMSE": 14.765445702204511,
+            "gain": 0.21762270482755497
+          }
+        ],
+        "positive_folds": 5,
+        "original208_top5_excluded_gain": 0.12454560196736253,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000224",
+          "TRAIN_000020",
+          "TRAIN_000382",
+          "TRAIN_000052",
+          "TRAIN_000125"
+        ],
+        "prediction_delta_RMS": 0.7424267410870403,
+        "historical208_CI95_seed202610208": [
+          0.09173510093220538,
+          0.24156584601754474
+        ]
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 12.786200775750695,
+        "EMA_RMSE": 12.78239607719176,
+        "gain": 0.00380469855893395,
+        "conditional_CI95": [
+          -0.00279936106096641,
+          0.010382522649694434
+        ],
+        "top5_removed_gain": 0.00011582003889820669,
+        "top5_removed_IDs": [
+          "TRAIN_000406",
+          "TRAIN_000064",
+          "TRAIN_000052",
+          "TRAIN_000175",
+          "TRAIN_000125"
+        ],
+        "positive_ID_count": 206,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 12.824291360960531,
+            "EMA_RMSE": 12.822426260323555,
+            "gain": 0.0018651006369765355
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 12.180402220733276,
+            "EMA_RMSE": 12.171502178372249,
+            "gain": 0.00890004236102726
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 13.763278947548145,
+            "EMA_RMSE": 13.768648236098096,
+            "gain": -0.005369288549951889
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 12.12245059832636,
+            "EMA_RMSE": 12.115638213554401,
+            "gain": 0.006812384771958335
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 12.970287133386918,
+            "EMA_RMSE": 12.96239959730968,
+            "gain": 0.007887536077237911
+          }
+        ],
+        "positive_folds": 4,
+        "original208_top5_excluded_gain": 0.00011582003889820669,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000406",
+          "TRAIN_000064",
+          "TRAIN_000052",
+          "TRAIN_000175",
+          "TRAIN_000125"
+        ],
+        "prediction_delta_RMS": 0.06540755518650251,
+        "historical208_CI95_seed202610208": [
+          -0.0028598152190292487,
+          0.010351216068238632
+        ]
+      }
+    },
+    "20261031": {
+      "standalone": {
+        "baseline_RMSE": 14.270187155168609,
+        "EMA_RMSE": 14.214429148258626,
+        "gain": 0.05575800690998278,
+        "conditional_CI95": [
+          -0.0262294259338268,
+          0.13829106194222973
+        ],
+        "top5_removed_gain": 0.016677600518054447,
+        "top5_removed_IDs": [
+          "TRAIN_000463",
+          "TRAIN_000227",
+          "TRAIN_000105",
+          "TRAIN_000278",
+          "TRAIN_000349"
+        ],
+        "positive_ID_count": 208,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 14.245315476013838,
+            "EMA_RMSE": 14.241779397215963,
+            "gain": 0.0035360787978753194
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 15.118378999212617,
+            "EMA_RMSE": 15.153955215075147,
+            "gain": -0.03557621586253035
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 15.472396192586379,
+            "EMA_RMSE": 15.388622300862714,
+            "gain": 0.08377389172366456
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 13.356211557821752,
+            "EMA_RMSE": 13.136016297882986,
+            "gain": 0.22019525993876599
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 12.996668016266721,
+            "EMA_RMSE": 12.977469726337151,
+            "gain": 0.019198289929569512
+          }
+        ],
+        "positive_folds": 4,
+        "original208_top5_excluded_gain": 0.05248929725000373,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000224",
+          "TRAIN_000020",
+          "TRAIN_000382",
+          "TRAIN_000052",
+          "TRAIN_000125"
+        ],
+        "prediction_delta_RMS": 0.8129551146539391
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 12.621902419708583,
+        "EMA_RMSE": 12.625775745924525,
+        "gain": -0.0038733262159418302,
+        "conditional_CI95": [
+          -0.011386906163517807,
+          0.003793357824677946
+        ],
+        "top5_removed_gain": -0.007483903174511752,
+        "top5_removed_IDs": [
+          "TRAIN_000105",
+          "TRAIN_000463",
+          "TRAIN_000226",
+          "TRAIN_000280",
+          "TRAIN_000349"
+        ],
+        "positive_ID_count": 201,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 12.645907133977154,
+            "EMA_RMSE": 12.653034664687574,
+            "gain": -0.00712753071042016
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 12.72156114069235,
+            "EMA_RMSE": 12.726380442680657,
+            "gain": -0.0048193019883076005
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 13.579801387155028,
+            "EMA_RMSE": 13.593080550527601,
+            "gain": -0.013279163372573066
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 11.711438975376169,
+            "EMA_RMSE": 11.70540448718665,
+            "gain": 0.006034488189518683
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 12.378861408754098,
+            "EMA_RMSE": 12.37750732063886,
+            "gain": 0.0013540881152369622
+          }
+        ],
+        "positive_folds": 2,
+        "original208_top5_excluded_gain": -0.002599388003410752,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000406",
+          "TRAIN_000064",
+          "TRAIN_000052",
+          "TRAIN_000175",
+          "TRAIN_000125"
+        ],
+        "prediction_delta_RMS": 0.07528321163800644
+      }
+    },
+    "20261101": {
+      "standalone": {
+        "baseline_RMSE": 14.553099889755208,
+        "EMA_RMSE": 14.45673244654157,
+        "gain": 0.09636744321363722,
+        "conditional_CI95": [
+          0.008714464124952984,
+          0.18692166826907872
+        ],
+        "top5_removed_gain": 0.05629443015546798,
+        "top5_removed_IDs": [
+          "TRAIN_000496",
+          "TRAIN_000274",
+          "TRAIN_000063",
+          "TRAIN_000273",
+          "TRAIN_000038"
+        ],
+        "positive_ID_count": 213,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 14.899599731811216,
+            "EMA_RMSE": 14.806808520869572,
+            "gain": 0.09279121094164466
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 14.64348908264391,
+            "EMA_RMSE": 14.597422162241495,
+            "gain": 0.046066920402415334
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 14.649865843692425,
+            "EMA_RMSE": 14.417425242863013,
+            "gain": 0.23244060082941154
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 14.594641146401987,
+            "EMA_RMSE": 14.5985314835202,
+            "gain": -0.003890337118212628
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 13.961075098065656,
+            "EMA_RMSE": 13.844853942500448,
+            "gain": 0.11622115556520818
+          }
+        ],
+        "positive_folds": 4,
+        "original208_top5_excluded_gain": 0.10433331146077585,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000224",
+          "TRAIN_000020",
+          "TRAIN_000382",
+          "TRAIN_000052",
+          "TRAIN_000125"
+        ],
+        "prediction_delta_RMS": 0.8835098106886391
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 13.032449212752852,
+        "EMA_RMSE": 13.038450437218287,
+        "gain": -0.006001224465435939,
+        "conditional_CI95": [
+          -0.013507311128679821,
+          0.0018866189567092705
+        ],
+        "top5_removed_gain": -0.009328645217856035,
+        "top5_removed_IDs": [
+          "TRAIN_000085",
+          "TRAIN_000206",
+          "TRAIN_000063",
+          "TRAIN_000056",
+          "TRAIN_000150"
+        ],
+        "positive_ID_count": 192,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 13.19322289145329,
+            "EMA_RMSE": 13.203831308667754,
+            "gain": -0.010608417214463373
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 12.775354173769069,
+            "EMA_RMSE": 12.776897255048068,
+            "gain": -0.0015430812789993809
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 12.750017685469336,
+            "EMA_RMSE": 12.75499944744422,
+            "gain": -0.00498176197488398
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 13.821111609654196,
+            "EMA_RMSE": 13.841820758277146,
+            "gain": -0.02070914862295048
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 12.584386388688468,
+            "EMA_RMSE": 12.574962088078223,
+            "gain": 0.00942430061024524
+          }
+        ],
+        "positive_folds": 1,
+        "original208_top5_excluded_gain": -0.0045386428693223735,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000406",
+          "TRAIN_000064",
+          "TRAIN_000052",
+          "TRAIN_000175",
+          "TRAIN_000125"
+        ],
+        "prediction_delta_RMS": 0.07941220272735902
+      }
+    }
+  },
+  "ID_cluster_aggregates": {
+    "two_repartitions": {
+      "standalone": {
+        "baseline_RMSE": 14.412337732733233,
+        "EMA_RMSE": 14.336092721549903,
+        "gain": 0.07624501118332994,
+        "conditional_CI95": [
+          0.008939985880539902,
+          0.14496922884882596
+        ],
+        "top5_removed_gain": 0.04899336794045084,
+        "top5_removed_IDs": [
+          "TRAIN_000273",
+          "TRAIN_000150",
+          "TRAIN_000278",
+          "TRAIN_000038",
+          "TRAIN_000349"
+        ],
+        "positive_ID_count": 226,
+        "ID_count": 400,
+        "partition_repetitions": 2,
+        "original208_top5_excluded_gain": 0.07865488825832756,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000224",
+          "TRAIN_000020",
+          "TRAIN_000382",
+          "TRAIN_000052",
+          "TRAIN_000125"
+        ]
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 12.828818206982822,
+        "EMA_RMSE": 12.833771912227785,
+        "gain": -0.004953705244963302,
+        "conditional_CI95": [
+          -0.010994627549657566,
+          0.0013307775211143446
+        ],
+        "top5_removed_gain": -0.007467938159246401,
+        "top5_removed_IDs": [
+          "TRAIN_000229",
+          "TRAIN_000056",
+          "TRAIN_000038",
+          "TRAIN_000349",
+          "TRAIN_000150"
+        ],
+        "positive_ID_count": 192,
+        "ID_count": 400,
+        "partition_repetitions": 2,
+        "original208_top5_excluded_gain": -0.003583992563788385,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000406",
+          "TRAIN_000064",
+          "TRAIN_000052",
+          "TRAIN_000175",
+          "TRAIN_000125"
+        ]
+      }
+    },
+    "all_three_partitions": {
+      "standalone": {
+        "baseline_RMSE": 14.621918907129922,
+        "EMA_RMSE": 14.514267182675221,
+        "gain": 0.10765172445470128,
+        "conditional_CI95": [
+          0.051597907528502775,
+          0.1638772944047099
+        ],
+        "top5_removed_gain": 0.08568572154767473,
+        "top5_removed_IDs": [
+          "TRAIN_000382",
+          "TRAIN_000278",
+          "TRAIN_000038",
+          "TRAIN_000020",
+          "TRAIN_000349"
+        ],
+        "positive_ID_count": 251,
+        "ID_count": 400,
+        "partition_repetitions": 3,
+        "original208_top5_excluded_gain": 0.09409996901133155,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000224",
+          "TRAIN_000020",
+          "TRAIN_000382",
+          "TRAIN_000052",
+          "TRAIN_000125"
+        ]
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 12.81462814460406,
+        "EMA_RMSE": 12.816669516224838,
+        "gain": -0.0020413716207787758,
+        "conditional_CI95": [
+          -0.007153032305276063,
+          0.0030923111362676447
+        ],
+        "top5_removed_gain": -0.004042275424412267,
+        "top5_removed_IDs": [
+          "TRAIN_000038",
+          "TRAIN_000150",
+          "TRAIN_000125",
+          "TRAIN_000175",
+          "TRAIN_000349"
+        ],
+        "positive_ID_count": 211,
+        "ID_count": 400,
+        "partition_repetitions": 3,
+        "original208_top5_excluded_gain": -0.002356016030478969,
+        "original208_top5_excluded_IDs": [
+          "TRAIN_000406",
+          "TRAIN_000064",
+          "TRAIN_000052",
+          "TRAIN_000175",
+          "TRAIN_000125"
+        ]
+      }
+    }
+  },
+  "stability_criteria": {
+    "20261031": {
+      "gain_at_least_0_02": true,
+      "at_least_3_positive_folds": true,
+      "CI_lower_positive": false,
+      "top5_removed_positive": true
+    },
+    "20261101": {
+      "gain_at_least_0_02": true,
+      "at_least_3_positive_folds": true,
+      "CI_lower_positive": true,
+      "top5_removed_positive": true
+    },
+    "two_repartitions": {
+      "gain_positive": true,
+      "CI_lower_positive": true,
+      "top5_removed_positive": true
+    },
+    "all_three_partitions": {
+      "gain_positive": true,
+      "CI_lower_positive": true,
+      "top5_removed_positive": true
+    }
+  },
+  "stability_criteria_passed": false,
+  "decision": "고정 EMA의 분할 안정성 기준을 충족하지 못했다. 이번 정책의 확대를 중단하고 best021을 유지한다.",
+  "gradient_training_fits": 10,
+  "gradient_updates": 8000,
+  "shadow_optimizer_verification_steps": 8000,
+  "additional_gradient_validation_fits": 0,
+  "EMA_policy_count": 1,
+  "original208_retrained": false,
+  "best021_replaced": false,
+  "fixed_ensemble_meaning": {
+    "formula": "Q = P021 + 0.081 * 기존 split/fold calibrator slope * (새 첫 seed CNN - 기존 첫 seed CNN)",
+    "meaning": "기존 CNN 3seed 중 첫 seed 출력 치환이다. 새 CNN을 추가한 blend가 아니다. 나머지 두 seed와 calibration·잔차는 고정하며 전체 nested 재학습이 아니다.",
+    "null": "Q_uniform = P021 exact, 기존 121/133/140/144/177 계보 재구성 확인"
+  },
+  "statistics": {
+    "draws": 10000,
+    "seed": 202610209,
+    "unit": "동일한 400개 ID cluster. 세 분할 결과를 항상 함께 재표집. 1200개 독립 관측으로 취급하지 않는다.",
+    "aggregate": "ID별 세 분할 squared error 평균 후 전체 ID 평균의 제곱근. 예측 평균 앙상블이 아니다.",
+    "reports": [
+      "208 원본과 두 재분할 각각의 RMSE·CI·전체 fold·상위 5개 이득 ID 제외",
+      "두 재분할 pooled 및 세 분할 pooled의 ID cluster CI·상위 5개 ID 제외",
+      "208 원본에서 제외한 다섯 ID를 동일하게 제외한 각 비교의 감도"
+    ],
+    "original_CI": "208의 사전 seed 202610208 CI는 보존하고 209 공통 draw CI를 별도 구분한다."
+  },
+  "gain_definition": "기존 마지막 5 epoch 평균의 RMSE - 고정 전체 update EMA의 RMSE. 양수가 개선이다.",
+  "limitations": [
+    "세 분할은 같은 개발 400개 ID의 반복측정이다. 독립 holdout 또는 1,200개 독립 표본이 아니다.",
+    "ID cluster bootstrap은 저장된 학습 결과에 조건부다. 재학습·seed 변동과 누적 400장 선택 편향은 보정하지 않는다.",
+    "고정 앙상블은 기존 CNN 3seed 중 첫 seed 출력만 치환했다. 추가 blend가 아니며 다른 seed·calibrator·잔차는 고정했다. 전체 nested 재학습의 성능을 추정하는 결과로 단정하지 않는다.",
+    "201의 과거 update별 RNG 해시는 없다. 시작·종료 RNG, 모든 배치·증강·LR·MSE·main gradient norm, 마지막 5 state와 평균, 최종 main optimizer·scheduler 및 OOF를 직접 비교했다.",
+    "EMA decay·warmup·초기화·seed·epoch·평가 시점은 탐색하지 않았다."
+  ],
+  "plan_SHA256": "e26f79da9720452fd4367a41604cd8d1e28d59b063582d0c335de5ebde84c8d7",
+  "validation_SHA256": "68f91f45f4f2cfaa64902df71f511f1942ac065cb039d5f72d72dd07a8558d9a",
+  "bootstrap_SHA256": "3f9480a2076a4a36d68236b2743f4ad31c1d824b9db9ddefd44f410de231682a",
+  "cost": 0,
+  "install_download_holdout_test_full500_newCSV_submission": false
+}

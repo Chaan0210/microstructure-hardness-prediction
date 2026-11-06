@@ -1,0 +1,37 @@
+{
+  "time": "2026-10-18T00:14:39.590447+09:00",
+  "active_exec_session": 92991,
+  "active_command": ".venv/bin/python -B -u experiments/model-audit-repair-20261017-2335/dense_mps.py train",
+  "completed": [
+    "freeze154570",
+    "teachers180missing",
+    "retarget12new8reused",
+    "retarget evaluation rejected",
+    "log120models",
+    "log evaluation rejected",
+    "audit",
+    "CPU and MPS probes"
+  ],
+  "dense_models_complete": 15,
+  "do_not_read_partial_dense_accuracy": true,
+  "next": [
+    "wait for dense-complete.json and process exit",
+    "evaluate.py dense",
+    "dense_decision.py",
+    "log_size_diagnostic.py",
+    "calibration_diagnostic.py",
+    "verify.py sources/repeat/models/assembly",
+    "dense_verify.py on local MPS",
+    "reproduce.py baseline conservation",
+    "protect.py verify",
+    "write REPORT,comparison,decision,completion and final file hashes"
+  ],
+  "no_submission": true,
+  "baseline_protected": [
+    "082",
+    "076"
+  ],
+  "compute_budget_seconds": 5400,
+  "dense_hard_cap_seconds": 3300,
+  "notes": "All writes new directory. Failed probe versions preserved. No user permission needed for continued local work. Previous083 upload unfinished and not resumed. Latest user asks further model improvement; do not stop at status."
+}

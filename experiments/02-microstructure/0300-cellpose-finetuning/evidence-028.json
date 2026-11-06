@@ -1,0 +1,53 @@
+{
+ "candidate": "028",
+ "date": "2026-10-08",
+ "change": "noisy-half (noise > train median) grain features from Cellpose-SAM fine-tuned on degraded clean train images (ft-a1s250: 170 train images ranked 80-250 by noise, 250 steps, label-free) instead of zero-shot 4-view TTA; grain model = mean(TabPFN-v2 n32x3, TabPFN-3.5 default x3); blend weight 0.75 on grain",
+ "harness": {
+  "base_v3tta_v2": 11.7549,
+  "ft_v2": 11.1298,
+  "ft_v35": 11.1263,
+  "ft_avg": 11.0484
+ },
+ "fidelity_80clean": {
+  "zs_clean": 9.06,
+  "zs_degraded": 11.678,
+  "ft_clean": 9.302,
+  "ft_degraded": 9.789
+ },
+ "dev_reference_027_pooled": 11.6618,
+ "dev": {
+  "original_w0.5": 11.081203832826553,
+  "20261031_w0.5": 11.05110966282378,
+  "20261101_w0.5": 11.27995711206224,
+  "pooled_w0.5": 11.137886328718606,
+  "original_w0.7": 10.864188612271514,
+  "20261031_w0.7": 10.866920949856553,
+  "20261101_w0.7": 10.993253392815308,
+  "pooled_w0.7": 10.908287144675628,
+  "original_w0.75": 10.85670775184609,
+  "20261031_w0.75": 10.865003731503482,
+  "20261101_w0.75": 10.963881363868566,
+  "pooled_w0.75": 10.895306387852889,
+  "original_w0.8": 10.868158272473671,
+  "20261031_w0.8": 10.880886024939871,
+  "20261101_w0.8": 10.95182085104532,
+  "pooled_w0.8": 10.90035052764605
+ },
+ "weight_rule": "nested outer-train-fold choice on dev gave 0.65-0.85 (median 0.75) for every partition; fixed at 0.75",
+ "adopt": true,
+ "review_note_2026-10-08": "weight_rule correction: the per-fold weight choice (0.65-0.85) used OOF predictions on outer-train rows that were produced by models trained with the outer-validation labels (best021 and grain), so it was NOT nested. 0.75 was therefore chosen after seeing dev; fixed-weight dev pooled: w0.7 10.908, w0.75 10.895, w0.8 10.900 (selection optimism small but nonzero). From now on W=0.75 is fixed for candidate comparisons; no data-driven weight selection on these OOFs.",
+ "inputs": {
+  "train_features": "experiments/push-300/feat-a1s250n1-train.npz",
+  "train_sha256": "fe1680f9959bffbc6f2de1ac82f047468ff08207c77467fefececa8a4660a179",
+  "test_features": "experiments/push-300/feat-a1s250n1-test.npz",
+  "test_sha256": "ceca067bdd2e24c8a122b289e553b2f61dfc22fd0f4f6c8224898200e81bfe12",
+  "provenance": [
+   "experiments/push-300/feat-a1s250n1-train.provenance.json",
+   "experiments/push-300/feat-a1s250n1-test.provenance.json"
+  ],
+  "dev_results": [
+   "experiments/push-300/dev-a1s250n1-v2.json",
+   "experiments/push-300/dev-a1s250n1-v35.json"
+  ]
+ }
+}

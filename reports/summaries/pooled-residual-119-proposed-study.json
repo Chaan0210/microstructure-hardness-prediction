@@ -1,0 +1,28 @@
+{
+  "study": "119 proposed fixed-regularization pooled320 residual comparison",
+  "status": "proposed_not_executed",
+  "created_utc": "2026-10-04T01:55:09.948849+00:00",
+  "hypothesis": "Poolingcrossfittedresidualpairs across3honestblocks mayreduceconditionalresidualfit variance anduseall320pairs inonelearner, ratherthanaveraging3smallfits. Sameinputs,targetvector,kernelfamily andlambda;no kernel orweight search.",
+  "arms": {
+    "A_reference": "Unchanged115/013developmentselector; descriptiveoperatingreference.",
+    "B_matched_block": "Threeblock-specificrbf1 models, eachfitonB106/107, uniformaveragecorrection +011. No none/Ridge/alpha selection.",
+    "C_primary_pooled": "One rbf1 model fitto all320 outer-training residualpairs. Residualfori inB_j =y_i - verifiednested011trainedA_j213/214(i). Applyunchanged011_outer320+g320(outer80)."
+  },
+  "fixed_model": "Existing115rbf1 exactly: same57fixedfeatures,MinMaxclip/StandardScaler/blockweights,train-localmedian-distancegamma,centeredunitmeandiagonalkernel,nointercept,residualRMS,alpha=n*1. Nochoiceoflambda,candidatefamily,none,foldcount orweight. Effective df<=1 fornormalizedkernel.",
+  "why_lambda1": "Alreadyexistingstrongest115regularization;conservativeonefixedsettingtoisolatepooling,datauseandvariance ratherthanretune. Fixedbeforeany119result;doesnotclaimbestlambda orpreregisteredhistoricalchoice.",
+  "leakage_rule": "Allcrossfitanchors excludeouter80. Cscalers/kernelstatsfitoutertrain320only. No innerhyperparameterCV onpooledresiduals, so thedemonstratedinnerlabelpath isnotusedforselection. Bscalersfititsownblock. Data-dependentnormalization/bandwidth changeswithtrainingcohort;contrasttestswholepoolingrecipe,notpurecausaln withfixedfeaturemap.",
+  "primary_metric": "Prespecified pooleduntrimmedMSE across3existingpartitions/1200predictionpairs; CminusB primarydata-usecontrast. ReportCversus115and011; all400IDs clusteredforuncertainty. No everyfold/partition gate, influencegate, ratiofit orbestseed choice.",
+  "candidate_policy": "OnlyconsiderC iff pooledMSE strictlybelowB,115and011 andindependentreload/scopechecks pass. Otherwise preserve013; no automaticlambda sweep/fallbackcandidate. A,B,Cnotcombinedorselectedusingtest.",
+  "validation": "Reconstructexact320OOFresidualvectorfrom45verified112anchorcache blocks, assertownlabelandouterexclusions, hash everyinput;independentkernelconstruction/eigensolve;perturbouterlabels and rerunresidualfits;scalersandRMSfitonlyrespectiveB/T. Retainimmutablecontrols011/013.",
+  "resources": "45fixedblockfits+15pooled320fits, cached57featuresandanchors;CPU2existingpackages,nonewupstreamtraining. Firstouterfoldbenchmarkreused beforecontinue;target<120seconds regression,RSS<2GB,stopifexceeded. No cost/newdata/install.",
+  "if_finalfit_later": "Sameprocedureonall500: usealreadyverified114OOFresiduals from3anchors333/334;fitonefixedrbf1on500pairs andaddtoexisting011full500. Testinferenceonlyaftercandidate lock andtrainingvalidation. Notperformedin118.",
+  "limitations": [
+    "Pseudo-targetsaredependentbecauseanchorfits overlap;320pairs are not320independentnoise realizations.",
+    "Fixedrbf1canunderfit;failurewouldnotrefuteproperlyselectedpooledmodels.",
+    "OOFanchor213/214 versuspredictionanchor320 mismatch persists;production333/334 versus500.",
+    "Historical400selectionbiasremains;candidateassessmentexploratory."
+  ],
+  "strict_nested_alternative": "To retain115five-wayselection, innerU213/214needsown3foldcrossfitted011residuals fromanchors142/143 with009calibrationnestedinsideeach142/143. Fitg_U candidates andevaluateonH106/107 using011_U;selectbyheldouttotalpredictions;refitselected g_T on320crossfitresiduals. IndexauditverifiesinsideU sets. This needs405new008calibrationfits+135shortB, muchhighercostinlocaltime andno newindependentlabels. Deferuntilcheapfixedpoolingtest supports data-usebenefit.",
+  "authorization_note": "Requestedprincipledcomparison/proposal only;119hasnotrun. No pooled320 performanceclaimed.",
+  "scope_audit_sha256": "1ce606308886a0fa0d146a82d0607d428285c5faef0cba7b163bb1a7722216bc"
+}

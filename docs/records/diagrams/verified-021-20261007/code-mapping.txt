@@ -1,0 +1,92 @@
+021 / 018 코드 근거 매핑 — 2026-10-07
+
+확인 결과
+021 = .9 × unchanged018 CSV + .1 × mean3(frozen DINOv2-L MLP).
+018 = .9 × affine(raw) + .1 × short-B + mean3(block residual).
+raw = .3 KRR26 + .3 mean3(CNN) + .2 mean3(S MLP) + .2 mean3(B MLP).
+affine(raw) = 194.16551625321193 + 1.110354875458264 × (raw − 194.05925884008164).
+보정 순서는 raw → affine → short-B 결합 → residual 추가. residual 뒤 재보정 없음.
+근거 A/infer.py:42–47, B/infer.py:22–36, A/models/calibrator.json.
+A = experiments/reproduction-018-176, B = experiments/candidate021-178.
+
+입력 / backbone / head
+• 입력 grayscale uint8 256×256. A/extract.py:24–29.
+• KRR compact26 = grain12 + intercept median/range12 + image mean/std2.
+  train-fitted MinMax(clip=True) → StandardScaler → 1/√block-size weights → RBF KRR.
+  실제 checkpoint: bandwidth4, alpha.1, gamma.007470005706494201, train(500,26).
+  A/candidate_features.py:7–13; compact_regression.py:7–24; config/schema.json.
+• CNN: PIL BOX256→128, /255, train-global μσ. Conv stride2: 1×128²→16×64²
+  →32×32²→64×16²→96×8². 첫 k5,p2; 이후 k3,p1. 각 GroupNorm4+SiLU.
+  concat(feature mean96,std96,input mean1,std1)=194 →Linear64→SiLU→Dropout.15→Linear1.
+  target 역표준화. A/extract.py:27; base_train.py:14–18; cnn_model.py:4–13.
+• DINO 공통: 전체256→504 bicubic; /255; grayscale RGB복제; ImageNet μ[.485,.456,.406],
+  σ[.229,.224,.225]. crop 없음. patch14, 36×36=1296 patches. frozen encoder.
+  S: d384,12blocks; B: d768,12blocks; normalized layers zero-based[5,8,11].
+  L: d1024,24blocks, no register tokens; normalized layers[11,17,23].
+  각 layer CLS+patch mean+population std concatenate: S3456, B6912, L9216.
+  A/feature_helpers.py:3–7; extract.py:49–59; B/runtime.py:50–66.
+• S/B/L head: train-fitted StandardScaler→Linear64→GELU→Dropout.25→Linear1
+  →target 역표준화. cls7 tensor는 저장되지만 effective aux weight=0; regression만 추론.
+  A/mlp_head.py:10–25,63–65; infer.py:32–33; B/train.py:12–16,29–31.
+• short-B: B6912→독립 scaler→Linear32→GELU→Dropout.5→Linear1→target 역표준화.
+  단일 seed20270215. A/feature_helpers.py:9–17; infer.py:34–38.
+
+Seed / 학습과 추론
+• CNN seeds20261003/20261023/20261043, scalar 동일평균. D4 train augmentation,
+  MSE,80epoch,AdamW lr.002→.0001,batch32,wd.01,clip5. 마지막5epoch '가중치' 평균.
+  추론 identity 단일 방향, D4 TTA 없음. A/base_train.py:11–69; infer.py:42.
+• S/B/L seeds20261128/20261205/20261219, scalar 동일평균. SmoothL1 beta1,
+  100epoch,batch64,AdamW lr.0003→.00001,wd.01,clip1. A/mlp_head.py:36–61.
+• short-B12epoch,effective batch16/microbatch2,AdamW wd.1,clip1. A/train.py:74–84.
+• 모든 root neural checkpoint 학습행500. CNN tensor conv/head, S/B/L/short linear shape 확인.
+• Affine은 full500 in-sample 예측이 아니라 3-fold group OOF middle로 fit.
+  honest residual target에는 한 단계 안쪽 deep OOF affine 적용. A/train.py:124–138.
+• 021 canonical은 기존018 CSV + MPS frozen L features에서 CPU readout 평균.
+  018 모델/특징 재사용, L heads만 fresh500 학습. B/infer.py:22–36.
+• 추론은 저장 scaler/checkpoint/calibrator/weights만 적용; fit/backward 차단.
+  bootstrap draw·선택·학습을 추론 노드로 그리면 오류. output hardness clipping 없음.
+  feature MinMax clipping과 output clipping은 구분. A/infer.py:24–47; B/infer.py:40–45.
+
+Residual585 상세
+physics57 = compact26 + denoised31. spatial528 = B finalpatch1296×768 → fixed QR768×32
+(seed20271201) →36×36×32 →가로/세로 인접차분 Gram upper triangle528.
+57+528=585. A/feature_helpers.py:19–23; extract.py:28–29,47,60;
+denoised_grain_features.py:17–36,96–105.
+모델순서 [none,ridge1,ridge01,rbf1,rbf01]; train-fitted scaling. RBF centered-normalized,
+α=λ×n. A/residual_linear.py:4–14; residual_models.py:5–15.
+저장 block weights (A/models/weights-{0,1,2}.json):
+0, n167: [.005859375,.3046875,.60546875,.017578125,.06640625]
+1, n167: [.32421875,.30078125,.0234375,.20703125,.14453125]
+2, n166: [.171875,.4765625,.005859375,.2734375,.072265625]
+각 block 내 가중합 뒤 3block 동일평균. weights는 각 honest block의 3-fold OOF squared
+loss에서 512 group-bootstrap winner frequency. bootstrap seed20271204+j,
+inner split20271013+j. A/train.py:110–122. 이전 후보 residual을 누적하는 구조가 아님.
+
+검증과 한계
+artifacts/submission-candidate-021.csv SHA256:
+7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b
+Public RMSE11.4878517800,current_best021은 reports/candidate021-public-submission.json:2–16
+기록과 일치. 해당 기록은 parent 제출 성공 보고 기반이며 이번 live leaderboard 검증은 아님.
+A/B models/manifest.json 전체 파일 SHA 일치; B feature/training/inference code-lock 전체 일치.
+deliverables/reproduction-018-v176의 infer/extract/cnn_model/feature_helpers/mlp_head는 A와 동일.
+이번 작업에서는 모델 학습 또는 test 추론을 실행하지 않음. 원본/experiments/reports 수정 없음.
+읽은 소스 SHA는 source-hashes.json. 원본은 Git 저장소가 아니므로 code-evidence/에 읽은 파일만
+복사한 별도 로컬 Git snapshot을 만들고 Archify source 검증에 사용. 원본 프로젝트 commit이 아님.
+localhost SSH origin은 snapshot 식별자만 제공하며 서버 접속이나 공개 저장소를 뜻하지 않음.
+
+스킬 설치 / 실행
+.agents/skills/diagram-design: cathrynlavery/diagram-design
+revision d1376371965f513d99cc9ec388835d255c5c88d5, SKILL metadata v2.6, MIT.
+.agents/skills/archify: tt-a1i/archify
+revision 73aaa0696e8f72c232ea710e6fa94fd953f3e773, SKILL v3.0/package3.0.1, MIT.
+공식 skill-installer로 프로젝트 .agents/skills에 설치, LICENSE.upstream 보존.
+실제 template/규칙을 읽고 diagram-design 생성; Archify bin/archify.mjs finalize 실행.
+자동 discovery/등록은 이 세션에서 확인하지 못했으며 설치 경로로 직접 사용.
+전역 설치·권한변경·유료 API 없음. PNG의 Python Playwright 경로는 모듈 부재로 불가하여
+기존 Chrome 렌더러로 대체한다. 영문 Archify Viewer UI 유지; 설명은 한국어.
+
+최종 QA: 정적 PNG 2개 실제 Chrome 렌더 및 육안 확인, 텍스트 bbox 위반0, self_check 통과.
+Archify showcase validate/deliver/check/browser-check 모두 통과, 4viewport light 및 양끝 dark 확인.
+8개 node 실제 클릭 통과, leaves→affine→blend→candidate018→candidate021 경로4단계 통과.
+Archify template에 프로젝트 전용 light 기본값/회색·코랄 CSS를 적용했으며 upstream 원본과
+변경 template 해시는 archify-install.json에 기록. base revision 자체가 무수정이라는 뜻은 아님.

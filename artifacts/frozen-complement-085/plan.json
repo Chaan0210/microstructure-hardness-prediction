@@ -1,0 +1,42 @@
+{
+  "study": "085 exploratory frozen-head complement follow-up",
+  "created_utc": "2026-10-02T08:58:02.833358+00:00",
+  "authorization": "User explicitly authorized promoting the original084 frozen control observation to a separate exploratory hypothesis, testing both existing resplits, and candidate011 full500 training/inference only after consistent improvement. No upload.",
+  "hypothesis": "A strongly regularized fresh frozen-B head may complement009 at the already fixed10% weight. This is not a claim that joint fine-tuning helps.",
+  "selection_bias": "The purpose changed after inspecting084 original results: joint-training superiority was rejected; the frozen control blend was selected post hoc for apparent complementarity. Original13.05399777 is discovery evidence, not fresh confirmation. Both resplits reuse the same400 historically selected rows and are not independent validation. No adjustment for this adaptive selection; conditional intervals omit fitting and selection uncertainty.",
+  "config": {
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "formula": ".9*samefold_verified009 + .1*frozen084_head",
+  "unchanged": "Exact084 Head6912-32-1, dropout.5,12fixedepochs, AdamW/cosine, SmoothL1beta1, seed20270215+fold, micro2/effective16, foldtrain-only scaler/target stats, no augmentation, no backbone updates. Reuse original frozen fits verbatim. No new calibration; retain nested009 coefficients.",
+  "gate": "Run both existing resplits without intervening tuning. Eligible only if fixedblend pooledRMSE strictly improves009 and010 in all3partitions and independent validation passes. Foldcounts/conditionalCI are diagnostics, not tuning criteria. Otherwise reject; no ratios, epochs, seeds, joint training or alternate settings.",
+  "full500_rule": "If eligible, lock candidate011 before loading full500 training labels/test. Train identical frozen head once onall500, seed20270215,12epochs with same per-epoch schedule; scaler/target stats fit on500. Keep all009 models/calibrator unchanged. Formula remains.9*009+.1*newhead. Test inference only after model is fixed.",
+  "sources": {
+    "frozen_complement_085.py": "a77ae19608dab1189f225817f999d7610727e158156b5e6afea5ec40876978a3",
+    "validate_frozen_complement_085.py": "2adfb921f81863728a8850133e988736569598a796356a50dc41c9b921d27d18",
+    "dinob_joint_084.py": "1f87129e3fbd695df60558e92c0463817f5cbdd7304b99ccc002dedf6c8093a6"
+  },
+  "evidence": {
+    "reports/dinob-joint-084-validation.json": "6d1477570b17e1dd9c6df3cc900bc2d68e37b4ac372c6ebd594c79e823ae74f6",
+    "reports/dinob-joint-084-summary.json": "1a9194b8d6d30cf2afc7f75ba0ac4b4b4a6e15068caa0fc34f7cebe0256d234c",
+    "artifacts/dinob-joint-084/original/report.json": "1b1e020d8a6b18908eb52a5f8ada77c6e0a6dd9e6e8a5d072abfcd0d1c4734c8",
+    "artifacts/dinob-joint-084/original/development_predictions.npz": "b15e4c14b7d2e543125cfc9db73d4d4578907c8c1eeb34339e405ed270e4b72c"
+  },
+  "scope": "Development400 selection only; no additional holdout evaluation/test selection/install/download/cost.009 and010 protected;010 remains unsubmitted.",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Fixedshortschedule mayunderfit andone seed leaves seed uncertainty. Results test thisoneprotocol,not alljointfinetuning."
+}

@@ -1,0 +1,243 @@
+{
+  "outcome": "Preserved submitted best009. The one preregistered component-contrast extension failed split consistency; no candidate010, final500 fit, test inference or upload was performed.",
+  "public_record": {
+    "candidate": "009",
+    "public_rmse": 11.8406613479,
+    "previous008_public_rmse": 11.8898307061,
+    "improvement_vs008": 0.0491693582,
+    "rank": 18,
+    "participants": 56,
+    "submitted_at": "2026-10-02T15:07:00+09:00",
+    "submission_id": "1df354d4-bbd6-4d17-aeee-a133e0a84124",
+    "daily_used": 3,
+    "daily_remaining": 2,
+    "submission_file": "artifacts/submission-candidate-009.csv",
+    "sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "source": "Parent explicitly reported completed official submission in thread 01a0f244-6000-7496-a632-e5f79ee2c02a; not independently browser-rechecked here."
+  },
+  "diagnosis076": {
+    "observables_inspected": [
+      "prediction level",
+      "squared prediction level",
+      "DINOmean minus legacy003",
+      "B minus S",
+      "unsigned S/B disagreement",
+      "unsigned DINO/legacy disagreement"
+    ],
+    "evidence": "Signed DINOmean-minus003 contrast correlated with009residuals and remained positive after controlling rawaggregate prediction in14/15 nested trainingfolds. This adaptive diagnostic supported one extra coefficient, not a nonlinear or multi-ratio sweep.",
+    "training_positive_partial_correlations": 14,
+    "training_folds": 15,
+    "bin_bias": "Some middle-bin residual patterns remain, but choosing knots/steps after seeing077failure would add another calibration search. No such alternative was selected."
+  },
+  "extension077": {
+    "formula": "y = intercept + b*p008 + c*(0.5*(Smean3+Bmean3)-legacy003)",
+    "parameters": 3,
+    "reference009_parameters": 2,
+    "fit_scope": "Each320outertrainingrows uses fresh innerOOF from models fit only within that outertrain. Cached074 upstream fits are reused because upstream inputs/learners are unchanged. GlobalouterOOF predictions are never calibrationtraining data.",
+    "controls": "Recomputed two-parameter009 control exactly matches all3partitions, maximum error0.",
+    "no_public_tuning": true,
+    "no_weight_grid_or_alternate_form": true,
+    "results": {
+      "original": {
+        "reference009_rmse": 13.105157912721568,
+        "extension_rmse": 12.90292668415508,
+        "gain": 0.2022312285664878,
+        "positive_folds": 5,
+        "comparison": {
+          "gain": 0.2022312285664878,
+          "fold_gains": [
+            0.06034944312706436,
+            0.19033061819052044,
+            0.27796562092403754,
+            0.21456245621601333,
+            0.2617904557825437
+          ],
+          "positive_folds": 5,
+          "bootstrap_sd": 0.12118835688814962,
+          "conditional_ci95": [
+            -0.029614535495176897,
+            0.4420735489020729
+          ]
+        },
+        "contrast_coefficients": [
+          0.3045294896501032,
+          0.14383952888019821,
+          0.271047269800185,
+          0.20583653521151787,
+          0.35549684796827996
+        ]
+      },
+      "20261031": {
+        "reference009_rmse": 13.082283244172682,
+        "extension_rmse": 13.132650678670727,
+        "gain": -0.05036743449804426,
+        "positive_folds": 2,
+        "comparison": {
+          "gain": -0.05036743449804426,
+          "fold_gains": [
+            0.08784508943330316,
+            -0.09657490953310344,
+            0.03674048735617319,
+            -0.22404731260504107,
+            -0.07614166009743784
+          ],
+          "positive_folds": 2,
+          "bootstrap_sd": 0.08206373224328187,
+          "conditional_ci95": [
+            -0.20402901639398863,
+            0.11182597954256995
+          ]
+        },
+        "contrast_coefficients": [
+          0.1773568944801741,
+          -0.027159606569502226,
+          0.2312609950561584,
+          0.28093544208256505,
+          0.18705749097258803
+        ]
+      },
+      "20261101": {
+        "reference009_rmse": 13.305105282101927,
+        "extension_rmse": 13.304434091169746,
+        "gain": 0.0006711909321808207,
+        "positive_folds": 3,
+        "comparison": {
+          "gain": 0.0006711909321808207,
+          "fold_gains": [
+            0.039416053790825245,
+            -0.08609343740156383,
+            0.41952958863825174,
+            -0.45725162952582643,
+            0.12852785005313905
+          ],
+          "positive_folds": 3,
+          "bootstrap_sd": 0.11780785377172608,
+          "conditional_ci95": [
+            -0.2224684521487768,
+            0.2260475184961964
+          ]
+        },
+        "contrast_coefficients": [
+          0.21946662365155156,
+          0.3194605953848122,
+          0.3111689389237622,
+          0.3735372283536848,
+          0.11993866614386596
+        ]
+      }
+    },
+    "contrast_coefficient_range": [
+      -0.027159606569502226,
+      0.3735372283536848
+    ],
+    "standardized_design_condition_number_range": [
+      1.0043736603214772,
+      1.2411944799483379
+    ],
+    "interpretation": "The failure is not explained by numerical ill-conditioning. Estimated reliability coefficients varied across training sets, and some heldout folds had a different reliability relation. Correlation does not guarantee a transferable fitted coefficient."
+  },
+  "verification": {
+    "passed": true,
+    "upstream_estimators_hash_and_scope_checked": 495,
+    "independent_meta_solutions": 15,
+    "max_independent_solve_prediction_error": 2.842170943040401e-14,
+    "leakage_stress": {
+      "outer_validation_labels_perturbed_in_memory": true,
+      "full_upstream_refit_aggregate_and_contrast_max_error": 5.684341886080802e-14,
+      "all6MLP_states_exact": true,
+      "new_meta_parameters_unchanged_for_all_checked_folds": true
+    },
+    "upstream_numeric_verification_source": "reports/nested-calibration-074-validation.json"
+  },
+  "diagnosis078": {
+    "purpose": "Diagnose a specified training-size reliability mismatch after077 failure. No new calibration form/ratio/weight/regularization choice and no newsubmissionrecipe evaluated.",
+    "new_fits": 0,
+    "same_validation_rows": true,
+    "results": {
+      "original": {
+        "size213_214": {
+          "legacy_rmse": 14.02439539259766,
+          "DINOmean_rmse": 13.976476895154356,
+          "legacy_minus_DINO_MSE": 1.3417597271309538,
+          "contrast_std": 7.715499009916311,
+          "contrast_residual009_correlation": 0.14505347252643636
+        },
+        "size320": {
+          "legacy_rmse": 13.705696031698212,
+          "DINOmean_rmse": 13.408039338023393,
+          "legacy_minus_DINO_MSE": 8.070584823325296,
+          "contrast_std": 7.769391659470393,
+          "contrast_residual009_correlation": 0.18922260740571795
+        },
+        "MSE_advantage_change_320_minus213": 6.728825096194342
+      },
+      "20261031": {
+        "size213_214": {
+          "legacy_rmse": 13.93874630368153,
+          "DINOmean_rmse": 14.079118592686394,
+          "legacy_minus_DINO_MSE": -3.932931828532193,
+          "contrast_std": 7.90295275565508,
+          "contrast_residual009_correlation": 0.11974196404488367
+        },
+        "size320": {
+          "legacy_rmse": 13.63181073293285,
+          "DINOmean_rmse": 13.606460347439661,
+          "legacy_minus_DINO_MSE": 0.6905006720554638,
+          "contrast_std": 7.968771080808939,
+          "contrast_residual009_correlation": 0.13705148003453066
+        },
+        "MSE_advantage_change_320_minus213": 4.623432500587657
+      },
+      "20261101": {
+        "size213_214": {
+          "legacy_rmse": 14.124844329691673,
+          "DINOmean_rmse": 14.483098721960229,
+          "legacy_minus_DINO_MSE": -10.24892125202301,
+          "contrast_std": 7.560552719848029,
+          "contrast_residual009_correlation": 0.09152244933240834
+        },
+        "size320": {
+          "legacy_rmse": 13.729980391208457,
+          "DINOmean_rmse": 13.963736661461724,
+          "legacy_minus_DINO_MSE": -6.473580007681437,
+          "contrast_std": 7.573177202827498,
+          "contrast_residual009_correlation": 0.107506061467352
+        },
+        "MSE_advantage_change_320_minus213": 3.775341244341573
+      }
+    },
+    "finding": "DINO relative MSE improved with larger training sets in all3partitions, but its absolute advantage overlegacy differed acrosspartitions. This is compatible with a training-size/reliability mismatch, not proof it caused077failure.",
+    "limits": "Differences also reflect training subsets and fittedmodel variability. They do not establish that samplesize caused077failure, and do not authorizechoosinganewcrossfitfoldcount or coefficientfromouterresults. Existing050Ridgelearningcurves provideonlygeneraldata-sizecontext,notcurrentMLPcalibrationevidence. Same400repeatedlyused.",
+    "no_followup_parameter_selection": "Did not choose a new innerfoldcount, shrinkfactor or mixture ratio from this diagnostic. Training-size effects would require a separately fixed controlled protocol, not a posthoc correction to077."
+  },
+  "older_independent_hypothesis_review": {
+    "047": "Joint image-feature additive/productkernel did not consistently improve. Not reused as a new positive hypothesis.",
+    "050": "FrozenS Ridge learning curve improved with moredata, but it is not a current S/B MLP or fullensemble experiment; it cannot identify077cause or a newmodel recipe.",
+    "066_072": "Resolution, tokennormalization, coarsespatialstructure and denoisedinput/mixture failed their development checks. They do not supply new evidence for another representation sweep."
+  },
+  "decision": "Reject077 under its fixed all3partition criterion. Preserve009 and all failures. No new submitted or unsubmitted candidate from this phase. This does not establish a performance ceiling or prize readiness.",
+  "remaining_limits": [
+    "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+    "The same400 observations informed diagnostics, choice ofcontrast and previousmodels. Threepartitions and15outerfolds are not independentreplications.",
+    "Public009 result is recorded only. No coefficients orratios were optimized against Public.",
+    "No technical/resource blocker. The limitation is lackofvalidated transferable improvement fromthetestedextension."
+  ],
+  "scope": {
+    "cost": 0,
+    "new_packages_or_weights": false,
+    "holdout_test_data_access": false,
+    "final500_artifacts": "SHA256 integrity checks only; not decoded or used for selection.",
+    "new_candidate": false,
+    "upload": false,
+    "protected009_files_verified": 60,
+    "running_experiments": []
+  },
+  "evidence_sha256": {
+    "reports/candidate009-public-submission.json": "3862a5ff878e930620c28ad17ef58cb17ed7e73a24d65e4aa271138bed0ec1ba",
+    "artifacts/residual-diagnostics-076/report.json": "2bc04912fae227973149e4e84ce1133fab8f4c53b8c3f2375bddddcfe89ebbcd",
+    "artifacts/contrast-calibration-077/plan.json": "155beebcb206c9229134df187a57bd070756a0a0523aff6404e1fa902d7e9630",
+    "reports/contrast-calibration-077-validation.json": "453f4a4a987ec4bcf34703cd650f1515833bdec3bbd30b37327810431631fcc8",
+    "artifacts/reliability-size-078/report.json": "e7277636291082a415e00f8692deb65c562f50c8569adbc53b8683ebf913e36c"
+  },
+  "source_sha256": "9fcfea01c74b2dbde77d45ed1fb3c1b66b99efacfa3f03c51b1766413da14265"
+}

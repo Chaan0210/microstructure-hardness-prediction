@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "results": {
+    "original": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.209632611789585,
+          "fold_rmse": [
+            13.137584839949701,
+            12.597373711388418,
+            14.228655527464698,
+            12.44121172584094,
+            13.56258166849383
+          ]
+        },
+        "fisher512": {
+          "rmse": 15.381710806490343,
+          "fold_rmse": [
+            16.196176153306773,
+            14.14014070695794,
+            15.287332650594779,
+            14.989004442773728,
+            16.19730353224157
+          ]
+        },
+        "primary": {
+          "rmse": 13.272376312383063,
+          "fold_rmse": [
+            13.273553827862239,
+            12.601215927803729,
+            14.188584483974775,
+            12.513223514503446,
+            13.707855354665545
+          ]
+        }
+      },
+      "comparison": {
+        "gain": -0.06274370059347767,
+        "fold_gains": [
+          -0.13596898791253764,
+          -0.0038422164153111282,
+          0.040071043489922076,
+          -0.0720117886625058,
+          -0.14527368617171454
+        ],
+        "positive_folds": 1,
+        "bootstrap_sd": 0.038361081674770495,
+        "conditional_ci95": [
+          -0.13763741892778114,
+          0.012861803354994482
+        ]
+      },
+      "fold_audits": [
+        {
+          "fold": 0,
+          "train_images": 320,
+          "dictionary_patches": 20480,
+          "validation_images": 80,
+          "GMM_iterations": 16,
+          "independent_Fisher_max_error": 1.1977203083490817e-13,
+          "model_reload_error": 0.0
+        },
+        {
+          "fold": 1,
+          "train_images": 320,
+          "dictionary_patches": 20480,
+          "validation_images": 80,
+          "GMM_iterations": 9,
+          "independent_Fisher_max_error": 1.95964338506327e-13,
+          "model_reload_error": 0.0
+        },
+        {
+          "fold": 2,
+          "train_images": 320,
+          "dictionary_patches": 20480,
+          "validation_images": 80,
+          "GMM_iterations": 15,
+          "independent_Fisher_max_error": 8.72266668616728e-14,
+          "model_reload_error": 0.0
+        },
+        {
+          "fold": 3,
+          "train_images": 320,
+          "dictionary_patches": 20480,
+          "validation_images": 80,
+          "GMM_iterations": 20,
+          "independent_Fisher_max_error": 3.120613576573783e-13,
+          "model_reload_error": 0.0
+        },
+        {
+          "fold": 4,
+          "train_images": 320,
+          "dictionary_patches": 20480,
+          "validation_images": 80,
+          "GMM_iterations": 40,
+          "independent_Fisher_max_error": 5.87221243852909e-14,
+          "model_reload_error": 0.0
+        }
+      ],
+      "residual_correlation": 0.8875109900761586,
+      "report_sha256": "354b8992cf0c612ae3b7a4a82fb24b465993344c8a4a450b612e8f0ebcd7ca0d",
+      "predictions_sha256": "e6ee4e6cb2600a6b0d74a5e8d2341268c281d1fdb471af32b88f74b51611ee9c"
+    }
+  },
+  "models_verified": 5,
+  "max_reload_error": 0.0,
+  "independent_Fisher_formula_max_error": 3.120613576573783e-13,
+  "tokens_reextracted": 400,
+  "token_max_error": 0.0,
+  "dictionary_full_refits": [
+    {
+      "split": "original",
+      "fold": 0,
+      "PCA_GMM_full_train_refit_exact": true,
+      "encoding_error": 0.0
+    }
+  ],
+  "fixtures": {
+    "single_gaussian_analytic_fixture": true,
+    "independent_sufficient_statistics_error": 2.220446049250313e-16,
+    "token_permutation_and_duplication_invariant": true,
+    "signedsqrt_L2_and_zero_fixture": true,
+    "deterministic_equal64_sampling": true
+  },
+  "eligible_for_candidate": false,
+  "best008_unchanged": true,
+  "best008_sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+  "validation_source_sha256": "079d544dea8f77259b4cda4cc79fd25c35549f56c2776d2ec9a56458b86782f4",
+  "seconds": 26.095052415970713,
+  "holdout_test_access": false,
+  "cost": 0,
+  "new_packages": 0,
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

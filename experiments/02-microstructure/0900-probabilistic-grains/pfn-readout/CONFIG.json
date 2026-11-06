@@ -1,0 +1,18 @@
+{
+  "model": "TabPFN3.5 local published checkpoint",
+  "n_estimators": 8,
+  "seeds": "fold index + 1000*partition",
+  "arms": [
+    "base98",
+    "phase_mean",
+    "phase_mean_and_sd"
+  ],
+  "added_columns": "posterior realized area phase fraction, then posterior SD",
+  "blend": 0.2,
+  "hyperparameter_search": false,
+  "source": "fold-isolated measurement caches; fixed historical X98; conditional validation",
+  "features": "experiments/probabilistic-grains-900/probabilistic/stage2/features",
+  "device": "mps",
+  "script_sha256": "42cac7a34d588aa2979d92355346204f1647d6044faa827cc438dee9b8280d5f",
+  "base_sha256": "f0d9b1b5295e753b4c66d282be6bd2bc03e6c547e953dc457f138b35c59d4f3d"
+}

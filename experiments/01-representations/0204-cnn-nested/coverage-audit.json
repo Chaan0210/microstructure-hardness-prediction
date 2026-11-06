@@ -1,0 +1,195 @@
+{
+  "study": 204,
+  "UTC": "2026-10-06T17:00:16.191432+00:00",
+  "new_model_experiments": 0,
+  "purpose": "진행 중인204의 리뷰 권고와 과거 실제 수행 범위를 대조. 새 로드맵 실험은 별도 세션으로 이관.",
+  "categories": [
+    {
+      "category": "데이터 증강",
+      "status": "실제 통제 연구 및 제한 파일럿이 있으나 전체 증강 공간을 검증한 것은 아님",
+      "evidence": [
+        "reports/cnn-orientation-129-summary.json",
+        "reports/input-noise-110-summary.json",
+        "reports/cnn-view-mean-151-summary.json",
+        "reports/mixup-061-summary.json",
+        "reports/cnn-dropout-171-summary.json",
+        "reports/d4-cnn-172-summary.json"
+      ],
+      "findings": [
+        "129: 원본 5fold에서 D4 제거 시 CNN RMSE 15.03232→16.33843, raw 결합도 악화.",
+        "110: 고정 잡음 조건의 matched 비교에서 최종 결합 13.05400→13.05727 악화.",
+        "061 feature mixup과151 D4 추론 평균은 일관된 최종 승격 근거를 만들지 못함.",
+        "172 D4 등변 CNN은 첫 fold의 제한 파일럿만 실행; 전체5fold 완료로 표시하지 않음."
+      ],
+      "not_established": [
+        "물리적 라벨 불변성은 입증되지 않았다.",
+        "crop/zoom/광도 변환의 미실행을 유해성의 실험적 증거로 취급하지 않는다."
+      ]
+    },
+    {
+      "category": "데이터 분리",
+      "status": "고정5fold·기존2재분할·중첩 분리는 실행; 새 독립 검증은 아님",
+      "evidence": [
+        "artifacts/nested-fusion-112/validation-replay.json",
+        "reports/layout-dependency-160-summary.json",
+        "reports/domain-risk-audit-126-summary.json",
+        "reports/research-history-through-016.md"
+      ],
+      "findings": [
+        "같은400개를 세 번 나눈 결과이며1200개 독립 표본으로 계산하지 않는다.",
+        "160의 제한된 유사성 감사에서 확정 family를 찾지 못해 근거 없는 새 그룹을 만들지 않았다.",
+        "204에서는 모든 outer T 내부의 middle/deep OOF를 사용한다."
+      ],
+      "not_established": [
+        "생성 family의 독립성 또는 OOF/Public 차이의 단일 원인은 확인되지 않았다.",
+        "이미 사용한100 holdout을 새 검증으로 다시 열지 않는다."
+      ]
+    },
+    {
+      "category": "손실 함수 / ASL",
+      "status": "복수 손실 통제 연구 있음; ASL 자체의 실행 근거는 찾지 못함",
+      "evidence": [
+        "reports/optimization-057-058-summary.json",
+        "reports/ranking-objective-120-summary.json",
+        "reports/rnc-131-summary.json",
+        "reports/label-density-169-summary.json",
+        "reports/research-193-201-summary.json"
+      ],
+      "findings": [
+        "058의 MSE 대체,120의 순위 목적,131의 RNC,169의 라벨 밀도 가중은 해당 고정 채택 기준에 미달.",
+        "193/194/201의 보조 CE는 true/detach/permuted로 검사했고 특정 고정 분기는 종료.",
+        "보고서 및 루트 Python 소스 검색에서 ASL/focal loss의 실행 증거는 없었다."
+      ],
+      "not_established": [
+        "ASL을 직접 scalar 회귀 손실로 옮길 대상이 정의되지 않았다.",
+        "고정 CE 실패를 모든 보조 분류 손실의 무용성으로 일반화하지 않는다."
+      ]
+    },
+    {
+      "category": "CNN / ViT / MHA 구조",
+      "status": "실제 구현·학습·matched 대조 있음; 일부는 제한 예산 또는 파일럿",
+      "evidence": [
+        "reports/cnn-update-budget-128-summary.json",
+        "reports/dinol-177-summary.json",
+        "reports/modern-backbones-190-summary.json",
+        "reports/research-193-201-summary.json",
+        "reports/d4-cnn-172-summary.json"
+      ],
+      "findings": [
+        "동결 DINO S/B/L과 TinyCNN은 현재 조합에 포함된다.",
+        "196 MHA와 mean 대조,197 Q 정규화 단일 변경,200 가중치 고정 개입이 실행됐다. Q 정규화는 단독 성능을 개선했지만 최종021을 넘지 못했다.",
+        "190의 Swin last-stage는 같은 seed 재학습의 엄격한 bitwise 기준에 실패했고 실패 상태를 보존했다."
+      ],
+      "not_established": [
+        "제한 학습 예산의 실패는 architecture의 최적 성능 한계가 아니다.",
+        "scratch ViT 또는 모든 fine-tuning 정책을 끝냈다는 주장은 하지 않는다."
+      ]
+    },
+    {
+      "category": "앙상블 / 선택 정책",
+      "status": "고정 결합·성분 제거·seed 평균·TTA·nested 후단 검증 있음",
+      "evidence": [
+        "reports/cnn-seed-mean-133-summary.json",
+        "reports/bootstrap-selector-144-summary.json",
+        "reports/simplification-202-summary.json",
+        "reports/cnn-seed-expand-203-summary.json",
+        "experiments/cnn-nested-204/plan.json"
+      ],
+      "findings": [
+        "202 단순화 A/B는 모두 악화했으며 Claude의 직접 제안이 아닌 자체 진단이다.",
+        "203은 CNN 3→6의 후단 고정 실험이다. L 3→9는 실행하지 않았다.",
+        "204가 outer/middle/deep의 seed 수를 일치시키고 양 arm에 같은 후단 정책을 재적합하는 누락 대조를 채운다."
+      ],
+      "not_established": [
+        "과거 개발을 보기 전에 현재 모든 가중치가 고정됐다고 인증할 수 없다.",
+        "seed 분산 감소는 실현된 최종 RMSE 개선을 보장하지 않는다."
+      ]
+    },
+    {
+      "category": "결과 분석 / 학습곡선",
+      "status": "Claude가 새로 제안한 일부 분석은 이미 수행됐음",
+      "evidence": [
+        "reports/base-learning-curve-127-summary.json",
+        "reports/base-learning-curve-127-analysis.json",
+        "reports/cnn-update-budget-128-summary.json",
+        "reports/bias-calibration-073-075-summary.json",
+        "reports/post009-research-076-078-summary.json",
+        "reports/submission022-diagnostic-199-summary.json"
+      ],
+      "findings": [
+        "127은 학습 크기142/143,213/214,320을 같은 outer80에 평가했다. 새 학습0, 저장 leaf840개 재추론; 성분별 오차 공분산·상관도 포함.",
+        "127의 CNN RMSE는15.56077→14.98564→14.62192였으나 데이터 수·업데이트 수·seed 차이가 섞여 인과 곡선이 아니다.128은 이를 따라 데이터 수와 업데이트 예산을 통제했다.",
+        "073/076은 prediction-conditioned bias와 성분 차이를 분석했고199는 타깃 분위·물리 통계·상위 기여 표본 민감도를 분석했다."
+      ],
+      "not_established": [
+        "낮거나 평평한 학습곡선만으로 bias 한계와 잡음 한계를 식별할 수 없다.",
+        "상위 이득 제거는 ESS 숫자를 추정하는 방법이 아니다.",
+        "현재021 전체 파이프라인을 모든 작은 학습 크기에서 재구축한 곡선과는 구분한다."
+      ]
+    },
+    {
+      "category": "주요 CV 대회 전략의 전이",
+      "status": "출처 조사와 일부 대응 실험 있음; 우승 전략 전체를 재현한 것은 아님",
+      "evidence": [
+        "reports/strategy-experiment-register.csv"
+      ],
+      "findings": [
+        "NDSB2015 cyclic pooling/형태 특징 후단 결합은129/151/172와121/140/144에 부분 대응한다. 해당 회전 pooling 구현 전체를 재현한 것은 아니다.",
+        "DSB2018 팀 저장소는 확인했지만 강한 증강 관련 Kaggle 본문의 세부 주장은 독립 확인되지 않았다는 기록이 있다.",
+        "RSNA bone age의 상보적 모델 결합 교훈은 고정 치환·오차 분석과 연결된다. MAD와 hardness RMSE, 예측 상관과 오차 상관은 동일하지 않다."
+      ],
+      "not_established": [
+        "외부 대회의 성능 향상을 현재 대회의 개선량으로 환산할 수 없다.",
+        "새 문헌을 근거로204 밖의 구조·증강·loss 실험을 자동 실행하지 않는다."
+      ]
+    }
+  ],
+  "official_rule_reconciliation": {
+    "source_record": "reports/research-history-through-016.md:64-78",
+    "official_url": "https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai",
+    "historical_check_date": "2026-09-30",
+    "historically_recorded": {
+      "Public": "30%",
+      "Private": "70%",
+      "daily_submission_limit": 5
+    },
+    "correction": "앞선 답변의 public/private 비율 일괄 미확인은 부정확했다. 로컬에 공식 페이지 확인 이력이 있다.",
+    "current_live_recheck": false,
+    "final_selection_count": "이번에 확인한 로컬 기록에는 개수 근거를 찾지 못했다. 기존 공식 확인 자료와 추가 대조 필요. 계정 선택을 변경하지 않음.",
+    "generator": "공식 설명 PDF의 URL과 기록된 주의사항 기록은 존재한다. 생성 코드·행별 family identity·정확한 타깃 함수 제공 여부와는 구분한다.",
+    "source_SHA256": "dc18b6886360365b3325841e3bb2540b51b2ad30465a02b7487aca25e8ef7c39"
+  },
+  "source_sha256": {
+    "artifacts/nested-fusion-112/validation-replay.json": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+    "experiments/cnn-nested-204/plan.json": "afad630e61f56cf8826a737a3724046b91f57a51ca8f2ef29841f589ab125cfe",
+    "reports/base-learning-curve-127-analysis.json": "9e51a24cf1d08639283e0c90c026e019b737e3f003934ce38edda75ac79eda4d",
+    "reports/base-learning-curve-127-summary.json": "7e01c65d2c5b4ec9b666c94e110687cea6d8037af1e634cf9374e11eff251946",
+    "reports/bias-calibration-073-075-summary.json": "d71c21a880c4da32c8fe905d297b267a22179ae5678f3c2a8cc0c7ebd390fce8",
+    "reports/bootstrap-selector-144-summary.json": "78489e7b37f9b4bf09e1e69cf2505ea6556a62d9ff7abb53181cc47fa5843234",
+    "reports/cnn-dropout-171-summary.json": "120f1d0a817c517e235f183bbd76250e6826d6c759d364188a0a3d8ae1d4a355",
+    "reports/cnn-orientation-129-summary.json": "59f78df29c11fb5572959807e475cb824b8a011c436e5d301641be9a38ff4023",
+    "reports/cnn-seed-expand-203-summary.json": "072741f7f9d558baed414bdc5b8b813313c7de35f0037385e1cef8ebaf3ec403",
+    "reports/cnn-seed-mean-133-summary.json": "0f5138dcb60d6cdeea5b9e257a4827fe879041fbfdf8a68ca1947752826b80d1",
+    "reports/cnn-update-budget-128-summary.json": "afe6167dd3d2bf240d3544819efd34f51aeda57c00e844498ea933de4b2f4506",
+    "reports/cnn-view-mean-151-summary.json": "53d5132ecc0fa5da0ea84a5763f0f59a33041c0e1c853bea6e67ed869df2f35b",
+    "reports/d4-cnn-172-summary.json": "0efd68e44e7e93dc0ea33ce8338da6f041049f35c553f8eb06b9dd613cbc1066",
+    "reports/dinol-177-summary.json": "676f5ff0bdfb4a7d0c017711d3cb5d6e29b1d1352b46450409bf95ef0819c655",
+    "reports/domain-risk-audit-126-summary.json": "5d4a2976882b0ac14f18b245bb1e89574ef8ceb5cd8ddcf2b57e6a67b26be70b",
+    "reports/input-noise-110-summary.json": "bd53eb1470820326e2ab1970e61d784187188e957df7311148ef5c8ad72ade41",
+    "reports/label-density-169-summary.json": "a76e73837a721e4d37a9925b297b2f5f79c6b8db6d3480f35b2e8f3cad7012d4",
+    "reports/layout-dependency-160-summary.json": "7fa147dc0c1fd201a41a6fd1c6f51f5b2effb3429b5bac78c3d499ac1170b6f1",
+    "reports/mixup-061-summary.json": "3a084624d25fb2c8389371a74bf8b451362a37c23a7e159f4e7f9a1c46721ed5",
+    "reports/modern-backbones-190-summary.json": "737a40270fc9c82da5c011e067bb8013ed1ecffc1464e7f0dac085d13623d0be",
+    "reports/optimization-057-058-summary.json": "e886001f62fe9194e76d259313ea6729ff67b16a30eb1061dab3093eedb7a8b3",
+    "reports/post009-research-076-078-summary.json": "3efb1a491433405805728b76842f673419eadbdc320bc3791d9a1b6a1a6f4763",
+    "reports/ranking-objective-120-summary.json": "df92b768dbc5e13facac9f6ba4565992d32e804a565e6d77297e985abe7ababb",
+    "reports/research-193-201-summary.json": "04707c2cc7ee835ba2f2c7dba69be0062270d4b75f97b0da7c951d195f7bc219",
+    "reports/research-history-through-016.md": "dc18b6886360365b3325841e3bb2540b51b2ad30465a02b7487aca25e8ef7c39",
+    "reports/rnc-131-summary.json": "79152bb48215f50a72c61c2b854503bd5959ec4390d413af1384056e69b1c08c",
+    "reports/simplification-202-summary.json": "a83f2800e3c630bd306343a02e8628f55423fb2c4b9015c7bb6c9f030c43ac7a",
+    "reports/strategy-experiment-register.csv": "1f0c3a284ef0678fbd75032718704ea5652da77742ced872b9d54a378d5391ea",
+    "reports/submission022-diagnostic-199-summary.json": "5f4af124424e0685dc7bdf3a0b468bd6cb4a32028ddbca05300337561aac7422"
+  },
+  "whole_history_inventory": "historical-arm-source-inventory.json",
+  "arm_count_limit": "192개 연구/제작/진단 디렉터리와448개 메타데이터 출처를 색인했다. 연구 수·seed·fold·replay·최종 arm을 합산한 독립 시행 수는 제시하지 않는다.204의R/F/N은 모두 명시 등록한다."
+}

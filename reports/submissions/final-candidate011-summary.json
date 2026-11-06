@@ -1,0 +1,210 @@
+{
+  "candidate": "011",
+  "status": "Verified exploratory candidate prepared; not uploaded. Existing009 remains submitted best;010 remains unsubmitted. Parent coordinates any future submission.",
+  "formula": ".9*candidate009+.1*fresh_frozen_B_head",
+  "settings": {
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "results": {
+    "original": {
+      "candidate011_recipe_RMSE": 13.0539977718711,
+      "reference009_RMSE": 13.105157912721568,
+      "reference010_RMSE": 13.10413742660317,
+      "frozen_head_standalone_RMSE": 13.957820652670737,
+      "comparison_vs009": {
+        "gain": 0.051160140850468494,
+        "fold_gains": [
+          -0.03783148881159448,
+          0.12031036946930307,
+          0.07539307874426271,
+          0.0342826596888024,
+          0.06356549305647263
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.036004952281658946,
+        "conditional_ci95": [
+          -0.018101738209629833,
+          0.12288080425357115
+        ]
+      },
+      "comparison_vs010": {
+        "gain": 0.05013965473207094,
+        "fold_gains": [
+          -0.04108097447073433,
+          0.11881736015444488,
+          0.07461041162256343,
+          0.03352130362741512,
+          0.06463939750478964
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.03555621367736745,
+        "conditional_ci95": [
+          -0.018419992860731236,
+          0.12036068748216397
+        ]
+      }
+    },
+    "20261031": {
+      "candidate011_recipe_RMSE": 13.015176056591201,
+      "reference009_RMSE": 13.082283244172682,
+      "reference010_RMSE": 13.081449590263393,
+      "frozen_head_standalone_RMSE": 13.771791193005598,
+      "comparison_vs009": {
+        "gain": 0.06710718758148104,
+        "fold_gains": [
+          0.0974970352790141,
+          0.20942488849939878,
+          0.05716294589547566,
+          -0.001710491760833932,
+          -0.05211464624731832
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.030479714010220763,
+        "conditional_ci95": [
+          0.011749033370516183,
+          0.12755114680599575
+        ]
+      },
+      "comparison_vs010": {
+        "gain": 0.06627353367219158,
+        "fold_gains": [
+          0.09824506990070248,
+          0.20683255142290058,
+          0.05709960280507076,
+          -0.0012512075066108963,
+          -0.05472827090382992
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.03032063719798108,
+        "conditional_ci95": [
+          0.011164571385741739,
+          0.12634837723857106
+        ]
+      }
+    },
+    "20261101": {
+      "candidate011_recipe_RMSE": 13.272377948565081,
+      "reference009_RMSE": 13.305105282101927,
+      "reference010_RMSE": 13.303706910124971,
+      "frozen_head_standalone_RMSE": 14.369641875486145,
+      "comparison_vs009": {
+        "gain": 0.03272733353684565,
+        "fold_gains": [
+          0.07129893040550073,
+          0.07822109829674417,
+          0.03710286919298866,
+          -0.053809546255228824,
+          0.0338987260152237
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.033752045052881055,
+        "conditional_ci95": [
+          -0.03319841669346677,
+          0.09796255744185155
+        ]
+      },
+      "comparison_vs010": {
+        "gain": 0.031328961559889734,
+        "fold_gains": [
+          0.07309459318925704,
+          0.07505551586692683,
+          0.03508154923325435,
+          -0.056400004678117455,
+          0.03273617360173375
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.03353294624472585,
+        "conditional_ci95": [
+          -0.03415760253111415,
+          0.09636168008162345
+        ]
+      }
+    }
+  },
+  "selection_bias": "The purpose changed after inspecting084 original results: joint-training superiority was rejected; the frozen control blend was selected post hoc for apparent complementarity. Original13.05399777 is discovery evidence, not fresh confirmation. Both resplits reuse the same400 historically selected rows and are not independent validation. No adjustment for this adaptive selection; conditional intervals omit fitting and selection uncertainty.",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Fixedshortschedule mayunderfit andone seed leaves seed uncertainty. Results test thisoneprotocol,not alljointfinetuning.",
+  "interpretation": "The previously observed original frozen-control benefit persisted in both fixed resplits. This supports testing this complementary regularized head, not joint fine-tuning. Same400 repeated observations and post-hoc hypothesis change prevent an unbiased performance claim. Two of three conditional gain intervals include zero. No public improvement or ranking is predicted.",
+  "validation": {
+    "development_models": 15,
+    "development_MPS_reload_error": 0.0,
+    "development_CPU_MPS_max_error": 3.4263589043348475e-05,
+    "all3_firstfold_label_perturbation_replays": [
+      {
+        "split": "original",
+        "full12epochs_state_exact": true,
+        "outer_validation_labels_perturbed_only_in_memory": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261031",
+        "full12epochs_state_exact": true,
+        "outer_validation_labels_perturbed_only_in_memory": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261101",
+        "full12epochs_state_exact": true,
+        "outer_validation_labels_perturbed_only_in_memory": true,
+        "prediction_error": 0.0
+      }
+    ],
+    "original084_preserved_and_exact": true,
+    "full500_state_replay_exact": true,
+    "full1000_MPS_reload_error": 0.0,
+    "full1000_CPU_MPS_max_error": 3.7937734504112086e-05,
+    "CSV_byte_exact": true,
+    "rows": 1000,
+    "finite": true,
+    "duplicates": 0,
+    "sample_order_exact": true,
+    "all1500_image_hashes_verified": true
+  },
+  "full500_training_seconds": 10.427157457976136,
+  "full500_head_seed": 20270215,
+  "full500_training_updates": 384,
+  "prediction_range": [
+    161.99483862243355,
+    235.19831413227354
+  ],
+  "difference_from009_RMS": 0.5913181123989604,
+  "deliverables": {
+    "csv": "artifacts/submission-candidate-011.csv",
+    "model": "artifacts/final-model-086/head/model.pt",
+    "decision": "artifacts/final-model-086/decision.json",
+    "development_verification": "reports/frozen-complement-085-validation.json",
+    "submission_verification": "reports/candidate011-verification.json"
+  },
+  "submission_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "protected009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+  "protected010_sha256": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5",
+  "scope": {
+    "cost": 0,
+    "new_install_or_download": false,
+    "additional_holdout_evaluation": false,
+    "test_used_for_selection": false,
+    "uploaded": false,
+    "010_unsubmitted": true
+  },
+  "evidence_sha256": {
+    "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+    "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+    "artifacts/final-model-086/decision.json": "83b779a44abf26db1b496b4d7aa2ce6cce0ea4e20cb9e147db331554cabee03f",
+    "artifacts/submission-candidate-011.manifest.json": "497cc7377fcc35cb9f6142bc0ee9868fbc3fa50aa40bf10c7a45d6ef3931fe94"
+  },
+  "source_sha256": "9aef57b8930cdf5c0ee7205d08a6ca31f42052c29bb1af49d92b2b31c31fec52"
+}

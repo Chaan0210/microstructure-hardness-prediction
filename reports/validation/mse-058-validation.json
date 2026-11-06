@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "results": {
+    "original": {
+      "scores": {
+        "reference007": {
+          "rmse": 13.241596955038409,
+          "fold_rmse": [
+            13.200972349680994,
+            12.726138894776982,
+            14.308109808709345,
+            12.375441992213231,
+            13.513163828337742
+          ]
+        },
+        "mse_mlp": {
+          "rmse": 14.044177332347774,
+          "fold_rmse": [
+            14.481692060732277,
+            13.902683054572151,
+            14.93677865786599,
+            13.173244329910172,
+            13.658289087759119
+          ]
+        },
+        "primary": {
+          "rmse": 13.242392104649582,
+          "fold_rmse": [
+            13.207007649572475,
+            12.71291953219905,
+            14.31163977386378,
+            12.380675472465606,
+            13.515073473978708
+          ]
+        },
+        "reference003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.680453686399362,
+            12.991004741250547,
+            14.032386512109253
+          ]
+        }
+      },
+      "comparison": {
+        "gain": -0.0007951496111733292,
+        "fold_gains": [
+          -0.006035299891481216,
+          0.013219362577931548,
+          -0.003529965154434933,
+          -0.005233480252375244,
+          -0.0019096456409659623
+        ],
+        "positive_folds": 1,
+        "bootstrap_sd": 0.0033997322222759606,
+        "conditional_ci95": [
+          -0.007273020981439204,
+          0.00588525507843607
+        ],
+        "mse_control_mlp_residual_correlation": 0.9998481245133625
+      },
+      "train_rmse": 0.5955249952341488,
+      "reload_max_error": 0.0,
+      "prediction_difference_rms": 0.06125370393531538,
+      "standalone_validation_outside_foldtrain_label_range": 0,
+      "foldtrain_target_quantile_diagnostics": {
+        "0": {
+          "n": 81,
+          "reference007_rmse": 16.82315911331556,
+          "new_rmse": 16.827442251133775,
+          "reference_signed_error": 13.935175917449286,
+          "new_signed_error": 13.938783192568968
+        },
+        "1": {
+          "n": 236,
+          "reference007_rmse": 8.449790530238666,
+          "new_rmse": 8.449995429706606,
+          "reference_signed_error": 0.28362624554022714,
+          "new_signed_error": 0.2848953661312967
+        },
+        "2": {
+          "n": 83,
+          "reference007_rmse": 19.12586343275207,
+          "new_rmse": 19.12458200489208,
+          "reference_signed_error": -15.182811985066841,
+          "new_signed_error": -15.179492143490002
+        }
+      }
+    }
+  },
+  "models_verified": 15,
+  "independent100epoch_replay_error": 0.0,
+  "protected_files": 18,
+  "seconds": 1.1221166670438834,
+  "scope": "Development400 only; noholdout/test/candidateCSV/upload/install/cost. Tailbins diagnostic only,fromeachfoldtrain20/80quantiles; no sampleweighting."
+}

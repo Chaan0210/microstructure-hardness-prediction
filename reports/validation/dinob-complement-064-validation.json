@@ -1,0 +1,319 @@
+{
+  "passed": true,
+  "results": {
+    "original": {
+      "scores": {
+        "reference003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.680453686399362,
+            12.991004741250547,
+            14.032386512109253
+          ]
+        },
+        "reference007": {
+          "rmse": 13.241596955038409,
+          "fold_rmse": [
+            13.200972349680994,
+            12.726138894776982,
+            14.308109808709345,
+            12.375441992213231,
+            13.513163828337742
+          ]
+        },
+        "Smean": {
+          "rmse": 14.049242890525278,
+          "fold_rmse": [
+            14.446117130508892,
+            13.952434285579072,
+            14.94415012517497,
+            13.1480280957738,
+            13.687481162436942
+          ]
+        },
+        "Bmean": {
+          "rmse": 13.615777507504738,
+          "fold_rmse": [
+            13.650648366415224,
+            12.80647915614849,
+            14.045068523498623,
+            13.407892313668881,
+            14.126760079518114
+          ]
+        },
+        "Bprimary": {
+          "rmse": 13.232540256094351,
+          "fold_rmse": [
+            13.119153240033091,
+            12.542326934894586,
+            14.192991337031799,
+            12.571463448229109,
+            13.660006044849125
+          ]
+        },
+        "mixed50": {
+          "rmse": 13.209632611789585,
+          "fold_rmse": [
+            13.137584839949701,
+            12.597373711388418,
+            14.228655527464698,
+            12.44121172584094,
+            13.56258166849383
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.03196434324882347,
+        "fold_gains": [
+          0.06338750973129237,
+          0.12876518338856435,
+          0.07945428124464726,
+          -0.06576973362770921,
+          -0.049417840156088744
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.046222488449716555,
+        "conditional_ci95": [
+          -0.059124924985042335,
+          0.12356775808613459
+        ]
+      },
+      "complementarity": {
+        "prediction_residual_correlation": 0.9917377743516141,
+        "standalone_head_residual_correlation": 0.879390546815892,
+        "prediction_difference_RMS": 1.7036572847436682,
+        "Bprimary_lower_absolute_error_rows": 200,
+        "mean_component_MSE": 175.22000577442003,
+        "disagreement_MSE_reduction": 0.7256120359650421,
+        "mixture_MSE": 174.49439373845496,
+        "MSE_identity_error": 2.842170943040401e-14,
+        "interpretation": "For fixed equal average, MSE(mix)=mean(MSE(007),MSE(Bprimary)) - mean((007-Bprimary)^2)/4. Identity explains observed complementarity, not independent validation."
+      },
+      "train_Bmean_rmse_pooled": 0.5059661954706801,
+      "report_sha256": "23f8b746f07069c7fdaced95522e5f0645a0996465cb904e70b503d5da2df44c",
+      "predictions_sha256": "dab3055c861db6e4813df92dd9326c4b04462b3309ed084fd2ba1b993c0f979d"
+    },
+    "20261031": {
+      "scores": {
+        "reference003": {
+          "rmse": 13.63181073293285,
+          "fold_rmse": [
+            13.807014528773689,
+            15.520422411997691,
+            13.962889095224837,
+            11.915062644080418,
+            12.67608644456163
+          ]
+        },
+        "reference007": {
+          "rmse": 13.192251472226435,
+          "fold_rmse": [
+            13.535395460149635,
+            14.411795240026315,
+            13.543037468664924,
+            11.898101707275336,
+            12.421434462850408
+          ]
+        },
+        "Smean": {
+          "rmse": 14.060492400313716,
+          "fold_rmse": [
+            14.51004611492426,
+            13.538025327016111,
+            14.916757653779445,
+            13.768248788919792,
+            13.512709982422537
+          ]
+        },
+        "Bmean": {
+          "rmse": 13.967093172617764,
+          "fold_rmse": [
+            13.502110276748768,
+            13.956975680280312,
+            14.804788899095918,
+            13.138042313219065,
+            14.3702601307972
+          ]
+        },
+        "Bprimary": {
+          "rmse": 13.222714692057783,
+          "fold_rmse": [
+            13.3006668671432,
+            14.652225253610592,
+            13.619951171027273,
+            11.786383640286529,
+            12.577104830896415
+          ]
+        },
+        "mixed50": {
+          "rmse": 13.180839919990602,
+          "fold_rmse": [
+            13.399031053593571,
+            14.50578410243469,
+            13.55291183492863,
+            11.810395013161449,
+            12.472130924914959
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0114115522358329,
+        "fold_gains": [
+          0.13636440655606386,
+          -0.09398886240837534,
+          -0.009874366263705525,
+          0.0877066941138871,
+          -0.050696462064550474
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.04580570047070066,
+        "conditional_ci95": [
+          -0.07710197379051453,
+          0.09832545024613223
+        ]
+      },
+      "complementarity": {
+        "prediction_residual_correlation": 0.9919437006797595,
+        "standalone_head_residual_correlation": 0.8854923137422851,
+        "prediction_difference_RMS": 1.6772601117212678,
+        "Bprimary_lower_absolute_error_rows": 202,
+        "mean_component_MSE": 174.43784136701066,
+        "disagreement_MSE_reduction": 0.7033003705928099,
+        "mixture_MSE": 173.73454099641785,
+        "MSE_identity_error": 0.0,
+        "interpretation": "For fixed equal average, MSE(mix)=mean(MSE(007),MSE(Bprimary)) - mean((007-Bprimary)^2)/4. Identity explains observed complementarity, not independent validation."
+      },
+      "train_Bmean_rmse_pooled": 0.4717761976092711,
+      "report_sha256": "0fda923f26e2c61658cb6f1e32d5b56bff800e8c9dd6b637ea5aedcd19ccdd25",
+      "predictions_sha256": "97b1f05dd273df0b76e61d8ca53ec8ec95458d724ac438c2803fac5d8c2f0a36"
+    },
+    "20261101": {
+      "scores": {
+        "reference003": {
+          "rmse": 13.729980391208457,
+          "fold_rmse": [
+            13.945290670360036,
+            13.342127449268341,
+            13.758607138657919,
+            14.043519497725589,
+            13.548380002146594
+          ]
+        },
+        "reference007": {
+          "rmse": 13.455677846832414,
+          "fold_rmse": [
+            13.633717745377801,
+            13.312423339991074,
+            13.039493810336934,
+            14.205322631335173,
+            13.0521211668746
+          ]
+        },
+        "Smean": {
+          "rmse": 14.667072997232468,
+          "fold_rmse": [
+            14.915154154784831,
+            14.654630094396005,
+            12.868032916798017,
+            16.903644667767562,
+            13.677560844836812
+          ]
+        },
+        "Bmean": {
+          "rmse": 14.02485574576349,
+          "fold_rmse": [
+            14.677079552637498,
+            13.389320447678788,
+            13.47112184163994,
+            14.835679788209715,
+            13.682975142551932
+          ]
+        },
+        "Bprimary": {
+          "rmse": 13.381157511382037,
+          "fold_rmse": [
+            13.775858228264818,
+            12.922963359473446,
+            13.270361885765366,
+            13.791903247415943,
+            13.121757886856406
+          ]
+        },
+        "mixed50": {
+          "rmse": 13.393004886763789,
+          "fold_rmse": [
+            13.68500128247352,
+            13.098019664407973,
+            13.127926748613318,
+            13.968281968272564,
+            13.060251084559912
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.06267296006862466,
+        "fold_gains": [
+          -0.051283537095718756,
+          0.21440367558310136,
+          -0.08843293827638377,
+          0.23704066306260962,
+          -0.008129917685312904
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.04212111322684699,
+        "conditional_ci95": [
+          -0.019231296457453383,
+          0.1438363581420925
+        ]
+      },
+      "complementarity": {
+        "prediction_residual_correlation": 0.9924328236814538,
+        "standalone_head_residual_correlation": 0.8948024785104827,
+        "prediction_difference_RMS": 1.6525633835923206,
+        "Bprimary_lower_absolute_error_rows": 204,
+        "mean_component_MSE": 180.05532133107627,
+        "disagreement_MSE_reduction": 0.6827414341975248,
+        "mixture_MSE": 179.37257989687873,
+        "MSE_identity_error": 0.0,
+        "interpretation": "For fixed equal average, MSE(mix)=mean(MSE(007),MSE(Bprimary)) - mean((007-Bprimary)^2)/4. Identity explains observed complementarity, not independent validation."
+      },
+      "train_Bmean_rmse_pooled": 0.4745569998910041,
+      "report_sha256": "e06f681414185b26535e463bdf3954cb94caa42ad5350be488e7fc55d1adb610",
+      "predictions_sha256": "9ed17aaf9a88d21189e18d29a04040f19470a74624583ac2c993249ab6494038"
+    }
+  },
+  "models_verified": 45,
+  "max_reload_error": 0.0,
+  "full_replays": [
+    {
+      "split": "original",
+      "B100epoch_exact": true,
+      "S100epoch_historical_state_exact": true,
+      "max_prediction_error": 0.0
+    },
+    {
+      "split": "20261031",
+      "B100epoch_exact": true,
+      "S100epoch_historical_state_exact": true,
+      "max_prediction_error": 0.0
+    },
+    {
+      "split": "20261101",
+      "B100epoch_exact": true,
+      "S100epoch_historical_state_exact": true,
+      "max_prediction_error": 0.0
+    }
+  ],
+  "confirmed_for_final_fit": false,
+  "sole_recipe": {
+    "candidate007": 0.5,
+    "ViTB_primary063": 0.5
+  },
+  "plan_sha256": "8026eaeb174b4ad345c6d598d950dd141bfc02a9a09c36e8d7ab67377e33af3d",
+  "validation_source_sha256": "8edde3c22e61bbb036490209db2a60c6425644989fb3a7ff2c3d02ff6f089942",
+  "seconds": 4.599624041991774,
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "holdout_test_selection_access": false
+}

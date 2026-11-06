@@ -1,0 +1,78 @@
+{
+  "status": "completed_promising_design_best003_preserved",
+  "results": {
+    "original": {
+      "control252": 14.967381624073983,
+      "full504": 14.543425199587686,
+      "native196x4": 14.865795545927249,
+      "control252_blend": 13.697138129537061,
+      "full504_blend": 13.522452231767831,
+      "native196x4_blend": 13.695943082061154,
+      "reference003": 13.705696031698212
+    },
+    "20261031": {
+      "control252": 14.767691224379154,
+      "full504": 14.225715205252632,
+      "control252_blend": 13.618671587333806,
+      "full504_blend": 13.484270679649033,
+      "reference003": 13.63181073293285
+    },
+    "20261101": {
+      "control252": 14.994699007122438,
+      "full504": 14.67018389948982,
+      "control252_blend": 13.715545558128364,
+      "full504_blend": 13.651326599763685,
+      "reference003": 13.729980391208457
+    }
+  },
+  "fold_wins": {
+    "original": 5,
+    "20261031": 2,
+    "20261101": 3
+  },
+  "candidate_design": "artifacts/dino-spatial-039/candidate-design.json",
+  "decision": "Retain504as a promising frozen developmentrecipe;do not replacebest003 or claim validatedpublicgain. No submissionCSV underdevelopment400-only scope.",
+  "diagnostic": "Middle60%targetRMSE consistently improves byabout.31-.33;low/hightail generallylittleorunstablegain. No tailweighting orrangeexpansion applied.",
+  "extraction_seconds": {
+    "full504": 20.37786441599019,
+    "native196x4": 10.18274341704091
+  },
+  "regression_seconds": 1.2508252489496954,
+  "pooled_diagnostic": {
+    "descriptive_pooled_rmse_gain": 0.13635441725685737,
+    "conditional_id_cluster_ci95": [
+      -0.055860242503486465,
+      0.3171631961766671
+    ],
+    "limits": "ResampleIDs keeping all3splitpredictions together,not1200independentobservations. Still omits model-fitting and repeated-selection uncertainty."
+  },
+  "verification": {
+    "unique_development_rows": 400,
+    "feature_cpu_reload_max_abs_errors": {
+      "full504": 5.2928924560546875e-05,
+      "native196x4": 2.110004425048828e-05
+    },
+    "regression_models_reloaded": 35,
+    "max_prediction_reload_error": 0.0,
+    "ids_finite_metrics_fixedblend_hashes_checked": true,
+    "fold_only_scaler_target_and_inner_split_checks": true,
+    "fixed_selection_gate_reproduced": true,
+    "best003_sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693"
+  },
+  "source_review": "Independentread-onlyauditfoundno blockingbugs/leakage; cropcenter weighting andlostpositionorder documented.",
+  "limitations": [
+    "Development400andpartitionsalreadyinformedhistoricalchoices; not independentunseenvalidation.",
+    "Spatialcropmean/std discardspositionorder andoverlapoverweightscenter; measureslocalcontext/heterogeneity, not spatialarrangement.",
+    "Featurecountscalingdoesnot equalizecorrelation/effectivecomplexity.",
+    "Whole504interpolation creates no independentpixelinformation; changes modeltokenization/relativegrain scale.",
+    "No data beyonddevelopment400,backboneadaptation,newdependencies,costorupload."
+  ],
+  "next_direction": "If researchingfurtherbeforecandidateproduction, remainingevidencepoints to extreme-target structuralmeasurement/representation errors. Uniform spatialaggregation mayhide heterogeneity, but currentoverlapcroparm didnotmeaningfullysolveit; do not expandscalesorTTArandomly.",
+  "new_installations": 0,
+  "cost": 0,
+  "new_api_or_external_data": false,
+  "holdout_test_access": false,
+  "submission_performed": false,
+  "running_work": [],
+  "remaining_execution_blockers": []
+}

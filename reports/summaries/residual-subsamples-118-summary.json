@@ -1,0 +1,367 @@
+{
+  "study": "118 fixed115 threeadditionalhalf-sampledraws and crossfit design review",
+  "completed_utc": "2026-10-04T01:57:28.450491+00:00",
+  "status": "completed_diagnostic_candidate013_unchanged",
+  "results": [
+    {
+      "split": "original",
+      "reference011_RMSE": 13.0539977718711,
+      "full115_RMSE": 13.045536327781294,
+      "half_draw_RMSE": [
+        13.106815777397657,
+        13.096941473256305,
+        13.211293934711646,
+        13.128596134424797
+      ]
+    },
+    {
+      "split": "20261031",
+      "reference011_RMSE": 13.015176056591201,
+      "full115_RMSE": 12.9664932798119,
+      "half_draw_RMSE": [
+        13.093584909745557,
+        12.985486081119559,
+        13.080172254248142,
+        13.03068566742454
+      ]
+    },
+    {
+      "split": "20261101",
+      "reference011_RMSE": 13.272377948565081,
+      "full115_RMSE": 13.23260840922976,
+      "half_draw_RMSE": [
+        13.302629185654014,
+        13.296496737868598,
+        13.303631984337299,
+        13.26036420484038
+      ]
+    }
+  ],
+  "draws_all4": [
+    {
+      "draw": 0,
+      "seed": 20271017,
+      "pooled_MSE": 173.39684295412357,
+      "pooled_RMSE": 13.168023502186028,
+      "MSE_gain_vs011": -1.4109489469111907,
+      "RMSE_gain_vs011": -0.05368425054195569,
+      "full115_RMSE_advantage": 0.0860015972091226,
+      "ID_cluster95_full_advantage_CI": [
+        -0.011662214401535032,
+        0.17969055992268715
+      ],
+      "selected_counts": {
+        "none": 19,
+        "ridge1": 12,
+        "ridge01": 3,
+        "rbf1": 5,
+        "rbf01": 6
+      },
+      "selected_same_as_full_of45": 12,
+      "correction_correlation_with_full": 0.24457264063330547,
+      "correction_RMS": 1.5342361539849403
+    },
+    {
+      "draw": 1,
+      "seed": 20271019,
+      "pooled_MSE": 172.31651673900035,
+      "pooled_RMSE": 13.126938589747434,
+      "MSE_gain_vs011": -0.33062273178796886,
+      "RMSE_gain_vs011": -0.012599338103362001,
+      "full115_RMSE_advantage": 0.0449166847705289,
+      "ID_cluster95_full_advantage_CI": [
+        -0.0788619753850988,
+        0.16585398918998046
+      ],
+      "selected_counts": {
+        "none": 20,
+        "ridge1": 13,
+        "ridge01": 1,
+        "rbf1": 6,
+        "rbf01": 5
+      },
+      "selected_same_as_full_of45": 16,
+      "correction_correlation_with_full": 0.10540036621416696,
+      "correction_RMS": 1.0393901105852523
+    },
+    {
+      "draw": 2,
+      "seed": 20271020,
+      "pooled_MSE": 174.20527253494467,
+      "pooled_RMSE": 13.19868450016685,
+      "MSE_gain_vs011": -2.219378527732289,
+      "RMSE_gain_vs011": -0.08434524852277825,
+      "full115_RMSE_advantage": 0.11666259518994515,
+      "ID_cluster95_full_advantage_CI": [
+        -0.018491604897063627,
+        0.24772658692319732
+      ],
+      "selected_counts": {
+        "none": 21,
+        "ridge1": 7,
+        "ridge01": 8,
+        "rbf1": 4,
+        "rbf01": 5
+      },
+      "selected_same_as_full_of45": 17,
+      "correction_correlation_with_full": 0.25293077873133935,
+      "correction_RMS": 1.8275000215190171
+    },
+    {
+      "draw": 3,
+      "seed": 20271021,
+      "pooled_MSE": 172.66535475635638,
+      "pooled_RMSE": 13.14021897672776,
+      "MSE_gain_vs011": -0.679460749143999,
+      "RMSE_gain_vs011": -0.025879725083688854,
+      "full115_RMSE_advantage": 0.058197071750855756,
+      "ID_cluster95_full_advantage_CI": [
+        -0.04605057527809207,
+        0.16167859180280347
+      ],
+      "selected_counts": {
+        "none": 25,
+        "ridge1": 6,
+        "ridge01": 4,
+        "rbf1": 5,
+        "rbf01": 5
+      },
+      "selected_same_as_full_of45": 21,
+      "correction_correlation_with_full": 0.46519283713923015,
+      "correction_RMS": 1.5206762201724875
+    }
+  ],
+  "aggregate": {
+    "reference011_pooled_RMSE": 13.114339251644072,
+    "full115_pooled_RMSE": 13.082021904976905,
+    "half_all4_mean_loss_MSE": 173.14599674610625,
+    "half_all4_sqrt_mean_loss": 13.158495231070544,
+    "no_averaged_prediction_or_new_ensemble": true,
+    "full115_RMSE_advantage_over_mean_half_loss": 0.07647332609363922,
+    "ID_cluster95_full_advantage_over_mean_half_loss_CI": [
+      -0.012681951250019096,
+      0.16288778206452256
+    ],
+    "half_draw_pooled_RMSE_range": [
+      13.126938589747434,
+      13.19868450016685
+    ],
+    "half_draws_worse_than_full115": 4,
+    "half_draws_worse_than011": 4,
+    "half_draw_mean_loss_minus011_MSE": 1.160102738893869,
+    "full115_selection_counts45": {
+      "none": 15,
+      "ridge1": 11,
+      "ridge01": 8,
+      "rbf1": 3,
+      "rbf01": 8
+    }
+  },
+  "composition_sensitivity": {
+    "half_correction_crossdraw_correlation": [
+      [
+        1.0,
+        0.19008351748952138,
+        0.11608144292700118,
+        0.215741074492482
+      ],
+      [
+        0.19008351748952138,
+        0.9999999999999998,
+        0.21492354689795137,
+        -0.009274100015278711
+      ],
+      [
+        0.11608144292700118,
+        0.21492354689795137,
+        0.9999999999999999,
+        0.022222578725065112
+      ],
+      [
+        0.21574107449248198,
+        -0.009274100015278711,
+        0.022222578725065112,
+        0.9999999999999999
+      ]
+    ],
+    "sameID_crossdraw_correction_SD_mean": 1.0231644760641525,
+    "full_half_correction_correlation_range": [
+      0.10540036621416696,
+      0.46519283713923015
+    ],
+    "mean_pairwise_subset_Jaccard": 0.3441553065719272,
+    "pairwise_subset_Jaccard_range": [
+      0.2,
+      0.5
+    ],
+    "within_block_row_exposure_count_across4draws": {
+      "0": 334,
+      "1": 1143,
+      "2": 1783,
+      "3": 1209,
+      "4": 331
+    },
+    "exposure_unit": "block-rowinstances across45overlappingouter/innertrainingblocks,notindependentpeople/images"
+  },
+  "development_vs_production_sizes": {
+    "development_anchor_residual_rows": [
+      [
+        213,
+        107
+      ],
+      [
+        214,
+        106
+      ]
+    ],
+    "development_inner_residual_train_validation_rows": [
+      [
+        70,
+        36
+      ],
+      [
+        71,
+        35
+      ],
+      [
+        71,
+        36
+      ],
+      [
+        72,
+        35
+      ]
+    ],
+    "production_anchor_residual_rows": [
+      [
+        333,
+        167
+      ],
+      [
+        333,
+        167
+      ],
+      [
+        334,
+        166
+      ]
+    ],
+    "production_inner_residual_train_validation_rows": [
+      [
+        110,
+        56
+      ],
+      [
+        111,
+        55
+      ],
+      [
+        111,
+        56
+      ],
+      [
+        112,
+        55
+      ]
+    ],
+    "development_union_residual_rows": 320,
+    "production_union_residual_rows": 500,
+    "learners": 3,
+    "current_production_choices": [
+      "ridge01",
+      "rbf1",
+      "rbf1"
+    ]
+  },
+  "scope_audit": {
+    "naive_pooled_inner_cells_with_label_paths": 45,
+    "key_finding": "Everypooled residualtarget excludesitsownlabel fromanchortraining, butall213/214innertrainingresiduals in thealigned naiveinnerCV useanchors thattrainedonall106/107innervalidationlabels. ThusnaiveinnerCV isnotclean even thoughouter80remainsunseen.",
+    "outer_vs_inner": "Pooling320crossfitresiduals isvalidforouterprediction ifallanchors/scalers/choicesexcludeouter80. ThecontaminationaboveinvalidatesinnerCVasanhonestestimateofcandidateselection;itdoesnotbyitselfleakouter80orinvalidateanouterCVtestofthefullyspecified contaminated-selectionalgorithm. We requirecleaninnerselectionhere.",
+    "path": "reports/residual-crossfit-118-scope-audit.json",
+    "sha256": "1ce606308886a0fa0d146a82d0607d428285c5faef0cba7b163bb1a7722216bc"
+  },
+  "verification": {
+    "partitions": {
+      "original": {
+        "passed": true,
+        "split": "original",
+        "models_reloaded": 720,
+        "inner_choices_recomputed": 45,
+        "max_independent_error": 5.667688540711424e-14,
+        "subset_and_anchor_exclusions_checked": true,
+        "report_sha256": "a0a11328930f681f98bdd0c8762aea488cc892f48b790ca0918495b6841bd512",
+        "seconds": 0.817081417015288
+      },
+      "20261031": {
+        "passed": true,
+        "split": "20261031",
+        "models_reloaded": 720,
+        "inner_choices_recomputed": 45,
+        "max_independent_error": 6.927791673660977e-14,
+        "subset_and_anchor_exclusions_checked": true,
+        "report_sha256": "e76c17975950bdf86b12848f7fa61f106a0834c08913872144d08f7a34731a96",
+        "seconds": 0.8221796250436455
+      },
+      "20261101": {
+        "passed": true,
+        "split": "20261101",
+        "models_reloaded": 720,
+        "inner_choices_recomputed": 45,
+        "max_independent_error": 7.815970093361102e-14,
+        "subset_and_anchor_exclusions_checked": true,
+        "report_sha256": "069bacfe2261e532bc5d7724d1ff906e357c56fa9c047be51bb64353b36e7ae2",
+        "seconds": 0.8311729590059258
+      }
+    },
+    "models_reloaded": 2160,
+    "inner_choices_recomputed": 135,
+    "leakage": {
+      "passed": true,
+      "outer80_labels_perturbed_9blocks": true,
+      "predictions_choices_exact": true,
+      "upstream_certificate": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8"
+    }
+  },
+  "resource": {
+    "new_upstream_fits": 0,
+    "fit_seconds": 3.40761829103576,
+    "cost": 0,
+    "new_packages": 0
+  },
+  "limits": [
+    "All3partitions and4draws reuse400uniqueIDs;not4800 independentobservations. ConditionalIDbootstrap holdsallpartition/drawerrors together for eachsampledID.",
+    "Seedsfixedbeforeresults;all4draws retained. Fourdraws quantifysomecompositionvariance,notallpossibletrainingrandomness orcausal asymptoticlearningcurve.",
+    "Fixedanchor213/214andouter011320 isolatea localresidual-trainingdata reduction, butsubsetcomposition alsochanges. No guarantee107->167or320->500improves.",
+    "Current013 uses166/167residualpairsperlearner and333/334anchor,comparedwithdevelopment106/107and213/214;bothlearner-sizeandpseudo-targetfunctionchange.",
+    "Currentthreelearnerscollectivelyuse320/500unique residualpairs,so sayingthewholemodelusesonly107isincorrect. Directresidualsupervisionperlearner remains107;dependenceandaveragingmakeeffective sample size unknowablefrommodelcountalone.",
+    "OverlappinganchorscorrelateOOFresidualnoise. Poolingcanimprovedatauseandreducefitvariance butcanalsoaggregateanchor-specificbias anddoesnotcreatenewlabels.",
+    "Candidate013 remainsanexploratorysmallgain withconditionalintervalincludingzero andhistoricselectionbias. No adjustmentornewcandidate selectedfromthisdiagnostic."
+  ],
+  "recommendation": "Retain013andfreeze itskernel/weights. A distinct data-use comparison is justifiedasaproposal,notasguaranteedimprovement: onefixedrbf1 pooled320 residuallearner versusmatchedthreeblockrbf1 average, withunchanged115and011references. No innerselectiononprecomputedpooledresiduals. Fullynestedfive-wayselection isalsovalidbutneedsdeeper nuisancecrossfitandmuchmorelocaltraining; deferuntildata-use benefit supported.",
+  "proposed_study": {
+    "path": "reports/pooled-residual-119-proposed-study.json",
+    "sha256": "dbefe4ed4af59d81250b1887cbb82dde45da79415c00c6ecf8bb16064ada5d9d",
+    "executed": false
+  },
+  "scope": {
+    "development400_only": true,
+    "no_test_holdout_labels_read": true,
+    "no_new_CSV": true,
+    "011_012_013_preserved": true,
+    "external_transmission": false,
+    "uploaded": false
+  },
+  "execution_blockers": [],
+  "evidence_sha256": {
+    "artifacts/residual-subsamples-118/original/report.json": "a0a11328930f681f98bdd0c8762aea488cc892f48b790ca0918495b6841bd512",
+    "artifacts/residual-subsamples-118/original/predictions.npz": "a2130f15e4c9c983af6afa63b7f6467d9b6e25e1629652b9e5d42e339b4c9642",
+    "artifacts/residual-subsamples-118/validation-original.json": "7b5e14b7b8fd760ba61e5d867cc24fefb8f367930656184f6581df19ecaaaeac",
+    "artifacts/residual-subsamples-118/20261031/report.json": "e76c17975950bdf86b12848f7fa61f106a0834c08913872144d08f7a34731a96",
+    "artifacts/residual-subsamples-118/20261031/predictions.npz": "42bea64fe274e01974c24b23d414250055fc990b14126833e21ea9dcf64a1518",
+    "artifacts/residual-subsamples-118/validation-20261031.json": "bd38562cf7bbd718451384ce5ff34237b6bf773e73ce2a91e0c23d9b19697042",
+    "artifacts/residual-subsamples-118/20261101/report.json": "069bacfe2261e532bc5d7724d1ff906e357c56fa9c047be51bb64353b36e7ae2",
+    "artifacts/residual-subsamples-118/20261101/predictions.npz": "d83abec7758d2ecec62c720978dd0a4a2c39a5a68a0cbb85449501c3e3508bf8",
+    "artifacts/residual-subsamples-118/validation-20261101.json": "1a2d5424b8818a1099fd4dc89137ce2b82203f742a70710a662d55dcc4cdf44e"
+  },
+  "source_sha256": "dd31b2b9b3acf5f6576ce5c6c2d5935e59256802e59bf1017b34b94ccf2c431e"
+}

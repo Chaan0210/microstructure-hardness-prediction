@@ -1,0 +1,18 @@
+{
+  "completed_UTC": "2026-10-07T00:20:44.860844+00:00",
+  "status": "완료",
+  "protected_files": 506,
+  "protected_unchanged": true,
+  "report_SHA256": "7d23cd00b4bc2f5209eb4e12d0891241ad6841c152eda67e5e70400fee629c50",
+  "manifest_SHA256": "87ae9a71ffd6677859dcbc8484e7f8d9d197fd0ca2103f4eb04b0fc251fe0642",
+  "best021_SHA256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+  "cost": 0,
+  "remaining_blockers": [],
+  "scientific_limits": [
+    "세 분할은 같은 개발 400개 ID의 반복측정이다. 독립 holdout 또는 1,200개 독립 표본이 아니다.",
+    "ID cluster bootstrap은 저장된 학습 결과에 조건부다. 재학습·seed 변동과 누적 400장 선택 편향은 보정하지 않는다.",
+    "고정 앙상블은 기존 CNN 3seed 중 첫 seed 출력만 치환했다. 추가 blend가 아니며 다른 seed·calibrator·잔차는 고정했다. 전체 nested 재학습의 성능을 추정하는 결과로 단정하지 않는다.",
+    "201의 과거 update별 RNG 해시는 없다. 시작·종료 RNG, 모든 배치·증강·LR·MSE·main gradient norm, 마지막 5 state와 평균, 최종 main optimizer·scheduler 및 OOF를 직접 비교했다.",
+    "EMA decay·warmup·초기화·seed·epoch·평가 시점은 탐색하지 않았다."
+  ]
+}

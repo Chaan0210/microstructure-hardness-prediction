@@ -1,0 +1,78 @@
+{
+  "split": "original",
+  "RMSE": {
+    "reference018": 12.811945280526919,
+    "B_MLP": 13.615777507504738,
+    "blend_B_MLP": 12.797114144449424,
+    "L_MLP": 13.897309666752351,
+    "blend_L_MLP": 12.786200775750695,
+    "B_SVR": 16.305621378409068,
+    "blend_B_SVR": 12.990629150981889,
+    "L_SVR": 15.981178807497134,
+    "blend_L_SVR": 12.912427040131584
+  },
+  "diagnostics": {
+    "MLP": {
+      "gain": 0.02574450477622392,
+      "fold_gains": [
+        -0.018775225091220094,
+        0.08237199172632792,
+        0.0452942195715913,
+        0.0445165900602138,
+        -0.02188758018607828
+      ],
+      "positive_folds": 3,
+      "conditional_cluster_bootstrap_CI95": [
+        -0.047323062325136785,
+        0.09532553498064755
+      ],
+      "CI_not_adjusted_for_model_selection_or_refitting": true,
+      "L_B_error_correlation": 0.9248422817832331,
+      "L_018_error_correlation": 0.8928852578124592,
+      "gain_vs_matched_B_blend": 0.010913368698728831
+    },
+    "SVR": {
+      "gain": -0.10048175960466565,
+      "fold_gains": [
+        -0.20582472472786328,
+        -0.1272802686446255,
+        0.019894576265983233,
+        -0.05706392491292789,
+        -0.13941253887348992
+      ],
+      "positive_folds": 1,
+      "conditional_cluster_bootstrap_CI95": [
+        -0.19190722660849974,
+        -0.00915083567897006
+      ],
+      "CI_not_adjusted_for_model_selection_or_refitting": true,
+      "L_B_error_correlation": 0.9550879181460172,
+      "L_018_error_correlation": 0.8470261007151738,
+      "gain_vs_matched_B_blend": 0.07820211085030415
+    }
+  },
+  "eligible_L_readouts": [
+    "MLP"
+  ],
+  "readouts_executed": [
+    "MLP",
+    "SVR"
+  ],
+  "seconds": 28.333981499999936,
+  "B_MLP_exact_historical_control": true,
+  "fixed_mixture": [
+    0.9,
+    0.1
+  ],
+  "fold_report_hashes": {
+    "fold-0/report.json": "45fa46950af129c76ad9945bb526e0490ae055d0cca8431fc2a6a2405202c325",
+    "fold-1/report.json": "3ba665030d9a738ddcd5d310573fc27cad57abf9aa4044885687f2f3cbaf6e13",
+    "fold-2/report.json": "06f923cd2da13954ac820ee9cf823265c6d71def169dace7b641c274783b514e",
+    "fold-3/report.json": "06e19d35210402dab41a69736ecbcc7e73ba08f36016e6f82eb8d02a6e69b734",
+    "fold-4/report.json": "3bd73c9041a72a6a2267d0725afc111042813e337a95aa92f88bef52f7a73a6b"
+  },
+  "predictions_sha256": "d47307a0594458197c986a668da95a8609691363d42d2faab4157c3dc458cb33",
+  "plan_sha256": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4",
+  "code_lock_sha256": "c0efce2a9c709d7ebd9b68ab180e185914d4b96b7f1aa49f3dfa6f5481ebd009",
+  "no_holdout_test_full500": true
+}

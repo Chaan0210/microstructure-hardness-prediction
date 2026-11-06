@@ -1,0 +1,76 @@
+{
+  "study": "137 one fixed quadratic calibration",
+  "completed_utc": "2026-10-04T11:24:47.359999+00:00",
+  "status": "validated_candidate_eligible",
+  "decision": {
+    "eligible": true,
+    "primary": "pooleduntrimmedMSE over3partitions;singlefixedlambda1quadratic;no allfold/allpartition/CI gate",
+    "reference015_MSE": 165.37397132936573,
+    "primary_MSE": 164.70700363272132,
+    "reference015_pooled_RMSE": 12.859781154023024,
+    "primary_pooled_RMSE": 12.8338226430289,
+    "pooled_RMSE_gain": 0.02595851099412272,
+    "conditional_ID_cluster95_gain_CI": [
+      -0.013876261493579145,
+      0.07093112776415968
+    ],
+    "independent_validation_passed": true,
+    "per_partition_wins_diagnostic_only": 3,
+    "no_parameter_search": true
+  },
+  "per_partition": [
+    {
+      "split": "original",
+      "reference015_RMSE": 12.830176114316457,
+      "primary_RMSE": 12.813150116084293,
+      "gain": 0.017025998232163886,
+      "seconds": 0.7976319170556962
+    },
+    {
+      "split": "20261031",
+      "reference015_RMSE": 12.636884322985622,
+      "primary_RMSE": 12.612076949376064,
+      "gain": 0.024807373609558425,
+      "seconds": 0.6194301249925047
+    },
+    {
+      "split": "20261101",
+      "reference015_RMSE": 13.107923156289893,
+      "primary_RMSE": 13.072096619282998,
+      "gain": 0.0358265370068942,
+      "seconds": 0.6331483329413459
+    }
+  ],
+  "validation": {
+    "residual_models_independently_verified": 720,
+    "augmented_LS_max_error": 1.4210854715202004e-13,
+    "manual_kernel_max_error": 5.595524044110789e-14,
+    "outer_and_innerB_poison_passed": true,
+    "base_CNN_exclusion_certificate_reused_from133": true,
+    "015_control_fold_reproduced": true
+  },
+  "limits": [
+    "Same400 adaptively reused; three overlapping partitions are not independent replications.",
+    "Conditional ID cluster interval fixes trained predictions and excludes refitting/research-selection uncertainty.",
+    "Quadratic extrapolation and nested training-size difference remain; no test-based clipping or correction.",
+    "Public result used only forbest preservation,notcurvature/weight/sample inference."
+  ],
+  "resource": {
+    "new_neural_fits": 0,
+    "main_quadratic_fits": 60,
+    "main_residual_models_including_none": 720,
+    "extra_control_and_poison_residual_models": 192,
+    "main_fit_seconds": 2.050210374989547,
+    "validation_seconds": 4.5476147091249,
+    "cost": 0,
+    "new_install": false
+  },
+  "scope": {
+    "holdout_test_decoded": false,
+    "full500_fit": false,
+    "new_CSV": false,
+    "uploaded": false,
+    "best015_preserved": true
+  },
+  "source_sha256": "2c745f851ea6f9c0b51f140353d03d032496372658d30051148a3e97d2b00893"
+}

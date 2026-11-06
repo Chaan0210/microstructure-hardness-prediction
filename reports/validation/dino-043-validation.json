@@ -1,0 +1,78 @@
+{
+  "results": {
+    "original": {
+      "split": "original",
+      "standalone_rmse": 14.537835145494492,
+      "frozen_standalone_rmse": 14.543425199587686,
+      "blend_rmse": 13.49037538493683,
+      "candidate005_rmse": 13.522452231767831,
+      "gain": 0.03207684683100176,
+      "fold_gains": [
+        0.030333488401018016,
+        0.010457741191368441,
+        0.021033157228707466,
+        0.04326779074387588,
+        0.05496930918199716
+      ],
+      "bootstrap_sd": 0.01598901012947337,
+      "conditional_ci95": [
+        0.001011120811953381,
+        0.06339479483188508
+      ],
+      "seconds_this_execution": 225.40100641699973
+    },
+    "20261031": {
+      "split": "20261031",
+      "standalone_rmse": 14.225328245092614,
+      "frozen_standalone_rmse": 14.225715205252632,
+      "blend_rmse": 13.448969908704811,
+      "candidate005_rmse": 13.484270679649033,
+      "gain": 0.03530077094422168,
+      "fold_gains": [
+        0.0875896874253499,
+        0.08336978030191311,
+        -0.06508027713842957,
+        0.009183334606914784,
+        0.05864611066867376
+      ],
+      "bootstrap_sd": 0.01920857557739561,
+      "conditional_ci95": [
+        -0.00232098624016017,
+        0.07252724645717384
+      ],
+      "seconds_this_execution": 222.9324719160213
+    },
+    "20261101": {
+      "split": "20261101",
+      "standalone_rmse": 14.643504305457737,
+      "frozen_standalone_rmse": 14.67018389948982,
+      "blend_rmse": 13.613023952868913,
+      "candidate005_rmse": 13.651326599763685,
+      "gain": 0.03830264689477225,
+      "fold_gains": [
+        -0.032712007715669955,
+        -0.0003678121597747719,
+        0.16684697942759996,
+        0.03547601034787462,
+        0.024738521546462167
+      ],
+      "bootstrap_sd": 0.017683387408841476,
+      "conditional_ci95": [
+        0.004084231984434439,
+        0.07359398315631203
+      ],
+      "seconds_this_execution": 223.1810128330253
+    }
+  },
+  "models_reloaded": 15,
+  "maximum_prediction_reload_error": 0.0,
+  "cpu_prediction_max_error": 3.0517578125e-05,
+  "prefix_recompute_max_error": 0.0,
+  "all_frozen_norm_head_tensors_unchanged": true,
+  "lastblock_only_trainable": true,
+  "fold_scaler_target_group_ids_checkpoint_and_head_hashes_verified": true,
+  "best005_protected": true,
+  "source_review": "Independent read-only audit: no blocking gradient/leakage error. Resume shortcut requires separate hash/ID checks; validation here checks all artifacts.",
+  "scope": "Development400 only; no fit, holdout/test access, package install, cost or upload.",
+  "limitations": "Repeated model selection on reused development400; bootstrap screening is not significance or independent validation."
+}

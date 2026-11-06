@@ -1,0 +1,240 @@
+{
+  "study": "160 bounded edge-layout dependency audit",
+  "status": "closed_limited_negative_no_confirmed_groups",
+  "completed_UTC": "2026-10-04T13:59:29.517011+00:00",
+  "prior_audit_found": {
+    "exact_D4": "Existing canonical-hashgroups alreadydone;notrepeated.",
+    "train_similarity": {
+      "scope": "train only",
+      "descriptor": "32x32 centered unit-norm grayscale thumbnail",
+      "max_pair_correlation": 0.5567935244364373,
+      "pairs_over_0_99": 0,
+      "pairs_over_0_95": 0,
+      "caveat": "Heuristic screens only aligned near-identical images. Does not prove generator-family independence."
+    },
+    "097_pair_only": {
+      "scale": 1.3333333333333333,
+      "rot90": 3,
+      "flip": true,
+      "max_center128_template_NCC": 0.4223291873931885,
+      "location_yx": [
+        176,
+        159
+      ]
+    },
+    "gap": "Noexistingall400boundary-layout/top-pairjunctioninspection found.097testedoneexternallysuppliedpair,notall400.094descriptormatchingwasmorphology/textureandoutcome-selectedanchors,notgeometryreuseevidence."
+  },
+  "method": {
+    "descriptor": "Gaussian derivative sigma2nativepx,reflectpadding,magnitude sqrt(gx^2+gy^2). Meanpool4x4 ->64x64edgefield. Perimage centerandL2normalize. Fullspatialcoordinatesretained; no histogram/DINO/CNN feature. Positiveaffineintensity invariance absentclipping; mildblur tolerance heuristic,notinvariance.",
+    "alignment": "Exactly8D4transforms ofsecondedgefield; no translations,scale,crop,elastic registration oralignmentparametersearch. This revisits approximate geometryunderphotometricchange,not exactpixelduplicatehashing.",
+    "selection": "Pearson/cosineofcenterededgefields; max8D4score perunorderedpair. All79800pairs,rankdescendingthenlexicographicIDtie. Freeze exacttop8pairs beforevisualreview;allowIDrepetition,noreplacement. No feature/threshold/rankexpansion afterviewing.",
+    "visual_criterion": "View all8samepanels:rawA/rawalignedB/edgeoverlay pluscontrast-normalizedA/B andsmoothedimageblend. Recognize >=5distinctjunctions withsamebranchlayout across>=3quadrants (<=3nativepx afterfixedD4), AND>=3connectedcurvedboundarysegments each>=20px following samepath within3px. Overallnetworkmustbeconsistent;similaraveragegrainshape/noise/texture alonefails. Recordexplicitlandmarkcoordinatesifaccepted. Numericalscorealonecannotcreateagroup. Ifuncertain,notconfirmed;do not forcegroup."
+  },
+  "observations": {
+    "development_images": 400,
+    "unordered_pairs_ranked": 79800,
+    "top_pairs_reviewed": 8,
+    "max_edge_layout_correlation": 0.1628969638447696,
+    "score_quantiles": {
+      "min": -0.025071459783015095,
+      "median": 0.04013067588815192,
+      "q90": 0.06752617839285137,
+      "q99": 0.0973100150772001,
+      "max": 0.1628969638447696
+    },
+    "confirmed_pairs": 0,
+    "confirmed_groups": 0,
+    "visual_review": [
+      {
+        "rank": 1,
+        "ID_A": "TRAIN_000273",
+        "ID_B": "TRAIN_000375",
+        "D4_B": 3,
+        "similarity": 0.1628969638447696,
+        "panel": "artifacts/layout-dependency-160/panels/pair-01.png",
+        "panel_sha256": "bf41fadd28369fd87bf57d1bcefd8efb36f202bd58ff10bf002fe65a1ebaf9cc",
+        "visually_inspected_at_native_resolution": true,
+        "confirmed_same_layout": false,
+        "status": "not_confirmed_under_fixed_criterion",
+        "matching_landmarks": [],
+        "observation_ko": "A의 흐린 미세 경계와 B의 불규칙한 큰 영역 경계 사이에서 공통 접합점 사슬을 식별하지 못했다. 붉은색/청록색 경계가 넓게 분리된다. 원형 어두운 반점 일부의 우연한 근접만으로 동일 배치를 인정하지 않았다.",
+        "interpretation": "No positive group evidence; not proof of independentlatentgenerator orabsenceofhiddenrelationship."
+      },
+      {
+        "rank": 2,
+        "ID_A": "TRAIN_000265",
+        "ID_B": "TRAIN_000435",
+        "D4_B": 7,
+        "similarity": 0.15916622809160322,
+        "panel": "artifacts/layout-dependency-160/panels/pair-02.png",
+        "panel_sha256": "8af6302addc329ceb4e9a16b3f71e92b51d3633d4845d9588d8fda9ed495641a",
+        "visually_inspected_at_native_resolution": true,
+        "confirmed_same_layout": false,
+        "status": "not_confirmed_under_fixed_criterion",
+        "matching_landmarks": [],
+        "observation_ko": "A에는 조밀한 다각형 경계망이 보이지만 B는 더 흐리고 경계가 일부만 보인다. A의 조밀한 접합점들을 B의 같은 위치와 연결해 확인할 수 없었다. 반점 또는 질감 유사도는 그룹 근거로 사용하지 않았다.",
+        "interpretation": "No positive group evidence; not proof of independentlatentgenerator orabsenceofhiddenrelationship."
+      },
+      {
+        "rank": 3,
+        "ID_A": "TRAIN_000018",
+        "ID_B": "TRAIN_000223",
+        "D4_B": 4,
+        "similarity": 0.15507278967157656,
+        "panel": "artifacts/layout-dependency-160/panels/pair-03.png",
+        "panel_sha256": "e18c738983b400519bac5908a4a9bad9d2c85597e6fe209160c064f98f1d00bf",
+        "visually_inspected_at_native_resolution": true,
+        "confirmed_same_layout": false,
+        "status": "not_confirmed_under_fixed_criterion",
+        "matching_landmarks": [],
+        "observation_ko": "두 이미지 모두 다각형 영역이 보이지만 중앙과 하단에서 다각형을 나누는 경로와 분기 위치가 대응하지 않는다. 여러 사분면에 걸친 같은 접합점 구조를 확인하지 못했다.",
+        "interpretation": "No positive group evidence; not proof of independentlatentgenerator orabsenceofhiddenrelationship."
+      },
+      {
+        "rank": 4,
+        "ID_A": "TRAIN_000215",
+        "ID_B": "TRAIN_000471",
+        "D4_B": 2,
+        "similarity": 0.1539278414027531,
+        "panel": "artifacts/layout-dependency-160/panels/pair-04.png",
+        "panel_sha256": "6dc499a000dec37bc6daf564e581e459157ede97b3b824cf40e057e9013fabc9",
+        "visually_inspected_at_native_resolution": true,
+        "confirmed_same_layout": false,
+        "status": "not_confirmed_under_fixed_criterion",
+        "matching_landmarks": [],
+        "observation_ko": "A에는 작은 길쭉한 영역이 흩어져 있고 B의 경계는 훨씬 흐리다. 강한 국소 테두리의 일부 근접을 제외하면 연결되는 경계 경로와 접합점 대응을 확인할 수 없다.",
+        "interpretation": "No positive group evidence; not proof of independentlatentgenerator orabsenceofhiddenrelationship."
+      },
+      {
+        "rank": 5,
+        "ID_A": "TRAIN_000141",
+        "ID_B": "TRAIN_000358",
+        "D4_B": 6,
+        "similarity": 0.1537759831660932,
+        "panel": "artifacts/layout-dependency-160/panels/pair-05.png",
+        "panel_sha256": "1d77742fe1221b8a5975c469f5aed74bca68ab53d902585ec9f0ba2962c65b23",
+        "visually_inspected_at_native_resolution": true,
+        "confirmed_same_layout": false,
+        "status": "not_confirmed_under_fixed_criterion",
+        "matching_landmarks": [],
+        "observation_ko": "양쪽 모두 경계망이 비교적 잘 보인다. A의 촘촘한 작은 다각형들과 B의 더 큰 다각형들은 중앙 및 하단에서 서로 다른 분기·연결 배치를 보인다. 전체 경계망의 일관된 일치는 없다.",
+        "interpretation": "No positive group evidence; not proof of independentlatentgenerator orabsenceofhiddenrelationship."
+      },
+      {
+        "rank": 6,
+        "ID_A": "TRAIN_000375",
+        "ID_B": "TRAIN_000399",
+        "D4_B": 7,
+        "similarity": 0.1512535703845188,
+        "panel": "artifacts/layout-dependency-160/panels/pair-06.png",
+        "panel_sha256": "fc9e1df0f3c3ed21af792d3fd90217d6d615c0e63fc1f1bc14dad1019ea86271",
+        "visually_inspected_at_native_resolution": true,
+        "confirmed_same_layout": false,
+        "status": "not_confirmed_under_fixed_criterion",
+        "matching_landmarks": [],
+        "observation_ko": "B의 길쭉한 다각형 경계망은 선명하지만 A에서는 해당 위치의 연결망을 확인할 수 없다. 일부 어두운 반점이 가까운 것은 경계·접합점 재사용 증거가 아니다.",
+        "interpretation": "No positive group evidence; not proof of independentlatentgenerator orabsenceofhiddenrelationship."
+      },
+      {
+        "rank": 7,
+        "ID_A": "TRAIN_000001",
+        "ID_B": "TRAIN_000471",
+        "D4_B": 6,
+        "similarity": 0.1464773627166456,
+        "panel": "artifacts/layout-dependency-160/panels/pair-07.png",
+        "panel_sha256": "418c9b57dd592893783d92da97d509b84d34d16607919a3fbcc57c8af1969e38",
+        "visually_inspected_at_native_resolution": true,
+        "confirmed_same_layout": false,
+        "status": "not_confirmed_under_fixed_criterion",
+        "matching_landmarks": [],
+        "observation_ko": "A의 긴 대각선 경계와 접합점들이 B의 같은 좌표에서 대응하는 망으로 이어지지 않는다. B의 흐린 경계 때문에 잠재적 관계 자체를 배제할 수는 없으나 확인 기준은 충족하지 않는다.",
+        "interpretation": "No positive group evidence; not proof of independentlatentgenerator orabsenceofhiddenrelationship."
+      },
+      {
+        "rank": 8,
+        "ID_A": "TRAIN_000294",
+        "ID_B": "TRAIN_000492",
+        "D4_B": 7,
+        "similarity": 0.14592562790671632,
+        "panel": "artifacts/layout-dependency-160/panels/pair-08.png",
+        "panel_sha256": "cd61fd268e7c8f70e1a3ebaad87b04ca6388c1e6804887e1f8a4dce4db45a7c2",
+        "visually_inspected_at_native_resolution": true,
+        "confirmed_same_layout": false,
+        "status": "not_confirmed_under_fixed_criterion",
+        "matching_landmarks": [],
+        "observation_ko": "비슷한 대각선 방향성이 있으나 A의 길고 가는 경로와 B의 더 작은 다각형들이 같은 접합점·분기망으로 대응하지 않는다. 방향성 유사도만으로 그룹을 만들지 않았다.",
+        "interpretation": "No positive group evidence; not proof of independentlatentgenerator orabsenceofhiddenrelationship."
+      }
+    ]
+  },
+  "decision": "Do notcreateapproximategroups orchangefolds/predictionrecipe. Endthisboundedcheck; no descriptor/threshold/numberofpairs expansion. Existingexact/D4groups remainunchanged.",
+  "fold_split_result": null,
+  "fold_split_reason": "Noactualrelatedgroupconfirmed,so none tofreeze/testacrossfolds; not a claim foldsareindependent.",
+  "scope": {
+    "labels_loaded_or_used": false,
+    "OOF_predictions_loaded_or_used": false,
+    "holdout_test_images_used": false,
+    "new_models_or_inference": false,
+    "installs": 0,
+    "cost": 0,
+    "uploaded": false,
+    "018_020_preserved": true
+  },
+  "resources": {
+    "feature_and_ranking_seconds": 1.8641778340097517,
+    "score_seconds": 0.08333549997769296,
+    "benchmark": {
+      "first10_seconds": 0.039752834010869265,
+      "projected400_seconds": 1.5901416772976518,
+      "RSS_bytes": 539213824,
+      "passed": true
+    },
+    "CPU_only": true
+  },
+  "limitations": [
+    "Top8underonescorecannotexcludeweak/shifted/cropped/rescaled/partial/geometricallychangedorothergeneratorfamilies. Sharedgeneratingparametersmaynotreuseidenticalboundaries. Noise/blurcanhidejunctions. No performance/noiselowerbound guaranteed.",
+    "Moderateblurtolerance wasverifiedononeknown-layoutsyntheticfixture only; no realunknown-generator sensitivity/recall estimate.",
+    "Gradientmagnitudecanrespondtospots/noiseaswellasgrain-likeboundaries. Visualreviewrequiredspecificpath/junctionagreementandfoundnone;thedescriptor rankingaloneisnotproofofgroupmembership.",
+    "Absenceofconfirmedtop8pairs doesnotprove400independentimages or ageneralization/error/noisefloor.",
+    "159quantilemasksexpressrank-basedconnectivitywithnearlyfixedareafractions;failuredoesnotshowtruephasefractionunhelpful."
+  ],
+  "159_phase_fraction_clarification": "Quantilebinarymasksnearlyfixareafraction andprimarilymeasure rank-basedconnectivity.159negative resultdoesNOT implytruephasefraction useless oridentifiedphaseconnectivity useless.",
+  "validation": {
+    "passed": true,
+    "fixed_top8_ranking_reconstructed_from_all79800_saved_scores": true,
+    "score_independent_dot_max_error": 6.661338147750939e-16,
+    "all_native_raw_panels_pixel_exact": 16,
+    "all_panel_hashes_verified": 8,
+    "feature_center_norm_verified": 400,
+    "known_layout_fixture": {
+      "passed": true,
+      "affine_max_error": 2.7755575615628914e-17,
+      "extra_blur1_2_similarity": 0.9910376613491598,
+      "D4_max_error": 4.163336342344337e-17,
+      "no_label_access": true,
+      "fixture_only_no_material_or_recall_claim": true
+    },
+    "hashes_of_locked_recipes_unchanged": true,
+    "protected_SHA256": {
+      "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+      "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+      "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+      "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+      "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef"
+    },
+    "fold_analysis": "Notperformed:no confirmedgroups. DevelopmentIDmanifest usedonlytoallowlist400images; no resplit/OOF/labelarrays read.",
+    "no_groups_created": true,
+    "cost": 0
+  },
+  "artifact_sha256": {
+    "artifacts/layout-dependency-160/plan.json": "db0eba5d89537e882885ce6f6a3791dec69d76920c7f9f76fcaee1269f6d62ec",
+    "artifacts/layout-dependency-160/selection.json": "074d8934c9f9f5d783e8b943f326af4e642a623f83ca16a8fb3e30d134a166a2",
+    "artifacts/layout-dependency-160/visual-review.json": "418e1020d317c45c5e5159a10cdd920e5dba95f2846a62f78e887fb32cc69e47",
+    "artifacts/layout-dependency-160/validation.json": "79f91edca9fd1b2e79bab358e23a8db162906680e2da3a1bb7d1225096ee6eb7",
+    "artifacts/layout-dependency-160/ranking.npz": "91a8c15c7f2347064d1556290fbb5445c2da16144bd2bdb961c1b0f15e30e670",
+    "artifacts/layout-dependency-160/fixtures.json": "4d296a4c7a4b269e36b5e7b979656469bea1ffad52118b3065b60f9e549d2607",
+    "artifacts/layout-dependency-160/panels.json": "ad9aeae32200059e509e7a73d127a610fd51f0cd1a1c44cf52c4694c05e4e10e"
+  },
+  "remaining_execution_blockers": [],
+  "finalizer_sha256": "5af78871ff85ccdc8e3f6c87114f0e0ea59a5429999f39493d452c044c22f952"
+}

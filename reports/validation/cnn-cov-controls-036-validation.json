@@ -1,0 +1,336 @@
+{
+  "validation": {
+    "checkpoints": 20,
+    "partitions": [
+      "original",
+      "20261031",
+      "20261101"
+    ],
+    "rows_per_partition": 400,
+    "oof_ids_finite_rmse_blend_checks": true,
+    "fold_only_preprocessing_and_disjoint_ids": true,
+    "source_and_checkpoint_hashes": true,
+    "fixed_screening_gate_reproduced": true,
+    "mps_reload_max_abs_diff": 0.0,
+    "reference003_vs_actual003_max_abs_diff": 5.684341886080802e-14,
+    "best003_sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693"
+  },
+  "selected_for_confirmation": "small_trace",
+  "results": {
+    "original": {
+      "scores": {
+        "baseline": {
+          "rmse": 13.98273103376079,
+          "fold_rmse": [
+            13.586021526541339,
+            13.411468157803718,
+            14.9358919180663,
+            13.196061640730782,
+            14.69419839701824
+          ]
+        },
+        "compact_kernel": {
+          "rmse": 14.482935938822393,
+          "fold_rmse": [
+            14.199103888352033,
+            13.644960947898369,
+            15.405654089395055,
+            14.65008366609084,
+            14.457473056960023
+          ]
+        },
+        "small_trace": {
+          "rmse": 14.137744748310938,
+          "fold_rmse": [
+            13.969388670366257,
+            14.51323444958481,
+            15.32647706513631,
+            13.84821013828671,
+            12.920043172036968
+          ]
+        },
+        "small_regularized": {
+          "rmse": 14.61965717140252,
+          "fold_rmse": [
+            15.402928122246564,
+            14.352203127199516,
+            14.945008546673758,
+            14.145970543768621,
+            14.211762262924852
+          ]
+        },
+        "small_trace_blend": {
+          "rmse": 13.354656849375033,
+          "fold_rmse": [
+            13.162244202448484,
+            13.09792623179138,
+            14.353766333783003,
+            12.708197714182202,
+            13.394217285712214
+          ],
+          "comparison": {
+            "gain": 0.3510391823231789,
+            "fold_gains": [
+              0.3771502810106693,
+              0.12045187359204412,
+              0.3266873526163554,
+              0.2828070270683476,
+              0.6381692263970429
+            ],
+            "conditional_ci95": [
+              0.17082256934952994,
+              0.532119641647438
+            ]
+          }
+        },
+        "small_regularized_blend": {
+          "rmse": 13.54906488913144,
+          "fold_rmse": [
+            13.533260295827471,
+            13.142643258152384,
+            14.26193930713078,
+            12.89913137989803,
+            13.864237723280755
+          ],
+          "comparison": {
+            "gain": 0.15663114256677169,
+            "fold_gains": [
+              0.006134187631682053,
+              0.07573484723103974,
+              0.41851437926857926,
+              0.09187336135251911,
+              0.1681487888285016
+            ],
+            "conditional_ci95": [
+              -0.0020971393281162586,
+              0.30918672672927144
+            ]
+          }
+        },
+        "reference003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.680453686399359,
+            12.99100474125055,
+            14.032386512109257
+          ]
+        },
+        "reference_cov035": {
+          "rmse": 13.567773890275364,
+          "fold_rmse": [
+            13.33219412686397,
+            12.97606369875279,
+            14.650923264371892,
+            13.213055900132595,
+            13.603764685526249
+          ]
+        }
+      },
+      "diagnostics": {
+        "small_trace": {
+          "mean_train_rmse": 6.622125949518216,
+          "mean_validation_rmse": 14.11547069908221,
+          "validation_epoch60_to80_change": -0.19508821145569932,
+          "baseline_residual_correlation": 0.7905008616845103
+        },
+        "small_regularized": {
+          "mean_train_rmse": 7.493026997682404,
+          "mean_validation_rmse": 14.611574520562664,
+          "validation_epoch60_to80_change": -0.23791630529095897,
+          "baseline_residual_correlation": 0.8264300641752281
+        }
+      },
+      "seconds": 156.1854140420328,
+      "report_sha256": "e469655a3a268b8e1b726446850573ea4ce272290f81a13ff23c8fc38931cc06",
+      "oof_sha256": "482314c4fee130f2f53bc3299ac0b15d937144ba238cf75532a929acd1ccf831"
+    },
+    "20261031": {
+      "scores": {
+        "baseline": {
+          "rmse": 14.272716700602603,
+          "fold_rmse": [
+            14.407444675755299,
+            16.64623278860325,
+            14.446614135477992,
+            12.440212569736428,
+            13.05439133706975
+          ]
+        },
+        "compact_kernel": {
+          "rmse": 14.381024891086929,
+          "fold_rmse": [
+            14.665980373226908,
+            15.480136271562646,
+            15.049330926050795,
+            12.580456149096214,
+            13.949679102228883
+          ]
+        },
+        "small_trace": {
+          "rmse": 14.857710497494182,
+          "fold_rmse": [
+            14.28100434975278,
+            14.848636402551275,
+            16.52535325581796,
+            14.735144720068705,
+            13.751979047867009
+          ]
+        },
+        "small_trace_blend": {
+          "rmse": 13.728295397511216,
+          "fold_rmse": [
+            13.80054583073703,
+            15.36327892438011,
+            14.302494446361642,
+            12.172555566978989,
+            12.771554786033922
+          ],
+          "comparison": {
+            "gain": -0.09648466457836591,
+            "fold_gains": [
+              0.006468698036655951,
+              0.15714348761758146,
+              -0.3396053511368038,
+              -0.25749292289857095,
+              -0.09546834147229255
+            ],
+            "conditional_ci95": [
+              -0.21669595755645843,
+              0.032313013910870776
+            ]
+          }
+        },
+        "reference003": {
+          "rmse": 13.63181073293285,
+          "fold_rmse": [
+            13.807014528773687,
+            15.520422411997691,
+            13.962889095224838,
+            11.915062644080418,
+            12.67608644456163
+          ]
+        },
+        "reference_cov035": {
+          "rmse": 13.599941528289083,
+          "fold_rmse": [
+            13.641839878355206,
+            15.48732677115999,
+            13.982485500403657,
+            11.709540723242347,
+            12.89231233575921
+          ]
+        }
+      },
+      "diagnostics": {
+        "small_trace": {
+          "mean_train_rmse": 8.529489328499025,
+          "mean_validation_rmse": 14.828423555211547,
+          "validation_epoch60_to80_change": 0.1912034953480294,
+          "baseline_residual_correlation": 0.8128901087295937
+        }
+      },
+      "seconds": 82.85817295801826,
+      "report_sha256": "48896ff2176677ac00512e962e63dc9ec0b71d4a47a82ccfebf8cf0de1e27194",
+      "oof_sha256": "6a98a01a2ea22db09284cc6b3652b703da804aa4ceae5e2b40c2a98c61c311d0"
+    },
+    "20261101": {
+      "scores": {
+        "baseline": {
+          "rmse": 14.314007659085357,
+          "fold_rmse": [
+            14.596285864102628,
+            13.806151425794823,
+            14.395109013364907,
+            14.50828489198722,
+            14.250726440763236
+          ]
+        },
+        "compact_kernel": {
+          "rmse": 14.343291339552492,
+          "fold_rmse": [
+            14.171835729734706,
+            13.14074751661951,
+            14.746291537774207,
+            15.13638868911744,
+            14.441830990051324
+          ]
+        },
+        "small_trace": {
+          "rmse": 15.05100457624939,
+          "fold_rmse": [
+            15.753845345745338,
+            14.396585680716372,
+            14.952510115722337,
+            15.263078844944836,
+            14.855276394054377
+          ]
+        },
+        "small_trace_blend": {
+          "rmse": 13.804532390195169,
+          "fold_rmse": [
+            14.144393481644192,
+            13.105657223647844,
+            13.756896675405786,
+            14.243030278159688,
+            13.743628949081888
+          ],
+          "comparison": {
+            "gain": -0.07455199898671161,
+            "fold_gains": [
+              -0.1991028112841544,
+              0.23647022562049358,
+              0.0017104632521363072,
+              -0.19951078043409964,
+              -0.19524894693529227
+            ],
+            "conditional_ci95": [
+              -0.20781315682382492,
+              0.06703225934683522
+            ]
+          }
+        },
+        "reference003": {
+          "rmse": 13.729980391208457,
+          "fold_rmse": [
+            13.945290670360038,
+            13.342127449268338,
+            13.758607138657922,
+            14.043519497725589,
+            13.548380002146596
+          ]
+        },
+        "reference_cov035": {
+          "rmse": 13.829958469549123,
+          "fold_rmse": [
+            13.70016182927812,
+            13.761145359015327,
+            13.745933229434831,
+            14.33358666831603,
+            13.596794235432904
+          ]
+        }
+      },
+      "diagnostics": {
+        "small_trace": {
+          "mean_train_rmse": 8.866130777418272,
+          "mean_validation_rmse": 15.044259276236653,
+          "validation_epoch60_to80_change": 0.4072750101356384,
+          "baseline_residual_correlation": 0.8203811340827736
+        }
+      },
+      "seconds": 82.96998499997426,
+      "report_sha256": "f46dcd138014b58a0278f24f041a3f736e51837b0cbb81a3a2bc58f7d20ccf5a",
+      "oof_sha256": "4fe11252c57010b2dc680bfaeb844e89f4480dc9a5934960bcc3a2ddab2e748b"
+    }
+  },
+  "training_seconds": 322.0135720000253,
+  "reporting_annotation_correction": "036 field fixed_035_controls_reused_for_reporting_only means no control predictions enter model training inputs/targets; they ARE used as fixed comparison and screening selection references. Actual recorded003 identity is verified here.",
+  "limitations": [
+    "Historical reuse of development400 creates repeated-selection bias. The repartitions are not independent unseen data.",
+    "Screening chooses one of two arms and adds selection optimism. Conditional bootstrap intervals omit model fitting and selection uncertainty.",
+    "The two new arms have identical initialization; comparisons against035 differ in capacity and initialization consumption.",
+    "No holdout/test use or external data/weights. No public score used in model selection."
+  ]
+}

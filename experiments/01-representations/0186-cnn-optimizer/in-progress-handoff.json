@@ -1,0 +1,34 @@
+{
+  "UTC": "2026-10-06T05:18:03.413408+00:00",
+  "status": "running_resnet50_then_queued_efficientnet_b0",
+  "unified_exec_session": 77929,
+  "command_chain": "root.venv/python -B -u experiments/cnn-optimizer-186/launch.py run.py resnet50 >resnet50-continued.log && same launcher run.py efficientnet_b0 >efficientnet_b0.log",
+  "first_actual_finetune_start_UTC_approx": "2026-10-06T04:41:33Z",
+  "continued_launch_UTC": "2026-10-06T04:43:45Z",
+  "no_duplicate_rule": "Inspectprocessandlogsfirst; doNOTrerunwhileactive. run.pyhaspartialfitreusebutnotfullyidempotentafterselectionfiles; unexpectedexitneedsreviewbeforemanualresume.",
+  "next_after_training": "Sequential launch.py validate.py resnet50; validate.py efficientnet_b0; summarize.py. Allvalidationcodeprepared; preservestrictCPUabs.002failuresandcontinueotherchecks. Thencheckpreservation/updateREADME/completion/parentreport.",
+  "important_finding": "scaling-diagnostic.json: nearconstantfoldtrainResNetfeature1092 createsz22984 andfrozenheadprediction4795beforefinetune. Current186unchanged; nextpriorityscale-stabilitycontroldocumented.",
+  "future_plans_only": [
+    "domain-adaptation-plan.json",
+    "followup-priority-after-scaling.json"
+  ],
+  "authorized_scope": "Originaldevelopment400only;2models4recipes3innerfold5outer;equalbudgets;noholdout/test/download/install/cost/full500/CSV/upload",
+  "history_files": [
+    "runtime-amendment.json",
+    "resnet50-initial-timegate.log",
+    "validation-failure-collection-policy.json"
+  ],
+  "preserved": "185andbest021,101protectedfiles; nochanges to185environment/weights",
+  "counts": {
+    "resnet50": {
+      "inner_fits": 41,
+      "outer_family_fits": 6,
+      "selections": 3
+    },
+    "efficientnet_b0": {
+      "inner_fits": 0,
+      "outer_family_fits": 0,
+      "selections": 0
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "study": 183,
+  "UTC": "2026-10-06T03:29:55.835179+00:00",
+  "IDs": [
+    "TRAIN_000104",
+    "TRAIN_000129",
+    "TRAIN_000221",
+    "TRAIN_000242",
+    "TRAIN_000257",
+    "TRAIN_000265",
+    "TRAIN_000270",
+    "TRAIN_000331",
+    "TRAIN_000390",
+    "TRAIN_000412",
+    "TRAIN_000424",
+    "TRAIN_000448",
+    "TRAIN_000457",
+    "TRAIN_000467",
+    "TRAIN_000489",
+    "TRAIN_000498"
+  ],
+  "selection": "16 smallest SHA256(183-label-blind:+ID) among400 development IDs, then lexical presentation. Frozen before images/segmentations. No replacement or image selection by scores/labels.",
+  "hypothesis": "Existing grayscale-derived watershed cells may be globally stable and visibly boundary-consistent enough to support later direct geometry. Unknown truegrain labels make this feasibility only.",
+  "baseline": "Unchanged existing weak TV1.0*HHnoise, eps1e-4,maxiter50; Gaussian derivative sigma.7; h=.2*gradientq90; exclude markers on 7x7blackhat>Otsu; watershed_line=True. CanonicalD4 computed once onoriginal and shared for all probes.",
+  "variants": {
+    "base": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "h_minus5": [
+      0.95,
+      1.0,
+      1.0
+    ],
+    "h_plus5": [
+      1.05,
+      1.0,
+      1.0
+    ],
+    "ridge_minus5": [
+      1.0,
+      0.95,
+      1.0
+    ],
+    "ridge_plus5": [
+      1.0,
+      1.05,
+      1.0
+    ],
+    "contrast_minus5": [
+      1.0,
+      1.0,
+      0.95
+    ],
+    "contrast_plus5": [
+      1.0,
+      1.0,
+      1.05
+    ]
+  },
+  "variant_format": "[h multiplier, ridge-Otsu multiplier, contrastfactor]. Contrast transform c*(x-.5)+.5 in float, no clipping/requantization, no spatial change. Adaptive HHnoise and otherexisting statistics recomputed. These are probes, not claimed generator distribution.",
+  "measurement": "Count/medianarea/aspect(areaweighted) for existing>=16px regions includingframe; report interior andsmall separately. Watershed zero pixels nearest-label filled only to define a complete graph partition; this forced coverage is not evidence oftrue tiling. Match allcells by maximum-overlap Hungarian assignment, retain IoU>=.5. Matched sourcepixel coverage and edgeJaccard using4-neighbor graph; unmatched endpoints remain unique so they cannot create false matches. Allcell count, areadistribution and completepartition connectedness reported.",
+  "boundary_proxy": "Rawcanonical gray Gaussian-gradient sigma1 top10% positive magnitudes, skeletonized, exclude3pxframe. Pseudoanchor only, not truth. Boundary=watershedzero; precision/recall distance<=2px. Fullraw/overlay/pseudanchor panels visually inspected for all16 withoutscores/labels. No manualresegmentation orperimage optimization.",
+  "gate": "At least14/16 images must have all6probe maxrelative changes<=.10 forcount,medianarea,areaweighted_aspect AND matched sourcepixel fraction>=.90 AND adjacencyJaccard>=.90. Boundary proxy medianprecision>=.60 andmedianrecall>=.80 plusno systematic visuallyunsupported partition in>=2 images. These thresholds are feasibility policy, not materialtruth. Anyfail rejects this operational inverse-rendering route with existing segmentation; no furtherlearning/rescue.",
+  "tessellation_limit": "We test globalpartition/cellidentity/adjacency consistency prerequisites. No fittedVoronoi/Laguerre/GBPD or inverse-rendering optimization. Not a proof ofmembership/nonmembership in everytessellation family.",
+  "paper": {
+    "url": "https://www.frontiersin.org/journals/materials/articles/10.3389/fmats.2021.760602/full",
+    "section": "2.4.2",
+    "reading": "Direct approach uses already segmentedgrain coordinate center ofmass/covariance andvolume, withoutparameter optimization. Itdoes not infergrainidentity from grayscale. Thepaperis3D; no automatic2D applicationclaim."
+  },
+  "scope": "Only fixed16 development images; no hardnesslabels/OOF/predictionarrays/holdout/test/full500/training/evaluation-image optimization/synthetictraining/externaltraining/install/download/payment/upload. ExistingNumPy/SciPy/skimage/PIL only.",
+  "resources": {
+    "threads": 2,
+    "max_RSS_bytes": 6000000000,
+    "max_MPS_driver_bytes": 6000000000,
+    "max_conservative_current_RSS_plus_MPS_bytes": 6000000000,
+    "swap_growth_stop_bytes": 67108864,
+    "minimum_memory_free_percent": 15,
+    "max_feature400_seconds": 600,
+    "max_benchmark_seconds": 180
+  },
+  "inputs": {
+    "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+    "grain_visual_audit_097.py": "ee14d4bb6c5a936a04645e1f6ddd1f67795dcf7a7e664eea386b9d95e31c97bb",
+    "reports/formation-049-summary.json": "e9e6d58e0f86a9b92ba99684c6b976c02022d99bddc7c2bd8d6ba34a128f782c",
+    "reports/grain-visual-audit-097-nlm098-summary.json": "e10b75952425a7d2d0e71360ded6f8b59d7ec1a7cc9e665d0e0f63bcd96b118d",
+    "reports/frame-censoring-100-summary.json": "f7ff805f77685ccb2a4d562fdfedc527e81359c42afe85a2568fc7d819ef8689",
+    "layout_dependency_audit_160.py": "e6aa983d04e875c99c1b86e5c1a78c7329e738b527e5bb4d4d56bc4f3de0e531",
+    "experiments/dinol-177/plan.json": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4"
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a",
+    "reports/retraining-175-summary.json": "a84fdf0c8bdb90563a7bc7964545a1f1b342f719ef1411261a9638725fe31659",
+    "experiments/reproduction-018-175/run/plan.json": "d576415c959f34e01af6daf9230c47608ed3d79bf956f8bc522f8464b4b83090",
+    "deliverables/reproduction-018-v176.zip": "e93bd3f2bd9f11b40014d65997238495293b07ae0eac49d17490552c198797a6",
+    "reports/retraining-176-summary.json": "b7862b213a83360be98f926f566e466bb670de2b8f7ce768a53c1d297ce8b634",
+    "reports/dinol-177-summary.json": "676f5ff0bdfb4a7d0c017711d3cb5d6e29b1d1352b46450409bf95ef0819c655",
+    "experiments/dinol-177/plan.json": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4",
+    "experiments/dinol-177/features.npz": "bc27df3ab45184f565a99007316b4239dce8cab9abe782e4dc302c988e9b8b90",
+    "experiments/dinol-177/dinov2_vitl14_pretrain.pth": "d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428",
+    "artifacts/submission-candidate-021.csv": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+    "artifacts/submission-candidate-021.manifest.json": "4ba41d28974dc5f629cc1c9f10d9f7cbd108ccf89030e84bdd53b9f65e50f649",
+    "reports/candidate021-178-summary.json": "74b35bd660f01f0f7d91ae0a2eebece60de7490d434ec4ee3739f329fbc995e3",
+    "reports/spatial-L-179-summary.json": "3309c1c987838e95876d311039f682d37ce99aa0d8d55491a0d4922dcc791195",
+    "reports/joint-readout-180-summary.json": "ea6d74aa8e20c0a084d1aecc9643d238e10a3e9d347415c9a57cee42a82b7b77",
+    "reports/midlayer-L-181-summary.json": "44a8229400427b898004dd13e3b9fe157c358c4a7770e19865f2fe7f180575cd",
+    "reports/L-representation-closure-181.json": "6797336777424a32baa6dab4ba2f1c7222e8ef0d23b68c7198138cae459c7443",
+    "reports/candidate021-public-submission.json": "a8536bd1877f5de089fbb42289b41f7ac34059848f019907f1d79286d699a8dc",
+    "reports/wph-182-summary.json": "b0c3ecc8106c93c80ff8d0cfbceb3ef8fb4b6ed956552eee73bf711a954b0fda",
+    "reports/WPH-family-closure-182.json": "132cb75ecc36778bfe20330e5c6f88beb88c0b81c9862b8d22e56f43754d5ed3"
+  }
+}

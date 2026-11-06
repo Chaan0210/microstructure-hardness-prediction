@@ -1,0 +1,302 @@
+{
+  "study": "115 fixed strongly regularized nonlinear residual extension",
+  "completed_utc": "2026-10-04T01:27:55.837640+00:00",
+  "status": "validated_exploratory_improvement",
+  "duplicate_audit": "022/101 KRR trainedhardnesstargets;047jointkernel trainedtargets;074/077predictioncalibration;076diagnostics;113onlylinearresidualRidge. No samephysics57 nonlinear residuallearner found in projectsource/plans/summaries.",
+  "primary": "Extendselector to five candidates includingrbf1/rbf01. Same3fold per honestblock, minimumpooleduntrimmed residualMSE;tieorder none,ridge1,ridge01,rbf1,rbf01. RefitselectedonB106/107; unchangedouter011 plusuniformmeanof3corrections. No posthocweight/threshold or trimming.",
+  "kernel": "Same113 train-onlyMinMaxclip/StandardScaler/blockweights. RBF gamma=1/medianpositive trainingpair squared distance (>1e-12). Training-center kernel and dividebymeantraindiagonal. Crosskernel centeredusingonlytrainingcolumn/grandmean andcrossrowmean. No intercept/residualmean added. ResidualRMS trainonly;alpha=lambda*n,lambda1/.1;effective df<=1/10 respectively. Constantfeaturesfallbackgamma1,degeneratescale1;zero centeredkernel.",
+  "results": [
+    {
+      "split": "original",
+      "reference011": {
+        "MSE": 170.40685782801563,
+        "RMSE": 13.0539977718711
+      },
+      "reference113": {
+        "MSE": 170.4742909510394,
+        "RMSE": 13.05658036972313
+      },
+      "primary": {
+        "MSE": 170.18601807946143,
+        "RMSE": 13.045536327781294
+      },
+      "selected_counts": {
+        "none": 3,
+        "ridge1": 4,
+        "ridge01": 2,
+        "rbf1": 2,
+        "rbf01": 4
+      }
+    },
+    {
+      "split": "20261031",
+      "reference011": {
+        "MSE": 169.3948077840649,
+        "RMSE": 13.015176056591201
+      },
+      "reference113": {
+        "MSE": 168.3760309639017,
+        "RMSE": 12.975978998283779
+      },
+      "primary": {
+        "MSE": 168.12994797540713,
+        "RMSE": 12.9664932798119
+      },
+      "selected_counts": {
+        "none": 5,
+        "ridge1": 5,
+        "ridge01": 2,
+        "rbf1": 0,
+        "rbf01": 3
+      }
+    },
+    {
+      "split": "20261101",
+      "reference011": {
+        "MSE": 176.15601640955663,
+        "RMSE": 13.272377948565081
+      },
+      "reference113": {
+        "MSE": 175.94293375258812,
+        "RMSE": 13.264348221928891
+      },
+      "primary": {
+        "MSE": 175.10192531201818,
+        "RMSE": 13.23260840922976
+      },
+      "selected_counts": {
+        "none": 7,
+        "ridge1": 2,
+        "ridge01": 4,
+        "rbf1": 1,
+        "rbf01": 1
+      }
+    }
+  ],
+  "decision": {
+    "eligible_for_candidate": true,
+    "metric": "Equalweight all1200predictionpairs pooleduntrimmedMSE;400uniqueIDs. Lowerthanboth011and113 withindependentvalidationpass. No allpartition/fold/CI/influencegate.",
+    "pooled_MSE": {
+      "reference011": 171.98589400721238,
+      "reference113": 171.59775188917644,
+      "primary": 171.1392971222956
+    },
+    "pooled_RMSE": {
+      "reference011": 13.114339251644072,
+      "reference113": 13.099532506512453,
+      "primary": 13.082021904976907
+    },
+    "comparisons": {
+      "reference011": {
+        "MSE_gain": 0.846596884916778,
+        "pooled_RMSE_gain": 0.032317346667165125,
+        "ID_cluster95_MSE_gain_CI": [
+          -2.360526610442,
+          4.189396577999293
+        ],
+        "ID_cluster95_RMSE_gain_CI": [
+          -0.0922966871962759,
+          0.15598572778770414
+        ],
+        "positive_IDs": 174,
+        "fixed092_other395_MSE_gain_diagnostic": -0.31527535207051677,
+        "largest5_removed_MSE_gain_diagnostic": -1.668664745642015,
+        "largest5_gains": [
+          {
+            "ID": "TRAIN_000064",
+            "mean_MSE_gain": 240.077801894696
+          },
+          {
+            "ID": "TRAIN_000227",
+            "mean_MSE_gain": 220.6669361879774
+          },
+          {
+            "ID": "TRAIN_000078",
+            "mean_MSE_gain": 209.40626246568138
+          },
+          {
+            "ID": "TRAIN_000406",
+            "mean_MSE_gain": 179.00542613351763
+          },
+          {
+            "ID": "TRAIN_000438",
+            "mean_MSE_gain": 148.6049018134388
+          }
+        ],
+        "largest5_losses": [
+          {
+            "ID": "TRAIN_000206",
+            "mean_MSE_gain": -139.93227768209283
+          },
+          {
+            "ID": "TRAIN_000008",
+            "mean_MSE_gain": -135.01088624931035
+          },
+          {
+            "ID": "TRAIN_000120",
+            "mean_MSE_gain": -115.44207264821762
+          },
+          {
+            "ID": "TRAIN_000218",
+            "mean_MSE_gain": -87.64321202809418
+          },
+          {
+            "ID": "TRAIN_000258",
+            "mean_MSE_gain": -66.19998113438459
+          }
+        ]
+      },
+      "reference113": {
+        "MSE_gain": 0.4584547668808341,
+        "pooled_RMSE_gain": 0.0175106015355464,
+        "ID_cluster95_MSE_gain_CI": [
+          -0.23142621262744356,
+          1.1643085887430251
+        ],
+        "ID_cluster95_RMSE_gain_CI": [
+          -0.008980071166853242,
+          0.04451491442301027
+        ],
+        "positive_IDs": 188,
+        "fixed092_other395_MSE_gain_diagnostic": 0.3996777522096036,
+        "largest5_removed_MSE_gain_diagnostic": 0.06273723966577548,
+        "largest5_gains": [
+          {
+            "ID": "TRAIN_000285",
+            "mean_MSE_gain": 57.773230390466836
+          },
+          {
+            "ID": "TRAIN_000404",
+            "mean_MSE_gain": 29.54645769453316
+          },
+          {
+            "ID": "TRAIN_000356",
+            "mean_MSE_gain": 25.70636311710564
+          },
+          {
+            "ID": "TRAIN_000385",
+            "mean_MSE_gain": 22.885751994702332
+          },
+          {
+            "ID": "TRAIN_000383",
+            "mean_MSE_gain": 22.688893887538285
+          }
+        ],
+        "largest5_losses": [
+          {
+            "ID": "TRAIN_000371",
+            "mean_MSE_gain": -35.92717355392722
+          },
+          {
+            "ID": "TRAIN_000278",
+            "mean_MSE_gain": -31.976465858784138
+          },
+          {
+            "ID": "TRAIN_000321",
+            "mean_MSE_gain": -30.76094884469154
+          },
+          {
+            "ID": "TRAIN_000466",
+            "mean_MSE_gain": -28.151567221376013
+          },
+          {
+            "ID": "TRAIN_000275",
+            "mean_MSE_gain": -27.68960560491371
+          }
+        ]
+      }
+    }
+  },
+  "verification": {
+    "partitions": {
+      "original": {
+        "passed": true,
+        "split": "original",
+        "models_reloaded": 240,
+        "inner_choices_recomputed": 15,
+        "independent_transform_eigensolve_max_error": 6.394884621840902e-14,
+        "nonlinear_inner_effective_df_range": [
+          0.923707292864295,
+          6.68830591162039
+        ],
+        "exact113_control": true,
+        "report_sha256": "41829263b5dec5e873bb7026e3296e3b39d42d3bd32dfa9f4b3d0af5ed136d86",
+        "seconds": 0.4607917910325341
+      },
+      "20261031": {
+        "passed": true,
+        "split": "20261031",
+        "models_reloaded": 240,
+        "inner_choices_recomputed": 15,
+        "independent_transform_eigensolve_max_error": 4.6629367034256575e-14,
+        "nonlinear_inner_effective_df_range": [
+          0.9215358432015857,
+          6.703629346896356
+        ],
+        "exact113_control": true,
+        "report_sha256": "d3b60ef5307db4c664850e966a4ac554185ecb10cbd6bdf161737200b0d0c60a",
+        "seconds": 0.4439959169831127
+      },
+      "20261101": {
+        "passed": true,
+        "split": "20261101",
+        "models_reloaded": 240,
+        "inner_choices_recomputed": 15,
+        "independent_transform_eigensolve_max_error": 4.618527782440651e-14,
+        "nonlinear_inner_effective_df_range": [
+          0.924902486614537,
+          6.695147693271838
+        ],
+        "exact113_control": true,
+        "report_sha256": "0508684a355fcc9bba4a5d627ff0d48c6f8d421ef9f8665e4d95f792998464e9",
+        "seconds": 0.43741808395134285
+      }
+    },
+    "leakage": {
+      "passed": true,
+      "outer80_label_perturbation_exact_predictions_and_choices": true,
+      "inner_validation_label_perturbation_exact_fixed_fits": 6,
+      "upstream112_exclusion_certificate_reused": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+      "new_upstream_training": false
+    },
+    "models_reloaded": 720,
+    "inner_choices_independently_recomputed": 45,
+    "exact113_control_all3": true
+  },
+  "resource": {
+    "new_inner_kernel_fits": 270,
+    "new_upstream_fits": 0,
+    "fit_seconds": 0.8237562489812262,
+    "cost": 0,
+    "new_install": false
+  },
+  "limits": [
+    "Same400historicallyselected observations;1200predictionpairs are notindependent. Currentnestingdoesnotundo historicalselectionbias.",
+    "ID-clusterbootstrap keeps3predictions together but is conditionalonfixedtrainedmodels anddoesnotinclude candidate-selectionortraininguncertainty.",
+    "Residualtraining-size mismatch remains; smallgainsnotguaranteedPublic/private improvements."
+  ],
+  "next_execution": "Lock115procedure, reuseverifiedfull500114nestedanchors, fit/selectfivecandidatesonlywithin3honestresidualblocks, retainall3includingnone, inferlockedtestcache andverifynew013CSV. No newupstreamfit needed.",
+  "scope": {
+    "development400_only": true,
+    "holdout_test_tuning": false,
+    "external_transmission": false,
+    "uploaded": false,
+    "011_113_012_preserved": true
+  },
+  "execution_blockers": [],
+  "evidence_sha256": {
+    "artifacts/nonlinear-residual-115/original/report.json": "41829263b5dec5e873bb7026e3296e3b39d42d3bd32dfa9f4b3d0af5ed136d86",
+    "artifacts/nonlinear-residual-115/original/predictions.npz": "758c934f486859447d0204257cc165f014b96f3941847e8e086997213ac14bcf",
+    "artifacts/nonlinear-residual-115/validation-original.json": "545f2f1862bb1693c70a4f594c8169a17be34e4409f9bc6ed19235fe2add2b34",
+    "artifacts/nonlinear-residual-115/20261031/report.json": "d3b60ef5307db4c664850e966a4ac554185ecb10cbd6bdf161737200b0d0c60a",
+    "artifacts/nonlinear-residual-115/20261031/predictions.npz": "c3ed184ee2fd9d48e729f72bc28937b70435eea0bb2d06dc8303aecfcf161d6d",
+    "artifacts/nonlinear-residual-115/validation-20261031.json": "f5fe056930d35f3858d2fc45568ca931d1cc799a54477f41cdf00671390bfc3e",
+    "artifacts/nonlinear-residual-115/20261101/report.json": "0508684a355fcc9bba4a5d627ff0d48c6f8d421ef9f8665e4d95f792998464e9",
+    "artifacts/nonlinear-residual-115/20261101/predictions.npz": "c89d92b9acbd7aee2c48d5d90215704d82ecbb345f1165ae3c6802ffe20391bc",
+    "artifacts/nonlinear-residual-115/validation-20261101.json": "1310f9d53609c492d94e5c4f0bf03dc4c1353bf78368a974f981ca6b1d9a9dda",
+    "artifacts/nonlinear-residual-115/plan.json": "e501e915c9674d648648d01c412e5f33b516b0fa64f3477cd5c5f494fdd20f72",
+    "artifacts/nonlinear-residual-115/decision.json": "46c91cc110ebb70f98b07cfc6fe5c37536dc76f86a311af6a8525b2ff99ccda1",
+    "artifacts/nonlinear-residual-115/leakage-validation.json": "37fc406b39ef50c40053939cb6b7240bc389c07ba3051e8defbbdb8b431e8127"
+  },
+  "source_sha256": "f74b6e7ad3110a847b6ec4e35cc0076ae5d9fe8fb455422e15ae3e7f4bc744bc"
+}

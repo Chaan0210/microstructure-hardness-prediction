@@ -1,0 +1,102 @@
+{
+ "candidate": "039",
+ "date": "2026-10-10",
+ "change": "038 structure (TabPFN-3.5 seeds 0/100/200 on 4 U-Net feature variants, equal mean, fixed W=0.75) + 4 label-free columns per variant: ang_c4, ang_s4 (|v|cos4theta, |v|sin4theta of the grain-prob-weighted mean doubled-angle shape-tensor vector from U-Net maps m1,m2,h1,z1: absolute elongation direction) and het4_u*m_el_pix, sizefield_std_s32*m_el_pix (heterogeneity x elongation).",
+ "why": "Hardness variance after phase grows strongly with elongation (clean: SD 9.2 equiaxed -> 16.7 most elongated). In elongated clean images the partial corr of hardness with cos4theta (controls: phase, size, het, elongation, pores) is -0.44 (n=97), dose-response with elongation (-0.13/-0.22/-0.44), replicated in LQ (-0.26), present with D4-symmetric U-Net controls only (-0.33), angle uncorrelated with every measured structure feature (|r|<0.06). 038 had no absolute-direction feature (dev residual corr +0.134). Het partial corr with hardness doubles in elongated images (+0.57 vs +0.29) and 038 LQ residual corr with het x el was -0.19.",
+ "dev_fixed_w075_pooled": {
+  "038": 10.1408,
+  "039": 10.083
+ },
+ "dev_fixed_w075_per_partition": {
+  "038": [
+   10.174,
+   10.097,
+   10.152
+  ],
+  "039": [
+   10.123,
+   10.06,
+   10.066
+  ]
+ },
+ "dev_per_variant_w075_pooled_base_to_039": {
+  "u1dm1sz": [
+   10.1854,
+   10.125
+  ],
+  "u1dm2sz": [
+   10.0884,
+   10.0381
+  ],
+  "u1dmavg": [
+   10.153,
+   10.0906
+  ],
+  "u1dmavg4": [
+   10.1679,
+   10.1149
+  ]
+ },
+ "ablation_3variant_ensemble": {
+  "base": 10.1336,
+  "ang_only": 10.0863,
+  "hetel_only": 10.097,
+  "both": 10.0743
+ },
+ "controls_avg_variant_2_random_products": [
+  10.1857,
+  10.1438,
+  10.1341
+ ],
+ "W_sweep_pooled_038_vs_039": {
+  "0.7": [
+   10.2113,
+   10.1554
+  ],
+  "0.75": [
+   10.1408,
+   10.083
+  ],
+  "0.8": [
+   10.0886,
+   10.0293
+  ],
+  "0.9": [
+   10.0403,
+   9.9793
+  ],
+  "1.0": [
+   10.0674,
+   10.0065
+  ]
+ },
+ "terciles_clean_mid_noisy": {
+  "038": [
+   8.147,
+   8.856,
+   12.573
+  ],
+  "039": [
+   8.159,
+   8.723,
+   12.529
+  ]
+ },
+ "elongation_bins_lt0.4_0.4to0.7_gt0.7": {
+  "038": [
+   8.735,
+   9.227,
+   12.499
+  ],
+  "039": [
+   8.748,
+   9.303,
+   12.251
+  ]
+ },
+ "caveat": "hetel interaction was suggested by residual inspection (some selection bias); the angle effect was tested as an a-priori 4-fold-symmetric hypothesis after visual inspection. Paired per-row dev MSE diff -1.17 (SE 1.09).",
+ "angle_files": {
+  "train": "6e7ec682a2adc50f7cdc0d78516868da476d19c11ab23cfd8c0c9c2adfdc9498",
+  "test": "5838f28c7786d1ed5dfc8feae8762d88cbb2b5d270ee0459110bf6a860149f90"
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "candidate": "038",
+ "date": "2026-10-10",
+ "change": "035 components (TabPFN-3.5 seeds 0/100/200 on 4 U-Net feature variants, equal mean, fixed W=0.75) with 4 new label-free columns per variant: het4_u, het4_u_mx (pixel-weighted 4x4 block Hall-Petch size heterogeneity from that variant's U-Net log-area maps) and z_f25, z_f50 (area fraction of grain pixels with predicted darkness z>0.25 / z>0.5 from new multi-task U-Net unet4-z1 with a per-pixel grain-darkness regression channel).",
+ "why": "035 residual on clean rows correlates with pixel-weighted block size heterogeneity (+0.13; centroid version used before: +0.03). Segmentation f_dark_20 / f_dark_50 carry hardness information beyond the U-Net phase (partial corr +0.12 / -0.16); the z channel gives the same information noise-robustly (z_f25 +0.16/+0.16, z_f50 -0.16/-0.18 beyond U-Net phase, clean/noisy halves).",
+ "dev_fixed_w075_pooled": {
+  "035": 10.2818,
+  "H2 (het only)": 10.2096,
+  "038 (H2Z)": 10.1408
+ },
+ "dev_fixed_w075_per_partition": {
+  "035": [
+   10.3195,
+   10.229,
+   10.2966
+  ],
+  "038": [
+   10.1738,
+   10.0969,
+   10.1516
+  ]
+ },
+ "dev_per_variant_w075_pooled": {
+  "u1dm1sz": [
+   10.3447,
+   10.2401,
+   10.1854
+  ],
+  "u1dm2sz": [
+   10.2799,
+   10.1763,
+   10.0884
+  ],
+  "u1dmavg": [
+   10.1911,
+   10.2081,
+   10.153
+  ],
+  "u1dmavg4": [
+   10.3491,
+   10.2397,
+   10.1679
+  ],
+  "order": "035 / H2 / H2Z"
+ },
+ "dev_terciles_pooled_clean_mid_noisy": {
+  "035": [
+   8.556,
+   9.07,
+   12.518
+  ],
+  "038": [
+   8.147,
+   8.856,
+   12.573
+  ]
+ },
+ "harness_v2n8_s0_u1dmavg": {
+  "base": 10.3017,
+  "H2": 10.2002,
+  "H2Z": 10.2278
+ },
+ "selection_notes": "het4_u/het4_u_mx chosen from 6 U-Net block stats by 035 dev residual correlation; z_f25/z_f50 chosen from 7 z readouts by partial correlation on train labels. Mild selection bias expected (~0.02-0.04).",
+ "rejected_same_session": {
+  "f_dark_20/50 from segmentation added to H2 (m1)": "10.240 -> 10.216, 2/3 partitions",
+  "ridge detrend + TabPFN residual (m1)": "10.240 -> 10.255",
+  "6 variants (+z1,+n1 nets)": "10.1394 = 4 variants",
+  "OLS clean formula blend": "-0.03 at w0.2",
+  "per-tercile recalibration": "worse",
+  "no-offset U-Net n1": "phase quality = m1"
+ },
+ "inputs": {
+  "u1dm1sz": {
+   "train": "96ccd92548b8ae587f458d24f1a25a7ecbe94723f068ce65b744dc742c7b0d74",
+   "test": "3358195ed89733efb8a4ac613a46c9468124c0d7478e772b1781ee9d80dd29ff"
+  },
+  "u1dm2sz": {
+   "train": "f75def6279439138da3ce522b58af8cc9cefc812d4bff7a3f091a9c13d2b81d3",
+   "test": "02639ce982f57c87f255a3d56e49a261c8bf23fc301cfd08895a7b64ca1ccc17"
+  },
+  "u1dmavg": {
+   "train": "aca0eb6b3f8e9fcd7f8f9e6c7ccd253cff8f68271066fc29cb328c838f51f96b",
+   "test": "efe10877592fc57deafe4ed74596309774a8715544811bc0d1b9e817ebb527a5"
+  },
+  "u1dmavg4": {
+   "train": "24a888713436e9a50a975a470da696f15f42895b2162c417da151204a703b41d",
+   "test": "1057860e0fef020750257d91ff5ceae287a82c2b4ef0c28c161c94a4fc03ae03"
+  }
+ },
+ "unet_weights": {
+  "unet4-z1": "9f936ecbe435d85f8fc69232d1cc9abdbc126a7d29c13d0f615d597bcceb2541"
+ },
+ "weight_rule": "fixed W=0.75",
+ "adopt": true
+}

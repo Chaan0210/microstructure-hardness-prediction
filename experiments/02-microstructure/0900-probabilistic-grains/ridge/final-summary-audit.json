@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "metric_rows_verified": 20,
+  "metrics": [
+    {
+      "method": "045 reference",
+      "rmse": 9.940240144126825
+    },
+    {
+      "method": "021 weight-only control",
+      "rmse": 9.903710816525285
+    },
+    {
+      "method": "Ridge 20%",
+      "rmse": 9.831834825350747
+    },
+    {
+      "method": "Ridge fixed021 share",
+      "rmse": 9.877356000265692
+    },
+    {
+      "method": "FGLS 20%",
+      "rmse": 9.83418298986813
+    },
+    {
+      "method": "Raw grain summary Ridge all3seed mean 20%",
+      "rmse": 10.069542324216744
+    },
+    {
+      "method": "Grain set all3seed mean 20%",
+      "rmse": 9.87501437832794
+    },
+    {
+      "method": "Grain set all3seed fixed021 share",
+      "rmse": 9.912918553869702
+    },
+    {
+      "method": "Bare X98 with matched stage2 selection 20%",
+      "rmse": 9.856435131220229
+    },
+    {
+      "method": "threshold__physical 20%",
+      "rmse": 10.55004381983692
+    },
+    {
+      "method": "threshold__x98_augmented 20%",
+      "rmse": 9.896081828310008
+    },
+    {
+      "method": "image_gmm__physical 20%",
+      "rmse": 10.293926353338623
+    },
+    {
+      "method": "image_gmm__x98_augmented 20%",
+      "rmse": 9.838170847991957
+    },
+    {
+      "method": "hierarchical__physical 20%",
+      "rmse": 10.442592839078515
+    },
+    {
+      "method": "hierarchical__x98_augmented 20%",
+      "rmse": 9.928434619830321
+    },
+    {
+      "method": "point_rbf 20%",
+      "rmse": 10.150809575023315
+    },
+    {
+      "method": "uncertain_rbf 20%",
+      "rmse": 10.152335303633913
+    },
+    {
+      "method": "PFN base98 20%",
+      "rmse": 9.866651501675117
+    },
+    {
+      "method": "PFN phase_mean 20%",
+      "rmse": 9.889572529271407
+    },
+    {
+      "method": "PFN phase_mean_and_sd 20%",
+      "rmse": 9.879261327163556
+    }
+  ],
+  "all_source_hashes_match": true,
+  "all_pooled_partition_fold_group_bootstrap_worst5_metrics_match": true,
+  "three_seed_uniform_mean_verified": true,
+  "same_stage2_innerCV_control_code_reviewed": true,
+  "corrected_cache_provenance_verified_for_120_models_and_45_PFN_contexts": true,
+  "quarantined_original_cache_used": false,
+  "final_cache_counts": {
+    "caches": 60,
+    "converged_inferences": 20400,
+    "adaptive_fallbacks": 6
+  },
+  "MPS_80_query_exact_replay_record_hash_verified": true,
+  "only_local_csv": "ridge/final500/candidate-045-ridge20.csv",
+  "local_csv_manifest_submitted": false,
+  "legacy_preservation_report": {
+    "checked_files": 21263,
+    "changed_or_missing": [],
+    "passed": true
+  },
+  "independent_legacy_hash_rerun_in_this_final_audit": false,
+  "material_caveats": [
+    "Same400 development IDs and legacy representations were reused; all metrics/intervals are conditional, not fresh public/private performance.",
+    "Bare-X98 matched-innerCV attribution control was added after main comparisons and is not the deployment recipe.",
+    "Ridge20 improvement beyond simple021 weight change is uncertain; stage1 report retains paired interval."
+  ],
+  "reviewed_summary_sha256": "4648de8c9bbb4c3cb9cc554960542b2a82511b7ba4b9c1a84b6e0d11b06faefa",
+  "reviewed_results_sha256": "4a81af576670fc5629e70f5ef293b94f3ac2ed8a1a85fa716972570b3078570f",
+  "entrypoint_repair_audit": {
+    "passed": true,
+    "executed_source_hash_matches_actual_training_CONFIG": true,
+    "current_source_hash_matches_repair_manifest": true,
+    "make_augment_AST_identical": true,
+    "corrected_default_features": true,
+    "invalid_source_and_completed_output_guards_before_writes": true,
+    "CLI_guard_test_record_all_passed": true,
+    "training_or_metrics_changed": false,
+    "source_hashes": {
+      "executed": "c3eb51849b05ab6c4a4494713bf54a943d4c12e3de4caad5ee5ae783995077b0",
+      "current": "ca411357a5c617d14eb12bc37c6489cc816f9c9f7c8a41fa7d270371e3c3888a"
+    }
+  }
+}

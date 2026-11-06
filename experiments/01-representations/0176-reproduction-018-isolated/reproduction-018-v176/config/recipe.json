@@ -1,0 +1,56 @@
+{
+  "model": "018",
+  "fixed_before176": true,
+  "CNN_seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "head_seeds": [
+    20261128,
+    20261205,
+    20261219
+  ],
+  "head_config": {
+    "hidden": 64,
+    "dropout": 0.25,
+    "epochs": 100,
+    "batch_size": 64,
+    "lr": 0.0003,
+    "min_lr": 1e-05,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "beta": 1.0,
+    "aux_weight": 0.3,
+    "bins": 7,
+    "seed": 20261128
+  },
+  "effective_aux_weight": 0.0,
+  "CNN": "TinyCNN91905,80epochs,batch32,D4train,AdamW.002cosine.0001,wd.01,clip5,last5weightsaverage,identityinference",
+  "short_B": "hidden32,dropout.5,12epochs,effectivebatch16,microbatch2,AdamW.0003cosine.00001,wd.1,clip1,seed20270215+offset",
+  "offsets": "root0,middle100(j+1),deep100(j+1)+100(ell+1)",
+  "top_KRR": "9grid (.25,1,4)x(.01,.1,1),GroupKFold3seed20261005 onfixeddevelopment400;refit500",
+  "nested_KRR": "same9grid onallcurrentnodeU,seed20261005+offset",
+  "nested_split": "GroupKFold3seed20270110+offset",
+  "raw_weights": [
+    0.0,
+    0.3,
+    0.3,
+    0.2,
+    0.2
+  ],
+  "base": ".9affine(raw)+.1shortB",
+  "residual": "585features,3honestblocks,none/ridge1/ridge01/rbf1/rbf01,inner3seed20271013+j,512groupbootstrapseed20271204+j,mean3",
+  "tolerances": {
+    "classical_independent_abs": 1e-08,
+    "CPU_head_predictions_abs": 1e-08,
+    "same_device_reload_abs": 1e-08,
+    "CPU_MPS_reload_abs": 0.001,
+    "fresh_MPS_same_seed_prediction_abs": 0.001,
+    "fresh_pipeline_abs": 0.001,
+    "basis": "Prior133 seedCNN fresh replay was stateexact; historical neural CPU/MPS replay errors ~1e-5 to1e-4.1e-3 is conservative diagnostic ceiling, not permission to dismiss larger drift. Report tensor equality and numeric error separately; investigate any changed seed/order/stats or threshold exceedance. Do not tune tolerances from observed OOF scores. Exact equality remains expected sameenvironment.",
+    "non_determinism_rule": "Do not label mismatch nondeterminism without same-input same-seed replay and stage-local comparison. No automatic tolerance widening."
+  },
+  "selection_ids_source": "fixed originaldevelopment400 IDs only; no oldlabels/predictions/models reused",
+  "no_output_clipping": true
+}

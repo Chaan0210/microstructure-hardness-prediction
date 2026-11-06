@@ -1,0 +1,139 @@
+{
+  "arm": "frozen",
+  "fold": 0,
+  "config": {
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "initial_state_sha256": "d853b5fd7ea224668940a2af8be3387521e2f001a90622595dbfe0f17803b32c",
+  "initial_head_sha256": "450c16640aa9c175733696bdac3bac0955a47b0e4d099bd530a7a8ae83356b3a",
+  "fixed_state_sha256": "f4d19a8f344598801e2bb7c7f4d60e6cd95d8eaf91fc3832349c7bcf410bcf29",
+  "final_state_sha256": "565d49330d4f5574ee27f21a2c89b04c4e310ead84c48db9ac4bbe0315783ff2",
+  "batch_order_sha256": "54dfce68e4f3b66a1947718adec3261902cd32aefdadfa9325331ad03fd5c36b",
+  "dropout_seeds_sha256": "0aa6bc707ffed7defdc326b98295f23a37262b73fdc5d72142c9f385c5aabdc2",
+  "curve": [
+    {
+      "epoch": 1,
+      "online_train_loss": 0.5498544913105434,
+      "train_RMSE": 17.22563455640923,
+      "head_lr": 0.0003,
+      "block_lr": 0.0,
+      "seconds": 1.5203417090233415
+    },
+    {
+      "epoch": 2,
+      "online_train_loss": 0.4276392434316222,
+      "train_RMSE": 13.181074246977735,
+      "head_lr": 0.00029505924481191485,
+      "block_lr": 0.0,
+      "seconds": 1.9963980000466108
+    },
+    {
+      "epoch": 3,
+      "online_train_loss": 0.4323328450584086,
+      "train_RMSE": 12.635567644195635,
+      "head_lr": 0.0002805736835487436,
+      "block_lr": 0.0,
+      "seconds": 2.489107333996799
+    },
+    {
+      "epoch": 4,
+      "online_train_loss": 0.30790690101421203,
+      "train_RMSE": 10.982546184486058,
+      "head_lr": 0.00025753048327204934,
+      "block_lr": 0.0,
+      "seconds": 3.030800292035565
+    },
+    {
+      "epoch": 5,
+      "online_train_loss": 0.3280926782787333,
+      "train_RMSE": 9.668303408262373,
+      "head_lr": 0.00022749999999999997,
+      "block_lr": 0.0,
+      "seconds": 3.497124584042467
+    },
+    {
+      "epoch": 6,
+      "online_train_loss": 0.24474669832270593,
+      "train_RMSE": 9.838214288308617,
+      "head_lr": 0.00019252876153986548,
+      "block_lr": 0.0,
+      "seconds": 3.972056334023364
+    },
+    {
+      "epoch": 7,
+      "online_train_loss": 0.24866891889687395,
+      "train_RMSE": 8.19548572638768,
+      "head_lr": 0.00015499999999999997,
+      "block_lr": 0.0,
+      "seconds": 4.441380167030729
+    },
+    {
+      "epoch": 8,
+      "online_train_loss": 0.1965028594375326,
+      "train_RMSE": 7.555939984884503,
+      "head_lr": 0.00011747123846013449,
+      "block_lr": 0.0,
+      "seconds": 4.915579584019724
+    },
+    {
+      "epoch": 9,
+      "online_train_loss": 0.1490150975587312,
+      "train_RMSE": 7.085050993991043,
+      "head_lr": 8.250000000000001e-05,
+      "block_lr": 0.0,
+      "seconds": 5.385540542018134
+    },
+    {
+      "epoch": 10,
+      "online_train_loss": 0.1316221798748302,
+      "train_RMSE": 6.210693871290826,
+      "head_lr": 5.246951672795061e-05,
+      "block_lr": 0.0,
+      "seconds": 5.855359917040914
+    },
+    {
+      "epoch": 11,
+      "online_train_loss": 0.1529728258127534,
+      "train_RMSE": 6.06804712900418,
+      "head_lr": 2.9426316451256386e-05,
+      "block_lr": 0.0,
+      "seconds": 6.315759958990384
+    },
+    {
+      "epoch": 12,
+      "online_train_loss": 0.13129597641782312,
+      "train_RMSE": 5.793782160783152,
+      "head_lr": 1.494075518808511e-05,
+      "block_lr": 0.0,
+      "seconds": 6.793965917022433
+    }
+  ],
+  "first_update_gradients": {
+    "head": 5.810255527496338,
+    "block": 0.0,
+    "train_loss_standardized": 0.28011603793129325
+  },
+  "max_head_grad_before_clip": 15.188034057617188,
+  "max_block_grad_before_clip": 0.0,
+  "lastblock_delta_L2": 0.0,
+  "checkpoint_sha256": "800e832f8db1449f6114dea4230ea78ac608adaea25e2e986bb1de7c5862a052",
+  "predictions_sha256": "a6a07374342d89dad5fbeaa2f00938c125997fc9f102f27d16cd09fcea2f6a88",
+  "seconds": 6.90008241700707,
+  "rss_peak_bytes": 1354498048,
+  "mps_driver_bytes": 50724864
+}

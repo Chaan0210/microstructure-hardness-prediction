@@ -1,0 +1,174 @@
+{
+  "study": 204,
+  "review_sha256": "30c34d8525e0f7fc3152e6b53f7f930792339d0f19f9ac2bd3ae69e743bf2c51",
+  "allow_preflight": true,
+  "neural_preconditions": [
+    "preflightpassed",
+    "mainfirst6_then6cleanand6NaNexactbefore534remaining",
+    "code/planlocks",
+    "resourcechecks"
+  ],
+  "no_fatal_design_defect_identified_in_summary_review": true,
+  "not_direct_sourceaudit": true,
+  "items": [
+    {
+      "point": "F1/R reproduction",
+      "disposition": "apply",
+      "action_or_reason": "Preflight reproduces row predictions and affine/anchor/residual/innerloss/bootstrap/final intermediates at1e-9;mustpassbeforeCNN."
+    },
+    {
+      "point": "F2 stale caches",
+      "disposition": "apply",
+      "action_or_reason": "New pure arm-explicit fit_fold reads only assembledcurrentinputs;oldanchor/residual caches readonlyinreference_check,notfit."
+    },
+    {
+      "point": "F3 outer labels",
+      "disposition": "apply",
+      "action_or_reason": "T-onlynormalization/calibration;VNaNpoison all15foldperarm;trueVlabelsabsentnewCNNtrainer."
+    },
+    {
+      "point": "F4 B/deepD exclusion",
+      "disposition": "apply_with_correction",
+      "action_or_reason": "DeepCNN C excludes D,B,V;middle A excludes B,V;affine_A legitimately uses y_A including D since its inputs are deepOOF. ReviewliteralF4 mustnotforbidaffine_AfromusingDtargets."
+    },
+    {
+      "point": "F5 seed overlap",
+      "disposition": "apply",
+      "action_or_reason": "Checkallold/neweffective-seedsetsdisjoint;eachnodehas6distinctseeds."
+    },
+    {
+      "point": "A2-1 complement poison",
+      "disposition": "apply",
+      "action_or_reason": "36finitecomplementpoisoncoverall12originalfold0nodesand3newseeds;6NaNcoverone middle+one deepandall3seeds;alltraincallsnontrainmasked0. Statedcoverage,notclaimallnodesNaN."
+    },
+    {
+      "point": "A2-2 MPS clean baseline",
+      "disposition": "apply",
+      "action_or_reason": "6cleanreplaysforone middle+one deep all3seeds,requirebitwiseexact;compareNaNandfinite replaysbitwise,stopifnot,noadaptive tolerance."
+    },
+    {
+      "point": "A2-3 stage invariance",
+      "disposition": "apply",
+      "action_or_reason": "All45anchorstestedB+VfiniteandNaN;all15outerperarmVNaN;BselectorcanintentionallydependonBlabels."
+    },
+    {
+      "point": "A2-4 raw delta",
+      "disposition": "apply",
+      "action_or_reason": "Outer/middle/deep rawN-rawR=.3*(mean6-mean3),atol1e-10;allotherbranches samecaches."
+    },
+    {
+      "point": "A2-4 anchors must differ",
+      "disposition": "reject_as_universal_test",
+      "action_or_reason": "Numericallyequalanchors canlegitimatelyoccur. Verifyfunctionalrecomputationandinputhashes,reportactualdifferences,do notassertnonzeroasmathematicalnecessity."
+    },
+    {
+      "point": "A2-5 R definition",
+      "disposition": "apply",
+      "action_or_reason": "Cached540oldinnerCNN predictionsreused,withmodels/sourcehashes andexistingprovenancecertificates;notclaimednew540retraining. All listeddownstreamintermediates checked."
+    },
+    {
+      "point": "A2-6 offset collisions",
+      "disposition": "apply",
+      "action_or_reason": "k0..4perpartition;reusedj+elloffsetsdocumentednotindependentseeddraws;membershipdistinct,oldnewdisjoint."
+    },
+    {
+      "point": "A2-7 names",
+      "disposition": "apply",
+      "action_or_reason": "B_hold,short_dino_B identifydataholdoutvsbackbone."
+    },
+    {
+      "point": "A2-8 decision and resolution",
+      "disposition": "apply_with_correction",
+      "action_or_reason": "Decisiontablelocked:stronggate=>futurecandidateplan;technicalfailurestop;directionalunresolvedkeep021;mixedornegativepointnoadoption;onlynegativeCIisconditionalstrongerharm evidence. Noautomatic500;nochanginggate. Expected~.009vspriorCI~.03isroughcontextnotcalibratedpower."
+    },
+    {
+      "point": "A3 adaptive overlap",
+      "disposition": "apply",
+      "action_or_reason": "Same400,threeoverlappingpartitions;conditionalCIandunknownfamilydependenceexplicit."
+    },
+    {
+      "point": "A3 training-size mismatch",
+      "disposition": "apply",
+      "action_or_reason": "213anchorresidualvs320outerremainscommonpolicy;204doesnotfixit."
+    },
+    {
+      "point": "A3 shared cache leakage",
+      "disposition": "apply",
+      "action_or_reason": "Hashesplus exactmembership andhistorical074/112labelpoisoncertificates;newCNNpoisoncannotrecertifyallcachedbranches."
+    },
+    {
+      "point": "A3 reweighting necessarilyglobalOOF",
+      "disposition": "reject_as_general_claim",
+      "action_or_reason": "Train-localnestedweightlearning ispossibleinprinciple;weightsremainfixedherebecauseofauthorizedcontrolledscope,notequivalenceofallreweightingtogloballeak."
+    },
+    {
+      "point": "A3 single realization and B corrections",
+      "disposition": "apply",
+      "action_or_reason": "CNN3->6 alllevels;notL3->9,notsingle-reviewproposalvalidation;Lunexecutedandlowproxy;1/Mnotrealizedgainpromise."
+    },
+    {
+      "point": "C1 coverage categories",
+      "disposition": "apply_pending_source_reconciliation",
+      "action_or_reason": "Mapeachclaimtocontrolledstudy/pilot/diagnostic/preflight/notimplemented;donotcallallcategoriesexhausted;ASLnotknownexecuted."
+    },
+    {
+      "point": "C2-1 provenance rules weights",
+      "disposition": "apply_pending_read_only_audit",
+      "action_or_reason": "Reconcileexistingofficial-recordsources andweightorigins;do notchangeaccountfinalselection. Wholearmhistorynot18registryrows."
+    },
+    {
+      "point": "C2-2 learningcurve first",
+      "disposition": "not_auto_adopt",
+      "action_or_reason": "Checkexisting127learningcurvebeforeclaimnovel. Cachedrawcomponent sizescanbedescribed butfullfinalpipeline atdeep/middlewouldneedfurthernestedfits;flatcurve doesnotidentifybiasversusnoise. Noextraexperimentexpandedbeyond204."
+    },
+    {
+      "point": "C2-3 residual error audit",
+      "disposition": "not_auto_adopt",
+      "action_or_reason": "199alreadytargetquartilesandphysicalstatstrata;prior073/076componentdiagnostics. Reconcileexistingproof ratherthanduplicateclaimedmissingstudy."
+    },
+    {
+      "point": "D1 replay",
+      "disposition": "answered",
+      "action_or_reason": "MPSbitwiseclean/poison withCPU/MPS inference<=.001;mainfirst6+6clean+6NaNbefore534rest."
+    },
+    {
+      "point": "D2 decisions",
+      "disposition": "answered",
+      "action_or_reason": "Passchangesrecommendednextcandidate,failkeeps021;this204cannotexecute500/testbyexplicitboundary."
+    },
+    {
+      "point": "D3 seed k",
+      "disposition": "answered",
+      "action_or_reason": "k0..4resetperpartition,identicalpolicyacrossexistingpartitions;notindependent15seeds."
+    }
+  ],
+  "execution": {
+    "one_CLI_invocation": true,
+    "CLI_reported_num_turns": 2,
+    "answer_segments": 2,
+    "original_result_tail_preserved": "response.md",
+    "complete_answer": "response-complete.md",
+    "tools": 0,
+    "hooks": 0,
+    "MCP": 0,
+    "networkviolations": 0,
+    "new_manual_call_after_initial": false,
+    "list_token_cost_USD": 0.6139434,
+    "list_cost_is_not_invoice": true,
+    "Pro_and_user_confirmed_extra_usage_OFF": true
+  },
+  "account_confirmation": {
+    "returncode": 0,
+    "auth": {
+      "loggedIn": true,
+      "authMethod": "claude.ai",
+      "apiProvider": "firstParty",
+      "subscriptionType": "pro",
+      "account_email_available": true,
+      "account_email_matches_user_requested": true
+    },
+    "stderr_sanitized": "",
+    "model_requests": 0,
+    "network_allowed": false
+  }
+}

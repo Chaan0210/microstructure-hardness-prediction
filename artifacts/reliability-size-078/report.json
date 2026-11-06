@@ -1,0 +1,343 @@
+{
+  "purpose": "Diagnose a specified training-size reliability mismatch after077 failure. No new calibration form/ratio/weight/regularization choice and no newsubmissionrecipe evaluated.",
+  "method": "For eachouterfold, predict its sameheldout80rows with eachofthreeexisting213/214-trainedinner models,comparecomponenterrorstoexisting320-trainedoutermodels. AllupstreamtrainIDs excludeheldout80; fold hasheschecked. CPUCNN reload error previouslyverified<=3.06e-5.",
+  "results": {
+    "original": {
+      "size213_214": {
+        "legacy_rmse": 14.02439539259766,
+        "DINOmean_rmse": 13.976476895154356,
+        "legacy_minus_DINO_MSE": 1.3417597271309538,
+        "contrast_std": 7.715499009916311,
+        "contrast_residual009_correlation": 0.14505347252643636
+      },
+      "size320": {
+        "legacy_rmse": 13.705696031698212,
+        "DINOmean_rmse": 13.408039338023393,
+        "legacy_minus_DINO_MSE": 8.070584823325296,
+        "contrast_std": 7.769391659470393,
+        "contrast_residual009_correlation": 0.18922260740571795
+      },
+      "MSE_advantage_change_320_minus213": 6.728825096194342,
+      "folds": [
+        {
+          "fold": 0,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 14.097882987968415,
+            "DINOmean_rmse": 14.17924003224316,
+            "legacy_minus_DINO_MSE": -2.3005431495177704,
+            "contrast_std": 7.90102063168988,
+            "contrast_residual009_correlation": 0.1278727000264327
+          },
+          "size320": {
+            "legacy_rmse": 13.539394483459153,
+            "DINOmean_rmse": 13.712424862724513,
+            "legacy_minus_DINO_MSE": -4.715392637141202,
+            "contrast_std": 7.906057372759613,
+            "contrast_residual009_correlation": 0.1352230450810777
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 1,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 13.536239030916942,
+            "DINOmean_rmse": 13.414778260767761,
+            "legacy_minus_DINO_MSE": 3.273491316551904,
+            "contrast_std": 8.557189046309452,
+            "contrast_residual009_correlation": 0.20018924772018334
+          },
+          "size320": {
+            "legacy_rmse": 13.218378105383424,
+            "DINOmean_rmse": 12.818843447741784,
+            "legacy_minus_DINO_MSE": 10.402772399167443,
+            "contrast_std": 8.382681697740802,
+            "contrast_residual009_correlation": 0.21238630918991913
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 2,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 14.906919676539985,
+            "DINOmean_rmse": 14.710873700359935,
+            "legacy_minus_DINO_MSE": 5.806449214873422,
+            "contrast_std": 6.997687103735144,
+            "contrast_residual009_correlation": 0.12678672740360244
+          },
+          "size320": {
+            "legacy_rmse": 14.680453686399362,
+            "DINOmean_rmse": 14.151534233984728,
+            "legacy_minus_DINO_MSE": 15.249799262874893,
+            "contrast_std": 7.022802603783733,
+            "contrast_residual009_correlation": 0.20415473389360214
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 3,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 13.210886901007049,
+            "DINOmean_rmse": 13.3769681530939,
+            "legacy_minus_DINO_MSE": -4.415744257688849,
+            "contrast_std": 7.820214863823692,
+            "contrast_residual009_correlation": 0.15713971213750483
+          },
+          "size320": {
+            "legacy_rmse": 12.991004741250547,
+            "DINOmean_rmse": 12.779477102134166,
+            "legacy_minus_DINO_MSE": 5.4511691832227775,
+            "contrast_std": 8.17602709776644,
+            "contrast_residual009_correlation": 0.2148180459101829
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 4,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 14.30714757877996,
+            "DINOmean_rmse": 14.154480786293547,
+            "legacy_minus_DINO_MSE": 4.3451455114360815,
+            "contrast_std": 6.95667550982743,
+            "contrast_residual009_correlation": 0.1258478825187467
+          },
+          "size320": {
+            "legacy_rmse": 14.032386512109253,
+            "DINOmean_rmse": 13.52565323068439,
+            "legacy_minus_DINO_MSE": 13.964575908502557,
+            "contrast_std": 7.076605847435665,
+            "contrast_residual009_correlation": 0.19553959948525254
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        }
+      ]
+    },
+    "20261031": {
+      "size213_214": {
+        "legacy_rmse": 13.93874630368153,
+        "DINOmean_rmse": 14.079118592686394,
+        "legacy_minus_DINO_MSE": -3.932931828532193,
+        "contrast_std": 7.90295275565508,
+        "contrast_residual009_correlation": 0.11974196404488367
+      },
+      "size320": {
+        "legacy_rmse": 13.63181073293285,
+        "DINOmean_rmse": 13.606460347439661,
+        "legacy_minus_DINO_MSE": 0.6905006720554638,
+        "contrast_std": 7.968771080808939,
+        "contrast_residual009_correlation": 0.13705148003453066
+      },
+      "MSE_advantage_change_320_minus213": 4.623432500587657,
+      "folds": [
+        {
+          "fold": 0,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 14.047295609247177,
+            "DINOmean_rmse": 13.511087650940434,
+            "legacy_minus_DINO_MSE": 14.777024422179924,
+            "contrast_std": 7.1993654225753465,
+            "contrast_residual009_correlation": 0.159851475167713
+          },
+          "size320": {
+            "legacy_rmse": 13.807014528773689,
+            "DINOmean_rmse": 13.713182924000998,
+            "legacy_minus_DINO_MSE": 2.582264290655175,
+            "contrast_std": 7.465940221250759,
+            "contrast_residual009_correlation": 0.10916148873958009
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 1,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 15.658708437193235,
+            "DINOmean_rmse": 14.510776571694766,
+            "legacy_minus_DINO_MSE": 34.6325132073809,
+            "contrast_std": 8.36908030961954,
+            "contrast_residual009_correlation": 0.29605342845116017
+          },
+          "size320": {
+            "legacy_rmse": 15.520422411997691,
+            "DINOmean_rmse": 13.289907200077518,
+            "legacy_minus_DINO_MSE": 64.26187846016799,
+            "contrast_std": 8.721837501000339,
+            "contrast_residual009_correlation": 0.39816355820250365
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 2,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 14.406019478685169,
+            "DINOmean_rmse": 15.021068377112732,
+            "legacy_minus_DINO_MSE": -18.09909796963966,
+            "contrast_std": 8.323297878539677,
+            "contrast_residual009_correlation": 0.06646724193054813
+          },
+          "size320": {
+            "legacy_rmse": 13.962889095224837,
+            "DINOmean_rmse": 14.436514595951916,
+            "legacy_minus_DINO_MSE": -13.45068179358409,
+            "contrast_std": 8.829908853638448,
+            "contrast_residual009_correlation": 0.09209291518101666
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 3,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 12.3033491273357,
+            "DINOmean_rmse": 13.251073232865206,
+            "legacy_minus_DINO_MSE": -24.218542073644624,
+            "contrast_std": 7.738807537564158,
+            "contrast_residual009_correlation": 0.015498493613165845
+          },
+          "size320": {
+            "legacy_rmse": 11.915062644080418,
+            "DINOmean_rmse": 12.999384320722491,
+            "legacy_minus_DINO_MSE": -27.015274905485075,
+            "contrast_std": 7.0130084615864705,
+            "contrast_residual009_correlation": -0.03580115350731244
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 4,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 13.039009999536285,
+            "DINOmean_rmse": 14.02755639792422,
+            "legacy_minus_DINO_MSE": -26.756556728937504,
+            "contrast_std": 7.810339489808989,
+            "contrast_residual009_correlation": 0.023117364466479058
+          },
+          "size320": {
+            "legacy_rmse": 12.67608644456163,
+            "DINOmean_rmse": 13.550234324227599,
+            "legacy_minus_DINO_MSE": -22.925682691476673,
+            "contrast_std": 7.606784955667955,
+            "contrast_residual009_correlation": 0.031653668334792315
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        }
+      ]
+    },
+    "20261101": {
+      "size213_214": {
+        "legacy_rmse": 14.124844329691673,
+        "DINOmean_rmse": 14.483098721960229,
+        "legacy_minus_DINO_MSE": -10.24892125202301,
+        "contrast_std": 7.560552719848029,
+        "contrast_residual009_correlation": 0.09152244933240834
+      },
+      "size320": {
+        "legacy_rmse": 13.729980391208457,
+        "DINOmean_rmse": 13.963736661461724,
+        "legacy_minus_DINO_MSE": -6.473580007681437,
+        "contrast_std": 7.573177202827498,
+        "contrast_residual009_correlation": 0.107506061467352
+      },
+      "MSE_advantage_change_320_minus213": 3.775341244341573,
+      "folds": [
+        {
+          "fold": 0,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 14.17517388972708,
+            "DINOmean_rmse": 14.841500250995601,
+            "legacy_minus_DINO_MSE": -19.334574896302108,
+            "contrast_std": 7.649984156584705,
+            "contrast_residual009_correlation": 0.09948835923259318
+          },
+          "size320": {
+            "legacy_rmse": 13.945290670360036,
+            "DINOmean_rmse": 14.49783327126869,
+            "legacy_minus_DINO_MSE": -15.716037680674669,
+            "contrast_std": 7.701199776184374,
+            "contrast_residual009_correlation": 0.08153193970754008
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 1,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 13.389083578379953,
+            "DINOmean_rmse": 14.087590028722815,
+            "legacy_minus_DINO_MSE": -19.192633748526738,
+            "contrast_std": 6.8189137548094925,
+            "contrast_residual009_correlation": 0.01523421367671358
+          },
+          "size320": {
+            "legacy_rmse": 13.342127449268341,
+            "DINOmean_rmse": 13.717039451249356,
+            "legacy_minus_DINO_MSE": -10.144806434611525,
+            "contrast_std": 6.907832586062855,
+            "contrast_residual009_correlation": 0.06810310133061168
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 2,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 14.274395713987518,
+            "DINOmean_rmse": 13.311563357723793,
+            "legacy_minus_DINO_MSE": 26.56065397281046,
+            "contrast_std": 7.286093224460209,
+            "contrast_residual009_correlation": 0.2571306206714459
+          },
+          "size320": {
+            "legacy_rmse": 13.758607138657919,
+            "DINOmean_rmse": 12.726383681527533,
+            "legacy_minus_DINO_MSE": 27.338428786478385,
+            "contrast_std": 7.295765334104595,
+            "contrast_residual009_correlation": 0.2599070620815034
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 3,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 14.69144610816305,
+            "DINOmean_rmse": 15.949893574985804,
+            "legacy_minus_DINO_MSE": -38.560516304314284,
+            "contrast_std": 7.949960744814593,
+            "contrast_residual009_correlation": -0.029225079190573038
+          },
+          "size320": {
+            "legacy_rmse": 14.043519497725589,
+            "DINOmean_rmse": 15.448605997554285,
+            "legacy_minus_DINO_MSE": -41.43898738467141,
+            "contrast_std": 8.141053785979262,
+            "contrast_residual009_correlation": -0.03672502768562435
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        },
+        {
+          "fold": 4,
+          "size213_214_individual_models_pooled_repeated_rows": {
+            "legacy_rmse": 14.062576615567522,
+            "DINOmean_rmse": 14.088065742055896,
+            "legacy_minus_DINO_MSE": -0.717535283782383,
+            "contrast_std": 7.992644387083466,
+            "contrast_residual009_correlation": 0.11807060929838374
+          },
+          "size320": {
+            "legacy_rmse": 13.548380002146594,
+            "DINOmean_rmse": 13.265183677864915,
+            "legacy_minus_DINO_MSE": 7.593502675072031,
+            "contrast_std": 7.627052686340827,
+            "contrast_residual009_correlation": 0.1664841773286092
+          },
+          "warning": "The same80validation rows appear three times for213models. This is a descriptivepairedcomparison,not240independentrows. No averaging ofthreeinnerpredictions intoanewcandidate."
+        }
+      ]
+    }
+  },
+  "interpretation_limits": "Differences also reflect training subsets and fittedmodel variability. They do not establish that samplesize caused077failure, and do not authorizechoosinganewcrossfitfoldcount or coefficientfromouterresults. Existing050Ridgelearningcurves provideonlygeneraldata-sizecontext,notcurrentMLPcalibrationevidence. Same400repeatedlyused.",
+  "predictions_sha256": "857076d74537882855863dfa62493cc7644240c3a3fb1c3f13f2fe0ad5b09559",
+  "best009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+  "source_sha256": "f540faf709073727b83af65560a631f4bfda2885825863dc646875269fbd604b",
+  "input_validation_sha256": "453f4a4a987ec4bcf34703cd650f1515833bdec3bbd30b37327810431631fcc8",
+  "seconds": 8.40952595800627,
+  "new_fits": 0,
+  "new_candidate": false,
+  "holdout_test_access": false,
+  "cost": 0
+}

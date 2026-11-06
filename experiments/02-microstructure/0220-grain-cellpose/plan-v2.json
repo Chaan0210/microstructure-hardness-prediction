@@ -1,0 +1,15 @@
+{
+  "study": "220-v2 corrected validation (written before running validate_v2.py)",
+  "trigger": "User-supplied review 2026-10-07: (1) blend weights were fit on p021[tr], an OOF slice whose producing models saw the outer validation fold; (2) log-transform columns were chosen by looking at all features; (3) validation used per-fold weights while final used fixed 0.42.",
+  "superseded": ["evaluate.py honest_blend results (weights from outer OOF slices)", "robustness.py weights (p021[tr] slice) and its 0.42 mean", "common.py data-dependent POSITIVE columns"],
+  "fixes": {
+    "blend": "Fixed equal weight w=0.5 declared before any v2 result: final = 0.5*best021 + 0.5*grain. No parameter is fitted on best021 predictions, so no outer-label path through best021 training-fold predictions. Identical in validation and final.",
+    "transform": "log1p(clip(x,0)) on all 36 columns, fixed by definition (no data-dependent column choice).",
+    "model_family": "Inside each outer training fold, choose among {ridge(RidgeCV), krr(RBF, inner GridSearch), hgb(fixed)} by inner CV over the remaining 4 original folds (standalone RMSE). Final: same rule with 5-fold CV on all 500.",
+    "fallback": "If segmentation n_obj < 20 (label-free), use best021 for that image (unchanged rule)."
+  },
+  "assumption": "best021 OOF for validation-fold samples is honest (outer-label poisoning invariance verified in experiments/cnn-nested-204/R-outer-poison; exact reproduction R).",
+  "gates_project_standard": ["gain > 0 on all three partitions", ">= 3/5 folds improved in each partition", "pooled ID-bootstrap 95% CI lower > 0", "pooled gain after removing 5 largest improvements > 0"],
+  "sensitivity_only": "Fixed w in {0.3,0.4,0.6} reported descriptively; not used for selection.",
+  "test": "Test masks are label-free inference inputs; no candidate CSV is written unless all gates pass."
+}

@@ -1,0 +1,46 @@
+{
+  "hypothesis": "Cross-channel covariance of pretrained patch activations may preserve texture coactivation lost by per-channel mean/std. One final-block descriptor only.",
+  "duplicate_audit": "cnn_texture_fusion/cnn_cov_regularized learn CNN projection on scratch features. dino_texture042 uses per-channel horizontal/vertical/diagonal neighboring-token squared differences. dino_multilayer044 uses normalized CLS/mean/std only. No equivalent fixed projected pretrained channel covariance found.",
+  "references": [
+    "https://www.kaggle.com/competitions/csiro-biomass/writeups/5th-place-solution",
+    "https://doi.org/10.1016/j.actamat.2025.121132"
+  ],
+  "reference_access": "Kaggle body not readable via tool; DOI403; title confirmed via publisher/institution search. Parent-provided motivation only, no claimed paper reproduction or hardness evidence.",
+  "features": "Original official frozen DINOv2ViT-S14 finalblock12 normalized patchtokens, full504bicubic grayscaleRGB/ImageNetnorm as007,1296x384. Final block fixed before results; no layer selection. NumPyPCG64seed20261225 Gaussian384x32 dividedsqrt384, generated before images/labels. Population centered covariance of projected tokens, uppertriangle includingdiag528, no sqrt2offdiag scaling,no whitening,trace normalization,or eigenvalue transform.",
+  "math": "Cproj=R.T C384 R, not full384 covariance or uncenteredGram. Covariance insensitive to token permutation after backbone; discards explicit spatial arrangement, higher than second moments. Backbone position encoding/context can still affect individual tokens.",
+  "regression": "Single StandardScaler+standardtarget Ridge alpha52.8/528/5280 selected by innerGroupKFold3seed20261225+outerfold. All scaler/target/Ridge fit innertrain/outertrain only. Primary=.9samefold007+.1covariance Ridge; no residual targets.",
+  "screen": "Original gain>conditionalbootstrapSD and>=3/5fold gains. Only then same recipe on both existing repartitions. No weights/layer/projection seeds sweep. Diagnostic covariance alone not alternate winner.",
+  "diagnostics": "Compare Cproj to R.Tdiag(channelvariance)R computable from existing std; mean/std control reproduced against044. Record residualcorrelation with007. Descriptive foldtrain Ridge(alpha1152) reconstruction from final CLS+mean/std to covariance; no use for feature selection.",
+  "scope": "Development400 only; noholdout/test/candidateCSV/upload/install/cost/externaldata. Existing models preserved.",
+  "resources": "Imagewise frozen inference; benchmark3MPSimages plus1CPU; require projected400<300s,RSS<2GB,MPSdriver<3GB.",
+  "sources": {
+    "token_covariance_056.py": "8bd1a9a084945cbac59828401a0bf5f2e848acc624f81d6a83727b2409fba85c",
+    "test_token_covariance_056.py": "4017aecf8fd8db2bb0eac2000a2448a822eb611f54f92d329117fa4ce1cec3cc",
+    "token_cov_experiment_056.py": "2ad904b59628e84d9a4374c5f60b746a801cdfb47ec939355015538c68ad1f14",
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5",
+    "dino_spatial_039.py": "6a5a2546cf3266dd67fcaccae2dfe978bc431349cec2d5ab784b9a065e79c692",
+    "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.manifest.json": "ac411a5e58ee57af5c4a653e7e4296c543a89333ee1a929b576d6e67f7b20e68",
+    "artifacts/submission-candidate-006.components.csv": "3a41ca42fa66e10b9899fc2d25ccfa395d5b728e0cf00a9b213be1ad06e410a5",
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/submission-candidate-007.components.csv": "73e2699df9c3728d4b173ea1e2f74bb28d689befaacce85527928c5193f964f5",
+    "artifacts/submission-candidate-007.csv": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "artifacts/submission-candidate-007.manifest.json": "be282c4a01a0e8f269a82ed9649522563d901a8dc424dcffde5a5533e6d81329",
+    "artifacts/final-model-045/report.json": "2d344e9f074aeebe45dfb99e001175aef8e6b8485bc85c51bc45af0ce4526e7c",
+    "artifacts/final-model-045/train_features.npz": "e46b8746fe9114c75766e329efdb040fb45e33912567e0ef50b5ef637c46faa1",
+    "artifacts/final-model-045/test_features.npz": "08b8e5c2e0f0daa1eb05e223fbcb99b490a481d3667cf07a70ce666ce3aba876",
+    "artifacts/final-model-045/decision.json": "cae40d328c87ae4104ad70bdf18b9e8002b5a787ab98307c31a74f6e282f49eb",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+    "artifacts/final-model-053/verification-test-compact-cnn-inputs.npz": "5693022f148ad26318debf34b554ad003833c0a6378c0be2d4754c82482d5539",
+    "artifacts/final-model-053/report.json": "4636d8307de29d1bb9b12c666e4d95361a32e33aabf0439d81e120ff1de00a0f",
+    "artifacts/final-model-053/mlp-seed-20261219.pt": "d3f5aa1cb9d755385ee04561d12d26610c8440c642aef0fb7466975b05bd9c58",
+    "artifacts/final-model-053/mlp-seed-20261128.pt": "e5f990b7ae6d0bda291cbd0574b65b01796959915ce1afdf696007957a512226",
+    "artifacts/final-model-053/decision.json": "d570d5508b94580a38f2f56951c454f4bdf07db129febda3efe58b91b16c83e6",
+    "artifacts/final-model-053/mlp-seed-20261205.pt": "550b0944dd3dcb1f36ff8e5238d29e5c31f05fada4a6deb1471809f4a10ddc1f",
+    "artifacts/seed-stability-052/candidate-design.json": "f149e8afd8c553dadc1205fadb8229a93f6dac1894f8a5ce50232c800de0f2b4"
+  },
+  "bias": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "projection_sha256": "8c11a8b76e4f73c2be4c38a51f54713945ea716253c4feb8caf4b092883222dc"
+}

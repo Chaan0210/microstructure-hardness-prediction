@@ -1,0 +1,140 @@
+{
+  "study": 165,
+  "status": "completed_negative",
+  "duplicate_review": {
+    "077": "Unregularized global legacy-vsDINO contrast, no image-quality interaction. Failed resplits.",
+    "078": "Training-size reliability diagnostic; no quality gating fit.",
+    "125": "Sample-independent simplex base weights with fixedridge penalty; failed pooledMSE.",
+    "126": "Image-condition risk diagnostic of013\u2192014 removal, no predictions or weights changed; no adverse-condition transfer.",
+    "165": "Two predefined image-quality interactions change CNN-vsremaining base mixture samplewise with strong shrinkage; complete018 downstream refit. Not a claim that image risk diagnostics showed a positive effect."
+  },
+  "original_RMSE": {
+    "reference018": 12.811945280526919,
+    "primary": 12.812072218813737
+  },
+  "gain_reference_minus_candidate": -0.0001269382868187563,
+  "fold_gains": [
+    0.00010952835322797227,
+    -0.00020677186190809493,
+    8.598718221008994e-05,
+    -0.00045300544203819015,
+    -0.0002065232522934224
+  ],
+  "advanced": false,
+  "decision": "Retain018. Fixed two-proxy strongshrink gate worsens originalRMSE and improves2of5folds. No resplits, penalty/weight/feature sweep, full500 refit or new CSV.",
+  "gate": {
+    "features": [
+      "noise_contrast_ratio",
+      "spectral_low_fraction"
+    ],
+    "lambda": 10.0,
+    "max_CNN_weight_shift": 0.03,
+    "actual_query_delta_range": [
+      -0.001997117899296195,
+      0.0019586621282281468
+    ],
+    "effective_df_range": [
+      0.004946582782475174,
+      0.010719170437454711
+    ],
+    "no_physical_sign_assumptions": true
+  },
+  "validation": {
+    "passed": true,
+    "split": "original",
+    "models_verified": 300,
+    "meta_fits_verified": 20,
+    "independent_residual_max_error": 5.639932965095795e-14,
+    "independent_meta_max_error": 2.2737367544323206e-13,
+    "constrained_fixture_passed": true,
+    "whole_outer_label_poison_exact": true,
+    "anchor_B_label_poison_exact": true,
+    "residual_inner_H_label_poison_exact": true,
+    "outer_quality_no_train_stat_leak": true,
+    "all_weight_vectors_positive_sum1_bounded": true,
+    "delta_query_range_all_levels": [
+      -0.001997117899296195,
+      0.0019586621282281468
+    ],
+    "effective_df_range": [
+      0.004946582782475174,
+      0.010719170437454711
+    ],
+    "quality_conditional_diagnostics": {
+      "noise_contrast_ratio": {
+        "below_train_median": {
+          "n": 200,
+          "018_RMSE": 11.312038301144357,
+          "165_RMSE": 11.312209736963649,
+          "mean_MSE_gain": -0.0038786064982338298
+        },
+        "at_or_above_train_median": {
+          "n": 200,
+          "018_RMSE": 14.15378653279309,
+          "165_RMSE": 14.153879325016954,
+          "mean_MSE_gain": -0.0026267312673412292
+        }
+      },
+      "spectral_low_fraction": {
+        "below_train_median": {
+          "n": 199,
+          "018_RMSE": 10.197302266873928,
+          "165_RMSE": 10.197307441956859,
+          "mean_MSE_gain": -0.00010554379657314771
+        },
+        "at_or_above_train_median": {
+          "n": 201,
+          "018_RMSE": 14.956881146146412,
+          "165_RMSE": 14.957094039259148,
+          "mean_MSE_gain": -0.0063684792915271425
+        }
+      }
+    },
+    "diagnostic_only_no_selection": "Fixed2proxies, outertrain median per fold; overlapping subgroups; no tuned cutoffs. Not causal degradation effect.",
+    "upstream_nested_training_certificate_sha256": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+    "report_sha256": "d01177824f4d399aa127c2c03afb4adedfd8a045191a43823d4a6b0ffe475241",
+    "seconds": 5.987705166000524
+  },
+  "resource": {
+    "main_meta_fits": 20,
+    "main_residual_models": 300,
+    "control_residual_models": 60,
+    "outer_poison_residual_models": 60,
+    "inner_poison_residual_models": 5,
+    "main_fold_wall_seconds": 1.6221937510017597,
+    "main_fold_cpu_seconds": 1.609956,
+    "max_peak_rss_bytes": 488046592,
+    "upstream_neural_fits": 0,
+    "new_installs_downloads_external_APIs_cost": false
+  },
+  "best018_full500_verification": {
+    "rows": 500,
+    "train_ids_unique": 500,
+    "018_residual_model_hashes_verified": 15,
+    "upstream017_reused": true,
+    "fit_sha256": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a",
+    "csv_sha256": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "no_duplicate_training": true
+  },
+  "reproduction_archives_preserved": {
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef"
+  },
+  "holdout_test_read": false,
+  "new_csv": false,
+  "current_best": "018",
+  "plan_sha256": "41d596c3927edce0d21b3a2e28cf40f394518f1874c7705d48fdf1b0a56ded65",
+  "source_sha256": {
+    "quality_gate_165.py": "ca19757695bda8a75d45bbdaf0b905f8dc4f896448bd59c70866cf438539a9ee",
+    "validate_quality_gate_165.py": "2ab6d0a13e1642d15184b79b440c2ef0fb7b2a441bd45afb4345ac365f228500",
+    "finalize_quality_gate_165.py": "309eca8af6aab93331fd632383afef0168cdd39c2fbb62643dadad7253eabfbb"
+  },
+  "remaining_blockers": [],
+  "limitations": [
+    "Same400 adaptive studies, no independent validation",
+    "Deep142/213/320 training-size mismatch persists",
+    "Quality proxies conflate signal and image degradation",
+    "Gate is one fixedCNN-vsremaining axis, not exhaustive component weighting",
+    "Negative result applies to fixedlambda10,CNN-vsremaining axis and two proxies; not proof that all quality-dependent weighting fails. No automatic penalty relaxation after failure."
+  ]
+}

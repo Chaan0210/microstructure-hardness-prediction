@@ -1,0 +1,98 @@
+{
+  "status": "image_review_completed",
+  "selection_label_free": true,
+  "selected12": [
+    "TRAIN_000351",
+    "TRAIN_000193",
+    "TRAIN_000470",
+    "TRAIN_000071",
+    "TRAIN_000210",
+    "TRAIN_000319",
+    "TRAIN_000115",
+    "TRAIN_000041",
+    "TRAIN_000481",
+    "TRAIN_000002",
+    "TRAIN_000120",
+    "TRAIN_000175"
+  ],
+  "pair_diagnostic_only": [
+    "TRAIN_000396",
+    "TRAIN_000497"
+  ],
+  "all14_cached_features_match_exactly": true,
+  "weak_strong_function_AST_identical_except_docstrings": true,
+  "weak_vs_strong": "Only marker h changes .1/.2 to .3/.6; TV denoised images are identical at matching TVfactor.",
+  "range_definition": "Absolute max-min across4 TV/h configurations, not standard error or coefficient of variation.",
+  "boundary_definition": "Fraction of watershed pixels labeled0; not measured true physical boundary thickness.",
+  "interior_definition": "Area>=16 and bounding box strictly away from all four frame edges.",
+  "all400_label_free_feature_summary": {
+    "grain_count": {
+      "weak_median400": 515.0,
+      "strong_median400": 90.0,
+      "rank_rho": 0.18868756633059705
+    },
+    "boundary_fraction": {
+      "weak_median400": 0.16352462768554688,
+      "strong_median400": 0.053287506103515625,
+      "rank_rho": -0.11108318383229465
+    },
+    "interior_area_fraction": {
+      "weak_median400": 0.6515693664550781,
+      "strong_median400": 0.3050956726074219,
+      "rank_rho": 0.2953424271744067
+    }
+  },
+  "matched48_config_support_transitions": {
+    "lost_interior_pixels_total": 1140937,
+    "lost_to_border_pixels": 1136210,
+    "fraction_lost_to_border": 0.9958569140977985,
+    "maximum_partition_error": 0.0
+  },
+  "visual_findings": [
+    "Weak settings can fragment within visibly broader regions, especially high-noise images; some extra basins may be texture or real substructure, so raw visual inspection cannot assign all to noise.",
+    "At h=.6, many visible narrow interfaces disappear even on low-noise images193/351/470. Large merged frame-connected regions dominate; high-noise175/481/002 retain mainly strong dark objects. This is not successful denoising by itself.",
+    "Strong h=.3 and h=.6 can produce very different partitions; the median descriptor is not a segmentation that can be overlaid.",
+    "Pair396/497 show different arrangements and apparent region scales; similar scalar summaries do not establish morphology equality."
+  ],
+  "pair_metadata": {
+    "TRAIN_000396": {
+      "mode": "L",
+      "size": [
+        256,
+        256
+      ],
+      "info": {},
+      "format": "PNG"
+    },
+    "TRAIN_000497": {
+      "mode": "L",
+      "size": [
+        256,
+        256
+      ],
+      "info": {},
+      "format": "PNG"
+    }
+  },
+  "pair_comparison_summary": {
+    "raw_RMSE_0_255": 32.468464972205986,
+    "raw_pearson": 0.03573063260776677,
+    "smooth_pearson": 0.08943986445667135,
+    "best_bounded_geometry_match": {
+      "scale": 1.3333333333333333,
+      "rot90": 3,
+      "flip": true,
+      "max_center128_template_NCC": 0.4223291873931885,
+      "location_yx": [
+        176,
+        159
+      ]
+    }
+  },
+  "pair_limit": "No physical pixel calibration or source-crop metadata; 24 fixed D4/scale template searches do not establish source identity or physical magnification. No label correction.",
+  "next_fixed_hypothesis": "Replace TV with existing skimage noise-aware nonlocal-means while keeping watershed weak settings and measure noise fragmentation versus true boundary preservation on fixed synthetic fixtures first. No NLM experiment found in existing project code; existing stronger-h025, connected-ridge, inverse-formation049, denoisedDINO071/072 are distinct and preserved. If the prespecified fidelity gate fails, do not run a hardness regression for it.",
+  "groundtruth_limit": "Real images have no geometric labels. Visual assessments and synthetic fixtures are diagnostic, not validation of true grain counts or hardness improvement.",
+  "cost": 0,
+  "holdout_test_images_accessed": false,
+  "label_file_accessed": false
+}

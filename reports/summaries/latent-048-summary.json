@@ -1,0 +1,94 @@
+{
+  "study": "latent-048",
+  "completed_at_utc": "2026-10-01T15:26:10.176091+00:00",
+  "decision": "Originalgatefailed;no rank/bandwidth/weightsearch or confirmation. Fixed4Dsupervisedbottlenecknotpromoted.",
+  "validation": {
+    "results": {
+      "original": {
+        "scores": {
+          "control": 13.895902699199368,
+          "latent": 14.218805695930133,
+          "linear_pls_diagnostic": 14.491875559269197,
+          "control_blend": 13.423229237711903,
+          "latent_blend": 13.487099655275172,
+          "linear_pls_diagnostic_blend": 13.572927099182511,
+          "reference003": 13.705696031698212
+        },
+        "comparison": {
+          "gain": -0.06387041756326894,
+          "fold_gains": [
+            -0.18403539655464307,
+            -0.10931377181773705,
+            -0.13927474109622295,
+            0.25359211595288755,
+            -0.11655032573290569
+          ],
+          "bootstrap_sd": 0.06808043708627376,
+          "conditional_ci95": [
+            -0.19621182134665632,
+            0.06846649786943494
+          ]
+        },
+        "selected_alpha": [
+          1.0,
+          10.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_train_rmse": 11.535452180986832,
+        "mean_linear_pls_train_rmse": 12.316904505781867,
+        "pls_n_iter": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "seconds": 1.109879625029862,
+        "rss_peak_bytes": 427982848,
+        "oof_sha256": "9c4477ac34459f0722527b9a754c7cbc0f8fc0694790e74891683bfe6689b9c9"
+      }
+    },
+    "models_reloaded": 10,
+    "max_reload_error": 0.0,
+    "batch_independence_error": 5.684341886080802e-14,
+    "minimum_kernel_eigenvalue": -2.230803680354954e-14,
+    "same006_control_reproduced": true,
+    "fold_only_scaler_target_supervised_PLStraining_scores_bandwidth_inner_groups_verified": true,
+    "best006_protected": true,
+    "screen_advanced": false,
+    "scope": "Development400only;noholdout/testfit,externaldata,installation,cost,candidateCSVorupload",
+    "limits": "CurrentnestedCV controlsalpha,not historicaldevelopment/modelselection. Fixed4Dfailureisnot evidenceofabsoluteperformanceceiling."
+  },
+  "best006_sha256": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+  "new_candidate": null,
+  "uploaded": false,
+  "cost": 0,
+  "running_work": []
+}

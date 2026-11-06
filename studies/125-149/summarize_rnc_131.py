@@ -1,0 +1,38 @@
+"""Close or advance exactly the prespecified131 screen."""
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[2]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import sys,datetime,argparse
+from pathlib import Path
+ROOT=_RepoPath(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+import rnc_study_131 as s
+import numpy as np
+
+def decision():
+    s.check();r=s.e.read(s.OUT/'original/report.json');assert s.e.read(s.OUT/'validation-original.json')['passed'];v=r['RMSE'];advance=v['rnc']<v['mse'] and v['raw_rnc']<min(v['raw_mse'],v['raw_legacy']);out={'advance':advance,'rule':s.e.read(s.OUT/'plan.json')['screen'],'RMSE':v,'reason':'Prespecified original screen passed; same recipe resplits required.' if advance else 'Fixed RNC screen failed. No tuning/rescue blend; retain014, close this small configuration.'};s.write(s.OUT/'screen-decision.json',out);s.e.emit(out)
+
+def summary():
+    s.check();dec=s.e.read(s.OUT/'screen-decision.json');splits=list(s.e.SPLITS) if dec['advance'] else ['original'];results={};contrasts={};rng=np.random.default_rng(20271116);ix=rng.integers(0,400,(10000,400))
+    for split in splits:
+        r=s.e.read(s.OUT/split/'report.json');v=s.e.read(s.OUT/f'validation-{split}.json');assert v['passed'];results[split]={'RMSE':r['RMSE'],'fit_seconds':r['seconds'],'validation_seconds':v['seconds'],'train_RMSE_mean':{a:float(np.mean([q['train_RMSE'] for q in r['records'] if q['arm']==a])) for a in s.ARMS},'pair_distance_spearman_mean_diagnostic':{a:float(np.mean([q['validation_pair_distance_spearman_diagnostic'] for q in r['records'] if q['arm']==a])) for a in s.ARMS},'independent_float64_Ridge_RMSE':v['independent_float64_Ridge_RMSE'],'max_CPU_reload_error':max(q['reload_prediction_max_error']['cpu'] for q in v['records']),'max_independent_Ridge_error':max(q['independent_Ridge_max_error'] for q in v['records'])}
+        with np.load(_repo_io(s.OUT/split/'predictions.npz')) as z:d={k:z[k].copy() for k in z.files}
+        contrasts[split]={}
+        for label,a,b in [('standalone','mse','rnc'),('raw_matched','raw_mse','raw_rnc'),('raw_legacy','raw_legacy','raw_rnc')]:
+            A=(d[a]-d['y'])**2;B=(d[b]-d['y'])**2;boot=np.sqrt(A[ix].mean(1))-np.sqrt(B[ix].mean(1));folds=[s.e.rmse(d['y'][d['fold']==k],d[a][d['fold']==k])-s.e.rmse(d['y'][d['fold']==k],d[b][d['fold']==k]) for k in range(5)];contrasts[split][label]={'RMSE_gain':s.e.rmse(d['y'],d[a])-s.e.rmse(d['y'],d[b]),'conditional_gain95':np.percentile(boot,[2.5,97.5]).tolist(),'positive_folds':sum(v>0 for v in folds),'fold_gains':folds}
+    old=s.e.read(_repo_path(ROOT, 'artifacts/problem-definition-111/plan.json'))['existing_report_sha256']
+    for f,h in old.items():assert s.e.sha(_repo_path(ROOT, f))==h,f
+    s.previous.check();env=s.old.prior.q.a.check()['environment'];csv=_repo_path(ROOT, 'artifacts/submission-candidate-014.csv');assert s.e.sha(csv)=='2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0'
+    sources=[_repo_path(ROOT, 'rnc_study_131.py'),_repo_path(ROOT, 'validate_rnc_131.py'),_repo_path(ROOT, 'validate_rnc_v2_131.py'),Path(__file__)];artifacts=[s.OUT/'plan.json',s.OUT/'fixtures.json',s.OUT/'screen-decision.json',*[s.OUT/z/'report.json' for z in splits],*[s.OUT/f'validation-{z}.json' for z in splits]]
+    status='completed_negative_original_screen' if not dec['advance'] else 'completed_resplit_control_requires_review'
+    out={'study':'131 fixed RNC CNN representation control','status':status,'completed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'results':results,'contrasts':contrasts,'decision':dec,'reference014_retained':True,'130_provenance_correction':'reports/binary-threepoint-130-provenance-correction.json','paper_and_repository':s.e.read(s.OUT/'plan.json')['research'],'novelty_vs120':s.e.read(s.OUT/'plan.json')['novelty'],'configuration':s.e.read(s.OUT/'plan.json')['encoder_budget'],'regression':s.e.read(s.OUT/'plan.json')['downstream'],'validation':{'loss_and_gradient_fixtures':s.e.read(s.OUT/'fixtures.json'),'all_models_reload_trainstatistics_SVD_streams_group_exclusion':True,'outer80label_poison_both_arms_exact_each_partition':True},'execution':{'main_CNN_fits':10*len(splits),'additional_poison_CNN_fits':2*len(splits),'CPU_threads':2,'device':'MPS','cost':0,'new_installs':0,'external_code_downloaded_or_executed':False,'holdout_or_test_decode_fit_inference':False,'new_submission_CSV':False,'uploaded':False},'limitations':['Constrained TinyCNN/40epoch/AdamW/Ridge10 transfer test, not original paper reproduction. No general RNC failure claim.','One paired seed/fold,64dim feature scale and fixed tau2,small16IDtwo-viewbatch; no hyperparameter search.','D4 label preservation is an empirical augmentation assumption, not established physics invariance.','Raw4way is a base-branch screen, not complete014; new honest downstream integration required before promotion.','Same400adaptively reused development labels; bootstrap fixed-fit conditional, not independent replication or historical-selection correction.','MSE scalar65parameters train, RNC scalarhead dormant; encoder/latentarchitecture and update/image budgets equal, FLOPs differ.'], 'preservation':{'014_CSV_SHA256':s.e.sha(csv),'previous_reports_verified':len(old),'packages_unchanged':len(env),'frozen130_originals_preserved':True},'source_sha256':{str(p.relative_to(ROOT)):s.e.sha(p) for p in sources},'artifact_sha256':{str(p.relative_to(ROOT)):s.e.sha(p) for p in artifacts},'preserved_validation_failure':{'original_validator_sha256':s.e.sha(_repo_path(ROOT, 'validate_rnc_131.py')),'original_failure_log_sha256':s.e.sha(_repo_path(ROOT, 'reports/rnc-131-validation-original.log')),'reason':'Original1e-9 tolerance compared float32 Ridge output with float64 independent SVD; observedmax0.000215. Separatev2 uses1e-3 and reports independentfloat64OOF endpoints; originalmodelsunchanged.'},'execution_blockers':[]}
+    dest=_repo_path(ROOT, 'reports/rnc-131-summary.json');s.write(dest,out);p=_repo_path(ROOT, 'README.md');before=s.e.sha(p);assert before==s.e.read(_repo_path(ROOT, 'reports/readme-update-130-provenance.json'))['after_sha256'];
+    with (_repo_path(ROOT, 'reports/README-before-131.md')).open('xb') as f:f.write(p.read_bytes())
+    text='\n\n## RNC 표현학습131 (고정 소규모 대조 완료)\n\n120은 frozenDINO 최종스칼라 순위벌점이며131은 CNN잠재64차원 거리의 target-distance순서대조입니다. 공식논문과저자loss를읽기만했고 외부코드를다운로드·실행하지않았습니다.\nMSE와RNC 모두 동일초기값/증강/800updates/25600views,이후동결표현에 동일train-onlyStandardScaler/Ridge10. tau2,40epochs,배치16ID×2views,추가튜닝없음.\n\n| 원본400 조건 | RMSE |\n|---|---:|\n'
+    for k,v in results['original']['RMSE'].items():text+=f'| {k} | {v:.9f} |\n'
+    text+='\n'+dec['reason']+'\n014전체파이프라인 대조가아닌 raw4way 사전검사입니다. 손실·기울기독립계산,전모델CPU/MPS재로딩,독립SVD회귀,외부80label변조양조건재학습검증통과.\n014및이전200보고서/26패키지보존. 설치·비용·holdout/test·제출없음. 상세:`reports/rnc-131-summary.json`.\n'
+    with p.open('a') as f:f.write(text)
+    s.write(_repo_path(ROOT, 'reports/readme-update-131.json'),{'before_sha256':before,'after_sha256':s.e.sha(p),'summary_sha256':s.e.sha(dest)})
+    s.write(_repo_path(ROOT, 'reports/rnc-131-preservation.json'),{'passed':True,**out['preservation'],'summary_sha256':s.e.sha(dest),'README_sha256':s.e.sha(p)});s.check();s.e.emit({k:out[k] for k in ['status','results','contrasts','execution','preservation']})
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('mode',choices=['decision','summary']);decision() if p.parse_args().mode=='decision' else summary()

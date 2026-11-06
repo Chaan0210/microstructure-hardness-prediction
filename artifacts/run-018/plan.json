@@ -1,0 +1,29 @@
+{
+  "hypothesis": "Reduce stochastic CNN variance by equal prediction averaging three prespecified seeds; no seed selection, no weight averaging across seeds",
+  "seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "endpoint_epochs": 80,
+  "cnn_weight": 0.25,
+  "kernel_weight": 0.25,
+  "baseline_weight": 0.5,
+  "folds": "original development400 five groups",
+  "future_confirmation_seeds": [
+    20261031,
+    20261101
+  ],
+  "no_test_holdout_reads": true,
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/cnn.pt": "7fa2cea78e1365cf280efe6695e758cff8c3da857ffb387d21787195cb472fb0",
+    "artifacts/final-model-017/kernel.joblib": "1dd0482997b5a5ac198dfea4952cc6d74c8694646238c65825eaf4786837eb4b",
+    "artifacts/final-model-017/baseline.joblib": "7667b2b36483ba1b93a8e2874d4de96d12f38492ea6815f9ce24c87d09bab83e"
+  },
+  "source_sha256": {
+    "cnn_multiseed.py": "dd63b5b370988b4063c8c1e7b779f69f05515abf69c49ce95ea3a61064f4f09e",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64"
+  }
+}

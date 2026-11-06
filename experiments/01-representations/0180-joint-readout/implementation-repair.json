@@ -1,0 +1,8 @@
+{
+  "before_any_fit": true,
+  "failure": "S cache shape400x3x1152, reader expected400x3456",
+  "fix": "Explicitrowmajorreshape, identicalauxiliary_experiment_051 legacy input ordering. No newfeatures/settings.",
+  "additional_prefit_review": "Artificialheldoutfeaturepoison createsverylargequeryvalues; independentmanualtransform uses1e-12relative tolerance onlyforpoisonquery, originalquery absolute1e-10 unchanged. TrainPCA/state assertions remainbitexact.",
+  "previous_source_and_lock_preserved": "implementation-repair-1",
+  "plan_unchanged": "4314f980178d1b37509b3edb0a744439deaff8c98216b7d0cfad645e037598c3"
+}

@@ -1,0 +1,161 @@
+{
+  "UTC": "2026-10-07T11:25:15.648260+00:00",
+  "completed": [
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "best021_preserved": true,
+  "best021_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+  "new_training_fits": 0,
+  "new_candidates": 0,
+  "installation_network_cost": 0,
+  "holdout_test_access": false,
+  "L1_scope": {
+    "studies": [
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217
+    ],
+    "OOF_blocks": 16,
+    "reported_comparisons": 78,
+    "note": "78 comparisons include controls and duplicated role views, not78 independent models. Earlier001-204 not exhaustively reanalysed."
+  },
+  "L1_example216": {
+    "A_gain": 0.31545596152488575,
+    "P": 0.31575417139902834,
+    "lambda_nonnegative_oracle": 0.4995277815763743,
+    "oracle_RMSE_gain": 0.0030814080265209043
+  },
+  "L1_example216_maxMSEreduction": 0.07878950832278413,
+  "L1_repartition_optima": [
+    {
+      "split": "20261031",
+      "A_gain": -1.227549810101233,
+      "P": 0.35794708019098065,
+      "lambda_optimum": 0.0
+    },
+    {
+      "split": "20261101",
+      "A_gain": -0.5695718089963414,
+      "P": 0.33846571700111583,
+      "lambda_optimum": 0.0
+    }
+  ],
+  "L2": {
+    "knn": "Frozen L finalCLS1024 cosine; k1/5/10,12nearest pairs inspected",
+    "exact_D4_duplicates_in_12": 0,
+    "automatic_exclusions": 0,
+    "image_audit": "Visual overview shows similar grain elongation/texture classes with distinct arrangements and darkphase/porelike spots. Not proof of generator families or mislabeled pairs. D4raw metrics cover12 only; no universal duplicate absence claim."
+  },
+  "L3": {
+    "top40_SSEshares": {
+      "original": 0.5004749582125202,
+      "20261031": 0.49069733630343076,
+      "20261101": 0.4967391003247024,
+      "pooled_meanSE": 0.4919203527942114
+    },
+    "pooled_top40_internal_k5_fraction": 0.19,
+    "random_fixed40_expectation": 0.09774436090225563,
+    "signed_local_descriptive": {
+      "original": {
+        "residual_vs_k5_mean_residual_Pearson": -0.10197959960606556,
+        "directed_edge_residual_sign_agreement": 0.479,
+        "cross_fold_edge_fraction": 0.8055
+      },
+      "20261031": {
+        "residual_vs_k5_mean_residual_Pearson": -0.09920273152849143,
+        "directed_edge_residual_sign_agreement": 0.468,
+        "cross_fold_edge_fraction": 0.7995
+      },
+      "20261101": {
+        "residual_vs_k5_mean_residual_Pearson": -0.11639175382032649,
+        "directed_edge_residual_sign_agreement": 0.467,
+        "cross_fold_edge_fraction": 0.8055
+      }
+    }
+  },
+  "L4": {
+    "TV_four_configs_empty0": {
+      "any_config_n": 0,
+      "all_configs_n": 0,
+      "per_config_n": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "median_interior_count_zero_n": 0
+    },
+    "Gaussian_sigma2_empty0": {
+      "n": 3,
+      "IDs": [
+        "TRAIN_000206",
+        "TRAIN_000223",
+        "TRAIN_000482"
+      ],
+      "pooled_RMSE": 22.64446138572411,
+      "mean_residual_original": -4.556232345013588,
+      "median_features": {
+        "border_area_fraction": 0.992919921875,
+        "interior_area_fraction": 0.0,
+        "interior_diam_mean": 0.0,
+        "all_diam_mean": 74.78238877505954,
+        "count": 6.0,
+        "interior_count": 0.0
+      }
+    },
+    "TV_border_fraction_quantiles": [
+      0.0930633544921875,
+      0.11574935913085938,
+      0.14470291137695312,
+      0.24301605224609385,
+      0.44667816162109375
+    ],
+    "Gaussian_sigma2_border_fraction_quantiles": [
+      0.1780242919921875,
+      0.24248199462890627,
+      0.33632659912109375,
+      0.5483062744140625,
+      0.99346923828125
+    ],
+    "actual_code_issue": "At three sigma2 empty images the compact inverse_sqrt descriptor averages the valid sigma1 value with sigma2 sentinel0; this halves the sigma1 value. No model impact is inferred without controlled validation.",
+    "TV_diameter_instability_vs_pooled_SE_spearman": 0.2874391089944312,
+    "TV_low_high_instability_quartile_RMSE": [
+      8.795274960323605,
+      16.69771596225488
+    ],
+    "geometry_limit": "Ideal disk complete-object retention falls with size: radius4 .93848, radius64 .25. Real grains are noncircular, masks uncertain and border sizes truncated; no calibrated bias-correction formula is established.",
+    "visual_audit": "Eight largest border-fraction cases show large visible frame-touching structures excluded in orange, with within-region fragmentation and some porelike splits in green interior. Mask validity is not groundtruth-confirmed.",
+    "all_recomputed_configs": 2400,
+    "descriptor_max_error": 0
+  },
+  "followup": {
+    "preferred_next": "D3 measurement-validity/encoding control first, not broadCNN variants or a claimed major improvement.",
+    "evidence": "Observed sentinel0 enters a real active descriptor; border censoring affects many images and configuration sensitivity relates to error magnitude. No verified physicalgrain truth and weak signed-residual associations, so expected improvement is unknown.",
+    "bounded_proposal": "Before anymodel fit, lock twoarms: current compact57 vs same fixed features with an explicit sigma2-validity indicator and valid-scale-only HallPetch aggregation (diagnostic thirdarm flag-only separates newmissingness indicator from changedaggregation). No label-defined thresholds, image exclusions or outcome-derived corrections. Verify grain masks/geometry and exact feature differences first. If later authorized, identical folds/train-only preprocessing/nested existingKRR settings, report entire finalrecipe including necessary residual recalibration, not just frozen firstseed substitution; original then unchangedrepeat protocol, noPublic tuning.",
+    "not_executed": true,
+    "D2_requirements": "Rawimage residualCNN is not established by magnitude clustering; signedneighbor correlations ~-.10 do not show smooth residualdirection. If considered, fixedsame anchorrecipe at every node, wholeouterV excluded from anchor/residualtarget/tuning. A clean pairedbranch builds anchor_A onA and residualCNN_B on yB-anchor_A(B); outerprediction must be anchor_A(V)+CNN_B(V), averagepairs, and deployment must reproduce identical pairedpolicy. Compare pairedanchor-only andbest021 separately. Do not add corrections trainedagainst a differentanchor tobest021. Any residualhyperparameterCV must rebuild anchors excluding itsinner validation, not naively split pooledcrossfit targets. Cache/anchor graph and compute must be audited before authorizingfits.",
+    "novelty_limit": "Existing113/115 already train linear/nonlinear feature residuals; residualarchitectureCNN is not the same as directresidualtargetCNN. Limitedsourceaudit found no explicit completed exactcurrent021 rawimage residualtarget study, but no exhaustive noveltyclaim.",
+    "resources": "Current diagnostics: TV400189.6s extraction (190.6swithsave), Gaussian40036s; noMPS used. Followup anchorrefit cost unmeasured; do not promise shorttotal or launchlarge graph automatically."
+  },
+  "limitations": [
+    "Allsame400 with historical adaptive reuse; repartitions are not independent holdout.",
+    "Oraclelambda and posthocgroups cannot select deployed weights or establishgeneralization.",
+    "78 pairedcomparisons are correlated; no multiplecomparison significanceclaim.",
+    "No94percenterrorcoverage claim, noPublicnoise/SE estimate, no prizeguarantee.",
+    "No1percentfrequency or.98correlation terminationrule.",
+    "The failedslow legacy diagnostic wasinterrupted beforeoutput; v2bbox-equivalent implementationcompleted, oldsource/plan/logretained."
+  ]
+}

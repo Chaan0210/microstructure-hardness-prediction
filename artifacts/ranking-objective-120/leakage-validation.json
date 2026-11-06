@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "original_exact_MPS_assertion_failed_preserved": true,
+  "invalid_crossdevice_training_equivalence_assertion_failed_preserved": true,
+  "outer80_perturbed_full_nested8models_CPU_states_predictions_choices_exact": true,
+  "inner107_perturbed_fixed2candidate_CPU_states_exact": true,
+  "MPS_perturbed_vs_original": {
+    "models": 8,
+    "state_max_error": 1.4901161193847656e-08,
+    "prediction_max_error": 8.608274129073834e-06,
+    "bit_exact_models": 4,
+    "initialization_batches_updates_paircounts_stats_exact": true,
+    "chosen_weight_equal": true,
+    "inner_MSE_max_error": 1.7138290786533616e-07
+  },
+  "MPS_unchanged_repeat_vs_original": {
+    "models": 8,
+    "state_max_error": 1.6763806343078613e-08,
+    "prediction_max_error": 9.684308395208063e-06,
+    "bit_exact_models": 4,
+    "initialization_batches_updates_paircounts_stats_exact": true,
+    "chosen_weight_equal": true,
+    "inner_MSE_max_error": 6.793930822368566e-07
+  },
+  "MPS_unchanged_vs_perturbed": {
+    "models": 8,
+    "state_max_error": 1.862645149230957e-08,
+    "prediction_max_error": 8.608274129073834e-06,
+    "bit_exact_models": 4,
+    "initialization_batches_updates_paircounts_stats_exact": true,
+    "chosen_weight_equal": true,
+    "inner_MSE_max_error": 8.507759901021927e-07
+  },
+  "CPU_deterministic_replay": {
+    "models": 8,
+    "state_max_error": 0.0,
+    "prediction_max_error": 0.0,
+    "bit_exact_models": 8,
+    "initialization_batches_updates_paircounts_stats_exact": true,
+    "chosen_weight_equal": true,
+    "inner_MSE_max_error": 0.0
+  },
+  "same_seed_CPU_MPS_dropout_mask_different_entries_of1024": 502,
+  "CPU_training_not_compared_as_same_random_trajectory_to_MPS": true,
+  "old013_components_unchanged": true,
+  "interpretation": "MPSrankmodelretraininghassmallfloatingpointvariabilityalsoobservedwithoutchanginglabels. ActualMPSreplayretainschoicesandexacttrainingstatisticsandmatcheswithinrecordedtolerance. DeterministicCPUwithinbackendheldoutlabelinterventionisbitexact. CPU/MPSdropoutRNGdiffers;CPUcertificateiswithinbackendandnotamatchingtrainedMPSmodel. Pairindexgradientaccumulationissuspectednotprovenbykernelprofiling. No bitexactMPStrainingclaim.",
+  "validation_fit_count_excluding_original_smooth_control": 34,
+  "source_sha256": "f5ff093f106a4714d567820868124301425feecfa1fbf12af185edf728385e62",
+  "amendment_sha256": "591212551eb291373d00487434e0a447fa1f058830462593d8612b2ed72abd75"
+}

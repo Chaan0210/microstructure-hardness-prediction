@@ -1,0 +1,206 @@
+{
+  "study": "129 CNN identity versus D4 training",
+  "status": "completed",
+  "completed_utc": "2026-10-04T04:52:14.519155+00:00",
+  "rationale": "Synthetic hardness proxy has no documented D4 invariance guarantee in the inspected official evidence recorded111. Current CNN assigns unchanged labels to rotated/reflected training images. Removing this augmentation may preserve useful absolute-orientation information. This tests a training assumption, not proof that the generator depends on direction.",
+  "novelty": {
+    "111": "Identified lack of invariance guarantee but did not train a removal control.",
+    "009_011_035_106_128": "CNN size/pooling/amplitude/update-budget trials retained D4. No CNN identity-only counterpart found in inspected training sources and research summaries.",
+    "046": "DINO D4 averaged frozen features, not removal of train-time CNN D4.",
+    "110": "Added weak noise to DINO input, not orientation control.",
+    "057_088_089_090": "Not another head epoch/dropout/seed/width regularization sweep."
+  },
+  "partitions_completed": [
+    "original"
+  ],
+  "screen": {
+    "advance": false,
+    "gains": {
+      "CNN_RMSE": -1.3061147638607764,
+      "raw4way_RMSE": -0.4271790781281304
+    },
+    "rule": "Both standalone CNN and prespecified raw4way strictly improve, after independent validation.",
+    "new_candidate": false
+  },
+  "results": {
+    "original": {
+      "scores": {
+        "D4": {
+          "CNN_RMSE": 15.032317843077909,
+          "raw4way_RMSE": 13.065975963657763
+        },
+        "identity": {
+          "CNN_RMSE": 16.338432606938685,
+          "raw4way_RMSE": 13.493155041785894
+        }
+      },
+      "main_fit_seconds": 135.59142675006296,
+      "fold_RMSE_gains": {
+        "cnn": [
+          -0.7362216285501564,
+          -2.3753245936514524,
+          -2.342680159949552,
+          0.1740761220716589,
+          -1.1297882176838296
+        ],
+        "raw": [
+          -0.4142487103768282,
+          -0.6666237170391813,
+          -0.6148073015621378,
+          -0.10353595311971553,
+          -0.31368091098867446
+        ]
+      },
+      "report_sha256": "8695e991a2d2224d2b98bea9e99bf8c51301bd68550444826e462d5aa64edb9c"
+    }
+  },
+  "pooled_validation_RMSE": {
+    "cnn": {
+      "D4": 15.032317843077909,
+      "identity": 16.338432606938685
+    },
+    "raw": {
+      "D4": 13.065975963657763,
+      "identity": 13.493155041785894
+    }
+  },
+  "pooled_training_RMSE": {
+    "D4": 9.885685012399287,
+    "identity": 0.3065596951900731
+  },
+  "contrasts": {
+    "cnn": {
+      "RMSE_gain_D4_minus_identity": -1.3061147638607764,
+      "MSE_gain": -40.97380031615876,
+      "conditional_gain_95": [
+        -2.2168683931428625,
+        -0.3771831217325229
+      ],
+      "bootstrap_independent_max_error": 7.105427357601002e-15
+    },
+    "raw": {
+      "RMSE_gain_D4_minus_identity": -0.4271790781281304,
+      "MSE_gain": -11.345505098789658,
+      "conditional_gain_95": [
+        -0.6918918354887087,
+        -0.16115354693678913
+      ],
+      "bootstrap_independent_max_error": 7.105427357601002e-15
+    }
+  },
+  "all3_consistent": false,
+  "recommendation": "Retain014 and close this exact identity-only CNN hypothesis. No resplit/augmentation-ratio/subgroup/seed rescue search and no downstream/full500 retraining justified by this screen.",
+  "interpretation_limits": [
+    "Removing D4 changes both orientation information and augmentation regularization. Accuracy cannot alone establish the physical/generator invariance or dependence.",
+    "No fabricated labels, interpolated images/labels, or newly assumed label-preserving transforms in identity arm. D4 retained only as existing matched control.",
+    "Raw4way excludes full014 affine/shortB/residual; no full014 improvement or degradation claimed.",
+    "Only400 historically reused images and one paired seed per fold. Bootstrap is conditional fixed-fit uncertainty and not selection-adjusted/independent confirmation."
+  ],
+  "validation": {
+    "original": {
+      "passed": true,
+      "split": "original",
+      "models_reloaded": 10,
+      "MPS_reload_max_error": 0.0,
+      "CPU_MPS_max_error": 3.0517578125e-05,
+      "fold_checks": [
+        {
+          "fold": 0,
+          "all800paired_batches_LR_random_draws": true,
+          "actual_input_sentinels_independently_verified": true,
+          "no_group_or_ID_overlap": true,
+          "five_states_average_exact": true,
+          "legacy_reproduction": {
+            "passed": true,
+            "prediction_max_error": 1.4210854715202004e-13,
+            "state_max_error": 0.0
+          }
+        },
+        {
+          "fold": 1,
+          "all800paired_batches_LR_random_draws": true,
+          "actual_input_sentinels_independently_verified": true,
+          "no_group_or_ID_overlap": true,
+          "five_states_average_exact": true,
+          "legacy_reproduction": {
+            "passed": true,
+            "prediction_max_error": 8.526512829121202e-14,
+            "state_max_error": 0.0
+          }
+        },
+        {
+          "fold": 2,
+          "all800paired_batches_LR_random_draws": true,
+          "actual_input_sentinels_independently_verified": true,
+          "no_group_or_ID_overlap": true,
+          "five_states_average_exact": true,
+          "legacy_reproduction": {
+            "passed": true,
+            "prediction_max_error": 1.7053025658242404e-13,
+            "state_max_error": 0.0
+          }
+        },
+        {
+          "fold": 3,
+          "all800paired_batches_LR_random_draws": true,
+          "actual_input_sentinels_independently_verified": true,
+          "no_group_or_ID_overlap": true,
+          "five_states_average_exact": true,
+          "legacy_reproduction": {
+            "passed": true,
+            "prediction_max_error": 1.4210854715202004e-13,
+            "state_max_error": 0.0
+          }
+        },
+        {
+          "fold": 4,
+          "all800paired_batches_LR_random_draws": true,
+          "actual_input_sentinels_independently_verified": true,
+          "no_group_or_ID_overlap": true,
+          "five_states_average_exact": true,
+          "legacy_reproduction": {
+            "passed": true,
+            "prediction_max_error": 1.7053025658242404e-13,
+            "state_max_error": 0.0
+          }
+        }
+      ],
+      "heldout_label_refit": {
+        "outside_training_targets_changed": 80,
+        "prediction_max_error": 0.0,
+        "state_sha256_exact": true
+      },
+      "report_sha256": "8695e991a2d2224d2b98bea9e99bf8c51301bd68550444826e462d5aa64edb9c",
+      "source_sha256": "2606c74675b9772902b1900f6478cf7492de9458bfdf226ebd03497b29ba7090",
+      "seconds": 15.643493874929845
+    }
+  },
+  "plan_sha256": "2352bf04a21fea25d85dd14cca9e9c79404e9a2afaa9e1ed58736adcccdf6b9d",
+  "bootstrap_sha256": "fea51f53c01517b4e1faa408fdf930c153aa87180fdc03da4e94fb2b6b57838b",
+  "execution": {
+    "main_fits": 10,
+    "all_fits_including_label_intervention": 11,
+    "main_seconds": 135.59142675006296,
+    "device": "MPS",
+    "CPU_threads": 2,
+    "new_installs": 0,
+    "new_data_or_weights": 0,
+    "cost": 0,
+    "holdout_decoded_or_scored": false,
+    "test_decoded_inferred_or_fit": false,
+    "existing_protected_artifacts_hashed_only": true,
+    "evaluation_server_zeroing": false,
+    "new_submission_CSV": false,
+    "uploaded": false
+  },
+  "preservation": {
+    "014_CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "previous_reports_verified": 200,
+    "packages_unchanged": 26
+  },
+  "execution_blockers": [],
+  "scientific_unknowns": [
+    "Exact hardness proxy formula and its absolute-orientation dependence remain unknown."
+  ],
+  "source_sha256": "402a557f07d2a175fd5aa1e07a735356b5b43c949a38fc64781b5adb48564c39"
+}

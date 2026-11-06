@@ -1,0 +1,64 @@
+D2 complete-anchor residual CNN219 — fixed original400 study completed
+
+DECISION: REJECT D2; retain best021. No repeat-split expansion, new candidate, full500 training, test inference, or submission.
+
+Development OOF RMSE (lower is better)
+Existing outer-safe best021: 12.7862007758
+A-only complete paired anchor R0: 13.3709807529
+Same anchor + true residual CNN R1: 14.3260018241
+Same anchor + permuted residual CNN: 14.2483223908
+
+Fold | best021 | paired anchor | true residual | permuted residual
+0 | 12.824291 | 13.055562 | 14.138816 | 13.188024
+1 | 12.180402 | 12.957027 | 13.781539 | 13.379252
+2 | 13.763279 | 14.521280 | 15.667599 | 14.607364
+3 | 12.122451 | 12.240954 | 13.678013 | 13.568461
+4 | 12.970287 | 13.959759 | 14.274909 | 16.268584
+
+True residual CNN worsened same-anchor RMSE by0.955021 in pooled OOF and on every one of5folds. It worsened best021 by1.539801, also on all5folds. It did not beat the pooled permutation control (0.077679 worse; fourfolds worse, one better).
+Conditional paired-ID bootstrap95 intervals for RMSE gain (comparator minus trueCNN):
+- same anchor: [-1.596015873330126, -0.30778268879761017]
+- permutation: [-0.8918859762616984, 0.7423386211379205]
+- best021: [-2.113420401136656, -0.9926060421324894]
+These are conditional descriptive intervals after repeated use of the same400 labels, not independent confirmation or a guarantee of statistical significance. A-only anchor has213 training samples versus incumbent320;0.584780 of the total gap already comes from the paired anchor. Improved weak-anchor correction alone would not establish competitive improvement, and even that did not occur.
+
+Mechanism diagnostics (post-comparison only, no tuning)
+True CNN training-residual RMSE8.097–12.733 versus uncorrected training-residual RMS12.541–14.889; validation RMSE13.678–15.668. Training fit did not transfer reliably.
+Pooled correlation between true correction and validation anchor residual:0.06096146; permutation:0.02948645.
+At fixedlambda1, MSE change = mean(correction²) -2mean(residual*correction):36.592942-10.141740=+26.451202. Correction variation overwhelmed aligned signal. No fitted shrinkage, epoch/seed rescue, tail weighting or additional models followed this diagnosis.
+This bounds this107-label residual-CNN recipe, not all possible local learning methods or an irreducible-noise floor.
+
+Execution and resources
+Actual main145CNN + verification34CNN =179 completed,35,600+8,480 optimizer updates. Separate discarded probe8updates.
+Main:285 longMLP heads,15 shortB heads,1260 KRR fits (45final+1215inner),240 nonzero classical residual fits,20 affine fits;20 cached base nodes reused.
+Verification:57 long heads,3 short heads,252 KRR fits,48 nonzero classical residual fits,4 affines, plus34CNN.
+Main training+internal verification time: 1076.193s (17.94min). Independent CPU1 replay: 41.667s.
+RSS peak 838991872 bytes, maximum recorded MPS driver 137560064 bytes; sum of recorded maxima 976551936 bytes. Final swap0. MPS one worker; CPU at most2 threads, independent verifier1. No new installation, external GPU/cloud/API, fee or subscription.
+Original development400 only. No holdout/test/production500 labels. Native raw data not reread; fixed pretrained feature caches only. No Public score used in fitting, weighting, model selection or adoption.
+
+Verification evidence
+- All5 exact locked V80 sets form400 unique IDs, incumbent ID/fold/target/group and source hashes verified against both204cache and original177best021 OOF.
+- First complete anchor rebuilt with B labels set12345 and outerV labels NaN. All fresh supervised stages repeated; cached A/C nodes relied on locked hashes/training-membership certificates. Complete anchor weights/normalization/predictions exactly matched.
+- Both residual arms retrained with outerV NaN; three representative deep CNN seeds and both residual arms clean-repeated. Exactly34CNN verification fits; bitwise state/normalization/target identity and all80epoch training-loss curves identical.
+- True/permuted arms share trueB normalization, initialization seed, IDs, fixed batch/D4 schedule,80epochs and last5state averaging. Batch/D4 hashes are reconstructed from the reviewed fixed RNG loop, not separately tapped execution traces.
+- Independent CPU1 fresh-process replay matched all saved R0/R1/Rperm predictions exactly despite mainCPU2. Rebuilt45deep+15middle raw OOF and nested/root affine; independent complete-anchor algebra max error2.27e-13;15bootstrap block draw/winner/weight reconstructions exact.
+- Anchor file digest bound into both residual models; bundle IDs/splits/schema/hash linkage checked. No full-data anchor substitution or pooled residual targets.
+
+Implementation corrections and retained failures
+One startup attempt stopped before any optimizer step: project TMPDIR directory had not been created; the strict write guard prevented fallback outside the project. Entire first attempt retained in startup-attempt-1/. Created the project tmp directory, then ran unchanged model settings. No duplicated completed training.
+Parent-requested evaluation.py list/ndarray input type fix was applied with original file/hash preserved. List/array fixture metrics exact and finite; no metric/bootstrap/adoption changes. Other14 locked219 source files and11 earlier source snapshots unchanged. Connection alert occurred during training; direct command/log checks confirmed existing process and no restart occurred.
+
+Deliverables / reproduction
+- protocol.json and implementation-contract.json (one level above): frozen design.
+- main-code-lock.json, authorized-source-fix.json, started.json, run.log: execution provenance.
+- nodes-fold-0..4/, CNN/, fold-0..4/: all learned states, curves and complete paired packages.
+- verification/validation.json, trace-validation.json, ../independent-check/results.json: isolation/replay proof.
+- oof-unscored.npz, scores.json, diagnostics.json: all400 frozen predictions and comparisons.
+- startup-attempt-1/: preserved setup failure.
+Existing run.py refuses to start again where started.json exists. Do not rerun it to inspect results. Independent verify.py --run and scoring scripts use exclusive output files; to repeat, preserve outputs in a new verification destination first. Creating new training runs or repeated partitions requires a subsequent task decision, not automatic execution from this negative result.
+
+Best preserved
+artifacts/submission-candidate-021.csv
+SHA2567cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b
+All6 protected artifact hashes matched after completion. Parent's parallel negative scattering/mean-only/high-frequency morphology findings were not rerun.
+Current execution: all219 training/verification/scoring sessions finished normally. No running219 training, no additional candidate, no submission.

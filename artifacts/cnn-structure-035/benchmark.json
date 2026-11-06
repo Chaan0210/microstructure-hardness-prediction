@@ -1,0 +1,79 @@
+{
+  "device": "mps",
+  "torch": "2.14.0",
+  "checks": {
+    "covariance_cpu_double_gradcheck": true,
+    "zero_input_forward_backward_all_variants_finite": true,
+    "parameters": {
+      "tiny128": 91905,
+      "cov128": 98049,
+      "covmorph128": 99713,
+      "tiny256": 91905
+    }
+  },
+  "variants": {
+    "tiny128": {
+      "median_step_seconds": 0.021250083518680185,
+      "measured_steps": 10,
+      "finite_loss_and_gradients": true,
+      "last_loss": 0.1532086282968521,
+      "memory": {
+        "process_peak_rss_bytes": 887652352,
+        "current_allocated_memory": 3578624,
+        "driver_allocated_memory": 95305728,
+        "recommended_max_memory": 12713115648
+      },
+      "estimated_five_fold_train_seconds": 85.00033407472074
+    },
+    "cov128": {
+      "median_step_seconds": 0.022333520493702963,
+      "measured_steps": 10,
+      "finite_loss_and_gradients": true,
+      "last_loss": 0.02521345019340515,
+      "memory": {
+        "process_peak_rss_bytes": 887652352,
+        "current_allocated_memory": 3678976,
+        "driver_allocated_memory": 95371264,
+        "recommended_max_memory": 12713115648
+      },
+      "estimated_five_fold_train_seconds": 89.33408197481185
+    },
+    "covmorph128": {
+      "median_step_seconds": 0.02247349952813238,
+      "measured_steps": 10,
+      "finite_loss_and_gradients": true,
+      "last_loss": 0.12487518787384033,
+      "memory": {
+        "process_peak_rss_bytes": 887652352,
+        "current_allocated_memory": 3705600,
+        "driver_allocated_memory": 95371264,
+        "recommended_max_memory": 12713115648
+      },
+      "estimated_five_fold_train_seconds": 89.89399811252952
+    },
+    "tiny256": {
+      "median_step_seconds": 0.04361314603011124,
+      "measured_steps": 10,
+      "finite_loss_and_gradients": true,
+      "last_loss": 0.4179317355155945,
+      "memory": {
+        "process_peak_rss_bytes": 887652352,
+        "current_allocated_memory": 9870080,
+        "driver_allocated_memory": 1135509504,
+        "recommended_max_memory": 12713115648
+      },
+      "estimated_five_fold_train_seconds": 174.45258412044495
+    }
+  },
+  "thermal": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+  "thermal_limit": "pmset may not expose sensors; timings and allocator memory do not measure temperature.",
+  "data_scope": "Only original fold0 training320 used for normalization/benchmark;32 training images benchmarked, no validation-driven selection.",
+  "source_sha256": {
+    "cnn_structure_experiment.py": "11906ac8964fd99db073ed5b1f206980ed51da3e86e07d6f58259f21f4d4a720",
+    "cnn_texture_fusion.py": "2f13c9ea5872f663279caaf6f88b752ba2cc29f1958a2b85c371767ee30aac7d",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc"
+  },
+  "feature_cache_sha256": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286"
+}

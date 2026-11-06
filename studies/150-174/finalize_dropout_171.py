@@ -1,0 +1,40 @@
+"""Close171 without promoting a singlefold result or running any extra recipe."""
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[2]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import json,hashlib
+from pathlib import Path
+import numpy as np
+import dropout_cnn_171 as s
+R=s.ROOT;O=s.OUT;e=s.e
+
+def main():
+    s.check();screen=e.read(O/'screen.json');ks=list(range(5)) if screen['advance'] else [0];d=s.load();n=400 if len(ks)==5 else 80;P={k:np.full(400,np.nan) for k in ['CNN15','CNN0','reference018','blend15','blend0']};trainall=[];Ytrain=[];Strain=[];Itrain=[];Sval=np.zeros(400,bool);covered=np.zeros(400,bool);records=[];audits=[]
+    for k in ks:
+        r=e.read(O/f'fold-{k}/evaluation.json');v=e.read(O/f'fold-{k}/validation.json');assert v['passed'] and r['validation_report_sha256']==e.sha(O/f'fold-{k}/validation.json');assert r['evaluation_sha256']==e.sha(O/f'fold-{k}/evaluation.npz');records.append(r);audits.append(v)
+        with np.load(_repo_io(O/f'fold-{k}/evaluation.npz')) as z:
+            T=z['T'];V=z['V'];np.testing.assert_array_equal(V,np.flatnonzero(d['fid']==k));covered[V]=True;Sval[V]=z['validation_sparse'];P['CNN15'][V]=z['validation_views'][0,0];P['CNN0'][V]=z['validation_views'][1,0];P['reference018'][V]=z['reference018'];P['blend15'][V]=z['blend'][0];P['blend0'][V]=z['blend'][1];trainall.append(z['train_views'].copy());Ytrain.extend(d['y'][T]);Itrain.extend(T);Strain.extend(z['train_sparse'])
+    assert covered.sum()==n and all(np.isfinite(p[covered]).all() for p in P.values());y=d['y'];scores={k:e.rmse(y[covered],p[covered]) for k,p in P.items()};gain=scores['blend15']-scores['blend0'];candidate=len(ks)==5 and scores['CNN0']<scores['CNN15'] and scores['blend0']<min(scores['reference018'],scores['blend15'])
+    with np.load(_repo_io(R/'artifacts/failure-review-166/analysis.npz')) as z:assert z['ids'].tolist()==d['ids'];large=z['persistent_large']
+    groups={name:{key:s.stats(y,p,mask&covered) for key,p in P.items()} for name,mask in [('all',np.ones(400,bool)),('sparse',Sval),('dense',~Sval),('large33',large)]}
+    train=np.concatenate(trainall,axis=2);yt=np.array(Ytrain);it=np.array(Itrain);st=np.array(Strain);trainstats={}
+    for name,m in [('all',np.ones(len(yt),bool)),('sparse',st),('dense',~st),('large33',large[it])]:
+        trainstats[name]={'overlapping_train_row_evaluations':int(m.sum()),'unique_IDs':int(len(np.unique(it[m]))),'arms':{arm:{'identity_RMSE':e.rmse(yt[m],train[ai,0,m]),'all8view_loss_RMSE':float(np.sqrt(np.mean((train[ai][:,m]-yt[m])**2))),'mean_withinimage_view_std':float(np.std(train[ai][:,m],axis=0).mean())} for ai,arm in enumerate(['dropout15','dropout0'])}}
+    complement={}
+    for arm in ['15','0']:
+        err=y[covered]-P['reference018'][covered];diff=P['CNN'+arm][covered]-P['reference018'][covered];cross=float(np.mean(err*diff));squared=float(np.mean(diff*diff));gainm=float(np.mean(err**2)-np.mean((y[covered]-P['blend'+arm][covered])**2));assert abs(gainm-(.4*cross-.04*squared))<1e-10;complement[arm]={'mean_018error_times_CNN_minus018':cross,'mean_CNN_minus018_squared':squared,'fixed20percent_MSE_gain_vs018':gainm,'negative_alignment_rulesout_positiveconstantblend_on_these_fixed_predictions':cross<0}
+    ci=None
+    if len(ks)==5:
+        rng=np.random.default_rng(20261006171);g={k:[] for k in ['reference018','blend15']};errors={k:(y-p)**2 for k,p in P.items()}
+        for _ in range(10000):
+            ix=rng.integers(0,400,400)
+            for k in g:g[k].append(float(np.sqrt(errors[k][ix].mean())-np.sqrt(errors['blend0'][ix].mean())))
+        ci={k:np.quantile(v,[.025,.975]).tolist() for k,v in g.items()}
+    out={'study':171,'status':'development_candidate_only' if candidate else ('completed_original5_no_promotion' if len(ks)==5 else 'completed_fold0_screen_failed_no_expansion'),'candidate':candidate,'best_retained':'018','executed_main_folds':ks,'new_main_fits':len(ks),'new_labelpoison_replays':1,'reused_control_fits':len(ks),'fold0_screen':screen,'validation_n_unique':int(covered.sum()),'RMSE':scores,'fold_scores':{str(r['fold']):r['scores'] for r in records},'subgroup_validation_unweighted_metrics':groups,'training_metrics':trainstats,'fold_D4_consistency_and_groups':{str(r['fold']):r['groups'] for r in records},'complementarity':complement,'conditional_bootstrap_gain_CI95_if5fold':ci,'mode_fixture':e.read(O/'mode-fixture.json'),'verification':{'passed':True,'same_init_seed_data_D4_LR_budget_norm':True,'fit_source_equivalence':e.read(O/'fit-source-equivalence.json'),'CPU_MPS_and_functional_reloads':True,'heldout80_label_refit':audits[0]['outside_label_refit'],'MPS_reload_max_error':max(x[a]['MPS_reload'] for v in audits for x in [v['reload_errors']] for a in ['control','dropout0']),'CPU_reload_max_error':max(x[a]['CPU_reload'] for v in audits for x in [v['reload_errors']] for a in ['control','dropout0']),'p0train_eval_identical':True,'MPS_dropout_RNG_end_difference_expected':True},'protected':e.read(O/'plan.json')['protected'],'scope':{'new_install_download_cost':0,'holdout_test_full500_newCSV_upload':False,'no_other_regularization_sweep':True},'limitations':['Originalfold0 expansiongate isnot independentvalidation; same400 usedadaptively.','Onepairedseedperfold; finaloriginalOOF stillnot resplitconfirmation.','D4traininganddropoutremoval changesoptimizationtrajectory; increasedfitability alone isnotgeneralizationproof.','20percentblend isfixedaddition tocomplete018, notnewnestedCNNreplacement.','Groupwise labeldensity and166largeerrors arediagnosticonly,notmodelinputs orselectionrules.'],'remaining_blockers':[],'evidence_sha256':{str(p.relative_to(R)):e.sha(p) for p in [O/'plan.json',O/'screen.json',O/'mode-fixture.json',*[O/f'fold-{k}/validation.json' for k in ks],*[O/f'fold-{k}/evaluation.json' for k in ks]]}}
+    np.savez_compressed(_repo_io(O/'evaluated-predictions.npz'),ids=np.array(d['ids'])[covered],y=y[covered],fold=d['fid'][covered],**{k:p[covered] for k,p in P.items()});out['predictions_sha256']=e.sha(O/'evaluated-predictions.npz');s.check();s.write(O/'final.json',out);s.write(R/'reports/cnn-dropout-171-summary.json',out)
+    with (R/'reports/README-before-dropout171.md').open('xb') as f:f.write((R/'README.md').read_bytes())
+    text=f'''\n\n## Study171: CNN dropout.15→0 withD4 retained\n\nOnefactoronly, existingTinyCNN91,905params,seed20261003+k,80epochs/800updates,AdamW.002wd.01,clip5,epochcosine,last5average. Reused129/169verifiedcontrol. Input/targettrainlocalnorm, IDs,800sample/D4/LRstreams,4actualinputhashes andinitialweights identical. Dropoutonlyhead.2; trainp.15stochastic,p0identity; bothinferenceevalidentity. p0consumesnoMPSdropoutRNG,expectedendRNGdifference; NumPydata/D4streamunchanged.\n\nPredeclaredfold0gate requires lowerfinal8viewtrainingloss,lower80validationCNNRMSE,andlowermatched01820percentblend. Gate={screen['advance']}. Executedmainfolds={ks}, newfits={len(ks)} plusoneoutside80labelpoisonreplay. Outcome={out['status']}. RMSEoneevaluatedscope(n={n}):018={scores['reference018']:.9f}, CNN.15={scores['CNN15']:.9f}, CNN0={scores['CNN0']:.9f}, matchedblend.15={scores['blend15']:.9f}, blend0={scores['blend0']:.9f}. Notconfirmedindependentperformance.\n\nAllmodelsCPU/MPS/functionalreload; trainstats/IDs,5weightaverage,modefixtures verified;outside80labelperturbationpreservesstateandpredictions. Sparse/dense/large33 andall8D4viewerrors/viewspread recorded. Best018preserved. No otherp/wd/seed/augmentationsearch,install/download/cost,holdout/test/full500/newCSV/upload. Evidence:`reports/cnn-dropout-171-summary.json`, `artifacts/cnn-dropout-171/plan.json`, foldvalidation/evaluation artifacts.\n'''
+    with (R/'README.md').open('a') as f:f.write(text)
+    print('FINAL171',json.dumps({k:out[k] for k in ['status','candidate','executed_main_folds','RMSE','verification','remaining_blockers']}),flush=True)
+if __name__=='__main__':main()

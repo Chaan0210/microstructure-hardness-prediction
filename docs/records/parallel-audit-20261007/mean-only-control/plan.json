@@ -1,0 +1,166 @@
+{
+  "study": "218 missing factorial cell mean-only",
+  "posthoc": true,
+  "selection": "Requested after observing 218 A/B/C and the audit; exploratory, not independent confirmation.",
+  "condition": "D: original26 only HP column valid-scale mean; both padded flag columns zero. All other feature/model/grid/ID/fold/seed decisions identical to218.",
+  "grid": [
+    [
+      0.25,
+      0.01
+    ],
+    [
+      0.25,
+      0.1
+    ],
+    [
+      0.25,
+      1.0
+    ],
+    [
+      1.0,
+      0.01
+    ],
+    [
+      1.0,
+      0.1
+    ],
+    [
+      1.0,
+      1.0
+    ],
+    [
+      4.0,
+      0.01
+    ],
+    [
+      4.0,
+      0.1
+    ],
+    [
+      4.0,
+      1.0
+    ]
+  ],
+  "inner_seed": "20261005+outerfold",
+  "splits": [
+    "original",
+    "20261031",
+    "20261101"
+  ],
+  "main_fits": 420,
+  "no_A_B_C_refitting": true,
+  "primary": "D-A pooled untrimmed fixed-downstream ensemble RMSE gain; standalone and all pairwise factorial comparisons are secondary.",
+  "decision_before_new_scores": {
+    "minimum_pooled_fixed_ensemble_RMSE_gain": 0.02,
+    "all_three_split_gains_positive": true,
+    "remaining397_pooled_gain_nonnegative": true,
+    "conditional_CI95_lower_positive": true,
+    "if_any_fail": "Reject this condition and stop; no new threshold, feature, flag scaling, weight or model search.",
+    "interpretation": "Practical screening rule, not statistical proof; even a pass cannot promote a frozen-downstream proxy."
+  },
+  "statistics": "Same218 ID bootstrap10000/seed202610218 and same397 draws; each ID retains all3 repetitions; no inferred precision for3 cases; CI omits fitting and historical selection uncertainty.",
+  "verification": "All420 fit train-only bounds/targets; 15 saved model independent solves/reloads; full nested outer-label and outer-feature poison on fold0 of each split (168 additionalfits); existing A/B/C metrics and C-A bootstrap exactly replayed; frozen downstream independently reconstructed.",
+  "resources": "Existing project uv-created .venv; CPU<=2 threads; peakRSS<2GB;300s; no neural/GPU/install/network/rawdata/test/holdout/full500/CSV/submission.",
+  "input_SHA256": {
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "experiments/grain-validity-218/policy.py": "3106ab38bb202eec8d0dbe7832205f5fd6e76979485d2b49aa8f40bc138cb5da",
+    "experiments/grain-validity-218/run.py": "1f37009fcfafd3ece3d778a2c4d2a240cb60fa997e00b2a15278f5c5a27cf94a",
+    "experiments/grain-validity-218/validate_score.py": "d8462ac052e8681d4854ce8112c6b7d96dba8444e3b9fce343a5f335b5fb2a59",
+    "experiments/grain-validity-218/plan.json": "2eeae1364f7696f4beb44fd5e916a3c30424075ed8e7f9c36cbc3fcdf3e877c3",
+    "experiments/grain-validity-218/validation.json": "eebe424b7090fc37faed208d545cd4916a2244a611d1b3eba73f226a98222775",
+    "experiments/grain-validity-218/results.json": "93879109365b43f81dc331e16450c6314f9599fc2e19b4e8cfb21b1bd3ff1591",
+    "experiments/grain-validity-218/paired-results.npz": "8721ec36836355070ae85c1feac225248df0a15d943600039b3ca3982e5ec8b9",
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/run-012/report.json": "201196e863b7ee017f179fba30dcf59637455dd619aaa92f96fcd234e57f7697",
+    "artifacts/run-006/development_features.npz": "515c164374860b8748619b88ddabce46500d7752492f1358b5f3f72333eb3d97",
+    "artifacts/run-006/report.json": "dd41e3ae722df565e6d1dd5e6f54013ca1f2544ae4e9b636d5c93f7430b6643c",
+    "experiments/grain-validity-218/original/OOF.npz": "dc69e10797dd83ff6a4dea678ed406b71c8d1ce54973b3dd71dcee942a8c77ef",
+    "experiments/grain-validity-218/original/completion.json": "9cd374f262ec22e7a76265e4a18086054fdf4b8f35876ebb862da39d806f9374",
+    "experiments/dinol-177/original/predictions.npz": "d47307a0594458197c986a668da95a8609691363d42d2faab4157c3dc458cb33",
+    "experiments/dinol-177/original/report.json": "4388928f5eac88fdedc388652eccdc4def996beb85fd9528b7afe479fd19215d",
+    "artifacts/cnn-seed-mean-133/original/predictions.npz": "ab8a79d811dafaa36089a56df5dcfea7437af8df0de60155b89ccbe66894e631",
+    "artifacts/component-ablation-121/original/predictions.npz": "120f21a4d0dc782af26fea08792aa0f7e922acccfde80c722c3906aab53c3c1e",
+    "experiments/grain-validity-218/original/fold-0/A_current/report.json": "217aed606349f4e17a548b6bc90a1404e8748bc668e9f0f7a0a35c3ad8f6de02",
+    "experiments/grain-validity-218/original/fold-0/B_validity/report.json": "b03e1d8271be95ae30b5902522af15e066af8e2c45b8242273cb7a322ee1521d",
+    "experiments/grain-validity-218/original/fold-0/C_valid_mean/report.json": "f2b122a3ec1a678eb5e3240883eb390eb85a429ed7026a04738805c5df979f5f",
+    "artifacts/spatial-joint-140/original/adjacent-fold-0/report.json": "bb4a013bad6571da7c8b1cc33732c28f8b08367f11ba2a0ebaf098e96162f798",
+    "experiments/grain-validity-218/original/fold-1/A_current/report.json": "d34b74221134be823dd491d753fddf49e7c5661069340b4691e3d59197729f2b",
+    "experiments/grain-validity-218/original/fold-1/B_validity/report.json": "d06717ee58d245d21897bee26df016f3a585da064c6f4415c74c39758bac70ff",
+    "experiments/grain-validity-218/original/fold-1/C_valid_mean/report.json": "b2a63a247fe054444ffaf9c602b799cf0bb9f9c04e2938d8d7d399c06bfe7d92",
+    "artifacts/spatial-joint-140/original/adjacent-fold-1/report.json": "8baef8813422872139eb380631201d8ff91e43c1ddde1f6ec90cb464cb9ba4fa",
+    "experiments/grain-validity-218/original/fold-2/A_current/report.json": "eb2e73651a07406511d6a291d503db7b937daacae4accf59ab36595852b9f298",
+    "experiments/grain-validity-218/original/fold-2/B_validity/report.json": "6c9f8242be1efbad76f366ca69658e08b021541e4fb68bff11f4979c598524e1",
+    "experiments/grain-validity-218/original/fold-2/C_valid_mean/report.json": "a387f6ea7f66d6bdef0897c87738ec3d0aaf016e640f2fa5ec19b1757a6d915a",
+    "artifacts/spatial-joint-140/original/adjacent-fold-2/report.json": "6b1da47e3e65dea05a51f2627eb80615f1eddc238c718ac0fc58f1b5abfb3dd5",
+    "experiments/grain-validity-218/original/fold-3/A_current/report.json": "af03bc60404f3e169eaecf6437bedcbbd932fd073ad4baa612dd4da6324361c1",
+    "experiments/grain-validity-218/original/fold-3/B_validity/report.json": "98dbdae4283a36c88d9784d7995270e47b00476efa48230495c9959ee87d1465",
+    "experiments/grain-validity-218/original/fold-3/C_valid_mean/report.json": "2201882755f290214865c50e435fa1c0c157b1e7078f2652e53f74390c4a2514",
+    "artifacts/spatial-joint-140/original/adjacent-fold-3/report.json": "5ab2b7064a049f954378fd5eb5cc668e446d9e217ee714a04b2a3be9ea856c6f",
+    "experiments/grain-validity-218/original/fold-4/A_current/report.json": "ffb6080149c9c3a056e4d4b12ac63d1123027ea8bed6b8a495c675dbbf930518",
+    "experiments/grain-validity-218/original/fold-4/B_validity/report.json": "1bd12a3f56193a7e858201a4301ee28bea4270dc6637eb849add2e22f83e9f68",
+    "experiments/grain-validity-218/original/fold-4/C_valid_mean/report.json": "2792d87b8b19b68986338f3f3d22c8cd4fdaea006291265b66795bcc9b9b6971",
+    "artifacts/spatial-joint-140/original/adjacent-fold-4/report.json": "f3ec8e7709af182528e2550b9e6ccfe7c59fb0a39f78327ad84bb00df7a35b90",
+    "experiments/grain-validity-218/20261031/OOF.npz": "d34b0bdca716d6c4149c288f3ee9f6013a687a316d53e43791964fac6b757ffc",
+    "experiments/grain-validity-218/20261031/completion.json": "5c9559b4b7479ada1c4fe2faa1e3b335c4bb4cb149b65cf0c47fd7df0cfa8778",
+    "experiments/dinol-177/20261031/predictions.npz": "bccc5ca678ca6bc2469920c74f26ba9557632a3ca17a9e9a83acece685235f2c",
+    "experiments/dinol-177/20261031/report.json": "d49bbf8db002094b7ed77eb30c01353a29d4d19635166772f83a4715838b66fa",
+    "artifacts/cnn-seed-mean-133/20261031/predictions.npz": "7e10cc5b9586ac55ece1af0998575f3925555df9a8a525d240f96e20eb74eacb",
+    "artifacts/component-ablation-121/20261031/predictions.npz": "ab3c75e02e5a523b6f8f5b9291140e9c685ac84c905e38422b434fa91644edcd",
+    "experiments/grain-validity-218/20261031/fold-0/A_current/report.json": "e18a8517e8d2ad2b406bb73b15100d95f88224870bc825470415af14c6fc6baa",
+    "experiments/grain-validity-218/20261031/fold-0/B_validity/report.json": "57052d8ca1dcd24aaf74070ebc0a92f9c14d0a8ff0c98f628ef54ddbc6318430",
+    "experiments/grain-validity-218/20261031/fold-0/C_valid_mean/report.json": "bbca84e415fe81dda1f56948bb57004980275f31235f68769a5d0a647ab6d563",
+    "artifacts/spatial-joint-140/20261031/adjacent-fold-0/report.json": "79e71c6dbc11f79d8e763c4ccf3d7ae48cf481d8412f4e6c20d87c5a8e121b89",
+    "experiments/grain-validity-218/20261031/fold-1/A_current/report.json": "20a89ba56b0fecfb7e2c03a92001b38c422b470b13d73503703574f98c90fb89",
+    "experiments/grain-validity-218/20261031/fold-1/B_validity/report.json": "41edd9c00de9238493a33fb14949dbdb36acdeabfd0897a0a06424881cbea73e",
+    "experiments/grain-validity-218/20261031/fold-1/C_valid_mean/report.json": "3ec7ee1d29ab9bed59e5df5b482bce4952c9aaa66b91dd8de359914fa45ea1e8",
+    "artifacts/spatial-joint-140/20261031/adjacent-fold-1/report.json": "eb97dc04793357058c8329c251b03c4098d5a31e799b7bdf4dc2055fb421abb6",
+    "experiments/grain-validity-218/20261031/fold-2/A_current/report.json": "b7654d2c6cbd0f2afbca2b3bd7c332ba54b08f562b0b45a9f279e7c564ae6b23",
+    "experiments/grain-validity-218/20261031/fold-2/B_validity/report.json": "c1ac20daaede504bf9cfbf125897bdb0cdf05256c16169924ea7756c786eb1b4",
+    "experiments/grain-validity-218/20261031/fold-2/C_valid_mean/report.json": "104223390fae126d65237dc9565dd11cee8eed9bbcc9c3d4927dad08c9a5f5d9",
+    "artifacts/spatial-joint-140/20261031/adjacent-fold-2/report.json": "1fb99d2e5c8b648d35d68e2181ec3b243fafb6e6d7a56279339f460ef061e0e8",
+    "experiments/grain-validity-218/20261031/fold-3/A_current/report.json": "d176f93aa89cac9d4a5260c2da54f594f36301c91d4b60b384077dfd94ab8e56",
+    "experiments/grain-validity-218/20261031/fold-3/B_validity/report.json": "a196a3d736f56c75132b01933baa42f5be38b1110b46a8fa93c39818044386f7",
+    "experiments/grain-validity-218/20261031/fold-3/C_valid_mean/report.json": "259e2003e4c05509ebc5cad69f84e5b2c9b942d0f818ab1fd79b71996b62131c",
+    "artifacts/spatial-joint-140/20261031/adjacent-fold-3/report.json": "b4864d578e99f2c14aa3fc7f2bc4febc2210817f44e1b9f5133ea883793b7b2b",
+    "experiments/grain-validity-218/20261031/fold-4/A_current/report.json": "dbb7307c0459ba94e64238f0504df2e30a49f331c31961e1f16b4405ddd0a308",
+    "experiments/grain-validity-218/20261031/fold-4/B_validity/report.json": "e2ff52106cf8b8760456019f51914dbb05ca2de27a7e5d753e5f4246b038f3b2",
+    "experiments/grain-validity-218/20261031/fold-4/C_valid_mean/report.json": "e9f2d0e6b80fc1929b3385d7eb4e06cfa9d3913c068bf76dc901c43707c07596",
+    "artifacts/spatial-joint-140/20261031/adjacent-fold-4/report.json": "dd801549724aa130bfd2075b58993f6f85f8271c272d68a720f2b2c33f0414e4",
+    "experiments/grain-validity-218/20261101/OOF.npz": "b980227aa0ae871ece94e9356646c0defceb88bd20447eebf655a2a7d32186ac",
+    "experiments/grain-validity-218/20261101/completion.json": "f91bd391d3f42f56a3b49b2a3da0760fbebadb362597dae5552b002fa8205de2",
+    "experiments/dinol-177/20261101/predictions.npz": "91d0226a32cf27e62655f830b23523ac3d35d314425fcba0c843972872516495",
+    "experiments/dinol-177/20261101/report.json": "de60caf62e39b88f4528c981bd8f38fbe6b93ea47af063963d5043bbad510b60",
+    "artifacts/cnn-seed-mean-133/20261101/predictions.npz": "39db8b23c24ad9c4a193b1d99f58d90d2c8aabb898181c06f79c313f592894ce",
+    "artifacts/component-ablation-121/20261101/predictions.npz": "94cca58d588f5ae48a5051df4e2866228b53a5a75420c0bb778011b1d64aeb1a",
+    "experiments/grain-validity-218/20261101/fold-0/A_current/report.json": "c85176bf95a646d69e0b2d97cc5d8a899c75234d3bd897f1975148ae8365819d",
+    "experiments/grain-validity-218/20261101/fold-0/B_validity/report.json": "47386046c2129bba9484f54d53d15daa23ae40a58cd485a78258daf13ed37d1c",
+    "experiments/grain-validity-218/20261101/fold-0/C_valid_mean/report.json": "4035cdf934c0e275d653eda063e7d21f1882afe2b94f1686cd13002c483a402b",
+    "artifacts/spatial-joint-140/20261101/adjacent-fold-0/report.json": "2efebf106d246915eb582647cdec64f4a226aacdb0fb3ba761d34e996b145b66",
+    "experiments/grain-validity-218/20261101/fold-1/A_current/report.json": "b9bfe937fd85fdf87b7db846fa5da23867d3321a48c13616a456a659a1897d25",
+    "experiments/grain-validity-218/20261101/fold-1/B_validity/report.json": "582fee5a76b31df93b5ae48df4a7766f0cf5d8597c0595c6a61f96982bc320ef",
+    "experiments/grain-validity-218/20261101/fold-1/C_valid_mean/report.json": "09856ef4d4de6ab161c28b8267a2ff7b39357389e1098ed0272fe05393e9dc09",
+    "artifacts/spatial-joint-140/20261101/adjacent-fold-1/report.json": "ab43cb0bb5fb59a6580b5a2ed0b6eb72a3291c08dacbc1d28cd6b43ae8a34105",
+    "experiments/grain-validity-218/20261101/fold-2/A_current/report.json": "ecbf14eaa6263160974f897557393c87a4644246af33f12f6e5398d975790a26",
+    "experiments/grain-validity-218/20261101/fold-2/B_validity/report.json": "4dfdd1fe36600091ab582d88578e9d3575584beee2cc485cf18c843336e1596a",
+    "experiments/grain-validity-218/20261101/fold-2/C_valid_mean/report.json": "2d4ddc428a71b2075a5e84a1a3b4c3a144aed11e4a36fd8558f09deaeeef0a10",
+    "artifacts/spatial-joint-140/20261101/adjacent-fold-2/report.json": "676d483c4523cd32cdc78af3c43aa920c0ccc0a640d8705ff8e0d852fe9dc0a1",
+    "experiments/grain-validity-218/20261101/fold-3/A_current/report.json": "fdc646b4393ecec39cf1038133aa847a41d793fd9d2f96e06544e35c5f0eac13",
+    "experiments/grain-validity-218/20261101/fold-3/B_validity/report.json": "ef12e1d40b68c6bc35cdf958bcf45f8f0a33538cbb8d74e8d814cb8545678ffd",
+    "experiments/grain-validity-218/20261101/fold-3/C_valid_mean/report.json": "1006b15e9c075bc2651f851a6b4c51446f4e962c536b1c6f591adfe4cb4f160a",
+    "artifacts/spatial-joint-140/20261101/adjacent-fold-3/report.json": "f52dccc8b85a2376e8f70ac347361c20772fcd1641b9fc82420fbc44d6b597e2",
+    "experiments/grain-validity-218/20261101/fold-4/A_current/report.json": "d283d24b40dc66790f92119d1516a88c95f295bfe1e7b96b671c5e40b8e163d3",
+    "experiments/grain-validity-218/20261101/fold-4/B_validity/report.json": "3248242a23ea92a2e81dd851cfc8931d64a9aeafde750b4b0130396484cfd1e5",
+    "experiments/grain-validity-218/20261101/fold-4/C_valid_mean/report.json": "ca35a72ff5ea3fe4537335c16f54394733ba44cd582264732543cbc99ffe0917",
+    "artifacts/spatial-joint-140/20261101/adjacent-fold-4/report.json": "3c3582eab765d73dadeb020e6424b6cf6223160ac775e0a73defd03c40f85498"
+  },
+  "source_SHA256": {
+    "study.py": "ef42fc0599d04be4d6fc6f891335ea1614a0cd84558bda2ff97920ae0d068129",
+    "policy.py": "6508649b7de2c8832f947c503c427f9fc42c32f72d8ce63cec522b09f1dd6a1d"
+  },
+  "best021_stat_without_content_read": {
+    "size": 31683,
+    "mtime_ns": 1791243885007173258,
+    "inode": 120031444
+  },
+  "output_directory": "parallel-audit-20261007/mean-only-control"
+}

@@ -1,0 +1,187 @@
+{
+  "review": "091 method-family evidence and audit-scope review after090",
+  "created_utc": "2026-10-02T09:42:26.627433+00:00",
+  "bottom_line": "No newverifiedimprovement. Keepbest011;stopheadhyperparametersearch. Nextcrediblejump needsbettertarget/domain/independence information oracarefullyjustifiedrepresentationhypothesis,notmoreseeds orPublicweighttuning. No claimofirreduciblenoisefloor/prizereadiness.",
+  "method_families": [
+    {
+      "family": "Image-local morphology and texture",
+      "evidence": [
+        "reports/followup-research-summary-024.json",
+        "reports/pore-hypothesis-030-032-summary.json",
+        "reports/betti-055-summary.json",
+        "reports/diagnostic-research-068-072-summary.json"
+      ],
+      "result": "Weak denoised morphology complemented theearly ensemble. Extra native texture,pore curvature,lineal/Betti,raw token amplitudes,TV and fixedraw/TVmixture didnotdeliver consistentlater gains.",
+      "meaning": "Many descriptors remain uncertain physical proxies; changing a statistic is not verified recovery of grains/pores. Do not repeat threshold/denoising grids without better groundtruth."
+    },
+    {
+      "family": "Pretrained representation and complementary ensembles",
+      "evidence": [
+        "reports/dino-039-summary.json",
+        "reports/dino-044-summary.json",
+        "reports/dinob-complement-064-summary.json",
+        "reports/final-candidate011-summary.json"
+      ],
+      "result": "504pixel processing,multiple DINO layers,S/B complementarity and newregularized frozenhead contributed accepted recipes. Standalone superiority was notnecessary for ensemblegain.",
+      "meaning": "Representation and genuinely useful residual alignment mattered; morefeatures,scaleconcat,Fisher/covariance/spatialvariance bythemselves didnotguarantee gain."
+    },
+    {
+      "family": "Optimization,headregularization andseedaveraging",
+      "evidence": [
+        "reports/optimization-057-058-summary.json",
+        "reports/representation-060-summary.json",
+        "reports/resumed-research-057-062-summary.json",
+        "reports/frozen-head-087-seed-088-summary.json",
+        "reports/dropout-control-089-summary.json",
+        "reports/width-control-090-summary.json"
+      ],
+      "result": "Oldrecipe earlystop/MSE/PCA/mixup failed.011shortsmallstrongregularization bundle complemented009. Newrecipe3seedmean,dropout reduction,andwidthincrease failedtheirdeclared criteria.",
+      "meaning": "Lowertrainerror and lowermean-seedMSE do not imply better fixedensemble. Width/dropout effects were conditionally tested; duration andinteractions remainunresolved, but no furtherhead sweep is justified now."
+    },
+    {
+      "family": "Backbone adaptation",
+      "evidence": [
+        "reports/adapter-diagnostics-082-lastblock-083-summary.json",
+        "reports/dinob-joint-084-summary.json",
+        "reports/final-candidate010-summary.json"
+      ],
+      "result": "Rank4 adaptation produced only0.0008..0.0014 development gains;010 stayedunsubmitted. Fullblock fixedheads didnotbeat010; freshjointhead+lastblock wasworse. Livegradients andoptimizerstate were verified.",
+      "meaning": "Not a dead-gradient issue; no evidence supports unfreezing morelayers or simply increasingtraining."
+    },
+    {
+      "family": "Calibration and learned fusion",
+      "evidence": [
+        "reports/bias-calibration-073-075-summary.json",
+        "reports/nested-calibration-074-validation.json",
+        "reports/nested-calibration-079-validation.json",
+        "reports/joint-047-validation.json",
+        "reports/latent-048-validation.json"
+      ],
+      "result": "Stricttrain-only affine calibration074/075 produced009. Extra contrast coefficient077,innerfold increase079,joint kernels047 andlatentPLS048 failedconsistency.",
+      "meaning": "Underdispersion correction had evidence. Moreflexible fusion/target-tail adjustment is not automatically an unexplored solution."
+    }
+  ],
+  "pipeline_evidence_and_gaps": [
+    {
+      "topic": "Development features and ID alignment",
+      "status": "Previously validated; evidence/provenance reviewed, fullaudit notrerun.",
+      "evidence": [
+        "reports/dinob-062-validation.json",
+        "reports/dinob-complement-064-validation.json",
+        "reports/frozen-complement-085-validation.json",
+        "reports/width-control-090-validation.json"
+      ],
+      "coverage": "All400 frozenB features reextracted withzeroerror in062;cacheIDs/y/folds checked onuse; foldtrain scalers/targetstats andtrainedcheckpointIDs verified. Frozenimage-local features may be shared across folds because theydo notfitlabels or cohortstatistics.",
+      "remaining": "No newalignment/cache bug identified in reviewed path; this isnotproof against everyunexaminedcodepath."
+    },
+    {
+      "topic": "Leakage and calibration",
+      "status": "Previously validated nestedrecipe; source boundaries reviewed.",
+      "evidence": [
+        "reports/nested-calibration-074-validation.json",
+        "reports/candidate009-verification.json",
+        "reports/candidate011-verification.json",
+        "reports/width-control-090-validation.json"
+      ],
+      "coverage": "074 innerfeatures/models/normalizers fitinsideoutertrain; calibration usesinnerOOF,notglobalOOF.45innerCNN,270MLP,135baseline,45kernel audited. Heldoutlabelperturbation replay passes.011keeps009calibrator andusesfixedblend;no newOOFfit.",
+      "remaining": "Historical feature/recipe selection usedsame400 repeatedly; nestedfit correctness doesnotremove adaptive selection optimism."
+    },
+    {
+      "topic": "Final inference/cache verification",
+      "status": "Existing artifact verification reviewed only; no test inference/evaluation performed now.",
+      "evidence": [
+        "reports/candidate008-verification.json",
+        "reports/candidate009-verification.json",
+        "reports/candidate011-verification.json"
+      ],
+      "coverage": "1000IDs/finite/order/CSVbyte reproduction;all1500imagehashes;full1000component/modelreload.008 rawCPU DINOfeature spotchecks covered10testimages;011reused those validated frozenfeatures andreranall1000headpredictions onCPU/MPS.",
+      "remaining": "A full1000 independent raw-image CPU DINO feature reextraction wasnotrecorded; cachedreplay/hashchecks are not the same assurance. This limitedcoverage isnot evidence of corruption or a scoreimprovement direction. Expand only when concretecache suspicion or futurecandidate packaging warrants it."
+    },
+    {
+      "topic": "Data independence and target identifiability",
+      "status": "Unresolved information gaps, not a discovered code defect.",
+      "evidence": [
+        "reports/train-similarity-audit.json",
+        "reports/official-reference-review-018.json",
+        "reports/formation-049-summary.json",
+        "reports/learning-curve-050-summary.json"
+      ],
+      "coverage": "Exact/D4 group separation andalignedthumbnail duplicate screen existed;maxthumbnailcorr.5568,zero>.95. Officialreference givesqualitativemorphology/physics,notcompletegeneration/label equations.",
+      "remaining": "No verifiedsource-family/latentgenerator groupIDs,independentfreshlabeledvalidation,physicalscale,realgrain/poresegmentationtruth orknownobservation-noise law. Exactduplicate checks cannotestablish generator-family independence. Learningcurve supports data sensitivity,butfixedRidgealpha confounds size withper-samplepenalty."
+    }
+  ],
+  "priority_information": [
+    {
+      "priority": 1,
+      "information": "Official generator and hardness equation, includinglatentvariables,scale,noise andgroup provenance.",
+      "why": "Would distinguish visiblephysics fromnuisance/invisiblelabelvariation; priorinverseformation049 wasunstable, so strongerphysicalpriors are presently unidentifiable.",
+      "cost0_route": "Review any alreadyprovidedproject specification; if absent, obtain official clarification through parent. No network retrieval or extra data ingestion performed here."
+    },
+    {
+      "priority": 2,
+      "information": "Rules-permitted independent labeledvalidation ortruegeneratorfamily grouping.",
+      "why": "All3existingpartitions reuse400rows. Morepermutations/bootstrap cannotcreate independent model-selection evidence; currentholdout remainssealed to selection.",
+      "cost0_route": "Use onlyauthorizedofficialmaterial if itbecomesavailable; do notopen current100holdout or manufacture newlabels."
+    }
+  ],
+  "unevaluated_hypotheses": [
+    {
+      "hypothesis": "Small learned patch aggregation on frozenB tokens, preserving011global branch",
+      "novelty": "No supervisedgated-attention/MIL pooling implementation found inprojectplans/source. Distinct fromfixedglobalmean/std,Fisher067,covariance056 andcoarsevariance070, but relatedspatialapproaches havefailed.",
+      "rationale": "Globalfixedpooling maywashout rarelocalfeatures; existingrepresentations succeededwhere semanticstatisticsaddedinformation. Presentdiagnostics donotprove a missinglocaltargetcue,so confidence islow.",
+      "needed_before_fitting": "Target-blind feasibility andposition/scale sensitivity checks with knownanalyticfixtures;prefer generator/segmentation evidence that a rarelocalcue affectslabel. No pseudo-label claims.",
+      "resource_plan": "Reuse officialB weights andexisting400prefixmemmap; derivefrozenlasttokens onMPS microbatch2. Tinygatedprojection32 (~25kinputprojectionweights),CPU2/MPS; microbenchmarkonefold training-only andcap5foldwalltime at10minutes,RSS/MPS<4GB. No installs/downloads. Exactdimensions/time mustbe measured first.",
+      "status": "Evaluated aspossible futurehypothesis,notimplemented or authorized asautomatic nextstudy; not enough evidence tospend finalsubmission."
+    },
+    {
+      "hypothesis": "Supervised physicalparameter estimation ornoise-aware forward model",
+      "novelty": "Jointkernels047,latentPLS048 andblindinverseformation049 alreadyfailed; repeatingthose isnotnew. Directsupervision withofficiallatenttruth wouldbe materiallydifferent.",
+      "needed_before_fitting": "Officiallatent/segmentation annotations andlabelconstruction definitions, currentlyabsent.",
+      "resource_plan": "Existingnumpy/scipy/sklearn withsmallparametricmodels andimagefixtures couldbe free, but unidentifiedgroundtruth is theblocker,notcompute.",
+      "status": "Blocked oninformation; donot inventlatentlabels or generateunverifiedtrainingdata."
+    }
+  ],
+  "inspection_scope": "Readexistingplans,reportsandsources;090onlynewtraining. Didnotrepeat062/064/074/008/009/011fullaudits. Source/currentprotected-filehashesverifiedthroughstudycheck. No rawholdout/test images/labels readforselection.",
+  "new_core_pipeline_bug_found": false,
+  "not_an_exhaustive_security_or_correctness_audit": true,
+  "head_search_stopped": true,
+  "best011_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "source_reports_sha256": {
+    "reports/adapter-diagnostics-082-lastblock-083-summary.json": "1d0b991971ad5ef8222780030b70a3c18600e3b1dff398352f817fb992563b14",
+    "reports/betti-055-summary.json": "67c5bfc524b39d293f92845d8d01bdb196d3ffe6815055ce7169c34774122189",
+    "reports/bias-calibration-073-075-summary.json": "d71c21a880c4da32c8fe905d297b267a22179ae5678f3c2a8cc0c7ebd390fce8",
+    "reports/candidate008-verification.json": "3d7477531fc44818be3f743cffcdea439a89dd7b2854205308156a5867d4e319",
+    "reports/candidate009-verification.json": "f3d7b199c6a33854532efb310162edafd23e3a19e1322e53c72761a6585a6665",
+    "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+    "reports/diagnostic-research-068-072-summary.json": "d88b3eceef22ef438601800e20744863485645c3581f975d76b3e570aa192158",
+    "reports/dino-039-summary.json": "7011c987906f992b0f5b4a7c97a86e046a876426e5fa81b281c55f3b7ebf7378",
+    "reports/dino-044-summary.json": "8e45f6675bb1a6b893d3093d7a88437a09fa480391a0839a0c2c72aaf5f2864e",
+    "reports/dinob-062-validation.json": "cee598d5f9c1d3f015e4410d916642fd479188483b3b8f16859a12001875edec",
+    "reports/dinob-complement-064-summary.json": "3d2a7735239a0e4d528b9c201fe0bdb622ed93068027905481c4b38e8793a202",
+    "reports/dinob-complement-064-validation.json": "1bf3a72f165e5bf20e1e92d9633d2bf72dd92cee8d713d6de0abed0a38ae7a0f",
+    "reports/dinob-joint-084-summary.json": "1a9194b8d6d30cf2afc7f75ba0ac4b4b4a6e15068caa0fc34f7cebe0256d234c",
+    "reports/dropout-control-089-summary.json": "8cf32d139048bdd22fad6be4e9a01f58280385b056fd2aeaa2842877cfe4c6e2",
+    "reports/final-candidate010-summary.json": "cd949b32c5207dfcf88c7f2eb9a67fe5060b811f336db1c01ebf3eaa75443812",
+    "reports/final-candidate011-summary.json": "168316e3c35fcbe00035c880df29f3b9eb3e76b6ff588ddce7a37922e84588ad",
+    "reports/followup-research-summary-024.json": "dcb6d035730c771fac351269593b6feec95c70faa0b5aeb1f29af885fc80e48e",
+    "reports/formation-049-summary.json": "e9e6d58e0f86a9b92ba99684c6b976c02022d99bddc7c2bd8d6ba34a128f782c",
+    "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+    "reports/frozen-head-087-seed-088-summary.json": "de789ffda27652c40211711d7e816d83e8a4a0ff864e0258ca0224fb946a52df",
+    "reports/joint-047-validation.json": "c7e071b92cb290873fc6acef550aea90a44008c2e2e55bf7039e288444b35509",
+    "reports/latent-048-validation.json": "38a6f159d489eb79add88df8f4b3b1b405904897dae275f81d5f58d6c9dc25c0",
+    "reports/learning-curve-050-summary.json": "6a7470c2d06824c94eed821cfabe1015fb955ae390165827aa5ce98c159ecc1a",
+    "reports/nested-calibration-074-validation.json": "024454780fbb26efa882fb3fba8bea5eb9a8182d4d934dd98010243bf7605f69",
+    "reports/nested-calibration-079-validation.json": "520b04aa7eb3d4e98761baf6c5564ec6b9779a35c0c6dd61d45c878522c93c82",
+    "reports/official-reference-review-018.json": "5afd93cd1101b35849e39b3b943b97fb675e96ba1e65607e1bbea961d727559e",
+    "reports/optimization-057-058-summary.json": "e886001f62fe9194e76d259313ea6729ff67b16a30eb1061dab3093eedb7a8b3",
+    "reports/pore-hypothesis-030-032-summary.json": "4ad0f1fb18a3896d5f524a94247cc20aba2fd6e4aec2a70ae2ce1f69401759c6",
+    "reports/representation-060-summary.json": "57d700f7fe448867355b4a39574669a23363b5a1a6c81390578d2c6f206ad9d1",
+    "reports/resumed-research-057-062-summary.json": "81828dac82d9f65acf7b31f8b55a41314a323212c2ee7deae05e4168315073fa",
+    "reports/train-similarity-audit.json": "191024c306c92a7e7dc75035b8c3b57c61194fff7126927f9f4d316e88ccdb15",
+    "reports/width-control-090-summary.json": "9fad29015a5519892d857f3388df0c9d89b1ef96575eb6a811171ecda88a2302",
+    "reports/width-control-090-validation.json": "123d47a149fd834ccfd68ddc332eebde538736387db44aa44102184144aae4ee"
+  },
+  "source_sha256": "6fd3b39f100f7fc8a46ea128c89d0df024566b92ee14e698423d66bf27354bd5",
+  "cost": 0,
+  "uploaded": false
+}

@@ -1,0 +1,76 @@
+{
+  "candidate": "020",
+  "UTC": "2026-10-04T13:18:04.830539+00:00",
+  "development": {
+    "study": "156 nonlinear same-anchor disagreement",
+    "advance": true,
+    "validation_passed": true,
+    "RMSE_by_partition": {
+      "original": {
+        "reference018": 12.811945280526919,
+        "primary": 12.812715372993805
+      },
+      "20261031": {
+        "reference018": 12.645872618239814,
+        "primary": 12.647094203509461
+      },
+      "20261101": {
+        "reference018": 13.048624416802191,
+        "primary": 13.043904674971632
+      }
+    },
+    "pooled_MSE": {
+      "reference018": 164.77687843957662,
+      "primary": 164.7527053971804
+    },
+    "pooled_RMSE": {
+      "reference018": 12.836544645642636,
+      "primary": 12.835603039872353
+    },
+    "conditional_ID_group_gain_CI95": [
+      -0.006985492806323368,
+      0.008586823477742908
+    ],
+    "unique_IDs": 400,
+    "unique_groups": 400,
+    "same400_adaptive_history": true,
+    "linear_candidates_unchanged": true,
+    "current_best": "018",
+    "test_or_holdout_read": false,
+    "new_neural_fits": 0,
+    "cost": 0,
+    "plan_sha256": "512796f4f5f08f11563aa9116176588617450cef679b838cf2484695b13f1e43"
+  },
+  "interpretation": "Very small positive pooled margin; two partitions worse, CI includeszero. This is an exploratory artifact under the prespecified gate, not replacement of Publicbest018 or evidence of reliable improvement.",
+  "recipe": "Exactly156: unchanged018 base/affines/shortB, no/Ridge585 candidates; RBF586 adds one same-anchor identityCNNmean3-KRR delta. Recompute full500 honestblock candidates and512bootstrap weights with originalseeds.",
+  "feature_scope": "For each B166/167, A333/334 fixedcheckpoints produce both B and test features. Never substitute all500 CNN/KRR for testdelta. Validation queries B only in saved trainingfeaturecache, not a new holdout.",
+  "reuse": "Existing A-only KRR/CNN3 and all500 base models. No new neuraltraining or affinechange;60residualobjects including12none.",
+  "test": "Only inference aftertrainingvalidation; no fitting/selection/clipping changes based on test. No formerholdout subgroup score.",
+  "hashes": {
+    "candidate020_pipeline.py": "99f109c46bbb7d2e462edb500fbd93696be6cedb19546319cb0f3c698521ae2e",
+    "disagreement_study_156.py": "c3530acf8686013bcf0d8d351c18f88d894b4ff937157b10828a54e0a57519d2",
+    "disagreement_features_156.py": "923bd6cc9426b4b9e3c9c5b3060a4b4c1aef38617d89a8bda31e828f56511170",
+    "validate_disagreement_v2_156.py": "2fd3649bbaa4e3702018beb29f17eb2b0b40bc7ad4d2d7f2316a767e4e169d87",
+    "artifacts/disagreement-156/decision.json": "c4bb7480781b991c435a87a1b2be2dc31c5491ad1291ba5002b75d5bec401bb6",
+    "reports/disagreement-156-summary.json": "c4bb7480781b991c435a87a1b2be2dc31c5491ad1291ba5002b75d5bec401bb6",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a",
+    "artifacts/final-model-145/training-validation.json": "fc7f93698197ec867037e58d053493e56ba8fa2a24cd042b2c423094675046a2",
+    "artifacts/disagreement-156/validation-original.json": "8227b48ece570645afb1674bcaf2c696e8a6ea3b700c7bfeebafdf0490a4a6d0",
+    "artifacts/disagreement-156/validation-v2-original.json": "bb1b32ee63ee49543b844a49cb231669ae30bc08723c4301d2c5393a8ee6a1e7",
+    "artifacts/disagreement-156/validation-20261031.json": "a5c5994ea338b0ec2b70ee6f190156d9ed3b0783f223403ac26b4dcd3c89d930",
+    "artifacts/disagreement-156/validation-v2-20261031.json": "2842ff0c3297ccb6cf80010b8d9e22f8d8fcb5fef4752d7abddde7b83ed9d6e0",
+    "artifacts/disagreement-156/validation-20261101.json": "af18eef5e0b24901524410483398f52e53f22d1de0e4c43545ce9b7fa0c5f2e9",
+    "artifacts/disagreement-156/validation-v2-20261101.json": "01260505b2b88899cf1c04cba449ebbde864d44ba2f5557dd574bd6bb4e53006"
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef"
+  },
+  "current_best": "018",
+  "Publicbest": 11.5230652779,
+  "today_submissions_remaining": 0,
+  "uploaded": false,
+  "cost": 0
+}

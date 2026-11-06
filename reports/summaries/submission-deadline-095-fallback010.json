@@ -1,0 +1,122 @@
+{
+  "created_utc": "2026-10-02T11:12:04.487761+00:00",
+  "parent_coordination_deadline_JST": "2026-10-02 22:30 Asia/Tokyo",
+  "user_submission_deadline_JST": "2026-10-02 before24:00 Asia/Tokyo",
+  "human_instruction": "Use remaining daily submission before midnight;parent coordinates upload. Do notoverstateperformance orskipvalidation.",
+  "live095": {
+    "runner_pid": 79428,
+    "training_pid": 79429,
+    "stage": "Original5fold three-arm experiment;fold0earlyepoch8 at20:10JST",
+    "started_JST": "2026-10-02 19:55:26",
+    "original_training_estimated_done_JST": "22:00..22:20;subject toactualruntime,verificationadditional",
+    "benchmark_effective16_early_seconds": 5.289712458499708,
+    "benchmark_working_memory_conservative_bytes": 5313904640,
+    "original5fold_benchmark_point_seconds": 6915.100675006397,
+    "original5fold_benchmark_margin_seconds": 8651.649376261048,
+    "deadline_assessment": "095cannotbeconsideredvalidatednewsubmissionby22:30: aftersuccessfuloriginal,itstillrequires2fixedresplits,thenlock/full500/testverification. No shortcut orposthoclatefallback. Existingprocesscontinueswithoutduplicate."
+  },
+  "ready_preserved_option010": {
+    "csv": "artifacts/submission-candidate-010.csv",
+    "sha256": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5",
+    "currently_unsubmitted_per_existing_records": true,
+    "technical_ready": true,
+    "integrity_rechecked_now": {
+      "rows": 1000,
+      "columns": [
+        "ID",
+        "hardness"
+      ],
+      "finite": true,
+      "unique_IDs": true,
+      "same_ID_order_as_verified011": true
+    },
+    "earlier_full_verification": {
+      "report": "reports/candidate010-verification.json",
+      "report_sha256": "4ba0d2e6b9dc54d2f43030b819f73facef6192140817ba06ae17fa7b87e20d22",
+      "byte_exact_CSV_reproduction": true,
+      "full1000_raw_image_reload_exact": true,
+      "full500_training_replay_exact": true,
+      "CPU_MPS_sample_max_error": 2.5291822993267488e-05
+    },
+    "comparison_to_best011": {
+      "original": {
+        "candidate010_RMSE": 13.10413742660317,
+        "best011_RMSE": 13.0539977718711,
+        "010_worse_by": 0.05013965473207094,
+        "source011_vs010": {
+          "gain": 0.05013965473207094,
+          "fold_gains": [
+            -0.04108097447073433,
+            0.11881736015444488,
+            0.07461041162256343,
+            0.03352130362741512,
+            0.06463939750478964
+          ],
+          "positive_folds": 4,
+          "bootstrap_sd": 0.03555621367736745,
+          "conditional_ci95": [
+            -0.018419992860731236,
+            0.12036068748216397
+          ]
+        }
+      },
+      "20261031": {
+        "candidate010_RMSE": 13.081449590263393,
+        "best011_RMSE": 13.015176056591201,
+        "010_worse_by": 0.06627353367219158,
+        "source011_vs010": {
+          "gain": 0.06627353367219158,
+          "fold_gains": [
+            0.09824506990070248,
+            0.20683255142290058,
+            0.05709960280507076,
+            -0.0012512075066108963,
+            -0.05472827090382992
+          ],
+          "positive_folds": 3,
+          "bootstrap_sd": 0.03032063719798108,
+          "conditional_ci95": [
+            0.011164571385741739,
+            0.12634837723857106
+          ]
+        }
+      },
+      "20261101": {
+        "candidate010_RMSE": 13.303706910124971,
+        "best011_RMSE": 13.272377948565081,
+        "010_worse_by": 0.031328961559889734,
+        "source011_vs010": {
+          "gain": 0.031328961559889734,
+          "fold_gains": [
+            0.07309459318925704,
+            0.07505551586692683,
+            0.03508154923325435,
+            -0.056400004678117455,
+            0.03273617360173375
+          ],
+          "positive_folds": 4,
+          "bootstrap_sd": 0.03353294624472585,
+          "conditional_ci95": [
+            -0.03415760253111415,
+            0.09636168008162345
+          ]
+        }
+      }
+    },
+    "interpretation": "010is a technicallyvalidatedunsubmittedalternative,not a verifiedimprovementover011. Itimproved009only~0.0008..0.0014developmentRMSE; allconditionalintervals includedzero. Threepartitionsreuse400,notindependent. Parentmayuseit tospendexplicitlyrequestedremainingattempt,withnoPublicgainpromise. Do notrelabel itas095."
+  },
+  "best011": {
+    "csv": "artifacts/submission-candidate-011.csv",
+    "sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "reported_public_RMSE": 11.7352685854,
+    "source": "Parent-reportedsubmissionrecord,not independentlyqueriednow",
+    "preserved": true
+  },
+  "scope": {
+    "cost": 0,
+    "new_model_inference": false,
+    "new_test_orholdout_image_orlabel_access": false,
+    "CSV_read_purpose": "Existingfinalizedsubmissionintegrityonly,not testprediction-basedmodelselection",
+    "upload_performed_here": false
+  }
+}

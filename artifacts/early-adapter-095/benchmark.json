@@ -1,0 +1,212 @@
+{
+  "arms": {
+    "frozen": {
+      "arm": "frozen",
+      "checkpointing": false,
+      "adapter_parameters": 6144,
+      "trainable_parameters": 221249,
+      "initial_head_sha256": "450c16640aa9c175733696bdac3bac0955a47b0e4d099bd530a7a8ae83356b3a",
+      "initial_adapter_sha256": "aa8cf98f2913f707386a8f4bb73da09fe14d9166e88304e4728a0e478f6a7f86",
+      "zero_init_descriptor_max_error": 0.0,
+      "zero_init_standardized_prediction_error": 0.0,
+      "effective16_step_seconds": [
+        0.07218604197259992,
+        0.02693341701524332,
+        0.025890332995913923
+      ],
+      "median_measured_effective16_seconds": 0.026411875005578622,
+      "max_measured_effective16_seconds": 0.02693341701524332,
+      "prediction_image_seconds_median": 0.0006687499699182808,
+      "adapter_gradients_first3updates": [
+        {
+          "V.weight": null,
+          "U.weight": null
+        },
+        {
+          "V.weight": null,
+          "U.weight": null
+        },
+        {
+          "V.weight": null,
+          "U.weight": null
+        }
+      ],
+      "block6_9_12_descriptor_delta_L2_after3updates": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "early_graph": null,
+      "memory": {
+        "rss_peak_bytes": 2739912704,
+        "mps_driver_bytes": 1462403072,
+        "conservative_sum_bytes": 4202315776
+      }
+    },
+    "late": {
+      "arm": "late",
+      "checkpointing": false,
+      "adapter_parameters": 6144,
+      "trainable_parameters": 227393,
+      "initial_head_sha256": "450c16640aa9c175733696bdac3bac0955a47b0e4d099bd530a7a8ae83356b3a",
+      "initial_adapter_sha256": "aa8cf98f2913f707386a8f4bb73da09fe14d9166e88304e4728a0e478f6a7f86",
+      "zero_init_descriptor_max_error": 0.0,
+      "zero_init_standardized_prediction_error": 0.0,
+      "effective16_step_seconds": [
+        0.27778466598829255,
+        0.22570279199862853,
+        0.21900758298579603
+      ],
+      "median_measured_effective16_seconds": 0.22235518749221228,
+      "max_measured_effective16_seconds": 0.22570279199862853,
+      "prediction_image_seconds_median": 0.011013707960955799,
+      "adapter_gradients_first3updates": [
+        {
+          "V.weight": 0.0,
+          "U.weight": 0.06017441302537918
+        },
+        {
+          "V.weight": 0.0020736258011311293,
+          "U.weight": 0.07677660137414932
+        },
+        {
+          "V.weight": 0.003616692963987589,
+          "U.weight": 0.09607285261154175
+        }
+      ],
+      "block6_9_12_descriptor_delta_L2_after3updates": [
+        0.0,
+        0.0,
+        0.011132728308439255
+      ],
+      "early_graph": null,
+      "memory": {
+        "rss_peak_bytes": 2739912704,
+        "mps_driver_bytes": 1500184576,
+        "conservative_sum_bytes": 4240097280
+      }
+    },
+    "early": {
+      "arm": "early",
+      "checkpointing": false,
+      "adapter_parameters": 6144,
+      "trainable_parameters": 227393,
+      "initial_head_sha256": "450c16640aa9c175733696bdac3bac0955a47b0e4d099bd530a7a8ae83356b3a",
+      "initial_adapter_sha256": "aa8cf98f2913f707386a8f4bb73da09fe14d9166e88304e4728a0e478f6a7f86",
+      "zero_init_descriptor_max_error": 0.0,
+      "zero_init_standardized_prediction_error": 0.0,
+      "effective16_step_seconds": [
+        5.497805124963634,
+        5.288399250013754,
+        5.291025666985661
+      ],
+      "median_measured_effective16_seconds": 5.289712458499707,
+      "max_measured_effective16_seconds": 5.291025666985661,
+      "prediction_image_seconds_median": 0.12278016697382554,
+      "adapter_gradients_first3updates": [
+        {
+          "V.weight": 0.0,
+          "U.weight": 0.0980706438422203
+        },
+        {
+          "V.weight": 0.0021083892788738012,
+          "U.weight": 0.13797812163829803
+        },
+        {
+          "V.weight": 0.0034805869217962027,
+          "U.weight": 0.20205795764923096
+        }
+      ],
+      "block6_9_12_descriptor_delta_L2_after3updates": [
+        0.035247620195150375,
+        0.01865783892571926,
+        0.021084986627101898
+      ],
+      "early_graph": {
+        "embedding_adapter_output_and12block_output_gradient_norms": [
+          1.9547572135925293,
+          3.059117555618286,
+          2.7383768558502197,
+          2.8488080501556396,
+          2.134004831314087,
+          2.071009874343872,
+          2.1183817386627197,
+          0.4865163564682007,
+          0.4382442235946655,
+          0.421321302652359,
+          0.0805426612496376,
+          0.06366242468357086,
+          0.04756946861743927
+        ],
+        "all12blocks_carry_input_gradient": true,
+        "backbone_parameter_grads_absent": true
+      },
+      "memory": {
+        "rss_peak_bytes": 2739912704,
+        "mps_driver_bytes": 2573991936,
+        "conservative_sum_bytes": 5313904640
+      }
+    }
+  },
+  "estimated_all3arms_5fold_seconds": 6915.100675006397,
+  "resource_gate_estimate_seconds_with25pct_margin": 8651.649376261048,
+  "projected_hours_with_margin": 2.403235937850291,
+  "working_memory_conservative_bytes": 5313904640,
+  "resource_pass": true,
+  "all_frozen_backbone_weights_unchanged": true,
+  "original_training_started": false,
+  "benchmark_train_rows_only": true,
+  "train_ids_used": [
+    "TRAIN_000364",
+    "TRAIN_000319",
+    "TRAIN_000475",
+    "TRAIN_000466",
+    "TRAIN_000469",
+    "TRAIN_000374",
+    "TRAIN_000133",
+    "TRAIN_000271",
+    "TRAIN_000119",
+    "TRAIN_000415",
+    "TRAIN_000051",
+    "TRAIN_000456",
+    "TRAIN_000244",
+    "TRAIN_000056",
+    "TRAIN_000207",
+    "TRAIN_000461",
+    "TRAIN_000465",
+    "TRAIN_000243",
+    "TRAIN_000248",
+    "TRAIN_000402",
+    "TRAIN_000215",
+    "TRAIN_000001",
+    "TRAIN_000227",
+    "TRAIN_000375",
+    "TRAIN_000359",
+    "TRAIN_000007",
+    "TRAIN_000420",
+    "TRAIN_000031",
+    "TRAIN_000380",
+    "TRAIN_000491",
+    "TRAIN_000385",
+    "TRAIN_000097",
+    "TRAIN_000044",
+    "TRAIN_000101",
+    "TRAIN_000157",
+    "TRAIN_000130",
+    "TRAIN_000430",
+    "TRAIN_000494",
+    "TRAIN_000219",
+    "TRAIN_000384",
+    "TRAIN_000187",
+    "TRAIN_000026",
+    "TRAIN_000220",
+    "TRAIN_000014",
+    "TRAIN_000439",
+    "TRAIN_000291",
+    "TRAIN_000262",
+    "TRAIN_000487"
+  ],
+  "time_estimate_scope": "All3arms,5fold,12epochs,240effectiveupdates/arm/fold; plus400endpointpredictions. Actualmayvary,25%marginnotguarantee. Earlygradientchecks andstartupvalidation excluded fromfulltraining estimate.",
+  "memory_policy": "RSSpeak + MPSdriver is conservative and may double-count unifiedmemory; not independent allocations.",
+  "checkpointing": false
+}

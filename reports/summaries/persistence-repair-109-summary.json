@@ -1,0 +1,143 @@
+{
+  "study": "109 authorizedfixed train-only variancefloor repair of107",
+  "completed_utc": "2026-10-03T17:26:14.100360+00:00",
+  "deadline_utc": "2026-10-03T18:34:55+00:00",
+  "status": "Numericalextrapolation repaired; fixedpersistencepredictionapproach closed afternegative originalOOF.",
+  "rule": "For each inner/outer trainingmatrix, mu_j=mean(X_j),var_j=populationvariance(X_j),s_RMS=sqrt(mean_j var_j). scale_j=max(sqrt(var_j),s_RMS). Transform(X_j-mu_j)/scale_j. Ifallvariancezero useunit scales. Keep512columns; no featuredeletion,clipping,PCA,cellmask,bin/sigma changes. Bothcurve andpersistence receiveidenticalrule.",
+  "no_validation_threshold_search": true,
+  "preflight_before_OOF": {
+    "fixed_previous_alpha": 5120.0,
+    "max_abs_scaled_validation_value_original": 148806.36358334098,
+    "max_abs_scaled_validation_value_repaired": 6.71161238708474,
+    "regularized_condition_original": 9.623311556444317,
+    "regularized_condition_repaired": 3.2891096718698294,
+    "raw_prediction_range_original": [
+      -3947.1670868531633,
+      239.94297001678842
+    ],
+    "raw_prediction_range_repaired": [
+      191.10015438326067,
+      198.78836644810858
+    ],
+    "interpretation": "Originalregularizedlinearsystemwasnotseverelyillconditioned. Mainfailurewasextremeheldoutfeatureamplificationfromtinytrainvariances. Fixedalphapreflight isnotfinalnestedOOF; itsnarrowrange mustnotbeconfusedwith finalpredictionrange.",
+    "all10comparisons": "artifacts/persistence-repair-109/preflight.json"
+  },
+  "OOF": {
+    "reference011_RMSE": 13.0539977718711,
+    "original107_persistence_standalone_RMSE": 206.71859437577234,
+    "repaired_persistence_standalone_RMSE": 16.23535995921321,
+    "original107_persistence_blend_RMSE": 24.04635545247622,
+    "repaired_persistence_blend_RMSE": 13.120860659817945,
+    "repaired_curve_blend_RMSE": 13.087334263400573,
+    "gain_vs011": -0.06686288794684536,
+    "positive_folds": 0,
+    "repaired_standalone_prediction_range": [
+      179.6418758450426,
+      215.34629241929082
+    ],
+    "selected_alpha_all10": [
+      51.2,
+      51.2,
+      51.2,
+      51.2,
+      51.2,
+      51.2,
+      51.2,
+      51.2,
+      51.2,
+      51.2
+    ],
+    "gate": {
+      "advance": false,
+      "primary_vs011": {
+        "gain": -0.06686288794684536,
+        "fold_gains": [
+          -0.0794565349799754,
+          -0.08926193338091615,
+          -0.027216725728106184,
+          -0.1316047010953909,
+          -0.0172712162760007
+        ],
+        "positive_folds": 0
+      },
+      "primary_vscurveblend": {
+        "gain": -0.033526396417371984,
+        "fold_gains": [
+          -0.02962226583006,
+          -0.0875169806074787,
+          -0.034544981269334585,
+          -0.02292478526071484,
+          0.0036927879951385023
+        ],
+        "positive_folds": 1
+      }
+    }
+  },
+  "conclusion": "107original24.046blend resultconfoundedthehypothesiswithbadfeature-scaling extrapolation; cannotuseitaloneas evidenceagainstpersistence. Afteronespecifiedrepair,13.12086blend stillworse01113.05400 inall5folds andworsecurvecontrol13.08733. Close thisfixedpersistenceimage+Ridge approach. Doesnotproveeverypersistencevariant impossible; no morecutoff,grid,weight orbintrial inthisbatch.",
+  "validation": {
+    "passed": true,
+    "split": "original",
+    "models_reloaded_exact": 10,
+    "independent_dual_prediction_max_error": 3.893774191965349e-12,
+    "all_inner_CV_scores_recomputed_max_error": 4.263256414560601e-14,
+    "independent_eigen_condition_max_error": 6.963318810448982e-13,
+    "fold_training_scaler_floor_target_ids_verified": true,
+    "train_scaled_variances_le1": true,
+    "constant_input_fallback_verified": true,
+    "complete_nested_replay_with_perturbed_outer_validation_labels": [
+      "curve",
+      "persistence"
+    ],
+    "preflight_fixed_alpha_predictions_reproduced": true,
+    "report_sha256": "c2d1a110f8d8e29d0f581b2b4715efa64799fb6d25d073b85359aebefe0642ae",
+    "original107_files_preserved": 21,
+    "protected011_files_preserved": 20,
+    "source_sha256": "46aed06208e8d9fa5267da41691c38ac5454f30e086773745b00100caf841931",
+    "seconds": 0.5404108329676092,
+    "holdout_test_used": false
+  },
+  "scope": {
+    "old107_files_preserved": 21,
+    "best011_protected_files_preserved": 20,
+    "features_reused_byte_exact": true,
+    "new_raw_image_decode": false,
+    "additional_holdout_test_selection": false,
+    "resplits_run": false,
+    "full500_fit": false,
+    "test_inference": false,
+    "new_candidate_CSV": false,
+    "upload": false,
+    "new_packages": 0,
+    "existing_packages_unchanged": 26,
+    "cost": 0,
+    "no_actual_physical_structure_preservation_claim": true
+  },
+  "next_proposal_only": {
+    "direction": "Matchedinput-noise augmentation ofexistingfrozenDINO-B head",
+    "motivation": "106sixfixturediagnosticshowsfrozenDINO responds tosamegeometrynoisechanges; thisisobservationalmotivation,notproof iidnoiseislabelinvariant inrealdata.",
+    "comparison": "Same011freshhead,12epochs,foldtrain-onlyoriginalfeature scaler,targetstats,init,trainingorder anddropout. Controloriginalfeatures; candidatefixed50percentoriginal/50percentweakGaussian-noise-view training. Bothpredictoriginalunmodifiedvalidationimages. Onepredeclaredinputnoiselevel anddeterministicimage-localrandomseeds; no noiselevel/grid search.",
+    "distinct_from_prior": "061 mixesdifferentimagesfeaturesandlabels;046 averagesD4;071/072 denoiseinputs. Thisproposes sameimageinputnoise duringheadtrainingonly, notfeaturemixup,restoration,rotation ornewbackbone.",
+    "limits": "Noiseaugmentation labelinvariance isunproven; couldremoveusefulsignals. Diagnoseinput/featureperturbationwithoutlabels andfreezeoneplan beforeOOF. No claim ofdenoising orstructure recovery.",
+    "estimated_resources": "ExistingMPS, approximatelyoneextra400image frozenB extraction plus5smallheadfits, typicallyminutes; noinstall/download/cost. Benchmarkbeforeexecution.",
+    "executed": false
+  },
+  "execution_blockers": [],
+  "best011_CSV_SHA256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "evidence_sha256": {
+    "artifacts/persistence-repair-109/plan.json": "88a84dcce637fb4e605bc9c6ed425ee62d9b237fbe9312e97a0c43175cc2a2f1",
+    "artifacts/persistence-repair-109/preflight.json": "87814537c88d49d6c7d490baf0fb8897c3301c936cba93de4808220a27f833aa",
+    "artifacts/persistence-repair-109/preflight-predictions.npz": "697d497a70929d00e3775d9de12daae06887f4d9017d145cbadfa712df40d512",
+    "artifacts/persistence-repair-109/original/report.json": "c2d1a110f8d8e29d0f581b2b4715efa64799fb6d25d073b85359aebefe0642ae",
+    "artifacts/persistence-repair-109/original/development_predictions.npz": "5968ff548403a8bcc112c519ae5a94af20fab86501ef22a354964981aeb87c5b",
+    "reports/persistence-repair-109-original-validation.json": "1c0ebb2564d81342f6b602372aeb3de1dff377fb4b4082f3a6d1e981e1f790f1",
+    "reports/research-batch-105-108-summary.json": "2299e268c4259f67dd3bf2db425aaa803dc1ecceb6ba5c2ab5b2be67afac5069"
+  },
+  "source_sha256": "feca3885e8acb2b4b50e5f56e20e1752b5188536ab4425f3a8d88d0e1ad1d81c",
+  "README_change": {
+    "utc": "2026-10-03T17:26:14.100360+00:00",
+    "before_backup": "reports/README-before-109.md",
+    "before_sha256": "603781238727ba5ae4d0aa0769c7ebc74d617d4c1cedcd1c632ba646bc41ae83",
+    "after_sha256": "8d34a193f75f9ff0e58c208d524314d79760c9fd029e1ba6df528698ff0c53ee",
+    "reason": "Appendauthorized109 correction; retain original107/105-108 history unchanged"
+  }
+}

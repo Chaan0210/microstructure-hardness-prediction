@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "batch": 1,
+  "dtype": "float32",
+  "IDs": [
+    "TRAIN_000001",
+    "TRAIN_000173",
+    "TRAIN_000339"
+  ],
+  "models": {
+    "resnet50": {
+      "finite": true,
+      "CPU_MPS_maxabs": 5.0067901611328125e-06,
+      "CPU_MPS_relative_L2": 9.537618552712956e-07,
+      "seconds": {
+        "cpu": [
+          0.04290462499920977,
+          0.030354000002262183,
+          0.02902616600476904
+        ],
+        "mps": [
+          0.5157101250006235,
+          0.023499165996327065,
+          0.02175854199595051
+        ]
+      },
+      "weights_unchanged": true,
+      "projected400_MPS_seconds": 9.399666398530826
+    }
+  },
+  "peak_conservative_RSS_plus_MPS": 529547264,
+  "swap_growth": 0,
+  "network_attempts": 0
+}

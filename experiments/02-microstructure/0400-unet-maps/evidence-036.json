@@ -1,0 +1,84 @@
+{
+ "candidate": "036",
+ "date": "2026-10-10",
+ "change": "035 components (TabPFN-3.5 on u1dm1sz, u1dm2sz, u1dmavg, u1dmavg4; seeds 0/100/200) with grain weight W=0.85 instead of the fixed 0.75. Built with pipeline_final.py on CPU (byte-reproducible).",
+ "why": "with the much stronger grain model, W=0.8 beat W=0.75 on all 7 U-Net variants x 3 partitions (21/21) and on every earlier candidate (030, 032). Fine grid on the 035 ensemble: optimum 0.85-0.95 in every partition.",
+ "dev_w_grid_035_ensemble": {
+  "original": {
+   "0.75": 10.32,
+   "0.8": 10.285,
+   "0.85": 10.27,
+   "0.9": 10.273,
+   "0.95": 10.295,
+   "1.0": 10.336
+  },
+  "p20261031": {
+   "0.75": 10.229,
+   "0.8": 10.193,
+   "0.85": 10.175,
+   "0.9": 10.175,
+   "0.95": 10.192,
+   "1.0": 10.227
+  },
+  "p20261101": {
+   "0.75": 10.297,
+   "0.8": 10.237,
+   "0.85": 10.195,
+   "0.9": 10.171,
+   "0.95": 10.166,
+   "1.0": 10.18
+  },
+  "pooled": {
+   "0.75": 10.282,
+   "0.8": 10.238,
+   "0.85": 10.213,
+   "0.9": 10.206,
+   "0.95": 10.218,
+   "1.0": 10.248
+  }
+ },
+ "dev_variants_v35_grain": {
+  "m1": [
+   10.431,
+   10.32,
+   10.265
+  ],
+  "m2": [
+   10.329,
+   10.229,
+   10.188
+  ],
+  "m3": [
+   10.469,
+   10.354,
+   10.364
+  ],
+  "m4": [
+   10.441,
+   10.303,
+   10.271
+  ],
+  "avg3": [
+   10.238,
+   10.143,
+   10.08
+  ],
+  "avg4": [
+   10.43,
+   10.293,
+   10.272
+  ],
+  "avg5": [
+   10.366,
+   10.265,
+   10.263
+  ],
+  "u1phdrop": [
+   10.491,
+   10.4,
+   10.317
+  ]
+ },
+ "weight_rule": "W=0.85 chosen on dev (1 parameter, broad optimum, all partitions agree); conservative side of the 0.85-0.95 optimum.",
+ "adopt": true
+}

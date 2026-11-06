@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-10-02T10:55:26.719595+00:00",
+  "base_plan_sha256": "ca84181bf4cdf5c09771adfda1020ba74988f4da9b115195eb29676c97d2ae86",
+  "benchmark_sha256": "d57e33af9bea8940babcee4c9205491a082839e6cfd0c1d045ec91ff36b40a12",
+  "repair_manifest_sha256": "5805f8718b256f623c169d025a6f15297c0a4d6ebac594c929930e1720553c1b",
+  "sources": {
+    "train_early_adapter_095.py": "1a9cfeb5b2ef79b1789e2146ba67cd98bfdeb6c203bb19c6c22d440c2ba7330e",
+    "validate_early_adapter_095.py": "1893756f945b65628ab217b652485cfb5a93eeb08950eb2dae92f963db39f74b",
+    "run_early_adapter_095.py": "c5840dd89a4306d9489d389c54e3cf5e54b4f31faf9329b25dbf07acdbf58101",
+    "early_adapter_095.py": "b698e78c8fb1e544138ad1b9ad30c5364d0687cc36504c4559c7e00094204e50",
+    "early_adapter_095_benchmark_repair.py": "623b47f3b6d2e18e3f85c5c16549a931030c0ab96a29255ba50d3d0daa82dbcf"
+  },
+  "unchanged_model_config": {
+    "rank": 4,
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 1,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "adapter_lr": 0.0001,
+    "adapter_min_lr": 1e-05,
+    "adapter_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_adapter": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "execution_details": "All3arms retrained micro1/effective16; original084headinit/orderseed. Sameper-image dropoutseedinall3arms. Noouterepochpredictions; endpointtrain320+validation80only. Earlyallrawimagefullgraph,lateverified080cache,frozenBfeatures. No firstfoldperformancegate. Afterfirstcompletefold resourceprojectiononly maystop if>3hours.",
+  "runtime_monitor": "Check conservativeRSSpeak+MPSdriver<8GB aftereachoptimizerstep; reportactualfirstfold/rollingprojected5fold. Resourcefailure stopswithout tuning. No checkpointing needed perpassedbenchmark.",
+  "validation": "Allsavedmodels strictnonbackbone-state reload andpredictions; scalers/targets/IDs inspected. Originalfold0 eacharm first2updates replay withouterlabelsperturbed, equalstate tosavedprefix. Earlyfullbackbonefrozenhash before/after. No full12epochreplay claimed.",
+  "scope": "Noholdout/test/full500/newcandidate/upload. Ifbothresplits qualify,reporteligible researchresult toparent,do notautomatically produce orsubmitCSV."
+}

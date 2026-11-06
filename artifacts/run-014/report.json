@@ -1,0 +1,542 @@
+{
+  "hypothesis": "Add boundary/pore-masked intensity mixture to existing compact panel, comparing identical nested regressors",
+  "outer_folds": "same development 5 folds",
+  "inner_folds": 3,
+  "inner_seed": 20261005,
+  "kernel_bandwidth_multipliers": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "kernel_alpha": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "kernel_formula": "gamma=1/(median train squared distance * bandwidth^2); train-standardized block weights1/sqrt(block columns), standardized target",
+  "other_models": [
+    "fixed additive splines knots4 degree3 Ridgealpha10",
+    "fixed shallow HGB leaves7 minleaf20 l2=10 iter200 lr.05"
+  ],
+  "recipes": [
+    "alone",
+    "baseline75_candidate25",
+    "baseline50_grain25_candidate25",
+    "baseline50_cnn80_25_candidate25"
+  ],
+  "no_test_holdout": true,
+  "provenance": "Parent-transcribed official PDF: Hall-Petch, phase mixture, porosity; direct PDF retrieval403. No effect sign constrained.",
+  "prior_choice_bias": "Existing baseline/CNN/grain and feature hypotheses developed on same400 rows; inner CV controls current kernel hyperparameters, not all historical choices.",
+  "scores": {
+    "baseline": {
+      "oof_rmse": 13.98273103376079,
+      "fold_rmse": [
+        13.586021526541336,
+        13.41146815780372,
+        14.935891918066302,
+        13.19606164073078,
+        14.69419839701824
+      ]
+    },
+    "spline": {
+      "oof_rmse": 16.811807122696774,
+      "fold_rmse": [
+        15.649757402488381,
+        17.067409270564546,
+        18.490362802104865,
+        16.570010141013373,
+        16.14045151355278
+      ]
+    },
+    "spline_blend25": {
+      "oof_rmse": 14.101620500881785,
+      "fold_rmse": [
+        13.568441652211565,
+        13.680703148895626,
+        15.320585328123572,
+        13.24997183787856,
+        14.585340850864082
+      ]
+    },
+    "spline_grainblend": {
+      "oof_rmse": 14.05028973034238,
+      "fold_rmse": [
+        13.724500500914003,
+        13.610839092335985,
+        15.21259000168026,
+        13.235787448081831,
+        14.381494665219954
+      ]
+    },
+    "spline_cnnblend": {
+      "oof_rmse": 13.96039574640578,
+      "fold_rmse": [
+        13.564320448711616,
+        13.586028457336765,
+        15.12204446332186,
+        13.221802961135515,
+        14.226734910324545
+      ]
+    },
+    "shallow_hgb": {
+      "oof_rmse": 14.954208333069829,
+      "fold_rmse": [
+        15.061590467650984,
+        14.525375599041235,
+        15.7858944742558,
+        14.15492854610106,
+        15.190366162086141
+      ]
+    },
+    "shallow_hgb_blend25": {
+      "oof_rmse": 13.918499990814265,
+      "fold_rmse": [
+        13.693379052071782,
+        13.340064967962993,
+        14.929325504727991,
+        13.065191342038265,
+        14.47664539622693
+      ]
+    },
+    "shallow_hgb_grainblend": {
+      "oof_rmse": 13.868997243831137,
+      "fold_rmse": [
+        13.816921060387788,
+        13.279358217385926,
+        14.885171572584689,
+        13.010246468337597,
+        14.271016592386173
+      ]
+    },
+    "shallow_hgb_cnnblend": {
+      "oof_rmse": 13.77902683467662,
+      "fold_rmse": [
+        13.667015915412959,
+        13.294554700289174,
+        14.776184892986672,
+        12.941954398139638,
+        14.140211109007755
+      ]
+    },
+    "nested_kernel": {
+      "oof_rmse": 14.53684195405138,
+      "fold_rmse": [
+        14.594756611663318,
+        13.608212299676492,
+        15.427952231050467,
+        14.643593713876447,
+        14.351026462867663
+      ]
+    },
+    "nested_kernel_blend25": {
+      "oof_rmse": 13.89971966969109,
+      "fold_rmse": [
+        13.641742904718042,
+        13.272497995602116,
+        14.899109842617476,
+        13.176843169517365,
+        14.427127640035021
+      ]
+    },
+    "nested_kernel_grainblend": {
+      "oof_rmse": 13.877313048867808,
+      "fold_rmse": [
+        13.798640297254499,
+        13.238062433003934,
+        14.912822414905557,
+        13.124348048146544,
+        14.234097519016101
+      ]
+    },
+    "nested_kernel_cnnblend": {
+      "oof_rmse": 13.747815491970776,
+      "fold_rmse": [
+        13.64340741822647,
+        13.213301754378849,
+        14.717396096228516,
+        13.015695953893745,
+        14.080772555399147
+      ]
+    }
+  },
+  "inner_choices": [
+    {
+      "fold": 0,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.1,
+        "inner_rmse": 14.652600330812104
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 18.060280169978682
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 18.04954766668119
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 18.059555344685318
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 18.77032411895461
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.804162420466787
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 14.871208895607431
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.89970496102943
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.652600330812104
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.245296777720505
+        }
+      ],
+      "outer_rmse": 14.594756611663318
+    },
+    {
+      "fold": 1,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.1,
+        "inner_rmse": 14.731914206432645
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 17.68913899871364
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 17.708965892145876
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 17.881840846975493
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 18.933177108153874
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.901309481542174
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.003908278838603
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.841624013635192
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.731914206432645
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.35584457788157
+        }
+      ],
+      "outer_rmse": 13.608212299676492
+    },
+    {
+      "fold": 2,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.1,
+        "inner_rmse": 14.18414046949571
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 17.810784493464855
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 17.782439756908783
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 17.748216427479164
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 17.78329297312196
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.10864080200323
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 14.425891068545951
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.367784479935729
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.18414046949571
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 14.962638423748626
+        }
+      ],
+      "outer_rmse": 15.427952231050467
+    },
+    {
+      "fold": 3,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.01,
+        "inner_rmse": 14.4724303290414
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 17.891969760183756
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 17.861037583184363
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 17.819677443056356
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 16.929879943204607
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.063219067209452
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 14.757854736467653
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.4724303290414
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.602293403782916
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.247749309325929
+        }
+      ],
+      "outer_rmse": 14.643593713876447
+    },
+    {
+      "fold": 4,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.1,
+        "inner_rmse": 14.789081614128051
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 17.812925653111947
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 17.838135330540513
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 18.011169957101817
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 17.671066084961726
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.674158322742192
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.053783645548608
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.879452740770938
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.789081614128051
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.553155501198201
+        }
+      ],
+      "outer_rmse": 14.351026462867663
+    }
+  ],
+  "features": [
+    "inverse_sqrt_grain_diameter",
+    "grain_size_cv",
+    "phase_dark",
+    "phase_light",
+    "pore_fraction15",
+    "pore_fraction30",
+    "pore_diameter",
+    "grain_aspect",
+    "grain_alignment",
+    "within_grain_contrast",
+    "grain_scale_sensitivity",
+    "boundary_fraction",
+    "intercept_median_gap_mean",
+    "intercept_sensitivity_gap_mean",
+    "intercept_median_gap_cv",
+    "intercept_sensitivity_gap_cv",
+    "intercept_median_gap_inv_sqrt_mean",
+    "intercept_sensitivity_gap_inv_sqrt_mean",
+    "intercept_median_directional_cv",
+    "intercept_sensitivity_directional_cv",
+    "intercept_median_uncensored_coverage",
+    "intercept_sensitivity_uncensored_coverage",
+    "intercept_median_crossings_per_pixel",
+    "intercept_sensitivity_crossings_per_pixel",
+    "image_mean",
+    "image_std",
+    "interior_median_dark_fraction",
+    "interior_sensitivity_dark_fraction",
+    "interior_median_dark_mean",
+    "interior_sensitivity_dark_mean",
+    "interior_median_light_mean",
+    "interior_sensitivity_light_mean",
+    "interior_median_separation",
+    "interior_sensitivity_separation",
+    "interior_median_overlap",
+    "interior_sensitivity_overlap",
+    "interior_median_ambiguous_fraction",
+    "interior_sensitivity_ambiguous_fraction",
+    "interior_median_interior_fraction",
+    "interior_sensitivity_interior_fraction",
+    "interior_median_boundary_fraction",
+    "interior_sensitivity_boundary_fraction",
+    "interior_median_pore_fraction",
+    "interior_sensitivity_pore_fraction",
+    "interior_median_fit_converged",
+    "interior_sensitivity_fit_converged"
+  ],
+  "blocks": [
+    "size",
+    "size",
+    "phase",
+    "phase",
+    "phase",
+    "phase",
+    "phase",
+    "shape",
+    "shape",
+    "intensity",
+    "size",
+    "shape",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intensity",
+    "intensity",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase",
+    "separated_phase"
+  ],
+  "feature_seconds": 8.76222970802337,
+  "elapsed_seconds": 9.821154583012685
+}

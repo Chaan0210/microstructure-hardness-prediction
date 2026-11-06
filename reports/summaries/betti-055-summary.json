@@ -1,0 +1,160 @@
+{
+  "outcome": "Rejected fixed Betti132 Ridge/10% blend; preserve best007",
+  "scores": {
+    "reference007": {
+      "rmse": 13.241596955038409,
+      "fold_rmse": [
+        13.200972349680994,
+        12.726138894776982,
+        14.308109808709345,
+        12.375441992213231,
+        13.513163828337742
+      ]
+    },
+    "betti132": {
+      "rmse": 15.67868113938592,
+      "fold_rmse": [
+        15.46658413798511,
+        14.39115128788408,
+        17.64676543534391,
+        15.726140198673884,
+        14.968798722213604
+      ]
+    },
+    "betti132_blend": {
+      "rmse": 13.36752762315509,
+      "fold_rmse": [
+        13.314850861627376,
+        12.760099312089983,
+        14.523751418362073,
+        12.59659461708685,
+        13.554889695150516
+      ]
+    },
+    "counts12": {
+      "rmse": 15.539302481543755,
+      "fold_rmse": [
+        15.620448034374057,
+        14.254522762601013,
+        17.298233423396386,
+        14.990532137663417,
+        15.369282961148224
+      ]
+    },
+    "counts12_blend": {
+      "rmse": 13.322253455381668,
+      "fold_rmse": [
+        13.306898965676892,
+        12.683238618849586,
+        14.492411842061259,
+        12.488472110912923,
+        13.545558203218004
+      ]
+    }
+  },
+  "comparison": {
+    "gain": -0.12593066811668052,
+    "fold_gains": [
+      -0.11387851194638188,
+      -0.03396041731300059,
+      -0.21564160965272805,
+      -0.22115262487361953,
+      -0.041725866812774015
+    ],
+    "positive_folds": 0,
+    "bootstrap_sd": 0.032637835065246354,
+    "conditional_ci95": [
+      -0.19015606605307753,
+      -0.0636359640870277
+    ],
+    "residual_correlation": 0.9153969629509441
+  },
+  "diagnostics": {
+    "constant_columns": 10,
+    "unique_column_vectors": 106,
+    "duplicate_columns": 26,
+    "d0_d1_exactly_duplicate": true,
+    "zero_count_reconstruction_r2_median": 0.42863134395227104,
+    "zero_count_reconstruction_r2_quartiles": [
+      -8.484033600314058,
+      0.2113620781824624,
+      0.42863134395227104,
+      0.7305422841253439,
+      0.9811925628091889
+    ],
+    "reconstruction_fold_constant_train_varying_validation_columns": 8,
+    "reconstruction_limit": "Descriptive OOF standardized-error R2 vs outertrain-mean null, not independent validation or feature selection. Some columns nearly constant.",
+    "highfrequency_abs_correlation_median": 0.4659091999563605,
+    "highfrequency_top_correlations": [
+      {
+        "feature": "betti_q20_d0_c1_b0",
+        "correlation": 0.903215948074662
+      },
+      {
+        "feature": "betti_q20_d1_c1_b0",
+        "correlation": 0.903215948074662
+      },
+      {
+        "feature": "betti_q20_d1_c2_b0",
+        "correlation": 0.8957662051308811
+      },
+      {
+        "feature": "betti_q20_d0_c2_b0",
+        "correlation": 0.8957662051308811
+      },
+      {
+        "feature": "betti_q20_d-1_c2_b1",
+        "correlation": 0.8952944562944527
+      }
+    ],
+    "highfrequency_limit": "Image high-frequency RMS mixes noise, sharp boundaries and contrast; correlation cannot distinguish cause. Not fed to regressor.",
+    "granulometry_distinction": "Existing grayscale opening/closing intensity statistics differ from components and holes through signed-distance excursions; thin/thick neck fixture has identical zero-level Betti counts but different eroded connectivity. Does not prove empirical information independent of every prior descriptor."
+  },
+  "extrapolation": {
+    "validation_predictions_outside_foldtrain_label_range": 0,
+    "prediction_min": 173.86582559544016,
+    "prediction_max": 235.42604386931654,
+    "feature_cells_outside_foldtrain_range_fraction_by_fold": [
+      0.0023674242424242425,
+      0.004166666666666667,
+      0.004545454545454545,
+      0.003693181818181818,
+      0.004356060606060606
+    ],
+    "chosen_alpha_by_fold": [
+      1200.0,
+      1200.0,
+      120.0,
+      1200.0,
+      1200.0
+    ]
+  },
+  "timing_seconds": {
+    "extraction400": 30.38436416600598,
+    "regression": 0.1113911250140518,
+    "validation": 1.0978492089780048
+  },
+  "validation": {
+    "fixtures": 14,
+    "models_verified": 10,
+    "reload_error": 0.0,
+    "protected_files": 18
+  },
+  "repartitions_run": false,
+  "new_candidate": null,
+  "running_work": [],
+  "limits": [
+    "Fixed user-defined approximation only; not full persistent homology or paper reproduction.",
+    "The observed panel has 10 constant columns and 26 duplicate columns. d0/d1 always coincide under this pixel-center EDT convention; plan said may, clarified without changing features.",
+    "High-frequency associations may reflect contrast or boundaries as well as noise; not causal evidence.",
+    "Count reconstruction diagnostic shows incomplete linear redundancy, not independent predictive utility.",
+    "All historical choices reused development400. Conditional bootstrap omits fitting and selection uncertainty."
+  ],
+  "reference_access": "Wang2020 abstract; Moon2019 abstract and signed-distance methods read on official publisher pages. No external training data or code used.",
+  "references": [
+    "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adts.201900227",
+    "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019WR025171"
+  ],
+  "independent_code_review": "audit_pipeline: no blocking error or fold leakage found; requested diagnostics completed in validator",
+  "scope": "No holdout/test images or labels, candidate CSV/upload, install or cost."
+}

@@ -1,0 +1,114 @@
+{
+  "range": "193–201",
+  "UTC": "2026-10-06T14:06:52.747770+00:00",
+  "current_best": {
+    "candidate": "021",
+    "Public_RMSE_parent_reported": 11.48785178,
+    "CSV_SHA256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b"
+  },
+  "conclusions": [
+    {
+      "study": "193",
+      "result": "CNN trueCE가 원본 단독에서는 detach/순열보다 개선됐지만 고정10%추가 RMSE12.79322535는 best02112.78620078보다 나쁨.",
+      "status": "추가 방식 실패; 원본 효과의 재분할 검증은201에서 완료",
+      "evidence": "reports/auxiliary-cnn-193-summary.json"
+    },
+    {
+      "study": "194",
+      "result": "기존 첫CNN seed만 고정출력 치환: 원본12.78620078→12.76150457, gain.02469621.역사적95%CI[-.00809346,.05882551]로 채택기준 미달.",
+      "status": "194실패 유지;201이 두재분할 안정성 판단을 추가",
+      "evidence": "experiments/matched-replacement-194/summary.json"
+    },
+    {
+      "study": "195",
+      "result": "기존DINO6912D에 최종max/min각768추가, 동일EDF32에서 양쪽모두 단독·결합 악화.",
+      "status": "분기 종료; signedGeM은 별개 미실행",
+      "evidence": "experiments/pooling-extrema-195/summary.json"
+    },
+    {
+      "study": "196–197",
+      "result": "crossQ직전 LN으로 MHA단독16.44024945→15.82276548 개선.고정10%결합12.82464418은021보다 나쁨.동일파라미터수는 동일유효용량을 보장하지 않음.",
+      "status": "사전 채택기준 미달; 가중치/온도/위치/구조 탐색 없음",
+      "evidence": "experiments/query-normalization-197/summary.json"
+    },
+    {
+      "study": "198",
+      "result": "명시 탐색선택 후보022를 전체500로 만들고 검증 후 제출.실제Public11.5435627849로021보다.0557110049 악화.동일데이터/seed true반복exact.",
+      "status": "기록보존·021유지; 기술검증 통과는 일반화 보증이 아님",
+      "evidence": "reports/candidate022-198-summary.json"
+    },
+    {
+      "study": "199",
+      "result": "원본194의 작은 이득이 상위5표본에73.1%집중, 상위10이득제외 시악화.동일400의OOF/full500학습내delta상관.02460.새기술오류 증거는 찾지못했으며 원인확정은 못함.",
+      "status": "사후진단 종료; 제안두개는200/201로 모두완료",
+      "evidence": "reports/submission022-diagnostic-199-summary.json"
+    },
+    {
+      "study": "200",
+      "result": "197의cross균등화 예측deltaRMS9.21465 vs196.11613: 학습된 비균등경로에 실제 의존.197단독은15.82277→17.13870악화.고정10%결합12.78588580의021대비.00031497 이득도 후보로선택하지않음.",
+      "status": "가중치고정 경로진단 종료·새학습/모델선택 없음",
+      "evidence": "reports/attention-counterfactual-200-summary.json"
+    },
+    {
+      "study": "201",
+      "result": {
+        "original": {
+          "best021": 12.786200775750695,
+          "true": 12.761504566432446,
+          "permuted": 12.782029582158549,
+          "true_gain": 0.024696209318248563,
+          "paired_passed": true,
+          "reference_passed": false
+        },
+        "20261031": {
+          "best021": 12.621902419708583,
+          "true": 12.613521003818033,
+          "permuted": 12.638126927904624,
+          "true_gain": 0.008381415890550414,
+          "paired_passed": false,
+          "reference_passed": false
+        },
+        "20261101": {
+          "best021": 13.032449212752852,
+          "true": 12.996248497062325,
+          "permuted": 12.99961886127039,
+          "true_gain": 0.03620071569052641,
+          "paired_passed": false,
+          "reference_passed": true
+        }
+      },
+      "status": "고정 CNN 보조 CE 분기 종료; best021 유지",
+      "evidence": "reports/auxiliary-repartition-201-summary.json"
+    }
+  ],
+  "051_related_failure": "FrozenDINO sharedMLP CE의 원본결합gain+.02041가 두재분할−.04928/−.00258로 불안정했다.193은CNN학습층/4bin/MSE/분리clip대조가 달라051의 직접재실험이나 동일모델은 아니다.201을 함께 보고 판단한다.",
+  "remaining_unexecuted": [
+    {
+      "item": "signedGeM",
+      "status": "음수token에 대한 signed정의·집계식 미확정; 구현/실행 없음.195max/min 결과로 모든pooling을 일반기각하지 않음."
+    },
+    {
+      "item": "보조CE 추가계수/seed/epoch/3seed전체교체/downstream재학습",
+      "status": "미실시.현재 고정 CNN CE 분기 종료 후 구조조정·구제탐색으로 이어가지 않음."
+    },
+    {
+      "item": "200 균등화조건 후보승격/가중치탐색",
+      "status": "미실시·분기종료.기존 비선택 결정 유지."
+    },
+    {
+      "item": "201 전체500/test/새제출CSV/업로드",
+      "status": "미실시.재분할 연구만 완료; best021 유지."
+    },
+    {
+      "item": "외부DSB2018 일부세부주장",
+      "status": "이전 부모전달 조사만 기록;본문독립확인 미완료.현성과근거로 추가사용하지 않음."
+    }
+  ],
+  "completed_not_pending": [
+    "193의 기존 두 개발 재분할30fits:201완료",
+    "199의 frozen cross균등개입 제안:200완료",
+    "전체500 후보022 생성·검증·부모제출:198/199기록완료"
+  ],
+  "uncertainty": "193–201은 동일 개발400의 반복연구가 많다.201세분할은 같은400ID이며 독립1200이 아니다.모든조건부CI는학습재추정과누적선택불확실성을빠뜨린다.작은원본이득/재현성/기술정확성만으로 Public/Private일반화를 보증하지 않는다.",
+  "current_task_blockers": []
+}

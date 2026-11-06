@@ -1,0 +1,33 @@
+import sys, numpy as np
+from pathlib import Path
+from scipy import ndimage as ndi
+from PIL import Image
+HERE = Path(__file__).resolve().parent; E = HERE.parent; P = E.parent
+split = sys.argv[1]; hpath = sys.argv[2] if len(sys.argv) > 2 else str(E / f'push-300/ftseg-ft-H300-{split}-noisy-n1-masks.npz')
+U = np.load(E / f'push-400/unet4maps-z1-{split}.npz'); upos = {str(i): k for k, i in enumerate(U['ids'])}
+Mc = np.load(E / f'grain-cellpose-220/masks-v3-{split}.npz', allow_pickle=True); cpos = {str(i): k for k, i in enumerate(Mc['ids'])}
+Mn = np.load(hpath, allow_pickle=True); npos = {str(i): k for k, i in enumerate(Mn['ids'])}
+F = np.load(E / f'grain-cellpose-220/features-v3-{split}.npz', allow_pickle=True); fk = [str(k) for k in F['keys']]; ids = [str(i) for i in F['ids']]
+Ftr = np.load(E / 'grain-cellpose-220/features-v3-train.npz', allow_pickle=True); thr = float(np.nanmedian(Ftr['X'][:, list(Ftr['keys']).index('noise')]))
+nz = F['X'][:, fk.index('noise')]
+KEYS = ['sh_cor15', 'sh_raw15']; X = np.full((len(ids), 2), np.nan); src = []
+for k, i in enumerate(ids):
+    noisy = nz[k] > thr
+    if noisy and i not in npos: raise SystemExit(f'missing ft-H300 mask for noisy {i}')
+    mask = (Mn['masks'][npos[i]] if noisy else Mc['masks'][cpos[i]]).astype(int); src.append('H300' if noisy else 'v3')
+    im = np.asarray(Image.open(P / f'data/{split}/{i}.png'), np.float32)
+    mp = U['maps'][upos[i]].astype(np.float32); ph = np.kron(mp[1], np.ones((2, 2))); po = np.kron(mp[2], np.ones((2, 2)))
+    inner = np.where(ndi.minimum_filter(mask, 5) == ndi.maximum_filter(mask, 5), mask, 0)
+    labs = np.unique(inner); labs = labs[labs > 0]
+    if len(labs) < 25: continue
+    I = np.asarray(ndi.mean(im, inner, labs)); pph = np.asarray(ndi.mean(ph, inner, labs)); ppo = np.asarray(ndi.mean(po, inner, labs))
+    A = np.asarray(ndi.sum(np.ones_like(im), mask, labs)); com = np.array(ndi.center_of_mass(np.ones_like(im), inner, labs)); cy, cx = com[:, 0], com[:, 1]
+    keep = ppo < 0.3; I, pph, A, cx, cy = I[keep], pph[keep], A[keep], cx[keep], cy[keep]
+    mat = pph < 0.15
+    if mat.sum() < 15: continue
+    d2 = (cx[:, None] - cx[mat][None]) ** 2 + (cy[:, None] - cy[mat][None]) ** 2; W = np.exp(-d2 / (2 * 48 ** 2))
+    W[np.where(mat)[0], np.arange(mat.sum())] = 0
+    field = (W @ I[mat]) / W.sum(1)
+    X[k] = [A[field - I > 15].sum() / A.sum(), A[np.median(I[mat]) - I > 15].sum() / A.sum()]
+np.savez(HERE / f'shade-{split}.npz', ids=np.array(ids), X=X, keys=np.array(KEYS), mask_source=np.array(src), noise_thr=thr)
+print(split, 'rows', len(ids), 'nan rows', int(np.isnan(X[:, 0]).sum()), 'noisy(H300) rows', src.count('H300'), 'mean', np.nanmean(X, 0).round(4))

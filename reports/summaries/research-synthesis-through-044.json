@@ -1,0 +1,55 @@
+{
+  "successes": [
+    {
+      "study": "039",
+      "finding": "Full504 frozenDINO improves fixed003ensemble across3partitions; candidate005 Public12.2763921367 was parent-confirmed.",
+      "evidence": "reports/dino-039-summary.json"
+    },
+    {
+      "study": "043",
+      "finding": "Weak lastblockadaptation gives smallconsistent0.0321/0.0353/0.0383gains versus005.",
+      "evidence": "reports/dino-043-summary.json"
+    },
+    {
+      "study": "044",
+      "finding": "Frozenmulti3 gives0.0992/0.0446/0.0405gains; fixed043combination onlylimitedextra gain.",
+      "evidence": "reports/dino-044-summary.json"
+    }
+  ],
+  "not_promoted": [
+    {
+      "study": "027-029",
+      "finding": "RelaxedHGB/shallowGBR andconnected-boundaryprofiles didnotconsistentlyimprove matchedensemble; capacityincreaseoverfit and segmentationundersegmented.",
+      "evidence": "reports/hypotheses-027-029-summary.json"
+    },
+    {
+      "study": "030-034",
+      "finding": "Localporecurvature andnonzero-lag covariancefeatures failedrepartitionensembleconfirmation.",
+      "evidence": [
+        "reports/pore-hypothesis-030-032-summary.json",
+        "reports/autocov-033-034-summary.json"
+      ]
+    },
+    {
+      "study": "035-036",
+      "finding": "CNNcovariancepooling/morphologyfusion andsmallerheadcontrols didnotreproduce originalgains.",
+      "evidence": [
+        "reports/cnn-structure-035-summary.json",
+        "reports/cnn-cov-controls-036-summary.json"
+      ]
+    },
+    {
+      "study": "042",
+      "finding": "Two-lag frozenpatchvariograms hadinconsistentthreepartitiongains.",
+      "evidence": "reports/dino-042-summary.json"
+    }
+  ],
+  "unresolved": [
+    "Does remainingerror reflect syntheticlabelnoise/unobservedgeneratorparameters or recoverable morphology? Currentdata do not establish a noise floor.",
+    "Can physically meaningful grain/phase/pore parameters be measured reliably through blur/noise? Prior connected-boundary/pore/covariance panels did not validate this.",
+    "Do block6/9/12 features improve morphology signal or merely encode nuisance contrast/noise? Need targeted development-only attribution/robustness diagnostics before larger training/search.",
+    "The three partitions reuse400historicallyinspectedimages; how much gain survives a genuinely prospective evaluation? Existing repeated CV cannot remove historical selection bias."
+  ],
+  "conclusion": "Representation changes provide modest gains. No irreducible ceiling established and no evidence supports prize-level performance. Preserve005; avoid spending lastsubmission on unreviewed marginal models.",
+  "new_resources_needed": "None proven necessary; no cost/install/actionrequested."
+}

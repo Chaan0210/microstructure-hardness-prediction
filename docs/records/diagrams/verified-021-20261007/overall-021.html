@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최고 모델 021 — 두 경로의 마지막 결합</title>
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #f5f5f5;   /* white-smoke */
+      --color-ink:     #2d3142;   /* jet-black */
+      --color-muted:   #4f5d75;   /* blue-slate */
+      --color-accent:  #eb6c36;   /* atomic-tangerine */
+      --font-sans:     'Geist', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', 'Noto Serif', 'Noto Serif KR', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .frame { max-width: 1600px; width: 100%; }
+    /* The SVG holds its readable width (min-width == the viewBox width, so the
+       type ramp is never silently scaled down). This wrapper lets a narrow
+       screen scroll the diagram instead of the whole page. */
+    .diagram-container { width: 100%; overflow-x: auto; }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+    }
+
+    svg { width: 100%; min-width: 1600px; display: block; }
+    /* Paper has no scrollbar, so the local scroller would clip instead of
+       scroll. Let the diagram scale down to the sheet: smaller but whole
+       beats sharp but cut off. Must come after the svg rule above - a media
+       query adds no specificity, so a later plain rule would win. */
+    @media print {
+      .diagram-container { overflow-x: visible; }
+      svg { min-width: 0; }
+    }
+  
+ .frame { min-width:0; max-width:100%; } svg { width:1600px; }
+ svg text { fill:#2d3142; font-family:'Geist','Noto Sans KR','Apple SD Gothic Neo',Arial,sans-serif; }
+ .title-svg {font-family:'Instrument Serif','Noto Serif KR','AppleMyungjo',Georgia,serif;font-size:40px;font-weight:400;}
+ .name {font-size:16px;font-weight:600;} .body {font-size:16px;font-weight:400;}
+ .tech {font-family:'Geist Mono',Menlo,monospace;font-size:12px;}
+ .eyebrow-svg {font-family:'Geist Mono',Menlo,monospace;font-size:12px;letter-spacing:2px;}
+ .footer-svg {font-family:'Geist Mono',Menlo,monospace;font-size:11px;fill:#4f5d75;}
+ </style>
+</head>
+<body>
+  <div class="frame">
+    
+
+    <!-- Replace [diagram-slug] with a unique slug for this diagram before export. -->
+    <div class="diagram-container">
+      <svg viewBox="0 0 1600 1040" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="overall-021-title overall-021-desc"><title id="overall-021-title">최고 모델 021 — 두 경로의 마지막 결합</title><desc id="overall-021-desc">코드·설정·저장 파라미터 대조 · 추론을 새로 실행하지 않고 확인한 구조</desc><defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker></defs><rect width="100%" height="100%" fill="#f5f5f5"/><text x="40" y="52" class="eyebrow-svg">MICROSTRUCTURE / VERIFIED CODE / 2026.10.07</text><text x="40" y="108" class="title-svg">최고 모델 021 — 두 경로의 마지막 결합</text><text x="40" y="140" class="body">코드·설정·저장 파라미터 대조 · 추론을 새로 실행하지 않고 확인한 구조</text><path class="connector" d="M 296 340 H 328 Q 336 340 336 332 V 308 Q 336 300 344 300 H 376" fill="none" stroke="#4f5d75" stroke-width="1.5" marker-end="url(#arrow)"/><path class="connector" d="M 296 460 H 328 Q 336 460 336 468 V 656 Q 336 664 344 664 H 376" fill="none" stroke="#4f5d75" stroke-width="1.5" marker-end="url(#arrow)"/><path class="connector" d="M 664 664 H 720" fill="none" stroke="#4f5d75" stroke-width="1.5" marker-end="url(#arrow)"/><path class="connector" d="M 1032 664 H 1088" fill="none" stroke="#4f5d75" stroke-width="1.5" marker-end="url(#arrow)"/><path class="connector" d="M 1032 300 H 1120" fill="none" stroke="#4f5d75" stroke-width="1.5" marker-end="url(#arrow)"/><path class="connector" d="M 1320 552 V 440" fill="none" stroke="#4f5d75" stroke-width="1.5" marker-end="url(#arrow)"/><g class="node" data-node="image"><rect class="box" x="40" y="280" width="256" height="240" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="64" y="316" class="name">입력 · 동일 이미지</text><text x="64" y="348" class="tech">256 × 256 · grayscale</text><text x="64" y="372" class="body">원본은 한 장의 미세조직 이미지</text><text x="64" y="396" class="body">각 경로가 별도로 전처리</text><text x="64" y="420" class="body">학습·시험의 ID 순서 보존</text></g><g class="node" data-node="018"><rect class="box" x="376" y="200" width="656" height="240" rx="6" fill="#fcf0e9" stroke="#eb6c36" stroke-width="2"/><text x="400" y="236" class="name">018 · 보정 + short-B + 잔차를 모두 포함</text><text x="400" y="268" class="tech">raw = .3 KRR26 + .3 CNN(mean3) + .2 S(mean3) + .2 B(mean3)</text><text x="400" y="292" class="tech">cal(raw) = 194.1655162532 + 1.1103548755 × (raw − 194.0592588401)</text><text x="400" y="316" class="tech">018 = .9 cal(raw) + .1 shortB + mean3(weighted residual)</text><text x="400" y="340" class="body">잔차: physics57 + DINO-B spatial528 → 585차원</text><text x="400" y="364" class="body">정확한 내부 순서와 각 층은 018 상세 그림 참조</text></g><g class="node" data-node="prepL"><rect class="box" x="376" y="552" width="288" height="224" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="400" y="588" class="name">L 경로 전처리</text><text x="400" y="620" class="tech">BICUBIC resize → 504 × 504</text><text x="400" y="644" class="tech">1 channel → replicated RGB</text><text x="400" y="668" class="tech">/255 → ImageNet normalization</text><text x="400" y="692" class="tech">μ=[.485,.456,.406]</text><text x="400" y="716" class="tech">σ=[.229,.224,.225]</text></g><g class="node" data-node="dinoL"><rect class="box" x="720" y="552" width="312" height="224" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="744" y="588" class="name">동결 DINOv2-L / ViT-L/14</text><text x="744" y="620" class="tech">24 blocks · width 1024</text><text x="744" y="644" class="tech">1296 patches · 36 × 36</text><text x="744" y="668" class="tech">layers = [11,17,23] (0-based)</text><text x="744" y="692" class="body">각 층: normalized CLS + mean + std</text><text x="744" y="716" class="tech">3 layers × 3 pools × 1024 = 9216</text></g><g class="node" data-node="headL"><rect class="box" x="1088" y="552" width="456" height="224" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="1112" y="588" class="name">L 헤드 3개 → 예측 평균</text><text x="1112" y="620" class="tech">9216 → StandardScaler → 64 → 1</text><text x="1112" y="644" class="body">GELU · Dropout(.25), eval에서 비활성</text><text x="1112" y="668" class="body">target scale을 복원한 뒤 3 seed 평균</text><text x="1112" y="692" class="tech">seeds: 20261128 / 20261205 / 20261219</text><text x="1112" y="716" class="body">학습용 7-class 보조 head는 추론에서 제외</text></g><g class="node" data-node="blend021"><rect class="box" x="1120" y="200" width="424" height="240" rx="6" fill="#fcf0e9" stroke="#eb6c36" stroke-width="2"/><text x="1144" y="236" class="name">최종 021 · 기존 018에 L을 혼합</text><text x="1144" y="268" class="tech">021 = .9 × 018 + .1 × L(mean3)</text><text x="1144" y="292" class="body">각 입력은 이미 hardness 단위의 예측값</text><text x="1144" y="316" class="body">잔차는 018 내부에서 더한 뒤 .9를 곱함</text><text x="1144" y="340" class="body">추가 affine · 출력 clipping 없음</text><text x="1144" y="364" class="body">Public RMSE 11.4878517800 (저장 기록)</text></g><text x="40" y="864" class="body">추론: 저장된 파라미터만 사용 · D4 / TTA 없음 · test에서 fit / bootstrap / 선택 없음</text><text x="40" y="900" class="body">학습과의 차이: train OOF로 보정·잔차 선택, backbone은 동결, 추론 시 dropout·보조 분류는 사용하지 않음</text><line x1="40" y1="964" x2="1560" y2="964" stroke="#bfc0c0"/><text x="40" y="996" class="body">산호색: 018 내부 결합과 최종 021 결합 · 화살표: 추론 값의 흐름 · 회색: 입력·고정 연산·헤드</text><text x="40" y="1020" class="footer-svg">Diagram Design v2.6 · d137637 · 6/8 grouped nodes · offline system-font fallback · PNG 2×</text></svg>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "study": "093 final hypothesis assessment",
+  "conclusion_ko": "학습형 가중합이 parameter-matched mean보다 유리한 방향은 세 분할에서 재현됐다. 그러나011 대비 순이득은 원본에서 고정한5장에 집중됐고 나머지395장 RMSE는 두 재분할에서 소폭 악화됐다. 범용 성능 개선이나 제출 근거로 확정하지 않는다.",
+  "representation_evidence": "Standalone attention-over-mean gains=.3640067/.1245287/.1594746; blend-over-mean gains=.0397518/.0092324/.0191835. All directionspositive, but bothresplit standalone conditional95%intervals includezero. These are correlatedrepartitions,not independentreplications.",
+  "fixed_sample_evidence": "All originalselected5 improveinbothresplits. Remaining395 gains=.0008897/-.0069393/-.0094141; alltheirconditionalintervals includezero. This establishes concentrated descriptivebenefit,not eachof395 worsening.",
+  "secondary_descriptive_attribution": "Sameprespecified5/395groups, no newsubgroup selection. Squared-error decomposition separates benefit alreadyavailable fromthemeanpatch branch fromtheadditionalattention weighting. Positivecombined5benefit mustnot be wholly attributed toattention orphysicalpatchimportance.",
+  "MSE_decomposition": {
+    "original": {
+      "fixed_top5": {
+        "MSE_gain_011_to_mean_blend": 74.34847877736809,
+        "MSE_gain_mean_to_attention_blend": 10.3332338396875,
+        "MSE_gain_011_to_attention_blend": 84.68171261705558
+      },
+      "fixed_other395": {
+        "MSE_gain_011_to_mean_blend": -0.8960115697474736,
+        "MSE_gain_mean_to_attention_blend": 0.9184379977384276,
+        "MSE_gain_011_to_attention_blend": 0.02242642799095404
+      }
+    },
+    "20261031": {
+      "fixed_top5": {
+        "MSE_gain_011_to_mean_blend": 80.99537691420007,
+        "MSE_gain_mean_to_attention_blend": 1.6057086794428983,
+        "MSE_gain_011_to_attention_blend": 82.60108559364296
+      },
+      "fixed_other395": {
+        "MSE_gain_011_to_mean_blend": -0.3972287375436459,
+        "MSE_gain_mean_to_attention_blend": 0.22250800568581586,
+        "MSE_gain_011_to_attention_blend": -0.17472073185783007
+      }
+    },
+    "20261101": {
+      "fixed_top5": {
+        "MSE_gain_011_to_mean_blend": 74.52619412992331,
+        "MSE_gain_mean_to_attention_blend": 7.686351413650368,
+        "MSE_gain_011_to_attention_blend": 82.21254554357367
+      },
+      "fixed_other395": {
+        "MSE_gain_011_to_mean_blend": -0.658661721608549,
+        "MSE_gain_mean_to_attention_blend": 0.4175873575609751,
+        "MSE_gain_011_to_attention_blend": -0.24107436404757407
+      }
+    }
+  },
+  "selection_bias": "This extension was selected after observing092 original gains. The092 >=3positivefold gate against011 failed(2/5) andremains recorded;093 deliberately relaxes it posthoc. Same400 historicallyreused rows andoriginal-selectedtop5 are notindependent confirmation or unbiased subgroups. No revised pre-registration claim.",
+  "decision": "Conclude thisfixedhypothesis only. No settingchanges,newexperiment,candidateCSV,full500training,testinference orsubmission. Best011preserved.",
+  "summary_sha256": "1f2c72128da7c0612064e29b3d9349aa8ea634ff973e9ea26da07b04b0b565ca",
+  "fixed_id_tracking_sha256": "68ca67269ca3cf2000b0d8e109b7aa237d007f6eddf90a5faa7cdd5a921391cd",
+  "protected011_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "cost": 0
+}

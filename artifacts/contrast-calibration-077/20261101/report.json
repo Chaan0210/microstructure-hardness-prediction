@@ -1,0 +1,132 @@
+{
+  "split": "20261101",
+  "scores": {
+    "reference009": {
+      "rmse": 13.305105282101927,
+      "fold_rmse": [
+        13.849200001634694,
+        12.960759057914057,
+        12.948923572726505,
+        13.74037731629103,
+        12.995188583092828
+      ]
+    },
+    "primary": {
+      "rmse": 13.304434091169746,
+      "fold_rmse": [
+        13.809783947843869,
+        13.04685249531562,
+        12.529393984088253,
+        14.197628945816856,
+        12.866660733039689
+      ]
+    }
+  },
+  "comparison": {
+    "gain": 0.0006711909321808207,
+    "fold_gains": [
+      0.039416053790825245,
+      -0.08609343740156383,
+      0.41952958863825174,
+      -0.45725162952582643,
+      0.12852785005313905
+    ],
+    "positive_folds": 3,
+    "bootstrap_sd": 0.11780785377172608,
+    "conditional_ci95": [
+      -0.2224684521487768,
+      0.2260475184961964
+    ]
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "model_sha256": "17ca2911935fca84fe87388cbca55b7e366ebc407cfb6a28323621cc193a4059",
+      "fit_data_sha256": "e84c67b1959cc9942c11d743fbed0681ef691c53fa90ac0ab8074ac95a24eed2",
+      "raw_slopes": [
+        1.1469602911578307,
+        0.21946662365155156
+      ],
+      "condition_number": 1.0231534499938233,
+      "effective_coefficients": {
+        "legacy003": 0.6407535947168215,
+        "Smean3": 0.2531033482205046,
+        "Bmean3": 0.2531033482205046
+      },
+      "control009_max_error": 0.0,
+      "outer_rmse": 13.809783947843869
+    },
+    {
+      "fold": 1,
+      "model_sha256": "5e452b8c6b03d71de2b3a49b725e0e8f17539058db7309492ac0555dffbb60ff",
+      "fit_data_sha256": "79c78cc8b8b286cbc5711474b2910dbc36b4533cdd1c3ec697165d4dee1dd273",
+      "raw_slopes": [
+        1.0731391091215672,
+        0.3194605953848122
+      ],
+      "condition_number": 1.2411944799483379,
+      "effective_coefficients": {
+        "legacy003": 0.4853937364563632,
+        "Smean3": 0.293872686332602,
+        "Bmean3": 0.293872686332602
+      },
+      "control009_max_error": 0.0,
+      "outer_rmse": 13.04685249531562
+    },
+    {
+      "fold": 2,
+      "model_sha256": "bbba8d456539e04b96f8baa97798a724738c1337703281bde518a34d30eeba8b",
+      "fit_data_sha256": "d1f9af6b04f953b8cd5e3b75cfd1c30e55e1fa060269c146557afa599381e6fd",
+      "raw_slopes": [
+        1.0939819386471161,
+        0.3111689389237622
+      ],
+      "condition_number": 1.0043736603214772,
+      "effective_coefficients": {
+        "legacy003": 0.509317515061575,
+        "Smean3": 0.2923322117927706,
+        "Bmean3": 0.2923322117927706
+      },
+      "control009_max_error": 0.0,
+      "outer_rmse": 12.529393984088253
+    },
+    {
+      "fold": 3,
+      "model_sha256": "5811e77016a2798cd39b98ad6d58a86f941919634d26becc8a2491911ed99ed2",
+      "fit_data_sha256": "7284fb748532b0c23562409a420acfa7e67f10d2eec9d9629ba06bc6392159f3",
+      "raw_slopes": [
+        1.1285003781392224,
+        0.3735372283536848
+      ],
+      "condition_number": 1.0786021517777558,
+      "effective_coefficients": {
+        "legacy003": 0.472838055250732,
+        "Smean3": 0.3278311614442452,
+        "Bmean3": 0.3278311614442452
+      },
+      "control009_max_error": 0.0,
+      "outer_rmse": 14.197628945816856
+    },
+    {
+      "fold": 4,
+      "model_sha256": "e9d6386474c65b41543f42617cb294578c5432cc54f45c24f38950a2a75323bd",
+      "fit_data_sha256": "8765a0f838412a07503582e103a4c6e69ea9c4724fd43e36ca97d84ad457dca7",
+      "raw_slopes": [
+        1.0731799643165896,
+        0.11993866614386596
+      ],
+      "condition_number": 1.053378027021704,
+      "effective_coefficients": {
+        "legacy003": 0.6849463070935762,
+        "Smean3": 0.19411682861150667,
+        "Bmean3": 0.19411682861150667
+      },
+      "control009_max_error": 0.0,
+      "outer_rmse": 12.866660733039689
+    }
+  ],
+  "predictions_sha256": "e5e519baa2ef51d27d3b037209413a2c1f60b03b8da862e64630c82c1d5b22e0",
+  "seconds": 0.046839665970765054,
+  "upstream_models_reused_not_refitted": true,
+  "candidate_created": false
+}

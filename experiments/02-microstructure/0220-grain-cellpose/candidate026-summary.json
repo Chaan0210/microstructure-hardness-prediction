@@ -1,0 +1,28 @@
+{
+ "candidate": "026",
+ "weight": 0.5,
+ "n_train": 500,
+ "test_failed_segmentations": 7,
+ "pred_stats": {
+  "mean": 193.8347047177464,
+  "std": 12.039090170294001,
+  "min": 161.47810299637956,
+  "max": 243.25965935586183
+ },
+ "corr_best021_vs_grain_test": 0.7979402165605911,
+ "rms_change_vs_021": 4.108402990373118,
+ "rms_change_vs_023": 2.927047418308014,
+ "csv": "artifacts/submission-candidate-026.csv",
+ "csv_sha256": "b6c9621fa445c0a911129b83fd2c2fd215370be4870a2170c713d4b9e7c832c4",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "uploaded": false,
+ "formula": "0.5*best021 + 0.5*mean3seeds TabPFN-v2(n_est=32) on features-v3 (fallback best021 if n_obj<20)",
+ "feature_prefix": "features-v3",
+ "tabpfn_weights_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+ "tabpfn_license": "Prior Labs License 1.1 (Apache-2.0 derivative + attribution clause)",
+ "seed_pred_corr": [
+  0.9996060570266467,
+  0.9995159563083104
+ ],
+ "dev_evidence": "explore-stabilize.json:adopt"
+}

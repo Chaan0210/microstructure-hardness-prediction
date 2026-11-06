@@ -1,0 +1,38 @@
+{
+  "arms": {
+    "full504": "Whole256imagebicubicresize504;36x36patchtokens,CLS+mean/std1152;grain structures occupy about twice as many pixels as252,interpolation addsnoindependentinformation",
+    "native196x4": "4unaltered196cropsat(0,0),(60,0),(0,60),(60,60),coverallpixels;percropCLS+patchmean/std1152;acrosscropmean+populationstd2304;targets localcontext/heterogeneity preservingnativeintensities"
+  },
+  "control": "037frozenwhole252descriptor1152, sameRidgeprotocol",
+  "orientation": "No rotation/reflectionaugmentation; no unverifieddirectionlabelinvariance assumed",
+  "normalization": "ExistingImageNetRGBmean/std,grayscaleRGBrepeat;backbonefrozen/eval/inference_mode",
+  "regression": "StandardScaler\u2192Ridge(alpha=lambda*featurecount);lambda(.1,1,10) innerGroupKFold3same037seeds. Standardizedtarget pertrain. Feature-count scaling normalizes aggregate feature magnitude acrosspanels. NoPCA.",
+  "ensemble": "0.75verifiedsamefold003+0.25spatialDINO,fixed",
+  "screen": "OriginalCV two newpanels plusmatched252control; selectatmostone newpanel onlyifblendbeats003andmatched252control,with>=3/5foldwinsagainst003. LowestblendRMSEwins;thenconfirmbothrepartitions. Ifnoneeligible, stop.",
+  "scope": "Development400only. Reusedsplitsandhistoricalselectionarenotindependentvalidation.",
+  "resources": "Stopbefore400extractifMPSimage>1secondorRSS>3GBorMPSdriver>3GB",
+  "source_sha256": {
+    "dino_spatial_039.py": "6a5a2546cf3266dd67fcaccae2dfe978bc431349cec2d5ab784b9a065e79c692",
+    "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353"
+  },
+  "backbone_provenance": {
+    "source.zip": {
+      "url": "https://codeload.github.com/facebookresearch/dinov2/zip/7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+      "sha256": "04276715cddb29d45d05bff3a6fc132224dc27749b279ac98ad2ce4620e20d48",
+      "bytes": 3001681,
+      "seconds": 0.3182906659785658
+    },
+    "dinov2_vits14_pretrain.pth": {
+      "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth",
+      "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+      "bytes": 88283115,
+      "seconds": 1.7954706249875017
+    },
+    "commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "source_dir": "vendor/dinov2-official/dinov2-7764ea0f912e53c92e82eb78a2a1631e92725fc8"
+  },
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  }
+}

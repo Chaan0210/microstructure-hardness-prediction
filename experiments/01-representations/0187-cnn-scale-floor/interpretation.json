@@ -1,0 +1,120 @@
+{
+  "study": 187,
+  "decision": "numerical_repair_passed_accuracy_gate_failed_keep_best021",
+  "old_rule": "mu_j=mean_train X_j; sigma_j=sqrt(mean_train (X_j-mu_j)^2); scale_j=sigma_j except exact-zero sigma_j replaced by1; Z=(X-mu)/scale. Nearzero nonzero sigma was not bounded.",
+  "new_rule": {
+    "formula": "mu_j=mean_T X_j; var_j=mean_T (X_j-mu_j)^2; s_RMS=sqrt(mean_j var_j); scale_j=max(sqrt(var_j),s_RMS); Z_j=(X_j-mu_j)/scale_j; if allvariancezero:unit scales.",
+    "dimensionless_principle": "sigma_j/s_RMS flooredat1. No adjustablecoefficient,epsilonsearch,featuredeletionorpredictionclipping. InvarianttocommonpositivechangeoffeatureunitswhenRMS>0.",
+    "fit_scope": "Everyinnertrainandoutertrain independently; fixedscalerduringadaptation; neverfitonvalidationfeatures/labels.",
+    "historical_source": "reports/persistence-repair-109-summary.json",
+    "historical_sha256": "fe55e5369cd6d3ad0e1d3ec13b7f96ab3c48bb6389d8c75c3ef083e0b8f0bc6b"
+  },
+  "causal_scope": "One changed scaling rule, fresh same-initialization head warmstarts required. Same frozen image/prefix caches, trainable stage, input224, activation, optimizer grid, seeds, epochs, orders, folds, and nested selection. No validation-derived floor or prediction clipping.",
+  "mechanism": "Rare nearconstant train feature divided by very small train standard deviation amplified heldout feature values and FP32 device differences before and after fine-tuning. Fixed train-only RMS floor removed the observed amplification. It also changes relative feature scaling and therefore learned predictions; numerical repair alone does not imply accuracy improvement.",
+  "evidence": {
+    "passed": true,
+    "new_reload_checks": 7,
+    "all_new_CPU_MPS_within_002": true,
+    "all_three_original_CPU_failures_reproduced": true,
+    "original_CPU_tolerance_unchanged": 0.002,
+    "all_new_features_predictions_gradients_finite": true,
+    "train_only_and_unit_invariance_passed": true,
+    "accuracy_not_used_for_gate": true,
+    "prediction_ranges_diagnostic_only": true,
+    "seconds": 160.6053641660037
+  },
+  "main_comparison186": {
+    "resnet50": {
+      "selected": {
+        "186_standalone": 16.084004689873392,
+        "187_standalone": 15.536521834495163,
+        "186_blend10": 12.907363523076791,
+        "187_blend10": 12.909168834878406,
+        "same_ID_target_fold_order": true,
+        "independent_python_fsum_verified": true
+      },
+      "AdamW": {
+        "186_standalone": 15.583036328149179,
+        "187_standalone": 15.536521834495163,
+        "186_blend10": 12.907992346403628,
+        "187_blend10": 12.909168834878406,
+        "same_ID_target_fold_order": true,
+        "independent_python_fsum_verified": true
+      },
+      "SGD": {
+        "186_standalone": 16.11479424716185,
+        "187_standalone": 15.851315358009245,
+        "186_blend10": 12.88545917608172,
+        "187_blend10": 12.90994446787234,
+        "same_ID_target_fold_order": true,
+        "independent_python_fsum_verified": true
+      }
+    },
+    "efficientnet_b0": {
+      "selected": {
+        "186_standalone": 17.09462796373864,
+        "187_standalone": 17.2530491587846,
+        "186_blend10": 13.004752701970657,
+        "187_blend10": 12.992553601328794,
+        "same_ID_target_fold_order": true,
+        "independent_python_fsum_verified": true
+      },
+      "AdamW": {
+        "186_standalone": 17.09462796373864,
+        "187_standalone": 17.054279214668927,
+        "186_blend10": 13.004752701970657,
+        "187_blend10": 12.98337973117441,
+        "same_ID_target_fold_order": true,
+        "independent_python_fsum_verified": true
+      },
+      "SGD": {
+        "186_standalone": 16.83448565133772,
+        "187_standalone": 17.23116209336639,
+        "186_blend10": 12.965076160379294,
+        "187_blend10": 12.986804286792797,
+        "same_ID_target_fold_order": true,
+        "independent_python_fsum_verified": true
+      }
+    }
+  },
+  "CPU_maxabs": {
+    "resnet50": 6.105139138412596e-05,
+    "efficientnet_b0": 2.690274479277832e-05
+  },
+  "selection_after_repair": {
+    "resnet50": [
+      "adamw_high",
+      "adamw_high",
+      "adamw_high",
+      "adamw_high",
+      "adamw_high"
+    ],
+    "efficientnet_b0": [
+      "adamw_high",
+      "sgd_high",
+      "sgd_high",
+      "sgd_high",
+      "sgd_high"
+    ]
+  },
+  "ResNet_residual_correlation_186_to_187": [
+    0.8533079511839435,
+    0.8902869583328745
+  ],
+  "interpretation_limits": [
+    "ResNet standalone improved but fixed blend did not; observed residual correlation increased. This observation does not prove a causal decomposition of blend performance.",
+    "Both fixed10 blends lost against021 on all5folds; no promotion or resplits.",
+    "Family OOF scores are diagnostics only; no outer-label choice of optimizer family.",
+    "Reused development400 with a long adaptive research history, not an independent final test.",
+    "Fixed12epochs does not establish convergence or a CNN architecture ceiling.",
+    "Input resolution, deeper unfreezing, activation and augmentation were not changed or executed."
+  ],
+  "preserved_controls": {
+    "185": true,
+    "186": true,
+    "186_three_original_CPU_failures_reproduced_at_same_002": true,
+    "best021_SHA256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b"
+  },
+  "cost": 0,
+  "new_download_install_holdout_test_resplit_full500_newCSV_upload": false
+}

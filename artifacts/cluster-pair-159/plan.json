@@ -1,0 +1,84 @@
+{
+  "study": "159 C2 same-component probability versus matched S2",
+  "UTC": "2026-10-04T13:44:14.846778+00:00",
+  "definition": "For inferred binary mask M, label4-connected components within observed image. C2(delta)=sum_x 1[label(x)=label(x+delta)>0]/Nvalid(delta); S2(delta)=sum_x M(x)M(x+delta)/sameNvalid. NO conditional normalization byS2, no wrapping, no smoothing/filtering/closing/denoising. Paths may bend anywhere INSIDE image; outside connectivity is unobserved.",
+  "features": {
+    "quantiles": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "threshold_method": "Each rawuint8image linearquantile, low<=threshold, complement>threshold;tiesretained. No dataset/label fit.",
+    "sides": [
+      "low",
+      "complement"
+    ],
+    "connectivity": 4,
+    "distances_native_pixels": [
+      4,
+      16,
+      64
+    ],
+    "directions": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "summary": "axis mean and populationstd,36features per arm. No diagonals/interpolation. D4invariant; orientation relative toload discarded.",
+    "rationale": "Three fixed inherited20/50/80quantiles and sparse4/16/64pixel lags span short/intermediate/quarter-image separations. No image/target outcome used tochoose them.",
+    "interpretation": "Estimated binary-region connectivity statistics; NOT identified physical phases, grains, pores, true material topology or mechanicalcausality."
+  },
+  "audit": {
+    "028": "TV+ridge linking+complement component22summaries. Label operation only for counts/areas/shapes/network; never same-component separated-pair curve.",
+    "054": "All pixels on sampled straight segment occupied, versus any4-neighbor path forC2. For axial integerlag same mask/domain: L2<=C2<=S2; inequality not claimed for054interpolateddiagonals.",
+    "055": "Counts ofcomponents/holes underdistance excursions; not distance-conditioned within-component paircounts.",
+    "130": "Centered endpoint pair/triple products; never asks whether endpoints sharea connectedcomponent. Current matchedS2 is rawprobability onexactC2mask/lags, NOT retry130triplebank.",
+    "other_source": "src/microstructure_v2/features.py andextra.py inspected:autocorrelations,componentmarginalshapes/areas,not C2. Source searches foundno directC2implementation.",
+    "proof": "Deterministic homometric masks have identical all-vectorS2 and same componentarea multiset/zero-levelBetti butdifferentC2. U-shapefixture path withoutstraightline. BFSindependentverification. No claim jointly independentofallpast descriptors or useful hardnesssignal."
+  },
+  "model": "Exact018nested procedure, existing585 plus ONE36wide block; same dimensions621 forS2andC2. C2isprimary; S2isdiagnosticmatchedcontrol and neverfallback. No concatenation, residualpooling, newneuraltraining or previousfailedbankretuning.",
+  "nesting": "OuterT320/V80 unchangedbase. A213/214 disjointfromB106/107andV supplies honesttargets viaA-onlydeepOOFcalibration. WithinB: residualfit/scalers onlyI70-72; heldoutH35-36 usedonlyOOFloss/bootstrapweights. Fiveexistingkinds none,ridge1,ridge01,rbf1,rbf01,512draws/sameseeds. FullresidualfitonlyB. No globalOOFtarget/weight fit.",
+  "criterion": "Runall3existingpartitions. PrimaryC2 pooled1200row untrimmedMSE mustbeatBOTH018 andS2 plusindependentverification. No foldcount/minimumgain/CIgate, no posthocquantile/lag/connectivity/weight/family exploration. Ifnegativeclosethisbank. Positive result initially remainsdevelopmentcandidate; no uploadtoday.",
+  "uncertainty": "10000pairedIDgroupbootstrap seed20271220; threeerrors perIDkepttogether. Same400historicallyreused,overlappingpartitions,conditionalfixedfits,notfreshvalidation.",
+  "resource": "ExistinguvCPU2/scipy/PIL/numpy/sklearn;zero installs/cost. Benchmarkfirst10imageextraction projected400<300s,RSS<2GB. Benchmarkfirstarmblock includedin1800objects projected90blocks<300s,RSS<2GB.1800objects include360none,1440nonnullfits, plus6outerpoisonblocks and30innerpoisonfits. Existing45upstreamanchors reused; no upstreamretraining.",
+  "scope": "Only400developmentimages/labels. No100holdout/testread,full500fit,CSV,uploadtoday. Keep018best and020weaksecondary.",
+  "hashes": {
+    "cluster_pair_features_159.py": "fdaab978425c29770075b1c316fa236b7cb05afb02df513a41a443a0e43b746e",
+    "cluster_pair_159.py": "2cbc449e5526b015899d39ff4525501c0955e98ddac95709173352f7d39b3289",
+    "directional_energy_148.py": "63d606f90d837cbe6aadecef90a9f0c583b45e20a6832dd4d293d7e131bf0000",
+    "bootstrap_selector_144.py": "d9f55f8e50cd7327efb8d45d433b8c16f3ede19265c436dffcd024e69b45abc3",
+    "connected_grain_features.py": "1b0374672595d13639ed1caf397c54dbb73c59bea79137250a6a4cfae3fee186",
+    "lineal_features_054.py": "22a0a1cee7d22dac759642741050489c64233965217d59ec5394d731ca573162",
+    "betti_features_055.py": "88f58ce16e2e3d64b508d7f4dfc2b96f5a15a68aef6721091484a60ee96d7e7a",
+    "binary_threepoint_features_130.py": "6917d04001a00cc0cc0112585876bf7bc2e0fe088fcd0a8832e6aa31c3878f01",
+    "src/microstructure_v2/features.py": "199c6d5a5ff4fd30191d98cf3db0613616c121100514cc5df24bf53b8d630ee9",
+    "src/microstructure_v2/extra.py": "b59aacf672c65de5af59c26e26930e707b004fd53a8eb4ad74f7bb5f28a19bc9",
+    "reports/nested-selector-146-audit.json": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+    "reports/aligned-crossfit-158-summary.json": "cd409149a428f80d13f2f8cf49b0de30d66f19d3c6ae2db5617927dc0871aa39",
+    "reports/candidate020-summary.json": "af1540287040d96929222a5328275de61899f8e065afb9abcb295879ecbe0b05",
+    "artifacts/run-001/split_manifest.json": "35293da0fda17e745939c316619f58281f50636c34696988e1b869bd9cc46193",
+    "artifacts/nested-calibration-074/extraction.json": "9ced9fa46890029bb27db8d25d9351fb3fed35f999340544327847f150cb541b",
+    "artifacts/bootstrap-selector-144/original/report.json": "1d6d0fc65062dd04c1762abad44b757c1d4cd07fcb4336dec13aaaa3dc087625",
+    "artifacts/bootstrap-selector-144/original/predictions.npz": "ec2ac0b3d80a62c63f542f5d6c537c911045f93846fdd21df945a85fc22957ef",
+    "artifacts/bootstrap-selector-144/validation-original.json": "9cb3c3a727b629e4d677333ce6e63c3f317de2a89bc0c7b5635aec7c119599df",
+    "artifacts/bootstrap-selector-144/20261031/report.json": "b348271c8e759ed750d167357ad69f0d731a11dca7070e5c14c4079b5140e2b8",
+    "artifacts/bootstrap-selector-144/20261031/predictions.npz": "bf886dfa0c9c799b73e7c3f1c596bca4f88d67ea5db5faf7f718eb0f31386501",
+    "artifacts/bootstrap-selector-144/validation-20261031.json": "44be855488a748d43236a52cda3c3aba8e4d73475d77044eb9977453547c3412",
+    "artifacts/bootstrap-selector-144/20261101/report.json": "f60fac49edcf5970e936d98d7a3f0166c4a5538836a8211c414285b2100345dd",
+    "artifacts/bootstrap-selector-144/20261101/predictions.npz": "dc919a907efa6c9ff4242320701c0d21c09c389982b92ba58a3df3d9bc12ee1f",
+    "artifacts/bootstrap-selector-144/validation-20261101.json": "73eee032bfd1de09b25356115ca27da206786c9a59c8fea707660d6b7b209691"
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef"
+  },
+  "cost": 0
+}

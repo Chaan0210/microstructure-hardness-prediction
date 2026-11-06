@@ -1,0 +1,9 @@
+{
+  "question": "Are persistent018 commonerrors consistent with scarce-training-target support ratherthan simple target-conditioned residual selection?",
+  "scope": "Existing400 cachedlabels/predictions, no rawimage/holdout/test/newfit. Descriptive posthoc, no causality claim.",
+  "density": "GaussiancontinuousKDE bandwidth.4*trainingSD. TrainLOOdensity; query usesonlytraininglabels. Train q20density sparse threshold, training q10/q90label tails.",
+  "analysis": "All3existingpartitions, perbranch predictions, existing127cleaninference training/outervalidation residuals. WithinID across3split density-error association removesfixedy butnot trainingmembership/modelconfounding. Predictionconditioned error slope and covarianceidentity highlighttargetselection effect.",
+  "proposed_mild_weight": "TrainLOOdensity ratio^-1/4, ratiofloor.1median, clipraw[.8,1.25], normalize fulltrainingmean1;max/min<=1.5625. No density/bandwidth/exponent/cap search.",
+  "prior_audit": "No targetdensity/LDSsampleweight implementation found in targetedroot/src/plan/summary searches.058DINO SmoothL1->halfMSE failed;120shortDINO MSE/ranking failed;051auxhardbins notdensityweight;131RNC notdensityweight.125ensemblecomponentweights notsampleweights. CurrentCNN alreadyMSE.",
+  "limitations": "Marginaltargetdensity is label-derivednotdeployablefeature; labeltail error doesnotproveunderfitting. WeightedMSE changesestimand andcanhurtunweightedRMSE. Same400adaptivehistory."
+}

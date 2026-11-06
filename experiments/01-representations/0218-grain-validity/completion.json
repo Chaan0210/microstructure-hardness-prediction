@@ -1,0 +1,57 @@
+{
+  "completed": true,
+  "UTC": "2026-10-07T11:37:05.549692+00:00",
+  "decision": "RejectcurrentB/Cpolicies; preservebest021; no rescue tuning orfullpipeline refit",
+  "main_fit_count": 1260,
+  "validation_fit_count": 252,
+  "fixture_fit_count": 1,
+  "independent_kernel_solves": 45,
+  "all_expected_3splits_completed": true,
+  "ensemble_effect_is_frozen_counterfactual": true,
+  "new_submission_files": 0,
+  "cost": 0,
+  "best021_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+  "primary_pooled_fixed_ensemble": {
+    "all400": {
+      "n": 400,
+      "baseline_RMSE": 12.81462814460406,
+      "candidate_RMSE": 12.835325453653649,
+      "RMSE_gain": -0.020697309049589663,
+      "total_SSE_gain": -212.35400669228284,
+      "improved_IDs": 195,
+      "worsened_IDs": 205,
+      "unchanged_IDs": 0,
+      "conditional_CI95": [
+        -0.05319920385890216,
+        0.00848997792433419
+      ]
+    },
+    "empty3": {
+      "n": 3,
+      "baseline_RMSE": 22.64446138572411,
+      "candidate_RMSE": 22.76820608257432,
+      "RMSE_gain": -0.12374469685020983,
+      "total_SSE_gain": -16.858730307071774,
+      "improved_IDs": 2,
+      "worsened_IDs": 1,
+      "unchanged_IDs": 0,
+      "uncertainty": "n3 only; reportall3individualrows, no inferential subgroupCI"
+    },
+    "other397": {
+      "n": 397,
+      "baseline_RMSE": 12.711442206566828,
+      "candidate_RMSE": 12.730797084140159,
+      "RMSE_gain": -0.01935487757333121,
+      "total_SSE_gain": -195.49527638521104,
+      "improved_IDs": 193,
+      "worsened_IDs": 204,
+      "unchanged_IDs": 0,
+      "conditional_CI95": [
+        -0.03636381978756531,
+        -0.004018333804772718
+      ]
+    }
+  },
+  "report": "experiments/grain-validity-218/REPORT.txt",
+  "blocking_issue": null
+}

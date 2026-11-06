@@ -1,0 +1,59 @@
+{
+  "hypothesis": "All-direction nonzero-lag covariance shapes after fixed sigma1/2 smoothing may reveal length and alignment without brittle segmentation.",
+  "novelty": "Baseline519 has only axial7-lag autocorrelation normalized by raw variance; native28 has coarse3-band spectral harmonics/LoGtile energies. New descriptors sample angular covariance at8radii, use nonzero-lag RMS, separate amplitude/noise/blur, and avoid circular wrap.",
+  "scales": [
+    1.0,
+    2.0
+  ],
+  "radii": [
+    4.0,
+    8.0,
+    12.0,
+    16.0,
+    24.0,
+    32.0,
+    48.0,
+    64.0
+  ],
+  "shape_normalization": "RMS covariance on nonzero radius2 ring; no noise variance subtraction",
+  "models": [
+    "fixed compact26+autocov36 nested KRR"
+  ],
+  "primary_ensemble": {
+    "baseline": 0.5,
+    "original_single_CNN": 0.25,
+    "new_kernel": 0.25
+  },
+  "inner_grid": {
+    "width": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "alpha": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "folds": 3
+  },
+  "source_sha256": {
+    "autocov_shape_features.py": "9bb71fa2477cb6162f309a767102d7ae4b7d4fdc989204163fb99bf0d704c2e1",
+    "autocov_experiment.py": "318745995b1818af6891b2172230279920f0ec941197d3a07e33292be45c2ec6",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3"
+  },
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  },
+  "input_sha256": {
+    "artifacts/run-001/split_manifest.json": "35293da0fda17e745939c316619f58281f50636c34696988e1b869bd9cc46193",
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/run-012/development_oof.csv": "14e598de255e25aa6e291499f101a61b4c51ba78aeaee49d05d88859cdcd2fac",
+    "artifacts/run-009/development_oof.csv": "2d6489eded8da556c061254fba5b8fa60af5f57cccf4a13610ae78e1d47220bf",
+    "artifacts/run-033/qa-engineering.json": "2ff858c151f6c168100a909e958100d42d87802865d5c4599cbd0f2fad8feb70",
+    "artifacts/run-033/qa-review.json": "2ff858c151f6c168100a909e958100d42d87802865d5c4599cbd0f2fad8feb70"
+  },
+  "scope": "Development400 only. No synthetic training, external data, holdout/test reads, manual target correction or Public-score tuning."
+}

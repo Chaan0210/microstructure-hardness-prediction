@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "device": "mps",
+  "torch": "2.14.0",
+  "numpy": "2.5.3",
+  "loss_fixtures": [
+    {
+      "device": "cpu",
+      "piecewise_loss_exact": true,
+      "gradient_exact_including_boundary_and_tails": true,
+      "central_MSE_value_and_gradient_exact": true,
+      "central_curvature": 2.0
+    },
+    {
+      "device": "mps",
+      "piecewise_loss_exact": true,
+      "gradient_exact_including_boundary_and_tails": true,
+      "central_MSE_value_and_gradient_exact": true,
+      "central_curvature": 2.0
+    }
+  ],
+  "all5_train_normalization_and_splits_match206": true,
+  "all5_validation_label_poison_normalization_exact": true,
+  "model_training_runs": 0,
+  "plan_SHA256": "ac3ae530fd688660a237d1e7b40db47ffb8e7765c3223001fedf3326ed40fcb8",
+  "code_lock_SHA256": "d1c22d06657c880350931dbbe4eca8ded280c04abdf788af88a7a220e0e43886"
+}

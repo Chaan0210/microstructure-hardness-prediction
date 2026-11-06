@@ -1,0 +1,194 @@
+{
+  "passed": true,
+  "results": {
+    "original": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.209632611789585,
+          "fold_rmse": [
+            13.137584839949701,
+            12.597373711388418,
+            14.228655527464698,
+            12.44121172584094,
+            13.56258166849383
+          ]
+        },
+        "primary": {
+          "rmse": 13.105157912721568,
+          "fold_rmse": [
+            13.025386023375454,
+            12.507824306370592,
+            14.197984111621984,
+            12.181376909479603,
+            13.51483530810461
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.10447469906801743,
+        "fold_gains": [
+          0.11219881657424757,
+          0.08954940501782538,
+          0.030671415842713046,
+          0.2598348163613373,
+          0.047746360389220754
+        ],
+        "positive_folds": 5,
+        "bootstrap_sd": 0.058228307971680125,
+        "conditional_ci95": [
+          -0.007428976904497592,
+          0.21924617680523412
+        ]
+      },
+      "slopes": [
+        1.0785198262507762,
+        1.0600158910914135,
+        1.1306764890299827,
+        1.1446824379161882,
+        1.0965320520166424
+      ],
+      "predictions_sha256": "662c9d59196e4fc5ca8d6fee16505e65f478eb511334d5974447e82e513eedf8",
+      "report_sha256": "2ee382a7ae8b0297b82780ceec98ae382303c8cf40a8cacb6988aaa11d26a016"
+    },
+    "20261031": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.180839919990602,
+          "fold_rmse": [
+            13.399031053593571,
+            14.50578410243469,
+            13.55291183492863,
+            11.810395013161449,
+            12.472130924914959
+          ]
+        },
+        "primary": {
+          "rmse": 13.082283244172682,
+          "fold_rmse": [
+            13.381109119932207,
+            14.258282229743807,
+            13.602704776447293,
+            11.723700529909848,
+            12.284105569029235
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.09855667581791927,
+        "fold_gains": [
+          0.01792193366136452,
+          0.24750187269088286,
+          -0.04979294151866398,
+          0.08669448325160012,
+          0.1880253558857241
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.0840140744859998,
+        "conditional_ci95": [
+          -0.06824618464099123,
+          0.2670664840620722
+        ]
+      },
+      "slopes": [
+        1.1504800351692415,
+        1.1526596742456843,
+        1.170005132688889,
+        1.1534773508107814,
+        1.0961880257958272
+      ],
+      "predictions_sha256": "88b3147aa606025849e7a8e1cde0bc72c535edd9ae74e4465358fa2f51401891",
+      "report_sha256": "799a2c1b875d749ba7b417633f96d8e1ae139083c6957165336e27df5e41ae09"
+    },
+    "20261101": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.393004886763789,
+          "fold_rmse": [
+            13.68500128247352,
+            13.098019664407973,
+            13.127926748613318,
+            13.968281968272564,
+            13.060251084559912
+          ]
+        },
+        "primary": {
+          "rmse": 13.305105282101927,
+          "fold_rmse": [
+            13.849200001634694,
+            12.960759057914057,
+            12.948923572726505,
+            13.74037731629103,
+            12.995188583092828
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.08789960466186209,
+        "fold_gains": [
+          -0.164198719161174,
+          0.13726060649391592,
+          0.17900317588681247,
+          0.2279046519815342,
+          0.06506250146708403
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.06657474082844127,
+        "conditional_ci95": [
+          -0.04415534590039303,
+          0.2170578633173189
+        ]
+      },
+      "slopes": [
+        1.150919601139202,
+        1.1191894502222395,
+        1.0950232564239748,
+        1.1495551693941954,
+        1.078239399761092
+      ],
+      "predictions_sha256": "461d701dce43db9f1a1eec824c3428c897dd034bb8dcbe78d4a99c5e67cddfdd",
+      "report_sha256": "25204068339a5b5da95e34145acc2e371496865f92f042640ead88e7a9e20311"
+    }
+  },
+  "inner_models_verified": {
+    "CNN": 45,
+    "MLP": 270,
+    "baseline_pipelines": 135,
+    "kernel": 45
+  },
+  "all_baseline_and_nested_kernel_refits": 45,
+  "max_CNN_CPU_MPS_reload_error": 3.0517578125e-05,
+  "max_baseline_reload_error": 5.684341886080802e-14,
+  "baseline_reload_tolerance": 1e-10,
+  "validator_revision": "v2: allow tiny floating-point tree-reduction error; all models/results unchanged",
+  "whole_recipe_refit_leakage_stress_checks": [
+    {
+      "split": "original",
+      "outer_validation_targets_perturbed_only_in_memory": true,
+      "calibration_fit_data_unchanged": true,
+      "entire_inner_recipe_refit_max_prediction_error": 5.684341886080802e-14,
+      "all6MLPstates_exact": true
+    },
+    {
+      "split": "20261031",
+      "outer_validation_targets_perturbed_only_in_memory": true,
+      "calibration_fit_data_unchanged": true,
+      "entire_inner_recipe_refit_max_prediction_error": 2.842170943040401e-14,
+      "all6MLPstates_exact": true
+    },
+    {
+      "split": "20261101",
+      "outer_validation_targets_perturbed_only_in_memory": true,
+      "calibration_fit_data_unchanged": true,
+      "entire_inner_recipe_refit_max_prediction_error": 5.684341886080802e-14,
+      "all6MLPstates_exact": true
+    }
+  ],
+  "OLS_independently_recomputed": true,
+  "eligible_for_candidate": true,
+  "protected008_sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+  "holdout_test_access": false,
+  "cost": 0,
+  "seconds": 109.9460496249958,
+  "validation_source_sha256": "58aad31e577ee8024e00f2214749d8ba5c622f123198ef4b14b77da0f04b334a",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

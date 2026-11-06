@@ -1,0 +1,33 @@
+{
+  "train_n": 214,
+  "validation_n": 106,
+  "worst_feature": 1178,
+  "worst_validation_ID": "TRAIN_000101",
+  "train_feature_mean": -0.12559229894497684,
+  "train_feature_std": 0.052892348123641686,
+  "train_feature_minmax": [
+    -0.23817212879657745,
+    0.20614413917064667
+  ],
+  "train_feature_nonzero_count": 214,
+  "validation_feature_minmax": [
+    -0.22989431023597717,
+    0.9163761734962463
+  ],
+  "worst_validation_raw": 0.9163761734962463,
+  "old_validation_scaled_feature_minmax": [
+    -1.9719678742033329,
+    19.699796084029153
+  ],
+  "old_validation_maxabs_Z": 19.699796084029153,
+  "new_validation_maxabs_Z": 7.931139362996014,
+  "RMS_floor": 0.2877924812857355,
+  "new_scale_for_worst_feature": 0.2877924812857355,
+  "old_inverse_scale_amplification": 18.906326443711478,
+  "new_inverse_scale_amplification": 3.4747259397897454,
+  "max_train_std_over_scale": 1.0,
+  "heldout_feature_and_label_poison_stats_exact": true,
+  "positive_global_unit_rescaling_invariance": true,
+  "formula": "r=sqrt(mean_j(var_train_j)); scale_j=max(sqrt(var_train_j),r); if r==0 scale_j=1; Z=(X-mean_train)/scale; variance ddof=0; fixed throughout adaptation",
+  "no_prediction_clipping": true
+}

@@ -1,0 +1,7 @@
+{
+  "study": "220-v5 joint TabPFN (written before running)",
+  "arm": "E_tabpfn_v3_dinoL32: TabPFN v2 (n_estimators=8) on [64 v3 grain features + 32 PCA components of standardized DINO-L 9216-d features]; scaler+PCA fit on outer-training rows only.",
+  "comparisons": ["standalone vs arm C TabPFN(v3 only)", "0.5*best021 + 0.5*E vs arm C blend", "descriptive: E alone (no 021) vs C blend"],
+  "adoption_rule": "E blend better than C blend in all 3 partitions and pooled gain >= 0.10; otherwise keep C.",
+  "license": "same TabPFN caveat as plan-v4; DINO-L weights already used in best021 (Apache-2.0)."
+}

@@ -1,0 +1,184 @@
+{
+  "study": "117 physical-block additive RBF and residual-family stability",
+  "utc": "2026-10-04T01:40:16.933681+00:00",
+  "fixed_blocks": {
+    "size": [
+      0,
+      1,
+      10
+    ],
+    "phase": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "shape": [
+      7,
+      8,
+      11
+    ],
+    "intensity": [
+      9,
+      24,
+      25
+    ],
+    "intercepts": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "denoised_grain_size": [
+      26,
+      27,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      54,
+      55
+    ],
+    "denoised_grain_support": [
+      28,
+      29,
+      42,
+      43,
+      50,
+      51,
+      52,
+      53
+    ],
+    "denoised_grain_shape": [
+      38,
+      39,
+      40,
+      41
+    ],
+    "denoised_grain_texture": [
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "denoised_noise": [
+      56
+    ]
+  },
+  "block_source": "Unchanged physical labels from run022; no regrouping, dropping or weight selection usingvalidation.",
+  "hypothesis": "Joint57distance mixesphysicalblocks;uniformadditive blockkernels removebetween-blockinteractions while retainingsmoothwithin-blocknonlinearity. Distinctfrom047DINO+morphologytargetkernel.",
+  "primary_candidates": [
+    "none",
+    "ridge1",
+    "ridge01",
+    "add1",
+    "add01"
+  ],
+  "matched_control": [
+    "none",
+    "ridge1",
+    "ridge01",
+    "rbf1",
+    "rbf01"
+  ],
+  "nested": "Exactly113/115 honest residualblocks andinner3fold seed. Samefeature/RMSfit scope. Each blockkernel centeredandunitmeantraindiagonal usinginnertrain;equalmeanoverall10;constantkernelzero,fixeddenominator10. gamma trainingmedianpositive squared distance only. alpha=n*lambda,lambda1/.1;nointercept.",
+  "comparison": "Fivechoices foradditive versusfiveforjoint115;replacekernel family ratherthan enlargechoice set. Full106/107residualtraining primary;exact113/115controls preserved.",
+  "primary_metric": "All3partition pooleduntrimmedMSE on1200predictionpairs/400uniqueIDs; candidacy onlyiflowerthan115 and011 andvalidationpasses. No allpartition/fold/CI/influence-exclusiongate.",
+  "size_diagnostic": "One fixedhalfgroup sample fromeachhonestB106/107, seed20271017+10000*splitindex+100*outer+block, chooseceil(groupcount/2)groups. AnchorA213/214andouter80fixed. Refit trainlocalscalers,3foldselectionandmodels forall3families. Fullsizeusesexisting113/115/new117. Halfsize isdiagnosticonly;nevercandidate orparameterchoice. No anchorrefits or holdout labels. This isolatesresiduallearner-size effect locally,not anchor213->333orresidual107->167 generalization.",
+  "family_summary": "Poolederrors,allIDclusterbootstrapcomparisons,foldsigns,conditionalinfluentialIDs; correction/residual correlations andincremental versusbase MSE decomposition 2mean(error011*correction)-mean(correction²). No learnedcrossfamilyblend orglobalOOFfittedcoefficients.",
+  "resource": "CPU2existingpackages. Full270newadditiveinnerfits;half810nonnullinnerfits+selected. 45upstreamanchorsreused. Projectfirstfull+halfblock45<180sec,RSS<2GB.",
+  "stopping": "Afterthiscomparison, summarizewholefamily;do not launch automaticgamma/alpha/block/mixture sweeps. Furtherresearchneeds evidencefromstability/size diagnostics.",
+  "scope": "No newdata/packages/cost/externaltransmission/testorholdouttuning/upload. Development400 only duringcomparison andsizeanalysis.",
+  "sources": {
+    "additive_residual_117.py": "dad5df869c4b653119d90eb9e2fc9af520056a34c5c9e6e56a673aacc9696dff",
+    "validate_additive_residual_117.py": "b66a9f1e7f47e6615105cb8b9ff4c5d97f32c087c5a75fd5ace0d98f532067c7",
+    "nonlinear_residual_115.py": "63bd7f2bed66edba2916b017f3c8a8e0dfc80509302806808b06bf4d6b126fc9"
+  },
+  "inputs": {
+    "artifacts/nonlinear-residual-115/original/report.json": "41829263b5dec5e873bb7026e3296e3b39d42d3bd32dfa9f4b3d0af5ed136d86",
+    "artifacts/nonlinear-residual-115/original/predictions.npz": "758c934f486859447d0204257cc165f014b96f3941847e8e086997213ac14bcf",
+    "artifacts/nonlinear-residual-115/20261031/report.json": "d3b60ef5307db4c664850e966a4ac554185ecb10cbd6bdf161737200b0d0c60a",
+    "artifacts/nonlinear-residual-115/20261031/predictions.npz": "c3ed184ee2fd9d48e729f72bc28937b70435eea0bb2d06dc8303aecfcf161d6d",
+    "artifacts/nonlinear-residual-115/20261101/report.json": "0508684a355fcc9bba4a5d627ff0d48c6f8d421ef9f8665e4d95f792998464e9",
+    "artifacts/nonlinear-residual-115/20261101/predictions.npz": "c89d92b9acbd7aee2c48d5d90215704d82ecbb345f1165ae3c6802ffe20391bc"
+  },
+  "protected": {
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-011.components.csv": "1e5d67fed120150f9a1f665eacdc5e5aca817a29e12bdba4aea27347e3380739",
+    "artifacts/submission-candidate-011.manifest.json": "497cc7377fcc35cb9f6142bc0ee9868fbc3fa50aa40bf10c7a45d6ef3931fe94",
+    "artifacts/submission-candidate-011.reproduced.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/final-model-086/decision.json": "83b779a44abf26db1b496b4d7aa2ce6cce0ea4e20cb9e147db331554cabee03f",
+    "artifacts/final-model-086/head/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/head/report.json": "1a46ff5c0e94c7e4797f62986347fd5e378a4829965ad4144a47f6c8afd07053",
+    "artifacts/final-model-086/head/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "artifacts/final-model-086/report.json": "d2d7eb583640ba97d422aa1bc0a53365954c9bba047610b7972815c50bb26608",
+    "artifacts/final-model-086/test_predictions.npz": "eb8b4af03053e3a82c19f3a7d7f2cf569eb46e9b764980cdc0b567bbbe1e1cbc",
+    "artifacts/final-model-086/validation-replay/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/validation-replay/report.json": "e87d4bce70bf24d7273a3c46693f0c6cfdab1ae252d8b3f6c30b52beb807317b",
+    "artifacts/final-model-086/validation-replay/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+    "verify_candidate011.py": "12147b31d5a4acdb8837c9a2f9ac9be4b3a102efde9eb357414a9cebb2cb73e9",
+    "finalize_candidate011.py": "9aef57b8930cdf5c0ee7205d08a6ca31f42052c29bb1af49d92b2b31c31fec52",
+    "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+    "reports/final-candidate011-summary.json": "168316e3c35fcbe00035c880df29f3b9eb3e76b6ff588ddce7a37922e84588ad",
+    "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+    "artifacts/frozen-complement-085/plan.json": "47ea467c9f5dacafc2bd1cabad34906c619f5d7f599ee0393a27b68266ab9ce0",
+    "reports/candidate012-residual-summary.json": "086188e4544c88fdf72f2b72dd8d4c246634afa53422bbc06fe3f3e485cf4360",
+    "reports/candidate012-residual-verification.json": "2eca331e5a9e1d54cc5ab6ab4d86b349527834302ce93504352c105a658cbe76",
+    "artifacts/submission-candidate-012.csv": "a7263185b3071e9aa6403e6dbc5dc16ca6c8675826356eb915d60770e79fab14",
+    "artifacts/submission-candidate-012.manifest.json": "0a4d63164ea42aecf2580393668d7cc4b84395b8681a77f90008a1d22320975e",
+    "artifacts/submission-candidate-012.components.csv": "e15210e6bd693c020d5915dd1e5cd397afac6fd4ac35f19c094f95d1f075822b",
+    "reports/residual-physics-113-summary.json": "8bfeeeebd3918f764fa3eb48d87eb28b28921b8de5c0012d027faecdc1931104",
+    "reports/residual-physics-113-pooled-addendum.json": "6cffa2a110c8077633ebc52c063409086832b65d8e7c2db2b6e9cf7b6ee9bd60",
+    "artifacts/residual-physics-113/decision.json": "2d1d7d9648c947d049b0e224ac296531086fdd95fd9374deda79e41db4c1fbc6",
+    "artifacts/submission-candidate-013.csv": "e2ea0111d8c6a262c71dd32ad3918db1a1d2189f1647db7a2d6399af83b51286",
+    "artifacts/submission-candidate-013.manifest.json": "ea58f8bf4de2d784c5ae2190ea90d213a6c76e385362d16d74b6223ec56f081c",
+    "artifacts/submission-candidate-013.components.csv": "6d8c1ec52a1b0bba8157d76de7088a76ef8417151605396529447030a7d3b7dc",
+    "reports/candidate013-summary.json": "970643fd11e0c035f8d3a2cd3d1b39691db2f4fcbc5327abd1a90d5b36f3421e",
+    "reports/candidate013-verification.json": "f895b82d04eb912a5ab282893f4cbf88e8a64074101f3d9858ab4d61a507d6fb",
+    "reports/nonlinear-residual-115-summary.json": "8b55a64ae5f551eb77d9fadb1e6afb625fd9019651b2c8aed84535cdb17516cb"
+  },
+  "environment": {
+    "numpy": "2.5.3",
+    "scikit-image": "0.26.0",
+    "scikit-learn": "1.9.1",
+    "cloudpickle": "3.1.2",
+    "filelock": "4.0.7",
+    "packaging": "26.3",
+    "tifffile": "2026.9.20",
+    "networkx": "3.7",
+    "joblib": "1.6.0",
+    "kymatio": "0.3.0",
+    "configparser": "7.2.0",
+    "torch": "2.14.0",
+    "appdirs": "1.4.4",
+    "sympy": "1.14.0",
+    "lazy-loader": "0.6",
+    "setuptools": "84.0.0",
+    "mpmath": "1.3.0",
+    "fsspec": "2026.9.0",
+    "jinja2": "3.1.6",
+    "markupsafe": "3.0.3",
+    "threadpoolctl": "3.7.0",
+    "typing-extensions": "4.16.0",
+    "imageio": "2.38.0",
+    "pillow": "12.3.0",
+    "scipy": "1.18.1",
+    "narwhals": "2.26.0"
+  }
+}

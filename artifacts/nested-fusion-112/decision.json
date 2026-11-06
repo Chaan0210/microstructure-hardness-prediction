@@ -1,0 +1,101 @@
+{
+  "eligible_for_locked_full500_candidate": false,
+  "criterion": "All3 pooled untrimmed attention-mixture MSE below unchanged011; independentvalidationpassed. No fold-count,minimumgain,CIortrimminggate.",
+  "results": [
+    {
+      "split": "original",
+      "incumbent011_RMSE": 13.0539977718711,
+      "nested_attention_RMSE": 13.101452501186104,
+      "nested_mean_RMSE": 13.15887125191968,
+      "old_fixed10_attention_RMSE_diagnostic_only": 13.012539733759176,
+      "primary_untrimmed_MSE_gain": -1.2411998128199855,
+      "RMSE_gain": -0.04745472931500494,
+      "attention_alphas": [
+        0.271392632084664,
+        0.16575250728847565,
+        0.0,
+        0.10203055550243463,
+        0.30980053278783126
+      ],
+      "mean_alphas": [
+        0.290249205173896,
+        0.12980833612360757,
+        0.0,
+        0.05509303341937645,
+        0.20507483187913148
+      ],
+      "conditional95_RMSE_gain_CI": [
+        -0.20608690108756123,
+        0.10981537467102812
+      ],
+      "fixed092_other395_RMSE_gain_diagnostic_only": -0.11587605154416458
+    },
+    {
+      "split": "20261031",
+      "incumbent011_RMSE": 13.015176056591201,
+      "nested_attention_RMSE": 13.024436230519905,
+      "nested_mean_RMSE": 13.032658485858992,
+      "old_fixed10_attention_RMSE_diagnostic_only": 12.982096553979792,
+      "primary_untrimmed_MSE_gain": -0.24113133881465387,
+      "RMSE_gain": -0.009260173928703708,
+      "attention_alphas": [
+        0.0,
+        0.08120491042943583,
+        0.12281919766297655,
+        0.17147970915398467,
+        0.20588216875139773
+      ],
+      "mean_alphas": [
+        0.0,
+        0.0792386275118555,
+        0.0890519495368988,
+        0.13406801754307443,
+        0.16542850706164094
+      ],
+      "conditional95_RMSE_gain_CI": [
+        -0.11239683278807656,
+        0.1047434679504714
+      ],
+      "fixed092_other395_RMSE_gain_diagnostic_only": -0.06510936621255325
+    },
+    {
+      "split": "20261101",
+      "incumbent011_RMSE": 13.272377948565081,
+      "nested_attention_RMSE": 13.258519780250458,
+      "nested_mean_RMSE": 13.280086788229475,
+      "old_fixed10_attention_RMSE_diagnostic_only": 13.242598707382134,
+      "primary_untrimmed_MSE_gain": 0.3676696462639768,
+      "RMSE_gain": 0.013858168314623498,
+      "attention_alphas": [
+        0.19629392826396866,
+        0.15543327967254908,
+        0.26127184461357505,
+        0.08422353761098249,
+        0.1979159018294722
+      ],
+      "mean_alphas": [
+        0.15932754575778013,
+        0.10054267272137131,
+        0.21125917822188406,
+        0.029927745637262658,
+        0.1844096291879436
+      ],
+      "conditional95_RMSE_gain_CI": [
+        -0.11494669928004154,
+        0.1482113232232108
+      ],
+      "fixed092_other395_RMSE_gain_diagnostic_only": -0.04984649654448248
+    }
+  ],
+  "limits": "Current study is explicitly selected after seeing092/093 and many other results. Nested fusion protects present coefficient fitting, not historical candidate selection. Three repartitions reuse same400 with highly correlated residuals and are not three independent studies. No Public-based tuning.",
+  "validation_replay": {
+    "passed": true,
+    "all_outside_innertrain_labels_perturbed": 187,
+    "max_prediction_error": 2.842170943040401e-14,
+    "all18_deep_MLP_and3_head_states_exact": true,
+    "includes_outer80_and_inner107_heldout": true,
+    "source_sha256": "f0030bcdd0107950345a3f95d35f9df6b8f9bb69120e5a3781c9a7fc72ce8c15"
+  },
+  "locked_recipe_not_yet_finalfit": false,
+  "decision_utc": "2026-10-04T00:37:54.204756+00:00"
+}

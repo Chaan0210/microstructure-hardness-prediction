@@ -1,0 +1,152 @@
+{
+  "split": "original",
+  "scores": {
+    "reference011": {
+      "rmse": 13.0539977718711,
+      "fold_rmse": [
+        13.063217512187048,
+        12.38751393690129,
+        14.122591032877722,
+        12.1470942497908,
+        13.451269815048137
+      ]
+    },
+    "control57": {
+      "rmse": 14.23756699243854,
+      "fold_rmse": [
+        14.203932109653492,
+        13.493022021532845,
+        15.128605286812967,
+        13.757557418082127,
+        14.545898206561512
+      ]
+    },
+    "control57_blend": {
+      "rmse": 13.102693869973313,
+      "fold_rmse": [
+        13.101104578317454,
+        12.443775558825822,
+        14.155344619895752,
+        12.222657429055003,
+        13.496270076754346
+      ]
+    },
+    "triple85": {
+      "rmse": 14.059924565881845,
+      "fold_rmse": [
+        14.031670367318611,
+        13.258186069071263,
+        15.133939609520962,
+        13.611265500518423,
+        14.192866032694244
+      ]
+    },
+    "triple85_blend": {
+      "rmse": 13.081205676895332,
+      "fold_rmse": [
+        13.06615673918167,
+        12.405807257303195,
+        14.157041339662067,
+        12.211356135692615,
+        13.469304584957456
+      ]
+    }
+  },
+  "gate": {
+    "advance": false,
+    "primary_vs011": {
+      "gain": -0.027207905024232204,
+      "fold_gains": [
+        -0.002939226994621791,
+        -0.018293320401905788,
+        -0.03445030678434513,
+        -0.06426188590181425,
+        -0.018034769909318626
+      ],
+      "positive_folds": 0
+    },
+    "primary_vscontrolblend": {
+      "gain": 0.021488193077981776,
+      "fold_gains": [
+        0.03494783913578381,
+        0.037968301522626646,
+        -0.0016967197663149136,
+        0.011301293362388165,
+        0.026965491796890007
+      ],
+      "positive_folds": 4
+    }
+  },
+  "conditional_gain_CI95": [
+    -0.07175787636505633,
+    0.021339572783448193
+  ],
+  "models_sha256": {
+    "control57-fold0.joblib": "0153544093252a25ca2807d46c561375a77f346b8926a3e62509e107b6eace27",
+    "control57-fold1.joblib": "313efb0ce9c5af0fc4d2fa8252ec3e04790d4b3d838e95c0ee7ab3d049ecb256",
+    "control57-fold2.joblib": "208bc59a2aac91b676785b6d01e425e8208f164a6d0791a00ab18c763811f9e1",
+    "control57-fold3.joblib": "8dd2d3565159677787f68d2ff260a2632685299e1135cdd063d2a5a8ccd2f2d8",
+    "control57-fold4.joblib": "709ba710e25c61514b03d188b096655824247d6720fec416b9e96b4d09b2877e",
+    "triple85-fold0.joblib": "13d71d4edf0cc8157d4046eec3727a4b8f588a54d37544dd594885a2b5000a05",
+    "triple85-fold1.joblib": "66b0533d66acf3788ea6b9f4d22a042adf0f295a7d78cf2bea97eb6195260eea",
+    "triple85-fold2.joblib": "6474dc3aa2059600b32430dbb0c3f38eb0f13398592041dc033b2e13892ff823",
+    "triple85-fold3.joblib": "4851d6b62a9fc6c3afdd018545b947f1df789dbc97ac6d55863bab5bac97b2c5",
+    "triple85-fold4.joblib": "f7db65ec3e7340643476f14b271fb22c68af8638b2017d472815ff86ce6f16f7"
+  },
+  "selected": {
+    "control57-fold0.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 14.615709571326994
+    },
+    "control57-fold1.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 14.749637267335636
+    },
+    "control57-fold2.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 14.208384560666774
+    },
+    "control57-fold3.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 14.656358195756738
+    },
+    "control57-fold4.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 14.703912578698334
+    },
+    "triple85-fold0.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 14.516877699006322
+    },
+    "triple85-fold1.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 14.72061124224428
+    },
+    "triple85-fold2.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 13.936948086393558
+    },
+    "triple85-fold3.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 14.438545192183467
+    },
+    "triple85-fold4.joblib": {
+      "bandwidth": 4.0,
+      "alpha": 0.1,
+      "inner_rmse": 14.59519993550639
+    }
+  },
+  "predictions_sha256": "9b573a2c0eac8fc35ee4510e664e185e296f244dc40009b764a794fe80453495",
+  "plan_sha256": "edea95b17563cbec88d6d7735a7be2ba36cadc7904ef97323ac56f1fa346aea0",
+  "seconds": 0.8389607080025598,
+  "candidate_created": false
+}

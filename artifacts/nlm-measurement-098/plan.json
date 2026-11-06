@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-10-02T15:38:50.839961+00:00",
+  "basis": "097 label-blind12image panels show within-region fragmentation with weak watershed and disappearance of visible interfaces at high markerprominence. 99.586% of lostinterior pixels move into frame-touching regions in48matchedconfig comparisons. Stronger h does not fix denoising.",
+  "hypothesis": "Existing skimage noise-aware nonlocal means can reduce stochastic within-region extrema while preserving narrow actual grain boundaries better than currentTV, without raising h. Unproven; requires fidelity gate first.",
+  "duplicate_audit": "No nonlocal means implementation/trial in project source. 025 changes markerprominence only; connected-grain changes topology extraction;049 inverseformation;071/072 TV preprocessing beforeDINO. This is one denoiser substitution with unchanged watershed/markers.",
+  "baseline": "CanonicalD4 raw[0,1]; TV weight=HH-noise,eps1e-4,maxiter50. Weak watershed h=.1/.2 of gradientq90,GaussianDerivativeSigma.7,7x7blackhat Otsu seed exclusion,area>=16.",
+  "candidate": "CanonicalD4 raw[0,1]; skimage denoise_nl_means h=.8*HHnoise,sigma=HHnoise,patch_size5,patch_distance6,fast_modeTrue,preserve_rangeTrue,channel_axisNone. Same exact weakwatershed and summaries. No otherparameter choices.",
+  "fixtures": "3 deterministic jittered rectangular Voronoi layouts:4x4,8x8,4x12 seedgrid,30% cellwidthjitter, RNG20270321+layoutindex. Scalar region intensities .62+/-.06,20%darkphase.4;truefind_boundaries thick1pixel raster replaced with.22;Gaussianblur.6 then independentGaussian noise sigma.025/.075,clipandquantizeuint8. Sixfixtures sharetruegeometries and modelcounts. No realhardness labels.",
+  "gate": "Across6 cases, mean absolute relative count error(candidate)<=.75*baseline. Candidate maynot worsen percase error by>.10. For BOTH h settings in EACHcase, precision>=.60 andrecall>=.80 forknownboundary tolerance2px. Allmustpass; otherwise rejectthisfixedNLMmeasurementhypothesis withoutCV or tuning. Boundariesexclude2pximageframe.",
+  "count_rule": "Eachcase median count overh.1/.2 versus actualnumber ofVoronoiregions. BoundaryPR evaluatedseparatelyeachh; not chosen byoutcome.",
+  "resources": "CPU2/noinstall/cost. MaxRSS2GB,onecandidateimage runtime<=2sec (excluding imports); no model fitting, noholdout/testimages.",
+  "if_pass": "Then unchangedNLM versus matchedTV31features (median/range acrossh.1/.2 only plusnoise) in independentfixed nestedKRR dev400 control,01190%+branch10%; require>=.02 originalgain,>=3positivefolds,beatmatchedTVstandaloneandblend,fixed395gain>0,bothresplits same. Separate plan before anyhardness scores.",
+  "source_sha256": {
+    "nlm_measurement_pilot_098.py": "701ab1f79788b2c1ee71d185066f687a3886ddf82eaa960258a1659eb5760485",
+    "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab"
+  },
+  "protected011": {
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-011.components.csv": "1e5d67fed120150f9a1f665eacdc5e5aca817a29e12bdba4aea27347e3380739",
+    "artifacts/submission-candidate-011.manifest.json": "497cc7377fcc35cb9f6142bc0ee9868fbc3fa50aa40bf10c7a45d6ef3931fe94",
+    "artifacts/submission-candidate-011.reproduced.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/final-model-086/decision.json": "83b779a44abf26db1b496b4d7aa2ce6cce0ea4e20cb9e147db331554cabee03f",
+    "artifacts/final-model-086/head/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/head/report.json": "1a46ff5c0e94c7e4797f62986347fd5e378a4829965ad4144a47f6c8afd07053",
+    "artifacts/final-model-086/head/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "artifacts/final-model-086/report.json": "d2d7eb583640ba97d422aa1bc0a53365954c9bba047610b7972815c50bb26608",
+    "artifacts/final-model-086/test_predictions.npz": "eb8b4af03053e3a82c19f3a7d7f2cf569eb46e9b764980cdc0b567bbbe1e1cbc",
+    "artifacts/final-model-086/validation-replay/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/validation-replay/report.json": "e87d4bce70bf24d7273a3c46693f0c6cfdab1ae252d8b3f6c30b52beb807317b",
+    "artifacts/final-model-086/validation-replay/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+    "verify_candidate011.py": "12147b31d5a4acdb8837c9a2f9ac9be4b3a102efde9eb357414a9cebb2cb73e9",
+    "finalize_candidate011.py": "9aef57b8930cdf5c0ee7205d08a6ca31f42052c29bb1af49d92b2b31c31fec52",
+    "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+    "reports/final-candidate011-summary.json": "168316e3c35fcbe00035c880df29f3b9eb3e76b6ff588ddce7a37922e84588ad",
+    "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+    "artifacts/frozen-complement-085/plan.json": "47ea467c9f5dacafc2bd1cabad34906c619f5d7f599ee0393a27b68266ab9ce0"
+  },
+  "limitations": "Synthetic visualfidelity gate is a resourceallocation rule, not validation of actualgrains. Image-specific unknownnoise/blur/generator may differ. No parameter changes onfailure."
+}

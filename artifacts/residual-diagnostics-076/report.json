@@ -1,0 +1,703 @@
+{
+  "scope": "Development400 only. Initial exploratory calculations preceded this written report; no claim that diagnostics were preregistered. No new-model corrected OOF performance calculated here.",
+  "public": "009 outcome recorded separately; never used for feature/weight/coefficient choice.",
+  "findings": "Prediction-conditioned linear residual trend mostly removed by009. DINOmean minus003 has the clearest consistent signed association among inspected reliability contrasts and is positive after adjusting for rawensemble prediction in14/15 train-onlyfolds. B-minus-S and unsigned disagreement show weaker/inconsistent evidence. Middle-bin residual patterns also exist but do not justify selecting multiple nonlinear calibrators.",
+  "decision": "One extension only: add the signed DINOmean-minus003 contrast to the existing affine calibrator. Fit3parameters total by unregularized OLS inside eachoutertrain. PreserveequalS/Bweights; no ratio grid, knots, nonlinear gates, regularization orPublic tuning.",
+  "nonduplication": "074 used one rawensemble prediction. 047 combined imagefeatures throughadditive/productkernels, not train-only component-prediction contrast calibration. 064 fixed S/Bmean; no nested learned legacy/DINO contrast coefficient.",
+  "results": {
+    "original": {
+      "residual_correlations_descriptive": {
+        "prediction": {
+          "pearson": 0.042998142096284976,
+          "spearman": -0.006124350777192357
+        },
+        "prediction_squared": {
+          "pearson": 0.08879295807524692,
+          "spearman": 0.023086831792698704
+        },
+        "DINO_minus_003": {
+          "pearson": 0.18922260740571795,
+          "spearman": 0.192659329120807
+        },
+        "B_minus_S": {
+          "pearson": 0.01025320084348291,
+          "spearman": 0.009025743910899442
+        },
+        "DINO_disagreement": {
+          "pearson": -0.025726160983538467,
+          "spearman": -0.004374777342358389
+        },
+        "legacy_DINO_disagreement": {
+          "pearson": 0.009900865398394252,
+          "spearman": -0.043502709391933694
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "training_only_partial_correlation": 0.16344770017247487,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            183.65370534712105,
+            190.39532637491138,
+            195.20679056982746,
+            203.13569487780342
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 9,
+              "mean_residual009": 1.2497817786978027
+            },
+            {
+              "bin": 1,
+              "n": 22,
+              "mean_residual009": 1.586197926549665
+            },
+            {
+              "bin": 2,
+              "n": 12,
+              "mean_residual009": -5.907672790646568
+            },
+            {
+              "bin": 3,
+              "n": 23,
+              "mean_residual009": 2.127392603567252
+            },
+            {
+              "bin": 4,
+              "n": 14,
+              "mean_residual009": 3.24274736674007
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "training_only_partial_correlation": 0.0782909461656393,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            185.61455013326832,
+            191.7261510814412,
+            196.46730045697402,
+            203.83211073888106
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 23,
+              "mean_residual009": -0.5088067042556795
+            },
+            {
+              "bin": 1,
+              "n": 16,
+              "mean_residual009": -3.1229408148440996
+            },
+            {
+              "bin": 2,
+              "n": 12,
+              "mean_residual009": -1.0555313128220998
+            },
+            {
+              "bin": 3,
+              "n": 15,
+              "mean_residual009": 2.6191587420806246
+            },
+            {
+              "bin": 4,
+              "n": 14,
+              "mean_residual009": 0.7458378790193153
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "training_only_partial_correlation": 0.1486564427389502,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            186.49209790451638,
+            191.61995513344382,
+            197.22921286354602,
+            204.7044933706262
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 22,
+              "mean_residual009": 2.9017416252326043
+            },
+            {
+              "bin": 1,
+              "n": 14,
+              "mean_residual009": -7.546325939188795
+            },
+            {
+              "bin": 2,
+              "n": 20,
+              "mean_residual009": -0.9916622104218774
+            },
+            {
+              "bin": 3,
+              "n": 8,
+              "mean_residual009": -2.05353895014661
+            },
+            {
+              "bin": 4,
+              "n": 16,
+              "mean_residual009": -1.7144347975390204
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "training_only_partial_correlation": 0.11711848635081988,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            184.40067017645134,
+            189.82332424222525,
+            195.46094756146482,
+            202.2882833534545
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 13,
+              "mean_residual009": -1.025586372697238
+            },
+            {
+              "bin": 1,
+              "n": 14,
+              "mean_residual009": -1.4488550576425
+            },
+            {
+              "bin": 2,
+              "n": 16,
+              "mean_residual009": -1.8358371239321123
+            },
+            {
+              "bin": 3,
+              "n": 19,
+              "mean_residual009": 4.70704459083993
+            },
+            {
+              "bin": 4,
+              "n": 18,
+              "mean_residual009": -0.0816905201241443
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "training_only_partial_correlation": 0.1966357322384256,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            185.4763416516418,
+            191.2315162481776,
+            195.96070689098016,
+            203.20392454193097
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 18,
+              "mean_residual009": 3.086438897301087
+            },
+            {
+              "bin": 1,
+              "n": 13,
+              "mean_residual009": 0.874214664381314
+            },
+            {
+              "bin": 2,
+              "n": 15,
+              "mean_residual009": -2.3852416380898527
+            },
+            {
+              "bin": 3,
+              "n": 17,
+              "mean_residual009": 4.914856207094747
+            },
+            {
+              "bin": 4,
+              "n": 17,
+              "mean_residual009": 2.8575934793606903
+            }
+          ]
+        }
+      ],
+      "prediction_quintile_bias_descriptive": [
+        1.0184293304865126,
+        -0.31101906259017087,
+        -3.0856085741264296,
+        3.6195076953422927,
+        0.3551696049004455
+      ]
+    },
+    "20261031": {
+      "residual_correlations_descriptive": {
+        "prediction": {
+          "pearson": 0.009005861928984251,
+          "spearman": -0.034260214126338284
+        },
+        "prediction_squared": {
+          "pearson": 0.08524725618604265,
+          "spearman": 0.00983068644179026
+        },
+        "DINO_minus_003": {
+          "pearson": 0.13705148003453066,
+          "spearman": 0.10954849717810736
+        },
+        "B_minus_S": {
+          "pearson": -0.012654657246219142,
+          "spearman": -0.018701366883543024
+        },
+        "DINO_disagreement": {
+          "pearson": -0.04024574910124132,
+          "spearman": -0.03033168957305983
+        },
+        "legacy_DINO_disagreement": {
+          "pearson": -0.029390491447521205,
+          "spearman": -0.061707198169988556
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "training_only_partial_correlation": 0.10003858624878295,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            184.84514230264796,
+            190.84339175441042,
+            195.617640046337,
+            202.9229088144765
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 18,
+              "mean_residual009": 2.8729837194869723
+            },
+            {
+              "bin": 1,
+              "n": 15,
+              "mean_residual009": -0.3605285158182198
+            },
+            {
+              "bin": 2,
+              "n": 16,
+              "mean_residual009": 2.6679506327732323
+            },
+            {
+              "bin": 3,
+              "n": 15,
+              "mean_residual009": 5.41123374863441
+            },
+            {
+              "bin": 4,
+              "n": 16,
+              "mean_residual009": -2.9453938398860124
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "training_only_partial_correlation": -0.014750024805017251,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            184.80676641591126,
+            190.1316618202897,
+            195.08148692689073,
+            202.34704500950326
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 16,
+              "mean_residual009": 0.633013076743925
+            },
+            {
+              "bin": 1,
+              "n": 13,
+              "mean_residual009": -0.9833449990067475
+            },
+            {
+              "bin": 2,
+              "n": 11,
+              "mean_residual009": -3.7354117049667703
+            },
+            {
+              "bin": 3,
+              "n": 22,
+              "mean_residual009": 4.977197791759377
+            },
+            {
+              "bin": 4,
+              "n": 18,
+              "mean_residual009": 1.4642998663853588
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "training_only_partial_correlation": 0.1431889639283085,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            185.48054187061322,
+            191.21151691204943,
+            197.02360239640495,
+            204.19527367727744
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 22,
+              "mean_residual009": 0.5161539836336431
+            },
+            {
+              "bin": 1,
+              "n": 15,
+              "mean_residual009": -0.6951436857022221
+            },
+            {
+              "bin": 2,
+              "n": 15,
+              "mean_residual009": -1.3728472413547328
+            },
+            {
+              "bin": 3,
+              "n": 12,
+              "mean_residual009": -3.6508329189305613
+            },
+            {
+              "bin": 4,
+              "n": 16,
+              "mean_residual009": -6.158861442951913
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "training_only_partial_correlation": 0.17183485151962272,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            186.11070428851758,
+            191.4140640536998,
+            197.36650600595704,
+            204.17740684292772
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 22,
+              "mean_residual009": 3.458267441388287
+            },
+            {
+              "bin": 1,
+              "n": 16,
+              "mean_residual009": -3.063703929730229
+            },
+            {
+              "bin": 2,
+              "n": 17,
+              "mean_residual009": -5.440847980763552
+            },
+            {
+              "bin": 3,
+              "n": 12,
+              "mean_residual009": 4.565009267530118
+            },
+            {
+              "bin": 4,
+              "n": 13,
+              "mean_residual009": 0.4098189029146445
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "training_only_partial_correlation": 0.09972899684638104,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            184.66415213750724,
+            191.17376169133874,
+            195.2540596865262,
+            202.39191470826003
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 10,
+              "mean_residual009": 1.784451927241514
+            },
+            {
+              "bin": 1,
+              "n": 16,
+              "mean_residual009": -6.079180696539606
+            },
+            {
+              "bin": 2,
+              "n": 19,
+              "mean_residual009": 0.42214414631267444
+            },
+            {
+              "bin": 3,
+              "n": 14,
+              "mean_residual009": 6.4820326651149305
+            },
+            {
+              "bin": 4,
+              "n": 21,
+              "mean_residual009": 1.9219980875799298
+            }
+          ]
+        }
+      ],
+      "prediction_quintile_bias_descriptive": [
+        2.5027674695002644,
+        -2.5208420260425983,
+        -0.7714356779355377,
+        2.6070541481679714,
+        -0.47361103347315525
+      ]
+    },
+    "20261101": {
+      "residual_correlations_descriptive": {
+        "prediction": {
+          "pearson": 0.030653032466301574,
+          "spearman": -0.019855999099994373
+        },
+        "prediction_squared": {
+          "pearson": 0.10539428809281846,
+          "spearman": 0.07178444865280408
+        },
+        "DINO_minus_003": {
+          "pearson": 0.107506061467352,
+          "spearman": 0.11437046481540508
+        },
+        "B_minus_S": {
+          "pearson": 0.04665262925196202,
+          "spearman": 0.051686760542253386
+        },
+        "DINO_disagreement": {
+          "pearson": 0.0108739917379222,
+          "spearman": 0.01890461815386346
+        },
+        "legacy_DINO_disagreement": {
+          "pearson": -0.02561686441988201,
+          "spearman": -0.02460896630603941
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "training_only_partial_correlation": 0.14384491069450003,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            184.04018417415858,
+            190.63793558773,
+            196.1417282908524,
+            203.57244233844537
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 14,
+              "mean_residual009": 3.80217268410388
+            },
+            {
+              "bin": 1,
+              "n": 21,
+              "mean_residual009": 0.7017641077248481
+            },
+            {
+              "bin": 2,
+              "n": 16,
+              "mean_residual009": -1.2031388939394798
+            },
+            {
+              "bin": 3,
+              "n": 16,
+              "mean_residual009": 5.27762150821342
+            },
+            {
+              "bin": 4,
+              "n": 13,
+              "mean_residual009": -5.530958582520863
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "training_only_partial_correlation": 0.17204169666128202,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            183.65247665320925,
+            190.07554893355254,
+            195.4519649602328,
+            202.58096080608567
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 6,
+              "mean_residual009": 0.22025706384080004
+            },
+            {
+              "bin": 1,
+              "n": 21,
+              "mean_residual009": 0.492520360908796
+            },
+            {
+              "bin": 2,
+              "n": 18,
+              "mean_residual009": -4.986843847543456
+            },
+            {
+              "bin": 3,
+              "n": 22,
+              "mean_residual009": 3.9913158909242967
+            },
+            {
+              "bin": 4,
+              "n": 13,
+              "mean_residual009": 2.8696448774308996
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "training_only_partial_correlation": 0.17223143234235985,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            185.7160198105533,
+            191.51938669337704,
+            196.20770018013422,
+            202.89306029070974
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 16,
+              "mean_residual009": -3.7273218426148613
+            },
+            {
+              "bin": 1,
+              "n": 15,
+              "mean_residual009": -8.565520269952058
+            },
+            {
+              "bin": 2,
+              "n": 15,
+              "mean_residual009": -4.68731409289943
+            },
+            {
+              "bin": 3,
+              "n": 17,
+              "mean_residual009": 4.055862382411571
+            },
+            {
+              "bin": 4,
+              "n": 17,
+              "mean_residual009": -0.9783498356144177
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "training_only_partial_correlation": 0.20537260971624277,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            184.96730589633796,
+            191.0964592697449,
+            196.19452793272313,
+            203.19987625184112
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 20,
+              "mean_residual009": 2.3396750875124583
+            },
+            {
+              "bin": 1,
+              "n": 14,
+              "mean_residual009": -2.747916596978669
+            },
+            {
+              "bin": 2,
+              "n": 15,
+              "mean_residual009": -5.878674799996276
+            },
+            {
+              "bin": 3,
+              "n": 13,
+              "mean_residual009": -0.09632868021756298
+            },
+            {
+              "bin": 4,
+              "n": 18,
+              "mean_residual009": 3.4706522490720744
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "training_only_partial_correlation": 0.0711915384684022,
+          "training_only_partial_correlation_scope": "Descriptive association after removing linear raw-ensemble prediction; same320pairs used to estimate nuisance trends. Not cross-validated extension performance. All upstream predictions generated strictly insideoutertrain.",
+          "prediction_bin_cuts_inner_train": [
+            184.58890403223796,
+            190.76886896621798,
+            195.55362683534696,
+            202.79482623661474
+          ],
+          "outer_bin_bias": [
+            {
+              "bin": 0,
+              "n": 20,
+              "mean_residual009": 3.45685908725534
+            },
+            {
+              "bin": 1,
+              "n": 14,
+              "mean_residual009": -3.0390474581987212
+            },
+            {
+              "bin": 2,
+              "n": 10,
+              "mean_residual009": -2.8277257463046057
+            },
+            {
+              "bin": 3,
+              "n": 16,
+              "mean_residual009": 3.0787052818841687
+            },
+            {
+              "bin": 4,
+              "n": 20,
+              "mean_residual009": 1.447369801836149
+            }
+          ]
+        }
+      ],
+      "prediction_quintile_bias_descriptive": [
+        1.9450569110197609,
+        -2.345742712161968,
+        -3.662213344197235,
+        3.052911392822284,
+        0.5105170228513334
+      ]
+    }
+  },
+  "matrix_sha256": "bc98abeff643464c66479bf855aa554eb1f423c01b446539878fcc01c5b0221b",
+  "sources": {
+    "residual_diagnostics_076.py": "282101bd92ac58998eb2478e28be7dfd9e6b1850ec46270682aac88f754d399d",
+    "nested_calibration_074.py": "6f795743f2625ff1224f5f693fb906f43f13ff708439a37132761c28dbd275b7",
+    "validate_nested_calibration_074_v2.py": "58aad31e577ee8024e00f2214749d8ba5c622f123198ef4b14b77da0f04b334a"
+  },
+  "inputs": {
+    "reports/nested-calibration-074-validation.json": "024454780fbb26efa882fb3fba8bea5eb9a8182d4d934dd98010243bf7605f69",
+    "reports/candidate009-public-submission.json": "3862a5ff878e930620c28ad17ef58cb17ed7e73a24d65e4aa271138bed0ec1ba",
+    "reports/joint-047-summary.json": "b0bb1b9e1f19b59a0ce44e43c3aa71e4ab32bed0175ab3c8fcc67e8adc11fc4c"
+  },
+  "protected_best009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Diagnostic correlations and the choice of extension are adaptive; not independent evidence."
+}

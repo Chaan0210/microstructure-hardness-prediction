@@ -1,0 +1,638 @@
+{
+  "passed": true,
+  "results": {
+    "original": {
+      "CNN_seed_RMSE": [
+        15.032317843077909,
+        14.931024236899864,
+        14.226369371296006
+      ],
+      "CNN_mean3_RMSE": 14.316237784821688,
+      "raw_first_RMSE": 13.065975963657763,
+      "raw_mean3_RMSE": 12.952986825018959,
+      "mean_seed_prediction_variance": 12.143885684030051,
+      "mean_individual_MSE_minus_mean3_MSE": 12.143885684030067,
+      "seed_residual_correlation": [
+        [
+          1.0,
+          0.9148247597548929,
+          0.9163378221788955
+        ],
+        [
+          0.9148247597548927,
+          1.0,
+          0.9195551630120666
+        ],
+        [
+          0.9163378221788955,
+          0.9195551630120666,
+          1.0
+        ]
+      ]
+    },
+    "20261031": {
+      "CNN_seed_RMSE": [
+        14.270187155168609,
+        14.118394516212616,
+        14.943644591390433
+      ],
+      "CNN_mean3_RMSE": 13.918648305036763,
+      "raw_first_RMSE": 12.871728660215116,
+      "raw_mean3_RMSE": 12.834535871278215,
+      "mean_seed_prediction_variance": 15.031168971615324,
+      "mean_individual_MSE_minus_mean3_MSE": 15.031168971615301,
+      "seed_residual_correlation": [
+        [
+          1.0,
+          0.8792665521875724,
+          0.9027015947846782
+        ],
+        [
+          0.8792665521875724,
+          1.0,
+          0.8971125363779021
+        ],
+        [
+          0.902701594784678,
+          0.8971125363779022,
+          1.0
+        ]
+      ]
+    },
+    "20261101": {
+      "CNN_seed_RMSE": [
+        14.553099889755208,
+        14.96118685705814,
+        14.618311992781377
+      ],
+      "CNN_mean3_RMSE": 14.307111794139066,
+      "raw_first_RMSE": 13.169241054400763,
+      "raw_mean3_RMSE": 13.194440468006594,
+      "mean_seed_prediction_variance": 11.74817680710616,
+      "mean_individual_MSE_minus_mean3_MSE": 11.748176807106148,
+      "seed_residual_correlation": [
+        [
+          1.0,
+          0.9072387005085457,
+          0.9238199886746785
+        ],
+        [
+          0.9072387005085457,
+          1.0,
+          0.9257665167931449
+        ],
+        [
+          0.9238199886746785,
+          0.9257665167931449,
+          1.0
+        ]
+      ]
+    }
+  },
+  "checkpoint_checks": [
+    {
+      "split": "original",
+      "fold": 0,
+      "seed": 20261003,
+      "checkpoint": "artifacts/run-009/fold-0.pt",
+      "sha256": "921fd261cd39a410ffe07e88dd302c8de5606d1ae1c5650f5ae3cce994509e59",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 3.0517578125e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 0,
+      "seed": 20261023,
+      "checkpoint": "artifacts/run-018/cnn-seed20261023-fold0.pt",
+      "sha256": "9dd91b1fcd980077ea5e8c462f193f3faec9c44904b5c4fe0808f850ab41a311",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 0,
+      "seed": 20261043,
+      "checkpoint": "artifacts/run-018/cnn-seed20261043-fold0.pt",
+      "sha256": "72f3860aaa21ac2d1a38f5a9f38cb7714133f419a366b44f00f4adadffdca214",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 1,
+      "seed": 20261003,
+      "checkpoint": "artifacts/run-009/fold-1.pt",
+      "sha256": "f9712fb181b71d39d61f1d491e1f5f79ab9d426655cdce53f702357f0fc26827",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 1,
+      "seed": 20261023,
+      "checkpoint": "artifacts/run-018/cnn-seed20261023-fold1.pt",
+      "sha256": "ac1662adb8329653c9092242debd01a2fb1ae38627cad7a746eb434ad244a840",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 1,
+      "seed": 20261043,
+      "checkpoint": "artifacts/run-018/cnn-seed20261043-fold1.pt",
+      "sha256": "5b42983d08d2206804ef6d012a99745cd62151250cbe54cb4f4ef1f7e1e05880",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 2,
+      "seed": 20261003,
+      "checkpoint": "artifacts/run-009/fold-2.pt",
+      "sha256": "c2dcf5379b769989dc790346872a0742422d2a4d602b6e3de6b4a9f20a876b4e",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 2,
+      "seed": 20261023,
+      "checkpoint": "artifacts/run-018/cnn-seed20261023-fold2.pt",
+      "sha256": "99b09989b79a7e59e5af1a72c3416cbba8b61221c78e35b03f3ae70f49a2cc23",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 2,
+      "seed": 20261043,
+      "checkpoint": "artifacts/run-018/cnn-seed20261043-fold2.pt",
+      "sha256": "e817fbbfee62557400b64d693c245e7e0d0bcd48f1748adf77d08c888077efb4",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 3,
+      "seed": 20261003,
+      "checkpoint": "artifacts/run-009/fold-3.pt",
+      "sha256": "f81b6426e4cd0c6a1464916fcb734bfe807ce86cf7aa5e0d9d579e7d8a6b6d4e",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 3,
+      "seed": 20261023,
+      "checkpoint": "artifacts/run-018/cnn-seed20261023-fold3.pt",
+      "sha256": "b1a0b10bfbc3d9fbeee9b0d6a9d30b59ad39d2da7e124ce285dc82c5456c357b",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 3,
+      "seed": 20261043,
+      "checkpoint": "artifacts/run-018/cnn-seed20261043-fold3.pt",
+      "sha256": "62e316d47996f57b1a4e8f2b0016015986675cfa1e90c97255a5bea99a82f860",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 4,
+      "seed": 20261003,
+      "checkpoint": "artifacts/run-009/fold-4.pt",
+      "sha256": "f34af86385d6aaddf62d0e6e847b7ef432544b2ec38e1c1cd90e6f0ddbe7ace3",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 3.0517578125e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 4,
+      "seed": 20261023,
+      "checkpoint": "artifacts/run-018/cnn-seed20261023-fold4.pt",
+      "sha256": "fc98667b7f0d566e829c73f450d02b7ecc14e27341720fdee4a9d629d0465a0f",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "original",
+      "fold": 4,
+      "seed": 20261043,
+      "checkpoint": "artifacts/run-018/cnn-seed20261043-fold4.pt",
+      "sha256": "58ac351b023f0271d49a4fdfa68355d92533af75b7b34002d03be21a97dedc96",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 0,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-0/cnn-seed20261003.pt",
+      "sha256": "1c3810520da39e8208b2f36ca45ab851696d7e494a8234584a897512870296a0",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 0,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-0/cnn-seed20261023.pt",
+      "sha256": "afa892ea79f9922a8a9869e29d87d62e6e2b8ac61f0206b02bfe555f589e9062",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 0,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-0/cnn-seed20261043.pt",
+      "sha256": "223272c3e2a1c29fc03b50159937a21d85a8fe606f46e72c05909b8835dcc435",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 1,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-1/cnn-seed20261003.pt",
+      "sha256": "9ad05c32773b33c8bcadb5d178da32d89329273d56951fbdc18d2ddc8e0b142a",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 1,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-1/cnn-seed20261023.pt",
+      "sha256": "abab61c8af02e53b863f6bb62a07b8e9b348a73aaebfc789e9741c3391b8f0b5",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 1,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-1/cnn-seed20261043.pt",
+      "sha256": "bebee998f32b14997a3b899dd41b416b676099e4a66a87c9f9c5ecac3a6cf384",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 3.0517578125e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 2,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-2/cnn-seed20261003.pt",
+      "sha256": "bb2beef416b02dbd0ec261e31f013fa8ccc7eddd4331bac0d10c0b93b6114991",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 2,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-2/cnn-seed20261023.pt",
+      "sha256": "f7bb1e1e93b40cc5af356d6e60dee46838a1b6baeb9c2cebfbb3229d3bd7283c",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 2,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-2/cnn-seed20261043.pt",
+      "sha256": "e1be801b3f2b117870a675f3bb492709c0821c72847fb5a22c82671156576a66",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 3.0517578125e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 3,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-3/cnn-seed20261003.pt",
+      "sha256": "1bb0283b4474ddbde8cf51e0577a06a8c3ec39363f2cb260c0c12a317bded9c9",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 3,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-3/cnn-seed20261023.pt",
+      "sha256": "aeb0e3e0d1b62a177a0cdef659cba1810e66275cfeb2cdd7099778e0fc709705",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 3,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-3/cnn-seed20261043.pt",
+      "sha256": "e41a7dc5b53bc195df9ac233a6bc65ec951ed185c443745e3a8fd57030acf29d",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 4,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-4/cnn-seed20261003.pt",
+      "sha256": "7106b30eddc6728dcc1e03004607bb68cad9e3a30ec75a2fabb579b6f5bb30f7",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 4,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-4/cnn-seed20261023.pt",
+      "sha256": "adf3326a95ede8586bf7f98a227978c533ba41ece55cc76d6f50f5d689e72bbd",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261031",
+      "fold": 4,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261031/fold-4/cnn-seed20261043.pt",
+      "sha256": "7f565d14d8638e9eaf9c8c7f0e0fa62a0ef6ffe0559115497a5e295c55ec7890",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 0,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-0/cnn-seed20261003.pt",
+      "sha256": "44c2f000d36d708c66046d192c7b53791fbc9b50a7bda00565aa2c6cee12e0ce",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 0,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-0/cnn-seed20261023.pt",
+      "sha256": "dc761ee6572b092358b2deeef745412f0bf7b89119756670c411a461afb501b4",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 3.0517578125e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 0,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-0/cnn-seed20261043.pt",
+      "sha256": "df1035eb96300c933ef954fab1bc66f47e074c7c3d19d8e4b09afa4c3d107742",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 1,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-1/cnn-seed20261003.pt",
+      "sha256": "878e561ea6e17ea1ebde76112d075d942e5301d799d92856b76eb0950ba7e71e",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 1,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-1/cnn-seed20261023.pt",
+      "sha256": "029f8689539808a724378a83df28a3d597c688da3cc8551ce2001d196e2ebc71",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 1,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-1/cnn-seed20261043.pt",
+      "sha256": "511b3770653d2821c67d7686ca8e85003b30a99eb0e443546e5e14ef96c64cdc",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 2,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-2/cnn-seed20261003.pt",
+      "sha256": "f158d300bc3dbcf61d05a074eae91295725766bb1f006b9bcbb54ac9dc770b8d",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 2,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-2/cnn-seed20261023.pt",
+      "sha256": "c243cc52e670ac1543afaadc8de6755729d49bdc4be3f4827f12de5c957ed015",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 3.0517578125e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 2,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-2/cnn-seed20261043.pt",
+      "sha256": "efbf46f45235c699eaf76c5240d3216a7729f1f348241aafaf768fba07931406",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 3,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-3/cnn-seed20261003.pt",
+      "sha256": "6fe1e6d9379cd19b51b967f4676bae4dc5a23f584ad54c774cabff93b36b760a",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 3,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-3/cnn-seed20261023.pt",
+      "sha256": "75bba2ecbb36c5c1f2ba3fced95e52af12c1fc7f86a94f7c4135f6a0b9cbf3a5",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 3,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-3/cnn-seed20261043.pt",
+      "sha256": "4c28fd7050f83c4aad47a8618d2f77e9986dda6a6f01d0852cc0e850de014d6e",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 4,
+      "seed": 20261003,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-4/cnn-seed20261003.pt",
+      "sha256": "73dcd5606b15e8ab3a932eb62c3fa3b591c2fcba6581705263525e4c8e1acd2a",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 4,
+      "seed": 20261023,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-4/cnn-seed20261023.pt",
+      "sha256": "a8d27d42ccc9a870a7dd77174310efe522d1f23cfdf6a14fe1f4a72be030858c",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    },
+    {
+      "split": "20261101",
+      "fold": 4,
+      "seed": 20261043,
+      "checkpoint": "artifacts/frozen-validation-021/seed-20261101/fold-4/cnn-seed20261043.pt",
+      "sha256": "470c46ee763722fde7a90562297d2785856e037b55d61d355ec2cde76cec9b2a",
+      "reload_errors": {
+        "mps": 0.0,
+        "cpu": 1.52587890625e-05
+      },
+      "trainlocal_stats_groups_and_seed_verified": true
+    }
+  ],
+  "exact_fresh_seed20261023_replay": true,
+  "new_CNN_fits": 1,
+  "seconds": 22.249711957992986,
+  "source_sha256": "0253abea611ec28ddd90995bb896526d3432f01793a8d62b387a9745b3bd6b5b"
+}

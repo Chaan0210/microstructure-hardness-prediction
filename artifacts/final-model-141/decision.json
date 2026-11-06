@@ -1,0 +1,81 @@
+{
+  "candidate": "017",
+  "locked_utc": "2026-10-04T11:41:53.778570+00:00",
+  "recipe": "Exactly015 affine/raw/shortB; physics57+adjacent528 in samehonestB selectors; fixed32projection/nearestneighbor/none,Ridge1,.1,RBF1,.1; mean3corrections. No quadratic137.",
+  "development": {
+    "passed_validation": true,
+    "advance": true,
+    "RMSE_by_partition": {
+      "original": {
+        "reference015": 12.830176114316457,
+        "unordered": 12.814450103217089,
+        "adjacent": 12.825855906064737
+      },
+      "20261031": {
+        "reference015": 12.636884322985622,
+        "unordered": 12.67366567677331,
+        "adjacent": 12.637362433836437
+      },
+      "20261101": {
+        "reference015": 13.107923156289893,
+        "unordered": 13.098217203010424,
+        "adjacent": 13.078569974088213
+      }
+    },
+    "pooled_MSE": {
+      "reference015": 165.37397132936573,
+      "unordered": 165.4650756772335,
+      "adjacent": 165.0848338581326
+    },
+    "pooled_RMSE": {
+      "reference015": 12.859781154023024,
+      "unordered": 12.863322886300939,
+      "adjacent": 12.84853430777739
+    },
+    "conditional_400IDcluster_gain_CI95": {
+      "reference015": [
+        -0.012088730615789921,
+        0.0335758595678973
+      ],
+      "unordered": [
+        -0.013443899403590098,
+        0.04635208035262542
+      ]
+    },
+    "current_best": "015",
+    "Public016": 11.5828840997,
+    "public_not_used_to_tune_features": true,
+    "new_neural_fits": 0,
+    "cost": 0,
+    "test_or_holdout_read": false,
+    "new_CSV": false,
+    "closed_if_negative": true,
+    "plan_sha256": "2228ead6c04708734517c4cf86f3ff9751a65493d25fdd591a935e46854dc65c"
+  },
+  "full500": "Reuse unchanged015 independentlyverified base/nestedheads and4affines, refit48augmentedresidualmodels. Reuse400label-freefeatures,extract remaining100 onlyafterlock. Noformerholdoutscore orselection.",
+  "test": "Afterfitverification, raw1000DINOtokensforfixedfeatureinference only; no testfit/selection/clipping.",
+  "hashes": {
+    "candidate017_pipeline.py": "45d39d863e64b4cff8d26746913b9d50f98e09faa0631734a0c62bc9b5777382",
+    "spatial_joint_140.py": "d050b813cad2d9c7637bb1e20c5e263c6633565eba7963c4fdfcd4a380ac9e3e",
+    "validate_spatial_joint_extra_140.py": "97df7af76a4ed90685589d493ae529b6d7e63518da9df155fe16ba4ff0bbd518",
+    "artifacts/spatial-joint-140/decision.json": "b8f40336221ab23a5102794d0ec62fdb8d188e50d36197d401a26c676a1b80f6",
+    "artifacts/spatial-joint-140/extra-validation.json": "5948c4f348de7d848bbb43f70170191f5cab4fe333c3070d68998ca706e50d95",
+    "artifacts/spatial-joint-140/features.npz": "e4bbdc20e08a924d00e60c391443f26d5a298287b66bf20b8866d8c3f648f867",
+    "artifacts/spatial-joint-140/extraction.json": "8e35e8c7b0604c3cd48003d8d424be5267d78e8d1aff48bd59604a12c8fc5537",
+    "artifacts/final-model-134/fit.json": "4a2cc17481e76a4019072f771855666f54d3cd49cbfe1f040cbbb1ebc02ddc00",
+    "artifacts/final-model-134/calibrator.json": "54ce5a63256ac88a0b9106b4ab4d078349998b72b03810b1e620ffe0778804a4",
+    "artifacts/final-model-134/training-validation.json": "5cab35a29892c7ed500fc687c1dd59b125bcc2be31b3a6638d20c6173c5fed0b",
+    "artifacts/spatial-joint-140/validation-original.json": "9d78b6d5917ee0017fbc812f2a56ed391e6fcac1ece123d8ccbd73ea2bae5443",
+    "artifacts/spatial-joint-140/validation-20261031.json": "bf05e07e8e0a973306e32c3b524e671efd4fc5ec183f7af3eb1f5de2cb8a647e",
+    "artifacts/spatial-joint-140/validation-20261101.json": "4721bfb07645a7ab23c146e5391ba8757fa0902eb924d8b58ea023e9111665aa"
+  },
+  "protected": {
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-014.csv": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "artifacts/submission-candidate-015.csv": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f",
+    "artifacts/submission-candidate-016.csv": "ceabcb7f019b7234e638510899ae98d2aacee08892f59650fd6cb16ff301cce0"
+  },
+  "best015_retained": true,
+  "cost": 0,
+  "upload": false
+}

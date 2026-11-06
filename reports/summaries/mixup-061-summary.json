@@ -1,0 +1,173 @@
+{
+  "outcome": "Fixedmixupfailedoriginalscreen;noresplits orcandidate",
+  "report": {
+    "split": "original",
+    "scores": {
+      "reference007": {
+        "rmse": 13.241596955038409,
+        "fold_rmse": [
+          13.200972349680994,
+          12.726138894776982,
+          14.308109808709345,
+          12.375441992213231,
+          13.513163828337742
+        ]
+      },
+      "mixup_mlp": {
+        "rmse": 14.182911281279164,
+        "fold_rmse": [
+          14.528063938958317,
+          14.163858274961537,
+          14.948380701314283,
+          13.43601312638345,
+          13.788212527073535
+        ]
+      },
+      "primary": {
+        "rmse": 13.243239642199292,
+        "fold_rmse": [
+          13.187653633252468,
+          12.736631356789083,
+          14.284677262804745,
+          12.408722035473371,
+          13.518602271613773
+        ]
+      },
+      "reference003": {
+        "rmse": 13.705696031698212,
+        "fold_rmse": [
+          13.539394483459153,
+          13.218378105383424,
+          14.680453686399362,
+          12.991004741250547,
+          14.032386512109253
+        ]
+      }
+    },
+    "comparison": {
+      "gain": -0.0016426871608832272,
+      "fold_gains": [
+        0.013318716428525335,
+        -0.010492462012100745,
+        0.023432545904599422,
+        -0.03328004326013989,
+        -0.005438443276030824
+      ],
+      "positive_folds": 2,
+      "bootstrap_sd": 0.012209568863580133,
+      "conditional_ci95": [
+        -0.024728323907403205,
+        0.023499868768632304
+      ],
+      "mixup_control_mlp_residual_correlation": 0.9978455479837508
+    },
+    "mean3_train_rmse_pooled": 0.4877823186642844,
+    "seconds": 8.163896625046618,
+    "rss_peak_bytes": 468615168,
+    "predictions_sha256": "cf9fa9aea45c54c920953a08bfcc0aabd7659837d40f4570e43eb08033ca488a",
+    "new_candidate": null
+  },
+  "validation": {
+    "passed": true,
+    "results": {
+      "original": {
+        "scores": {
+          "reference007": {
+            "rmse": 13.241596955038409,
+            "fold_rmse": [
+              13.200972349680994,
+              12.726138894776982,
+              14.308109808709345,
+              12.375441992213231,
+              13.513163828337742
+            ]
+          },
+          "mixup_mlp": {
+            "rmse": 14.182911281279164,
+            "fold_rmse": [
+              14.528063938958317,
+              14.163858274961537,
+              14.948380701314283,
+              13.43601312638345,
+              13.788212527073535
+            ]
+          },
+          "primary": {
+            "rmse": 13.243239642199292,
+            "fold_rmse": [
+              13.187653633252468,
+              12.736631356789083,
+              14.284677262804745,
+              12.408722035473371,
+              13.518602271613773
+            ]
+          },
+          "reference003": {
+            "rmse": 13.705696031698212,
+            "fold_rmse": [
+              13.539394483459153,
+              13.218378105383424,
+              14.680453686399362,
+              12.991004741250547,
+              14.032386512109253
+            ]
+          }
+        },
+        "comparison": {
+          "gain": -0.0016426871608832272,
+          "fold_gains": [
+            0.013318716428525335,
+            -0.010492462012100745,
+            0.023432545904599422,
+            -0.03328004326013989,
+            -0.005438443276030824
+          ],
+          "positive_folds": 2,
+          "bootstrap_sd": 0.012209568863580133,
+          "conditional_ci95": [
+            -0.024728323907403205,
+            0.023499868768632304
+          ],
+          "mixup_control_mlp_residual_correlation": 0.9978455479837508
+        },
+        "train_rmse": 0.4877823186642844,
+        "reload_max_error": 0.0,
+        "prediction_difference_rms": 0.23407146977646393,
+        "standalone_validation_outside_foldtrain_label_range": 0,
+        "foldtrain_target_quantile_diagnostics": {
+          "0": {
+            "n": 81,
+            "reference007_rmse": 16.82315911331556,
+            "new_rmse": 16.857445030654812,
+            "reference_signed_error": 13.935175917449286,
+            "new_signed_error": 13.9437575795992
+          },
+          "1": {
+            "n": 236,
+            "reference007_rmse": 8.449790530238666,
+            "new_rmse": 8.449679809195615,
+            "reference_signed_error": 0.28362624554022714,
+            "new_signed_error": 0.2808474309983204
+          },
+          "2": {
+            "n": 83,
+            "reference007_rmse": 19.12586343275207,
+            "new_rmse": 19.102007660588818,
+            "reference_signed_error": -15.182811985066841,
+            "new_signed_error": -15.167272147476119
+          }
+        }
+      }
+    },
+    "models_verified": 15,
+    "independent100epoch_replay_error": 0.0,
+    "protected_files": 18,
+    "seconds": 1.2327947500161827,
+    "scope": "Development400 only; noholdout/test/candidateCSV/upload/install/cost. Tailbins diagnostic only,fromeachfoldtrain20/80quantiles; no sampleweighting."
+  },
+  "interpretation": "MixupdoesnotreduceoriginaltrainRMSEinthiscondition (.4878vs.6013),andblend13.24324 isnotbetter00713.24160. Do notinferallmixup/regularizationineffective or tunethealphausingouterresults.",
+  "curve_note": "train_loss logs SmoothL1 onoriginalunmixedtrainrows,notaugmentedtrainingobjective.",
+  "reference": "https://arxiv.org/abs/1710.09412",
+  "cost": 0,
+  "running_work": []
+}

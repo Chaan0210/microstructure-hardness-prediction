@@ -1,0 +1,98 @@
+{
+  "status": "completed",
+  "names": [
+    "grain_diameter",
+    "dark_phase_fraction",
+    "pore_fraction",
+    "alignment"
+  ],
+  "images": 40,
+  "variants": 4,
+  "synthetic_fixture_count": 6,
+  "label_files_opened": 0,
+  "hypothesis_promoted": false,
+  "stability": {
+    "baseline": [
+      0.16579458792185092,
+      0.046206967774526465,
+      0.1707408165844496,
+      0.06454759434578006
+    ],
+    "candidate": [
+      0.04466434017272433,
+      0.05777739693155464,
+      3.871040729183512,
+      0.024468337088334458
+    ],
+    "candidate_over_baseline": [
+      0.2693956463390551,
+      1.2504044241441625,
+      22.67202890685994,
+      0.37907434562561865
+    ],
+    "reduction_fraction": [
+      0.7306043536609449,
+      -0.25040442414416253,
+      -21.67202890685994,
+      0.6209256543743813
+    ],
+    "passed": false,
+    "scale": [
+      3.727971871289771,
+      0.14221268616786364,
+      0.00499725341796875,
+      0.21263286235886134
+    ]
+  },
+  "preservation": {
+    "checks": {
+      "all_fixture_structures_preserved": false,
+      "real_feature_spread_noncollapsed": false,
+      "real_boundary_anchors": true,
+      "real_pore_anchors": false,
+      "start_agreement": false,
+      "nondegenerate_fraction": false
+    },
+    "fixture_pass": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "iqr_ratio": [
+      0.20367200601803154,
+      0.8579427739658358,
+      11.779389312977099,
+      0.13305969771913204
+    ],
+    "boundary_anchor_recall_median": 0.9588700349050461,
+    "pore_anchor_recall_median": 0.5388386123680241,
+    "pore_anchor_images": 40,
+    "start_disagreement_normalized_median": [
+      0.09966028311280231,
+      0.048621549155732594,
+      4.073282442748091,
+      0.045095332156063095
+    ],
+    "degenerate_images": 39
+  },
+  "seconds": 302.362278665998,
+  "rss_bytes": 454197248,
+  "sources": {
+    "evaluate_formation_049.py": "c587067aa8aa2128151eba5d39c9db43f7f5f6771f393cd1ea2ad8f7f497ba85",
+    "formation_model_049.py": "87a4de67ede77305c50e14f2d13efa176eddd271c7ad3d2df20745449e575515",
+    "formation_pilot_049.py": "ee462a2645f82f5b8655bafda5939ad1ee584fab243a04003a0c5676f5268360"
+  },
+  "protected_unchanged": true,
+  "best": "candidate006 unchanged",
+  "regression_or_cv_executed": false,
+  "new_candidate": null,
+  "limitations": [
+    "Fixed synthetic perturbations are probes, not the identified competition generator.",
+    "Input-derived real-image anchors can miss structure; fixture metrics are conditional on analytic layouts, not ground truth for real images.",
+    "Joint inverse image model remains non-identifiable and optimizer may underfit or overfit. Failure rejects this fixed approximation, not all possible inverse problems or competition ceiling.",
+    "No new target score exists because feasibility precedes regression."
+  ]
+}

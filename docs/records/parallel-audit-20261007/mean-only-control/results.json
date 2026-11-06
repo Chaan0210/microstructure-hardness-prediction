@@ -1,0 +1,2144 @@
+{
+  "posthoc": true,
+  "independent_confirmation": false,
+  "decision": "reject_mean_only_stop_no_tuning_keep_best021",
+  "gates_locked_before_training": {
+    "practical_gain_at_least_0.02": false,
+    "all_split_positive": true,
+    "remaining397_nonnegative": true,
+    "conditional_CI_lower_positive": false
+  },
+  "comparisons": {
+    "original": {
+      "KRR": {
+        "D-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.482935938822393,
+            "candidate_RMSE": 14.431794274043803,
+            "RMSE_gain": 0.05114166477859072,
+            "SSE_gain": 591.4989758839213,
+            "improved_IDs": 204,
+            "worsened_IDs": 196,
+            "conditional_CI95": [
+              -0.023289408520941902,
+              0.1766265803763551
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 27.218967353497057,
+            "candidate_RMSE": 23.263564423899997,
+            "RMSE_gain": 3.95540292959706,
+            "SSE_gain": 599.0362622573789,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.343707913398452,
+            "candidate_RMSE": 14.344369707759313,
+            "RMSE_gain": -0.000661794360860668,
+            "SSE_gain": -7.537286373457604,
+            "improved_IDs": 202,
+            "worsened_IDs": 195,
+            "conditional_CI95": [
+              -0.028177683380913397,
+              0.027102563567219025
+            ]
+          },
+          "fold_gains": [
+            -0.06770340545904396,
+            0.0015872835466286261,
+            0.03320471295174343,
+            0.2832328293778339,
+            0.0012843565426035042
+          ]
+        },
+        "D-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.544627687821542,
+            "candidate_RMSE": 14.431794274043803,
+            "RMSE_gain": 0.11283341377773937,
+            "SSE_gain": 1307.803443608604,
+            "improved_IDs": 212,
+            "worsened_IDs": 188,
+            "conditional_CI95": [
+              -0.01254715492096481,
+              0.2991243378442498
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 31.469020617183713,
+            "candidate_RMSE": 23.263564423899997,
+            "RMSE_gain": 8.205456193283716,
+            "SSE_gain": 1347.3174866993638,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.340899927068593,
+            "candidate_RMSE": 14.344369707759313,
+            "RMSE_gain": -0.0034697806907200146,
+            "SSE_gain": -39.51404309075953,
+            "improved_IDs": 209,
+            "worsened_IDs": 188,
+            "conditional_CI95": [
+              -0.025616697552417644,
+              0.020324684952349244
+            ]
+          },
+          "fold_gains": [
+            0.2652360884119851,
+            -0.027332337378036087,
+            0.04751251083191299,
+            0.28350970886914517,
+            -0.008150152383109344
+          ]
+        },
+        "D-C": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.526028659859751,
+            "candidate_RMSE": 14.431794274043803,
+            "RMSE_gain": 0.09423438581594823,
+            "SSE_gain": 1091.529063497361,
+            "improved_IDs": 205,
+            "worsened_IDs": 195,
+            "conditional_CI95": [
+              -0.011771085003027171,
+              0.25761173529970943
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 30.299009013855226,
+            "candidate_RMSE": 23.263564423899997,
+            "RMSE_gain": 7.03544458995523,
+            "SSE_gain": 1130.5095525502038,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.340946784749848,
+            "candidate_RMSE": 14.344369707759313,
+            "RMSE_gain": -0.0034229230094648955,
+            "SSE_gain": -38.98048905284283,
+            "improved_IDs": 202,
+            "worsened_IDs": 195,
+            "conditional_CI95": [
+              -0.023450315073379847,
+              0.018153010374428416
+            ]
+          },
+          "fold_gains": [
+            0.27439185750348827,
+            -0.028368551153269195,
+            0.03243618849425722,
+            0.1926511965415365,
+            -0.0020160357659566586
+          ]
+        },
+        "C-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.544627687821542,
+            "candidate_RMSE": 14.526028659859751,
+            "RMSE_gain": 0.018599027961791137,
+            "SSE_gain": 216.2743801112434,
+            "improved_IDs": 205,
+            "worsened_IDs": 195,
+            "conditional_CI95": [
+              -0.0051439970433535985,
+              0.05882105186632196
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 31.469020617183713,
+            "candidate_RMSE": 30.299009013855226,
+            "RMSE_gain": 1.1700116033284864,
+            "SSE_gain": 216.80793414916002,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.340899927068593,
+            "candidate_RMSE": 14.340946784749848,
+            "RMSE_gain": -4.685768125511913e-05,
+            "SSE_gain": -0.5335540379166588,
+            "improved_IDs": 203,
+            "worsened_IDs": 194,
+            "conditional_CI95": [
+              -0.007941225984949752,
+              0.007699639075030481
+            ]
+          },
+          "fold_gains": [
+            -0.009155769091503174,
+            0.001036213775233108,
+            0.015076322337655768,
+            0.09085851232760866,
+            -0.006134116617152685
+          ]
+        },
+        "B-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.482935938822393,
+            "candidate_RMSE": 14.544627687821542,
+            "RMSE_gain": -0.06169174899914864,
+            "SSE_gain": -716.3044677246829,
+            "improved_IDs": 203,
+            "worsened_IDs": 197,
+            "conditional_CI95": [
+              -0.2093434830105286,
+              0.022083589186839166
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 27.218967353497057,
+            "candidate_RMSE": 31.469020617183713,
+            "RMSE_gain": -4.250053263686656,
+            "SSE_gain": -748.2812244419849,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.343707913398452,
+            "candidate_RMSE": 14.340899927068593,
+            "RMSE_gain": 0.0028079863298593466,
+            "SSE_gain": 31.976756717301868,
+            "improved_IDs": 202,
+            "worsened_IDs": 195,
+            "conditional_CI95": [
+              -0.020678091949337764,
+              0.025966757406529557
+            ]
+          },
+          "fold_gains": [
+            -0.33293949387102906,
+            0.028919620924664713,
+            -0.01430779788016956,
+            -0.0002768794913112771,
+            0.009434508925712848
+          ]
+        },
+        "C-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.482935938822393,
+            "candidate_RMSE": 14.526028659859751,
+            "RMSE_gain": -0.043092721037357506,
+            "SSE_gain": -500.0300876134395,
+            "improved_IDs": 202,
+            "worsened_IDs": 198,
+            "conditional_CI95": [
+              -0.1995490466207687,
+              0.060532794985240085
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 27.218967353497057,
+            "candidate_RMSE": 30.299009013855226,
+            "RMSE_gain": -3.0800416603581695,
+            "SSE_gain": -531.4732902928249,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.343707913398452,
+            "candidate_RMSE": 14.340946784749848,
+            "RMSE_gain": 0.0027611286486042275,
+            "SSE_gain": 31.443202679385237,
+            "improved_IDs": 201,
+            "worsened_IDs": 196,
+            "conditional_CI95": [
+              -0.025745693044920425,
+              0.03081214280618112
+            ]
+          },
+          "fold_gains": [
+            -0.34209526296253223,
+            0.02995583469989782,
+            0.0007685244574862082,
+            0.09058163283629739,
+            0.0033003923085601627
+          ]
+        }
+      },
+      "frozen_ensemble": {
+        "D-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.786200775750695,
+            "candidate_RMSE": 12.768744715602912,
+            "RMSE_gain": 0.017456060147782892,
+            "SSE_gain": 178.43546622815808,
+            "improved_IDs": 195,
+            "worsened_IDs": 205,
+            "conditional_CI95": [
+              -0.004569763497731483,
+              0.054804557336160666
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 23.674377504338135,
+            "candidate_RMSE": 22.538318963277906,
+            "RMSE_gain": 1.1360585410602297,
+            "SSE_gain": 157.5009855823769,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.668346843184294,
+            "candidate_RMSE": 12.666265434212775,
+            "RMSE_gain": 0.002081408971518428,
+            "SSE_gain": 20.93448064578117,
+            "improved_IDs": 193,
+            "worsened_IDs": 204,
+            "conditional_CI95": [
+              -0.005881434060695944,
+              0.010389012717303718
+            ]
+          },
+          "fold_gains": [
+            -0.008992808151672804,
+            -0.001373459158616086,
+            0.012952730647711519,
+            0.08536860487732056,
+            0.002922220167254963
+          ]
+        },
+        "D-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.797865088499812,
+            "candidate_RMSE": 12.768744715602912,
+            "RMSE_gain": 0.029120372896899838,
+            "SSE_gain": 297.8036844820122,
+            "improved_IDs": 209,
+            "worsened_IDs": 191,
+            "conditional_CI95": [
+              -0.00304492396160878,
+              0.07551320174860227
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 24.656844796961803,
+            "candidate_RMSE": 22.538318963277906,
+            "RMSE_gain": 2.118525833683897,
+            "SSE_gain": 299.95252095302953,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.666051766971758,
+            "candidate_RMSE": 12.666265434212775,
+            "RMSE_gain": -0.00021366724101667955,
+            "SSE_gain": -2.1488364710172654,
+            "improved_IDs": 206,
+            "worsened_IDs": 191,
+            "conditional_CI95": [
+              -0.007041029529990528,
+              0.007824019579851568
+            ]
+          },
+          "fold_gains": [
+            0.05397780520467954,
+            -0.01009104959211804,
+            0.020560985560248213,
+            0.08427368056889861,
+            -0.0008415370744714323
+          ]
+        },
+        "D-C": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.792480549759738,
+            "candidate_RMSE": 12.768744715602912,
+            "RMSE_gain": 0.023735834156825675,
+            "SSE_gain": 242.68680149755758,
+            "improved_IDs": 200,
+            "worsened_IDs": 200,
+            "conditional_CI95": [
+              -0.0029176011725216442,
+              0.062707678846097
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 24.298255439881792,
+            "candidate_RMSE": 22.538318963277906,
+            "RMSE_gain": 1.7599364766038867,
+            "SSE_gain": 247.28818719387755,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.665807895975338,
+            "candidate_RMSE": 12.666265434212775,
+            "RMSE_gain": -0.0004575382374376602,
+            "SSE_gain": -4.601385696319973,
+            "improved_IDs": 197,
+            "worsened_IDs": 200,
+            "conditional_CI95": [
+              -0.006271169353737394,
+              0.006119613372371186
+            ]
+          },
+          "fold_gains": [
+            0.05506207349502468,
+            -0.009626821223093884,
+            0.01578300682279199,
+            0.05891765639547408,
+            -0.00016993186499725255
+          ]
+        },
+        "C-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.797865088499812,
+            "candidate_RMSE": 12.792480549759738,
+            "RMSE_gain": 0.005384538740074163,
+            "SSE_gain": 55.116882984454705,
+            "improved_IDs": 199,
+            "worsened_IDs": 201,
+            "conditional_CI95": [
+              -0.0013133754640060503,
+              0.01685042717568556
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 24.656844796961803,
+            "candidate_RMSE": 24.298255439881792,
+            "RMSE_gain": 0.3585893570800103,
+            "SSE_gain": 52.664333759151994,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.666051766971758,
+            "candidate_RMSE": 12.665807895975338,
+            "RMSE_gain": 0.00024387099642098065,
+            "SSE_gain": 2.452549225302704,
+            "improved_IDs": 197,
+            "worsened_IDs": 200,
+            "conditional_CI95": [
+              -0.0020200465112461875,
+              0.002659544141235325
+            ]
+          },
+          "fold_gains": [
+            -0.0010842682903451362,
+            -0.00046422836902415554,
+            0.004777978737456223,
+            0.02535602417342453,
+            -0.0006716052094741798
+          ]
+        },
+        "B-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.786200775750695,
+            "candidate_RMSE": 12.797865088499812,
+            "RMSE_gain": -0.011664312749116945,
+            "SSE_gain": -119.36821825385417,
+            "improved_IDs": 203,
+            "worsened_IDs": 197,
+            "conditional_CI95": [
+              -0.044633509695103914,
+              0.007630663670385429
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 23.674377504338135,
+            "candidate_RMSE": 24.656844796961803,
+            "RMSE_gain": -0.9824672926236673,
+            "SSE_gain": -142.45153537065264,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.668346843184294,
+            "candidate_RMSE": 12.666051766971758,
+            "RMSE_gain": 0.0022950762125351076,
+            "SSE_gain": 23.08331711679844,
+            "improved_IDs": 201,
+            "worsened_IDs": 196,
+            "conditional_CI95": [
+              -0.004239956509177655,
+              0.008780380308431823
+            ]
+          },
+          "fold_gains": [
+            -0.06297061335635235,
+            0.008717590433501954,
+            -0.007608254912536694,
+            0.0010949243084219518,
+            0.0037637572417263954
+          ]
+        },
+        "C-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.786200775750695,
+            "candidate_RMSE": 12.792480549759738,
+            "RMSE_gain": -0.006279774009042782,
+            "SSE_gain": -64.2513352693995,
+            "improved_IDs": 203,
+            "worsened_IDs": 197,
+            "conditional_CI95": [
+              -0.04180843781694184,
+              0.018543016313319158
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 23.674377504338135,
+            "candidate_RMSE": 24.298255439881792,
+            "RMSE_gain": -0.623877935543657,
+            "SSE_gain": -89.78720161150063,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.668346843184294,
+            "candidate_RMSE": 12.665807895975338,
+            "RMSE_gain": 0.0025389472089560883,
+            "SSE_gain": 25.535866342101134,
+            "improved_IDs": 202,
+            "worsened_IDs": 195,
+            "conditional_CI95": [
+              -0.005254020673039949,
+              0.010358678020783645
+            ]
+          },
+          "fold_gains": [
+            -0.06405488164669748,
+            0.008253362064477798,
+            -0.0028302761750804706,
+            0.02645094848184648,
+            0.0030921520322522156
+          ]
+        }
+      }
+    },
+    "20261031": {
+      "KRR": {
+        "D-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.381024891086929,
+            "candidate_RMSE": 14.361359196142281,
+            "RMSE_gain": 0.019665694944647427,
+            "SSE_gain": 226.09558297653598,
+            "improved_IDs": 215,
+            "worsened_IDs": 185,
+            "conditional_CI95": [
+              -0.02341183873606738,
+              0.08364440319575504
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 27.5090652214842,
+            "candidate_RMSE": 25.506860153104874,
+            "RMSE_gain": 2.0022050683793253,
+            "SSE_gain": 318.446263469467,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.235806910244179,
+            "candidate_RMSE": 14.24397485771437,
+            "RMSE_gain": -0.00816794747019145,
+            "SSE_gain": -92.35068049293113,
+            "improved_IDs": 212,
+            "worsened_IDs": 185,
+            "conditional_CI95": [
+              -0.03158083149575401,
+              0.014766684375278252
+            ]
+          },
+          "fold_gains": [
+            0.11682745303741449,
+            0.01664291546304497,
+            -0.049160992837469664,
+            0.028793970946102476,
+            -0.01230609597159571
+          ]
+        },
+        "D-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.450440403447072,
+            "candidate_RMSE": 14.361359196142281,
+            "RMSE_gain": 0.08908120730479041,
+            "SSE_gain": 1026.6359571820258,
+            "improved_IDs": 204,
+            "worsened_IDs": 196,
+            "conditional_CI95": [
+              -0.013283023831657246,
+              0.24916577059670825
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 31.746865613425534,
+            "candidate_RMSE": 25.506860153104874,
+            "RMSE_gain": 6.24000546032066,
+            "SSE_gain": 1071.790684220554,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.239981737369023,
+            "candidate_RMSE": 14.24397485771437,
+            "RMSE_gain": -0.0039931203453473785,
+            "SSE_gain": -45.154727038528165,
+            "improved_IDs": 201,
+            "worsened_IDs": 196,
+            "conditional_CI95": [
+              -0.028463136171470404,
+              0.0191866799403944
+            ]
+          },
+          "fold_gains": [
+            0.12759347127913934,
+            0.03480074696215141,
+            -0.025814409403650984,
+            0.03288768438806322,
+            0.28286060565989857
+          ]
+        },
+        "D-C": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.438027736000286,
+            "candidate_RMSE": 14.361359196142281,
+            "RMSE_gain": 0.07666853985800515,
+            "SSE_gain": 883.2027779572312,
+            "improved_IDs": 213,
+            "worsened_IDs": 187,
+            "conditional_CI95": [
+              -0.013406653902137177,
+              0.2231671472750722
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 31.032325221320033,
+            "candidate_RMSE": 25.506860153104874,
+            "RMSE_gain": 5.5254650682151585,
+            "SSE_gain": 937.2158813151789,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.239198242531993,
+            "candidate_RMSE": 14.24397485771437,
+            "RMSE_gain": -0.004776615182377597,
+            "SSE_gain": -54.0131033579476,
+            "improved_IDs": 210,
+            "worsened_IDs": 187,
+            "conditional_CI95": [
+              -0.02685793748309315,
+              0.015985969640352014
+            ]
+          },
+          "fold_gains": [
+            0.08766067743328243,
+            0.030933623917901443,
+            -0.013006789512791883,
+            0.01640163300650066,
+            0.2662105850675278
+          ]
+        },
+        "C-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.450440403447072,
+            "candidate_RMSE": 14.438027736000286,
+            "RMSE_gain": 0.012412667446785264,
+            "SSE_gain": 143.43317922479457,
+            "improved_IDs": 215,
+            "worsened_IDs": 185,
+            "conditional_CI95": [
+              -0.003081588970812188,
+              0.033942479191610704
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 31.746865613425534,
+            "candidate_RMSE": 31.032325221320033,
+            "RMSE_gain": 0.7145403921055014,
+            "SSE_gain": 134.57480290537518,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.239981737369023,
+            "candidate_RMSE": 14.239198242531993,
+            "RMSE_gain": 0.0007834948370302186,
+            "SSE_gain": 8.858376319419428,
+            "improved_IDs": 213,
+            "worsened_IDs": 184,
+            "conditional_CI95": [
+              -0.00636653256658497,
+              0.00824001641822387
+            ]
+          },
+          "fold_gains": [
+            0.039932793845856907,
+            0.003867123044249965,
+            -0.012807619890859101,
+            0.01648605138156256,
+            0.01665002059237075
+          ]
+        },
+        "B-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.381024891086929,
+            "candidate_RMSE": 14.450440403447072,
+            "RMSE_gain": -0.06941551236014298,
+            "SSE_gain": -800.5403742054898,
+            "improved_IDs": 197,
+            "worsened_IDs": 203,
+            "conditional_CI95": [
+              -0.20577855123793204,
+              0.009240178507018892
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 27.5090652214842,
+            "candidate_RMSE": 31.746865613425534,
+            "RMSE_gain": -4.2378003919413345,
+            "SSE_gain": -753.344420751087,
+            "improved_IDs": 0,
+            "worsened_IDs": 3,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.235806910244179,
+            "candidate_RMSE": 14.239981737369023,
+            "RMSE_gain": -0.004174827124844072,
+            "SSE_gain": -47.195953454402925,
+            "improved_IDs": 197,
+            "worsened_IDs": 200,
+            "conditional_CI95": [
+              -0.02644333566057746,
+              0.018248394233554597
+            ]
+          },
+          "fold_gains": [
+            -0.01076601824172485,
+            -0.018157831499106436,
+            -0.02334658343381868,
+            -0.004093713441960745,
+            -0.2951667016314943
+          ]
+        },
+        "C-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.381024891086929,
+            "candidate_RMSE": 14.438027736000286,
+            "RMSE_gain": -0.05700284491335772,
+            "SSE_gain": -657.1071949806953,
+            "improved_IDs": 197,
+            "worsened_IDs": 203,
+            "conditional_CI95": [
+              -0.18864316510029533,
+              0.021053745284207004
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 27.5090652214842,
+            "candidate_RMSE": 31.032325221320033,
+            "RMSE_gain": -3.523259999835833,
+            "SSE_gain": -618.7696178457119,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.235806910244179,
+            "candidate_RMSE": 14.239198242531993,
+            "RMSE_gain": -0.003391332287813853,
+            "SSE_gain": -38.33757713498352,
+            "improved_IDs": 196,
+            "worsened_IDs": 201,
+            "conditional_CI95": [
+              -0.028889663373049324,
+              0.021965859279242793
+            ]
+          },
+          "fold_gains": [
+            0.029166775604132056,
+            -0.014290708454856471,
+            -0.03615420332467778,
+            0.012392337939601816,
+            -0.2785166810391235
+          ]
+        }
+      },
+      "frozen_ensemble": {
+        "D-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.621902419708583,
+            "candidate_RMSE": 12.61443907995105,
+            "RMSE_gain": 0.00746333975753366,
+            "SSE_gain": 75.33895633964761,
+            "improved_IDs": 199,
+            "worsened_IDs": 201,
+            "conditional_CI95": [
+              -0.006339156946017121,
+              0.02714133986763797
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 23.055989373286145,
+            "candidate_RMSE": 22.473858538081704,
+            "RMSE_gain": 0.5821308352044419,
+            "SSE_gain": 79.51298517412724,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.509969056365465,
+            "candidate_RMSE": 12.510389271231997,
+            "RMSE_gain": -0.0004202148665317651,
+            "SSE_gain": -4.174028834479628,
+            "improved_IDs": 197,
+            "worsened_IDs": 200,
+            "conditional_CI95": [
+              -0.008386813791712999,
+              0.00877669579073714
+            ]
+          },
+          "fold_gains": [
+            0.033906481297172775,
+            0.017570157534768427,
+            -0.011924684414797326,
+            0.007925792959293076,
+            -0.00900284340960944
+          ]
+        },
+        "D-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.637245431886274,
+            "candidate_RMSE": 12.61443907995105,
+            "RMSE_gain": 0.022806351935225067,
+            "SSE_gain": 230.35952157367987,
+            "improved_IDs": 190,
+            "worsened_IDs": 210,
+            "conditional_CI95": [
+              -0.0027897278804136947,
+              0.05831883620277327
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 24.02061391569023,
+            "candidate_RMSE": 22.473858538081704,
+            "RMSE_gain": 1.5467553776085268,
+            "SSE_gain": 215.74672589082925,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.511860284039924,
+            "candidate_RMSE": 12.510389271231997,
+            "RMSE_gain": 0.0014710128079276075,
+            "SSE_gain": 14.612795682850635,
+            "improved_IDs": 187,
+            "worsened_IDs": 210,
+            "conditional_CI95": [
+              -0.007520264079906002,
+              0.013227301124437655
+            ]
+          },
+          "fold_gains": [
+            0.03753558561425052,
+            0.026751356240735547,
+            -0.008127570599519629,
+            0.0056506300812397825,
+            0.05394540516132018
+          ]
+        },
+        "D-C": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.633521198953476,
+            "candidate_RMSE": 12.61443907995105,
+            "RMSE_gain": 0.019082119002426623,
+            "SSE_gain": 192.7138330442459,
+            "improved_IDs": 207,
+            "worsened_IDs": 193,
+            "conditional_CI95": [
+              -0.0028301358615903994,
+              0.05090331865497961
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 23.81325914878352,
+            "candidate_RMSE": 22.473858538081704,
+            "RMSE_gain": 1.3394006107018157,
+            "SSE_gain": 185.99098109224224,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.511066055842559,
+            "candidate_RMSE": 12.510389271231997,
+            "RMSE_gain": 0.0006767846105617537,
+            "SSE_gain": 6.722851952003655,
+            "improved_IDs": 204,
+            "worsened_IDs": 193,
+            "conditional_CI95": [
+              -0.0070143653825100565,
+              0.010455586637850399
+            ]
+          },
+          "fold_gains": [
+            0.025978054195736178,
+            0.022408547977349258,
+            -0.004962628863779628,
+            0.0010026156164837374,
+            0.05214007605311011
+          ]
+        },
+        "C-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.637245431886274,
+            "candidate_RMSE": 12.633521198953476,
+            "RMSE_gain": 0.0037242329327984436,
+            "SSE_gain": 37.64568852943401,
+            "improved_IDs": 206,
+            "worsened_IDs": 194,
+            "conditional_CI95": [
+              -0.0006453774911256093,
+              0.009936850111886874
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 24.02061391569023,
+            "candidate_RMSE": 23.81325914878352,
+            "RMSE_gain": 0.20735476690671106,
+            "SSE_gain": 29.755744798587028,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.511860284039924,
+            "candidate_RMSE": 12.511066055842559,
+            "RMSE_gain": 0.0007942281973658538,
+            "SSE_gain": 7.889943730846982,
+            "improved_IDs": 204,
+            "worsened_IDs": 193,
+            "conditional_CI95": [
+              -0.0015674533034304439,
+              0.003485296994093189
+            ]
+          },
+          "fold_gains": [
+            0.011557531418514344,
+            0.0043428082633862886,
+            -0.003164941735740001,
+            0.004648014464756045,
+            0.0018053291082100742
+          ]
+        },
+        "B-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.621902419708583,
+            "candidate_RMSE": 12.637245431886274,
+            "RMSE_gain": -0.015343012177691406,
+            "SSE_gain": -155.02056523403226,
+            "improved_IDs": 204,
+            "worsened_IDs": 196,
+            "conditional_CI95": [
+              -0.043690907623060715,
+              0.0017920472829679997
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 23.055989373286145,
+            "candidate_RMSE": 24.02061391569023,
+            "RMSE_gain": -0.9646245424040849,
+            "SSE_gain": -136.23374071670202,
+            "improved_IDs": 0,
+            "worsened_IDs": 3,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.509969056365465,
+            "candidate_RMSE": 12.511860284039924,
+            "RMSE_gain": -0.0018912276744593726,
+            "SSE_gain": -18.786824517330253,
+            "improved_IDs": 204,
+            "worsened_IDs": 193,
+            "conditional_CI95": [
+              -0.0085798040680086,
+              0.00463876559632359
+            ]
+          },
+          "fold_gains": [
+            -0.003629104317077747,
+            -0.00918119870596712,
+            -0.0037971138152776973,
+            0.002275162878053294,
+            -0.06294824857092962
+          ]
+        },
+        "C-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.621902419708583,
+            "candidate_RMSE": 12.633521198953476,
+            "RMSE_gain": -0.011618779244892963,
+            "SSE_gain": -117.37487670459826,
+            "improved_IDs": 206,
+            "worsened_IDs": 194,
+            "conditional_CI95": [
+              -0.03908192094655525,
+              0.0052903750265289986
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 23.055989373286145,
+            "candidate_RMSE": 23.81325914878352,
+            "RMSE_gain": -0.7572697754973738,
+            "SSE_gain": -106.477995918115,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.509969056365465,
+            "candidate_RMSE": 12.511066055842559,
+            "RMSE_gain": -0.0010969994770935187,
+            "SSE_gain": -10.896880786483273,
+            "improved_IDs": 205,
+            "worsened_IDs": 192,
+            "conditional_CI95": [
+              -0.008196449630402735,
+              0.00601958579720132
+            ]
+          },
+          "fold_gains": [
+            0.007928427101436597,
+            -0.004838390442580831,
+            -0.0069620555510176985,
+            0.006923177342809339,
+            -0.06114291946271955
+          ]
+        }
+      }
+    },
+    "20261101": {
+      "KRR": {
+        "D-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.343291339552492,
+            "candidate_RMSE": 14.317658709941504,
+            "RMSE_gain": 0.025632629610987223,
+            "SSE_gain": 293.86220676706967,
+            "improved_IDs": 207,
+            "worsened_IDs": 193,
+            "conditional_CI95": [
+              -0.013783946589623453,
+              0.08001696982840853
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 22.32043256076037,
+            "candidate_RMSE": 20.706011869463573,
+            "RMSE_gain": 1.6144206912967967,
+            "SSE_gain": 208.3883464832561,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.266039843794108,
+            "candidate_RMSE": 14.258491975960856,
+            "RMSE_gain": 0.007547867833251232,
+            "SSE_gain": 85.47386028381361,
+            "improved_IDs": 205,
+            "worsened_IDs": 192,
+            "conditional_CI95": [
+              -0.01615973793187413,
+              0.03386750836569451
+            ]
+          },
+          "fold_gains": [
+            0.017248271518663927,
+            -0.0004580262808211444,
+            0.022373525707868325,
+            0.005493109051586842,
+            0.08232672430907328
+          ]
+        },
+        "D-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.580245031939516,
+            "candidate_RMSE": 14.317658709941504,
+            "RMSE_gain": 0.26258632199801113,
+            "SSE_gain": 3035.2777028132305,
+            "improved_IDs": 222,
+            "worsened_IDs": 178,
+            "conditional_CI95": [
+              0.08272152831268104,
+              0.4580389083780971
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 21.923842831306356,
+            "candidate_RMSE": 20.706011869463573,
+            "RMSE_gain": 1.2178309618427825,
+            "SSE_gain": 155.74787086037023,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.510610503580054,
+            "candidate_RMSE": 14.258491975960856,
+            "RMSE_gain": 0.2521185276191975,
+            "SSE_gain": 2879.529831952861,
+            "improved_IDs": 220,
+            "worsened_IDs": 177,
+            "conditional_CI95": [
+              0.09044405769327964,
+              0.4320442170239531
+            ]
+          },
+          "fold_gains": [
+            -0.012235235276321532,
+            -0.010466290572878734,
+            0.034723499200925545,
+            1.193250601751533,
+            0.0001628064164638232
+          ]
+        },
+        "D-C": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.576707451902225,
+            "candidate_RMSE": 14.317658709941504,
+            "RMSE_gain": 0.25904874196072036,
+            "SSE_gain": 2994.019681591215,
+            "improved_IDs": 211,
+            "worsened_IDs": 189,
+            "conditional_CI95": [
+              0.07587903317114378,
+              0.4555485811980939
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 21.564576987825042,
+            "candidate_RMSE": 20.706011869463573,
+            "RMSE_gain": 0.8585651183614686,
+            "SSE_gain": 108.87615937640132,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.511097734642467,
+            "candidate_RMSE": 14.258491975960856,
+            "RMSE_gain": 0.25260575868161084,
+            "SSE_gain": 2885.1435222148143,
+            "improved_IDs": 209,
+            "worsened_IDs": 188,
+            "conditional_CI95": [
+              0.09111254574157854,
+              0.43327017414867924
+            ]
+          },
+          "fold_gains": [
+            -0.014143967450186423,
+            -0.010474146841188414,
+            0.030596910618703177,
+            1.1979335765228072,
+            -0.017001717305381803
+          ]
+        },
+        "C-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.580245031939516,
+            "candidate_RMSE": 14.576707451902225,
+            "RMSE_gain": 0.003537580037290766,
+            "SSE_gain": 41.25802122201541,
+            "improved_IDs": 203,
+            "worsened_IDs": 197,
+            "conditional_CI95": [
+              -0.006428510280259347,
+              0.015583695849566712
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 21.923842831306356,
+            "candidate_RMSE": 21.564576987825042,
+            "RMSE_gain": 0.35926584348131385,
+            "SSE_gain": 46.87171148396891,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.510610503580054,
+            "candidate_RMSE": 14.511097734642467,
+            "RMSE_gain": -0.00048723106241332914,
+            "SSE_gain": -5.613690261953497,
+            "improved_IDs": 201,
+            "worsened_IDs": 196,
+            "conditional_CI95": [
+              -0.00823634671391793,
+              0.006927636277580879
+            ]
+          },
+          "fold_gains": [
+            0.001908732173864891,
+            7.856268309680559e-06,
+            0.004126588582222368,
+            -0.004682974771274218,
+            0.017164523721845626
+          ]
+        },
+        "B-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.343291339552492,
+            "candidate_RMSE": 14.580245031939516,
+            "RMSE_gain": -0.2369536923870239,
+            "SSE_gain": -2741.415496046161,
+            "improved_IDs": 185,
+            "worsened_IDs": 215,
+            "conditional_CI95": [
+              -0.4487125674405033,
+              -0.030654954176467342
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 22.32043256076037,
+            "candidate_RMSE": 21.923842831306356,
+            "RMSE_gain": 0.39658972945401416,
+            "SSE_gain": 52.6404756228859,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.266039843794108,
+            "candidate_RMSE": 14.510610503580054,
+            "RMSE_gain": -0.24457065978594628,
+            "SSE_gain": -2794.0559716690464,
+            "improved_IDs": 184,
+            "worsened_IDs": 213,
+            "conditional_CI95": [
+              -0.4330458578818959,
+              -0.07959625583954016
+            ]
+          },
+          "fold_gains": [
+            0.02948350679498546,
+            0.01000826429205759,
+            -0.01234997349305722,
+            -1.1877574926999461,
+            0.08216391789260946
+          ]
+        },
+        "C-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.343291339552492,
+            "candidate_RMSE": 14.576707451902225,
+            "RMSE_gain": -0.23341611234973314,
+            "SSE_gain": -2700.1574748241455,
+            "improved_IDs": 180,
+            "worsened_IDs": 220,
+            "conditional_CI95": [
+              -0.447143472306975,
+              -0.020509877471647644
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 22.32043256076037,
+            "candidate_RMSE": 21.564576987825042,
+            "RMSE_gain": 0.755855572935328,
+            "SSE_gain": 99.51218710685481,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.266039843794108,
+            "candidate_RMSE": 14.511097734642467,
+            "RMSE_gain": -0.2450578908483596,
+            "SSE_gain": -2799.6696619310005,
+            "improved_IDs": 179,
+            "worsened_IDs": 218,
+            "conditional_CI95": [
+              -0.43145650791688883,
+              -0.0804084802075455
+            ]
+          },
+          "fold_gains": [
+            0.03139223896885035,
+            0.01001612056036727,
+            -0.008223384910834852,
+            -1.1924404674712203,
+            0.09932844161445509
+          ]
+        }
+      },
+      "frozen_ensemble": {
+        "D-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 13.032449212752852,
+            "candidate_RMSE": 13.023706427591804,
+            "RMSE_gain": 0.008742785161047095,
+            "SSE_gain": 91.12134835455878,
+            "improved_IDs": 199,
+            "worsened_IDs": 201,
+            "conditional_CI95": [
+              -0.0025554954173026886,
+              0.02402782836906647
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 21.12486918656908,
+            "candidate_RMSE": 20.707541327099246,
+            "RMSE_gain": 0.4173278594698324,
+            "SSE_gain": 52.37349100839762,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.952063595513525,
+            "candidate_RMSE": 12.948295244025097,
+            "RMSE_gain": 0.0037683514884285785,
+            "SSE_gain": 38.747857346161155,
+            "improved_IDs": 197,
+            "worsened_IDs": 200,
+            "conditional_CI95": [
+              -0.0031748307903015417,
+              0.011934490573301997
+            ]
+          },
+          "fold_gains": [
+            0.002391297982752505,
+            0.0004082990675371434,
+            0.008652531423031462,
+            0.009429232378709074,
+            0.02323957591143966
+          ]
+        },
+        "D-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 13.077604653091583,
+            "candidate_RMSE": 13.023706427591804,
+            "RMSE_gain": 0.05389822549977907,
+            "SSE_gain": 562.725740186624,
+            "improved_IDs": 214,
+            "worsened_IDs": 186,
+            "conditional_CI95": [
+              0.007493766194467934,
+              0.1026375897222389
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 20.057609131689375,
+            "candidate_RMSE": 20.707541327099246,
+            "RMSE_gain": -0.6499321954098711,
+            "SSE_gain": -79.48375120168257,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 13.010611279875965,
+            "candidate_RMSE": 12.948295244025097,
+            "RMSE_gain": 0.06231603585086809,
+            "SSE_gain": 642.2094913883064,
+            "improved_IDs": 213,
+            "worsened_IDs": 184,
+            "conditional_CI95": [
+              0.0226984199613681,
+              0.10540420043882022
+            ]
+          },
+          "fold_gains": [
+            -0.012922331858872482,
+            -0.004314823231585052,
+            0.008825350990262493,
+            0.2705055492656747,
+            -0.011364637789771592
+          ]
+        },
+        "D-C": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 13.07605911592784,
+            "candidate_RMSE": 13.023706427591804,
+            "RMSE_gain": 0.052352688336036124,
+            "SSE_gain": 546.5571564574079,
+            "improved_IDs": 219,
+            "worsened_IDs": 181,
+            "conditional_CI95": [
+              0.0048151852559891435,
+              0.10200038749753448
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 19.942344294160996,
+            "candidate_RMSE": 20.707541327099246,
+            "RMSE_gain": -0.76519703293825,
+            "SSE_gain": -93.31551560000275,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 13.010385070444592,
+            "candidate_RMSE": 12.948295244025097,
+            "RMSE_gain": 0.0620898264194949,
+            "SSE_gain": 639.8726720574107,
+            "improved_IDs": 218,
+            "worsened_IDs": 179,
+            "conditional_CI95": [
+              0.02244347976267256,
+              0.10508261087397387
+            ]
+          },
+          "fold_gains": [
+            -0.01392593805263509,
+            -0.003994428782187143,
+            0.0070638124292425886,
+            0.27126430712637273,
+            -0.017752610990729778
+          ]
+        },
+        "C-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 13.077604653091583,
+            "candidate_RMSE": 13.07605911592784,
+            "RMSE_gain": 0.0015455371637429494,
+            "SSE_gain": 16.168583729215975,
+            "improved_IDs": 198,
+            "worsened_IDs": 202,
+            "conditional_CI95": [
+              -0.0013766842911790088,
+              0.005283933454932077
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 20.057609131689375,
+            "candidate_RMSE": 19.942344294160996,
+            "RMSE_gain": 0.1152648375283789,
+            "SSE_gain": 13.83176439832018,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 13.010611279875965,
+            "candidate_RMSE": 13.010385070444592,
+            "RMSE_gain": 0.00022620943137319216,
+            "SSE_gain": 2.3368193308957963,
+            "improved_IDs": 197,
+            "worsened_IDs": 200,
+            "conditional_CI95": [
+              -0.0017813033498794706,
+              0.0022395397746095553
+            ]
+          },
+          "fold_gains": [
+            0.0010036061937626073,
+            -0.0003203944493979094,
+            0.0017615385610199041,
+            -0.0007587578606980117,
+            0.006387973200958186
+          ]
+        },
+        "B-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 13.032449212752852,
+            "candidate_RMSE": 13.077604653091583,
+            "RMSE_gain": -0.04515544033873198,
+            "SSE_gain": -471.6043918320652,
+            "improved_IDs": 191,
+            "worsened_IDs": 209,
+            "conditional_CI95": [
+              -0.09880425904007609,
+              0.008620846820494448
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 21.12486918656908,
+            "candidate_RMSE": 20.057609131689375,
+            "RMSE_gain": 1.0672600548797035,
+            "SSE_gain": 131.8572422100802,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.952063595513525,
+            "candidate_RMSE": 13.010611279875965,
+            "RMSE_gain": -0.05854768436243951,
+            "SSE_gain": -603.4616340421453,
+            "improved_IDs": 189,
+            "worsened_IDs": 208,
+            "conditional_CI95": [
+              -0.10232582338970664,
+              -0.0189114830136012
+            ]
+          },
+          "fold_gains": [
+            0.015313629841624987,
+            0.0047231222991221955,
+            -0.00017281956723103065,
+            -0.26107631688696564,
+            0.03460421370121125
+          ]
+        },
+        "C-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 13.032449212752852,
+            "candidate_RMSE": 13.07605911592784,
+            "RMSE_gain": -0.04360990317498903,
+            "SSE_gain": -455.43580810284925,
+            "improved_IDs": 186,
+            "worsened_IDs": 214,
+            "conditional_CI95": [
+              -0.09820854175335474,
+              0.012096848302533962
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 21.12486918656908,
+            "candidate_RMSE": 19.942344294160996,
+            "RMSE_gain": 1.1825248924080825,
+            "SSE_gain": 145.68900660840038,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.952063595513525,
+            "candidate_RMSE": 13.010385070444592,
+            "RMSE_gain": -0.05832147493106632,
+            "SSE_gain": -601.1248147112495,
+            "improved_IDs": 184,
+            "worsened_IDs": 213,
+            "conditional_CI95": [
+              -0.10214525644685972,
+              -0.018551199986697152
+            ]
+          },
+          "fold_gains": [
+            0.016317236035387594,
+            0.004402727849724286,
+            0.0015887189937888735,
+            -0.26183507474766365,
+            0.040992186902169436
+          ]
+        }
+      }
+    },
+    "pooled_ID_meanSE": {
+      "KRR": {
+        "D-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.402538164936724,
+            "candidate_RMSE": 14.370347651365384,
+            "RMSE_gain": 0.03219051357134006,
+            "SSE_gain": 370.4855885425086,
+            "improved_IDs": 210,
+            "worsened_IDs": 190,
+            "conditional_CI95": [
+              -0.017431962555064604,
+              0.11266478747272785
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 25.792909638439152,
+            "candidate_RMSE": 23.2417173211832,
+            "RMSE_gain": 2.5511923172559534,
+            "SSE_gain": 375.29029073670046,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.281923865681476,
+            "candidate_RMSE": 14.282347560171639,
+            "RMSE_gain": -0.0004236944901627737,
+            "SSE_gain": -4.804702194191904,
+            "improved_IDs": 208,
+            "worsened_IDs": 189,
+            "conditional_CI95": [
+              -0.02191492683856735,
+              0.02144409685629642
+            ]
+          }
+        },
+        "D-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.525207601755847,
+            "candidate_RMSE": 14.370347651365384,
+            "RMSE_gain": 0.1548599503904633,
+            "SSE_gain": 1789.9057012012868,
+            "improved_IDs": 220,
+            "worsened_IDs": 180,
+            "conditional_CI95": [
+              0.05596263396617518,
+              0.28906474493109896
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 28.74495677142605,
+            "candidate_RMSE": 23.2417173211832,
+            "RMSE_gain": 5.503239450242852,
+            "SSE_gain": 858.285347260096,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.364264777395872,
+            "candidate_RMSE": 14.282347560171639,
+            "RMSE_gain": 0.08191721722423395,
+            "SSE_gain": 931.6203539411907,
+            "improved_IDs": 217,
+            "worsened_IDs": 180,
+            "conditional_CI95": [
+              0.025359717585683807,
+              0.14382510740672313
+            ]
+          }
+        },
+        "D-C": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.513701040406868,
+            "candidate_RMSE": 14.370347651365384,
+            "RMSE_gain": 0.14335338904148465,
+            "SSE_gain": 1656.2505076819357,
+            "improved_IDs": 228,
+            "worsened_IDs": 172,
+            "conditional_CI95": [
+              0.050298550331793555,
+              0.2734656948815602
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 27.964657078339012,
+            "candidate_RMSE": 23.2417173211832,
+            "RMSE_gain": 4.722939757155814,
+            "SSE_gain": 725.5338644139279,
+            "improved_IDs": 3,
+            "worsened_IDs": 0,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.36418554063658,
+            "candidate_RMSE": 14.282347560171639,
+            "RMSE_gain": 0.0818379804649414,
+            "SSE_gain": 930.7166432680077,
+            "improved_IDs": 225,
+            "worsened_IDs": 172,
+            "conditional_CI95": [
+              0.02506191540596934,
+              0.14388078459132084
+            ]
+          }
+        },
+        "C-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.525207601755847,
+            "candidate_RMSE": 14.513701040406868,
+            "RMSE_gain": 0.01150656134897865,
+            "SSE_gain": 133.65519351935131,
+            "improved_IDs": 215,
+            "worsened_IDs": 185,
+            "conditional_CI95": [
+              -0.0032299536984579987,
+              0.035412298967949375
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 28.74495677142605,
+            "candidate_RMSE": 27.964657078339012,
+            "RMSE_gain": 0.7802996930870378,
+            "SSE_gain": 132.75148284616816,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.364264777395872,
+            "candidate_RMSE": 14.36418554063658,
+            "RMSE_gain": 7.92367592925558e-05,
+            "SSE_gain": 0.903710673183113,
+            "improved_IDs": 213,
+            "worsened_IDs": 184,
+            "conditional_CI95": [
+              -0.0058044285313688885,
+              0.005894077699247099
+            ]
+          }
+        },
+        "B-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.402538164936724,
+            "candidate_RMSE": 14.525207601755847,
+            "RMSE_gain": -0.12266943681912323,
+            "SSE_gain": -1419.4201126587784,
+            "improved_IDs": 187,
+            "worsened_IDs": 213,
+            "conditional_CI95": [
+              -0.260904869138555,
+              -0.01637698790106557
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 25.792909638439152,
+            "candidate_RMSE": 28.74495677142605,
+            "RMSE_gain": -2.9520471329868982,
+            "SSE_gain": -482.9950565233956,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.281923865681476,
+            "candidate_RMSE": 14.364264777395872,
+            "RMSE_gain": -0.08234091171439673,
+            "SSE_gain": -936.4250561353828,
+            "improved_IDs": 186,
+            "worsened_IDs": 211,
+            "conditional_CI95": [
+              -0.1516285217026696,
+              -0.02173147190935381
+            ]
+          }
+        },
+        "C-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 14.402538164936724,
+            "candidate_RMSE": 14.513701040406868,
+            "RMSE_gain": -0.11116287547014458,
+            "SSE_gain": -1285.764919139427,
+            "improved_IDs": 190,
+            "worsened_IDs": 210,
+            "conditional_CI95": [
+              -0.2514437874148452,
+              0.005338266718175381
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 25.792909638439152,
+            "candidate_RMSE": 27.964657078339012,
+            "RMSE_gain": -2.1717474398998604,
+            "SSE_gain": -350.2435736772274,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 14.281923865681476,
+            "candidate_RMSE": 14.36418554063658,
+            "RMSE_gain": -0.08226167495510417,
+            "SSE_gain": -935.5213454621996,
+            "improved_IDs": 189,
+            "worsened_IDs": 208,
+            "conditional_CI95": [
+              -0.15296810359160046,
+              -0.02009803991026225
+            ]
+          }
+        }
+      },
+      "frozen_ensemble": {
+        "D-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.81462814460406,
+            "candidate_RMSE": 12.803408973474339,
+            "RMSE_gain": 0.011219171129720706,
+            "SSE_gain": 114.96525697412099,
+            "improved_IDs": 193,
+            "worsened_IDs": 207,
+            "conditional_CI95": [
+              -0.0038215444893382688,
+              0.035197574671483295
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 22.64446138572411,
+            "candidate_RMSE": 21.922989509444825,
+            "RMSE_gain": 0.7214718762792849,
+            "SSE_gain": 96.46248725496712,
+            "improved_IDs": 1,
+            "worsened_IDs": 2,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.711442206566828,
+            "candidate_RMSE": 12.709608825532134,
+            "RMSE_gain": 0.0018333810346931045,
+            "SSE_gain": 18.502769719153868,
+            "improved_IDs": 192,
+            "worsened_IDs": 205,
+            "conditional_CI95": [
+              -0.00496706777688245,
+              0.009427579414933608
+            ]
+          }
+        },
+        "D-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.838861143571567,
+            "candidate_RMSE": 12.803408973474339,
+            "RMSE_gain": 0.03545217009722812,
+            "SSE_gain": 363.6296487474378,
+            "improved_IDs": 210,
+            "worsened_IDs": 190,
+            "conditional_CI95": [
+              0.010831634447780614,
+              0.06642727377220442
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 23.001866390271772,
+            "candidate_RMSE": 21.922989509444825,
+            "RMSE_gain": 1.0788768808269467,
+            "SSE_gain": 145.40516521405874,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.73121519477461,
+            "candidate_RMSE": 12.709608825532134,
+            "RMSE_gain": 0.021606369242475054,
+            "SSE_gain": 218.22448353337904,
+            "improved_IDs": 208,
+            "worsened_IDs": 189,
+            "conditional_CI95": [
+              0.006192553226008446,
+              0.03883740390814276
+            ]
+          }
+        },
+        "D-C": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.835325453653649,
+            "candidate_RMSE": 12.803408973474339,
+            "RMSE_gain": 0.03191648017931037,
+            "SSE_gain": 327.3192636664038,
+            "improved_IDs": 221,
+            "worsened_IDs": 179,
+            "conditional_CI95": [
+              0.00941215022060593,
+              0.061068674227887136
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 22.76820608257432,
+            "candidate_RMSE": 21.922989509444825,
+            "RMSE_gain": 0.8452165731294947,
+            "SSE_gain": 113.32121756203888,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.730797084140159,
+            "candidate_RMSE": 12.709608825532134,
+            "RMSE_gain": 0.021188258608024313,
+            "SSE_gain": 213.9980461043649,
+            "improved_IDs": 219,
+            "worsened_IDs": 178,
+            "conditional_CI95": [
+              0.006140231985504796,
+              0.03789846585559511
+            ]
+          }
+        },
+        "C-B": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.838861143571567,
+            "candidate_RMSE": 12.835325453653649,
+            "RMSE_gain": 0.0035356899179177503,
+            "SSE_gain": 36.31038508103397,
+            "improved_IDs": 213,
+            "worsened_IDs": 187,
+            "conditional_CI95": [
+              -0.0007455884956248937,
+              0.010431994635755167
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 23.001866390271772,
+            "candidate_RMSE": 22.76820608257432,
+            "RMSE_gain": 0.23366030769745194,
+            "SSE_gain": 32.083947652019866,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.73121519477461,
+            "candidate_RMSE": 12.730797084140159,
+            "RMSE_gain": 0.00041811063445074126,
+            "SSE_gain": 4.2264374290141,
+            "improved_IDs": 211,
+            "worsened_IDs": 186,
+            "conditional_CI95": [
+              -0.001356672129885217,
+              0.0023079140813398787
+            ]
+          }
+        },
+        "B-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.81462814460406,
+            "candidate_RMSE": 12.838861143571567,
+            "RMSE_gain": -0.024232998967507413,
+            "SSE_gain": -248.66439177331677,
+            "improved_IDs": 193,
+            "worsened_IDs": 207,
+            "conditional_CI95": [
+              -0.055476691444265834,
+              0.0011776303961415781
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 22.64446138572411,
+            "candidate_RMSE": 23.001866390271772,
+            "RMSE_gain": -0.3574050045476618,
+            "SSE_gain": -48.94267795909164,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.711442206566828,
+            "candidate_RMSE": 12.73121519477461,
+            "RMSE_gain": -0.01977298820778195,
+            "SSE_gain": -199.72171381422515,
+            "improved_IDs": 191,
+            "worsened_IDs": 206,
+            "conditional_CI95": [
+              -0.03656489497856889,
+              -0.004778564719757395
+            ]
+          }
+        },
+        "C-A": {
+          "all400": {
+            "n": 400,
+            "baseline_RMSE": 12.81462814460406,
+            "candidate_RMSE": 12.835325453653649,
+            "RMSE_gain": -0.020697309049589663,
+            "SSE_gain": -212.35400669228284,
+            "improved_IDs": 195,
+            "worsened_IDs": 205,
+            "conditional_CI95": [
+              -0.05319920385890216,
+              0.00848997792433419
+            ]
+          },
+          "empty3": {
+            "n": 3,
+            "baseline_RMSE": 22.64446138572411,
+            "candidate_RMSE": 22.76820608257432,
+            "RMSE_gain": -0.12374469685020983,
+            "SSE_gain": -16.858730307071774,
+            "improved_IDs": 2,
+            "worsened_IDs": 1,
+            "caution": "n=3 descriptive only; no CI or inference."
+          },
+          "other397": {
+            "n": 397,
+            "baseline_RMSE": 12.711442206566828,
+            "candidate_RMSE": 12.730797084140159,
+            "RMSE_gain": -0.01935487757333121,
+            "SSE_gain": -195.49527638521104,
+            "improved_IDs": 193,
+            "worsened_IDs": 204,
+            "conditional_CI95": [
+              -0.03636381978756531,
+              -0.004018333804772718
+            ]
+          }
+        }
+      }
+    }
+  },
+  "factorial_MSE_interaction": {
+    "KRR": {
+      "definition": "gain(D-A)-gain(C-B) on MSE scale; positive means correction helps more without flags.",
+      "mean_MSE_gain_difference": 0.5920759875578931,
+      "conditional_CI95": [
+        -0.47714688096907065,
+        2.239682627254148
+      ]
+    },
+    "frozen_ensemble": {
+      "definition": "gain(D-A)-gain(C-B) on MSE scale; positive means correction helps more without flags.",
+      "mean_MSE_gain_difference": 0.19663717973271752,
+      "conditional_CI95": [
+        -0.0884709984039834,
+        0.636245537963833
+      ]
+    }
+  },
+  "D_hyperparameter_changed_vs_A_folds": {
+    "original": [],
+    "20261031": [],
+    "20261101": []
+  },
+  "prior218_A_B_C_scores_and_CIs_reproduced": true,
+  "no_additional_conditions_or_tuning": true,
+  "limitations": [
+    "Same400 adaptive reuse;3 partitions not1200 independent rows.",
+    "Conditional bootstrap omits fitting/selection uncertainty.",
+    "Frozen downstream only; no complete nested pipeline or deployable candidate.",
+    "3 missing images too few for subgroup generalization."
+  ]
+}

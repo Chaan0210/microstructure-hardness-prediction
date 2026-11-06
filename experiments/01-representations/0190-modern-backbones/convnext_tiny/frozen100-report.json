@@ -1,0 +1,187 @@
+{
+  "arm": "frozen100",
+  "model": "convnext_tiny",
+  "score": {
+    "RMSE": {
+      "best021": 12.786200775750695,
+      "standalone": 16.50462462159319,
+      "blend10": 12.952080940195762
+    },
+    "blend_gain": -0.16588016444506692,
+    "fold_blend_gains": [
+      -0.28315696188387207,
+      -0.06480364353374846,
+      -0.2504292775979202,
+      -0.02183263972823113,
+      -0.1888960337771941
+    ],
+    "positive_folds": 0,
+    "conditional_group_bootstrap_CI95": [
+      -0.270037989178392,
+      -0.058270511330707674
+    ],
+    "gain_after_removing_top5": -0.2195981612378155,
+    "residual_correlation_vs021": 0.8586394545124485,
+    "advance_gate": false,
+    "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+  },
+  "fold_records": [
+    {
+      "fold": 0,
+      "train_RMSE": 6.118268711132966,
+      "CPU_MPS_maxabs": 6.4562055968053755e-06,
+      "checkpoint_SHA256": "ccd1bd9dae3ff4c1d502170cba4c3cce37c082782c59a1593e4a4b09847c599b",
+      "prediction_minmax": [
+        171.95612795524357,
+        222.02475341855708
+      ],
+      "scale": {
+        "train_n": 320,
+        "validation_n": 80,
+        "raw_std_min": 0.0001488228329263304,
+        "raw_std_quantiles": [
+          0.0001488228329263304,
+          0.12372963047656259,
+          0.1992410325088343,
+          0.3153866153342897,
+          0.47664121822490113,
+          2.6202101915605724
+        ],
+        "exact_zero_count": 0,
+        "std_below_001_RMS_count": 1,
+        "train_RMS_floor": 0.3668104008559488,
+        "actual_scale_min": 0.3668104008559488,
+        "max_validation_absZ_raw_std": 4.694659829230633,
+        "max_validation_absZ_RMS_floor": 3.620868523020839,
+        "scale_fit_train_only": true,
+        "no_validation_tuning": true
+      }
+    },
+    {
+      "fold": 1,
+      "train_RMSE": 5.7550083257659415,
+      "CPU_MPS_maxabs": 1.9437144175071808e-05,
+      "checkpoint_SHA256": "05137bef744495022a8718083e9289efd3d94246d6ec62ab06aba2858edb1798",
+      "prediction_minmax": [
+        168.30688428076132,
+        237.72234906135478
+      ],
+      "scale": {
+        "train_n": 320,
+        "validation_n": 80,
+        "raw_std_min": 0.00014575564261552524,
+        "raw_std_quantiles": [
+          0.00014575564261552524,
+          0.12155184757088786,
+          0.198156757045915,
+          0.3134978180383779,
+          0.4742155841399339,
+          2.629411482486568
+        ],
+        "exact_zero_count": 0,
+        "std_below_001_RMS_count": 1,
+        "train_RMS_floor": 0.36581840740808286,
+        "actual_scale_min": 0.36581840740808286,
+        "max_validation_absZ_raw_std": 4.636648054883046,
+        "max_validation_absZ_RMS_floor": 4.544585186950854,
+        "scale_fit_train_only": true,
+        "no_validation_tuning": true
+      }
+    },
+    {
+      "fold": 2,
+      "train_RMSE": 5.703038011737984,
+      "CPU_MPS_maxabs": 1.1778108728321968e-05,
+      "checkpoint_SHA256": "88467278c553b89471bdb83171d2bd017e5871571d9bf87c5abd97ee5feac3f6",
+      "prediction_minmax": [
+        164.69088678236153,
+        245.8788764305918
+      ],
+      "scale": {
+        "train_n": 320,
+        "validation_n": 80,
+        "raw_std_min": 0.0001429717007072248,
+        "raw_std_quantiles": [
+          0.0001429717007072248,
+          0.12080458740750862,
+          0.19792652566896896,
+          0.3118798042723414,
+          0.47319047232035427,
+          2.6551782746958885
+        ],
+        "exact_zero_count": 0,
+        "std_below_001_RMS_count": 1,
+        "train_RMS_floor": 0.3649811516142988,
+        "actual_scale_min": 0.3649811516142988,
+        "max_validation_absZ_raw_std": 5.378738393156909,
+        "max_validation_absZ_RMS_floor": 4.4486149805701745,
+        "scale_fit_train_only": true,
+        "no_validation_tuning": true
+      }
+    },
+    {
+      "fold": 3,
+      "train_RMSE": 6.165653586500105,
+      "CPU_MPS_maxabs": 5.897148099620608e-06,
+      "checkpoint_SHA256": "e50adc9bfe23b7a51fe8a04894a13946a83843c9fbd9a6bbc4e381f38ba3d35a",
+      "prediction_minmax": [
+        163.68192374743967,
+        230.35996520458184
+      ],
+      "scale": {
+        "train_n": 320,
+        "validation_n": 80,
+        "raw_std_min": 0.00014815297567255596,
+        "raw_std_quantiles": [
+          0.00014815297567255596,
+          0.12166586533106132,
+          0.19940307956580922,
+          0.3149837271970152,
+          0.47599801030468963,
+          2.648061031172553
+        ],
+        "exact_zero_count": 0,
+        "std_below_001_RMS_count": 1,
+        "train_RMS_floor": 0.3663389023734383,
+        "actual_scale_min": 0.3663389023734383,
+        "max_validation_absZ_raw_std": 4.294816316865841,
+        "max_validation_absZ_RMS_floor": 4.179053968298958,
+        "scale_fit_train_only": true,
+        "no_validation_tuning": true
+      }
+    },
+    {
+      "fold": 4,
+      "train_RMSE": 5.478204936965966,
+      "CPU_MPS_maxabs": 6.443340339501447e-06,
+      "checkpoint_SHA256": "9ef066a6340f6c70e357cc910df7a332f1226b2496070f966826101ff47fbda8",
+      "prediction_minmax": [
+        159.2547160734419,
+        234.7707744205673
+      ],
+      "scale": {
+        "train_n": 320,
+        "validation_n": 80,
+        "raw_std_min": 0.00014222603354423766,
+        "raw_std_quantiles": [
+          0.00014222603354423766,
+          0.12425872188277519,
+          0.19876089488637272,
+          0.31344681370973626,
+          0.4753716747975873,
+          2.6076770902535764
+        ],
+        "exact_zero_count": 0,
+        "std_below_001_RMS_count": 1,
+        "train_RMS_floor": 0.36543500288409214,
+        "actual_scale_min": 0.36543500288409214,
+        "max_validation_absZ_raw_std": 5.060923926408297,
+        "max_validation_absZ_RMS_floor": 4.468185380163849,
+        "scale_fit_train_only": true,
+        "no_validation_tuning": true
+      }
+    }
+  ],
+  "OOF_SHA256": "03d5947bab2e3ef456ef58b7a13517b0597b54be36a06f8eccefcc6c29306156",
+  "seconds": 1.8521636660007061
+}

@@ -1,0 +1,83 @@
+{
+  "study": 202,
+  "UTC": "2026-10-06T15:42:03.822330+00:00",
+  "status": "Completed fixed OOF experiment; primary simplification rejected; best021 retained",
+  "actual_work": "Two predeclared current021 simplifications evaluated across all3existing5fold partitions with independent10000cluster-bootstrap verification. New training0; executed prediction-only comparison, not review alone.",
+  "no_new_search": "A diagnostic intermediate cannot be promoted. B sole primary failed. No partial residual weight, alternate calibration, weights,seed subset or architecture search after outcomes.",
+  "primary_result": {
+    "pooled_RMSE_R": 12.814628144604061,
+    "pooled_RMSE_B": 12.96785308533754,
+    "gain": -0.15322494073347848,
+    "conditional_CI95": [
+      -0.3243575991661129,
+      0.006754897960864431
+    ],
+    "all3_partitions_worsened": true,
+    "positive_folds_by_partition": [
+      0,
+      1,
+      0
+    ],
+    "prediction_partition_variance_R": 3.3703575184754038,
+    "prediction_partition_variance_B": 2.5082797701024377,
+    "variance_reduction_percent": 25.578228530572357
+  },
+  "reasoning_ko": [
+    "현재021의 L/short-B를 그대로 두고 residual만 제거한 A, 이어서calibration도제거한 B를 실제 계산했다. 둘다 세분할 평균RMSE가 악화했다. 설명용 A를 대체후보로 고르지 않는다.",
+    "B의 분할간 예측분산은 약25.6% 줄었다. 그러나RMSE는.153225 악화했다. 후단은 변동뿐 아니라 유효한 예측 보정도 제공한다. 이번 단순화로 정확도가 좋아졌다고 주장하지 않는다.",
+    "B가 평균제곱오차 기준 개선한 이미지는218/400이지만 전체순이득은음수다. 개선 이미지수나특정fold만보고채택하지 않는다. pooled상위5수혜제거후gain은-.208373이다.",
+    "조건부gain95CI는[-.324358,.006755]로0을포함한다. 재사용400장과고정모델조건의 불확실성이다. 새로운모집단에서B가유의하게나쁘다고단정하지않지만 사전운영게이트는실패했다.",
+    "Seed분해는 현재021의 실제fold별slope와최종가중치를반영했다. rawseed분산의반복계산을넘어최종직접경로로전달되는양을측정했으나후단재학습변동은포함하지않는다.",
+    "독립seed성분 가정에서 mean3의 조건부MSE분산 proxy는CNN .476614 / S .031447 / B .025805 / L .007880이다. 이부분합의약88%는CNN이다. L부터seed를늘리자는외부리뷰제안은현재가중치하의진단근거가약하다.",
+    "L3→9의조건부MSE감소proxy는.005254이며 실제RMSE개선을예측하거나보증하지않는다. 모든head합proxy.361164도성분독립가정과3seed추정에의존한다. 이를기준으로새학습을자동개시하지않았다.",
+    "3→9의기대분산법칙은이미선택된실현3seed묶음보다좋아진다는보증이아니다. CNN1→3전체nested대조는133에서이미수행되었다. 이번결과는새CNNseed학습이나닫힌CE분기를자동정당화하지않는다."
+  ],
+  "seed_scope": {
+    "conditional_mean3_MSE_proxy": {
+      "CNN": 0.4766138434819974,
+      "S": 0.031446950267886915,
+      "B": 0.025805046751241432,
+      "L": 0.007880444235778494
+    },
+    "independent_sum": 0.5417462847369042,
+    "unknown_covariance_bounds": [
+      0.17616657358753446,
+      1.0767683837342081
+    ],
+    "CNN_fraction_of_independent_sum": 0.879773164874517,
+    "not_total_uncertainty": true,
+    "no_new_seed_training": true
+  },
+  "duplicate_difference": "052/088/133 seed averaging and121/122 older ablations reused. New:021 residual/calibration-removal with L retained, current coefficient-propagated seedvariance, and across-partition sensitivity on same400 IDs.",
+  "independent_validation": {
+    "predictions_max_abs_error": 8.526512829121202e-14,
+    "bootstrap_max_abs_error": 8.881784197001252e-15,
+    "seed_identity_max_abs_error": 2.842170943040401e-14,
+    "three_repeated_measurements_per400_ID_cluster": true,
+    "all_input_hashes_unchanged": true
+  },
+  "resources": {
+    "scoring_seconds": 1.5135565840027994,
+    "validation_seconds": 0.36649429200042505,
+    "timing_scope": "Execution intervals only; excludes planning,coding,tool setup,reporting.",
+    "maximum_observed_RSS_bytes": 195428352,
+    "CPU_threads": 2,
+    "device": "CPU NumPy; no MPS training",
+    "new_fits": 0,
+    "cost": 0
+  },
+  "scope": {
+    "new_install": false,
+    "download": false,
+    "network": false,
+    "holdout_test_reads": false,
+    "new_labels": false,
+    "full500_refit": false,
+    "new_CSV": false,
+    "upload": false,
+    "best021_unchanged": true
+  },
+  "failures_preserved": "Initial read-allowlist blocked installed NumPy lazy import before new scores; fixed to permit read-only existing .venv, oldcode/failure/amendment preserved. Finalizer wrapper quote syntax failed before file creation; recorded. Plan/formulas/gates unchanged.",
+  "decision": "Close current fixed simplification test; retain calibrated residual-corrected best021. No automatic alternative model/seed/weight experiment.",
+  "remaining_blockers": "No execution blocker. Unknown generator and historical adaptive selection remain scientific limits."
+}

@@ -1,0 +1,144 @@
+{
+  "scope": "Completed both authorized hypotheses using existing project packages and development400 only. No holdout/test reevaluation, fulltrain fitting, external data, installation, payment or submission.",
+  "tree_runs": [
+    {
+      "split": "original",
+      "candidate003_rmse": 13.705696031698212,
+      "nested_replace_rmse": 13.745477926207966,
+      "nested_complement_rmse": 13.697510751459843,
+      "complement_better_folds": 3,
+      "elapsed_seconds": 14.663414000009652,
+      "oof_sha256": "32140b1ea2505e9f09e7f42ab9c558211ea4bf4ebb1415b83f01b84f73a51bfc",
+      "report_sha256": "92b361e3a7abc173ef68176bfb7426fdec97d174d82e781f50ffd81a6b13a06f"
+    },
+    {
+      "split": "20261031",
+      "candidate003_rmse": 13.63181073293285,
+      "nested_replace_rmse": 13.772772747535837,
+      "nested_complement_rmse": 13.677747518201969,
+      "complement_better_folds": 2,
+      "elapsed_seconds": 16.304856000002474,
+      "oof_sha256": "a9eb77dd53de3b875a31e4154a8be6c5e2c5b7dd6483435b71cf1fccf5a9729b",
+      "report_sha256": "c0233e2f5fa451d4d4a7aab6de5779b95b295165eb4cecd8a1a0d52439e3ebc0"
+    },
+    {
+      "split": "20261101",
+      "candidate003_rmse": 13.729980391208457,
+      "nested_replace_rmse": 13.755116422242564,
+      "nested_complement_rmse": 13.717703063434575,
+      "complement_better_folds": 3,
+      "elapsed_seconds": 15.46431508398382,
+      "oof_sha256": "fbf44c19d72dbc6537db357bd92c8f91234f8688e6b168159e1ff3b0a625f06f",
+      "report_sha256": "5c95aabe0fa7047d64a5b68adeb986fa992def0cda65f5ecf1e7365c13afac64"
+    }
+  ],
+  "connected_runs": [
+    {
+      "split": "original",
+      "candidate003_rmse": 13.705696031698212,
+      "candidate_rmse": 13.700539591118353,
+      "better_folds": 3,
+      "conditional_improvement_ci95": [
+        -0.0935195512591152,
+        0.10059003290813895
+      ]
+    },
+    {
+      "split": 20261031,
+      "candidate003_rmse": 13.63181073293285,
+      "candidate_rmse": 13.650553707133291,
+      "better_folds": 2,
+      "conditional_improvement_ci95": [
+        -0.1148482642849237,
+        0.07943976122341384
+      ]
+    },
+    {
+      "split": 20261101,
+      "candidate003_rmse": 13.729980391208457,
+      "candidate_rmse": 13.685789013291958,
+      "better_folds": 4,
+      "conditional_improvement_ci95": [
+        -0.04155298134084116,
+        0.13247073666310155
+      ]
+    }
+  ],
+  "total_measured_fit_feature_compute_seconds": 78.92414599994663,
+  "time_caveat": "Excludes implementation, code audit, image QA, tool latency and report writing. Those took longer than model fits; no precise engineering wall-time claim.",
+  "interpretation": [
+    "Relaxed HGB train RMSE1.0624 versus old5.9139 but OOF15.5563 versus14.8455 supports overfitting rather than insufficient capacity for this fixed57 panel.",
+    "Shallow GBR and inner-selected tree mixtures failed consistent split improvement; no tree promotion.",
+    "Connected boundaries reduce watershed basin proliferation but create severe undersegmentation on many images; physical grain reconstruction remains unvalidated.",
+    "Connected panel closed interior count0 on113/400; closed area<1% on186/400; maxbasin>50% on229/400. Median closed support2.33%,median maxbasin74.26%.",
+    "Tiny connected gain is inconsistent across partitions, with all reported conditional intervals crossing zero; no promotion.",
+    "This disproves usefulness of these particular profiles/panel for promotion, not all nonlinear trees or a performance ceiling. Original/repartition folds reuse historically examined400 rows and do not establish unseen generalization."
+  ],
+  "engineering_validation": [
+    "Independent tree/confirmation source audits: no evident leakage or ensemble formula error.",
+    "Existing compact26 kernel reproduced exact old OOF (maxdiff0).",
+    "Connected fixture finite/schema and32 D4 checks passed; actual16 QA images selected without targets or errors.",
+    "Source/cache/protected003 hashes and all new validation OOF scores rechecked.",
+    "Initial audit-stage intermediate004-column confusion was already corrected in audit026; current comparisons explicitly reconstruct exact003 from same-fold components."
+  ],
+  "new_submission_candidate": null,
+  "best_preserved": "artifacts/submission-candidate-003.csv",
+  "best_public_rmse": 12.4479505141,
+  "submission_recommendation": "Do not spend a submission on these small, inconsistent changes. No Public score used to fit or choose weights.",
+  "new_package_needed": false,
+  "remaining_scientific_limit": "Hard threshold topology still cannot reliably recover boundaries under blur/noise and dark phases; no ground-truth grain masks to directly score reconstruction. A substantially different representation would need a new measured hypothesis, not more sweeps of these settings.",
+  "running_work": [],
+  "reproduction_commands": [
+    ".venv/bin/python -I -B tree_controls_027.py",
+    ".venv/bin/python -I -B tree_controls_027.py --split 20261031",
+    ".venv/bin/python -I -B tree_controls_027.py --split 20261101",
+    ".venv/bin/python -I -B connected_grain_experiment.py qa",
+    ".venv/bin/python -I -B connected_grain_experiment.py fit",
+    ".venv/bin/python -I -B confirm_connected_029.py"
+  ],
+  "reproduction_safety": "Existing output artifacts intentionally refuse overwrite. Reproduction requires an isolated copy under the authorized project with generated run027/028/029 output paths absent; preserve original inputs and frozen QA/source hashes. Read connected QA instructions before fit; it requires matching qa-review.json.",
+  "evidence": [
+    "reports/tree-controls-027-summary.json",
+    "artifacts/run-028/report.json",
+    "artifacts/run-028/qa-review.json",
+    "artifacts/connected-confirmation-029/report.json"
+  ],
+  "confirmation_verification": [
+    {
+      "seed": 20261031,
+      "oof_sha256": "9eff620a5e15664d5b75de1709f3eee2e720c13c75ccaafb006e3a9eb06532bd",
+      "kernel_sha256": {
+        "kernel-fold3.joblib": "0fc28906c1480638e19b4fa644805ab028f1d6d47adb3ba5e7ea7d08320a64ea",
+        "kernel-fold1.joblib": "1fbf8892c173381b32d462f9fbc189392863d4bada856002409fffadd0dc61cd",
+        "kernel-fold2.joblib": "aa50b0865049a6ee36b0bc14c70427a56aace2f6586095627aa786ac97b960b9",
+        "kernel-fold0.joblib": "278c3ef15ae92f34acef4332ce24f51fa9349fb3c9bf38dae0874559919a2d14",
+        "kernel-fold4.joblib": "5d97f62bdfd9b02a302051d9ada9d326a39dc5bfffebde01f11a21a659906e00"
+      },
+      "parent_fold_metadata_sha256": {
+        "fold-3-report.json": "f955e695e31b8e757e8ae0b8f5932fc64330f69cdb9a45d998ac5b222a37eae7",
+        "fold-0-report.json": "faea5814f13ff39d5108709a3cba2ffc956e74de772f4e2637662eb0352d6bb1",
+        "fold-2-report.json": "9d24617490b526c5f96a6f4417f4b93f8da3291279cb4bae336f890a0f5605a5",
+        "fold-4-report.json": "ee72cc50abfeb331427541bd9b4a02ad9ca8e18c7f235b5b83a6d42bb8357dd3",
+        "fold-1-report.json": "ce6f0033497ccc1ecc095265bbe9c930ccc2571a6b8507566ed6d14a5f257bba"
+      }
+    },
+    {
+      "seed": 20261101,
+      "oof_sha256": "7079d9f250f259bdda40cabae59149035ded2c164c9d4ea765c4efb4de363991",
+      "kernel_sha256": {
+        "kernel-fold3.joblib": "3e263d3cc5ab5298ef4e3197f199790fc7c5f37329697ee994d587c1c11f2df2",
+        "kernel-fold1.joblib": "c84ae876a15e22bf71cff6742332bfbfda20b1cb8dfbad6a1b1996c28e572179",
+        "kernel-fold2.joblib": "8cc4fec7083110238af020ce02a0e2e4aeb827f183ba4c520bb56e040d6fba2e",
+        "kernel-fold0.joblib": "8f41c31814608a790fe7917056d0a3e9da3d11f66f6364b51c30b7d74b12b563",
+        "kernel-fold4.joblib": "eb59792850a086327c4d5015fb9c1dd9ecd3748b1a20f6dfd3e4cf2e56d17735"
+      },
+      "parent_fold_metadata_sha256": {
+        "fold-3-report.json": "e987f7a2f6bcd283a1b08002c7e395be7ae602a3b5ca1bc1b4179ee253abaf20",
+        "fold-0-report.json": "0e6490a8a52740cdd682920274c6d7df5edbb80941890734687dfe8678754cd3",
+        "fold-2-report.json": "876c08a4e854a8b197cadbac1365b6ba2e16e69143f1942fed16c75c81609062",
+        "fold-4-report.json": "599afea31a854e292e37c7448b620d3cb8a6f079fe416e016805836d516be141",
+        "fold-1-report.json": "57842c3f5b1a42affc70205de5b6eb784614ef1262a2400fd4740c6145fbfeb1"
+      }
+    }
+  ]
+}

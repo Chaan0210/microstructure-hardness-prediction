@@ -1,0 +1,74 @@
+{
+ "candidate": "046c18",
+ "weight": 0.75,
+ "n_train": 500,
+ "test_failed_segmentations": 1,
+ "pred_stats": {
+  "mean": 193.59877111446633,
+  "std": 13.527139311907698,
+  "min": 157.96735882376706,
+  "max": 262.70518840863605
+ },
+ "corr_best021_vs_grain_test": 0.8005108822927554,
+ "rms_change_vs_021": 6.6082170068299435,
+ "rms_change_vs_023": 5.746785520949224,
+ "csv": "artifacts/submission-candidate-046c18.csv",
+ "csv_sha256": "9b96a238d8537dc30dc4b4c5f85ce9c9d647a58c9eb2c397ff7f013f66b7512f",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "uploaded": false,
+ "formula": "0.25*best021 + 0.75*mean over components (fallback best021 if n_obj<20)",
+ "components": [
+  {
+   "component": "v3.5@../push-800/feat-u1dm1szH2Z-anghc18-train.npz@../push-800/feat-u1dm1szH2Z-anghc18-test.npz",
+   "train_sha256": "5f52e29bf145eb2af9698fbe72c0a226a47984b7d67a7b1bc3e1f291d98da29a",
+   "test_sha256": "72e6ceff333642e8f0f2946d41228fbf2c34a8c896e5bf4ff4fd674060eec8b2",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-800/feat-u1dm2szH2Z-anghc18-train.npz@../push-800/feat-u1dm2szH2Z-anghc18-test.npz",
+   "train_sha256": "814948484f22a901cb3a2b7436da42eb40922a039c7b62fdb3491d85b9451efe",
+   "test_sha256": "3cd2ea9fa4b17eac601de6129530f4f486ff147c03bd243aee2a586c7c95c648",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-800/feat-u1dmavgH2Z-anghc18-train.npz@../push-800/feat-u1dmavgH2Z-anghc18-test.npz",
+   "train_sha256": "f3a47eb8498aa6c94815b2cc50f38ef77ceab7ea883022f7fca68f075fedeab1",
+   "test_sha256": "b38ba26af1e77b0ca4f42fd1c60eaaa26259ed9c6bec44956ba9fe973eb538c0",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-800/feat-u1dmavg4H2Z-anghc18-train.npz@../push-800/feat-u1dmavg4H2Z-anghc18-test.npz",
+   "train_sha256": "f8ad73e8e2f238a816b7f17219aef7168468a7c4d22bc4c25510b4d90590e403",
+   "test_sha256": "b025a9e179fbb9e84555f2fff39ed024e64ce16535d16c2a9f2bc8be01f3bd27",
+   "n_train_rows": 500
+  }
+ ],
+ "component_corr": [
+  [
+   0.9999999999999999,
+   0.9967700812678505,
+   0.9980317326921098,
+   0.998172032085796
+  ],
+  [
+   0.9967700812678505,
+   1.0,
+   0.9983245041847354,
+   0.9986071015951411
+  ],
+  [
+   0.9980317326921098,
+   0.9983245041847353,
+   0.9999999999999999,
+   0.9994517438554972
+  ],
+  [
+   0.9981720320857959,
+   0.9986071015951411,
+   0.9994517438554972,
+   1.0
+  ]
+ ],
+ "dev_evidence": "../push-800/combos.py",
+ "device": "cpu"
+}

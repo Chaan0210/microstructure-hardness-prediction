@@ -1,0 +1,159 @@
+{
+  "environment": {
+    "python": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+  },
+  "checks": {
+    "protected_inputs_unchanged": 30,
+    "protected_files": {
+      "experiments/probabilistic-grains-900/base.npz": "f0d9b1b5295e753b4c66d282be6bd2bc03e6c547e953dc457f138b35c59d4f3d",
+      "experiments/push-1300/audit061.npz": "0ea41244397b6183249ca0c13389654d8c39dd50af429ffcc756afc2c6dea1c7",
+      "experiments/probabilistic-grains-900/ridge/predictions.npz": "06e5db4e7bd81a9c6ca8bbadbdd5b77ac6063b8d502663c42bc369582534330a",
+      "data/train.csv": "e8027032e51a2a4b2afee8ac9f3b431373c7777d516047bf5824fe69998da106",
+      "experiments/push-800/feat-u1dmavgH2Z-anghcor-train.npz": "4c61d9469a510a356f9d107f556cf61681f1e3044dfed9e790233b72515035ba",
+      "experiments/push-1300/nb-partners.npz": "40f0fa18231886f6d555b3283d2f4d7e23d22145adb99ece93391a51d1c63272",
+      "experiments/push-1300/abl/groups.json": "3ee032da64b55e9285dc9823d5090aa392f86a2e726d67810ef5f1431a88eecb",
+      "experiments/push-1300/abl/dev-nb-038-u1dm1sz.npz": "cdab867795fb06a00cb0ec54e62e558bed47002641fe74db23b1b9962fce4c31",
+      "experiments/push-1300/abl/dev-nb-038-u1dm2sz.npz": "08210eb02ce7b7fda73e10cfbdf15426f723521221f3349cefcae486125f6642",
+      "experiments/push-1300/abl/dev-nb-038-u1dmavg.npz": "a7baab5844627d62aa32cd73932eaa0daea872b7f09cc72844d38ff774ef271f",
+      "experiments/push-1300/abl/dev-nb-038-u1dmavg4.npz": "c9d17d80fa25daad10b0edbab8a45a6301537dd702ce8908b33e4578f70e5ee2",
+      "experiments/push-1300/abl/dev-nb-039-u1dm1sz.npz": "324d2f342d8b1ba222f59621331e87de7cfb2dc608d6be192ee929bb07fbb418",
+      "experiments/push-1300/abl/dev-nb-039-u1dm2sz.npz": "495fd090149093662e6d1b499607b5ef0c432035326b99aa7a4b6ef60d848ed4",
+      "experiments/push-1300/abl/dev-nb-039-u1dmavg.npz": "a90e23331495c45739142db76fb44be6965d7b6b4eb6835e06ade5f941ce3187",
+      "experiments/push-1300/abl/dev-nb-039-u1dmavg4.npz": "29ecea64b230c77281b69985f12a73d0dc5d1a5db0f7bb723897e3b20a140257",
+      "experiments/push-1300/abl/dev-nb-044-u1dm1sz.npz": "ac8c62c35361be1c23b94fd896eaaac7d297e9fb3e66473b4f7959e65896ecdc",
+      "experiments/push-1300/abl/dev-nb-044-u1dm2sz.npz": "826c4bcc859601ded5419a30147858c159fefbc30d6c62044fdb854f3e22b425",
+      "experiments/push-1300/abl/dev-nb-044-u1dmavg.npz": "bf8db8c3799f695a42b269d49b09ea38b51e9c3a50dab3052b68d955f09e1b9f",
+      "experiments/push-1300/abl/dev-nb-044-u1dmavg4.npz": "625d3d9f1c01b18ee0321bac0831cf36380d2980d81b296fe0565d8ce0ac055f",
+      "experiments/push-1300/dev-nb-candidate.npy": "09b49b67565102fb213cdeca896fdf779b3d55fa375fd3261a3ea5405630c0b7",
+      "experiments/push-1200/synthrows-deg-u1dmavgH2Z-anghcor.npz": "d7935469fb83fecd4b902f2cf2b6180a1acfe0f49741aa3849c3ddfdcf44a10f",
+      "experiments/push-1200/synthrows-deg2-u1dmavgH2Z-anghcor.npz": "0a32c6c78e32b81224c23fcf8551d44e78a3a97ea87ad125f2eba3ef97eb6e8e",
+      "experiments/push-1200/synthrows-deg3-u1dmavgH2Z-anghcor.npz": "25f6a276420cbef93336250903cd60f52e3184ed4f105907988c00edb25a3a0f",
+      "experiments/push-1200/synthrows-deg4-u1dmavgH2Z-anghcor.npz": "5fce1fa69d5ba3c75932f0096b8ea89e0c24fac20f3080be36e8d9ed3352b50e",
+      "artifacts/submission-candidate-021.csv": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+      "artifacts/submission-candidate-021.manifest.json": "4ba41d28974dc5f629cc1c9f10d9f7cbd108ccf89030e84bdd53b9f65e50f649",
+      "artifacts/submission-candidate-061.csv": "259d69c4839a1f607e6b08686d16468f7dd5a6af9fc541e2e0449f020d23021d",
+      "artifacts/submission-candidate-061.manifest.json": "a565686edc06cea7b6ae4045024a2079f5d4a87bac5626a2019f8216ffc70991",
+      "artifacts/submission-candidate-073.csv": "6a243cfb5ff5a230d1da7de56be0fe2333db56902dacd3404e95078ceb791c11",
+      "artifacts/submission-candidate-073.manifest.json": "2aff7ace07b6bff2e8c40ccdff25c0e94053d2956bafab676a2c30e08f97bd7c"
+    },
+    "independently_recomputed_metrics": [
+      {
+        "experiment": "domain",
+        "arm": "production",
+        "pooled": 9.592885525141726
+      },
+      {
+        "experiment": "domain",
+        "arm": "nested_control",
+        "pooled": 9.610366233847264
+      },
+      {
+        "experiment": "domain",
+        "arm": "candidate",
+        "pooled": 9.613928993483546
+      },
+      {
+        "experiment": "consistency",
+        "arm": "production",
+        "pooled": 9.592885525141728
+      },
+      {
+        "experiment": "consistency",
+        "arm": "nested_control",
+        "pooled": 9.589309882968376
+      },
+      {
+        "experiment": "consistency",
+        "arm": "candidate",
+        "pooled": 9.592526189186012
+      },
+      {
+        "experiment": "consistency-strict",
+        "arm": "production",
+        "pooled": 9.586503559893634
+      },
+      {
+        "experiment": "consistency-strict",
+        "arm": "nested_control",
+        "pooled": 9.592618180979784
+      },
+      {
+        "experiment": "consistency-strict",
+        "arm": "candidate",
+        "pooled": 9.594442838388584
+      },
+      {
+        "experiment": "nuisance",
+        "arm": "control",
+        "pooled": 9.613934044684957
+      },
+      {
+        "experiment": "nuisance",
+        "arm": "candidate",
+        "pooled": 9.61392214464341
+      },
+      {
+        "experiment": "bagging",
+        "arm": "full",
+        "pooled": 9.592885525141835
+      },
+      {
+        "experiment": "bagging",
+        "arm": "penalty_control",
+        "pooled": 9.597642186059815
+      },
+      {
+        "experiment": "bagging",
+        "arm": "bagged",
+        "pooled": 9.599393594309214
+      }
+    ],
+    "label_poisoning": {
+      "domain": "exact selected parameters, coefficients and query predictions after held-out labels +10000; exact model reload",
+      "consistency": "exact selected parameters, coefficients and query predictions after held-out labels +10000; exact model reload"
+    },
+    "all_15_outer_source_exclusions": true,
+    "reproduction": {
+      "061": {
+        "file": "experiments/rmse-research-20261015/reproduction/submission-061.csv",
+        "sha256": "259d69c4839a1f607e6b08686d16468f7dd5a6af9fc541e2e0449f020d23021d",
+        "max_absolute_difference": 0.0,
+        "byte_identical": true,
+        "n_rows": 1000
+      },
+      "073": {
+        "file": "experiments/rmse-research-20261015/reproduction/submission-073.csv",
+        "sha256": "6a243cfb5ff5a230d1da7de56be0fe2333db56902dacd3404e95078ceb791c11",
+        "max_absolute_difference": 0.0,
+        "byte_identical": true,
+        "n_rows": 1000
+      }
+    },
+    "retrained-linear": {
+      "061": {
+        "file": "experiments/rmse-research-20261015/retrained-linear/submission-061.csv",
+        "sha256": "8176b2a986aa0b07759772db072cf3e4f211418fc4fc55bacb5b5832c334b790",
+        "max_absolute_difference": 1.5006662579253316e-11,
+        "byte_identical": false,
+        "n_rows": 1000
+      },
+      "073": {
+        "file": "experiments/rmse-research-20261015/retrained-linear/submission-073.csv",
+        "sha256": "1f82c8bf4eefb657483e8fefeb9378b60b40837b1df641bb443cce473401eda4",
+        "max_absolute_difference": 1.5006662579253316e-11,
+        "byte_identical": false,
+        "n_rows": 1000
+      }
+    }
+  },
+  "limitations": [
+    "New heads are label-safe inside outer and inner folds; inherited image representations and historical model/feature choices were not retrained from scratch inside folds.",
+    "Repeated 400-ID OOF is conditional validation, not 1200 independent observations. Bootstrap intervals do not correct prior adaptive selection.",
+    "Raw component differences at segmentation-failure rows are irrelevant after the preserved p021 fallback; blended production controls reproduce the baseline.",
+    "No private/test labels, leaderboard queries, new external models, GPU training, or upload in this study."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "input_tensor_hashes_shared_both_arms": {
+    "TRAIN_000001": "d1d419598958942c2acb6ae8007a4f1d5019698185dd8ee72ba3915e17153705",
+    "TRAIN_000173": "85ffb25f3faa58293ed4b2e74c07c0c4540cb8f628b2d52ec0fdd5c4491e414b",
+    "TRAIN_000339": "9a81c565f30dce02a2ed069842f610762b0fab8f728eaac10cd7907b747c5fa1"
+  },
+  "models": {
+    "imagenet": {
+      "feature_shape": [
+        3,
+        2048
+      ],
+      "CPU_MPS_maxabs": 5.7220458984375e-06,
+      "CPU_MPS_relative_L2": 8.661848482915957e-07,
+      "MPS_repeat_exact": true,
+      "state_unchanged": true,
+      "MPS_projected400_seconds": 8.335916802752763,
+      "times": {
+        "cpu": [
+          0.03314174999832176,
+          0.029673666998860426,
+          0.02896104200044647
+        ],
+        "mps": [
+          0.34225287500885315,
+          0.020839792006881908,
+          0.01921125000808388
+        ]
+      },
+      "imagenet_cache_exact": true
+    },
+    "micronet": {
+      "feature_shape": [
+        3,
+        2048
+      ],
+      "CPU_MPS_maxabs": 3.814697265625e-06,
+      "CPU_MPS_relative_L2": 6.182829679346469e-07,
+      "MPS_repeat_exact": true,
+      "state_unchanged": true,
+      "MPS_projected400_seconds": 18.489033600781113,
+      "times": {
+        "cpu": [
+          0.030776082989177667,
+          0.029797750001307577,
+          0.02991487499093637
+        ],
+        "mps": [
+          0.11723320800228976,
+          0.04622258400195278,
+          0.018761541999992914
+        ]
+      },
+      "imagenet_cache_exact": false
+    }
+  },
+  "no_fit": true
+}

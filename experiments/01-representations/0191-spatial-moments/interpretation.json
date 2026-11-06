@@ -1,0 +1,73 @@
+{
+  "decision": "Keep best021; no arm passed the fixed complementarity gate. No resplit expansion.",
+  "ResNet50": {
+    "RMSE_mean": 12.843051741348257,
+    "RMSE_mean_std": 12.859352087396275,
+    "gain_mean_minus_mean_std": -0.016300346048018,
+    "fold_gains": [
+      0.037614095911315815,
+      -0.08198613758488271,
+      -0.0045888339737381045,
+      0.009165166768397626,
+      -0.04491777181253909
+    ],
+    "positive_folds": 2,
+    "conditional_group_bootstrap_CI95": [
+      -0.05653849820766044,
+      0.026444313361937956
+    ]
+  },
+  "ConvNeXtTiny": {
+    "RMSE_mean": 12.929938095869748,
+    "RMSE_mean_std": 12.892809387569882,
+    "gain_mean_minus_mean_std": 0.03712870829986592,
+    "fold_gains": [
+      0.05004465120082635,
+      0.03322115295444483,
+      0.1118434422531358,
+      -0.030789174300553057,
+      0.012295956213689507
+    ],
+    "positive_folds": 4,
+    "conditional_group_bootstrap_CI95": [
+      -0.014416824531898742,
+      0.08664594339525435
+    ]
+  },
+  "summary": "Adding spatial std improved the ConvNeXt PCA128 pipeline, but not the ResNet pipeline; neither improves best021 with the predeclared fixed10 percent blend.",
+  "mean_descriptor_preservation": "All400 mean descriptors match existing native256 caches exactly. ConvNeXt keeps its existing post-pool LayerNorm on mean; appended population std comes from the same pre-pool spatial map, with no LayerNorm relocation.",
+  "capacity_control": "Both arms use train-only full-SVD PCA128 and identical8321-parameter MLP, initial tensors, sample/dropout seeds, 100epochs/500updates. Their unsupervised PCA subspaces differ.",
+  "PCA_retention_ranges": {
+    "resnet50": {
+      "mean": [
+        0.9349046584925853,
+        0.9359147574878438
+      ],
+      "mean_std": [
+        0.8892274742097858,
+        0.8914914806917585
+      ]
+    },
+    "convnext_tiny": {
+      "mean": [
+        0.976453458955687,
+        0.9769338666099201
+      ],
+      "mean_std": [
+        0.9206166678303092,
+        0.9230883407109807
+      ]
+    }
+  },
+  "limits": [
+    "Existing scratch TinyCNN already uses mean/std; novelty is this frozen pretrained descriptor and matched PCA/head control.",
+    "Mean descriptor preserved exactly from188/190; each arm has a different train-only PCA subspace. The experiment estimates the full pooling-plus-compression pipeline, not an isolated std effect under fixed PCA axes.",
+    "PCA128 can discard signal. Failed comparison does not prove all spatial variability is useless or backbone capacity is exhausted.",
+    "Spatial std is a marginal dispersion statistic, not spatial arrangement or physical grain segmentation.",
+    "Reused development400 and conditional bootstrap are not independent validation or selection-adjusted evidence."
+  ],
+  "previous190_failure_preserved": "Swin bitwise retraining failure remains in190; Swin is not used in191.",
+  "no_new_experiment_after191": true,
+  "holdout_test_access": false,
+  "cost": 0
+}

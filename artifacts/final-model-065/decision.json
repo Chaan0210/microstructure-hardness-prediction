@@ -1,0 +1,176 @@
+{
+  "candidate": "008",
+  "status": "Exploratory candidate, not demonstrated significant improvement",
+  "locked_at_utc": "2026-10-02T04:06:49.452434+00:00",
+  "authorization": {
+    "source_thread_id": "01a0f244-6000-7496-a632-e5f79ee2c02a",
+    "instruction": "Parent explicitly authorized exploratory008 from the fixed50:50 mixture, full500 retraining/test1000 inference/verification. No further ratio/model search. Preserve007.",
+    "posthoc_change": true,
+    "prior_rule": "064 agent-chosen per-partition >=3/5 improving folds; observed3/5,2/5,2/5.",
+    "replacement": "User explicitly waived fold-majority condition AFTER observing064 results; all3 pooledRMSE gains and deterministic reproduction support making a small-gain exploratory artifact. This is a posthoc operational decision, not preregistered statistical confirmation.",
+    "previous_records_unchanged": true,
+    "no_significance_claim": true
+  },
+  "formula": "0.5*candidate007 + 0.5*(0.75*candidate003 + 0.25*B_MLP_mean3)",
+  "equivalent_weights": {
+    "candidate003": 0.75,
+    "S_MLP_mean3": 0.125,
+    "B_MLP_mean3": 0.125
+  },
+  "seeds": [
+    20261128,
+    20261205,
+    20261219
+  ],
+  "head_config": {
+    "hidden": 64,
+    "dropout": 0.25,
+    "epochs": 100,
+    "batch_size": 64,
+    "lr": 0.0003,
+    "min_lr": 1e-05,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "beta": 1.0,
+    "aux_weight": 0.3,
+    "bins": 7,
+    "seed": 20261128
+  },
+  "effective_aux_weight": 0.0,
+  "epochs": 100,
+  "fixed_before_full500": true,
+  "full500_recipe": "Retrain3 S and3 B MLP heads on all500; retain already-full500 unchanged candidate003 baseline/kernel/CNN. Verify retrained S weights/predictions exactly reproduce007. B frozen officialViT-B14 with same504 descriptors. No fit of backbone.",
+  "selection": "No hyperparameter/weight/epoch/seed search or checkpoint selection in final fit. All3seeds included per backbone. Final endpoint100.",
+  "holdout": "Former100 holdout included in final500 fit only; never separately evaluated or used for selection.",
+  "test": "Only inference and integrity/reload/raw-feature checks after lock; no tuning, clipping, fitting, selection or submission.",
+  "validation_report": "reports/dinob-complement-064-validation.json",
+  "validation_sha256": "1bf3a72f165e5bf20e1e92d9633d2bf72dd92cee8d713d6de0abed0a38ae7a0f",
+  "development_results": {
+    "original": {
+      "007_rmse": 13.241596955038409,
+      "mixed50_rmse": 13.209632611789585,
+      "comparison": {
+        "gain": 0.03196434324882347,
+        "fold_gains": [
+          0.06338750973129237,
+          0.12876518338856435,
+          0.07945428124464726,
+          -0.06576973362770921,
+          -0.049417840156088744
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.046222488449716555,
+        "conditional_ci95": [
+          -0.059124924985042335,
+          0.12356775808613459
+        ]
+      }
+    },
+    "20261031": {
+      "007_rmse": 13.192251472226435,
+      "mixed50_rmse": 13.180839919990602,
+      "comparison": {
+        "gain": 0.0114115522358329,
+        "fold_gains": [
+          0.13636440655606386,
+          -0.09398886240837534,
+          -0.009874366263705525,
+          0.0877066941138871,
+          -0.050696462064550474
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.04580570047070066,
+        "conditional_ci95": [
+          -0.07710197379051453,
+          0.09832545024613223
+        ]
+      }
+    },
+    "20261101": {
+      "007_rmse": 13.455677846832414,
+      "mixed50_rmse": 13.393004886763789,
+      "comparison": {
+        "gain": 0.06267296006862466,
+        "fold_gains": [
+          -0.051283537095718756,
+          0.21440367558310136,
+          -0.08843293827638377,
+          0.23704066306260962,
+          -0.008129917685312904
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.04212111322684699,
+        "conditional_ci95": [
+          -0.019231296457453383,
+          0.1438363581420925
+        ]
+      }
+    }
+  },
+  "source_sha256": {
+    "candidate008_pipeline.py": "57204586a6e7f96dee7b5a172ca6e4e163b479ec7d37e6f9988d48029448f2e5",
+    "verify_candidate008.py": "91919a8ba460ab093d4a9033f6ad156b0adb0c3a2b31691b0ec7d9b6e6cfa35b",
+    "dinob_complement_064.py": "ee5b2f8416238b773af5fef5577bdf026721bc21960c3daa57005ecdaf0ebfbd",
+    "dinob_mlp_063.py": "df37f8524b3dd27408270979b9e954099528be199ea99c4fe9287d69cafce24e",
+    "dinob_mlp_head_063.py": "e841bc72082d27f68b2bdad2d81ccf3eb2b127661bef347506cff6eb6ab04431",
+    "auxiliary_head_051.py": "1024afa9838b07d138c9bdec5ea0a5946276da5b33d8ad794cbf5d3be16434b3",
+    "dinob_062.py": "209407c04766b687696d8a06ae158c3af4912a7b399d153301238a34074a56f9",
+    "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353",
+    "dino_spatial_039.py": "6a5a2546cf3266dd67fcaccae2dfe978bc431349cec2d5ab784b9a065e79c692",
+    "candidate006_pipeline.py": "55ff99ad014351d9d574010e815542e94579a7afb988c60b212fe50ef075985e",
+    "candidate_pipeline.py": "7495e2b0c6ff14d163cc6bc539798b94f20605f4c02d3cb3305363422ecc1b28"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.manifest.json": "ac411a5e58ee57af5c4a653e7e4296c543a89333ee1a929b576d6e67f7b20e68",
+    "artifacts/submission-candidate-006.components.csv": "3a41ca42fa66e10b9899fc2d25ccfa395d5b728e0cf00a9b213be1ad06e410a5",
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/submission-candidate-007.components.csv": "73e2699df9c3728d4b173ea1e2f74bb28d689befaacce85527928c5193f964f5",
+    "artifacts/submission-candidate-007.csv": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "artifacts/submission-candidate-007.manifest.json": "be282c4a01a0e8f269a82ed9649522563d901a8dc424dcffde5a5533e6d81329",
+    "artifacts/final-model-045/report.json": "2d344e9f074aeebe45dfb99e001175aef8e6b8485bc85c51bc45af0ce4526e7c",
+    "artifacts/final-model-045/train_features.npz": "e46b8746fe9114c75766e329efdb040fb45e33912567e0ef50b5ef637c46faa1",
+    "artifacts/final-model-045/test_features.npz": "08b8e5c2e0f0daa1eb05e223fbcb99b490a481d3667cf07a70ce666ce3aba876",
+    "artifacts/final-model-045/decision.json": "cae40d328c87ae4104ad70bdf18b9e8002b5a787ab98307c31a74f6e282f49eb",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+    "artifacts/final-model-053/verification-test-compact-cnn-inputs.npz": "5693022f148ad26318debf34b554ad003833c0a6378c0be2d4754c82482d5539",
+    "artifacts/final-model-053/report.json": "4636d8307de29d1bb9b12c666e4d95361a32e33aabf0439d81e120ff1de00a0f",
+    "artifacts/final-model-053/mlp-seed-20261219.pt": "d3f5aa1cb9d755385ee04561d12d26610c8440c642aef0fb7466975b05bd9c58",
+    "artifacts/final-model-053/mlp-seed-20261128.pt": "e5f990b7ae6d0bda291cbd0574b65b01796959915ce1afdf696007957a512226",
+    "artifacts/final-model-053/decision.json": "d570d5508b94580a38f2f56951c454f4bdf07db129febda3efe58b91b16c83e6",
+    "artifacts/final-model-053/mlp-seed-20261205.pt": "550b0944dd3dcb1f36ff8e5238d29e5c31f05fada4a6deb1471809f4a10ddc1f",
+    "artifacts/seed-stability-052/candidate-design.json": "f149e8afd8c553dadc1205fadb8229a93f6dac1894f8a5ce50232c800de0f2b4",
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/submission-candidate-003.components.csv": "fea51417718a17574fb50f9f36850e6d61d765cbd0025eb5cf8e2fa42fc6d5d8",
+    "artifacts/submission-candidate-003.manifest.json": "e4f8b14bf902296535329b9e657b98c9184d00b5aa4778a97ab8d40df0c60314",
+    "reports/candidate007-verification.json": "79d463fb3d85d657b3ab1ead7621576bb28a263105b1b0b5597e64967c60293f",
+    "reports/dinob-complement-064-summary.json": "3d2a7735239a0e4d528b9c201fe0bdb622ed93068027905481c4b38e8793a202",
+    "artifacts/dinob-complement-064/plan.json": "8026eaeb174b4ad345c6d598d950dd141bfc02a9a09c36e8d7ab67377e33af3d",
+    "reports/dinob-complement-064-validation.json": "1bf3a72f165e5bf20e1e92d9633d2bf72dd92cee8d713d6de0abed0a38ae7a0f",
+    "artifacts/final-model-017/baseline.joblib": "7667b2b36483ba1b93a8e2874d4de96d12f38492ea6815f9ce24c87d09bab83e",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9",
+    "artifacts/final-model-017/training-curve.json": "5485044c48a4ef034f552753af9536c8851b83395d27d7c08b73f67b1d448c23",
+    "artifacts/final-model-017/kernel.joblib": "1dd0482997b5a5ac198dfea4952cc6d74c8694646238c65825eaf4786837eb4b",
+    "artifacts/final-model-017/decision.json": "fdb0efbbc7d2b81a53ed0828c752b19a0cf3b928129f3cb5e5e6d037ae034f7b",
+    "artifacts/final-model-017/cnn.pt": "7fa2cea78e1365cf280efe6695e758cff8c3da857ffb387d21787195cb472fb0"
+  },
+  "weights": {
+    "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_pretrain.pth",
+    "bytes": 346378731,
+    "http_content_length": 346378731,
+    "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+    "seconds": 17.789459666004404,
+    "official_source_dir": "vendor/dinov2-official/dinov2-7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "code_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "license": "Apache-2.0 frompinnedofficialoriginalDINOv2MODEL_CARD andLICENSE",
+    "license_sha256": "600cc67cc4cb2f5ea317dcfc687ad1c74dc4bec8782bbe9db0afd83513b935b7",
+    "model_card_sha256": "70ca59606bee0a5fbb1baec80e7e29a93cd7cfbe26ca1910c52a852c4aab09d0",
+    "model": "originalnonregisterdinov2_vitb14",
+    "packages_installed": 0,
+    "cost": 0,
+    "hash_interpretation": "Locallycomputedintegrityhash,notpublisher-signedchecksum;trustedHTTPSofficialURLandstrictweightsloadwillbeverified."
+  },
+  "cost": 0,
+  "new_packages": 0,
+  "uploaded": false,
+  "limitations": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Gains are small and fold-wise consistency weak. All conditional95% bootstrap intervals include zero; Public/private improvement unknown."
+}

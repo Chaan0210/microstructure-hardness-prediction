@@ -1,0 +1,7 @@
+# Runtime amendment before any hardness fitting or evaluation
+
+The discarded40-step MPS probe passed numerical/gradient checks (independent target error4.77e-7, active pixel-embedding gradient), used about1.7GB RSS+driver memory, and measured median step0.05848s. Its original90-minute budget gate failed: conservative full-matrix projection6170s, about103min including a20min readout allowance. No hardness labels or validation scores were used by that probe.
+
+To retain the genuinely different architecture,100 epochs and two seeds, set the one-time compute ceiling to **120 minutes**, and active-work ceiling to180 minutes. Encoder/feature stage gets at most105 minutes, leaving15 minutes for readouts. No further budget extension, epoch reduction or architecture selection follows scores. The original failed90-minute probe record remains unchanged; training explicitly checks this amended gate. This is a disclosed budget change before the main experiment, not a claim that the original gate passed.
+
+The physical100-column bank is read directly from the verified incumbent artifact `experiments/03-robustness/1300-robust-ensembles/abl/feat-h9phys-full-044-u1dmavg-train.npz` (its declared SHA is in dev-h9phys-full-044-u1dmavg.npz). This avoids reconstructing or subtly changing the H9/physical interactions. No features or weights in that bank are modified. It is the intended100-column reference in the plan.

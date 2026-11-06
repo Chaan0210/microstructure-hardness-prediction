@@ -1,0 +1,393 @@
+{
+  "study": "124 baseline diagnostics and 125 constrained weights",
+  "completed_utc": "2026-10-04T03:41:18.658544+00:00",
+  "status": "complete; retain fixed014; reject125 on primary pooled development MSE",
+  "baseline124": {
+    "component_scores": {
+      "base_et": {
+        "sqrt_mean_training_MSE": 1.4377617693126192,
+        "pooled_validation_RMSE": 14.776013231658121,
+        "validation_minus_training_MSE": 216.2634081168389
+      },
+      "base_ridge": {
+        "sqrt_mean_training_MSE": 10.26756261541368,
+        "pooled_validation_RMSE": 14.546372972113712,
+        "validation_minus_training_MSE": 106.17412458239967
+      },
+      "morph_ridge": {
+        "sqrt_mean_training_MSE": 12.215570547190664,
+        "pooled_validation_RMSE": 14.216854467141006,
+        "validation_minus_training_MSE": 52.89878714647517
+      },
+      "baseline": {
+        "sqrt_mean_training_MSE": 7.195684745084738,
+        "pooled_validation_RMSE": 14.190584019488792,
+        "validation_minus_training_MSE": 149.59479586352546
+      }
+    },
+    "actual_lineage": {
+      "weights": {
+        "base_et": 0.375,
+        "base_ridge": 0.375,
+        "morph_ridge": 0.25
+      },
+      "input_widths": {
+        "base_et": 519,
+        "base_ridge": 519,
+        "morph_ridge": 795
+      },
+      "correction_to_shorthand": "baseline795nameswholebundleinputwidth;ET/baseRidgeactuallyselect519. ThirdmorphRidgeusesall795,notonly276extra."
+    },
+    "feature_stability": {
+      "all400x795_finite": true,
+      "mean_validation_outside_training_range_fraction": 0.005414046121593292,
+      "perID_oob_fraction_vs_baseline_squared_error_Spearman": 0.02058405814715643,
+      "largest15_range_violation_features": [
+        {
+          "name": "extra_bright_q50_distance_std",
+          "column": 617,
+          "rate": 0.010833333333333334
+        },
+        {
+          "name": "dark10_solidity_mean",
+          "column": 344,
+          "rate": 0.010833333333333334
+        },
+        {
+          "name": "dark10_solidity_q25",
+          "column": 348,
+          "rate": 0.010833333333333334
+        },
+        {
+          "name": "otsu_axis_major_length_q75",
+          "column": 310,
+          "rate": 0.01
+        },
+        {
+          "name": "gradient_s4_mean",
+          "column": 102,
+          "rate": 0.01
+        },
+        {
+          "name": "lbp_r3_0",
+          "column": 206,
+          "rate": 0.01
+        },
+        {
+          "name": "otsu_axis_major_length_q50",
+          "column": 309,
+          "rate": 0.01
+        },
+        {
+          "name": "lbp_r3_18",
+          "column": 224,
+          "rate": 0.01
+        },
+        {
+          "name": "extra_bright_q25_area_std",
+          "column": 556,
+          "rate": 0.009166666666666667
+        },
+        {
+          "name": "laplace_s4_q90",
+          "column": 118,
+          "rate": 0.009166666666666667
+        },
+        {
+          "name": "lbp_r1_1",
+          "column": 197,
+          "rate": 0.009166666666666667
+        },
+        {
+          "name": "extra_bright_q25_area_mean",
+          "column": 555,
+          "rate": 0.009166666666666667
+        },
+        {
+          "name": "extra_boundary_interior_9_distance_mean",
+          "column": 769,
+          "rate": 0.009166666666666667
+        },
+        {
+          "name": "extra_bright_q25_distance_std",
+          "column": 583,
+          "rate": 0.009166666666666667
+        },
+        {
+          "name": "hist_15",
+          "column": 24,
+          "rate": 0.009166666666666667
+        }
+      ],
+      "coefficient_stability": {
+        "base_ridge": {
+          "standardized_coefficient_cosine_range": [
+            0.6852842763434057,
+            0.8817090950343814
+          ],
+          "median_cosine": 0.8110175788371946,
+          "comparison_limit": "Foldlocalstandardizationsdiffer;coefficientcosineisdescriptivenotexactcommonrawfeatureattribution. Overlappingtrainsetsnotindependent."
+        },
+        "morph_ridge": {
+          "standardized_coefficient_cosine_range": [
+            0.7932314221463568,
+            0.9132581585590115
+          ],
+          "median_cosine": 0.8657026784078559,
+          "comparison_limit": "Foldlocalstandardizationsdiffer;coefficientcosineisdescriptivenotexactcommonrawfeatureattribution. Overlappingtrainsetsnotindependent."
+        }
+      },
+      "limits": "Rangeviolationsmeasurefoldsupport,notmeasurementnoise/segmentationaccuracy. RidgeclipsMinMaxinputs;ETthresholdsoutsideboundsdonotlinearlyextrapolate. No corruptedimagefeaturesortestdistribution used."
+    },
+    "training_size_diagnostic": {
+      "small_mean_individual_MSE": 209.48740112991223,
+      "large_MSE": 201.37267481417067,
+      "large_minus_small_MSE": -8.114726315741564,
+      "limits": "Trainingmembershipandmodelvariabilitychangeaswellasn. Repeated3predictionsonsame80arenotindependentandnotanensemblecandidate."
+    },
+    "verification": {
+      "trainlocal_scalers_verified_all30Ridges": true,
+      "manual_Ridge_prediction_max_error": 0.0,
+      "mixture_reconstruction_max_error": 5.684341886080802e-14,
+      "all_model_hashes_and_ID_scopes_checked": true
+    },
+    "models_reloaded_bundles": 60,
+    "interpretation": "ET has a large train-validation gap, while range violations are uncommon and nearly uncorrelated with per-ID squared error. This supports investigating overfitting and redundancy, but does not identify a unique causal reason for014 gains; removing baseline also changed weights, calibrators and residual targets."
+  },
+  "weights125": {
+    "prior": [
+      0.3,
+      0.3,
+      0.2,
+      0.2
+    ],
+    "lambda": 1.0,
+    "shortB_weight_fixed": 0.1,
+    "pooled_MSE": {
+      "fixed014": 166.2887997064064,
+      "learned125": 166.59220807777695
+    },
+    "pooled_RMSE": {
+      "fixed014": 12.895301458531568,
+      "learned125": 12.907060396456544
+    },
+    "RMSE_change": 0.011758937924975399,
+    "ID_cluster_conditional95_change_CI": [
+      -0.006347434153461195,
+      0.030639849009144397
+    ],
+    "per_partition": [
+      {
+        "split": "original",
+        "fixed014_RMSE": 12.968699771878843,
+        "learned125_RMSE": 12.951398927873157,
+        "RMSE_change": -0.017300844005685434,
+        "paired_ID_conditional95_change_CI": [
+          -0.04235292693832773,
+          0.00731730202566961
+        ]
+      },
+      {
+        "split": "20261031",
+        "fixed014_RMSE": 12.668260572562595,
+        "learned125_RMSE": 12.675084796404146,
+        "RMSE_change": 0.006824223841551458,
+        "paired_ID_conditional95_change_CI": [
+          -0.009262985055451489,
+          0.022621232702558367
+        ]
+      },
+      {
+        "split": "20261101",
+        "fixed014_RMSE": 13.04585755754465,
+        "learned125_RMSE": 13.091222840070422,
+        "RMSE_change": 0.04536528252577199,
+        "paired_ID_conditional95_change_CI": [
+          0.008463106670732579,
+          0.08512411856198526
+        ]
+      }
+    ],
+    "outer_weight_statistics": {
+      "count": 15,
+      "order": [
+        "kernel",
+        "cnn",
+        "Smean",
+        "Bmean"
+      ],
+      "mean": [
+        0.2845185999332758,
+        0.2970884332289029,
+        0.20691763967153876,
+        0.21147532716628265
+      ],
+      "min": [
+        0.26996708164952743,
+        0.2757524984197751,
+        0.17721463696067988,
+        0.20220396959717746
+      ],
+      "max": [
+        0.2991913564737565,
+        0.31546590760957216,
+        0.23746820085506765,
+        0.23291475290375124
+      ],
+      "mean_L2_distance_from_prior": 0.027281775390157907,
+      "mean_training_objective_improvement": 0.0010065672000791448,
+      "KKT_max_error": 3.3306690738754696e-16,
+      "affine_slope_range": [
+        1.0249895080769533,
+        1.159958675104354
+      ]
+    },
+    "anchor_weight_statistics": {
+      "count": 45,
+      "order": [
+        "kernel",
+        "cnn",
+        "Smean",
+        "Bmean"
+      ],
+      "mean": [
+        0.29168448210619646,
+        0.29199451635674517,
+        0.2104723839583355,
+        0.2058486175787229
+      ],
+      "min": [
+        0.23035695236649192,
+        0.24948816054963482,
+        0.17691130989659282,
+        0.1770861245720914
+      ],
+      "max": [
+        0.3309922676372874,
+        0.326819913651669,
+        0.238344968673071,
+        0.23037174834310647
+      ],
+      "mean_L2_distance_from_prior": 0.03580095183106372,
+      "mean_training_objective_improvement": 0.0017136189850573524,
+      "KKT_max_error": 2.7755575615628914e-16,
+      "affine_slope_range": [
+        0.9286090033724065,
+        1.2253417073728599
+      ]
+    },
+    "nesting": "Outer320weights+affine use074componentOOF from213/214 fits. EachresidualanchorA213/214 weights+affine use112deepcomponentOOF from142/143 fits;applytoheldoutB106/107 componentpredictions fromA. Fit115residualselectoronlyB,anchorAexcludesallB. NeverfitweightsonglobalouterOOF. CacheIDs/hashesfrom121/122reverified.",
+    "duplicate_audit": {
+      "074": "Oneaffineonfixedaggregate;noindividualweightlearning.",
+      "077": "UnregularizedOLS legacy003-vs-equalS/Bcontrast;not4remainingcomponentssimplex. Original00913.105158->12.902927butresplitfailureand078size-mismatchwarningretained.",
+      "079": "Inner3->5affinecrossfit-only;notweights.",
+      "112": "Oneboundedalpha betweencomplete011 andnewattentionbranch;no4way014baseweights orpriorpenalty.",
+      "125_distinction": "Same014surviving4branches,nonnegativeunit-sumweightswithfixedridge-to-prior,noattentionornewbaselearner. Refitaffineandhonestphysicsresiduals afterlearnedmixture."
+    }
+  },
+  "validation": {
+    "partitions": {
+      "original": {
+        "passed": true,
+        "split": "original",
+        "independent_weight_affine_fits": 20,
+        "SLSQP_max_weight_error": 1.903921464929681e-12,
+        "residual_models_reloaded": 240,
+        "independent_kernel_max_error": 4.618527782440651e-14,
+        "fixed014_base_anchor_reconstruction_error": 8.526512829121202e-14,
+        "report_sha256": "6d785fc89a7bfa8d3240662c73e4a4258765fde54884272c4b05c7e3d7ae8b16"
+      },
+      "20261031": {
+        "passed": true,
+        "split": "20261031",
+        "independent_weight_affine_fits": 20,
+        "SLSQP_max_weight_error": 4.319961055543331e-12,
+        "residual_models_reloaded": 240,
+        "independent_kernel_max_error": 6.394884621840902e-14,
+        "fixed014_base_anchor_reconstruction_error": 5.684341886080802e-14,
+        "report_sha256": "63829170baa351ee6d1f0249af68a202863e12d270afcd586c37d0bd424ffefb"
+      },
+      "20261101": {
+        "passed": true,
+        "split": "20261101",
+        "independent_weight_affine_fits": 20,
+        "SLSQP_max_weight_error": 4.210856663355855e-11,
+        "residual_models_reloaded": 240,
+        "independent_kernel_max_error": 4.618527782440651e-14,
+        "fixed014_base_anchor_reconstruction_error": 5.684341886080802e-14,
+        "report_sha256": "98f9553dccf480138c8067c27dc48c2249e6eba8e9c5e4de1404a3cbf5b19a49"
+      }
+    },
+    "independent_weight_affine_fits": 60,
+    "residual_models_reloaded_including_none": 720,
+    "fixtures_and_fixed014_refit": {
+      "passed": true,
+      "SLSQP_fixture_max_weight_error": 3.107073698847829e-08,
+      "shift_and_scale_invariance": true,
+      "identical_predictors_return_prior": true,
+      "fixed014_full_fold_refit_max_error": 5.684341886080802e-14,
+      "source_sha256": "7b1276524cbc57944b3a2d3739b9081f3bf5bf44150ce28b42dd06573cd23f34"
+    },
+    "label_interventions": {
+      "passed": true,
+      "outer80_meta_models_and_choices_exact": true,
+      "outer80_prediction_max_error": 5.684341886080802e-14,
+      "anchor_meta_excludes_all_residual_block_labels": true,
+      "residual_inner_validation_5fixedfit_max_error": 0.0,
+      "upstream112_training_certificate_reused": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+      "source_sha256": "7b1276524cbc57944b3a2d3739b9081f3bf5bf44150ce28b42dd06573cd23f34"
+    }
+  },
+  "uncertainty": "10000 paired ID-cluster bootstrap draws, seed20271103. Each ID retains all three partition predictions. Models are held fixed; intervals exclude research selection and refitting variability. The three partitions reuse the same400 observations, not1200 independent examples.",
+  "decision": {
+    "keep_candidate": "014",
+    "new_submission": false,
+    "full500_refit": false,
+    "new_test_inference": false,
+    "reason": "The only predeclared learned-weight procedure has worse pooled untrimmed MSE. Do not expand lambda search or blend after observing these results.",
+    "next_basis": "Wait for already prepared014 submission evidence through the parent. This result does not establish that every possible constrained weighting scheme fails. Any future representation or robustness hypothesis needs a separate fixed design and valid train-only cache lineage."
+  },
+  "limits": [
+    "Same400adaptivehistory;124diagnosticand122results motivatedthisstudy.",
+    "Training-size mismatch142->213->320 andfinal222->333->500 remains;constraintsdonotproveweighttransport.",
+    "Weightobjectivefitscenteredunscaledmixturebeforeaffine;bestcenteredrawMSEneednotgivebestcalibrated/residualpipeline.",
+    "Fourweights3freeparametersplusaffine2;regularizationlimitsinstabilitybutcannotcreateindependentlabels.",
+    "Thisassessesonefixedlambda1;failuredoesnotjustifyautomaticlambdaorbasecandidateexpansion.",
+    "Train/validationgapdoesnotprovewhy013baselineweightwasbad;evenbetterstandalonebaselinecanberedundantwithothermodels.",
+    "014gainchangesmixtureweights,calibrationandresidualfunctions;cannotattributeallgaintoaunique795featurefailure.",
+    "Same400historicalselectionbiasandmanycorrelatedfeaturetests;top15onlydescriptive,no featuredeletionselected."
+  ],
+  "preservation": {
+    "candidate014_CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "previous_reports_verified": 200,
+    "packages_unchanged": 26,
+    "protected_sources_inputs_and014_hashes_verified": true
+  },
+  "scope": {
+    "development_examples": 400,
+    "new_neural_fits": 0,
+    "test_or_holdout_decoded": false,
+    "global_outer_OOF_weights_fit": false,
+    "new_packages": 0,
+    "cost": 0,
+    "uploaded": false
+  },
+  "evidence_sha256": {
+    "artifacts/constrained-weights-125/original/report.json": "6d785fc89a7bfa8d3240662c73e4a4258765fde54884272c4b05c7e3d7ae8b16",
+    "artifacts/constrained-weights-125/original/predictions.npz": "989ec784d6ebcf52bab194dabe6202f3d984ee7ff824674ea7226f436d987434",
+    "artifacts/constrained-weights-125/validation-original.json": "bfc8e1e376892d71ca275f6cfdd7bc26368b1d51d79819e954b51bcd79c4de10",
+    "artifacts/constrained-weights-125/20261031/report.json": "63829170baa351ee6d1f0249af68a202863e12d270afcd586c37d0bd424ffefb",
+    "artifacts/constrained-weights-125/20261031/predictions.npz": "7f8156a8edc9925fd95f0cb965f59af4036136a4c2b033faaed6b7a0ae727720",
+    "artifacts/constrained-weights-125/validation-20261031.json": "28a186c89ecace1ab945dcfebe361260a038c27c07b2326ad9610484fd6dd8b5",
+    "artifacts/constrained-weights-125/20261101/report.json": "98f9553dccf480138c8067c27dc48c2249e6eba8e9c5e4de1404a3cbf5b19a49",
+    "artifacts/constrained-weights-125/20261101/predictions.npz": "e5b2ca5d0a0c0a577c9acf36a001aba9db0d9b602125083f0872196cbd6a59f0",
+    "artifacts/constrained-weights-125/validation-20261101.json": "299b4357ac63b4da497f34b7fab9d8120d861c3f763fc80caaf0175f387bd8cf",
+    "artifacts/baseline-diagnostics-124/report.json": "5ae33b88d3ae3afa07d4c84fcccb0d971093b81848c39529ea08959044173456",
+    "artifacts/baseline-diagnostics-124/predictions.npz": "3eabdcbeb9f9b889d2432f9f06d9d0d12b9d90c120b822d73bc47f7afa0033e3",
+    "artifacts/constrained-weights-125/plan.json": "7a2d23883687b53498dad142ca92a20e5c9047307091d95424a58adcd503d766",
+    "artifacts/constrained-weights-125/fixture-control-validation.json": "44e2e11861ecc0e0cd47e1d75d0a45dd3ad240ddba521ed588c61b7b2b0f424e",
+    "artifacts/constrained-weights-125/replay-validation.json": "c8e21b6f92270add28b8f0e0a257d8309fb74bb3423d7ed1a02d5e04a6257f8f"
+  },
+  "source_sha256": "333bfd293011753d26d2c1cfc541c71bdec2a0b077df86b23f05c5c4a763cd4f",
+  "execution_blockers": []
+}

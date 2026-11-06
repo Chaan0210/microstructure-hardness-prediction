@@ -1,0 +1,312 @@
+{
+  "candidate": "013",
+  "source_study": "115",
+  "completed_utc": "2026-10-04T01:32:44.822458+00:00",
+  "status": "verified_exploratory_candidate_ready_parent_submission",
+  "development": {
+    "eligible_for_candidate": true,
+    "metric": "Equalweight all1200predictionpairs pooleduntrimmedMSE;400uniqueIDs. Lowerthanboth011and113 withindependentvalidationpass. No allpartition/fold/CI/influencegate.",
+    "pooled_MSE": {
+      "reference011": 171.98589400721238,
+      "reference113": 171.59775188917644,
+      "primary": 171.1392971222956
+    },
+    "pooled_RMSE": {
+      "reference011": 13.114339251644072,
+      "reference113": 13.099532506512453,
+      "primary": 13.082021904976907
+    },
+    "comparisons": {
+      "reference011": {
+        "MSE_gain": 0.846596884916778,
+        "pooled_RMSE_gain": 0.032317346667165125,
+        "ID_cluster95_MSE_gain_CI": [
+          -2.360526610442,
+          4.189396577999293
+        ],
+        "ID_cluster95_RMSE_gain_CI": [
+          -0.0922966871962759,
+          0.15598572778770414
+        ],
+        "positive_IDs": 174,
+        "fixed092_other395_MSE_gain_diagnostic": -0.31527535207051677,
+        "largest5_removed_MSE_gain_diagnostic": -1.668664745642015,
+        "largest5_gains": [
+          {
+            "ID": "TRAIN_000064",
+            "mean_MSE_gain": 240.077801894696
+          },
+          {
+            "ID": "TRAIN_000227",
+            "mean_MSE_gain": 220.6669361879774
+          },
+          {
+            "ID": "TRAIN_000078",
+            "mean_MSE_gain": 209.40626246568138
+          },
+          {
+            "ID": "TRAIN_000406",
+            "mean_MSE_gain": 179.00542613351763
+          },
+          {
+            "ID": "TRAIN_000438",
+            "mean_MSE_gain": 148.6049018134388
+          }
+        ],
+        "largest5_losses": [
+          {
+            "ID": "TRAIN_000206",
+            "mean_MSE_gain": -139.93227768209283
+          },
+          {
+            "ID": "TRAIN_000008",
+            "mean_MSE_gain": -135.01088624931035
+          },
+          {
+            "ID": "TRAIN_000120",
+            "mean_MSE_gain": -115.44207264821762
+          },
+          {
+            "ID": "TRAIN_000218",
+            "mean_MSE_gain": -87.64321202809418
+          },
+          {
+            "ID": "TRAIN_000258",
+            "mean_MSE_gain": -66.19998113438459
+          }
+        ]
+      },
+      "reference113": {
+        "MSE_gain": 0.4584547668808341,
+        "pooled_RMSE_gain": 0.0175106015355464,
+        "ID_cluster95_MSE_gain_CI": [
+          -0.23142621262744356,
+          1.1643085887430251
+        ],
+        "ID_cluster95_RMSE_gain_CI": [
+          -0.008980071166853242,
+          0.04451491442301027
+        ],
+        "positive_IDs": 188,
+        "fixed092_other395_MSE_gain_diagnostic": 0.3996777522096036,
+        "largest5_removed_MSE_gain_diagnostic": 0.06273723966577548,
+        "largest5_gains": [
+          {
+            "ID": "TRAIN_000285",
+            "mean_MSE_gain": 57.773230390466836
+          },
+          {
+            "ID": "TRAIN_000404",
+            "mean_MSE_gain": 29.54645769453316
+          },
+          {
+            "ID": "TRAIN_000356",
+            "mean_MSE_gain": 25.70636311710564
+          },
+          {
+            "ID": "TRAIN_000385",
+            "mean_MSE_gain": 22.885751994702332
+          },
+          {
+            "ID": "TRAIN_000383",
+            "mean_MSE_gain": 22.688893887538285
+          }
+        ],
+        "largest5_losses": [
+          {
+            "ID": "TRAIN_000371",
+            "mean_MSE_gain": -35.92717355392722
+          },
+          {
+            "ID": "TRAIN_000278",
+            "mean_MSE_gain": -31.976465858784138
+          },
+          {
+            "ID": "TRAIN_000321",
+            "mean_MSE_gain": -30.76094884469154
+          },
+          {
+            "ID": "TRAIN_000466",
+            "mean_MSE_gain": -28.151567221376013
+          },
+          {
+            "ID": "TRAIN_000275",
+            "mean_MSE_gain": -27.68960560491371
+          }
+        ]
+      }
+    }
+  },
+  "per_partition": [
+    {
+      "split": "original",
+      "reference011": {
+        "MSE": 170.40685782801563,
+        "RMSE": 13.0539977718711
+      },
+      "reference113": {
+        "MSE": 170.4742909510394,
+        "RMSE": 13.05658036972313
+      },
+      "primary": {
+        "MSE": 170.18601807946143,
+        "RMSE": 13.045536327781294
+      },
+      "selected_counts": {
+        "none": 3,
+        "ridge1": 4,
+        "ridge01": 2,
+        "rbf1": 2,
+        "rbf01": 4
+      }
+    },
+    {
+      "split": "20261031",
+      "reference011": {
+        "MSE": 169.3948077840649,
+        "RMSE": 13.015176056591201
+      },
+      "reference113": {
+        "MSE": 168.3760309639017,
+        "RMSE": 12.975978998283779
+      },
+      "primary": {
+        "MSE": 168.12994797540713,
+        "RMSE": 12.9664932798119
+      },
+      "selected_counts": {
+        "none": 5,
+        "ridge1": 5,
+        "ridge01": 2,
+        "rbf1": 0,
+        "rbf01": 3
+      }
+    },
+    {
+      "split": "20261101",
+      "reference011": {
+        "MSE": 176.15601640955663,
+        "RMSE": 13.272377948565081
+      },
+      "reference113": {
+        "MSE": 175.94293375258812,
+        "RMSE": 13.264348221928891
+      },
+      "primary": {
+        "MSE": 175.10192531201818,
+        "RMSE": 13.23260840922976
+      },
+      "selected_counts": {
+        "none": 7,
+        "ridge1": 2,
+        "ridge01": 4,
+        "rbf1": 1,
+        "rbf01": 1
+      }
+    }
+  ],
+  "verification": {
+    "valid": true,
+    "candidate": "013",
+    "rows": 1000,
+    "ID_order_exact": true,
+    "duplicates": 0,
+    "finite": true,
+    "prediction_range": [
+      160.18417724292513,
+      241.08788835746876
+    ],
+    "training_label_range": [
+      151.9798276392398,
+      264.1213029015716
+    ],
+    "outside_training_range": 0,
+    "CSV_SHA256": "e2ea0111d8c6a262c71dd32ad3918db1a1d2189f1647db7a2d6399af83b51286",
+    "CSV_byte_exact": true,
+    "model_reload_exact": true,
+    "independent_kernel_eigensolve_max_error": 2.7533531010703882e-14,
+    "selected": [
+      "ridge01",
+      "rbf1",
+      "rbf1"
+    ],
+    "test_fit_or_tuning": false,
+    "holdout_subgroup_scored": false,
+    "011_012_preserved": true,
+    "uploaded": false,
+    "cost": 0,
+    "difference_from012_RMS": 0.09340422430411478,
+    "training_validation": {
+      "passed": true,
+      "models_reloaded": 48,
+      "manual_eigensolve_max_error": 3.019806626980426e-14,
+      "all_inner_choices_independently_recomputed": true,
+      "linear_candidates_exact012": true,
+      "anchor_exclusion_checked": true,
+      "all500covered": true,
+      "unscored_train_predictions_not_validation": true
+    },
+    "source_sha256": "47c059df8870819955f8ecc1450b82248ea0a5a63f670837e90bdd7f6643edf1"
+  },
+  "production": {
+    "n_train": 500,
+    "selected": [
+      "ridge01",
+      "rbf1",
+      "rbf1"
+    ],
+    "new_upstream_fits": 0,
+    "reused_verified114_nested011_anchors": 3,
+    "training_seconds": 0.22176616603974253,
+    "new_residual_inner_fits": 45,
+    "final_block_fits": 3,
+    "unchanged_formula": "unchangedcandidate011 + uniformmean3 selected residualcorrections",
+    "test_source": "Immutablepreviouslyverified57featurecache;onlyinferenceafterlock. No testfit orselection."
+  },
+  "CSV": {
+    "path": "artifacts/submission-candidate-013.csv",
+    "sha256": "e2ea0111d8c6a262c71dd32ad3918db1a1d2189f1647db7a2d6399af83b51286",
+    "rows": 1000,
+    "range": [
+      160.18417724292513,
+      241.08788835746876
+    ]
+  },
+  "limitations": [
+    "Same400historicallyselected observations;1200predictionpairs are notindependent. Currentnestingdoesnotundo historicalselectionbias.",
+    "ID-clusterbootstrap keeps3predictions together but is conditionalonfixedtrainedmodels anddoesnotinclude candidate-selectionortraininguncertainty.",
+    "Residualtraining-size mismatch remains; smallgainsnotguaranteedPublic/private improvements.",
+    "Relative113gain remainspositive afterdiagnosticlargest5exclusion;relative011gainstilldepends oninfluentialIDs. Neitherdiagnostic is a selectiongate.",
+    "Candidate013 differsfrom012 onlyslightly;Public/private outcome unknown andneithernewcandidate submittedbythisagent."
+  ],
+  "preservation": {
+    "best011": true,
+    "candidate012": true,
+    "original113_records": true,
+    "previous200_reports": true,
+    "26packages_unchanged": true
+  },
+  "scope": {
+    "cost": 0,
+    "new_install": false,
+    "holdout_test_tuning": false,
+    "external_transmission": false,
+    "uploaded": false
+  },
+  "next_executable_research": "One distinct follow-up,notyetexecuted: replacejoint57RBFdistancewithuniformaverageofRBFkernelsforfixedphysicalfeatureblocks, keepinghonestanchors,train-localmedianbandwidth/centering,lambda1/.1,none/Ridgecontrols andpooleduntrimmedmetric. Testwhetheradditivesmoothphysicaleffects generalizebetterthanjointdistance,withoutnewimages orlabels. No needtowaitforbrowser/submission.",
+  "execution_blockers": [],
+  "submission_status": "CSVready;parentcoordinatesseparatesubmission. Browserblockdoesnotblocklocalresearch.",
+  "evidence_sha256": {
+    "reports/nonlinear-residual-115-summary.json": "8b55a64ae5f551eb77d9fadb1e6afb625fd9019651b2c8aed84535cdb17516cb",
+    "reports/candidate013-verification.json": "f895b82d04eb912a5ab282893f4cbf88e8a64074101f3d9858ab4d61a507d6fb",
+    "artifacts/final-model-116/decision.json": "5f5c4db7357a10c8811900aaebe25c7710b4582c9bfcacbb9643577c2413a3a5",
+    "artifacts/final-model-116/fit.json": "ebeee8f032e4168fadf57fc71acb37a5887a47c4308a19b583a5ad5eeae20bbd",
+    "artifacts/submission-candidate-013.csv": "e2ea0111d8c6a262c71dd32ad3918db1a1d2189f1647db7a2d6399af83b51286",
+    "artifacts/submission-candidate-013.manifest.json": "ea58f8bf4de2d784c5ae2190ea90d213a6c76e385362d16d74b6223ec56f081c"
+  },
+  "README_change": {
+    "before_sha256": "d022250f5b01b8259beca88b5976bc3c3a6bbd0483e9ebb2363ece13859d996f",
+    "after_sha256": "c48b296e5b11f2295ed7a9a3b67f0ae78846ebe33b357a6a2aa3a40b0ad61ad4",
+    "backup": "reports/README-before-115-candidate013.md"
+  }
+}

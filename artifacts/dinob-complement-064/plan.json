@@ -1,0 +1,86 @@
+{
+  "authorization": "User follow-up explicitly requests one fixed50:50 prediction average after063 and replaces the previous standalone bootstrap-SD gate for this distinct complementarity comparison.",
+  "recipe": {
+    "candidate007": 0.5,
+    "ViTB_primary063": 0.5
+  },
+  "equivalent_recipe": {
+    "samefold003": 0.75,
+    "S_MLP_mean3": 0.125,
+    "B_MLP_mean3": 0.125
+  },
+  "config": {
+    "hidden": 64,
+    "dropout": 0.25,
+    "epochs": 100,
+    "batch_size": 64,
+    "lr": 0.0003,
+    "min_lr": 1e-05,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "beta": 1.0,
+    "aux_weight": 0.3,
+    "bins": 7,
+    "seed": 20261128
+  },
+  "effective_aux_weight": 0.0,
+  "seeds": [
+    20261128,
+    20261205,
+    20261219
+  ],
+  "original_gate": "Strictly lower original pooled OOF RMSE than007; no bootstrap threshold. If equal or worse reject direction.",
+  "confirmation_gate": "Unchanged50:50 average must strictly improve007 pooled RMSE in BOTH existing resplits20261031/20261101, and improve >=3/5 folds in each of all three partitions. All45 B checkpoints reload exactly, fold-only scalers/targets verified, B100epoch replay per split, samefold007 provenance verified. No fallback recipe.",
+  "final_fit_gate": "Only after confirmation and validation, lock the sole average recipe then full500 fit3S+3B identical heads (existing003 alreadyfull500 retained), test1000 inference once, ID/finite/order/reload/CSV hash verification. No holdout separate scoring and no test-driven selection.",
+  "no_search": "Exactly one ratio50:50. No alternateweights, optimizer, width, epochs, seeds, layers or variants; no bootstrap/pvalue as a significance claim.",
+  "previous_gate_explanation": {
+    "value": 0.09300178059368959,
+    "quantity": "Population standard deviation (numpy.std ddof=0) across3000 paired row-bootstrap RMSE gains: RMSE(y,007)-RMSE(y,Bprimary).",
+    "algorithm": "np.random.default_rng(20270104).integers(0,400,(3000,400)); each bootstrap uses same400 sampled row indices for both fixed OOF residual arrays, with replacement. No refitting.",
+    "previous_rule": "063 originally required gain>bootstrapSD and>=3/5 improving folds before resplits, inherited from057-062 as a conservative compute-allocation heuristic.",
+    "basis_and_limit": "No theoretical or empirical calibration made1SD a valid hard model-selection threshold. It is not a standard error for the whole procedure, not cross-foldSD, not a significance test, and can reject useful ensemble diversity. It omits fitting, historical selection, dependency and repeated400-row exploration uncertainty. This user-authorized study supersedes that gate for the specified mixture only.",
+    "previous_outcome_preserved": "063 remains unchanged and correctly reports failure of its own declared rule;064 tests a different fixed predictor."
+  },
+  "sources": {
+    "dinob_complement_064.py": "ee5b2f8416238b773af5fef5577bdf026721bc21960c3daa57005ecdaf0ebfbd",
+    "dinob_mlp_063.py": "df37f8524b3dd27408270979b9e954099528be199ea99c4fe9287d69cafce24e",
+    "dinob_mlp_head_063.py": "e841bc72082d27f68b2bdad2d81ccf3eb2b127661bef347506cff6eb6ab04431",
+    "auxiliary_head_051.py": "1024afa9838b07d138c9bdec5ea0a5946276da5b33d8ad794cbf5d3be16434b3",
+    "earlystop_experiment_057.py": "dfe1326e56f1b0d43bb4b97169b058a414655f5dc7803d6aacb083b25c93a108",
+    "auxiliary_experiment_051.py": "8399a180a56f19a6de0c838f6a2fe20b1d57894ecb12faacf822ab6d282eee3b"
+  },
+  "inputs": {
+    "artifacts/dino-multilayer-044/development_features.npz": "6d26b7d78eaf1d094e829984d5665a38dc11b71c918f108384861259b35c4159",
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/dinob-062/development_features.npz": "3ce775f1398f91d4c55a795c89f0ad06ed37c7eba4e8380c9e080475e83998d3",
+    "artifacts/dinob-062/extraction.json": "b0fd01cf33a7b2b7e553968c3a89ede9d6253005d7f6f70a712a45f2deae35b0",
+    "reports/dinob-062-validation.json": "cee598d5f9c1d3f015e4410d916642fd479188483b3b8f16859a12001875edec",
+    "reports/seed-052-validation.json": "aa66ac5943f030963ba17209de9f9f11ea05d8dedf35fef53fee89cb46ed321f",
+    "reports/dinob-mlp-063-validation.json": "026edb869faba055ca9d5c8259c745c03a78f5ff2987640d4062cf05e058db3a",
+    "artifacts/dinob-mlp-063/original/development_predictions.npz": "8c25f64af2173168658b682c3f0aabd9b4259b90206b112722153e677d370344",
+    "artifacts/dinob-mlp-063/original/report.json": "109b87a6835534fd7837037b4e644fb6e5abdb0599d3915a0ef9ba3659d73ad4",
+    "artifacts/dinob-mlp-063/plan.json": "8eeafeeac45abe4cc520d93d415f690d7b43599960aaa10e11ba3dd690d3d776"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.manifest.json": "ac411a5e58ee57af5c4a653e7e4296c543a89333ee1a929b576d6e67f7b20e68",
+    "artifacts/submission-candidate-006.components.csv": "3a41ca42fa66e10b9899fc2d25ccfa395d5b728e0cf00a9b213be1ad06e410a5",
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/submission-candidate-007.components.csv": "73e2699df9c3728d4b173ea1e2f74bb28d689befaacce85527928c5193f964f5",
+    "artifacts/submission-candidate-007.csv": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "artifacts/submission-candidate-007.manifest.json": "be282c4a01a0e8f269a82ed9649522563d901a8dc424dcffde5a5533e6d81329",
+    "artifacts/final-model-045/report.json": "2d344e9f074aeebe45dfb99e001175aef8e6b8485bc85c51bc45af0ce4526e7c",
+    "artifacts/final-model-045/train_features.npz": "e46b8746fe9114c75766e329efdb040fb45e33912567e0ef50b5ef637c46faa1",
+    "artifacts/final-model-045/test_features.npz": "08b8e5c2e0f0daa1eb05e223fbcb99b490a481d3667cf07a70ce666ce3aba876",
+    "artifacts/final-model-045/decision.json": "cae40d328c87ae4104ad70bdf18b9e8002b5a787ab98307c31a74f6e282f49eb",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+    "artifacts/final-model-053/verification-test-compact-cnn-inputs.npz": "5693022f148ad26318debf34b554ad003833c0a6378c0be2d4754c82482d5539",
+    "artifacts/final-model-053/report.json": "4636d8307de29d1bb9b12c666e4d95361a32e33aabf0439d81e120ff1de00a0f",
+    "artifacts/final-model-053/mlp-seed-20261219.pt": "d3f5aa1cb9d755385ee04561d12d26610c8440c642aef0fb7466975b05bd9c58",
+    "artifacts/final-model-053/mlp-seed-20261128.pt": "e5f990b7ae6d0bda291cbd0574b65b01796959915ce1afdf696007957a512226",
+    "artifacts/final-model-053/decision.json": "d570d5508b94580a38f2f56951c454f4bdf07db129febda3efe58b91b16c83e6",
+    "artifacts/final-model-053/mlp-seed-20261205.pt": "550b0944dd3dcb1f36ff8e5238d29e5c31f05fada4a6deb1471809f4a10ddc1f",
+    "artifacts/seed-stability-052/candidate-design.json": "f149e8afd8c553dadc1205fadb8229a93f6dac1894f8a5ce50232c800de0f2b4"
+  },
+  "scope": "Project-only existinguvCPU/MPS;cost0; no install/download/upload; development400 only before lock.",
+  "limitations": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

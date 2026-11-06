@@ -1,0 +1,245 @@
+{
+  "study": "096 fixed official wavelet scattering",
+  "status": "completed_rejected",
+  "recorded_utc": "2026-10-02T14:44:24.205980+00:00",
+  "completed_partitions": [
+    "original"
+  ],
+  "resplits_skipped": "Original prespecified gate failed; both blends worsen011 in everyfold.",
+  "scores": {
+    "reference011": {
+      "rmse": 13.0539977718711,
+      "fold_rmse": [
+        13.063217512187048,
+        12.38751393690129,
+        14.122591032877722,
+        12.1470942497908,
+        13.451269815048137
+      ]
+    },
+    "order1": {
+      "rmse": 16.094294235597783,
+      "fold_rmse": [
+        16.52601531195349,
+        15.509512159920854,
+        16.508211364181484,
+        15.343365069025001,
+        16.53896886430525
+      ]
+    },
+    "order1_blend": {
+      "rmse": 13.18140750319685,
+      "fold_rmse": [
+        13.23804192112084,
+        12.551642954277897,
+        14.177167762622087,
+        12.258866593560956,
+        13.589927451660243
+      ]
+    },
+    "order2": {
+      "rmse": 15.923347606118549,
+      "fold_rmse": [
+        15.757501550129653,
+        15.325335486310856,
+        16.781437649844065,
+        15.535909112317638,
+        16.174644061440453
+      ]
+    },
+    "order2_blend": {
+      "rmse": 13.150322057066235,
+      "fold_rmse": [
+        13.135338354794287,
+        12.50254357871875,
+        14.165282872460757,
+        12.280823062790946,
+        13.576829064023546
+      ]
+    }
+  },
+  "comparisons_vs011": {
+    "order1": {
+      "gain": -0.1274097313257503,
+      "fold_gains": [
+        -0.1748244089337927,
+        -0.16412901737660768,
+        -0.05457672974436534,
+        -0.11177234377015566,
+        -0.1386576366121055
+      ],
+      "positive_folds": 0
+    },
+    "order2": {
+      "gain": -0.09632428519513603,
+      "fold_gains": [
+        -0.07212084260723906,
+        -0.11502964181746123,
+        -0.04269183958303557,
+        -0.13372881300014505,
+        -0.12555924897540827
+      ],
+      "positive_folds": 0
+    }
+  },
+  "order2_vs_order1": {
+    "gain": 0.1709466294792339,
+    "fold_gains": [
+      0.7685137618238365,
+      0.1841766736099988,
+      -0.2732262856625809,
+      -0.19254404329263686,
+      0.36432480286479674
+    ],
+    "positive_folds": 3
+  },
+  "order2blend_vs_order1blend": {
+    "gain": 0.031085446130614258,
+    "fold_gains": [
+      0.10270356632655364,
+      0.04909937555914645,
+      0.011884890161329764,
+      -0.021956469229989395,
+      0.01309838763669724
+    ],
+    "positive_folds": 4
+  },
+  "fixed395_gain_vs011": -0.09660009080808862,
+  "advance": false,
+  "interpretation": "Second-order coefficients improve the paired first-order model under this fixed protocol, but neither complements011. This rejects this recipe, not every possible scattering model.",
+  "posthoc_diagnostic_only": {
+    "formula": "MSE(base+w*(branch-base))-MSE(base)=w*2mean((base-y)*(branch-base))+w^2*mean((branch-base)^2)",
+    "values": {
+      "order1": {
+        "MSE_slope_at_zero_weight": 27.293904957542345,
+        "MSE_quadratic_coefficient": 61.32554415643799,
+        "MSE_delta_at_01": 3.3426459373185935,
+        "any_positive_weight_worsens_same_OOF_MSE": true,
+        "residual_correlation": 0.8760075208197651
+      },
+      "order2": {
+        "MSE_slope_at_zero_weight": 18.807232944161218,
+        "MSE_quadratic_coefficient": 64.33890821310446,
+        "MSE_delta_at_01": 2.524112376547123,
+        "any_positive_weight_worsens_same_OOF_MSE": true,
+        "residual_correlation": 0.865051451026805
+      }
+    },
+    "limitation": "On these saved original OOF predictions only. No weight search or new prediction candidate; not evidence about unknown test performance."
+  },
+  "installation": {
+    "added": {
+      "kymatio": "0.3.0",
+      "appdirs": "1.4.4",
+      "configparser": "7.2.0"
+    },
+    "existing23_packages_unchanged": true,
+    "wheel_payload_bytes": 114396,
+    "official_PyPI_hash_verified": true,
+    "public_numpy_import_failed": "Unrelated3D imports removed scipy.special.sph_harm.",
+    "working_import": "kymatio.scattering2d.frontend.numpy_frontend.ScatteringNumPy2D",
+    "installed_library_patched": false
+  },
+  "CPU_smoke": {
+    "passed": true,
+    "device": "CPU",
+    "backend": "official kymatio.scattering2d.frontend.numpy_frontend.ScatteringNumPy2D",
+    "dtype": "float32 input",
+    "small_shape": [
+      81,
+      8,
+      8
+    ],
+    "zero_exact": true,
+    "constant_nonzero_order_max": 3.9582371158530805e-08,
+    "positive_homogeneity_pass": true,
+    "native_shape": [
+      1009,
+      4,
+      4
+    ],
+    "order1_shape": [
+      49,
+      4,
+      4
+    ],
+    "pooled_dims": [
+      49,
+      1009
+    ],
+    "order1_prefix_exact": true,
+    "repeat_exact": true,
+    "finite": true,
+    "filter_build_seconds": 15.034318958001677,
+    "native_order2_seconds": [
+      0.16426449996652082,
+      0.15837995801120996,
+      0.15824854100355878
+    ],
+    "native_order1_seconds": 0.022808542009443045,
+    "projected400_seconds_from_synthetic": 63.351983204483986,
+    "rss_peak_bytes": 120750080,
+    "total_seconds": 15.614382207975723,
+    "real_images_or_labels_accessed": false,
+    "source_sha256": "993a05afbac18e4ceb0c4c71ad1c00378e9b57c9cf0db9976dc0d8cb318f8048",
+    "resource_pass": true
+  },
+  "extraction": {
+    "shape": [
+      400,
+      1009
+    ],
+    "features_sha256": "decf53f935f97549b0f14941540003c417ceabef09afc5ebff7d356b211fa2e3",
+    "first3_order1_prefix_exact": true,
+    "perimage_median_seconds": 0.1610025620320812,
+    "elapsed_seconds": 81.5515297499951,
+    "rss_peak_bytes": 192921600
+  },
+  "validation": {
+    "passed": true,
+    "split": "original",
+    "models_verified": 10,
+    "reload_error": 0.0,
+    "independent_kernel_solve_max_error": 4.263256414560601e-13,
+    "inner_selection_recomputed": true,
+    "foldtrain_scalers_targets_ids_verified": true,
+    "leakage_replay": {
+      "order1": {
+        "outer_validation_labels_perturbed": true,
+        "all_inner_choices_and_full_outer_fit_identical": true
+      },
+      "order2": {
+        "outer_validation_labels_perturbed": true,
+        "all_inner_choices_and_full_outer_fit_identical": true
+      }
+    },
+    "raw_image_feature_repeat_max_error": 0.0,
+    "gate_recomputed": false,
+    "report_sha256": "d76d5c5e56bf21e398bbb86ae186853395a8eac20b5e66623f730252ef3e9bfc",
+    "predictions_sha256": "99263660beada4fbfcfb2d072b251cfa86eb50c1fc6e3d2d62e8a08016662d92",
+    "seconds": 16.296972375013866,
+    "holdout_test_access": false,
+    "cost": 0,
+    "source_sha256": "7b9e83c35c19e85182e327ed624bdcff1e4ffa6010e67a836d6bde9958530613"
+  },
+  "regression_seconds": 0.35432233300525695,
+  "protected011_files_verified": 20,
+  "best011_csv_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "plan_sha256": "16b2f1684bf4f4c08c7188d57d30bdb78724a2515a569668335dfd9b8db09f13",
+  "report_sha256": "d76d5c5e56bf21e398bbb86ae186853395a8eac20b5e66623f730252ef3e9bfc",
+  "predictions_sha256": "99263660beada4fbfcfb2d072b251cfa86eb50c1fc6e3d2d62e8a08016662d92",
+  "features_sha256": "decf53f935f97549b0f14941540003c417ceabef09afc5ebff7d356b211fa2e3",
+  "source_files": [
+    "wavelet_scattering_096.py",
+    "validate_wavelet_scattering_096.py"
+  ],
+  "processes_active": [],
+  "cost": 0,
+  "holdout_test_access": false,
+  "candidate_created": false,
+  "uploaded": false,
+  "next_action": "Retain011 and the complete failed096 record. Parent is researching primary sources and analogous competitions; compare any next hypothesis with prior trials before fixing a separate controlled study. No J/L/order/weight sweep from096 results. Overall competition goal remains ongoing; no prize guarantee.",
+  "remaining_blockers": [
+    "No validated improvement or new submission candidate from096. Public kymatio.numpy import remains incompatible, but unchanged official2D directimport works and is tested."
+  ]
+}

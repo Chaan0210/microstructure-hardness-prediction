@@ -1,0 +1,294 @@
+{
+  "study": 182,
+  "UTC": "2026-10-06T03:25:59.522095+00:00",
+  "decision": "close_WPH_family_keep021",
+  "current_best": "021",
+  "source_duplicate_audit": {
+    "equivalent_found": false,
+    "scope": "Root Python sources and project experiment sources/plans/summaries; excluded vendor, .venv, tabicl-v2 dependency cache. Not a mathematical proof against every possible reparameterization.",
+    "searched_terms": [
+      "WPH",
+      "wavelet phase harmonic",
+      "Portilla",
+      "Simoncelli",
+      "phase doubling",
+      "phase alignment",
+      "cross scale"
+    ],
+    "closest": {
+      "wavelet_scattering_096.py": "Kymatio J6 L8 order2 modulus cascade and global averaging; no complex phase doubling.",
+      "native_texture_features.py": "LoG squared-energy tile correlation and Fourier POWER angular harmonics; neither is wavelet coefficient phase harmonics.",
+      "threepoint_features_108.py": "Centered rawpixel line/corner products at fixedlags, D4 moments; thirdorder phase coupling related but amplitude cubed, different from WPH degree2.",
+      "binary_threepoint_features_130.py": "Quantilebinary centered 2/3point correlations, not complex wavelet phase alignment.",
+      "cnn_texture_fusion.py": "Learned feature covariance, no analytic crossscale H2.",
+      "patch_phase_104.py": "DINO patch-grid origin shift, not complex phase.",
+      "phase_features.py": "Intensity/material phase mixture proxies, not complex phase."
+    },
+    "new_hypothesis": "Adjacent-scale phase-aligned coefficient covariance can distinguish phase relationships with equal amplitudes. Whether this complements hardness predictors is unknown; not guaranteed independent of all existing nonlinear embeddings or higher-order statistics.",
+    "sources": [
+      "https://arxiv.org/html/1911.10017v2",
+      "https://arxiv.org/html/2203.07902v1"
+    ],
+    "source_limit": "Texture/random process synthesis papers, not hardness prediction evidence. Compact custom filterbank subset, not full paper reproduction."
+  },
+  "synthetic": {
+    "passed": true,
+    "dimensions_perarm": 15,
+    "H2_magnitude_and_phase_identities": true,
+    "centered_covariance_explicit_error": 2.2221394694025363e-16,
+    "phase_mutation_peak": 1.0358772852916793,
+    "phase_quadrature_zero_and_pi_sign_flip": true,
+    "coherent_scale_phase_change_invariant": true,
+    "same_amplitude_control_max_mutation": 8.646789521122489e-30,
+    "constant_exact_zero": true,
+    "periodic_translation_invariance": true,
+    "production_padding_D4_max_error": 2.9976021664879227e-15,
+    "intensity_degree2_and_contrast_sign_verified": true,
+    "NumPy_SciPy_FFT_error": 3.3306690738754696e-16,
+    "independent_polar_covariance_error": 2.220446049250313e-15,
+    "production_edges_finite": true,
+    "no_dataset_opened": true,
+    "limits": "Pure periodic analytic fixture pad0, production D4 fixture pad64. Not arbitrary-angle invariance or scientific performance evidence."
+  },
+  "feature_validation": {
+    "passed": true,
+    "rows": 400,
+    "shape_perarm": [
+      400,
+      15
+    ],
+    "raw400_image_hashes_exact": true,
+    "NumPy_SciPy_smoke_errors": {
+      "TRAIN_000001": 1.3877787807814457e-17,
+      "TRAIN_000002": 1.5178830414797062e-17,
+      "TRAIN_000003": 6.938893903907228e-18
+    },
+    "feature_sha256": "ddf229d85b9f8f35b971478eb2ac9b2373156ebc53784c2ddb04d185e9ac04aa",
+    "seconds": 43.07773329199699,
+    "noholdout_test": true,
+    "no_fit_for_extraction": true
+  },
+  "results": {
+    "original": {
+      "split": "original",
+      "passed_validation": true,
+      "RMSE": {
+        "018": 12.811945280526919,
+        "021": 12.786200775750695,
+        "globalL": 13.897309666752351,
+        "B_replay": 12.811945280526919,
+        "AMP": 12.778894995294518,
+        "WPH": 12.779598283061107
+      },
+      "comparison": {
+        "021": {
+          "gain": 0.006602492689587791,
+          "fold_gains": [
+            0.009688653560768756,
+            0.009113126306457886,
+            -0.001817197337041776,
+            0.04055522370601494,
+            -0.021489992636906763
+          ],
+          "positive_folds": 3
+        },
+        "AMP": {
+          "gain": -0.0007032877665889004,
+          "fold_gains": [
+            -0.07556548992830336,
+            0.009031040034255255,
+            0.0326817459526243,
+            0.03302970031750618,
+            -0.0030345232356303597
+          ],
+          "positive_folds": 3
+        },
+        "018": {
+          "gain": 0.03234699746581171,
+          "fold_gains": [
+            -0.009086571530451337,
+            0.0914851180327858,
+            0.04347702223454952,
+            0.08507181376622874,
+            -0.043377572822985044
+          ],
+          "positive_folds": 3
+        }
+      },
+      "correlations": {
+        "WPH_vs_AMP_residual": 0.998934451342929,
+        "WPH_vs021_residual": 0.9997065457758955,
+        "WPH_update_vs021_residual": 0.03188203380954408,
+        "WPH_update_vsAMP_update": 0.06722624123704601,
+        "WPH_update_RMS": 0.3108536312393404
+      },
+      "conditional_group_bootstrap_gain_CI95": {
+        "021": [
+          -0.023166270924461684,
+          0.036775665456785414
+        ],
+        "AMP": [
+          -0.06204393664716266,
+          0.06109077129547195
+        ]
+      },
+      "failure33_fixed_diagnostic_RMSE": {
+        "021": 29.482117589329434,
+        "AMP": 29.3292729583249,
+        "WPH": 29.44470658321917
+      },
+      "bootstrap_limit": "Conditional fixedfits, repeated400 and adaptive history; not independent confirmation.",
+      "advance": false,
+      "gate": "Original WPH must improve BOTH021 and AMP aggregate RMSE, with>=3/5 foldwins against each; all validations pass. Onlythen both unchanged development resplits. Propose only if bothcomparisons improve inall3. Failure closes WPH family without alternative filters/pooling/heads.",
+      "main_model_objects": 900,
+      "main_nonnull_fits": 720,
+      "outer0_poison_model_objects": 120,
+      "inner_heldout_poison_refits": 60,
+      "independent_max_error": 5.773159728050814e-14,
+      "all_B_inner_full_weights_predictions_exact": true,
+      "018_and021_control_exact": true,
+      "all_reload_exact": true,
+      "all_train_local_scaling_and_group_scopes_verified": true,
+      "outer_fold0_botharms_all3blocks_poison_exact": true,
+      "upstream_neural_anchors_reused_with_exclusion_certificates": true,
+      "new_neural_fits": 0,
+      "block_report_hashes": {
+        "AMP-fold-0-block-0/report.json": "e41c3157fc8192a45095e7ff00265359ff6ba92eeb68b778f2ca748430f801b1",
+        "AMP-fold-0-block-1/report.json": "1d0d28b0150ed13bef6a6a8bbc8c75b2a3f1dea61d83f9444645bd0d4777cfa9",
+        "AMP-fold-0-block-2/report.json": "1c837bbd97ef3c35fc8fc9506b3a032e87464d2107a2960ecdaa10e07162edac",
+        "AMP-fold-1-block-0/report.json": "62ebc4af8cad1bde5da409c78e452e2188a2bcb3d2c3ad563436098e40bcd61e",
+        "AMP-fold-1-block-1/report.json": "815a9f383c9bd7eb579b4593128d142832b950081ce78b6396794b7a0605c681",
+        "AMP-fold-1-block-2/report.json": "5bf5bd7ba746b748e19d1d4880afb9b32849c67b67de9b75c43a442a177ebb1e",
+        "AMP-fold-2-block-0/report.json": "9c3210f725905a5d1d630a041509c3221f5c043ed0ba6125308cdb328b2fa31d",
+        "AMP-fold-2-block-1/report.json": "4b3705ea647e9582427a139b1f9a87de802559bb5a291d69796718414e8300fc",
+        "AMP-fold-2-block-2/report.json": "bfaa54e310353f30d9897ac1d74d8ef2044b7a18f65d88665bc26707103ec3be",
+        "AMP-fold-3-block-0/report.json": "165e3bec296d615388781b840d952e1f6372f7161d6988d7c9cc6d6fb4718f45",
+        "AMP-fold-3-block-1/report.json": "b94cce3e5008a5d2ccee3d8290dd100a862bf0eddbe1751d9ea59d2c5dac5bf4",
+        "AMP-fold-3-block-2/report.json": "38551e48ef8394199e3367069e900b042eab9c47482dff10f3c6992986a02456",
+        "AMP-fold-4-block-0/report.json": "133c46a510db516ab387f00f8c3dbb60f97f9fa005e52ea3dc580e1f9e40c8da",
+        "AMP-fold-4-block-1/report.json": "5e1ac8efc56131f173ffb4513d7804ab5d37e6da6b4e831d6d3dc4303cbb36c5",
+        "AMP-fold-4-block-2/report.json": "7ee709ea215cf713adbcc1f3f42936b8dd1e4c4d35e3de278a5067ab5da1ed13",
+        "B-fold-0-block-0/report.json": "df62076179de7687d8a4a8403f404233745544c93293eb0355fd17d7ae24a621",
+        "B-fold-0-block-1/report.json": "94d0633202c58b5abdfffc5bdbafe46ccbe758a6997e2132dbd6d8c4cc8108c2",
+        "B-fold-0-block-2/report.json": "cc742bf43e648e1963027a7d9c988938546890f9f9519e2a3cfbd9bd97f3ccc3",
+        "B-fold-1-block-0/report.json": "a1c463d9e04b78d8b5679d8a0e10a9b65bb29c781d61214a9d8d2a80755c39c9",
+        "B-fold-1-block-1/report.json": "9a876a922bba3b37264edc246d1752cca86b83624d77b2bccbeae0094ce89bf9",
+        "B-fold-1-block-2/report.json": "d82e42a9592616c1ff72e44684a3a08eae6de781bd7ac62496d7afd101d66b98",
+        "B-fold-2-block-0/report.json": "ce535fce8b8373e5951d51d4e255e6fe1c30eac36231499a8b35a1645e9d68da",
+        "B-fold-2-block-1/report.json": "2ec170db43844abcbf1f6c59bb1bafa707502a3e49d2684dcbe5ca3e0c63d6e2",
+        "B-fold-2-block-2/report.json": "98e1e9a095a48d05c49ee3764ca1e4ca323e6f8c2bafc5a974b61d2f2a8df10a",
+        "B-fold-3-block-0/report.json": "0d5050aeb0db5d9729d9228c31642dadb5fb17e0379c6ddda114f9b10fd99c05",
+        "B-fold-3-block-1/report.json": "dafcb91adfb33a4d19296362aa3341e7fb7ff52de149a1164b7950ae4abc2ee1",
+        "B-fold-3-block-2/report.json": "0ccc4579e10c875965f6a3dddb44dec3ecba7783dd8e96be9fb92bb6a6932ab0",
+        "B-fold-4-block-0/report.json": "572b623091bd10ef9347a7d5f25f0cc42902bf9273f2161a4d2168719cf769fb",
+        "B-fold-4-block-1/report.json": "4d44895428e37c862ea331168a63bb3674176247723afd5f3bbb85d74faec809",
+        "B-fold-4-block-2/report.json": "761635647d6f5e99cebe9d40fcfdda79b2006aea4266639b59856068c57cb468",
+        "WPH-fold-0-block-0/report.json": "3510b7756ca28dfe2dcdacdfde0851ca215971cb96516f41cfdc6e47569e866d",
+        "WPH-fold-0-block-1/report.json": "b3d9a80cf19f31b44a37840f1f86404dd97e23d7ed441e61b24f8c930f4d9eab",
+        "WPH-fold-0-block-2/report.json": "378726a30cf39d7e0576c5205a5cf0ec13380eb87a7debe8aae847b35c9fbec8",
+        "WPH-fold-1-block-0/report.json": "f48e929d2038896e16177b36a854edec7845051caca8d5cd695bfba64a038f60",
+        "WPH-fold-1-block-1/report.json": "0b90552702102a42d6b3f810676211205a981bb2f1ffec11d1b6df07d699d2c5",
+        "WPH-fold-1-block-2/report.json": "9c9997f6933ddb5e44cd0a2afe5154115847ccc0d60a926dc429e5f977b0ab2b",
+        "WPH-fold-2-block-0/report.json": "185c5a81c1ed764152dd8c92d8f6622e0443a8eeb06d226e97240fe06b9b042e",
+        "WPH-fold-2-block-1/report.json": "cfd8beff2b91e34e25d5170eb2bdb48f692bd734b54be6078a65f673e50d8d71",
+        "WPH-fold-2-block-2/report.json": "789beff8dc95543960a854694ff170e0242b4f3dfe770be454518a30a2c853d5",
+        "WPH-fold-3-block-0/report.json": "a1da9ec0ecb461d80809f2f029e5c7ad18380a3f4aea63545399a345ca0f514d",
+        "WPH-fold-3-block-1/report.json": "22f928db2174161bd9c70133ba023de1510ccf53e9a62fee6f1590947882714b",
+        "WPH-fold-3-block-2/report.json": "c950b3f47c80b27d90893d263e21e9084bca56ef7d932faed574381ccc9d2779",
+        "WPH-fold-4-block-0/report.json": "4b851df18920697dc87550b90dd77358a82864f5eb98ad51634a0dc1ff8f618e",
+        "WPH-fold-4-block-1/report.json": "d9a2ee5741cde68c0951b4179c8834317722e2cc82d0c1f4e9baa2c83defcd61",
+        "WPH-fold-4-block-2/report.json": "c498cf28a2a43a4ba225e33fc51e8cf2be59cee96cc888d979e527d01c80f11b"
+      },
+      "predictions_sha256": "78cd67f62fa1d24b5292c50a58b6bc127de6432f3e0245225f0b31d09c139f3b",
+      "plan_sha256": "5b6174a63e558acce99de462b09ff0a01a5a66d0387452c5254485b7fb9f185d",
+      "readout_code_sha256": "4cd5b277e886eea0cf286cc2355c234496a2831a5fde87f76d5abc0e9aaeb25b",
+      "seconds": 12.014019249996636,
+      "holdout_test_full500_access": false
+    }
+  },
+  "second_process_validation": {
+    "original": {
+      "passed": true,
+      "second_process_main_model_reloads": 900,
+      "all_inner_full_bootstrap_predictions_exact": true,
+      "independent_solver_max_error": 5.773159728050814e-14,
+      "all_train_scalers_weights_and_group_scopes_checked": true,
+      "all_final_predictions_exact": true,
+      "ID_target_group_fold_order_exact": true,
+      "protected_unchanged": 23,
+      "plan_sha256": "5b6174a63e558acce99de462b09ff0a01a5a66d0387452c5254485b7fb9f185d",
+      "prediction_sha256": "78cd67f62fa1d24b5292c50a58b6bc127de6432f3e0245225f0b31d09c139f3b"
+    }
+  },
+  "resources": {
+    "readout-original-resources": {
+      "seconds": 12.009085500001675,
+      "peak_RSS": 513507328,
+      "peak_conservative_RSS_plus_MPS": 513867776,
+      "peak_MPS_driver": 393216,
+      "max_swap_growth": 0,
+      "minimum_system_free_percent": 72
+    },
+    "validation-original-resources": {
+      "seconds": 7.970442541998636,
+      "peak_RSS": 442974208,
+      "peak_conservative_RSS_plus_MPS": 443334656,
+      "peak_MPS_driver": 393216,
+      "max_swap_growth": 0,
+      "minimum_system_free_percent": 73
+    },
+    "feature-extraction-resources": {
+      "seconds": 43.07684125000378,
+      "peak_RSS": 544161792,
+      "peak_conservative_RSS_plus_MPS": 544538624,
+      "peak_MPS_driver": 393216,
+      "max_swap_growth": 0,
+      "minimum_system_free_percent": 73
+    }
+  },
+  "runtime_failure_recovery": {
+    "reason": "SciPy duccfft workerpool RuntimeError: Work item submitted after shutdown, after200 logged rows and before any feature cache or regression fit. Root cause unproven.",
+    "change": "Use existing NumPy FFT primary; SciPy workers1 for independent smoke. Mathematical filters/covariance/pooling/head/gate unchanged.",
+    "old_run_preserved": "attempt1-scipy-threadpool",
+    "prelabel_fix": true,
+    "original_plan_sha256": "5b6174a63e558acce99de462b09ff0a01a5a66d0387452c5254485b7fb9f185d",
+    "no_new_install": true,
+    "new_code_lock_sha256": "4cd5b277e886eea0cf286cc2355c234496a2831a5fde87f76d5abc0e9aaeb25b"
+  },
+  "failure_preserved": "experiments/wph-182/attempt1-scipy-threadpool",
+  "protected_unchanged": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a",
+    "reports/retraining-175-summary.json": "a84fdf0c8bdb90563a7bc7964545a1f1b342f719ef1411261a9638725fe31659",
+    "experiments/reproduction-018-175/run/plan.json": "d576415c959f34e01af6daf9230c47608ed3d79bf956f8bc522f8464b4b83090",
+    "deliverables/reproduction-018-v176.zip": "e93bd3f2bd9f11b40014d65997238495293b07ae0eac49d17490552c198797a6",
+    "reports/retraining-176-summary.json": "b7862b213a83360be98f926f566e466bb670de2b8f7ce768a53c1d297ce8b634",
+    "reports/dinol-177-summary.json": "676f5ff0bdfb4a7d0c017711d3cb5d6e29b1d1352b46450409bf95ef0819c655",
+    "experiments/dinol-177/plan.json": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4",
+    "experiments/dinol-177/features.npz": "bc27df3ab45184f565a99007316b4239dce8cab9abe782e4dc302c988e9b8b90",
+    "experiments/dinol-177/dinov2_vitl14_pretrain.pth": "d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428",
+    "artifacts/submission-candidate-021.csv": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+    "artifacts/submission-candidate-021.manifest.json": "4ba41d28974dc5f629cc1c9f10d9f7cbd108ccf89030e84bdd53b9f65e50f649",
+    "reports/candidate021-178-summary.json": "74b35bd660f01f0f7d91ae0a2eebece60de7490d434ec4ee3739f329fbc995e3",
+    "reports/spatial-L-179-summary.json": "3309c1c987838e95876d311039f682d37ce99aa0d8d55491a0d4922dcc791195",
+    "reports/joint-readout-180-summary.json": "ea6d74aa8e20c0a084d1aecc9643d238e10a3e9d347415c9a57cee42a82b7b77",
+    "reports/midlayer-L-181-summary.json": "44a8229400427b898004dd13e3b9fe157c358c4a7770e19865f2fe7f180575cd",
+    "reports/L-representation-closure-181.json": "6797336777424a32baa6dab4ba2f1c7222e8ef0d23b68c7198138cae459c7443",
+    "reports/candidate021-public-submission.json": "a8536bd1877f5de089fbb42289b41f7ac34059848f019907f1d79286d699a8dc"
+  },
+  "plan_sha256": "5b6174a63e558acce99de462b09ff0a01a5a66d0387452c5254485b7fb9f185d",
+  "code_lock_sha256": "4cd5b277e886eea0cf286cc2355c234496a2831a5fde87f76d5abc0e9aaeb25b",
+  "resplits_run": false,
+  "new_holdout_test_access": false,
+  "new_full500_fit": false,
+  "new_CSV": false,
+  "upload": false,
+  "new_install_download_payment": false,
+  "performance_limit": "Development400 repeatedly reused with adaptive history. Resplits reuse same400; conditionalbootstrap not independent confirmation.",
+  "method_limit": "Custom fixed15D WPH subset, not full published WPH/PS reproduction; no hardness improvement claim from texture papers."
+}

@@ -1,0 +1,55 @@
+{
+  "study": "137 one orthogonal quadratic calibration of fixed015",
+  "utc": "2026-10-04T11:23:16.983577+00:00",
+  "hypothesis": "Prediction-conditioned mean error may retain curvature after a single affine fit.073 established affine underdispersion, not curvature; this is a low-capacity falsifiable extension, not established physical law. Domain physics57 nonlinear correction suggests simple linear mappings need not suffice but does not prove this feature helps.",
+  "duplicate_audit": {
+    "074": "Single affine ofaggregate.",
+    "077": "Unregularized legacy-versus-DINO linear contrast.",
+    "079": "Calibration fold count3->5.",
+    "125": "Four individual component weights with prior penalty.",
+    "115_117_119": "Physics-feature residual kernels and fit sample-size changes.",
+    "137": "Add exactly one standardized orthogonal quadratic basis ofthe SAME fixed015 rawmixture; no componentweights ornewrepresentation."
+  },
+  "procedure": "Fit z=(p-meanTrainP)/stdTrainP; q=z²-meanTrain(z²)-projectionTrainOnZ*z; normalizeqbytrainRMS. Affine coefficients unpenalized; curvature minimizes mean((res-c*q)²)+1*c², equivalenttohalfOLSfornondegenerateq. Allmoments usecurrentmeta training OOF only. No clipping,monotonicconstraint,extraquantiles,model/degree/lambda/weightsearch.",
+  "fixed_lambda": 1.0,
+  "extra_effective_df": 0.5,
+  "nested": "Reuse verified133 first3seed CNN mean atouter,middle,deep levels. Outer320 calibrator usesmiddleOOF; A213/214 residualanchor calibrator usesdeepOOF. RefiteachhonestB106/107 physics57 selector andmodel withsame CVseeds. No globalOOFtarget fitting.",
+  "primary": "Run one fixed procedure across all3existing400-IDpartitions. Promote only if pooleduntrimmedMSE strictlybelow015 andindependentvalidationpasses. Noeverypartition/foldwinorCIgate; reportconditionaluncertainty. No tuning after failure.",
+  "training_resource": "CPU2;60 quadratic calibrators,45residualblocks(720modelsincludingnone),one015controlfoldandoneouter-label-poisonreplay. No newneuralfits.",
+  "base_cache_lineage": "133 validatedallnested CNNs/normalization and outer/anchor labelpoison; reused exactly, notclaimedfreshlyretrained in137.",
+  "limitations": [
+    "Same400 adaptively reused;3partitions overlap and1200pairs are notindependent.",
+    "Training size mismatch remains. Quadratic extrapolation can be unstable; diagnostics only, no data-dependent clipping.",
+    "Curvature hypothesis is not supported by Public score; Public result only updates preservedbest."
+  ],
+  "hashes": {
+    "quadratic_calibration_137.py": "31276925710555a6e2331af24a9814f47e83cee4af40a4a1652136bbc911d69b",
+    "validate_quadratic_calibration_137.py": "f74878dad338ad9da9fae748cfe04304c13b7f825f9155aca36eddc99d733f07",
+    "cnn_seed_mean_133.py": "0253abea611ec28ddd90995bb896526d3432f01793a8d62b387a9745b3bd6b5b",
+    "component_ablation_121.py": "49979a38b2ebb96ec86d97d27e92d57e960be8a904e7ec9168b6e7cedbb4e858",
+    "component_single_ablation_122.py": "0fc37e9b9039d412c528f08f51fe8150f7305eae42c4cce00d83ca9dcbba565a",
+    "nonlinear_residual_115.py": "63bd7f2bed66edba2916b017f3c8a8e0dfc80509302806808b06bf4d6b126fc9",
+    "reports/candidate015-public-submission.json": "6ca2e4a68b6395cedca39fbd89f2ae0f39a07f407aed3df36e74c533af8c24bf",
+    "reports/cnn-seed-mean-133-summary.json": "0f5138dcb60d6cdeea5b9e257a4827fe879041fbfdf8a68ca1947752826b80d1",
+    "artifacts/bias-audit-073/report.json": "8af0d046bc65cf0ea19a2d5bb2d4989cddbaff30874dc731b6d727c58a8e6d2f",
+    "reports/baseline124-weights125-summary.json": "86d5b0298dabd4e323445f4eb45f2084d5e6908362acf836942b84c6561d02fe",
+    "artifacts/submission-candidate-015.csv": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f",
+    "artifacts/submission-candidate-015.manifest.json": "30413d479b69b9ae7247be3330e3c50e79df5c868907e091948e7b36ef8d85d1",
+    "artifacts/cnn-seed-mean-133/original/report.json": "86ad4b90fa877f0aa4a8bdeaf62ceb64ca05e81bfcc160f5012671983eec35d8",
+    "artifacts/cnn-seed-mean-133/original/predictions.npz": "ab8a79d811dafaa36089a56df5dcfea7437af8df0de60155b89ccbe66894e631",
+    "artifacts/cnn-seed-mean-133/validation-original.json": "8f016bf4eeaa93769932515eb9460d55058082770290eaec2c1a810d3b3bacd4",
+    "artifacts/cnn-seed-mean-133/20261031/report.json": "a2f276b30c0f9ad8216a1330df2b64d2e4950a0f6932bd4760cdf084b600305a",
+    "artifacts/cnn-seed-mean-133/20261031/predictions.npz": "7e10cc5b9586ac55ece1af0998575f3925555df9a8a525d240f96e20eb74eacb",
+    "artifacts/cnn-seed-mean-133/validation-20261031.json": "2d9659e184fb1a79ab82cc182ea0c87001c89702618dc0420195a080124886a8",
+    "artifacts/cnn-seed-mean-133/20261101/report.json": "4f2222f09c1b95ecc5dcd30baeb44005a89a423503388e7bd17bff088e6fcef6",
+    "artifacts/cnn-seed-mean-133/20261101/predictions.npz": "39db8b23c24ad9c4a193b1d99f58d90d2c8aabb898181c06f79c313f592894ce",
+    "artifacts/cnn-seed-mean-133/validation-20261101.json": "47290ac6869d45c35ab3ac60f47e322453192a51d0ca20cf4da05b804b77c81a"
+  },
+  "protected": {
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-014.csv": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "artifacts/submission-candidate-015.csv": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f"
+  },
+  "scope": "Development400 only; no holdout/test decoding, full500 fit, newCSV orupload until positive validated decision. No newpackage,cost,externaldata.",
+  "cost": 0
+}

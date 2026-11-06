@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-04T07:11:11.256516+00:00",
+  "authority": "Parent explicit follow-up: evaluate both fixed resplits and judge pooledMSE, not every-partition improvement.",
+  "supersedes": "sequential-confirmation-policy.json early termination rule; retain original file and originalplan",
+  "information_known_at_change": {
+    "original": {
+      "reference014": 12.968699771878843,
+      "primary": 12.830176114316457,
+      "base": 12.844601873695295,
+      "raw": 12.952986825018959
+    },
+    "first_resplit": {
+      "reference014": 12.668260572562595,
+      "primary": 12.636884322985622,
+      "base": 12.735481957243554,
+      "raw": 12.834535871278215
+    },
+    "second_resplit_completepipeline_observed": false,
+    "historical_outer_raw_diagnostics_already_known": true
+  },
+  "history": "First resplit result was already observed and positive. No stopping occurred. Both remaining evaluation stages had already been queued unchanged. Criterion clarification/change after first resplit result is explicit; do not claim fully outcome-blind rule setting.",
+  "primary_rule": "After independent validation of all3partitions, compare pooled untrimmed MSE = mean over3partitions and400IDs. Fixed3seed equalmean only. No per-partition/fold win requirement or CI gate. No fallback seed/weight/model.014remains protected and no full500/test/submission.",
+  "candidate_change": false,
+  "seed_or_weight_change": false,
+  "stopped_after_seen_result": false,
+  "unobserved_remaining_partition": "20261101",
+  "old_policy_sha256": "607f7f0d4e92d0e8531394ae9283ce8316c7d6c9679e0b701e9f1b23222d22ef"
+}

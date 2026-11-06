@@ -1,0 +1,133 @@
+{
+  "fold": 4,
+  "arm": "early",
+  "initial_state_sha256": "21d44dbbe9bdae7f004437b84067c4b50a14d14b7900eb956d87bdbeb429bc76",
+  "initial_head_sha256": "ff97681927103b665441f1f42e6f24802277cea73f6362a41ac7b140b4203f3b",
+  "initial_adapter_sha256": "7140b90fb1d85b394c0343ad7ae0adce25a3e80e98a0ba0a39adb429dc33c9c3",
+  "final_state_sha256": "95aa7c550e321153156f124d8cae3764ee7c0d116c03d3f25f4f980e67f5cf0e",
+  "backbone_sha256": "6ba9dd85ee9ac3caec717ec270ee86bb44f57b3b4787679b64e5e1c549af0906",
+  "backbone_unchanged": true,
+  "trainable_parameters": 227393,
+  "batch_order_sha256": "80d2bedb25c409aa5e13b83d76a2cf17dd482bf9ec366d2a680c857364b911ff",
+  "dropout_seeds_sha256": "d9ebcc89a933ba35fb2e6a76ed4f501991871c369948c344e531e3312c90bd70",
+  "warm_prediction_max_error": 0.0,
+  "first_two_update_adapter_gradients": [
+    {
+      "V.weight": 0.0,
+      "U.weight": 0.1776958853006363
+    },
+    {
+      "V.weight": 0.001039819442667067,
+      "U.weight": 0.16392794251441956
+    }
+  ],
+  "adapter_up_l2": 0.1267399787902832,
+  "train_RMSE": 6.406175935865428,
+  "curve": [
+    {
+      "epoch": 1,
+      "online_train_loss": 0.50210721765629,
+      "head_lr": 0.0003,
+      "adapter_lr": 0.0001,
+      "epoch_seconds": 145.24955175002106,
+      "seconds": 146.19525533303386
+    },
+    {
+      "epoch": 2,
+      "online_train_loss": 0.3828878988807161,
+      "head_lr": 0.00029505924481191485,
+      "adapter_lr": 9.846666218300807e-05,
+      "epoch_seconds": 143.75256008299766,
+      "seconds": 289.94822775002103
+    },
+    {
+      "epoch": 3,
+      "online_train_loss": 0.3699454154692724,
+      "head_lr": 0.0002805736835487436,
+      "adapter_lr": 9.397114317029975e-05,
+      "epoch_seconds": 144.32142866699724,
+      "seconds": 434.2702521660249
+    },
+    {
+      "epoch": 4,
+      "online_train_loss": 0.31738421461164873,
+      "head_lr": 0.00025753048327204934,
+      "adapter_lr": 8.681980515339464e-05,
+      "epoch_seconds": 145.60763579199556,
+      "seconds": 579.8783149580122
+    },
+    {
+      "epoch": 5,
+      "online_train_loss": 0.23444552637776184,
+      "head_lr": 0.00022749999999999997,
+      "adapter_lr": 7.75e-05,
+      "epoch_seconds": 145.41845229198225,
+      "seconds": 725.2973262910382
+    },
+    {
+      "epoch": 6,
+      "online_train_loss": 0.20432518032873617,
+      "head_lr": 0.00019252876153986548,
+      "adapter_lr": 6.664685702961344e-05,
+      "epoch_seconds": 142.71550154098077,
+      "seconds": 868.0135314160143
+    },
+    {
+      "epoch": 7,
+      "online_train_loss": 0.20245874415767595,
+      "head_lr": 0.00015499999999999997,
+      "adapter_lr": 5.5e-05,
+      "epoch_seconds": 125.82352408301085,
+      "seconds": 993.8375260410248
+    },
+    {
+      "epoch": 8,
+      "online_train_loss": 0.15067791610967482,
+      "head_lr": 0.00011747123846013449,
+      "adapter_lr": 4.335314297038657e-05,
+      "epoch_seconds": 127.22582649998367,
+      "seconds": 1121.0640762080438
+    },
+    {
+      "epoch": 9,
+      "online_train_loss": 0.1616905540582298,
+      "head_lr": 8.250000000000001e-05,
+      "adapter_lr": 3.250000000000001e-05,
+      "epoch_seconds": 136.50947929098038,
+      "seconds": 1257.5743283749907
+    },
+    {
+      "epoch": 10,
+      "online_train_loss": 0.1399460422006861,
+      "head_lr": 5.246951672795061e-05,
+      "adapter_lr": 2.3180194846605367e-05,
+      "epoch_seconds": 136.60435325000435,
+      "seconds": 1394.1792242500233
+    },
+    {
+      "epoch": 11,
+      "online_train_loss": 0.13465971514567326,
+      "head_lr": 2.9426316451256386e-05,
+      "adapter_lr": 1.602885682970026e-05,
+      "epoch_seconds": 136.33445929194568,
+      "seconds": 1530.5143275409937
+    },
+    {
+      "epoch": 12,
+      "online_train_loss": 0.10896371137744629,
+      "head_lr": 1.494075518808511e-05,
+      "adapter_lr": 1.1533337816991932e-05,
+      "epoch_seconds": 137.18900324997958,
+      "seconds": 1667.7044346249895
+    }
+  ],
+  "memory": {
+    "rss_peak_bytes": 2788130816,
+    "mps_driver_bytes": 2571894784,
+    "conservative_sum_bytes": 5360025600
+  },
+  "seconds": 1730.4660626660334,
+  "checkpoint_sha256": "c79d429e03500f05ed2712d6bdee8ecc84bafb0903e768e3c11b0e48cbf089e5",
+  "first_two_updates_sha256": "5a05e222a8249cd0df592ae3138baaac8abaa3a125c5495c73700845e62d2b05",
+  "predictions_sha256": "5c8926278e322625f1ebfb37afd0785ff3c5b85d3511b12ff1087aeb0d098910"
+}

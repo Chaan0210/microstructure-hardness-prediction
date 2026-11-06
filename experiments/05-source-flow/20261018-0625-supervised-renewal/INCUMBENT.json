@@ -1,0 +1,33 @@
+{
+  "complete_incumbent": {
+    "083": {
+      "public_rmse": 8.9179249297,
+      "record": "experiments/submission-083-20261018-060706/result-state-final.txt",
+      "csv_sha256": "02c4c6d58e418b14b86c786ee532c1d0373b6ab930075a7df93029f6fed9187c",
+      "formula": "082 + (079 - 078) = 076 + (round4 aux-noise addition - 073) + (079 - 078)"
+    },
+    "082": {
+      "public_rmse": 8.9343098075,
+      "record": "reports/candidate082-public-submission.json"
+    },
+    "076": {
+      "public_rmse": 8.9646534604,
+      "record": "reports/candidate076-public-submission.json"
+    }
+  },
+  "input_to_prediction": [
+    "Original256 grayscale image. Image-local noise estimate determines fixed noise12 gate.",
+    "Cellpose-SAM eligible pretrained masks plus train-derived segmentation fine-tuning, D4 measurements, four U-Net variants and image-derived morphology/phase/size/heterogeneity/angle statistics.",
+    "Three feature banks by four U-Net variants by three seeds, offline TabPFN v3.5. 083 adds sigma2/4 cumulant phase and contrast to sigma1 pair. Non-gated subset drops known noise-dependent columns.",
+    "Normal rows: .16 G021 + .384 TabPFN + .128 Ridge + .128 logRidge + .05 grain-set + .15 GMM-Ridge. Failed segmentation rows fall back to G021. High-noise linear partners use source-grouped permitted degraded copies.",
+    "G021=.9 G018+.1 DINOv2-L MLP; G018 contains frozen DINO/kernel/CNN and nested affine/residual bootstrap mixture. Full saved reproduction package preserved.",
+    "High-noise eligible rows receive old two-seed residualCNN correction; target is y minus nonG021 T073, not y minus whole076. Coefficients came from inner B roles. 083 keeps this correction and adds fixed079\u2212078."
+  ],
+  "inherited_validation_limit": "Historical auxiliary models learned from some evaluation images. Existing complete OOF is conditional; new representation fits exclude heldout originals. No claim of end-to-end baseline confirmation yet.",
+  "preservation": "Existing155401-file manifest and successful reproduction reused. New work writes only isolated experiment directory; selective boundary hashes in baseline-protection.json.",
+  "deadline": "2026-10-19T10:00:00+09:00",
+  "official_url": "https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai",
+  "rules_observed_at_kst": "2026-10-18 06:24\u201306:37",
+  "cost": 0,
+  "submission_actions": false
+}

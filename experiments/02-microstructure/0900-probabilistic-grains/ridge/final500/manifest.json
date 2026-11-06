@@ -1,0 +1,43 @@
+{
+  "formula": "where(n_obj<20, p021, 0.8*submitted045 + 0.2*RidgeCV_full500)",
+  "alpha_candidates": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "selected_alpha": 10.0,
+  "train_images": 500,
+  "test_inference_images": 1000,
+  "fallback_images": 1,
+  "input_hashes": {
+    "experiments/push-800/feat-u1dmavgH2Z-anghcor-train.npz": "4c61d9469a510a356f9d107f556cf61681f1e3044dfed9e790233b72515035ba",
+    "data/train.csv": "e8027032e51a2a4b2afee8ac9f3b431373c7777d516047bf5824fe69998da106",
+    "experiments/push-800/feat-u1dmavgH2Z-anghcor-test.npz": "c66d49be71388b1ec249621daa1928aa90cdd0a4ad72f4a4215065bc3858b19f",
+    "data/sample_submission.csv": "d5658d45e0f1167606317bcf5b718a63c5b07be43928515c89cdd52b46ec7735",
+    "artifacts/submission-candidate-045.csv": "7a9dbb257f9c599596769cfcade50f8dd3d988637879ff9896113c62138725c1",
+    "artifacts/submission-candidate-021.csv": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+    "experiments/probabilistic-grains-900/ridge/METHOD.md": "78518da0df0727ebaa633c0ef1b1284224a9f04908a37f34bba9525984c1cea5",
+    "experiments/probabilistic-grains-900/ridge/finalize500.py": "a3233c55c7379e9009b1bca5b46d5aedd5f85cccfa61b7633e406125c2ab93ce"
+  },
+  "model_sha256": "8067e37ee0ee34469700f7fbeb56ade8ddf930041f39082710d06b8c51ecb24d",
+  "csv_sha256": "66486dcbba2571e4389d333d74c2c9313cc48235d0c73dbf17d470f17d9ef96e",
+  "submitted": false,
+  "reload_prediction_exact": true,
+  "csv_prediction_exact": true,
+  "test_scope": "Only fixed-feature inference after train-only fitting; no labels, scoring, adaptation, or selection.",
+  "synthetic_examples_generated": 0,
+  "test_training": false,
+  "limitations": [
+    "Frozen blend recipe from reused dev folds and legacy 98-feature representation.",
+    "No public or private score is available for this candidate."
+  ],
+  "prediction_change_rms": 0.7307892554040563,
+  "environment": {
+    "python": "3.13.3",
+    "numpy": "2.5.3",
+    "sklearn": "1.9.1",
+    "device": "cpu"
+  }
+}

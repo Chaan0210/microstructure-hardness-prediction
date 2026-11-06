@@ -1,0 +1,150 @@
+{
+  "study": 204,
+  "status": "completed",
+  "decision": "모든 중첩 단계에 CNN 6개 seed를 적용하고 같은 후단 정책으로 재적합한 후보가 사전 개발 기준에 미달했습니다. best021을 유지하며, 이번 작업에서 추가 seed·가중치·구조 탐색은 하지 않습니다.",
+  "RMSE_by_partition": {
+    "original": {
+      "R": 12.786200775750695,
+      "F": 12.74550800303232,
+      "N": 12.740881738449936
+    },
+    "20261031": {
+      "R": 12.621902419708583,
+      "F": 12.64422148497035,
+      "N": 12.645836800779215
+    },
+    "20261101": {
+      "R": 13.032449212752852,
+      "F": 13.034443298359745,
+      "N": 13.03656927503765
+    }
+  },
+  "pooled_RMSE": {
+    "R": 12.814628144604061,
+    "F": 12.809124655423076,
+    "N": 12.808843225521507
+  },
+  "N_vs_R": {
+    "reference_RMSE": 12.814628144604061,
+    "new_RMSE": 12.808843225521507,
+    "gain": 0.005784919082554296,
+    "conditional_CI95": [
+      -0.026273519539496214,
+      0.03731951544595677
+    ],
+    "influence": {
+      "positive_IDs": 212,
+      "net_SSE_gain": 59.29188339612712,
+      "top_benefit_removal": {
+        "1": {
+          "benefit_sum": 45.90858489002085,
+          "net_fraction": 0.7742811032550122,
+          "gain_after_removal": 0.0013183881492278005
+        },
+        "5": {
+          "benefit_sum": 173.79464435541766,
+          "net_fraction": 2.9311709192015605,
+          "gain_after_removal": -0.011677158787087194
+        },
+        "10": {
+          "benefit_sum": 290.42130196178414,
+          "net_fraction": 4.898162873685239,
+          "gain_after_removal": -0.024396847335559357
+        }
+      }
+    }
+  },
+  "N_vs_F": {
+    "reference_RMSE": 12.809124655423076,
+    "new_RMSE": 12.808843225521507,
+    "gain": 0.000281429901569652,
+    "conditional_CI95": [
+      -0.00557922367833581,
+      0.006175909594955305
+    ],
+    "influence": {
+      "positive_IDs": 199,
+      "net_SSE_gain": 2.8838648716535484,
+      "top_benefit_removal": {
+        "1": {
+          "benefit_sum": 8.658970452335097,
+          "net_fraction": 3.0025576223931125,
+          "gain_after_removal": -0.0005691552759152785
+        },
+        "5": {
+          "benefit_sum": 31.290278232007722,
+          "net_fraction": 10.85011941425207,
+          "gain_after_removal": -0.002903755963540533
+        },
+        "10": {
+          "benefit_sum": 52.53999015703984,
+          "net_fraction": 18.218603331061935,
+          "gain_after_removal": -0.005196792691428698
+        }
+      }
+    }
+  },
+  "criteria": {
+    "technical_validation": true,
+    "pooled_gain_positive": true,
+    "all3_gains_nonnegative": false,
+    "conditional_CI_lower_positive": false,
+    "pooled_top5_removal_positive": false,
+    "acrosspartition_variance_not_increased": true
+  },
+  "strong_gate": false,
+  "resources": {
+    "preflight-resources.json": {
+      "observed_seconds": 21.557739374999073,
+      "max_RSS_plus_MPS_driver_bytes": 394002432,
+      "swap_growth_bytes": 0
+    },
+    "study-resources.json": {
+      "observed_seconds": 4619.353958292006,
+      "max_RSS_plus_MPS_driver_bytes": 895221760,
+      "swap_growth_bytes": 0
+    },
+    "model-validation-resources.json": {
+      "observed_seconds": 206.17064133301028,
+      "max_RSS_plus_MPS_driver_bytes": 627015680,
+      "swap_growth_bytes": 0
+    },
+    "N-downstream-resources.json": {
+      "observed_seconds": 19.389798749994952,
+      "max_RSS_plus_MPS_driver_bytes": 643153920,
+      "swap_growth_bytes": 0
+    }
+  },
+  "fits": {
+    "main_CNN": 540,
+    "validation_CNN": 48,
+    "phases": {
+      "main": 540,
+      "clean": 6,
+      "nan": 6,
+      "finite": 36
+    },
+    "all_updates": 259200,
+    "nonnull_downstream_primary_R_plus_N": 1440,
+    "nonnull_downstream_outer_poison": 1440
+  },
+  "validation": {
+    "R_exact": 0.0,
+    "new_CNN_MPS_exact": true,
+    "max_CPU_error": 3.0517578125e-05,
+    "max_independent_downstream_error": 2.2737367544323206e-13,
+    "max_independent_bootstrap_error": 7.105427357601002e-15
+  },
+  "best021_preserved": true,
+  "best021_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+  "no_full500_test_holdout_new_submission_CSV_upload": true,
+  "source_files": {
+    "summary": "experiments/cnn-nested-204/summary.json",
+    "interpretation": "experiments/cnn-nested-204/interpretation.json",
+    "coverage": "experiments/cnn-nested-204/coverage-audit.json",
+    "complete_review": "docs/records/reviews/nested-204/response-complete.md"
+  },
+  "summary_sha256": "84f55cb7492403f673a96125e90aefab9979261ad25ab13c5fea9933ff285d22",
+  "plan_sha256": "afad630e61f56cf8826a737a3724046b91f57a51ca8f2ef29841f589ab125cfe",
+  "local_compute_cost": 0
+}

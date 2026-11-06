@@ -1,0 +1,11 @@
+{
+  "study": 220,
+  "purpose": "Grain instance segmentation with Cellpose-SAM; derive per-grain measurements for hardness regression on dev400 (original 5 folds).",
+  "authorization": "User explicitly requested on 2026-10-07: install Cellpose-SAM and run grain-segmentation-based measurement.",
+  "environment": "Separate uv venv (.venv) with Python from project .venv (3.13.3). torch 2.14.0 / torchvision 0.29.0 cloned (APFS cp -cR) from experiments/pretrained-cnn-185/.venv; original environments untouched.",
+  "new_packages": ["cellpose==4.2.1.1", "fastremap==1.20.0", "fill-voids==2.1.2", "imagecodecs==2026.8.16", "natsort==8.4.0", "opencv-python-headless==5.0.0.93", "roifile==2026.9.22", "segment-anything==1.0", "tqdm==4.70.1"],
+  "weights": {"file": "weights/cpsam", "url": "https://huggingface.co/mouseland/cellpose-sam/resolve/main/cpsam", "bytes": 1233587898, "sha256": "e1440429eb384f95afe32bcba6510f90d518eaedc917ede549bed6804004abe2", "sha256_matches_hf_x_linked_etag": true, "license": "bsd-3-clause (HF model card)"},
+  "code_license": "Cellpose BSD-3-Clause (licenses/cellpose-LICENSE.txt)",
+  "competition_rule_check": "Rules allow officially released pretrained weights under permissive licenses (MIT/Apache/CC BY/...); BSD-3-Clause is permissive. Runs locally, no API.",
+  "data_scope": "Train images only for development. Test images untouched in this study unless a candidate passes; no test labels exist."
+}

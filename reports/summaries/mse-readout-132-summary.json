@@ -1,0 +1,250 @@
+{
+  "study": "132 fixed131MSE CNN-only whole014 nested replacement",
+  "status": "completed_negative_pooled_development_control",
+  "utc": "2026-10-04T06:22:45.031583+00:00",
+  "duplicate_execution_avoided": true,
+  "014_retained": true,
+  "code_and_budget_audit": {
+    "same": "TinyCNN91905parameters,128BOXinput,trainlocalpixel/targetstats,MSE,AdamWlr.002->.0001 wd.01 clip5,D4train,identity inference,sameoriginalouter320/80 IDs/groups.",
+    "014": "80epochs,32distinctIDs/update,singleD4view,800updates/25600views,cosine80epoch,averagefinal5epochweights,trainedDropout.15hidden64 scalarhead,seed20261003+k.",
+    "131MSE": "40epochs,16distinctIDs with2batchD4views,800updates/25600views,cosine40epoch,finalweights,noaverage. Frozenhidden64preDropout thenStandardScaler/Ridge10 onidentitytrainingfeatures;seed20271115+k.",
+    "learning_rates": "Bothspan800updates but LRconstantfor10stepsvs20steps at320train. Equaltotalbudget doesnotmeanidenticaloptimization.",
+    "not_single_schedule_causal_test": "Two-view batching,LR staircase,endpointaveraging all changed together. Fixedseedcheckpointcontrastisolates this training-bundle effect,not individualepoch/schedule/augmentation causality."
+  },
+  "diagnostic_scores": {
+    "legacy_scalar": {
+      "CNN": 15.032317843077909,
+      "raw4way": 13.065975963657763
+    },
+    "legacy_ridge": {
+      "CNN": 15.74907019203794,
+      "raw4way": 13.131928777634164
+    },
+    "new_scalar": {
+      "CNN": 14.35111639101626,
+      "raw4way": 12.972558108302925
+    },
+    "new_ridge": {
+      "CNN": 14.482584949107597,
+      "raw4way": 12.912475664679324
+    },
+    "new_legacyseed_scalar": {
+      "CNN": 14.521025102232654,
+      "raw4way": 13.104675254826875
+    },
+    "new_legacyseed_ridge": {
+      "CNN": 14.63137595579899,
+      "raw4way": 13.054612856869358
+    }
+  },
+  "diagnostic_RMSE_gains": {
+    "readout_on_legacy": {
+      "CNN": -0.716752348960032,
+      "raw4way": -0.06595281397640029
+    },
+    "readout_on_new_legacyseed": {
+      "CNN": -0.11035085356633623,
+      "raw4way": 0.050062397957516325
+    },
+    "readout_on_new_131seed": {
+      "CNN": -0.13146855809133662,
+      "raw4way": 0.06008244362360138
+    },
+    "seed_with_new_scalar": {
+      "CNN": 0.16990871121639373,
+      "raw4way": 0.13211714652394946
+    },
+    "seed_with_new_ridge": {
+      "CNN": 0.14879100669139333,
+      "raw4way": 0.1421371921900345
+    },
+    "training_bundle_fixedseed_scalar": {
+      "CNN": 0.5112927408452546,
+      "raw4way": -0.038699291169111305
+    },
+    "training_bundle_fixedseed_ridge": {
+      "CNN": 1.1176942362389504,
+      "raw4way": 0.07731592076480531
+    }
+  },
+  "diagnostic_interpretation": "No RNCeffect. SamecheckpointRidge worsenedlegacyraw13.06598->13.13193,butimprovednewraw12.97256->12.91248. Trainingbundleandseed effectsinteract;no isolatedschedulecausalclaim. Diagnosticseeds/readoutsnotfallbackcandidates.",
+  "primary_recipe": "Exactly131MSErecipe,seed20271115+offset,40fixedepochs,2views16IDs,MSEAdamW,finalcheckpoint,frozenlatent64StandardScalerRidge10. Reuse5originalouter131checkpoints/predictions. Fitnew15middle213/214+45deep142/143CNNs. Everylevel replacesonlyCNNcolumn;KRR/S/B/shortBcachedhonestmodels unchanged.",
+  "nested_refit": "ForouterT320/V80: middle3A213/B107CNN predictions formT-OOF fornewaffine. For eachA,deep3C142/D71CNN predictions formA-OOF foranchor-affine. AnchorB=.9affine_A(raw_B)+.1shortB_A(B). Fitunchangedphysics57five-wayselectoronlyB; applytoouterV,average3corrections. Wholebase=.9newaffine_T(raw_V)+.1shortB_T(V). Neveruseglobal400OOF for training residuals or reuse old calibrators.",
+  "RMSE": {
+    "original": {
+      "reference014": 12.968699771878843,
+      "primary": 12.837478359857467,
+      "base": 12.801814137938523,
+      "raw": 12.912475664679322
+    },
+    "20261031": {
+      "reference014": 12.668260572562595,
+      "primary": 12.946444836516578,
+      "base": 13.042400205796643,
+      "raw": 13.154909940687968
+    },
+    "20261101": {
+      "reference014": 13.04585755754465,
+      "primary": 13.468018931637022,
+      "base": 13.487724788273,
+      "raw": 13.572304263471521
+    }
+  },
+  "contrasts": {
+    "original": {
+      "RMSE_gain": 0.13122141202137527,
+      "conditional95": [
+        -0.05785324882547988,
+        0.32080844932341696
+      ],
+      "positive_folds": 3,
+      "fold_gains": [
+        0.20464705249385062,
+        -0.1224214145461211,
+        0.22332859403611138,
+        -0.12009345196291754,
+        0.43771792143929567
+      ]
+    },
+    "20261031": {
+      "RMSE_gain": -0.27818426395398355,
+      "conditional95": [
+        -0.47471284113852324,
+        -0.08424580571218943
+      ],
+      "positive_folds": 1,
+      "fold_gains": [
+        -0.3674852632725223,
+        -0.3219741899650348,
+        -0.5825299213566719,
+        0.44186042646154533,
+        -0.4793205673437928
+      ]
+    },
+    "20261101": {
+      "RMSE_gain": -0.4221613740923722,
+      "conditional95": [
+        -0.6190393387985919,
+        -0.22064082234131935
+      ],
+      "positive_folds": 0,
+      "fold_gains": [
+        -0.4690081285840826,
+        -0.032914829992090944,
+        -0.7682375925768703,
+        -0.346761657753726,
+        -0.5018274674592327
+      ]
+    }
+  },
+  "pooled": {
+    "014_RMSE": 12.895301458531568,
+    "primary_RMSE": 13.08687406637797,
+    "RMSE_gain": -0.1915726078464015,
+    "conditional_IDcluster95": [
+      -0.3057107123051848,
+      -0.07741975484552412
+    ]
+  },
+  "results": [
+    {
+      "split": "original",
+      "fit_seconds": 442.3487197080394,
+      "validation_seconds": 151.59238866704982,
+      "selected_physics_counts": {
+        "rbf01": 2,
+        "ridge1": 7,
+        "rbf1": 2,
+        "ridge01": 3,
+        "none": 1
+      }
+    },
+    {
+      "split": "20261031",
+      "fit_seconds": 511.28411579097155,
+      "validation_seconds": 164.70731945801526,
+      "selected_physics_counts": {
+        "none": 5,
+        "rbf01": 3,
+        "ridge01": 3,
+        "ridge1": 4
+      }
+    },
+    {
+      "split": "20261101",
+      "fit_seconds": 507.80622141598724,
+      "validation_seconds": 166.24261125002522,
+      "selected_physics_counts": {
+        "rbf01": 2,
+        "none": 6,
+        "ridge1": 3,
+        "ridge01": 4
+      }
+    }
+  ],
+  "decision": {
+    "advance": true,
+    "original_RMSE": {
+      "reference014": 12.968699771878843,
+      "primary": 12.837478359857467,
+      "base": 12.801814137938523,
+      "raw": 12.912475664679322
+    },
+    "rule": "Originalcomplete5foldpipelinefirst. Afterindependentverification advanceunchangedprimaryto2existingresplitsonlyifcompletepipelineRMSE<014. No seed/readout/schedulefallbackorblendsearch. No full500/test/submission regardlessresult in132.",
+    "014_retained": true
+  },
+  "verification": {
+    "all_new_CNN_group_trainstatistics_budget_reload_SVD": true,
+    "CNN_max_CPU_reload_error": 6.280391315272027e-05,
+    "Ridge_max_independentSVD_error": 0.0002517874777936413,
+    "independent_physics_models": 720,
+    "independent_OLS_and_all_selected_models": true,
+    "014_control_reconstructed": true,
+    "outer_and_inner_label_poison_exact": true,
+    "exact131_outer_replay": true
+  },
+  "execution": {
+    "main_nested_CNN_fits": 190,
+    "diagnostic_CNN_fits": 6,
+    "poison_CNN_fits": 50,
+    "reused_original_outer131": 5,
+    "recorded_fit_plus_validation_seconds": 2027.4922763730865,
+    "CPU_threads": 2,
+    "device": "MPS",
+    "cost": 0,
+    "new_packages": 0,
+    "holdout_test_decode_fit_inference": false,
+    "full500_training": false,
+    "CSV_created": false,
+    "uploaded": false
+  },
+  "limitations": [
+    "Same400historicallyadaptiveselection;132hypothesisselectedafter131MSEsuccess. Nestedcurrentfitsdonotundohistoricalselection.",
+    "Threepartitionsreusesame400IDs;conditionalbootstrapnotindependentreplication/refittinguncertainty.",
+    "Legacyvsnewchangesinclude2views,LRstaircase,finalvsaveragecheckpoint,seedandRidge. Pairedreadout/seedcontrastsnotfullfactorialcausaldecomposition.",
+    "Inner142/143CNNhas360updatesvslegacy400;both80nviews. Fixedepochsacrosssizeshasdifferentupdates.",
+    "Onecandidatefixedbeforewholepipelineoutcomes;controlvariantsnotselectedorblended.014retained,no productionclaim."
+  ],
+  "preservation": {
+    "014_CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "previous_reports_verified": 200,
+    "packages_unchanged": 26
+  },
+  "source_sha256": {
+    "mse_readout_132.py": "0b65dce945a665c046e7e374cffb3ecdec275b26ba919b3d1fe654bc07defb56",
+    "validate_mse_readout_132.py": "dd6cbae96b22094e270b21643ae2067e08c8b4422bb8e72c67e3187abf15ae70",
+    "summarize_mse_readout_132.py": "c49a493fc3f9a91f323af5e4208ac2d5e42da7a905eb4fc151bc840a71d5f9b6"
+  },
+  "artifact_sha256": {
+    "artifacts/mse-readout-132/plan.json": "c7644a4d851be790e28c5db586c6bc4ce944ae0935be53387288c8e6e1c8b304",
+    "artifacts/mse-readout-132/diagnostics/report.json": "13312452d3531bb97b27f0779ead31232aed7e44d941b86744cdb4e8561a534c",
+    "artifacts/mse-readout-132/screen-decision.json": "1834b96845ef46fea0b05ac5d251dd05a85d35fb465868ba234e62ed0adf15f0",
+    "artifacts/mse-readout-132/original/report.json": "2edfdd74ba07ff4ac447a022aeb026a9777028b3d87a1f924a4e77caceb0b482",
+    "artifacts/mse-readout-132/20261031/report.json": "ae67c3d73825493a82a160e6d24924cf59a0bb8fed95f6287399ee285e73afd4",
+    "artifacts/mse-readout-132/20261101/report.json": "cbd81a84871d679f1826e71736a0ff9a23c2fff9be969206d7fc0a7d40ed6f1d",
+    "artifacts/mse-readout-132/validation-original.json": "c5ddeab7ce0af4dcf0314bb259dc8771f1693e643d4a144517d934928f1d0857",
+    "artifacts/mse-readout-132/validation-20261031.json": "a8f68521a5208cba7d73c151289d1df9f853590be6d15af6b80c2773055bc31c",
+    "artifacts/mse-readout-132/validation-20261101.json": "979f7a1ec19481ee1131d7718950ac61e768f00734ea3b23c5c53f25560f391c"
+  },
+  "execution_blockers": []
+}

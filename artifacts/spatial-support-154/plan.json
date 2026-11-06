@@ -1,0 +1,77 @@
+{
+  "study": "154 spatial support saturation control",
+  "utc": "2026-10-04T12:44:04.279999+00:00",
+  "hypothesis": "Training-extrema coordinate clipping removes spatial graph-energy amplitudes differently at inner70/72 and full106/107 residual training sizes. Fixed standardized spatial amplitudes without hard saturation may transfer better. Diagnosis shows broad exposure, not positive error association or causal proof.",
+  "diagnostic": {
+    "inner_B_train": {
+      "nodes": 135,
+      "train_n_range": [
+        70,
+        72
+      ],
+      "physics": {
+        "coordinate_fraction": 0.027078498715925617,
+        "rows_any": 0.5084597295708407,
+        "lost_standardized_RMS": 0.14085970364270542,
+        "largest_lost_standardized": 3.8831606778753
+      },
+      "spatial": {
+        "coordinate_fraction": 0.027618268220120073,
+        "rows_any": 0.9910052910052911,
+        "lost_standardized_RMS": 0.1247092313053502,
+        "largest_lost_standardized": 4.163774082801664
+      }
+    },
+    "full_honest_B": {
+      "nodes": 45,
+      "train_n_range": [
+        106,
+        107
+      ],
+      "physics": {
+        "coordinate_fraction": 0.018703703703703705,
+        "rows_any": 0.38444444444444437,
+        "lost_standardized_RMS": 0.11504859688403721,
+        "largest_lost_standardized": 4.327751578362211
+      },
+      "spatial": {
+        "coordinate_fraction": 0.01853009259259259,
+        "rows_any": 0.9658333333333334,
+        "lost_standardized_RMS": 0.09869731471821361,
+        "largest_lost_standardized": 4.481437088804092
+      }
+    }
+  },
+  "primary": "Only residual features57:585 bypass MinMax clipping at prediction. Physics0:57 keeps original clipping. Same train-only MinMax and StandardScaler, block weights, Ridge/RBF train models, regularization, 512groupbootstrap and3honest blocks. Recompute all innerOOF predictions, bootstrap weights and outer corrections. No hard/soft cutoff grid or variants.",
+  "equivalence": "Every training coordinate lies inside own extrema; unchanged fitted models can be reused. Verify train-query predictions agree to floating precision, independently solve all900 model objects, fresh refit representative inner and full models. No new backbone or neural training.",
+  "duplicate_audit": "135/142 documented clipping, but did not compare spatial-only amplitude preservation. Different from148 directional statistic,149 local crossmoment,137 quadratic output calibration,118 subsampling,119 pooled residuals,128 update budget,125 base-weight fitting. No rejected feature or ensemble axis reopened.",
+  "design": "All three existing partitions. Primary pooled untrimmed MSE must be below unchanged018 and all validation pass. No fold/CI minimum, no rescue blend or physics-unclipping variant. Fail closes this transform.",
+  "validation": "Exact018 control from saved models; train-scope/index/group checks; independent raw transforms and linear/kernel solves; independent groupbootstrap weights; representative fresh refits and outer-label poison. Feature and target fits remain inner training only.",
+  "risk": "Removing spatial caps restores linear Ridge extrapolation and alters RBF distances outside train box; no guarantee of bounded wholeprediction or Public/private benefit. No test-based thresholding.",
+  "uncertainty": "10000paired400IDcluster bootstrap seed20271212, conditional on fits and historical adaptive reuse. No independent validation claim.",
+  "resources": "Existing CPU2 only, model reuse and several validation refits; no installs/cost/holdout/test. Positive result requires locked full500 downstream recipe and inference validation. No submission today or by this worker.",
+  "hashes": {
+    "spatial_support_154.py": "9a1e0400104f837d1e67a7ada8473b26065100581b7bb7355120d579ffc7e0ba",
+    "bootstrap_selector_144.py": "d9f55f8e50cd7327efb8d45d433b8c16f3ede19265c436dffcd024e69b45abc3",
+    "nonlinear_residual_115.py": "63bd7f2bed66edba2916b017f3c8a8e0dfc80509302806808b06bf4d6b126fc9",
+    "residual_physics_113.py": "39f1c1c16bcb8d2d38c332d55eda44e57748e4a17b87ffdff37c7054e13d2554",
+    "reports/support-diagnostic-153.json": "4de1e319c3e72f2c2b5d225160de9fccbf53a67e8c43bf701fab470bfc4b5b8b",
+    "reports/candidate019-public-submission.json": "c3940a0ece4691caa498450129488e0db3bdce75be1a9ab62ab72dff83ee0f84",
+    "reports/nested-selector-146-audit.json": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+    "reports/spatial-joint-142-audit.json": "f8f228d8f9a83f5f792dec4e0450e67f57b647616d8c9b8b4a78813b7e02258d",
+    "artifacts/bootstrap-selector-144/original/report.json": "1d6d0fc65062dd04c1762abad44b757c1d4cd07fcb4336dec13aaaa3dc087625",
+    "artifacts/bootstrap-selector-144/validation-original.json": "9cb3c3a727b629e4d677333ce6e63c3f317de2a89bc0c7b5635aec7c119599df",
+    "artifacts/spatial-joint-140/validation-original.json": "9d78b6d5917ee0017fbc812f2a56ed391e6fcac1ece123d8ccbd73ea2bae5443",
+    "artifacts/bootstrap-selector-144/20261031/report.json": "b348271c8e759ed750d167357ad69f0d731a11dca7070e5c14c4079b5140e2b8",
+    "artifacts/bootstrap-selector-144/validation-20261031.json": "44be855488a748d43236a52cda3c3aba8e4d73475d77044eb9977453547c3412",
+    "artifacts/spatial-joint-140/validation-20261031.json": "bf05e07e8e0a973306e32c3b524e671efd4fc5ec183f7af3eb1f5de2cb8a647e",
+    "artifacts/bootstrap-selector-144/20261101/report.json": "f60fac49edcf5970e936d98d7a3f0166c4a5538836a8211c414285b2100345dd",
+    "artifacts/bootstrap-selector-144/validation-20261101.json": "73eee032bfd1de09b25356115ca27da206786c9a59c8fea707660d6b7b209691",
+    "artifacts/spatial-joint-140/validation-20261101.json": "4721bfb07645a7ab23c146e5391ba8757fa0902eb924d8b58ea023e9111665aa"
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c"
+  },
+  "cost": 0
+}

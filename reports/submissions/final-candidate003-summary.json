@@ -1,0 +1,107 @@
+{
+  "status": "candidate003_ready_not_uploaded",
+  "project": ".",
+  "candidate": "artifacts/submission-candidate-003.csv",
+  "sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+  "model": "artifacts/final-model-017",
+  "recipe": {
+    "baseline_run005": 0.5,
+    "TinyCNN128_80": 0.25,
+    "compact_nested_kernel": 0.25
+  },
+  "original_development_oof_rmse": 13.705696031698212,
+  "repartition_results": [
+    {
+      "seed": 20261011,
+      "baseline_rmse": 14.42219310127814,
+      "candidate_rmse": 13.77797082168966,
+      "fold_improvements": [
+        0.5703362750228553,
+        1.0527745023263524,
+        0.03368660761834974,
+        1.209361007049802,
+        0.3714270563180442
+      ]
+    },
+    {
+      "seed": 20261012,
+      "baseline_rmse": 14.303546790308314,
+      "candidate_rmse": 13.88947852123937,
+      "fold_improvements": [
+        0.2948428205124376,
+        0.3646764476257971,
+        0.06282201088154338,
+        0.6917141945822518,
+        0.6314124543391912
+      ]
+    }
+  ],
+  "interpretation": "Same historical development400 reused; all components refit inside new folds, kernel nested; not independent holdout or prize guarantee.",
+  "holdout_used_for_selection_or_evaluation": false,
+  "full_training_rows_after_freeze": 500,
+  "test_used_for_training_or_selection": false,
+  "full_training_seconds": 86.7790465420112,
+  "prediction_seconds": 133.03649237501668,
+  "validation": {
+    "valid": true,
+    "rows": 1000,
+    "columns": [
+      "ID",
+      "hardness"
+    ],
+    "ids_unique": true,
+    "sample_order_exact": true,
+    "all_predictions_finite": true,
+    "negative_prediction_count": 0,
+    "all_predictions_nonnegative": true,
+    "prediction_min": 166.98735917360722,
+    "prediction_max": 235.03185196210765,
+    "prediction_mean": 193.68586396587597,
+    "prediction_std": 10.309069217849851,
+    "sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "file_bytes": 31701,
+    "uploaded": false
+  },
+  "reload_verification": {
+    "valid": true,
+    "submission_sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "rows": 1000,
+    "full_weighted_formula_max_abs_difference": 0.0,
+    "full_baseline_vs_candidate002_max_abs_difference": 5.684341886080802e-14,
+    "reloaded_kernel_sample_max_abs_difference": 2.3874235921539366e-12,
+    "cpu_vs_mps_cnn_sample_max_abs_difference": 1.52587890625e-05,
+    "reload_sample_ids": [
+      "TEST_000001",
+      "TEST_000112",
+      "TEST_000223",
+      "TEST_000334",
+      "TEST_000445",
+      "TEST_000556",
+      "TEST_000667",
+      "TEST_000778",
+      "TEST_000889",
+      "TEST_001000"
+    ],
+    "cpu_mps_tolerance": 0.001,
+    "old_candidate002_unchanged": true,
+    "test_usage": "Post-freeze inference and integrity verification only; no fit or selection",
+    "uploaded": false
+  },
+  "tests": {
+    "passed": 15,
+    "seconds": 2.996,
+    "log": "reports/test-results-research-016.txt"
+  },
+  "model_sha256": {
+    "baseline.joblib": "7667b2b36483ba1b93a8e2874d4de96d12f38492ea6815f9ce24c87d09bab83e",
+    "kernel.joblib": "1dd0482997b5a5ac198dfea4952cc6d74c8694646238c65825eaf4786837eb4b",
+    "cnn.pt": "7fa2cea78e1365cf280efe6695e758cff8c3da857ffb387d21787195cb472fb0"
+  },
+  "original_best_preserved": true,
+  "paid_service_used": false,
+  "pretrained_weights_used": false,
+  "running_work": [],
+  "submission_state": "No candidate003 upload attempted in this worker; coordinate one submission via parent browser recovery task.",
+  "browser_blocker": "No official browser/CUA tool exposed in this runtime; parent coordinates recovery worker 01a0f2f0-0b75-7474-b504-2228d094a027.",
+  "future_research": "Remaining extreme-target shrinkage; no proven performance ceiling. Spectral/LoG/tile additions were not yet separately ablated against this fixed recipe."
+}

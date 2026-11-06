@@ -1,0 +1,52 @@
+{
+  "completed_utc": "2026-10-19T00:32:20.670130+00:00",
+  "recommendation": "Retain candidate-source-flow38.csv, the user-reported Public best. Do not promote any last-review structural replacement.",
+  "current_public_rmse": 8.8625701284,
+  "public_source": "Direct user report of manual submission",
+  "current_csv_sha256": "0134d548df303294cb610454a62c1126c134727c8c67f1d537f902e9ead0d75b",
+  "current_conditional_oof_rmse": 8.977661203129443,
+  "new_variants": {
+    "replace_tab_block": {
+      "rmse": 8.966191527939781,
+      "gain": 0.011469675189662354,
+      "positive_folds": 3,
+      "ci95": [
+        -0.06509088635218516,
+        0.08751179243105879
+      ],
+      "top10_positive_removed_gain": -0.055127772416236454,
+      "passes_declared_resource_gate": false
+    },
+    "replace_linear_block": {
+      "rmse": 9.220107216443633,
+      "gain": -0.2424460133141899,
+      "positive_folds": 0,
+      "ci95": [
+        -0.40535694348956397,
+        -0.07909488711307754
+      ],
+      "top10_positive_removed_gain": -0.3554342360033349,
+      "passes_declared_resource_gate": false
+    },
+    "replace_both_blocks": {
+      "rmse": 9.211598335618051,
+      "gain": -0.2339371324886077,
+      "positive_folds": 0,
+      "ci95": [
+        -0.41174818372993194,
+        -0.057812859043343025
+      ],
+      "top10_positive_removed_gain": -0.3543783906346558,
+      "passes_declared_resource_gate": false
+    }
+  },
+  "new_submission_csv_generated": false,
+  "test_predictions_read_for_model_selection": false,
+  "public_score_used_for_parameter_fitting": false,
+  "current_pipeline_modified": false,
+  "automatic_submission_authorized": false,
+  "agent_uploads": 0,
+  "agent_selection_changes": 0,
+  "scope": "Same400 reused conditional OOF. No new independent validation or full-system confirmation. These results reject these three fixed changes, not all possible future improvement.",
+  "next_research_if_time_permits_in_a_future_request": "The source-flow linear replacement loses0.242RMSE. An eventual augmentation study would need the continuous descriptors recomputed on permitted original-image degradation copies, source-grouped folds, and complete matched validation; it cannot be responsibly completed before today10:00. No such workload started."
+}

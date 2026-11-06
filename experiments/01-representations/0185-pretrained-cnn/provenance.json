@@ -1,0 +1,42 @@
+{
+  "wheel": {
+    "url": "https://files.pythonhosted.org/packages/81/56/4e122b6b59269cb2e6a8f7ef969cff7b1eca1499c48784805ad156d3720b/torchvision-0.29.0-cp313-cp313-macosx_14_0_arm64.whl",
+    "bytes": 1813739,
+    "sha256": "28a3964a9e6db34354d4ca440d2c2038deeef24e7219e8d6f49d9d174f44830c",
+    "path": "experiments/pretrained-cnn-185/wheels/torchvision-0.29.0-cp313-cp313-macosx_14_0_arm64.whl"
+  },
+  "weights": {
+    "resnet50": {
+      "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+      "bytes": 102540417,
+      "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+      "path": "experiments/pretrained-cnn-185/weights/resnet50-11ad3fa6.pth"
+    },
+    "efficientnet_b0": {
+      "url": "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth",
+      "bytes": 21444401,
+      "sha256": "7f5810bc96def8f7552d5b7e68d53c4786f81167d28291b21c0d90e1fca14934",
+      "path": "experiments/pretrained-cnn-185/weights/efficientnet_b0_rwightman-7f5810bc.pth"
+    }
+  },
+  "license": {
+    "url": "https://raw.githubusercontent.com/pytorch/vision/v0.29.0/LICENSE",
+    "bytes": 1517,
+    "sha256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d",
+    "path": "experiments/pretrained-cnn-185/licenses/torchvision-BSD-3-Clause.txt"
+  },
+  "code_license": "BSD-3-Clause; weight-specific/training-data terms distinct, official models documentation retained as URL",
+  "weights_notice_url": "https://docs.pytorch.org/vision/stable/models.html",
+  "use": "local research only; no redistribution, login, terms acceptance, payment or API",
+  "environment": "Separate uv venv. Existing approved dependencies cloned via APFS cp -cR, separate writable inodes; no Torch download or modification of old env. Only torchvision newly installed.",
+  "required_dependencies": [
+    "numpy",
+    "torch==2.14.0",
+    "pillow!=8.3.*,>=5.3.0",
+    "gdown>=4.7.3; extra == \"gdown\"",
+    "scipy; extra == \"scipy\""
+  ],
+  "torch": "2.14.0",
+  "torchvision": "0.29.0",
+  "cost": 0
+}

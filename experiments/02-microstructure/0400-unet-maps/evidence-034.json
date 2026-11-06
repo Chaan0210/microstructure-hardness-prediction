@@ -1,0 +1,44 @@
+{
+ "candidate": "034",
+ "date": "2026-10-10",
+ "change": "grain = TabPFN-3.5 (default, seeds 0/100/200) on feat-u1dmavg = feat-u1phdrop + 10 multi-task U-Net size/elongation/phase cols averaged over 3 U-Nets (m1, m2, h1). Fixed W=0.75.",
+ "why": "single-U-Net versions of the same 10 cols (r>0.994 between nets) moved TabPFN dev by ~0.1 -> averaging over nets reduces U-Net training noise in the features.",
+ "harness_v2n8": {
+  "u1phdrop": 10.426,
+  "u1dmavg": 10.3057,
+  "u1dm2sz": 10.2884
+ },
+ "dev_fixed_w075": {
+  "cfg033": {
+   "original": 10.3795,
+   "p20261031": 10.3322,
+   "p20261101": 10.3723,
+   "pooled": 10.3613
+  },
+  "cfg034_v35": {
+   "original": 10.2259,
+   "p20261031": 10.1473,
+   "p20261101": 10.1998,
+   "pooled": 10.1911
+  },
+  "alt_v2_plus_v35": {
+   "original": 10.2352,
+   "p20261031": 10.218,
+   "p20261101": 10.2683,
+   "pooled": 10.2405
+  }
+ },
+ "model_choice": "v3.5 only: v3.5 beat v2 on every feature set and partition evaluated today; adding v2 worsened all partitions here.",
+ "inputs": {
+  "train": "51970206d43f0f989a9981123c03dcd9958e187fa592e9c2ee6e869cb6502c4e",
+  "test": "0bd1a5798cafd6ce2a974e5c363f97d5a782ed3aa270c927287f90ddae6e2674",
+  "unet_u1": "34d154ca47fe4f003210ebd790422076d2ad815271956afe20a3a49df72f0d24",
+  "unet2_m1": "c9965a8608c7f7ad5e245d58dcee2096790b4bd8235a9c063d96e392b4e597bc",
+  "unet2_m2": "d696e1f6bf34a3e3a5a5fe6718c5a1b2afa61dc26df12d8d25cb550e42b2a5fd",
+  "unet2_h1": "f49ba049dd4d3c56cd707327a1c592c2ad16b051ddcb5ff1874f4f1b05ae031e",
+  "dev": "experiments/push-300/dev-u1dmavg-v35.json"
+ },
+ "weight_rule": "fixed W=0.75",
+ "adopt": true,
+ "caveat": "model (v3.5-only) chosen after seeing v2 dev; mild selection optimism."
+}

@@ -1,0 +1,288 @@
+{
+  "candidate": "011",
+  "locked_utc": "2026-10-02T09:03:23.172485+00:00",
+  "config": {
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "formula": ".9*candidate009+.1*fresh_frozen_B_head",
+  "full500_rule": "If eligible, lock candidate011 before loading full500 training labels/test. Train identical frozen head once onall500, seed20270215,12epochs with same per-epoch schedule; scaler/target stats fit on500. Keep all009 models/calibrator unchanged. Formula remains.9*009+.1*newhead. Test inference only after model is fixed.",
+  "selection_bias": "The purpose changed after inspecting084 original results: joint-training superiority was rejected; the frozen control blend was selected post hoc for apparent complementarity. Original13.05399777 is discovery evidence, not fresh confirmation. Both resplits reuse the same400 historically selected rows and are not independent validation. No adjustment for this adaptive selection; conditional intervals omit fitting and selection uncertainty.",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Fixedshortschedule mayunderfit andone seed leaves seed uncertainty. Results test thisoneprotocol,not alljointfinetuning.",
+  "development_results": {
+    "original": {
+      "scores": {
+        "frozen": {
+          "rmse": 13.957820652670737,
+          "fold_rmse": [
+            14.931247692185186,
+            13.009438626394363,
+            14.460333930204607,
+            13.162435979579374,
+            14.126753255852853
+          ]
+        },
+        "primary": {
+          "rmse": 13.0539977718711,
+          "fold_rmse": [
+            13.063217512187048,
+            12.38751393690129,
+            14.122591032877722,
+            12.1470942497908,
+            13.451269815048137
+          ]
+        },
+        "reference009": {
+          "rmse": 13.105157912721568,
+          "fold_rmse": [
+            13.025386023375454,
+            12.507824306370592,
+            14.197984111621984,
+            12.181376909479603,
+            13.51483530810461
+          ]
+        },
+        "reference010": {
+          "rmse": 13.10413742660317,
+          "fold_rmse": [
+            13.022136537716314,
+            12.506331297055734,
+            14.197201444500285,
+            12.180615553418216,
+            13.515909212552927
+          ]
+        }
+      },
+      "comparisons": {
+        "reference009": {
+          "gain": 0.051160140850468494,
+          "fold_gains": [
+            -0.03783148881159448,
+            0.12031036946930307,
+            0.07539307874426271,
+            0.0342826596888024,
+            0.06356549305647263
+          ],
+          "positive_folds": 4,
+          "bootstrap_sd": 0.036004952281658946,
+          "conditional_ci95": [
+            -0.018101738209629833,
+            0.12288080425357115
+          ]
+        },
+        "reference010": {
+          "gain": 0.05013965473207094,
+          "fold_gains": [
+            -0.04108097447073433,
+            0.11881736015444488,
+            0.07461041162256343,
+            0.03352130362741512,
+            0.06463939750478964
+          ],
+          "positive_folds": 4,
+          "bootstrap_sd": 0.03555621367736745,
+          "conditional_ci95": [
+            -0.018419992860731236,
+            0.12036068748216397
+          ]
+        }
+      },
+      "advance": true,
+      "report_sha256": "d54ca814cbc3dd6f83ef41a46428e4ea95359f2ef64d28c8ca59ffe5d08f81eb",
+      "predictions_sha256": "1d663be56d5fb15d8a30320596fadf8aba9c34fe6e761c72451f0b84e181a763"
+    },
+    "20261031": {
+      "scores": {
+        "frozen": {
+          "rmse": 13.771791193005598,
+          "fold_rmse": [
+            13.306375409054459,
+            13.595699830975594,
+            14.216166848350426,
+            13.04327519778133,
+            14.634960032499514
+          ]
+        },
+        "primary": {
+          "rmse": 13.015176056591201,
+          "fold_rmse": [
+            13.283612084653193,
+            14.048857341244409,
+            13.545541830551818,
+            11.725411021670682,
+            12.336220215276553
+          ]
+        },
+        "reference009": {
+          "rmse": 13.082283244172682,
+          "fold_rmse": [
+            13.381109119932207,
+            14.258282229743807,
+            13.602704776447293,
+            11.723700529909848,
+            12.284105569029235
+          ]
+        },
+        "reference010": {
+          "rmse": 13.081449590263393,
+          "fold_rmse": [
+            13.381857154553895,
+            14.25568989266731,
+            13.602641433356888,
+            11.724159814164071,
+            12.281491944372723
+          ]
+        }
+      },
+      "comparisons": {
+        "reference009": {
+          "gain": 0.06710718758148104,
+          "fold_gains": [
+            0.0974970352790141,
+            0.20942488849939878,
+            0.05716294589547566,
+            -0.001710491760833932,
+            -0.05211464624731832
+          ],
+          "positive_folds": 3,
+          "bootstrap_sd": 0.030479714010220763,
+          "conditional_ci95": [
+            0.011749033370516183,
+            0.12755114680599575
+          ]
+        },
+        "reference010": {
+          "gain": 0.06627353367219158,
+          "fold_gains": [
+            0.09824506990070248,
+            0.20683255142290058,
+            0.05709960280507076,
+            -0.0012512075066108963,
+            -0.05472827090382992
+          ],
+          "positive_folds": 3,
+          "bootstrap_sd": 0.03032063719798108,
+          "conditional_ci95": [
+            0.011164571385741739,
+            0.12634837723857106
+          ]
+        }
+      },
+      "advance": true,
+      "report_sha256": "bd6c06ba14d988b4e687b09f84de8b056ed7016a5b3358a1f925e7f4c89042f0",
+      "predictions_sha256": "4e411df686f1f5be04ad97bf5f7b96d13830e995f9d0b8fbdc42d6f929820eac"
+    },
+    "20261101": {
+      "scores": {
+        "frozen": {
+          "rmse": 14.369641875486145,
+          "fold_rmse": [
+            14.212402784041824,
+            13.762855497073563,
+            13.831327756570763,
+            15.791704045248686,
+            14.1541834683972
+          ]
+        },
+        "primary": {
+          "rmse": 13.272377948565081,
+          "fold_rmse": [
+            13.777901071229193,
+            12.882537959617313,
+            12.911820703533516,
+            13.794186862546258,
+            12.961289857077604
+          ]
+        },
+        "reference009": {
+          "rmse": 13.305105282101927,
+          "fold_rmse": [
+            13.849200001634694,
+            12.960759057914057,
+            12.948923572726505,
+            13.74037731629103,
+            12.995188583092828
+          ]
+        },
+        "reference010": {
+          "rmse": 13.303706910124971,
+          "fold_rmse": [
+            13.85099566441845,
+            12.95759347548424,
+            12.94690225276677,
+            13.73778685786814,
+            12.994026030679338
+          ]
+        }
+      },
+      "comparisons": {
+        "reference009": {
+          "gain": 0.03272733353684565,
+          "fold_gains": [
+            0.07129893040550073,
+            0.07822109829674417,
+            0.03710286919298866,
+            -0.053809546255228824,
+            0.0338987260152237
+          ],
+          "positive_folds": 4,
+          "bootstrap_sd": 0.033752045052881055,
+          "conditional_ci95": [
+            -0.03319841669346677,
+            0.09796255744185155
+          ]
+        },
+        "reference010": {
+          "gain": 0.031328961559889734,
+          "fold_gains": [
+            0.07309459318925704,
+            0.07505551586692683,
+            0.03508154923325435,
+            -0.056400004678117455,
+            0.03273617360173375
+          ],
+          "positive_folds": 4,
+          "bootstrap_sd": 0.03353294624472585,
+          "conditional_ci95": [
+            -0.03415760253111415,
+            0.09636168008162345
+          ]
+        }
+      },
+      "advance": true,
+      "report_sha256": "d60aa51b55d9b4572647286b413659467f8b26494093c1435dd3ad6a60006c98",
+      "predictions_sha256": "e022f68f456c6bb6f2421f2f2cf5dbb7afb9a7ab772af4783d134b870199b4c9"
+    }
+  },
+  "validation_sha256": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+  "sources": {
+    "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+    "verify_candidate011.py": "12147b31d5a4acdb8837c9a2f9ac9be4b3a102efde9eb357414a9cebb2cb73e9",
+    "frozen_complement_085.py": "a77ae19608dab1189f225817f999d7610727e158156b5e6afea5ec40876978a3",
+    "dinob_joint_084.py": "1f87129e3fbd695df60558e92c0463817f5cbdd7304b99ccc002dedf6c8093a6"
+  },
+  "base_assets": {
+    "artifacts/final-model-065/report.json": "1a1f741158576b8ad40f6b12f351a7cdf7e1ada96610b83813b160d250bf9b9f",
+    "artifacts/final-model-075/calibrator.json": "7fa1f81d572bbb54159ea96f425c8a7b98f610c1fba7ca4480dad5afd36a9ac7",
+    "artifacts/submission-candidate-009.csv": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "artifacts/submission-candidate-008.manifest.json": "a0a5b79eec6fd86771d56487b35c05f79c17a70561042f546239a23747ab8227",
+    "reports/candidate009-verification.json": "f3d7b199c6a33854532efb310162edafd23e3a19e1322e53c72761a6585a6665",
+    "reports/candidate008-verification.json": "3d7477531fc44818be3f743cffcdea439a89dd7b2854205308156a5867d4e319"
+  },
+  "authorization": "User authorized full500 fit and candidate011 CSV verification after both unchanged resplits improve. No holdout subgroup evaluation.010 unsubmitted. No upload.",
+  "cost": 0
+}

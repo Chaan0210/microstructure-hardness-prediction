@@ -1,0 +1,30 @@
+This is a frozen exploratory challenger, not a confirmed improvement or a selected competition submission. Its original400 conditional validation RMSE is 9.0233908132 versus complete083 at 9.2017068026. The broader component-only validation was inconclusive; the complete confirmation protocol has not passed. No Public score exists for this candidate.
+
+The exact formula is:
+  p083 + eligible * [
+    0.384 * (mean3 TabPFN(P104 + F46) - mean3 TabPFN(P104))
+    + 0.128 * (Ridge100(P104 + F46) - Ridge100(P104))
+    + 0.128 * (exp(log-Ridge100(P104 + F46)) - exp(log-Ridge100(P104)))
+  ]
+The eligibility mask is the frozen076 failure fallback, aligned by ID. All paired heads use the same500 original training rows. TabPFN is the existing local3.5 checkpoint, eight estimators and seeds0/100/200. Linear heads use training-median imputation, StandardScaler and alpha100. No calibration is fitted on test predictions.
+
+F46 contains continuous cell-flow, confidence, spatial and brightness statistics from the existing H300 auxiliary segmenter. It uses image-local1st/99th percentiles and the mean of four90-degree rotations. Native CPU float32 extraction was frozen before test-image access. H300's historical training ancestry is why the original400 development comparison is conditional.
+
+Frozen construction and hashes: frozen-recipe.json.
+Saved heads and versions: models/ and fit-complete.json.
+Final schema verification: csv-verification.json.
+Saved-state replay: replay-verification.json.
+Independent feature/dependency check: final-verification.json.
+The latter verification files appear only after their jobs finish.
+
+From the project root, reproduce predictions from the saved states:
+  experiments/tabpfn-v2/.venv/bin/python experiments/supervised-renewal-20261018-0625/flow_candidate_finalize.py replay
+
+To refit the exact frozen heads in a new isolated output directory and re-extract test features from the pinned H300 weights:
+  experiments/tabpfn-v2/.venv/bin/python experiments/supervised-renewal-20261018-0625/flow_reproduce.py fit --output-dir experiments/supervised-renewal-20261018-0625/replay-flow46-v1
+  experiments/grain-cellpose-220/.venv/bin/python experiments/supervised-renewal-20261018-0625/flow_reproduce.py features --output-dir experiments/supervised-renewal-20261018-0625/replay-flow46-v1
+  experiments/tabpfn-v2/.venv/bin/python experiments/supervised-renewal-20261018-0625/flow_reproduce.py predict --output-dir experiments/supervised-renewal-20261018-0625/replay-flow46-v1
+  experiments/tabpfn-v2/.venv/bin/python experiments/supervised-renewal-20261018-0625/flow_reproduce.py replay --output-dir experiments/supervised-renewal-20261018-0625/replay-flow46-v1
+The output directory must not already exist for the fit action. These commands use the pinned training-feature caches and existing local packages/weights; they require no downloads or paid services. The saved original083 CSV is an explicit unchanged dependency. Its complete pipeline and those of082/076 are preserved under the referenced project preservation manifests.
+
+This directory contains no upload or final-selection action. Test data are used only for inference and reproduction/schema checks.

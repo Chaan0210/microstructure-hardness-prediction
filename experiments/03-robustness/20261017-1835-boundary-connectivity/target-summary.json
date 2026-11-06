@@ -1,0 +1,119 @@
+{
+  "source_groups": {
+    "all": {
+      "node_support": {
+        "median": 0.5841064453125,
+        "q10": 0.4443359375,
+        "q90": 0.7381347656250001
+      },
+      "boundary_positive_fraction": {
+        "median": 0.197662353515625,
+        "q10": 0.107965087890625,
+        "q90": 0.30601196289062504
+      },
+      "edge_known_fraction": {
+        "median": 0.303679435483871,
+        "q10": 0.18039314516129032,
+        "q90": 0.5195060483870969
+      },
+      "pair_positive_count": {
+        "median": 79.5,
+        "q10": 19.900000000000006,
+        "q90": 284.20000000000005
+      },
+      "pair_negative_count": {
+        "median": 574.5,
+        "q10": 337.8,
+        "q90": 787.3000000000001
+      },
+      "boundary_evidence_AUC": {
+        "median": 0.8795137809766315,
+        "q10": 0.5619845749504095,
+        "q90": 0.9434188879036648
+      },
+      "n": 400,
+      "four_view_sources": 195,
+      "withheld_view_sources": 193,
+      "withheld_view_median": 1.0,
+      "no_pair_positive_or_negative": 3
+    },
+    "high_eligible": {
+      "node_support": {
+        "median": 0.6527099609375,
+        "q10": 0.3960693359375,
+        "q90": 0.757421875
+      },
+      "boundary_positive_fraction": {
+        "median": 0.127105712890625,
+        "q10": 0.0828125,
+        "q90": 0.181036376953125
+      },
+      "edge_known_fraction": {
+        "median": 0.3649193548387097,
+        "q10": 0.14203629032258067,
+        "q90": 0.5452116935483872
+      },
+      "pair_positive_count": {
+        "median": 117.0,
+        "q10": 39.900000000000006,
+        "q90": 309.4
+      },
+      "pair_negative_count": {
+        "median": 647.5,
+        "q10": 166.00000000000003,
+        "q90": 804.7
+      },
+      "boundary_evidence_AUC": {
+        "median": 0.6800433040276144,
+        "q10": 0.3608951656252502,
+        "q90": 0.8076982538796696
+      },
+      "n": 124,
+      "four_view_sources": 124,
+      "withheld_view_sources": 122,
+      "withheld_view_median": 1.0,
+      "no_pair_positive_or_negative": 1
+    },
+    "lower": {
+      "node_support": {
+        "median": 0.555419921875,
+        "q10": 0.447265625,
+        "q90": 0.70849609375
+      },
+      "boundary_positive_fraction": {
+        "median": 0.2373046875,
+        "q10": 0.139862060546875,
+        "q90": 0.319488525390625
+      },
+      "edge_known_fraction": {
+        "median": 0.2855342741935484,
+        "q10": 0.18674395161290322,
+        "q90": 0.4974798387096774
+      },
+      "pair_positive_count": {
+        "median": 64.0,
+        "q10": 17.0,
+        "q90": 234.0
+      },
+      "pair_negative_count": {
+        "median": 539.5,
+        "q10": 372.0,
+        "q90": 767.5
+      },
+      "boundary_evidence_AUC": {
+        "median": 0.9099341789065969,
+        "q10": 0.812046118756664,
+        "q90": 0.9489046447029811
+      },
+      "n": 276,
+      "four_view_sources": 71,
+      "withheld_view_sources": 71,
+      "withheld_view_median": 1.0,
+      "no_pair_positive_or_negative": 2
+    }
+  },
+  "ids_unique_and_train_only": true,
+  "all_development_sources_exact": true,
+  "hardness_used": false,
+  "interpretation": "Withheld-view agreement is conditional on the confident common interiors and a correlated auxiliary teacher. It is not segmentation accuracy. Physical-evidenceAUC compares pseudo-boundary versus pseudo-interior raw ridge/gradient strength, not true boundaries. Positive support weights vary within each image; per-class normalization and equal image averaging do not remove all-image teacher bias."
+}

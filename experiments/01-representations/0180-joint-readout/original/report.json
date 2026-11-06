@@ -1,0 +1,190 @@
+{
+  "split": "original",
+  "passed_validation": true,
+  "RMSE": {
+    "018": 12.811945280526919,
+    "021": 12.786200775750695,
+    "globalL": 13.897309666752351,
+    "SB": 15.017018560975407,
+    "SB_blend": 12.890309020944908,
+    "SBL": 15.02316579437874,
+    "SBL_blend": 12.880848911580447
+  },
+  "comparisons": {
+    "021": {
+      "gain": -0.09464813582975218,
+      "fold_gains": [
+        -0.13668599029407602,
+        -0.12823527389420342,
+        -0.042683767800390626,
+        -0.07664261233877312,
+        -0.0937616601855229
+      ],
+      "positive_folds": 0
+    },
+    "SB_blend": {
+      "gain": 0.009460109364461289,
+      "fold_gains": [
+        -0.0010868028200441415,
+        0.031262735691342414,
+        0.011545315338612028,
+        0.013469314241488561,
+        -0.006552059788244691
+      ],
+      "positive_folds": 3
+    }
+  },
+  "correlations": {
+    "joint_SB_SBL_error": 0.9875353413800431,
+    "jointSBL_021_error": 0.8945500078215367,
+    "blendSBL_021_error": 0.9984519337619036,
+    "jointSBL_globalL_error": 0.8787989016922572,
+    "blend_update_021_residual": -0.10202067314004015,
+    "blend_update_RMS": 0.722534165829003
+  },
+  "conditional_group_bootstrap_gain_CI95": {
+    "021": [
+      -0.1728783198263188,
+      -0.012914143213823642
+    ],
+    "SB_blend": [
+      -0.015709204260332666,
+      0.03557904948209996
+    ]
+  },
+  "subgroups": {
+    "persistent_large33": {
+      "n": 33,
+      "RMSE": {
+        "018": 29.571979000365157,
+        "021": 29.482117589329434,
+        "globalL": 29.585762689492828,
+        "SB": 33.43860790890164,
+        "SB_blend": 29.86110420072239,
+        "SBL": 32.67652564928815,
+        "SBL_blend": 29.788701060598967
+      },
+      "bias_y_minus_prediction": {
+        "018": 5.797121602523916,
+        "021": 5.649141438008077,
+        "globalL": 4.31731995736562,
+        "SB": 7.986801006591534,
+        "SB_blend": 6.016089542930671,
+        "SBL": 8.89556729502808,
+        "SBL_blend": 6.106966171774321
+      },
+      "SBLblend_better_than021_count": 14
+    },
+    "other367": {
+      "n": 367,
+      "RMSE": {
+        "018": 10.013589222040656,
+        "021": 10.001543288534073,
+        "globalL": 11.48018239254002,
+        "SB": 12.051852336633916,
+        "SB_blend": 10.045998255345458,
+        "SBL": 12.246589733102647,
+        "SBL_blend": 10.052099434248662
+      },
+      "bias_y_minus_prediction": {
+        "018": -0.20677246551607528,
+        "021": -0.24447832077644668,
+        "globalL": -0.5838310181197359,
+        "SB": -0.3728535836257581,
+        "SB_blend": -0.2233805773270485,
+        "SBL": -0.337830804147593,
+        "SBL_blend": -0.2198782993792322
+      },
+      "SBLblend_better_than021_count": 179
+    }
+  },
+  "subgroup_posthoc_historical_definition_not_gate": true,
+  "advance": false,
+  "main_head_fits": 30,
+  "main_PCA_fits": 10,
+  "bank_scaler_fit_calls": 25,
+  "fresh_validation_head_replays": 6,
+  "validation_extra_PCA_fits": 2,
+  "total_head_fits": 36,
+  "fold0_poison_replays": [
+    {
+      "arm": "SB",
+      "seed": 20261128,
+      "PCA_and_states_exact": true,
+      "outer_labels_and_features_perturbed": true
+    },
+    {
+      "arm": "SB",
+      "seed": 20261205,
+      "PCA_and_states_exact": true,
+      "outer_labels_and_features_perturbed": true
+    },
+    {
+      "arm": "SB",
+      "seed": 20261219,
+      "PCA_and_states_exact": true,
+      "outer_labels_and_features_perturbed": true
+    },
+    {
+      "arm": "SBL",
+      "seed": 20261128,
+      "PCA_and_states_exact": true,
+      "outer_labels_and_features_perturbed": true
+    },
+    {
+      "arm": "SBL",
+      "seed": 20261205,
+      "PCA_and_states_exact": true,
+      "outer_labels_and_features_perturbed": true
+    },
+    {
+      "arm": "SBL",
+      "seed": 20261219,
+      "PCA_and_states_exact": true,
+      "outer_labels_and_features_perturbed": true
+    }
+  ],
+  "same_capacity_parameters": 2113,
+  "paired_initialization_and_orders": true,
+  "shared_SB_scalers_exact": true,
+  "all_reload_exact": true,
+  "CPU_MPS_max_error": 4.282948623313132e-06,
+  "manual_forward_max_error": 5.225788896723316e-06,
+  "PCA_eigen_max_error": 1.0453877347105234e-15,
+  "manual_transform_max_error": 3.552713678800501e-15,
+  "all_training_scopes_checked": true,
+  "PCA_retained_variance": {
+    "SB": [
+      0.8722789291856585,
+      0.872017034033353,
+      0.8729553640850474,
+      0.8728136227386349,
+      0.8715457961552331
+    ],
+    "SBL": [
+      0.8620344708061071,
+      0.8613799397871329,
+      0.8629079104129365,
+      0.8621834729770257,
+      0.8610928080273992
+    ]
+  },
+  "fold_report_hashes": {
+    "fold-2/SBL-report.json": "6f13fce8337aee119756d65eb396ac5a82025cb5a95c0cbbcfc4bb1c32053c29",
+    "fold-2/SB-report.json": "ca3a229aaa16571200224da8b49ef592169579fb122ece986c97eea562e1efa3",
+    "fold-4/SBL-report.json": "0bd574a93665f3f08719a51404956bcf3d58a1e895854998696d644726dd52d3",
+    "fold-4/SB-report.json": "4d94dc891ac98ad9f3ab0161cf800ccccfb6e8447d440045c9921138a7fd827b",
+    "fold-3/SBL-report.json": "f516be6834775b66351cf0fd4a32489831b67e37e7c9fb9f1d84eb7a7ef403bb",
+    "fold-3/SB-report.json": "b7a495d43c333199fe1c255da831f8b10c5ae54c91329e5cb173c7afea39e332",
+    "fold-1/SBL-report.json": "6b78953da9d6569c973671376823bf552fcc95a7cb1537f9c629124dd7c9547f",
+    "fold-1/SB-report.json": "21bc6d8215967eb7b4aa38bdbc794e38d8f5afa5519792f618204639bfea36ad",
+    "fold-0/SBL-report.json": "841acb45ebf06ba519d782ecca39a8c4e39a29fb5292c558e03f82fec543e146",
+    "fold-0/SB-report.json": "ee4cca36b4245d8455969c1053e1f81d5acc851e67b3a67c937c055a6fd9ace1"
+  },
+  "predictions_sha256": "a19217e377b72c84f15a09a6ab54f2a0ba4db0c8c9a36c3a5e1f9dd835813ae4",
+  "plan_sha256": "4314f980178d1b37509b3edb0a744439deaff8c98216b7d0cfad645e037598c3",
+  "code_lock_sha256": "bccb83c9a1a3486d954d5910c9cdc7aee7068793e165d0b85461b1ec03ca89f5",
+  "seconds": 14.003908291000698,
+  "holdout_test_full500_access": false,
+  "Public_tuning": false
+}

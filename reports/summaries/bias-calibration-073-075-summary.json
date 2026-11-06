@@ -1,0 +1,259 @@
+{
+  "outcome": "A fixed affine calibration trained from fully nested predictions improved all three development partitions.",
+  "audit": {
+    "physical_effect_signs": "No fixed negative porosity coefficient or rule that heterogeneous grains mean low hardness remains in the current learned estimators. Tree monotonic constraints are None; Ridge positive constraints are False; nonlinear kernel and neural heads are unconstrained.",
+    "orientation": "Alignment uses the magnitude of the doubled-angle resultant. CNN D4 training imposes an orientation-invariance assumption on its 0.1875 ensemble contribution; S/B frozen descriptors use no D4 averaging or training augmentation. No global D4-invariance claim or repeated D4 trial.",
+    "physical_scale": "Pixel diameters and inverse-square-root transforms are proxies with learned relationships. No micrometre conversion or fixed physical coefficient.",
+    "target_range": "No target/output clipping in 008. Feature clipping in legacy train-fit MinMax scalers can limit extrapolation.",
+    "official_pdf_access": "Parent supplied official cautions; direct URL retrieval failed. The audit checks the supplied cautions against local code, without claiming independent retrieval of the PDF.",
+    "proxy_residual_evidence": "Porosity, grain-size heterogeneity and alignment proxies had weak signed-residual Spearman associations, at most about 0.073 in absolute value. These do not justify sign constraints or another D4 trial."
+  },
+  "calibration_diagnosis": {
+    "prediction_conditioned_slopes": {
+      "original": 1.157529780152807,
+      "20261031": 1.1611931402966051,
+      "20261101": 1.159692529216736
+    },
+    "slope_above_one_in_folds": 14,
+    "total_folds": 15,
+    "not_independent_repeats": true,
+    "target_tail_warning": "Residuals contain the observed target, so residual-versus-target or target-tail bias alone does not establish correctable shrinkage. The actionable diagnostic uses prediction-conditioned residuals.",
+    "loss_interpretation": "S/B standalone slopes were below one while final-ensemble slopes were above one. This supports testing ensemble calibration, not claiming that SmoothL1 alone caused underdispersion. Prior 058 already tested and rejected a loss replacement."
+  },
+  "procedure": {
+    "outer_validation_rows": 80,
+    "outer_training_rows": 320,
+    "inner_crossfit_folds": 3,
+    "inner_training_rows": [
+      213,
+      214
+    ],
+    "calibrator": "Unconstrained OLS intercept and slope on 320 fresh inner OOF prediction/target pairs. No strength, bin, spline, weight or clipping search.",
+    "inner_models": "Every baseline, kernel, CNN and S/B head is fit inside the current outer training set. Kernel hyperparameters use a further training-only CV level.",
+    "no_global_oof_training": "Historical global OOF values are only the unchanged outer-validation predictions and baseline. They never train the calibrator.",
+    "generalization_risk": "Calibration pairs come from smaller fitted models than those receiving the correction. This training-size mismatch is evaluated as part of the fixed procedure."
+  },
+  "results": {
+    "original": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.209632611789585,
+          "fold_rmse": [
+            13.137584839949701,
+            12.597373711388418,
+            14.228655527464698,
+            12.44121172584094,
+            13.56258166849383
+          ]
+        },
+        "primary": {
+          "rmse": 13.105157912721568,
+          "fold_rmse": [
+            13.025386023375454,
+            12.507824306370592,
+            14.197984111621984,
+            12.181376909479603,
+            13.51483530810461
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.10447469906801743,
+        "fold_gains": [
+          0.11219881657424757,
+          0.08954940501782538,
+          0.030671415842713046,
+          0.2598348163613373,
+          0.047746360389220754
+        ],
+        "positive_folds": 5,
+        "bootstrap_sd": 0.058228307971680125,
+        "conditional_ci95": [
+          -0.007428976904497592,
+          0.21924617680523412
+        ]
+      },
+      "slopes": [
+        1.0785198262507762,
+        1.0600158910914135,
+        1.1306764890299827,
+        1.1446824379161882,
+        1.0965320520166424
+      ],
+      "predictions_sha256": "662c9d59196e4fc5ca8d6fee16505e65f478eb511334d5974447e82e513eedf8",
+      "report_sha256": "2ee382a7ae8b0297b82780ceec98ae382303c8cf40a8cacb6988aaa11d26a016"
+    },
+    "20261031": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.180839919990602,
+          "fold_rmse": [
+            13.399031053593571,
+            14.50578410243469,
+            13.55291183492863,
+            11.810395013161449,
+            12.472130924914959
+          ]
+        },
+        "primary": {
+          "rmse": 13.082283244172682,
+          "fold_rmse": [
+            13.381109119932207,
+            14.258282229743807,
+            13.602704776447293,
+            11.723700529909848,
+            12.284105569029235
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.09855667581791927,
+        "fold_gains": [
+          0.01792193366136452,
+          0.24750187269088286,
+          -0.04979294151866398,
+          0.08669448325160012,
+          0.1880253558857241
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.0840140744859998,
+        "conditional_ci95": [
+          -0.06824618464099123,
+          0.2670664840620722
+        ]
+      },
+      "slopes": [
+        1.1504800351692415,
+        1.1526596742456843,
+        1.170005132688889,
+        1.1534773508107814,
+        1.0961880257958272
+      ],
+      "predictions_sha256": "88b3147aa606025849e7a8e1cde0bc72c535edd9ae74e4465358fa2f51401891",
+      "report_sha256": "799a2c1b875d749ba7b417633f96d8e1ae139083c6957165336e27df5e41ae09"
+    },
+    "20261101": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.393004886763789,
+          "fold_rmse": [
+            13.68500128247352,
+            13.098019664407973,
+            13.127926748613318,
+            13.968281968272564,
+            13.060251084559912
+          ]
+        },
+        "primary": {
+          "rmse": 13.305105282101927,
+          "fold_rmse": [
+            13.849200001634694,
+            12.960759057914057,
+            12.948923572726505,
+            13.74037731629103,
+            12.995188583092828
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.08789960466186209,
+        "fold_gains": [
+          -0.164198719161174,
+          0.13726060649391592,
+          0.17900317588681247,
+          0.2279046519815342,
+          0.06506250146708403
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.06657474082844127,
+        "conditional_ci95": [
+          -0.04415534590039303,
+          0.2170578633173189
+        ]
+      },
+      "slopes": [
+        1.150919601139202,
+        1.1191894502222395,
+        1.0950232564239748,
+        1.1495551693941954,
+        1.078239399761092
+      ],
+      "predictions_sha256": "461d701dce43db9f1a1eec824c3428c897dd034bb8dcbe78d4a99c5e67cddfdd",
+      "report_sha256": "25204068339a5b5da95e34145acc2e371496865f92f042640ead88e7a9e20311"
+    }
+  },
+  "verification": {
+    "inner_models": {
+      "CNN": 45,
+      "MLP": 270,
+      "baseline_pipelines": 135,
+      "kernel": 45
+    },
+    "all_baseline_and_nested_kernel_refits": 45,
+    "max_CNN_CPU_MPS_reload_error": 3.0517578125e-05,
+    "label_perturbation_stress_checks": [
+      {
+        "split": "original",
+        "outer_validation_targets_perturbed_only_in_memory": true,
+        "calibration_fit_data_unchanged": true,
+        "entire_inner_recipe_refit_max_prediction_error": 5.684341886080802e-14,
+        "all6MLPstates_exact": true
+      },
+      {
+        "split": "20261031",
+        "outer_validation_targets_perturbed_only_in_memory": true,
+        "calibration_fit_data_unchanged": true,
+        "entire_inner_recipe_refit_max_prediction_error": 2.842170943040401e-14,
+        "all6MLPstates_exact": true
+      },
+      {
+        "split": "20261101",
+        "outer_validation_targets_perturbed_only_in_memory": true,
+        "calibration_fit_data_unchanged": true,
+        "entire_inner_recipe_refit_max_prediction_error": 5.684341886080802e-14,
+        "all6MLPstates_exact": true
+      }
+    ],
+    "independent_OLS": true,
+    "source": "reports/nested-calibration-074-validation.json",
+    "sha256": "024454780fbb26efa882fb3fba8bea5eb9a8182d4d934dd98010243bf7605f69"
+  },
+  "candidate": {
+    "path": "artifacts/submission-candidate-009.csv",
+    "sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "verification": "reports/candidate009-verification.json",
+    "verification_sha256": "f3d7b199c6a33854532efb310162edafd23e3a19e1322e53c72761a6585a6665",
+    "rows": 1000,
+    "model": "artifacts/final-model-075",
+    "formula": "target_center + slope * (candidate008 - prediction_center)",
+    "full500_calibration_slope": 1.1280948063190912,
+    "prediction_range": [
+      162.15252126516518,
+      236.19788369333574
+    ],
+    "CSV_byte_exact_reproduction": true,
+    "uploaded": false
+  },
+  "best_public_preserved": {
+    "candidate": "008",
+    "public_rmse_parent_confirmed": 11.8898307061,
+    "sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9"
+  },
+  "limits": [
+    "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+    "The diagnostic led to this experiment after many prior studies on the same 400 rows. Three partitions are split-robustness checks, not independent validation.",
+    "Conditional bootstrap intervals omit fitting and adaptive-selection uncertainty. No claim of statistically proven improvement or prize readiness.",
+    "Candidate009, if present, is unsubmitted. Its Public/private performance is unknown."
+  ],
+  "scope": {
+    "cost": 0,
+    "new_packages_or_weights": false,
+    "holdout100_separate_evaluation": false,
+    "test_selection": false,
+    "upload": false,
+    "running_processes": []
+  },
+  "technical_blockers": [],
+  "source_sha256": "88c912451a1635ff1d2d02015769377874ba6d4ccdfd5bd50a2bc18e22dcb829",
+  "audit_report_sha256": "8af0d046bc65cf0ea19a2d5bb2d4989cddbaff30874dc731b6d727c58a8e6d2f"
+}

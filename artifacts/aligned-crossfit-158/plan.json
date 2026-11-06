@@ -1,0 +1,55 @@
+{
+  "study": "158 anchor-aligned cross-fitted stack",
+  "UTC": "2026-10-04T13:32:57.321276+00:00",
+  "prior119_correction": "119 already pooled320 own-label-excluded residuals with fixedrbf1 and NO innerselection. It was a valid outer comparison, not a demonstrated outer-label leak. Repeating fullTbase+fixedpooledresidual would duplicate it.",
+  "distinct_hypothesis": "119 retained target anchors trained213/214 but deploymentbase trained320.158 uses the SAME three A-only calibrated+shortB base models at outer inference, averaging their predictions, then adds one pooled320 residualfit. This aligns individual upstream train size and model construction between residual generation and deployment, while increasing each residualfit from107 to320.",
+  "definitions": "WithinouterT320/V80, A_j=TminusB_j. f_Aj=.9affine_Aj(.3KRR+.3CNNmean3identity+.2Smean3+.2Bmean3)+.1shortB_Aj; affine_Aj learned from A-only deepOOF. r_i=y_i-f_Aowner(i)(i) fori inB_j. b(V)=mean_j f_Aj(V). Matchedblock=b(V)+mean_j g_Bj(V); PRIMARY=b(V)+g_T(V). Unchanged018 is operatingreference. No new outer affine on pooled fitted residuals.",
+  "fixed_residual": "Existing n.fit kindrbf1 exactly,physics57+spatial528=585. Train-only MinMaxclip/StandardScaler/blockweights,medianpairdistance gamma,traincenter/trace normalization,residualRMS,alpha=1*n,effective df<=1. One fixed family/strength and no inner selection, bootstrap candidate weights,lambda sweep,none fallback or posthoc mixture.",
+  "matched_control": "Reuse45 current018 fullB rbf1 model objects with the same crossfit targets/features. Compute new aligned base for BOTH arms; only residual pooling differs between primary and matchedcontrol. No repeat of119 fullTbase+pooled arm and no use of020 extra feature.",
+  "leakage": "EveryT row has exactly one crossfitted target; its completeA upstream/affine/shortB excludes itsB andV. Allg_T statistics fitT only; no innerselector consuming contaminated pooled residuals. V excludes every upstream and downstream fit. Existing deeperA OOF calib scopes independently checked.",
+  "cache_reuse": {
+    "existing_45_anchor_targets_and_deepOOF_affines": true,
+    "existing_A_KRR_CNN3_outerV_predictions": "156 audited feature caches,45bundles; no newfits.",
+    "existing_A_S_B_and_shortB_checkpoints": "074/112,270S/Bheads+45shortB. Missing outerV predictions recomputed and checked on originalB queries.",
+    "existing45_fullB_rbf1": "144,exacttarget/feature/modelhashes verified.",
+    "new_models": "15 pooled320 RBF1 fits only; additional3poison replay fits. No CNN/MLP/backbone training."
+  },
+  "strict_selected_alternative_not_run": {
+    "extra_depth_base_bundles94_96": 405,
+    "current3seedCNN_fits_if_rebuilt": 1215,
+    "S_B_MLP_fits": 2430,
+    "shortB142_143_fits": 135,
+    "reason": "118 identified extra calibration depth required for clean innerselection. These are model-count estimates,not benchmarkedtime; current existing142 rawOOF caches alone cannot provide calibrated142 nuisances. Fixedrbf1 avoids this explosion."
+  },
+  "criterion": "Run all3 existing partitions. Primary pooled untrimmedMSE must beat BOTH matchedblock and unchanged018, plusindependentverification. No fold/CI gate; controls not fallbackcandidates. Negative closes this aligned fixedstack with no alternate lambda or baseweights.",
+  "uncertainty": "10000 paired ID-group bootstrap seed20271218; all3partitions retained for each ID/group. Historical400adaptive reuse,anchor-overlap dependence and fixedfit CI limitations disclosed.",
+  "cautions": "Current3small residuals already jointly use320labels;107-to320 is perlearner,not3xindependentinformation. AveragingA models reduces queryvariance versusoneOOFanchor; alignment is not full distribution equality. Pooledpreprocessing/kernelstatistics alsochange. RBF1 may underfit; failure does not refute all properlynested stacks.",
+  "resources": "ExistingCPU2/MPS, zero packages/cost. Firstwholefoldbenchmark projected15<600sec,RSS<3GB. No new neuralfits. Test/holdout unavailable for selection; positivecandidate full500 would use3A333/334 basebundles plusone500residual.",
+  "hashes": {
+    "aligned_crossfit_158.py": "57f69c41d21561cb3e9c075853b983bad1e3d1bace7c57d08cebedd82c6a5f22",
+    "bootstrap_selector_144.py": "d9f55f8e50cd7327efb8d45d433b8c16f3ede19265c436dffcd024e69b45abc3",
+    "nonlinear_residual_115.py": "63bd7f2bed66edba2916b017f3c8a8e0dfc80509302806808b06bf4d6b126fc9",
+    "validate_nonlinear_residual_115.py": "6fdfd3b17d927738851730cbf616c1fc47d3ece3d04ea5447667073e6c4b7b60",
+    "reports/residual-crossfit-118-scope-audit.json": "1ce606308886a0fa0d146a82d0607d428285c5faef0cba7b163bb1a7722216bc",
+    "reports/pooled-residual-119-summary.json": "0b3897cf525e1073b7bcf4f403ab6af2d7ee392b5f7426fa4d5da9188ca89fdd",
+    "pooled_residual_119.py": "cf8dba66c651c63be5d1b6f00bf08ccb573e0863ebb7a73f087a2bdc4676442b",
+    "reports/nested-selector-146-audit.json": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+    "reports/disagreement-156-audit.json": "269d283cd2f43e4b04198019d8da80c618e86fbe832875a35bc63ed2683bf849",
+    "reports/candidate020-summary.json": "af1540287040d96929222a5328275de61899f8e065afb9abcb295879ecbe0b05",
+    "artifacts/bootstrap-selector-144/original/report.json": "1d6d0fc65062dd04c1762abad44b757c1d4cd07fcb4336dec13aaaa3dc087625",
+    "artifacts/bootstrap-selector-144/validation-original.json": "9cb3c3a727b629e4d677333ce6e63c3f317de2a89bc0c7b5635aec7c119599df",
+    "artifacts/bootstrap-selector-144/20261031/report.json": "b348271c8e759ed750d167357ad69f0d731a11dca7070e5c14c4079b5140e2b8",
+    "artifacts/bootstrap-selector-144/validation-20261031.json": "44be855488a748d43236a52cda3c3aba8e4d73475d77044eb9977453547c3412",
+    "artifacts/bootstrap-selector-144/20261101/report.json": "f60fac49edcf5970e936d98d7a3f0166c4a5538836a8211c414285b2100345dd",
+    "artifacts/bootstrap-selector-144/validation-20261101.json": "73eee032bfd1de09b25356115ca27da206786c9a59c8fea707660d6b7b209691"
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef"
+  },
+  "submission": "None; parentreported5/5 exhausted.018best and020secondary retained.",
+  "cost": 0
+}

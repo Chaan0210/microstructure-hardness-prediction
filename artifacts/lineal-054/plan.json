@@ -1,0 +1,60 @@
+{
+  "hypothesis": "Full-segment probabilities over lengths encode phase connectivity and chord distributions beyond existinginterceptmoments or two-point autocorrelation. Hardness benefit unknown.",
+  "references": [
+    "https://www.sciencedirect.com/science/article/pii/S0921509307005898",
+    "https://www.sciencedirect.com/science/article/abs/pii/S1044580318313743"
+  ],
+  "access": "Both directprimaryURLs403; nofulltextretrieved. Implemented user-specifieddefinition,notclaimedpaperreproduction. No externalcode/data downloaded.",
+  "panel": "Raw256grayquantiles10/25/50/75/90,mask<=quantileandcomplement,4directions,no denoise orperiodicwrap. Sixlengths2/4/8/16/32/64; directionmean/populationstd gives5*2*6*2=120.",
+  "distance_definition": "L=pixel-center endpointdistance. Lattice lagk usesk+1consecutivephasepixels. Horizontal/vertical spacing1; diagonalspacing sqrt2. Adjacentlagprobabilities linearlyinterpolatedtoL/sqrt2, eachnormalizedbyitsownvalidstartcount. Digital approximation; no exactsubpixelclaim.",
+  "counting": "Sum over observedphase runlengthr ofmax(r-k,0) /sumoverimage-line lengthsN ofmax(N-k,0). Includesimage-edgeclippedruns butonlywhollyvisiblewindows;doesnotdiscardshortdiagonals exceptwhennoeligiblewindow.",
+  "quantile_ties": "np.quantilelinear;mask<=threshold. Eight-bit ties retained,D4invariancepreserved. Nominalphasefractionslargelyremoved butactualoccupancycanexceedq;countsloggeddiagnostically,notaddedfeatures.",
+  "existing_overlap": "latent36 usesblackhatboundarythresholdinterceptmoments,notrawgraylevelwhole-segmentcurves. Existingextra granulometry/distance/componentstatsdistinct; no Euler/Betti added.",
+  "regression": "OneRidgefamily,StandardScalerX,targetmeanstdinnertrainonly; alpha12/120/1200chosenbysmallinnerGroupKFold3,seed20261221+outerfold,pooledstandaloneinnerRMSE. Noresidualtargets orbaselinein-samplelabels.",
+  "primary": ".90samefold007+.10linealRidge. Existingphase/intensityinformationretainedwithin007,notreplaced.",
+  "diagnostic": ".90samefold006+.10linealRidge andlinealalone;noteligiblealternatewinner.",
+  "screen": "Originalprimaryimproves007,>=3/5folds,andgainexceedspairedbstrapSD. Thisiscomputeallocationrule,notsignificancethreshold. Onlythenconfirmunchangedrecipeonbothknownrepartitions. Stopifnotpassed,nofeature/weight/hyperparametersweep.",
+  "scope": "Development400only;noholdout/testdata,submissionCSV,upload,newinstall,cost,topologyfeatures.006/007artifactsprotected.",
+  "resource": "Fixturefirst;benchmarkfirst10developmentimages,thenfixed400extractionifprojected<5minutesandRSS<2GB.",
+  "bias": "Development400repeatedlyused;conditionalbootstrapdoesnotcorrecthistoricalmodelselection.",
+  "sources": {
+    "lineal_features_054.py": "22a0a1cee7d22dac759642741050489c64233965217d59ec5394d731ca573162",
+    "test_lineal_054.py": "404b1de930c293fca20ce1f73377a059d794d71d1e41329435a35b89c5b0c14d",
+    "lineal_experiment_054.py": "d48ac085368c2563824e57a0ce43339ca6bbefe8e0baf48cac62599c61d8a482",
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.manifest.json": "ac411a5e58ee57af5c4a653e7e4296c543a89333ee1a929b576d6e67f7b20e68",
+    "artifacts/submission-candidate-006.components.csv": "3a41ca42fa66e10b9899fc2d25ccfa395d5b728e0cf00a9b213be1ad06e410a5",
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/submission-candidate-007.components.csv": "73e2699df9c3728d4b173ea1e2f74bb28d689befaacce85527928c5193f964f5",
+    "artifacts/submission-candidate-007.csv": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "artifacts/submission-candidate-007.manifest.json": "be282c4a01a0e8f269a82ed9649522563d901a8dc424dcffde5a5533e6d81329",
+    "artifacts/final-model-045/report.json": "2d344e9f074aeebe45dfb99e001175aef8e6b8485bc85c51bc45af0ce4526e7c",
+    "artifacts/final-model-045/train_features.npz": "e46b8746fe9114c75766e329efdb040fb45e33912567e0ef50b5ef637c46faa1",
+    "artifacts/final-model-045/test_features.npz": "08b8e5c2e0f0daa1eb05e223fbcb99b490a481d3667cf07a70ce666ce3aba876",
+    "artifacts/final-model-045/decision.json": "cae40d328c87ae4104ad70bdf18b9e8002b5a787ab98307c31a74f6e282f49eb",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+    "artifacts/final-model-053/verification-test-compact-cnn-inputs.npz": "5693022f148ad26318debf34b554ad003833c0a6378c0be2d4754c82482d5539",
+    "artifacts/final-model-053/report.json": "4636d8307de29d1bb9b12c666e4d95361a32e33aabf0439d81e120ff1de00a0f",
+    "artifacts/final-model-053/mlp-seed-20261219.pt": "d3f5aa1cb9d755385ee04561d12d26610c8440c642aef0fb7466975b05bd9c58",
+    "artifacts/final-model-053/mlp-seed-20261128.pt": "e5f990b7ae6d0bda291cbd0574b65b01796959915ce1afdf696007957a512226",
+    "artifacts/final-model-053/decision.json": "d570d5508b94580a38f2f56951c454f4bdf07db129febda3efe58b91b16c83e6",
+    "artifacts/final-model-053/mlp-seed-20261205.pt": "550b0944dd3dcb1f36ff8e5238d29e5c31f05fada4a6deb1471809f4a10ddc1f",
+    "artifacts/seed-stability-052/candidate-design.json": "f149e8afd8c553dadc1205fadb8229a93f6dac1894f8a5ce50232c800de0f2b4"
+  },
+  "pre_extraction_fixture_correction": {
+    "reason": "Analytic single-row fixture L1 (not among productionL2..64) had assumed zero diagonal probability. Interpolation between lag0 occupancy1/8 and lag1 zero yields(1-1/sqrt2)/8. Brute enumeration agreed with implementation. Correct expectation only; nofeature/regression/gatechange.",
+    "initial_plan_sha256": "8015dd59a505e58fde3cec2df8767f3cf0199ac238772e5854a3b0d21ef7123b",
+    "initial_failure_log": "reports/lineal-054-benchmark-initial-failure.log",
+    "real_image_extraction_before_fix": false,
+    "model_fit_before_fix": false,
+    "at_utc": "2026-10-01T16:35:02.186015+00:00"
+  },
+  "serialization_fix": {
+    "reason": "numpy.bool_ could not be JSON serialized when gate false",
+    "scope": "bool cast only; no feature/model/prediction/selection-rule change",
+    "recovery": "selection reconstructed from already saved original/report.json; no refit",
+    "prior_source_sha256": "a4ccb7d4c73fa45d4277c4a56adef87b274cc120dabb617009c9f5c3c40a2ef3"
+  }
+}

@@ -1,0 +1,32 @@
+{
+ "candidate": "031",
+ "weight": 0.75,
+ "n_train": 500,
+ "test_failed_segmentations": 1,
+ "pred_stats": {
+  "mean": 193.79807142336574,
+  "std": 12.962490254104724,
+  "min": 161.31360473928424,
+  "max": 256.3970800140674
+ },
+ "corr_best021_vs_grain_test": 0.7989534385732957,
+ "rms_change_vs_021": 6.318951661108798,
+ "rms_change_vs_023": 5.34014327092034,
+ "csv": "artifacts/submission-candidate-031.csv",
+ "csv_sha256": "e0705869712c42ffa5a1f8bb5931a8ac35fb9eeaf04bf6d24e5370d2a6c1cb8a",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "uploaded": false,
+ "formula": "0.25*best021 + 0.75*mean(v2+v3.5) TabPFN on feat-u1ph-train.npz/feat-u1ph-test.npz (fallback best021 if n_obj<20)",
+ "train_features": "experiments/push-400/feat-u1ph-train.npz",
+ "train_features_sha256": "644ebc074150e7bf8efd6c4deb6a70fc22fb120f98828fdf66c1aeb39b9e88d0",
+ "test_features": "experiments/push-400/feat-u1ph-test.npz",
+ "test_features_sha256": "2b6119e2462b575938cc8d1e03bddca257ef776d8860787217884f28cdfd622c",
+ "models": [
+  "v2",
+  "v3.5"
+ ],
+ "model_corr": {
+  "v2~v3.5": 0.9892664049441113
+ },
+ "dev_evidence": "experiments/push-400/evidence-031.json (dev pooled fixed W0.75: 10.431 vs 030 10.779; all 3 partitions better; harness v2 n8 3 seeds 10.549 vs 10.884)"
+}

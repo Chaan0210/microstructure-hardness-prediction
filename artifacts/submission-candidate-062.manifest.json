@@ -1,0 +1,15 @@
+{
+ "candidate": "062",
+ "formula": "053 + 1[noise>=12 & ~failed]*0.128*((ridge_aug - ridge) + (logridge_aug - logridge))",
+ "augmentation": "all degraded copies (deg..deg7, deg7 = mid-noise sources) with measured noise >= 12; RidgeCV alphas 0.001..1000 and log-Ridge alpha by internal CV",
+ "fin": "d1to7n12-wal",
+ "dev": 9.6448,
+ "n_fit_rows": 1809,
+ "ridge_alpha": 0.01,
+ "n_gated": 318,
+ "change_rms_all": 0.8606477513350866,
+ "change_rms_gated": 1.5262015082032756,
+ "change_mean_gated": 0.48384253371718733,
+ "CSV_sha256": "9175355021cea5c372f57805ca9490512d92b293f05ca7cd36b0fc202307e876",
+ "uploaded": false
+}

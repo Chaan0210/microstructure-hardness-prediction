@@ -1,0 +1,434 @@
+{
+  "study": 177,
+  "UTC": "2026-10-05T23:24:27.680509+00:00",
+  "status": "completed_confirmed_development_candidate",
+  "best018_preserved": true,
+  "chosen_readout": "MLP",
+  "confirmed_L_readouts": [
+    "MLP"
+  ],
+  "fixed_recipe": ".90*existing018 + .10*L_readout",
+  "scope": "development400 only. No rawholdout/test or full500fit, no CSV generation or upload.",
+  "download": {
+    "model": "original DINOv2 ViT-L/14 nonregister",
+    "official_URL": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitl14/dinov2_vitl14_pretrain.pth",
+    "HTTP_status": 200,
+    "bytes": 1217586395,
+    "sha256": "d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428",
+    "seconds": 22.009267583998735,
+    "license": "Apache-2.0",
+    "license_sha256": "600cc67cc4cb2f5ea317dcfc687ad1c74dc4bec8782bbe9db0afd83513b935b7",
+    "model_card_sha256": "70ca59606bee0a5fbb1baec80e7e29a93cd7cfbe26ca1910c52a852c4aab09d0",
+    "source_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "publisher": "Meta AI",
+    "local_integrity_hash_not_publisher_signature": true,
+    "other_weight_downloads": 0,
+    "new_packages": 0,
+    "cost": 0
+  },
+  "feature": {
+    "passed": true,
+    "shape": [
+      400,
+      9216
+    ],
+    "seconds": 149.3247990000018,
+    "feature_sha256": "bc27df3ab45184f565a99007316b4239dce8cab9abe782e4dc302c988e9b8b90",
+    "weight_sha256": "d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428",
+    "model_state_unchanged": true,
+    "benchmark3_exact": true,
+    "raw_image_hashes_match_B": true,
+    "batch": 1,
+    "dtype": "float32",
+    "no_labels_or_holdout_test_read": true
+  },
+  "benchmark": {
+    "passed": true,
+    "rows": 3,
+    "batch": 1,
+    "dtype": "float32",
+    "parameters": 304368640,
+    "devices": {
+      "cpu": {
+        "image_seconds": [
+          1.1582837919995654,
+          1.189526542002568,
+          1.1668181249988265
+        ],
+        "median_image_seconds": 1.1668181249988265,
+        "repeat_error": 0.0,
+        "resource": {
+          "RSS": 2264825856,
+          "peak_RSS": 2674049024,
+          "MPS_driver": 393216,
+          "conservative_RSS_plus_MPS": 2265219072,
+          "swap_bytes": 0,
+          "system_memory_free_percent": 73
+        }
+      },
+      "mps": {
+        "image_seconds": [
+          0.34741229099745397,
+          0.3570226250012638,
+          0.3570756659973995
+        ],
+        "median_image_seconds": 0.3570226250012638,
+        "repeat_error": 0.0,
+        "resource": {
+          "RSS": 1065795584,
+          "peak_RSS": 2674049024,
+          "MPS_driver": 2194309120,
+          "conservative_RSS_plus_MPS": 3260104704,
+          "swap_bytes": 0,
+          "system_memory_free_percent": 57
+        }
+      }
+    },
+    "CPU_MPS_max_abs": 8.440017700195312e-05,
+    "weights_unchanged": true,
+    "seconds": 15.020942374998413,
+    "projected400_MPS_seconds": 142.80905000050552,
+    "feature_sha256": "863590a1d199276137df52aafd44ca319f373fa91059acc4a9a366811cfcdb1b",
+    "no_labels_read": true,
+    "scope": "3 originalfold0-training images only"
+  },
+  "RMSE_by_partition": {
+    "original": {
+      "reference018": 12.811945280526919,
+      "B_MLP": 13.615777507504738,
+      "blend_B_MLP": 12.797114144449424,
+      "L_MLP": 13.897309666752351,
+      "blend_L_MLP": 12.786200775750695,
+      "B_SVR": 16.305621378409068,
+      "blend_B_SVR": 12.990629150981889,
+      "L_SVR": 15.981178807497134,
+      "blend_L_SVR": 12.912427040131584
+    },
+    "20261031": {
+      "reference018": 12.645872618239814,
+      "B_MLP": 13.967093172617764,
+      "blend_B_MLP": 12.67774011374635,
+      "L_MLP": 14.072964146377657,
+      "blend_L_MLP": 12.621902419708583
+    },
+    "20261101": {
+      "reference018": 13.048624416802191,
+      "B_MLP": 14.02485574576349,
+      "blend_B_MLP": 13.052589976080085,
+      "L_MLP": 14.330638886351583,
+      "blend_L_MLP": 13.032449212752852
+    }
+  },
+  "diagnostics_by_partition": {
+    "original": {
+      "MLP": {
+        "gain": 0.02574450477622392,
+        "fold_gains": [
+          -0.018775225091220094,
+          0.08237199172632792,
+          0.0452942195715913,
+          0.0445165900602138,
+          -0.02188758018607828
+        ],
+        "positive_folds": 3,
+        "conditional_cluster_bootstrap_CI95": [
+          -0.047323062325136785,
+          0.09532553498064755
+        ],
+        "CI_not_adjusted_for_model_selection_or_refitting": true,
+        "L_B_error_correlation": 0.9248422817832331,
+        "L_018_error_correlation": 0.8928852578124592,
+        "gain_vs_matched_B_blend": 0.010913368698728831
+      },
+      "SVR": {
+        "gain": -0.10048175960466565,
+        "fold_gains": [
+          -0.20582472472786328,
+          -0.1272802686446255,
+          0.019894576265983233,
+          -0.05706392491292789,
+          -0.13941253887348992
+        ],
+        "positive_folds": 1,
+        "conditional_cluster_bootstrap_CI95": [
+          -0.19190722660849974,
+          -0.00915083567897006
+        ],
+        "CI_not_adjusted_for_model_selection_or_refitting": true,
+        "L_B_error_correlation": 0.9550879181460172,
+        "L_018_error_correlation": 0.8470261007151738,
+        "gain_vs_matched_B_blend": 0.07820211085030415
+      }
+    },
+    "20261031": {
+      "MLP": {
+        "gain": 0.023970198531230835,
+        "fold_gains": [
+          0.0639981467882329,
+          -0.04791144625034782,
+          0.049868872260681485,
+          0.04598018127220094,
+          0.007524906663183728
+        ],
+        "positive_folds": 4,
+        "conditional_cluster_bootstrap_CI95": [
+          -0.05314743836127591,
+          0.10159733604097405
+        ],
+        "CI_not_adjusted_for_model_selection_or_refitting": true,
+        "L_B_error_correlation": 0.9049602481766773,
+        "L_018_error_correlation": 0.8678045494853992,
+        "gain_vs_matched_B_blend": 0.05583769403776628
+      }
+    },
+    "20261101": {
+      "MLP": {
+        "gain": 0.016175204049339698,
+        "fold_gains": [
+          0.14923219215223504,
+          0.02289237983830006,
+          -0.06874294588776309,
+          -0.03869899286582168,
+          0.015103552921107877
+        ],
+        "positive_folds": 3,
+        "conditional_cluster_bootstrap_CI95": [
+          -0.05599148331586408,
+          0.0893772351183062
+        ],
+        "CI_not_adjusted_for_model_selection_or_refitting": true,
+        "L_B_error_correlation": 0.9241674229859081,
+        "L_018_error_correlation": 0.8876428246871875,
+        "gain_vs_matched_B_blend": 0.020140763327233913
+      }
+    }
+  },
+  "aggregate": {
+    "MLP": {
+      "pooled_RMSE_018": 12.836544645642636,
+      "pooled_RMSE_Lblend": 12.814628144604061,
+      "pooled_RMSE_Bblend": 12.843433210548069,
+      "pooled_gain": 0.02191650103857512,
+      "conditional_group_bootstrap_CI95": [
+        -0.04626108818810644,
+        0.08968440519523549
+      ],
+      "group_draw_shared_across_repartitions": true,
+      "fixed_predictions_no_refitting_or_historical_selection_adjustment": true
+    }
+  },
+  "PCA_SVR": {
+    "original_result": {
+      "B_SVR": 16.305621378409068,
+      "blend_B_SVR": 12.990629150981889,
+      "L_SVR": 15.981178807497134,
+      "blend_L_SVR": 12.912427040131584
+    },
+    "advanced": false,
+    "grid": {
+      "input": "finalnormalizedCLS only;B768,L1024. Paper-inspired PCA/SVR,notliteralpaperreplication.",
+      "scaler": "StandardScaler fitinnertrain/outertrain only",
+      "PCA_components": [
+        16,
+        34,
+        64
+      ],
+      "PCA_whiten": false,
+      "PCA_solver": "full",
+      "kernel": "rbf",
+      "gamma": "scale",
+      "C": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "epsilon": 0.1,
+      "target": "mean/stdfittrainonly",
+      "selection": "innerGroupKFold3shuffle random_state202710177+10000*splitindex+fold;minpooledRMSE,tiefirstgridorder;outerheldoutneverusedforfit/selection"
+    },
+    "interpretation": "This fixedfinalCLS/PCA/SVR recipe is paper-inspired, not a literalMicroPropViT replication or a disproof of everyL/PCA/kernel variant."
+  },
+  "validation": {
+    "original": {
+      "passed": true,
+      "split": "original",
+      "MLP_reloads": 30,
+      "SVR_dual_reloads": 280,
+      "errors": {
+        "SVR_manual": 1.8189894035458565e-12,
+        "PCA_eigen": 1.971756091734278e-13,
+        "MLP_reload": 0.0,
+        "B_state_max": 0.0
+      },
+      "all_inner_and_outer_scaler_PCA_target_scopes_verified": true,
+      "all_PCA_eigen_equations_checked": true,
+      "all_inner_selection_scores_replayed": true,
+      "all_B_MLP_states_exact_historical": true,
+      "outer_fold0_target_poison_exact": {
+        "B_MLP": 0.0,
+        "B_SVR": 0.0,
+        "L_MLP": 0.0,
+        "L_SVR": 0.0
+      },
+      "poison_scope": "One completeouterfold perpartition,notall5folds",
+      "seconds": 7.5534695829992415,
+      "report_sha256": "4388928f5eac88fdedc388652eccdc4def996beb85fd9528b7afe479fd19215d",
+      "source_sha256": "6141eae135dbc7610c50d9566da2032b60d6a7d77035ee729828c5eb8c99a0ac",
+      "no_holdout_test_access": true
+    },
+    "20261031": {
+      "passed": true,
+      "split": "20261031",
+      "MLP_reloads": 30,
+      "SVR_dual_reloads": 0,
+      "errors": {
+        "SVR_manual": 0.0,
+        "PCA_eigen": 0.0,
+        "MLP_reload": 0.0,
+        "B_state_max": 0.0
+      },
+      "all_inner_and_outer_scaler_PCA_target_scopes_verified": true,
+      "all_PCA_eigen_equations_checked": true,
+      "all_inner_selection_scores_replayed": true,
+      "all_B_MLP_states_exact_historical": true,
+      "outer_fold0_target_poison_exact": {
+        "B_MLP": 0.0,
+        "L_MLP": 0.0
+      },
+      "poison_scope": "One completeouterfold perpartition,notall5folds",
+      "seconds": 5.971528540998406,
+      "report_sha256": "d49bbf8db002094b7ed77eb30c01353a29d4d19635166772f83a4715838b66fa",
+      "source_sha256": "6141eae135dbc7610c50d9566da2032b60d6a7d77035ee729828c5eb8c99a0ac",
+      "no_holdout_test_access": true
+    },
+    "20261101": {
+      "passed": true,
+      "split": "20261101",
+      "MLP_reloads": 30,
+      "SVR_dual_reloads": 0,
+      "errors": {
+        "SVR_manual": 0.0,
+        "PCA_eigen": 0.0,
+        "MLP_reload": 0.0,
+        "B_state_max": 0.0
+      },
+      "all_inner_and_outer_scaler_PCA_target_scopes_verified": true,
+      "all_PCA_eigen_equations_checked": true,
+      "all_inner_selection_scores_replayed": true,
+      "all_B_MLP_states_exact_historical": true,
+      "outer_fold0_target_poison_exact": {
+        "B_MLP": 0.0,
+        "L_MLP": 0.0
+      },
+      "poison_scope": "One completeouterfold perpartition,notall5folds",
+      "seconds": 5.979958083000383,
+      "report_sha256": "de60caf62e39b88f4528c981bd8f38fbe6b93ea47af063963d5043bbad510b60",
+      "source_sha256": "6141eae135dbc7610c50d9566da2032b60d6a7d77035ee729828c5eb8c99a0ac",
+      "no_holdout_test_access": true
+    }
+  },
+  "training_counts": {
+    "main_MLP_models": 90,
+    "main_SVR_fits": 280,
+    "poison_MLP_models": 18,
+    "poison_SVR_fits": 56
+  },
+  "resources": {
+    "20261101-resources.json": {
+      "seconds": 24.898744083002384,
+      "max_RSS": 579731456,
+      "peak_RSS": 579764224,
+      "max_MPS_driver": 393216,
+      "max_conservative_RSS_plus_MPS": 580124672,
+      "max_swap_bytes": 0,
+      "min_system_memory_free_percent": 73
+    },
+    "validation-20261101-resources.json": {
+      "seconds": 5.504596000006131,
+      "max_RSS": 590856192,
+      "peak_RSS": 590872576,
+      "max_MPS_driver": 393216,
+      "max_conservative_RSS_plus_MPS": 591249408,
+      "max_swap_bytes": 0,
+      "min_system_memory_free_percent": 73
+    },
+    "benchmark-resources.json": {
+      "seconds": 15.020337500005553,
+      "max_RSS": 2294906880,
+      "peak_RSS": 2674049024,
+      "max_MPS_driver": 2194358272,
+      "max_conservative_RSS_plus_MPS": 3261825024,
+      "max_swap_bytes": 0,
+      "min_system_memory_free_percent": 57
+    },
+    "extraction-resources.json": {
+      "seconds": 149.32369091699366,
+      "max_RSS": 1468956672,
+      "peak_RSS": 2674016256,
+      "max_MPS_driver": 2194358272,
+      "max_conservative_RSS_plus_MPS": 3362816000,
+      "max_swap_bytes": 0,
+      "min_system_memory_free_percent": 57
+    },
+    "validation-original-resources.json": {
+      "seconds": 6.102480999994441,
+      "max_RSS": 609271808,
+      "peak_RSS": 609304576,
+      "max_MPS_driver": 393216,
+      "max_conservative_RSS_plus_MPS": 609665024,
+      "max_swap_bytes": 0,
+      "min_system_memory_free_percent": 73
+    },
+    "validation-20261031-resources.json": {
+      "seconds": 5.498543999994581,
+      "max_RSS": 591380480,
+      "peak_RSS": 591413248,
+      "max_MPS_driver": 393216,
+      "max_conservative_RSS_plus_MPS": 591773696,
+      "max_swap_bytes": 0,
+      "min_system_memory_free_percent": 73
+    },
+    "original-resources.json": {
+      "seconds": 28.333333791997575,
+      "max_RSS": 599588864,
+      "peak_RSS": 599654400,
+      "max_MPS_driver": 393216,
+      "max_conservative_RSS_plus_MPS": 599982080,
+      "max_swap_bytes": 0,
+      "min_system_memory_free_percent": 73
+    },
+    "20261031-resources.json": {
+      "seconds": 24.869910707995587,
+      "max_RSS": 578748416,
+      "peak_RSS": 578781184,
+      "max_MPS_driver": 393216,
+      "max_conservative_RSS_plus_MPS": 579141632,
+      "max_swap_bytes": 0,
+      "min_system_memory_free_percent": 73
+    }
+  },
+  "nested_explanation": "Frozen018OOF uses previouslyverifiednested/honest procedure. NewMLP learned onlyoutertrain; PCA/SVR preprocessing andhyperselection fitinnertrain, thenrefitoutertrain. Predetermined.9/.1blend hasno learnedcombiner or weightselection, hence no newcombiner fitting. Outerfold0 targetpoison replays everyexecutedreadout/backbone perpartition. A learnedresidual correction would require newhonestnested fits and wasnot substituted.",
+  "no_performance_guarantee": true,
+  "limitations": [
+    "Three partitions reuse the same400 observations and historical adaptive selection. They are not independent datasets.",
+    "Conditional bootstrap uses fixedOOF predictions and excludes refitting/modelselection uncertainty.",
+    "L vs B MLP hiddenwidth is fixed but inputwidth and firstlayer parametercount differ; recipecontrol is notparametercountcontrol.",
+    "PCA/SVR used finalCLS B768/L1024 at504px with3PCAx3C grid; neither arbitrarygridsearch nor exact149SEM paperreplication.",
+    "Memory guard conservatively checks currentRSS+MPSallocation but these metrics may overlap; they are not a precise physical-memory sum.",
+    "Same-device feature/MLP reload validated; cross-device feature differences nonzero and no cross-platform claim."
+  ],
+  "protected_files": 11,
+  "preservation_validation_sha256": "e82914e799258de6ed470140dde0087b1348aa29b2b88d2a303e36ee4807e10a",
+  "plan_sha256": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4",
+  "readout_code_lock_sha256": "c0efce2a9c709d7ebd9b68ab180e185914d4b96b7f1aa49f3dfa6f5481ebd009",
+  "source_sha256": "4ad4dd768b4ff3de7864679f990e233bd26ae070d16621ce18200d0222235b49",
+  "failures": [],
+  "new_packages": 0,
+  "G_or_other_weight_downloads": 0,
+  "paid_services": 0,
+  "cost": 0,
+  "new_CSV": false,
+  "uploads": 0,
+  "remaining_blockers": [],
+  "next_action": "Report confirmedfixeddevelopmentrecipe toparent; holdout/full500/test execution was excluded from this study."
+}

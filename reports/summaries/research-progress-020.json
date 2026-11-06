@@ -1,0 +1,301 @@
+{
+  "submission003": {
+    "candidate": "artifacts/submission-candidate-003.csv",
+    "sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "public_rmse": 12.4479505141,
+    "public_rank": 23,
+    "public_participants": 37,
+    "submitted_at": "2026-10-01T01:51:00+09:00",
+    "submission_id": "09432cbd-74ba-4f0e-afae-41a84311a5d1",
+    "daily_used": 2,
+    "daily_limit": 5,
+    "remaining_at_confirmation": 3,
+    "source": "Parent delegation: submission verified by separate browser worker; not reverified in this runtime",
+    "url": "https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai?section=submissions",
+    "model_selection_use": false
+  },
+  "development_experiments": {
+    "run-018": {
+      "scores": {
+        "candidate003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.68045368639936,
+            12.99100474125055,
+            14.032386512109257
+          ]
+        },
+        "cnn_seed20261003": {
+          "rmse": 15.032317843077909,
+          "fold_rmse": [
+            15.249590276858356,
+            14.37046186697119,
+            15.484683471683876,
+            15.05074615048783,
+            14.983068407032066
+          ]
+        },
+        "cnn_seed20261023": {
+          "rmse": 14.931024236899864,
+          "fold_rmse": [
+            14.077140146940424,
+            15.127985270768612,
+            15.632606922321695,
+            15.07036703071022,
+            14.702423239627008
+          ]
+        },
+        "cnn_seed20261043": {
+          "rmse": 14.226369371296006,
+          "fold_rmse": [
+            14.6489421694539,
+            14.257644996607299,
+            15.06296489772582,
+            14.624834484155572,
+            12.381328067311415
+          ]
+        },
+        "cnn_mean3": {
+          "rmse": 14.316237784821688,
+          "fold_rmse": [
+            14.206548877745554,
+            14.376195666677715,
+            15.188075993826443,
+            14.254254040255207,
+            13.505957132207461
+          ]
+        },
+        "candidate_mean3": {
+          "rmse": 13.612513534356744,
+          "fold_rmse": [
+            13.365736226788192,
+            13.255420571814042,
+            14.644045313961907,
+            12.908597164449635,
+            13.822937469440845
+          ]
+        }
+      },
+      "elapsed_seconds": 138.65942391596036
+    },
+    "run-019": {
+      "scores": {
+        "candidate003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.53939448345915,
+            13.218378105383424,
+            14.68045368639936,
+            12.991004741250551,
+            14.032386512109257
+          ]
+        },
+        "candidate_multiseed": {
+          "rmse": 13.612513534356744,
+          "fold_rmse": [
+            13.365736226788192,
+            13.255420571814042,
+            14.644045313961907,
+            12.908597164449635,
+            13.822937469440845
+          ]
+        },
+        "native_kernel": {
+          "rmse": 16.428230369142074,
+          "fold_rmse": [
+            16.645521967724157,
+            16.298123427459583,
+            16.599705425320117,
+            15.52320686503354,
+            17.035591122449745
+          ]
+        },
+        "combined_kernel": {
+          "rmse": 14.448764126778647,
+          "fold_rmse": [
+            14.358737627566914,
+            13.771847178896792,
+            15.351354313465649,
+            13.934940600746415,
+            14.769907046977064
+          ]
+        },
+        "combined_et": {
+          "rmse": 14.914402863026568,
+          "fold_rmse": [
+            14.900902296329985,
+            14.58000520533099,
+            15.723094103354756,
+            14.570505275343585,
+            14.767136168169507
+          ]
+        },
+        "combined_hgb": {
+          "rmse": 15.032402441087775,
+          "fold_rmse": [
+            15.296334679434977,
+            14.636708397715982,
+            15.467223479719578,
+            14.292695965840066,
+            15.431732510172807
+          ]
+        },
+        "native_kernel_blend": {
+          "rmse": 14.028223009491127,
+          "fold_rmse": [
+            13.978260057060012,
+            13.594521890910984,
+            14.72459858783681,
+            13.193647898404684,
+            14.589937488379451
+          ]
+        },
+        "native_kernel_multiseed_blend": {
+          "rmse": 13.931835124132274,
+          "fold_rmse": [
+            13.802113825318418,
+            13.630314808000183,
+            14.697621563996517,
+            13.120081294106027,
+            14.354083356849628
+          ]
+        },
+        "combined_kernel_blend": {
+          "rmse": 13.7392910131262,
+          "fold_rmse": [
+            13.596628153864824,
+            13.253205419181226,
+            14.66583123271927,
+            12.959627160404679,
+            14.15225405354444
+          ]
+        },
+        "combined_kernel_multiseed_blend": {
+          "rmse": 13.64627096773981,
+          "fold_rmse": [
+            13.419290602170125,
+            13.289463752033921,
+            14.631281100884324,
+            12.893640769656724,
+            13.931833712499163
+          ]
+        },
+        "combined_et_blend": {
+          "rmse": 13.870504650903039,
+          "fold_rmse": [
+            13.737525950555732,
+            13.489135832982678,
+            14.78352293528588,
+            13.101893853645409,
+            14.179771460092358
+          ]
+        },
+        "combined_et_multiseed_blend": {
+          "rmse": 13.779680636940697,
+          "fold_rmse": [
+            13.569255106555518,
+            13.52709200162112,
+            14.75152656481129,
+            13.03863280191411,
+            13.952691811181207
+          ]
+        },
+        "combined_hgb_blend": {
+          "rmse": 13.789864204736189,
+          "fold_rmse": [
+            13.672255756451984,
+            13.372300839128128,
+            14.693249720346577,
+            12.992636160745485,
+            14.154595895798828
+          ]
+        },
+        "combined_hgb_multiseed_blend": {
+          "rmse": 13.697271934068104,
+          "fold_rmse": [
+            13.520274020294938,
+            13.413294689694702,
+            14.655590413265186,
+            12.912021037126634,
+            13.923196132282394
+          ]
+        }
+      },
+      "elapsed_seconds": 6.480572499975096
+    },
+    "run-020": {
+      "scores": {
+        "candidate003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.68045368639936,
+            12.99100474125055,
+            14.032386512109257
+          ]
+        },
+        "candidate_mean3": {
+          "rmse": 13.612513534356744,
+          "fold_rmse": [
+            13.365736226788192,
+            13.255420571814042,
+            14.644045313961907,
+            12.908597164449635,
+            13.822937469440845
+          ]
+        },
+        "cnn_mean3_d4": {
+          "rmse": 14.101785259882034,
+          "fold_rmse": [
+            14.223125368759087,
+            13.674634096841046,
+            15.078468947533786,
+            13.865383109726478,
+            13.61615768342803
+          ]
+        },
+        "candidate_mean3_d4": {
+          "rmse": 13.585046659194468,
+          "fold_rmse": [
+            13.406445525957952,
+            13.08771271819215,
+            14.647217843522316,
+            12.847026255517576,
+            13.862156530009706
+          ]
+        }
+      },
+      "elapsed_seconds": 3.1676338330144063
+    }
+  },
+  "independent_code_review": {
+    "reviewed": [
+      "cnn_controls.py",
+      "candidate_pipeline.py",
+      "frozen_validation.py",
+      "cnn_multiseed.py",
+      "native_regression.py",
+      "native_texture_features.py"
+    ],
+    "result": "No evident training/normalization/OOF leakage error found by independent read-only agent. Identity reload and400ID/target assertions separately checked.",
+    "cnn_calibration_diagnostic_slopes": [
+      0.7777,
+      0.7836,
+      0.7955
+    ],
+    "kernel_slopes": [
+      1.0133,
+      1.0049
+    ],
+    "interpretation": "CNN variance/generalization gap is plausible; targetstd alone does not imply prediction expansion is useful. No posthoc calibration applied.",
+    "phase_addition_residual_correlation": 0.9880508608,
+    "shared_worst40_phase_errors": 35,
+    "phase_prediction_change_residual_correlation": 0.0533882435
+  },
+  "remaining_hypothesis": "Adaptive denoising / gradient watershed compact grain descriptors before final frozen repartition",
+  "cost": 0,
+  "public_score_used_for_model_tuning": false
+}

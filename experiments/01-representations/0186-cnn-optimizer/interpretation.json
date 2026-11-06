@@ -1,0 +1,10 @@
+{
+  "optimization": "PrimaryfinaltrainRMSE R502.10092/B02.28565 vsOOF16.08400/17.09463; nonzerofinitegradients, BNfixed, severeunderfitting/capacityfailureNOTestablished.",
+  "convergence_limit": "TrainRMSEepoch9->12 still4.0002->2.1009(R50),3.8300->2.2856(B0). 12epochsdoesNOTestablishfullconvergence orruleoutbenefitsoflongerproperlyselectedtraining. Noouterepochselectionwasperformed.",
+  "generalization_gap": "Lowtrainerrorandhighoutererror supportsgeneralizationgap; doesnotuniquelyidentifyoverfittingvsdomainrepresentationlimitations.",
+  "conditioning": "AninnerResNetfeaturehastrainstd8.1286e-6(nonzero1/214),validationraw.186831,z22984; initialfrozenheadprediction4795.45. Stabilityissueexistsbeforefinetuning. Itdominatedoneinnerselection,notprovensolecauseofallOOFfailures.",
+  "numerical_verification": "All140MPSsave/reloads exact, fourlabel-poisonfullrefits exact, BN/trainstats/IDs/LR/updatesverified. StrictCPUabs.002failed3ResNetINNERmodels(max.0046863); all20OUTERmodels passed(R50max.00008315,B0max.00002570). B0all70passed. CriteriaNOTrelaxed.",
+  "next_priority": "Fixedtrain-onlyRMSscalefloorcontrol using109precedent BEFOREarchitecture/resolutionconclusions. Thenwhole224vsnative256singleaxis; last2stageextensiondeferred. No187orotherfollowuptrainingexecuted.",
+  "subgroups": "Sparse80andposthocfailure33bothworsenedunderfixedblends; 33notindependenttestornextselectioncriterion.",
+  "preserved_best021": true
+}

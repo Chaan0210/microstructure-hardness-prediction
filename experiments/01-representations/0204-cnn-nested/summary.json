@@ -1,0 +1,549 @@
+{
+  "study": 204,
+  "name": "CNN3to6 atallnestedlevels withsame downstreampolicy refit",
+  "RMSE_by_partition": {
+    "original": {
+      "R": 12.786200775750695,
+      "F": 12.74550800303232,
+      "N": 12.740881738449936
+    },
+    "20261031": {
+      "R": 12.621902419708583,
+      "F": 12.64422148497035,
+      "N": 12.645836800779215
+    },
+    "20261101": {
+      "R": 13.032449212752852,
+      "F": 13.034443298359745,
+      "N": 13.03656927503765
+    }
+  },
+  "pooled_RMSE": {
+    "R": 12.814628144604061,
+    "F": 12.809124655423076,
+    "N": 12.808843225521507
+  },
+  "contrasts": {
+    "N_vs_R": {
+      "reference": "R",
+      "new": "N",
+      "by_partition": {
+        "original": {
+          "reference_RMSE": 12.786200775750695,
+          "new_RMSE": 12.740881738449936,
+          "gain": 0.045319037300759035,
+          "fold_gains": [
+            0.06427984238465712,
+            0.2013969221538332,
+            -0.0067218828635144945,
+            -0.004671138073613079,
+            -0.01647039069311873
+          ],
+          "positive_folds": 2,
+          "conditional_CI95": [
+            -0.009066875556940922,
+            0.10004991409612186
+          ],
+          "influence": {
+            "positive_IDs": 198,
+            "net_SSE_gain": 462.74512185624997,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 100.37180375324363,
+                "net_fraction": 0.21690515796387747,
+                "gain_after_removal": 0.035821975380921245
+              },
+              "5": {
+                "benefit_sum": 349.9058067590545,
+                "net_fraction": 0.756152340094795,
+                "gain_after_removal": 0.011555859189803286
+              },
+              "10": {
+                "benefit_sum": 552.4253191402762,
+                "net_fraction": 1.193800416359408,
+                "gain_after_removal": -0.009384281582418552
+              }
+            }
+          }
+        },
+        "20261031": {
+          "reference_RMSE": 12.621902419708583,
+          "new_RMSE": 12.645836800779215,
+          "gain": -0.023934381070631616,
+          "fold_gains": [
+            -0.0658470333311989,
+            -0.06339312629667226,
+            -0.03792990401383278,
+            0.03303124915588285,
+            0.021095437418257035
+          ],
+          "positive_folds": 2,
+          "conditional_CI95": [
+            -0.07471978062824562,
+            0.02588888357040972
+          ],
+          "influence": {
+            "positive_IDs": 201,
+            "net_SSE_gain": -241.90707971858524,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 44.45708313977275,
+                "net_fraction": null,
+                "gain_after_removal": -0.02851219597413568
+              },
+              "5": {
+                "benefit_sum": 202.04933002534432,
+                "net_fraction": null,
+                "gain_after_removal": -0.04558303195906355
+              },
+              "10": {
+                "benefit_sum": 359.5869543158475,
+                "net_fraction": null,
+                "gain_after_removal": -0.06348974801309026
+              }
+            }
+          }
+        },
+        "20261101": {
+          "reference_RMSE": 13.032449212752852,
+          "new_RMSE": 13.03656927503765,
+          "gain": -0.004120062284798109,
+          "fold_gains": [
+            -0.057110849329724545,
+            0.08453426650762808,
+            0.04639110318781725,
+            0.02289471167892465,
+            -0.11835033408046236
+          ],
+          "positive_folds": 3,
+          "conditional_CI95": [
+            -0.05167382794468711,
+            0.04238611060263693
+          ],
+          "influence": {
+            "positive_IDs": 205,
+            "net_SSE_gain": -42.96239194928202,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 59.417389519507424,
+                "net_fraction": null,
+                "gain_after_removal": -0.009942454088111674
+              },
+              "5": {
+                "benefit_sum": 211.28696108310731,
+                "net_fraction": null,
+                "gain_after_removal": -0.025492503882277973
+              },
+              "10": {
+                "benefit_sum": 355.8210597061316,
+                "net_fraction": null,
+                "gain_after_removal": -0.04087892062889509
+              }
+            }
+          }
+        }
+      },
+      "pooled": {
+        "reference_RMSE": 12.814628144604061,
+        "new_RMSE": 12.808843225521507,
+        "gain": 0.005784919082554296,
+        "conditional_CI95": [
+          -0.026273519539496214,
+          0.03731951544595677
+        ],
+        "influence": {
+          "positive_IDs": 212,
+          "net_SSE_gain": 59.29188339612712,
+          "top_benefit_removal": {
+            "1": {
+              "benefit_sum": 45.90858489002085,
+              "net_fraction": 0.7742811032550122,
+              "gain_after_removal": 0.0013183881492278005
+            },
+            "5": {
+              "benefit_sum": 173.79464435541766,
+              "net_fraction": 2.9311709192015605,
+              "gain_after_removal": -0.011677158787087194
+            },
+            "10": {
+              "benefit_sum": 290.42130196178414,
+              "net_fraction": 4.898162873685239,
+              "gain_after_removal": -0.024396847335559357
+            }
+          }
+        }
+      },
+      "prediction_delta_RMS": 0.4920359851017012,
+      "exact_MSE_change": {
+        "cross": -0.3903291191253207,
+        "delta_square": 0.24209941063500154,
+        "MSE_change": -0.14822970849031905
+      }
+    },
+    "N_vs_F": {
+      "reference": "F",
+      "new": "N",
+      "by_partition": {
+        "original": {
+          "reference_RMSE": 12.74550800303232,
+          "new_RMSE": 12.740881738449936,
+          "gain": 0.004626264582384465,
+          "fold_gains": [
+            -0.005341878114196064,
+            0.004388846014700576,
+            0.004014077750344569,
+            0.016729995001103504,
+            0.004005226823954544
+          ],
+          "positive_folds": 4,
+          "conditional_CI95": [
+            -0.005901200300260489,
+            0.0148392579535229
+          ],
+          "influence": {
+            "positive_IDs": 204,
+            "net_SSE_gain": 47.16271287755749,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 15.94549750689498,
+                "net_fraction": 0.3380954261111364,
+                "gain_after_removal": 0.003095427833665454
+              },
+              "5": {
+                "benefit_sum": 62.29902378641205,
+                "net_fraction": 1.3209380882764532,
+                "gain_after_removal": -0.0015519622406330313
+              },
+              "10": {
+                "benefit_sum": 92.99390022789777,
+                "net_fraction": 1.9717674101853708,
+                "gain_after_removal": -0.004823034800132575
+              }
+            }
+          }
+        },
+        "20261031": {
+          "reference_RMSE": 12.64422148497035,
+          "new_RMSE": 12.645836800779215,
+          "gain": -0.001615315808864537,
+          "fold_gains": [
+            0.00231505178374114,
+            -0.00943871512921568,
+            -0.006246081597067743,
+            -0.004219388791041112,
+            0.009979503611944551
+          ],
+          "positive_folds": 2,
+          "conditional_CI95": [
+            -0.00938989985164942,
+            0.0060285065278521165
+          ],
+          "influence": {
+            "positive_IDs": 196,
+            "net_SSE_gain": -16.340572382435056,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 8.291582742025298,
+                "net_fraction": null,
+                "gain_after_removal": -0.002453911393304864
+              },
+              "5": {
+                "benefit_sum": 35.96970312362441,
+                "net_fraction": null,
+                "gain_after_removal": -0.005339546791548244
+              },
+              "10": {
+                "benefit_sum": 60.00545229803561,
+                "net_fraction": null,
+                "gain_after_removal": -0.007964954839373206
+              }
+            }
+          }
+        },
+        "20261101": {
+          "reference_RMSE": 13.034443298359745,
+          "new_RMSE": 13.03656927503765,
+          "gain": -0.002125976677904262,
+          "fold_gains": [
+            -0.007029434230410914,
+            -0.005409739239956579,
+            0.008764856638126872,
+            -0.0012138009651447845,
+            -0.005625639981071018
+          ],
+          "positive_folds": 1,
+          "conditional_CI95": [
+            -0.010615752292785484,
+            0.006527398648332113
+          ],
+          "influence": {
+            "positive_IDs": 197,
+            "net_SSE_gain": -22.170545880159718,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 16.33507138377172,
+                "net_fraction": null,
+                "gain_after_removal": -0.0037272324223884823
+              },
+              "5": {
+                "benefit_sum": 44.822840829711225,
+                "net_fraction": null,
+                "gain_after_removal": -0.00664014388899048
+              },
+              "10": {
+                "benefit_sum": 70.84809952462038,
+                "net_fraction": null,
+                "gain_after_removal": -0.009588730235471132
+              }
+            }
+          }
+        }
+      },
+      "pooled": {
+        "reference_RMSE": 12.809124655423076,
+        "new_RMSE": 12.808843225521507,
+        "gain": 0.000281429901569652,
+        "conditional_CI95": [
+          -0.00557922367833581,
+          0.006175909594955305
+        ],
+        "influence": {
+          "positive_IDs": 199,
+          "net_SSE_gain": 2.8838648716535484,
+          "top_benefit_removal": {
+            "1": {
+              "benefit_sum": 8.658970452335097,
+              "net_fraction": 3.0025576223931125,
+              "gain_after_removal": -0.0005691552759152785
+            },
+            "5": {
+              "benefit_sum": 31.290278232007722,
+              "net_fraction": 10.85011941425207,
+              "gain_after_removal": -0.002903755963540533
+            },
+            "10": {
+              "benefit_sum": 52.53999015703984,
+              "net_fraction": 18.218603331061935,
+              "gain_after_removal": -0.005196792691428698
+            }
+          }
+        }
+      },
+      "prediction_delta_RMS": 0.09177951777149267,
+      "exact_MSE_change": {
+        "cross": -0.01563314206150233,
+        "delta_square": 0.008423479882367739,
+        "MSE_change": -0.007209662179135598
+      }
+    },
+    "F_vs_R": {
+      "reference": "R",
+      "new": "F",
+      "by_partition": {
+        "original": {
+          "reference_RMSE": 12.786200775750695,
+          "new_RMSE": 12.74550800303232,
+          "gain": 0.04069277271837457,
+          "fold_gains": [
+            0.06962172049885318,
+            0.19700807613913263,
+            -0.010735960613859064,
+            -0.021401133074716583,
+            -0.020475617517073275
+          ],
+          "positive_folds": 2,
+          "conditional_CI95": [
+            -0.011791113921688677,
+            0.09340572288850355
+          ],
+          "influence": {
+            "positive_IDs": 194,
+            "net_SSE_gain": 415.5824089786925,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 96.52758559338201,
+                "net_fraction": 0.23227062432840154,
+                "gain_after_removal": 0.03153444522122939
+              },
+              "5": {
+                "benefit_sum": 323.63240169150106,
+                "net_fraction": 0.7787442266549212,
+                "gain_after_removal": 0.00941577283801287
+              },
+              "10": {
+                "benefit_sum": 521.9124985889763,
+                "net_fraction": 1.255858013508304,
+                "gain_after_removal": -0.011125762662318905
+              }
+            }
+          }
+        },
+        "20261031": {
+          "reference_RMSE": 12.621902419708583,
+          "new_RMSE": 12.64422148497035,
+          "gain": -0.02231906526176708,
+          "fold_gains": [
+            -0.06816208511494004,
+            -0.053954411167456584,
+            -0.03168382241676504,
+            0.03725063794692396,
+            0.011115933806312484
+          ],
+          "positive_folds": 2,
+          "conditional_CI95": [
+            -0.07221112695910326,
+            0.02725696190097151
+          ],
+          "influence": {
+            "positive_IDs": 202,
+            "net_SSE_gain": -225.56650733615015,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 43.08305890900294,
+                "net_fraction": null,
+                "gain_after_removal": -0.02675029301496501
+              },
+              "5": {
+                "benefit_sum": 197.2401644948477,
+                "net_fraction": null,
+                "gain_after_removal": -0.04342089426998719
+              },
+              "10": {
+                "benefit_sum": 352.58697898139263,
+                "net_fraction": null,
+                "gain_after_removal": -0.06106576469707292
+              }
+            }
+          }
+        },
+        "20261101": {
+          "reference_RMSE": 13.032449212752852,
+          "new_RMSE": 13.034443298359745,
+          "gain": -0.0019940856068938473,
+          "fold_gains": [
+            -0.05008141509931363,
+            0.08994400574758465,
+            0.03762624654969038,
+            0.024108512644069435,
+            -0.11272469409939134
+          ],
+          "positive_folds": 3,
+          "conditional_CI95": [
+            -0.04947205877659964,
+            0.04349890176915302
+          ],
+          "influence": {
+            "positive_IDs": 210,
+            "net_SSE_gain": -20.791846069122293,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 64.0969638853494,
+                "net_fraction": null,
+                "gain_after_removal": -0.008244387906353623
+              },
+              "5": {
+                "benefit_sum": 208.6000703531052,
+                "net_fraction": null,
+                "gain_after_removal": -0.022981105940816704
+              },
+              "10": {
+                "benefit_sum": 359.1254657393898,
+                "net_fraction": null,
+                "gain_after_removal": -0.039010962871238064
+              }
+            }
+          }
+        }
+      },
+      "pooled": {
+        "reference_RMSE": 12.814628144604061,
+        "new_RMSE": 12.809124655423076,
+        "gain": 0.005503489180984644,
+        "conditional_CI95": [
+          -0.025946168867543085,
+          0.0359091161683839
+        ],
+        "influence": {
+          "positive_IDs": 207,
+          "net_SSE_gain": 56.40801852447355,
+          "top_benefit_removal": {
+            "1": {
+              "benefit_sum": 42.73070990305587,
+              "net_fraction": 0.7575290006777395,
+              "gain_after_removal": 0.0013473526067109276
+            },
+            "5": {
+              "benefit_sum": 164.4357766310991,
+              "net_fraction": 2.9151135057111768,
+              "gain_after_removal": -0.011088429115284626
+            },
+            "10": {
+              "benefit_sum": 263.8050319404909,
+              "net_fraction": 4.6767292814236106,
+              "gain_after_removal": -0.021894030989026092
+            }
+          }
+        }
+      },
+      "prediction_delta_RMS": 0.4874358532340657,
+      "exact_MSE_change": {
+        "cross": -0.3786137573292061,
+        "delta_square": 0.2375937110180216,
+        "MSE_change": -0.1410200463111835
+      }
+    }
+  },
+  "partition_variance": {
+    "mean_prediction_variance": {
+      "R": 3.3703575184754038,
+      "F": 3.1878559132942637,
+      "N": 3.203889502251203
+    },
+    "N_vs_R_gain": 0.16646801622420035,
+    "conditional_gain_CI95": [
+      0.06471458197113013,
+      0.268512186640161
+    ],
+    "scope": "Same400rowsacross3overlappingpartitions;notindependentreplications."
+  },
+  "downstream_adaptation": {
+    "affine_delta_RMS": 0.07560785890968359,
+    "residual_delta_RMS": 0.058214825120987676,
+    "affine_MSE_term": -0.03078991963813174,
+    "residual_MSE_term": 0.024262291769366683,
+    "interaction_MSE_term": -0.0006820343104058659,
+    "N_minus_F_MSE": -0.007209662179135598,
+    "new_slope_range": [
+      1.0616416076614368,
+      1.187617741230055
+    ],
+    "old_slope_range": [
+      1.0456949466358776,
+      1.174292636680815
+    ],
+    "changed_bootstrap_blocks": 43,
+    "blocks": 45,
+    "same_outer6CNN_for_F_and_N": true,
+    "not_additive_causal_stage_effects": true
+  },
+  "criteria": {
+    "technical_validation": true,
+    "pooled_gain_positive": true,
+    "all3_gains_nonnegative": false,
+    "conditional_CI_lower_positive": false,
+    "pooled_top5_removal_positive": false,
+    "acrosspartition_variance_not_increased": true
+  },
+  "strong_development_gate": false,
+  "primary_only": "N;Fdiagnostic,nofallback;all6seedsretained",
+  "new_main_CNN_fits": 540,
+  "verification_CNN_fits": 48,
+  "uncertainty": "400uniqueIDsnot1200independent. Conditionalfixed-fitbootstrap;adaptivehistoricalselection,trainingdependence,unknownfamilygroups andrefituncertainty notcorrected. Negativepointestimate/gatefailurealone notuniversalharm. Nisasingle6seedrealization. Residualanchor213vsouter320size mismatchretained.",
+  "same400_adaptive_history": true,
+  "no_holdout_test_full500_CSV_submission": true,
+  "cost": 0,
+  "plan_sha256": "afad630e61f56cf8826a737a3724046b91f57a51ca8f2ef29841f589ab125cfe",
+  "analysis_lock_sha256": "40565cd3de8ea459484cd7816ac624d57e2070f12344f6b800be4a6d3f9e590b",
+  "ensemble_sha256": "9905ebcf33151b1f4622a8ddd599fe1a33a0115609583bd4a46af9f783d85410",
+  "seconds": 3.144766041994444
+}

@@ -1,0 +1,310 @@
+{
+  "study": 181,
+  "UTC": "2026-10-06T03:02:24.781913+00:00",
+  "outcome": "rejected_close_L_representation_variants",
+  "propose_candidate": false,
+  "L_representation_variants_closed": true,
+  "current_best": "021",
+  "duplicate_audit": {
+    "S044": "Block6 vs12 atsame1152dimensions, nestedRidgealpha=.1/1/10*p; midpoint standalone14.10134 vsfinal14.54343 butblend13.557262886866987 worsefinal13.522452231767831. Intermediate+finalmulti3 primarysucceeded. Midonlywasdiagnosticnotpromoted.",
+    "B": "062/063/064/066 allusedblocks6/9/12 combined; no equaldimensional midpoint-only vsfinal-only MLP found in reviewed source/plans/summaries.",
+    "L177": "Alreadyextracted12/18/24andtrainedjoint9216inputMLP. FinalCLS PCA/SVRwasdifferent1024-dimensionalreadout. No fixed L12-only vsL24-only3072inputMLP comparison.",
+    "not_new_information": "L12andL24descriptors arealreadyinside021. Thisexperimentisolates a readout withonlyL12 versussame-sizedL24, notnewrawimageinformation or proofthat021entirelylacks midlayertexture.",
+    "reason_for_bounded_test": "Differentbackbonedepth andsame nonlinearscalarreadout contrast hasnotrun; removinglayercompetition/inputcoordinates couldchange generalization. S044negativeevidence weakensprior; do not repeat S/B orlayer/rank/epoch sweeps.",
+    "closure": "If181fails, closeLrepresentationvariants179/180/181 andpreserve021. No alternateLlayer/readout rescue."
+  },
+  "plan": {
+    "layers_zero_based": {
+      "MID": 11,
+      "LAST": 23
+    },
+    "features": "Same504pxfullimagebicubic/grayRGB/ImageNetnorm,normalizedCLS1024+patchmean1024+populationstd1024 per layer.3072each. Freshonlydevelopment400; verifybitexact againstthealreadycached177layer12/24 slices. No newinformationclaim.",
+    "head": "Exactly177 existing64hidden/GELU/dropout.25/SmoothL1beta1/100epochs/batch64/AdamWlr.0003cosine.00001/wd.01/clip1/aux0. Same3seeds20261128,20261205,20261219+fold. Sameinit/dropout/sampleorders betweenMID/LAST. TrainlocalStandardScalerandtargetmean/std; noPCA/selection/earlystop. Legacyunusedclassifierhead isidenticalinboth, effectivepredictiveparametercount196737.",
+    "formula": "MIDblend=.9*fixed018+.1*MIDmean3; LASTblend=.9*same018+.1*LASTmean3.021=.9*018+.1*existingjointL12/18/24mean3. Replacetenpercentbranch only; no additionalblendwith021 orweighttuning.",
+    "gate": "Original5fold: MIDblend mustimprove021ANDLASTblend by>0.01RMSE each, and>=3/5folds improveeach, allvalidationpasses. Onlythenbothknownresplits unchanged. Proposeonlyif MIDbeatsbothreferences inall3partitions. OtherwisecloseLrepresentationvariants; no LASTfallbackpromotion."
+  },
+  "partitions_run": [
+    "original"
+  ],
+  "original_gate": false,
+  "RMSE": {
+    "original": {
+      "018": 12.811945280526919,
+      "021": 12.786200775750695,
+      "Lmulti": 13.897309666752351,
+      "MID": 15.139965837885304,
+      "MID_blend": 12.92675058111654,
+      "LAST": 15.218594479290314,
+      "LAST_blend": 12.808443322487186
+    }
+  },
+  "comparisons": {
+    "original": {
+      "021": {
+        "gain": -0.14054980536584516,
+        "fold_gains": [
+          -0.1525698362390404,
+          -0.11147130795895421,
+          -0.2053948487505508,
+          -0.06617898980143089,
+          -0.1571186534107607
+        ],
+        "positive_folds": 0
+      },
+      "LAST_blend": {
+        "gain": -0.1183072586293541,
+        "fold_gains": [
+          -0.0892167412511089,
+          -0.06878060382729956,
+          -0.30105992850033125,
+          -0.0018731623965315691,
+          -0.10953267193463034
+        ],
+        "positive_folds": 0
+      }
+    }
+  },
+  "correlations": {
+    "original": {
+      "MID_LAST_residual": 0.781264057554561,
+      "MID_021_residual": 0.9208631480701986,
+      "LAST_021_residual": 0.8410072756606305,
+      "MID_Lmulti_residual": 0.9008988011863328,
+      "MIDblend_021_residual": 0.9987509666019297,
+      "MID_update_021_residual": -0.18894893467105256,
+      "MID_update_RMS": 0.657675212670724
+    }
+  },
+  "conditional_group_bootstrap_gain_CI95": {
+    "original": {
+      "021": [
+        -0.2121316981584258,
+        -0.07274899950225297
+      ],
+      "LAST_blend": [
+        -0.22826685914360495,
+        -0.014997505935365335
+      ]
+    }
+  },
+  "historical_subgroups_diagnostic_only": {
+    "original": {
+      "persistent_large33": {
+        "n": 33,
+        "RMSE": {
+          "018": 29.571979000365157,
+          "021": 29.482117589329434,
+          "Lmulti": 29.585762689492828,
+          "MID": 32.36988413965353,
+          "MID_blend": 29.788418631692803,
+          "LAST": 29.714126413159942,
+          "LAST_blend": 29.40961702314203
+        },
+        "bias_y_minus_pred": {
+          "018": 5.797121602523916,
+          "021": 5.649141438008077,
+          "Lmulti": 4.31731995736562,
+          "MID": 6.0457426836550505,
+          "MID_blend": 5.8219837106370225,
+          "LAST": 5.6781996602325275,
+          "LAST_blend": 5.785229408294768
+        }
+      },
+      "other367": {
+        "n": 367,
+        "RMSE": {
+          "018": 10.013589222040656,
+          "021": 10.001543288534073,
+          "Lmulti": 11.48018239254002,
+          "MID": 12.474466133930235,
+          "MID_blend": 10.116192276129627,
+          "LAST": 13.154456563924114,
+          "LAST_blend": 10.051630232896205
+        },
+        "bias_y_minus_pred": {
+          "018": -0.20677246551607528,
+          "021": -0.24447832077644668,
+          "Lmulti": -0.5838310181197359,
+          "MID": -0.6379784901597615,
+          "MID_blend": -0.24989306798045,
+          "LAST": -0.64769630157069,
+          "LAST_blend": -0.2508648491215423
+        }
+      }
+    }
+  },
+  "pooled_RMSE": {
+    "021": 12.786200775750695,
+    "LAST_blend": 12.808443322487186,
+    "MID_blend": 12.92675058111654
+  },
+  "feature_validation": {
+    "passed": true,
+    "rows": 400,
+    "shape_perlayer": [
+      400,
+      3072
+    ],
+    "CPU_MPS_smoke_max_error": 8.440017700195312e-05,
+    "model_state_unchanged": true,
+    "fresh400_exact177_cached_layers": true,
+    "raw400_image_hashes_exact": true,
+    "smoke_repeat_exact": true,
+    "feature_sha256": "585c4ba0a3a6eb8329da9c568f15e7d73ce53822fc3c15d2fdea32cff98c4c5d",
+    "seconds": 154.38958429199556,
+    "noholdout_test": true
+  },
+  "validation": {
+    "original": {
+      "main_head_fits": 30,
+      "wholefold0_poison_refits": 6,
+      "poison_replays": [
+        {
+          "arm": "MID",
+          "seed": 20261128,
+          "exact_states_stats_and_original_predictions": true,
+          "outer_targets_and_features_perturbed": true,
+          "checkpoint_sha256": "4a55d7bd15df1b682ac2368b54f949e82d735832a3f78e3c2008c0c97867154a"
+        },
+        {
+          "arm": "MID",
+          "seed": 20261205,
+          "exact_states_stats_and_original_predictions": true,
+          "outer_targets_and_features_perturbed": true,
+          "checkpoint_sha256": "7a89b188165403324d79ca459f17cfdc7a12dda09ef1177c527c22995e71dddb"
+        },
+        {
+          "arm": "MID",
+          "seed": 20261219,
+          "exact_states_stats_and_original_predictions": true,
+          "outer_targets_and_features_perturbed": true,
+          "checkpoint_sha256": "d4479e21b9839df8d55e2383ec3012d77a03b32c794bb0345a5b09b76482c739"
+        },
+        {
+          "arm": "LAST",
+          "seed": 20261128,
+          "exact_states_stats_and_original_predictions": true,
+          "outer_targets_and_features_perturbed": true,
+          "checkpoint_sha256": "748207d8b969bc3afa6ff435a7c37cc7c0232c46a904186d481ea1705a252b7f"
+        },
+        {
+          "arm": "LAST",
+          "seed": 20261205,
+          "exact_states_stats_and_original_predictions": true,
+          "outer_targets_and_features_perturbed": true,
+          "checkpoint_sha256": "f4abcd344f5ad334306b01edbe7a3bbf1e9f8aea510eadff3c6cb200e4f801dc"
+        },
+        {
+          "arm": "LAST",
+          "seed": 20261219,
+          "exact_states_stats_and_original_predictions": true,
+          "outer_targets_and_features_perturbed": true,
+          "checkpoint_sha256": "ac1834b7be5ea0a69d7605288a09fbe78967ba8597f4ed57aa8eb24873a0359a"
+        }
+      ],
+      "equal_predictive_parameters_perhead": 196737,
+      "paired_initialization_order_exact": true,
+      "same_device_reload_exact": true,
+      "manual_forward_max_error": 2.1523643880527743e-05,
+      "CPU_MPS_max_error": 2.3625581235364734e-05,
+      "all_train_scaler_target_scopes_verified": true,
+      "train_RMSE_byarm": {
+        "MID": [
+          0.8998631610893656,
+          0.8261795924557455,
+          0.8897781973047955,
+          0.8492964101343826,
+          0.8279613999088317,
+          0.9607897023337293,
+          0.8962424338824625,
+          0.8134417939835564,
+          0.8480822681263093,
+          0.85511518855874,
+          0.8129407157531248,
+          0.8349035553189962,
+          0.8268492485174722,
+          0.8337130932826361,
+          0.8164808688221188
+        ],
+        "LAST": [
+          0.815326896158447,
+          0.7241234483654279,
+          0.7281384386456362,
+          0.7218729292628552,
+          0.7594897669574253,
+          0.7657971539946093,
+          0.7193401303543107,
+          0.731299952244587,
+          0.7079631711455736,
+          0.6409990805710175,
+          0.6860879772799993,
+          0.7146357357022087,
+          0.7447945420886467,
+          0.7014936490994191,
+          0.713243561701272
+        ]
+      },
+      "seconds": 16.1773805000048
+    }
+  },
+  "second_process_heads_reloaded": 30,
+  "second_process_prediction_error": 0.0,
+  "resources": {
+    "readout-original-resources.json": {
+      "seconds": 16.175184207997518,
+      "peak_RSS_bytes": 573407232,
+      "peak_MPS_bytes": 2506752,
+      "max_conservative_RSS_plus_MPS": 575864832,
+      "swap_growth": 0,
+      "min_memory_free_percent": 71
+    },
+    "feature-extraction-resources.json": {
+      "seconds": 154.38279508300184,
+      "peak_RSS_bytes": 2674671616,
+      "peak_MPS_bytes": 2197372928,
+      "max_conservative_RSS_plus_MPS": 3422552064,
+      "swap_growth": 0,
+      "min_memory_free_percent": 56
+    }
+  },
+  "protected_files_unchanged": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a",
+    "reports/retraining-175-summary.json": "a84fdf0c8bdb90563a7bc7964545a1f1b342f719ef1411261a9638725fe31659",
+    "experiments/reproduction-018-175/run/plan.json": "d576415c959f34e01af6daf9230c47608ed3d79bf956f8bc522f8464b4b83090",
+    "deliverables/reproduction-018-v176.zip": "e93bd3f2bd9f11b40014d65997238495293b07ae0eac49d17490552c198797a6",
+    "reports/retraining-176-summary.json": "b7862b213a83360be98f926f566e466bb670de2b8f7ce768a53c1d297ce8b634",
+    "reports/dinol-177-summary.json": "676f5ff0bdfb4a7d0c017711d3cb5d6e29b1d1352b46450409bf95ef0819c655",
+    "experiments/dinol-177/plan.json": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4",
+    "experiments/dinol-177/features.npz": "bc27df3ab45184f565a99007316b4239dce8cab9abe782e4dc302c988e9b8b90",
+    "experiments/dinol-177/dinov2_vitl14_pretrain.pth": "d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428",
+    "artifacts/submission-candidate-021.csv": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+    "artifacts/submission-candidate-021.manifest.json": "4ba41d28974dc5f629cc1c9f10d9f7cbd108ccf89030e84bdd53b9f65e50f649",
+    "reports/candidate021-178-summary.json": "74b35bd660f01f0f7d91ae0a2eebece60de7490d434ec4ee3739f329fbc995e3",
+    "reports/spatial-L-179-summary.json": "3309c1c987838e95876d311039f682d37ce99aa0d8d55491a0d4922dcc791195",
+    "reports/joint-readout-180-summary.json": "ea6d74aa8e20c0a084d1aecc9643d238e10a3e9d347415c9a57cee42a82b7b77"
+  },
+  "evidence_SHA256": {
+    "plan.json": "0cfe2ae7a8a7a3d06eba4207731b8ce334d5580d8828d452f3a73c5fe738c20f",
+    "duplicate-audit.json": "dafcd37f31328ab3455988847aa8e5c4a29dbce34a45d149f815108260301411",
+    "code-lock.json": "eddcb01faeb25b99dba89351c79d9cfac8a6a26f782f4b9c0c09e93192e4ad9d",
+    "readout-code-lock.json": "fcb8c9c10d95856803b6ed6f4ec5f0fe44561541bebe2712c604d71fadb2e1a1",
+    "feature-validation.json": "14a33de74fcf555e4c18965795f63468867ed74a8107229f5c2fce3be377c01b",
+    "finalize.py": "da172f0aad4669e68c31a4fde295f441a6ce2c7248bba2d73bf29887a8a9baac"
+  },
+  "scope": "Freshdevelopment400layerfeatures only; noholdout/test/full500/newCSV/upload/install/download/payment. ExistingofficialLweightandtorchonly.",
+  "limitations": [
+    "L12information alreadyin021joint12/18/24features; thisisreadoutisolation,notnewphysicalinformation.",
+    "S044midpointRidgefailedblend;181doesnotrerunS orlayersearch.",
+    "Tokenrepresentations arenotproventexture/physicalgrainmeasurements.",
+    "Same400adaptivehistory; conditionalbootstrap notindependentvalidation.",
+    "Familyclosure is a researchdecision under authorizedscope, not proofallpossibleLarchitectures fail."
+  ],
+  "remaining_blockers": [],
+  "cost": 0
+}

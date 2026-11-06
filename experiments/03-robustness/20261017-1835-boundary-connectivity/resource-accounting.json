@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-17T09:45:27.149449+00:00",
+  "passed": true,
+  "probe_sha256": "185a655082bb7f42f3f73047ff8028ebce3e887bca3b30379dd353dab0ee3316",
+  "original_probe_gate_passed": false,
+  "original_gate_seconds": 6000,
+  "protocol_total_budget_seconds": 7200,
+  "protocol_validation_reserve_seconds": 600,
+  "protocol_readout_reserve_seconds": 900,
+  "encoder_stage_cap_seconds": 5700,
+  "measured_projected_encoder_and_features_seconds": 5365.661631747498,
+  "measured_projected_readouts_seconds": 900,
+  "projected_with_validation_seconds": 6865.661631747498,
+  "correct_combined_fit_gate_seconds": 6600,
+  "explanation": "The source probe compared a projection already including900s readouts against6000s, unnecessarily reserving20minutes after including readouts. The prospective PLAN permits95min encoder/features +15min readouts +10min verification =120min. Existing train deadline5700 and readout deadline(total7200 minus actual encoder minus600) already implement that. Correct the probe check to6600 for encoder/features/readouts before any main training or hardness score. No budget, architecture, epochs, seed, control or scientific decision rule is changed. Original false records and exact probe sources remain preserved.",
+  "main_models_or_hardness_scores_seen": false
+}

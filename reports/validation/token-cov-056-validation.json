@@ -1,0 +1,180 @@
+{
+  "passed": true,
+  "fixtures": {
+    "passed": true,
+    "count": 10,
+    "tests": [
+      "projection_seed_replay",
+      "symmetric_PSD",
+      "projected_original_covariance_identity",
+      "independent_numpy_population_covariance",
+      "constant_zero_covariance",
+      "centering_translation_invariance",
+      "quadratic_scale_law",
+      "token_permutation_invariance_position_loss",
+      "same_mean_std_different_crosschannel_statistics",
+      "schema528"
+    ],
+    "projected_cov_identity_max_error": 1.7763568394002505e-15,
+    "seconds": 0.002043624990619719,
+    "synthetic_training": false
+  },
+  "raw_feature_replay_max_error": 0.0,
+  "raw_replay_rows": 3,
+  "projection_sha256": "8c11a8b76e4f73c2be4c38a51f54713945ea716253c4feb8caf4b092883222dc",
+  "protected_files_verified": 18,
+  "results": {
+    "original": {
+      "scores": {
+        "reference007": {
+          "rmse": 13.241596955038409,
+          "fold_rmse": [
+            13.200972349680994,
+            12.726138894776982,
+            14.308109808709345,
+            12.375441992213231,
+            13.513163828337742
+          ]
+        },
+        "cov528": {
+          "rmse": 14.93887483532647,
+          "fold_rmse": [
+            15.645611526855497,
+            13.125063403098391,
+            15.590060958001523,
+            14.843837570503629,
+            15.343009576006512
+          ]
+        },
+        "primary007": {
+          "rmse": 13.27568233638631,
+          "fold_rmse": [
+            13.306522687147243,
+            12.636667263400756,
+            14.326913062961824,
+            12.461710049239478,
+            13.561531870284654
+          ]
+        }
+      },
+      "comparison": {
+        "gain": -0.034085381347901844,
+        "fold_gains": [
+          -0.10555033746624964,
+          0.0894716313762256,
+          -0.01880325425247875,
+          -0.08626805702624729,
+          -0.04836804194691169
+        ],
+        "positive_folds": 1,
+        "bootstrap_sd": 0.03459592963967532,
+        "conditional_ci95": [
+          -0.10353815313600546,
+          0.031037185195048823
+        ],
+        "residual_correlation": 0.8987061211453523
+      },
+      "reload_max_error": 0.0,
+      "models_verified": 5,
+      "extrapolation": [
+        {
+          "fold": 0,
+          "alpha": 528.0,
+          "validation_prediction_range": [
+            175.01207524738064,
+            218.77811081900126
+          ],
+          "outside_foldtrain_label_range": 0,
+          "feature_cells_outside_foldtrain_range_fraction": 0.004427083333333333
+        },
+        {
+          "fold": 1,
+          "alpha": 528.0,
+          "validation_prediction_range": [
+            167.91360638526248,
+            218.92685244060257
+          ],
+          "outside_foldtrain_label_range": 0,
+          "feature_cells_outside_foldtrain_range_fraction": 0.00537405303030303
+        },
+        {
+          "fold": 2,
+          "alpha": 528.0,
+          "validation_prediction_range": [
+            167.88886011888465,
+            221.99475505289456
+          ],
+          "outside_foldtrain_label_range": 0,
+          "feature_cells_outside_foldtrain_range_fraction": 0.008072916666666667
+        },
+        {
+          "fold": 3,
+          "alpha": 528.0,
+          "validation_prediction_range": [
+            174.41037644790023,
+            217.6715958739939
+          ],
+          "outside_foldtrain_label_range": 0,
+          "feature_cells_outside_foldtrain_range_fraction": 0.007196969696969697
+        },
+        {
+          "fold": 4,
+          "alpha": 528.0,
+          "validation_prediction_range": [
+            164.41806367273855,
+            225.49538733840987
+          ],
+          "outside_foldtrain_label_range": 0,
+          "feature_cells_outside_foldtrain_range_fraction": 0.006178977272727273
+        }
+      ],
+      "residual_correlation_with_DINO_MLPmean3": 0.8463115615913427
+    }
+  },
+  "diagnostics": {
+    "meanstd_CLS_reconstruction_oof_R2_quantiles": [
+      0.32071800282046703,
+      0.6252369948859868,
+      0.7000113283040535,
+      0.7664447458279068,
+      0.9148897851324186
+    ],
+    "meanstd_CLS_reconstruction_R2_median": 0.7000113283040535,
+    "crosschannel_relative_Frobenius_quantiles": [
+      0.782869971230281,
+      0.8195162259059594,
+      0.8332790003931105,
+      0.8452598976060779,
+      0.9035219161624881
+    ],
+    "minimum_eigenvalue_all_images": 0.057983544870871845,
+    "maximum_asymmetry": 0.0,
+    "constant_columns": 0,
+    "interpretation": "Crosschannel magnitude is not independent information or target utility. Reconstruction is descriptive 5fold Ridge1152, all scalers trainfold-only; no feature selection. CLS plusmean/std control includes context.",
+    "position_limit": "Permutation invariant over output tokens. Input arrangement still influences backbone positional/contextual tokens."
+  },
+  "selection": {
+    "advance": false,
+    "primary": "primary007",
+    "comparison": {
+      "gain": -0.034085381347901844,
+      "fold_gains": [
+        -0.10555033746624964,
+        0.0894716313762256,
+        -0.01880325425247875,
+        -0.08626805702624729,
+        -0.04836804194691169
+      ],
+      "positive_folds": 1,
+      "bootstrap_sd": 0.03459592963967532,
+      "conditional_ci95": [
+        -0.10353815313600546,
+        0.031037185195048823
+      ],
+      "residual_correlation": 0.8987061211453523
+    }
+  },
+  "seconds": 0.8760554170003161,
+  "independent_code_review": "audit_pipeline no blocking math/leakage issue; planned reconstruction completed here",
+  "scope": "Development400 only. No holdout/test, candidateCSV, upload, newdata/packages/cost. Reused development selection bias persists."
+}

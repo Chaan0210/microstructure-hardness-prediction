@@ -1,0 +1,19 @@
+{
+  "hypothesis": "D4 training augmentation does not ensure invariant single-view inference; average all8 fixed D4 views to reduce orientation variation",
+  "seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "weights": {
+    "baseline": 0.5,
+    "cnn": 0.25,
+    "kernel": 0.25
+  },
+  "training": false,
+  "scope": "Only original development400 validation-fold inference; checkpoints verify train IDs exclude scored IDs",
+  "source_sha256": {
+    "cnn_d4_ablation.py": "4cc008e30764f86a9a5e3ccbecc21f51254a191bceb42da9f923627562ec56ea",
+    "cnn_ensemble_inference.py": "c88a3f988e8187c21f77124644a897defcef72915df463c286f687c2aae9eef1"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "n": 400,
+  "features": {
+    "smooth_bright_dark_log_energy_ratio": {
+      "q05_q50_q95": [
+        -0.1791453111237497,
+        -0.021432262675059002,
+        0.04233278601973863
+      ],
+      "iid_q95": 0.05940702849272332,
+      "fraction_above_iid_q95_descriptive": 0.01,
+      "compact57_max_abs_Spearman": 0.4895890853257212,
+      "compact57_fixed_Ridge_OOF_R2": 0.4838311630978539,
+      "hardness_Spearman_retrospective": 0.05255582847392796
+    },
+    "smooth_intensity_energy_cv": {
+      "q05_q50_q95": [
+        0.00692452155144983,
+        0.021604731118885293,
+        0.08880581937404546
+      ],
+      "iid_q95": 0.0299999250172337,
+      "fraction_above_iid_q95_descriptive": 0.2825,
+      "compact57_max_abs_Spearman": 0.5765613653243925,
+      "compact57_fixed_Ridge_OOF_R2": 0.5214460416709316,
+      "hardness_Spearman_retrospective": -0.011032193951212193
+    },
+    "edge_smooth_log_energy_ratio": {
+      "q05_q50_q95": [
+        -0.022745191449382085,
+        0.03417817632748278,
+        0.2648895540351391
+      ],
+      "iid_q95": 0.024396795128828117,
+      "fraction_above_iid_q95_descriptive": 0.5675,
+      "compact57_max_abs_Spearman": 0.7696701567365413,
+      "compact57_fixed_Ridge_OOF_R2": 0.619860318601823,
+      "hardness_Spearman_retrospective": 0.20181951137194606
+    },
+    "tile_HH_energy_cv": {
+      "q05_q50_q95": [
+        0.11058689437323814,
+        0.12150939653427485,
+        0.13818148783149342
+      ],
+      "iid_q95": 0.13745607340468205,
+      "fraction_above_iid_q95_descriptive": 0.06,
+      "compact57_max_abs_Spearman": 0.17911368196051225,
+      "compact57_fixed_Ridge_OOF_R2": 0.1490045070136271,
+      "hardness_Spearman_retrospective": 0.007164232276451727
+    },
+    "phase_log_energy_range": {
+      "q05_q50_q95": [
+        0.006691128374713634,
+        0.018000768685674608,
+        0.03480568098560701
+      ],
+      "iid_q95": 0.03274134055245536,
+      "fraction_above_iid_q95_descriptive": 0.065,
+      "compact57_max_abs_Spearman": 0.13551764145199247,
+      "compact57_fixed_Ridge_OOF_R2": -0.04913652080748898,
+      "hardness_Spearman_retrospective": -0.0046269664185401155
+    },
+    "phase_mean_over_RMS_max": {
+      "q05_q50_q95": [
+        0.0009751342257423493,
+        0.005538371239908735,
+        0.016074558281110277
+      ],
+      "iid_q95": 0.012927721181662974,
+      "fraction_above_iid_q95_descriptive": 0.12,
+      "compact57_max_abs_Spearman": 0.08871074194213713,
+      "compact57_fixed_Ridge_OOF_R2": -0.02372778825463895,
+      "hardness_Spearman_retrospective": 0.06619466371664823
+    }
+  },
+  "extraction_seconds": 3.2668437079992145,
+  "comparisons_retrospective": [
+    {
+      "split": "original",
+      "base57_RMSE": 13.931403222281665,
+      "plus6_RMSE": 14.13345037052902,
+      "gain": -0.20204714824735603
+    },
+    {
+      "split": "20261031",
+      "base57_RMSE": 13.918483170451104,
+      "plus6_RMSE": 14.024100235986651,
+      "gain": -0.10561706553554728
+    },
+    {
+      "split": "20261101",
+      "base57_RMSE": 13.888231079250529,
+      "plus6_RMSE": 14.055694657405237,
+      "gain": -0.1674635781547078
+    }
+  ],
+  "fold_results": [
+    {
+      "split": "original",
+      "fold": 0,
+      "base_RMSE": 13.711311054777969,
+      "plus_RMSE": 13.960560264652457
+    },
+    {
+      "split": "original",
+      "fold": 1,
+      "base_RMSE": 13.02102157318902,
+      "plus_RMSE": 13.098765769202421
+    },
+    {
+      "split": "original",
+      "fold": 2,
+      "base_RMSE": 15.38088102419898,
+      "plus_RMSE": 15.614321364342143
+    },
+    {
+      "split": "original",
+      "fold": 3,
+      "base_RMSE": 13.186846512612833,
+      "plus_RMSE": 13.584929491750747
+    },
+    {
+      "split": "original",
+      "fold": 4,
+      "base_RMSE": 14.227034231732755,
+      "plus_RMSE": 14.280750972439149
+    },
+    {
+      "split": "20261031",
+      "fold": 0,
+      "base_RMSE": 14.408022635730044,
+      "plus_RMSE": 14.469145461365247
+    },
+    {
+      "split": "20261031",
+      "fold": 1,
+      "base_RMSE": 14.99855399890558,
+      "plus_RMSE": 15.158260114215652
+    },
+    {
+      "split": "20261031",
+      "fold": 2,
+      "base_RMSE": 14.25424289645608,
+      "plus_RMSE": 14.41178798506057
+    },
+    {
+      "split": "20261031",
+      "fold": 3,
+      "base_RMSE": 12.16475964932091,
+      "plus_RMSE": 12.223829094852595
+    },
+    {
+      "split": "20261031",
+      "fold": 4,
+      "base_RMSE": 13.598099596044383,
+      "plus_RMSE": 13.679411040177701
+    },
+    {
+      "split": "20261101",
+      "fold": 0,
+      "base_RMSE": 13.569708564901951,
+      "plus_RMSE": 13.911032419550978
+    },
+    {
+      "split": "20261101",
+      "fold": 1,
+      "base_RMSE": 13.315287072566594,
+      "plus_RMSE": 13.266312832442763
+    },
+    {
+      "split": "20261101",
+      "fold": 2,
+      "base_RMSE": 14.505187417189642,
+      "plus_RMSE": 14.77308465695708
+    },
+    {
+      "split": "20261101",
+      "fold": 3,
+      "base_RMSE": 14.357502858072463,
+      "plus_RMSE": 14.513903470339521
+    },
+    {
+      "split": "20261101",
+      "fold": 4,
+      "base_RMSE": 13.654398626988792,
+      "plus_RMSE": 13.762392892846158
+    }
+  ],
+  "fit_count": 35,
+  "D4_max_abs_error": 2.203098814490545e-16,
+  "validation_label_poison_max_coef_difference": 0.0,
+  "hardness_labels_used": true,
+  "holdout_test_full500_access": false,
+  "scope": "400 development images only; manifest contains held-out ID metadata but no holdout data loaded. No test data/cache/submission read.",
+  "elapsed_seconds": 3.3650027079856955,
+  "peak_RSS_bytes": 169754624,
+  "threadpools": [
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 2,
+      "prefix": "libomp",
+      "filepath": ".venv/lib/python3.13/site-packages/sklearn/.dylibs/libomp.dylib",
+      "version": null
+    }
+  ],
+  "decision": "Diagnostic only, best021 unchanged. No hyperparameter, feature, weight, threshold or seed rescue.",
+  "limitations": [
+    "Retrospective reuse of 400; repeats are not independent1200.",
+    "Six correlations and two image diagnoses not multiplicity-corrected; no significance claim.",
+    "Fixed Ridge comparison is not complete KRR/DINO/CNN ensemble or deployment result.",
+    "Conditional HH energy mixes true high-frequency structure, blur, clipping and noise.",
+    "Smoothed guide is derived from same image, so conditioning can itself induce dependence.",
+    "Fixed linear recovery failure does not prove descriptor absent from nonlinear compact57 models or DINO/CNN."
+  ]
+}

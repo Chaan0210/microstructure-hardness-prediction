@@ -1,0 +1,444 @@
+{
+  "status": "frozen_conditional_source_candidate_not_selected",
+  "name": "candidate-source-flow38-v1",
+  "frozen_utc": "2026-10-18T19:07:29.821667+00:00",
+  "field_count": 38,
+  "formula": "p083 + eligible*(.384*(mean_encoder(mean3Tab(P104+sourceF38))-mean3Tab(P104)) + .128*(mean_encoder(Ridge100(P104+sourceF38))-Ridge100(P104)) + .128*(mean_encoder(exp(logRidge100(P104+sourceF38)))-exp(logRidge100(P104))))",
+  "encoder_prediction_weights": [
+    0.5,
+    0.5
+  ],
+  "encoder_training_seeds": [
+    2026101811,
+    2026101823
+  ],
+  "encoder_tags": [
+    "full500-sourceflow38-s1811",
+    "full500-sourceflow38-s1823"
+  ],
+  "flow_keys": [
+    "cell_logit_mean",
+    "cell_logit_std",
+    "cell_logit_q10",
+    "cell_logit_q50",
+    "cell_logit_q90",
+    "speed_mean",
+    "speed_std",
+    "speed_q10",
+    "speed_q50",
+    "speed_q90",
+    "divergence_mean",
+    "divergence_std",
+    "divergence_q10",
+    "divergence_q50",
+    "divergence_q90",
+    "curl_mean",
+    "curl_std",
+    "curl_q10",
+    "curl_q50",
+    "curl_q90",
+    "strain_mean",
+    "strain_std",
+    "strain_q10",
+    "strain_q50",
+    "strain_q90",
+    "gray_divergence_mean",
+    "gray_divergence_std",
+    "gray_divergence_q10",
+    "gray_divergence_q50",
+    "gray_divergence_q90",
+    "prob_mean",
+    "prob_std",
+    "prob_entropy",
+    "strain_c4",
+    "strain_s4",
+    "prob_tile4_std",
+    "speed_tile4_std",
+    "divergence_tile4_std"
+  ],
+  "auxiliary_recipe": "Original eligible CPSAM initialization; lower-noise half of the500provided training originals, selected only within training;300updates,effectivebatch4/microbatch1,lr2e-5,warm15,cosinefloor.05,AdamWwd.1,ordinaryoriginalblur/contrast/brightness/noise andcovariantD4weakannotations. No hardness labels in auxiliary fit.",
+  "initial_weights": "experiments/grain-cellpose-220/weights/cpsam",
+  "initial_weights_sha256": "e1440429eb384f95afe32bcba6510f90d518eaedc917ede549bed6804004abe2",
+  "auxiliary_source_sha256": "126830b95c94b1c874861237d7ea93ee0173850f2edc3d770c65ea54709bc165",
+  "descriptor_source_sha256": "9ed469f513a9edcb9ab2e4627cfee1d2bcba079fe071db7a1e1327b4b776d292",
+  "inference_source_sha256": "3341540a3531b9c30b0a746b6cf1f3a41d419cf86deb312721eb711a4e70a25e",
+  "head_source_sha256": "840d03c8ec3eab497d99543ef954deaa777259049d673292e90621480fdb551d",
+  "source_hashes": {
+    "source_h300_v2.py": "126830b95c94b1c874861237d7ea93ee0173850f2edc3d770c65ea54709bc165",
+    "source_flow38_infer.py": "3341540a3531b9c30b0a746b6cf1f3a41d419cf86deb312721eb711a4e70a25e",
+    "source_flow38_heads.py": "840d03c8ec3eab497d99543ef954deaa777259049d673292e90621480fdb551d",
+    "flow38_fast.py": "9ed469f513a9edcb9ab2e4627cfee1d2bcba079fe071db7a1e1327b4b776d292",
+    "domain_semantics.py": "54b7ae29a6e58c564de402f6f504d556547b4861196026737786889406af24f7"
+  },
+  "training_input_hashes": {
+    "data.npz": "445776cefd93972e6201cf3e5283f0c5a2a9f7d817ff20945ccaf5540c439ca3",
+    "train-pixels.npy": "0c2ce1b01873052ac04965a9e0f7045ada0eb901d81cc89b95cc831e86a8e3a0",
+    "source-h300/all-original-flow-targets.npz": "37e9b52d8ac74d9618c741fbf35558a0f423480f0f101316484b28c3a6c2243d"
+  },
+  "noise_training_file": "experiments/push-300/noise_train.npy",
+  "noise_training_sha256": "622fedc50de1fa85e4115a2b5d5a90c1ad61317d6b3edfb8312b516efb17087b",
+  "control_training_context": "candidate-flow46-v1/training-context.npz",
+  "control_training_sha256": "2b205f7f6d993e920821fbfbc410ff942a7c1a7aa35c59e74878976106c3a2eb",
+  "control_predictions": "candidate-flow46-v1/test-predictions.npz",
+  "control_predictions_sha256": "420c2a272ceb80327e1216b52cfb93e3751eac8a28bc143692a68e5b57054356",
+  "physical_test": "experiments/push-1300/abl/feat-h9s2-full-044-u1dmavg-test.npz",
+  "physical_keys": [
+    "ar_med",
+    "ar_q90",
+    "ar_wmean",
+    "aw_eqd_mean",
+    "aw_eqd_q50",
+    "aw_eqd_q90",
+    "aw_inv_sqrt_d",
+    "boundary_coherence",
+    "coarse_area_frac",
+    "coverage",
+    "dark_span_vs_noise",
+    "eqd_q10",
+    "eqd_q90",
+    "fine_area_frac",
+    "grain_I_std_mean",
+    "grain_density_j",
+    "grain_eqd_mean",
+    "grain_eqd_med",
+    "grain_eqd_q90_q10",
+    "grain_inv_sqrt_d",
+    "grain_logA_std",
+    "grain_mean_area_j",
+    "img_std",
+    "logA_bimodality",
+    "logA_skew",
+    "n_obj",
+    "neighbors_mean",
+    "neighbors_std",
+    "noise",
+    "obj_I_cv",
+    "obj_I_spread_vs_noise",
+    "obj_per_kpx",
+    "orient_coherence",
+    "pore_d_mean",
+    "pore_frac",
+    "pore_n",
+    "pore_per_grain",
+    "pore_to_grain_size",
+    "px_pore_d",
+    "px_pore_ecc",
+    "px_pore_frac",
+    "px_pore_n",
+    "sizefield_plane_r2",
+    "sizefield_range_s32",
+    "sizefield_ratio",
+    "sizefield_std_s16",
+    "sizefield_std_s32",
+    "solidity_wmean",
+    "sp_ar",
+    "sp_contiguity",
+    "sp_field_std_s32",
+    "sp_to_matrix_size",
+    "sp_z_mean",
+    "tile8_logA_std",
+    "tile_logA_std",
+    "tile_spfrac_std",
+    "vstd_sizefield_range_s32",
+    "vstd_sizefield_std_s32",
+    "vstd_sizefield_std_s16",
+    "vstd_tile8_logA_std",
+    "vstd_grain_logA_std",
+    "vstd_grain_eqd_mean",
+    "vstd_aw_eqd_mean",
+    "vstd_n_obj",
+    "vstd_solidity_wmean",
+    "vstd_neighbors_std",
+    "vstd_ar_wmean",
+    "vstd_orient_coherence",
+    "stcoh_s1.5_w8_glob",
+    "stcoh_s1.5_w8_locmed",
+    "stcoh_s1.5_w32_glob",
+    "stcoh_s1.5_w32_locmed",
+    "stcoh_s3_w8_glob",
+    "stcoh_s3_w8_locmed",
+    "stcoh_s3_w32_glob",
+    "stcoh_s3_w32_locmed",
+    "u_ph",
+    "u_ph_hard",
+    "u_ph_f32",
+    "m_el_glob",
+    "m_el_loc16",
+    "m_el_pix",
+    "m_el_coh",
+    "m_la_std",
+    "m_la_f16",
+    "m_la_f32",
+    "m_la_tile8",
+    "m_la_mean",
+    "m_ph_hard",
+    "het4_u",
+    "het4_u_mx",
+    "z_f25",
+    "z_f50",
+    "ang_c4",
+    "ang_s4",
+    "het4_u_x_m_el_pix",
+    "sizefield_std_s32_x_m_el_pix",
+    "sh_cor15",
+    "cumulant_sigma1.0_p34",
+    "cumulant_sigma1.0_contrast",
+    "c_s2_p34",
+    "c_s2_contrast",
+    "c_s4_p34",
+    "c_s4_contrast"
+  ],
+  "baseline_csv": "artifacts/submission-candidate-083.csv",
+  "baseline_sha256": "02c4c6d58e418b14b86c786ee532c1d0373b6ab930075a7df93029f6fed9187c",
+  "failure_cache": "experiments/082-fusion-20261018-0155/reproduction/incumbent-components.npz",
+  "failure_cache_sha256": "743e26c8f1b0128d0cb11e9fe873364fa0792b6c67e822783094fd77a88a0ca9",
+  "tabpfn": {
+    "version": "3.5",
+    "weights": "existinglocaltabpfn-v3.5-20260909.safetensors",
+    "n_estimators": 8,
+    "seeds": [
+      0,
+      100,
+      200
+    ],
+    "device": "cpu",
+    "native_preprocessing": true,
+    "fingerprint": "unchangedcheckpointdefault"
+  },
+  "linear": {
+    "alpha": 100.0,
+    "imputer": "trainingmedian,keep_empty_features=True",
+    "scaler": "StandardScalerfitonlytrain",
+    "targets": [
+      "y",
+      "natural_log_y"
+    ],
+    "log_inverse": "exp,noadditionalcalibration"
+  },
+  "inference": "MPSfloat32C4two-view batches for the auxiliary encoder; bit-equivalent38-field descriptor; all learned preprocessing/readouts fit on500training originals only. CPU nativeTabPFN n8 withseeds0/100/200. Equal prediction averaging across encoders, not feature or parameter averaging.",
+  "conditional_validation": {
+    "baseline_rmse": 9.201706802567655,
+    "candidate_rmse": 8.977661203129443,
+    "gain": 0.22404559943821134,
+    "positive_folds": 5,
+    "ci95": [
+      0.09249625422511687,
+      0.3536237849955839
+    ],
+    "top10_positive_removed_gain": 0.09313683925223337,
+    "positive_images": 231,
+    "folds": [
+      {
+        "fold": 0,
+        "baseline_rmse": 9.434292182256197,
+        "candidate_rmse": 9.27961680888483
+      },
+      {
+        "fold": 1,
+        "baseline_rmse": 9.015715671851066,
+        "candidate_rmse": 8.588126555279564
+      },
+      {
+        "fold": 2,
+        "baseline_rmse": 9.85812159386536,
+        "candidate_rmse": 9.494083780657744
+      },
+      {
+        "fold": 3,
+        "baseline_rmse": 8.097804682868757,
+        "candidate_rmse": 8.033002118272737
+      },
+      {
+        "fold": 4,
+        "baseline_rmse": 9.5032121045956,
+        "candidate_rmse": 9.405213855905636
+      }
+    ],
+    "per_encoder_seed_rmse": [
+      8.97729558138976,
+      8.979504256453374
+    ],
+    "diagnostic_groups": {
+      "noise_low": {
+        "n": 203,
+        "baseline_rmse": 8.038701235689034,
+        "candidate_rmse": 7.79766795744066
+      },
+      "noise_mid": {
+        "n": 71,
+        "baseline_rmse": 8.041839025846695,
+        "candidate_rmse": 7.636847118202899
+      },
+      "noise_high": {
+        "n": 126,
+        "baseline_rmse": 11.32454286158644,
+        "candidate_rmse": 11.182257230273434
+      },
+      "target_low": {
+        "n": 134,
+        "baseline_rmse": 10.062622937679485,
+        "candidate_rmse": 9.79075039080365
+      },
+      "target_mid": {
+        "n": 136,
+        "baseline_rmse": 7.00213594149819,
+        "candidate_rmse": 6.829192728911142
+      },
+      "target_high": {
+        "n": 130,
+        "baseline_rmse": 10.240245192143195,
+        "candidate_rmse": 10.019800093110247
+      },
+      "morph_coarse": {
+        "n": 139,
+        "baseline_rmse": 10.967781843592926,
+        "candidate_rmse": 10.854733105725233
+      },
+      "morph_mid": {
+        "n": 128,
+        "baseline_rmse": 9.293003502854408,
+        "candidate_rmse": 8.86260492372487
+      },
+      "morph_fine": {
+        "n": 131,
+        "baseline_rmse": 6.795880591422054,
+        "candidate_rmse": 6.633264056160607
+      },
+      "morph_missing": {
+        "n": 2,
+        "baseline_rmse": 4.678139647351956,
+        "candidate_rmse": 4.678139647351956
+      }
+    }
+  },
+  "validation_summary_sha256": "03046724aa42090fbc9b746a925684116e78f2619e765c74a7fc2275e89584dc",
+  "conditional_promotion_checks": {
+    "gain_at_least_point_one": true,
+    "four_of_five_folds": true,
+    "positive_interval": true,
+    "positive_influence_sensitivity": true,
+    "every_encoder_seed_improves": true
+  },
+  "full_system_protocol_passed": false,
+  "limitations": "All labels have been reused. New encoder/eligibility ranking excludes outer-query originals in validation, but inherited P104/083 representations are historically global. These conditional checks do not complete the predefined all500 matched end-to-end incumbent protocol and are not a Private probability. No new Public result.",
+  "final_fit_start_cutoff_utc": "2026-10-18T19:30:00+00:00",
+  "recovery_target_kst": "2026-10-19 08:00",
+  "official_deadline_kst": "2026-10-19 10:00",
+  "cost": 0,
+  "no_submission_or_selection_change": true,
+  "current_best_comparison": {
+    "comparator": "candidate-flow38-v1 (global H300 F38)",
+    "encoder_seed_suffixes": [
+      1811,
+      1823
+    ],
+    "rows": 400,
+    "current_best_rmse": 9.006878064271838,
+    "source_candidate_rmse": 8.977661203129443,
+    "gain": 0.029216861142394634,
+    "ci95": [
+      0.004010148546927051,
+      0.05444599631399245
+    ],
+    "positive_folds": 4,
+    "positive_images": 216,
+    "folds": [
+      {
+        "fold": 0,
+        "current_best_rmse": 9.353409799276523,
+        "source_candidate_rmse": 9.27961680888483
+      },
+      {
+        "fold": 1,
+        "current_best_rmse": 8.581186445779448,
+        "source_candidate_rmse": 8.588126555279564
+      },
+      {
+        "fold": 2,
+        "current_best_rmse": 9.501677359556247,
+        "source_candidate_rmse": 9.494083780657744
+      },
+      {
+        "fold": 3,
+        "current_best_rmse": 8.095664950045679,
+        "source_candidate_rmse": 8.033002118272737
+      },
+      {
+        "fold": 4,
+        "current_best_rmse": 9.416717209536092,
+        "source_candidate_rmse": 9.405213855905636
+      }
+    ],
+    "top10_positive_removed_gain": 0.006070833308122303,
+    "diagnostic_groups": {
+      "noise_low": {
+        "n": 203,
+        "current_best_rmse": 7.829634172915112,
+        "source_candidate_rmse": 7.79766795744066
+      },
+      "noise_mid": {
+        "n": 71,
+        "current_best_rmse": 7.627405027974667,
+        "source_candidate_rmse": 7.636847118202899
+      },
+      "noise_high": {
+        "n": 126,
+        "current_best_rmse": 11.22440947856979,
+        "source_candidate_rmse": 11.182257230273434
+      },
+      "target_low": {
+        "n": 134,
+        "current_best_rmse": 9.817863232379226,
+        "source_candidate_rmse": 9.79075039080365
+      },
+      "target_mid": {
+        "n": 136,
+        "current_best_rmse": 6.8556561409949985,
+        "source_candidate_rmse": 6.829192728911142
+      },
+      "target_high": {
+        "n": 130,
+        "current_best_rmse": 10.054168427840372,
+        "source_candidate_rmse": 10.019800093110247
+      },
+      "morph_coarse": {
+        "n": 139,
+        "current_best_rmse": 10.896813822600297,
+        "source_candidate_rmse": 10.854733105725233
+      },
+      "morph_mid": {
+        "n": 128,
+        "current_best_rmse": 8.876856925048138,
+        "source_candidate_rmse": 8.86260492372487
+      },
+      "morph_fine": {
+        "n": 131,
+        "current_best_rmse": 6.662309947927724,
+        "source_candidate_rmse": 6.633264056160607
+      },
+      "morph_missing": {
+        "n": 2,
+        "current_best_rmse": 4.678139647351956,
+        "source_candidate_rmse": 4.678139647351956
+      }
+    },
+    "prediction_files": {
+      "source-h300/proper-summary-s1811-1823.npz": "bbb3ed56d39a14480525dedea4599a57ef42c3037e923ace9ad43a8edaea7a40",
+      "flow-content-ablation/oof.npz": "c543b1885ded534ff7b56ebb9a31210eb382f086bc5f3f170dac57c9cb5d7fff"
+    },
+    "full_system_protocol_passed": false,
+    "coefficients_fit": false,
+    "scope": "Same original400 rows/folds, 320 labeled training rows per fold, same heads/control/fallback rules. New source encoder excludes validation originals; global-H300 comparator and inherited P104/083 have historical global representation exposure. Reused-data conditional comparison only. ID bootstrap does not account for adaptive model search and is not a Private probability."
+  },
+  "current_best_final_fit_resource_checks": {
+    "every_encoder_seed_improves": true,
+    "positive_gain": true,
+    "four_of_five_folds": true,
+    "positive_interval": true,
+    "positive_influence_sensitivity": true
+  },
+  "current_best_comparison_sha256": "768997ac80274f9652afdd2f0d0a0dfc2a3f6b04ab5012db33bba4b15fefb9b1",
+  "final_fit_rule_sha256": "52c7d9502e3567badeee84d17ab5153228a487cde6af4535daf0e4d006d15291",
+  "freeze_factory_sha256": "1a3c7e0796afc137cfd085ec8ab3370b256cb65d7b6b3c55dc286139b332d13e",
+  "recommendation_scope": "Separate exploratory candidate. These resource checks do not pass the original all500 complete end-to-end confirmation or establish a reliable Private improvement over the user-submitted globalF38 model."
+}

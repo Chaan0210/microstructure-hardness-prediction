@@ -1,0 +1,129 @@
+{
+  "weights": {
+    "p021": 0.16,
+    "tabpfn": 0.384,
+    "ridge": 0.128,
+    "logridge": 0.128,
+    "grain_set": 0.05,
+    "gmm": 0.15
+  },
+  "gate_noise_gray": 12,
+  "failed_fallback": "p021",
+  "tabpfn": {
+    "version": "3.5",
+    "local_only": true,
+    "slots": [
+      "038",
+      "039",
+      "044"
+    ],
+    "variants": [
+      "u1dm1szH2Z",
+      "u1dm2szH2Z",
+      "u1dmavgH2Z",
+      "u1dmavg4H2Z"
+    ],
+    "seeds": [
+      0,
+      100,
+      200
+    ],
+    "aggregation": "uniform arithmetic mean"
+  },
+  "ridge": {
+    "alphas": [
+      0.1,
+      1,
+      10,
+      100,
+      1000
+    ],
+    "selection": "GCV",
+    "impute": "train median",
+    "scaler": "train standardization"
+  },
+  "logridge": {
+    "alpha": 2,
+    "variants": [
+      "u1dm1szH2Z",
+      "u1dm2szH2Z",
+      "u1dmavgH2Z",
+      "u1dmavg4H2Z"
+    ],
+    "aggregation": "geometric mean",
+    "smearing": false
+  },
+  "augmentation": {
+    "sets": [
+      "deg",
+      "deg2",
+      "deg3",
+      "deg4"
+    ],
+    "measured_noise_min": 12,
+    "source": "train only"
+  },
+  "feature_drop_073": "het and intensity: 13 columns, applied only to predictions with noise<12",
+  "mode": "refit only Ridge/logRidge; other components frozen",
+  "no_upload": true,
+  "no_test_fitting": true,
+  "outputs": {
+    "061": {
+      "file": "experiments/rmse-research-20261015/retrained-linear/submission-061.csv",
+      "sha256": "8176b2a986aa0b07759772db072cf3e4f211418fc4fc55bacb5b5832c334b790",
+      "max_absolute_difference": 1.5006662579253316e-11,
+      "byte_identical": false,
+      "n_rows": 1000
+    },
+    "073": {
+      "file": "experiments/rmse-research-20261015/retrained-linear/submission-073.csv",
+      "sha256": "1f82c8bf4eefb657483e8fefeb9378b60b40837b1df641bb443cce473401eda4",
+      "max_absolute_difference": 1.5006662579253316e-11,
+      "byte_identical": false,
+      "n_rows": 1000
+    }
+  },
+  "input_sha256": {
+    "data/sample_submission.csv": "d5658d45e0f1167606317bcf5b718a63c5b07be43928515c89cdd52b46ec7735",
+    "artifacts/submission-candidate-053.csv": "a6365c07009593188f70dac6a97db7bcaba8f8a4361c2b21f0bec991fc1cd27c",
+    "artifacts/submission-candidate-021.csv": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+    "experiments/push-1200/fin-none.npz": "917b411020f258b68eada76e8f0262dcffb0f993ce6055d245bd9e90bfe3012f",
+    "experiments/push-1200/fin-d1234n12.npz": "03daef1affad454f40353462059b2f610e5dbe6f21e6fc3c2943ca8abe4c9a9e",
+    "experiments/push-1300/fin-nb-partners.npz": "15392369915e02883f927f0ed0287aa9ffe930b9c81407a28f10fa87e41ddf0d",
+    "experiments/push-1300/fin-nb-tab-cpu.npz": "1475c71cc688948375ec016fddd2a9ebe480a5a8be86ba83e4b3df927b6cf3c6",
+    "experiments/probabilistic-grains-900/ridge/final500/predictions.npz": "21b02388b280e44b20be8f7bd10eea0bc512e428eb4387c1b1c47e0ba2a2507d",
+    "experiments/probabilistic-grains-900/set_model/full500/predictions.npz": "2cdb3569a6a0a0c75ae783ef9707654ce9570a08706906198e7d567627bf40be",
+    "data/train.csv": "e8027032e51a2a4b2afee8ac9f3b431373c7777d516047bf5824fe69998da106",
+    "experiments/push-1300/abl/groups.json": "3ee032da64b55e9285dc9823d5090aa392f86a2e726d67810ef5f1431a88eecb",
+    "experiments/push-800/feat-u1dm1szH2Z-anghcor-train.npz": "32841fe23e6ff4f811c877597441224f69b51c72228380f9557a7f6b71809b94",
+    "experiments/push-800/feat-u1dm1szH2Z-anghcor-test.npz": "82a0cbc24b1e43e0096613d075c6c4f97774e868892148fdff0a6569743e9f64",
+    "experiments/push-800/feat-u1dm2szH2Z-anghcor-train.npz": "ba0c8614ded531203ba0dd1b9bd6ae57adb01d8d013ec7acd43f1a1d93a02354",
+    "experiments/push-800/feat-u1dm2szH2Z-anghcor-test.npz": "5e8fae7e474e5cc2b580942540c4bebad98304a447fef0dd3092d493e2224ec4",
+    "experiments/push-800/feat-u1dmavgH2Z-anghcor-train.npz": "4c61d9469a510a356f9d107f556cf61681f1e3044dfed9e790233b72515035ba",
+    "experiments/push-800/feat-u1dmavgH2Z-anghcor-test.npz": "c66d49be71388b1ec249621daa1928aa90cdd0a4ad72f4a4215065bc3858b19f",
+    "experiments/push-800/feat-u1dmavg4H2Z-anghcor-train.npz": "32f0e908246faec2164fb296b31878170b9f29383a05efbd9f25ee9f5e9022cd",
+    "experiments/push-800/feat-u1dmavg4H2Z-anghcor-test.npz": "9984a9fad8de2876f81b4a4e26d565adfab74cb6e551b86bed8d40ec75a8c74f",
+    "experiments/push-1200/synthrows-deg-u1dm1szH2Z-anghcor.npz": "0dab496ededbe2e04e70a09857c40455a3fe6b3856280d79c37fe8b23bf9600e",
+    "experiments/push-1200/synthrows-deg2-u1dm1szH2Z-anghcor.npz": "a101f78dc61678c87dfc0af77269147c5d03d67075b287ee0f43352c91da14aa",
+    "experiments/push-1200/synthrows-deg3-u1dm1szH2Z-anghcor.npz": "5770a507147d237629548a3bcf4906fad280ca312160bde42eb78253625932bc",
+    "experiments/push-1200/synthrows-deg4-u1dm1szH2Z-anghcor.npz": "b7eecb04137b104318e04e57c03f4427c571a1cb81a51874cacac5889880db84",
+    "experiments/push-1200/synthrows-deg-u1dm2szH2Z-anghcor.npz": "327405937e206b091a8c98d8cbdacee136dd954a70fd7a66d52f804c99b5aaf2",
+    "experiments/push-1200/synthrows-deg2-u1dm2szH2Z-anghcor.npz": "c9665c22c8ffdecd6bec60f196b01259e23988fef2badc70f279431a8ef1d8d4",
+    "experiments/push-1200/synthrows-deg3-u1dm2szH2Z-anghcor.npz": "f72289607711ce4103e39ef7a9fa7052e02d24972c9767a8a7aa30d63c94be54",
+    "experiments/push-1200/synthrows-deg4-u1dm2szH2Z-anghcor.npz": "c41256e24b2ff4f4798f53c59f6be8c97bbbaf2e0b3c66acb8d2ab0ed4b517ae",
+    "experiments/push-1200/synthrows-deg-u1dmavgH2Z-anghcor.npz": "d7935469fb83fecd4b902f2cf2b6180a1acfe0f49741aa3849c3ddfdcf44a10f",
+    "experiments/push-1200/synthrows-deg2-u1dmavgH2Z-anghcor.npz": "0a32c6c78e32b81224c23fcf8551d44e78a3a97ea87ad125f2eba3ef97eb6e8e",
+    "experiments/push-1200/synthrows-deg3-u1dmavgH2Z-anghcor.npz": "25f6a276420cbef93336250903cd60f52e3184ed4f105907988c00edb25a3a0f",
+    "experiments/push-1200/synthrows-deg4-u1dmavgH2Z-anghcor.npz": "5fce1fa69d5ba3c75932f0096b8ea89e0c24fac20f3080be36e8d9ed3352b50e",
+    "experiments/push-1200/synthrows-deg-u1dmavg4H2Z-anghcor.npz": "3f69df7770aaf9ca6e4704c7212ca523aee639b8ade69b49d6692ff0ee0d5b0a",
+    "experiments/push-1200/synthrows-deg2-u1dmavg4H2Z-anghcor.npz": "2d7d65686e26e8923406ee55cd54573ee40b0e0cd974f77b9b1d2b9580a41e36",
+    "experiments/push-1200/synthrows-deg3-u1dmavg4H2Z-anghcor.npz": "5dcfb820e08aa222ed2ffe93f5303ccf3165026f8d7f19d218a8d2fefc0547b3",
+    "experiments/push-1200/synthrows-deg4-u1dmavg4H2Z-anghcor.npz": "8348acb70e383531aa3a1b082eeccf200e6a322c968b2755321b6f7e39762b41",
+    "artifacts/submission-candidate-038.csv": "e6eb78afdd5e2383258345a425c70225672a5f79cf38759ad6e0f472be283023",
+    "artifacts/submission-candidate-039.csv": "bfc64992b9a48711b860f07df5bd94759748517b24e8ddd5c3341b1281554497",
+    "artifacts/submission-candidate-044.csv": "f9fff6f3c0ab19ffc01e7b82a6abf76b352bb65114c53c4662209143c1054463",
+    "artifacts/submission-candidate-061.csv": "259d69c4839a1f607e6b08686d16468f7dd5a6af9fc541e2e0449f020d23021d",
+    "artifacts/submission-candidate-073.csv": "6a243cfb5ff5a230d1da7de56be0fe2333db56902dacd3404e95078ceb791c11"
+  },
+  "code_sha256": "7a136b8f1a7a450bcf7a4defd9491bf1827e41677e0deac3407f486a96d471dd"
+}

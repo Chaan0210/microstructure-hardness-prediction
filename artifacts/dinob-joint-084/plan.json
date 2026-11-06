@@ -1,0 +1,61 @@
+{
+  "hypothesis": "082/083 fixed B heads already nearly interpolate trainlabels, leaving smallbackbone signal. Fresh joint head training exposes the backbone to unsatisfied regression signal fromstep1. Isolate this by comparing a freshhead on frozenB against the identicalfreshhead jointly training onlylastBblock. No predictionpreservation penalty.",
+  "duplicate_audit": "063/064 newheads onfrozenB only;043S/080B/083B fine-tuned withalreadyfit frozenheads;059 two-stageSadaptedfeatures thenhead.047jointkernel is not neuralbackbone/headjointtraining. No matchedfreshhead+B lastblock experiment found.",
+  "config": {
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "architecture": "Full504 B6912 normalizedCLS/patchmean/std blocks6/9/12. Fresh Linear6912x32,GELU,Dropout.5,Linear32x1. Onefixedseed20270215+outerfold inbotharms. Modelparameterstate initialization identical. Jointarm onlyblock11 andheadtrainable;frozenarmonlyheadtrainable. Finalnorm andallprefixweightsfrozen/eval.",
+  "regularization": "Both heads AdamWwd.1,dropout.5,12fixedepochs. Headlr3e-4 cosine->1e-5; jointblocklr1e-6 cosine->1e-7,wd0,originalpretrainedinitialization,11blocks frozen. Separateclip1 forhead/block prevents backbonegradient fromchangingheadclip rule. No predictionanchor, noforcedminimumoutputchange, noearlystopping/epochchoice.",
+  "pairing": "Samefoldtrain-only StandardScaler onfrozenB features andtargetmean/std, heldconstantduringjointtraining. Identicalheadinit, NumPytrainingorders, effectivebatch16/micro2. Reset torchseed per epoch+microbatch identically inbotharms to pair dropoutmasks. Bothuseidentityimageaugmentation;none additional. Jointprefixsameimmutable080cache. Frozenarm usesexactmatchingcachedBdescriptors.",
+  "single_blend": "Eacharmblend=.9*verifiedsamefold009+.1*itsrawtargetprediction. 009calibrator alreadyfitstrictlyinsideoutertrain; neverfit newcalibration orweights onouterOOF. Reference009 values enteronlyheldoutcomparison/linearcombination,nevertraininputs/targets.",
+  "selection": "Originaljoint standaloneRMSE muststrictlybeatmatchedfrozenhead; jointblend muststrictlybeatfrozenblend,009,and010. Thenbothknownresplits unchanged. Candidateeligibleonlyif all3partitions meetthesecriteria andstrictverificationpasses. No fallbackfrozenheadcandidate orweight/epoch/lr/headseedsearch. CI/foldcountsdiagnosticonly.",
+  "resources": "ExistingCPU2/MPS,noinstall/download/cost.6stepmicrobenchmarkprojectpaired5fold<1800s,RSS/MPS<4GB. Firstcompletepairedfold<360s andRSS/MPS<4GB, reusedonce.12epochs imply240optimizerupdates perarm320trainrows. Onefixedseedperarm; this is a pairedmethodcontrol,not equalcapacitytoexisting3seedBensemble.",
+  "sources": {
+    "dinob_joint_084.py": "1f87129e3fbd695df60558e92c0463817f5cbdd7304b99ccc002dedf6c8093a6",
+    "validate_dinob_joint_084.py": "d02130b368e41bb94ea6cdadc22ca84417c622721f774482c05be76304ac274c",
+    "dinob_lastblock_083.py": "07bc20444084de7086cf74f037807f8556eccc1a8687040e0186bfd37648f7b7",
+    "dinob_adapter_080.py": "e3cf765f5a253098edc69f434e29756ff21ed6328db659bc5eabda8b186d2a5e"
+  },
+  "inputs": {
+    "reports/adapter-diagnostics-082-lastblock-083-summary.json": "1d0b991971ad5ef8222780030b70a3c18600e3b1dff398352f817fb992563b14",
+    "reports/dinob-lastblock-083-validation.json": "7393b0f5204c8e793e6f94d4863a62e670109b01994ff86fc4f6a7f44168ad74",
+    "reports/dinob-adapter-080-validation.json": "7aa490921e5adaa086a8640267e2f703a1d3860b7ee4e298f86dc6eebfb19327",
+    "artifacts/dinob-adapter-080/prefix.json": "948bdbfee7563da88bf446f20a5f9be349228a03620c93978b7a781884ec79a5"
+  },
+  "protected010": {
+    "artifacts/submission-candidate-010.reproduced.csv": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5",
+    "artifacts/submission-candidate-010.csv": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5",
+    "artifacts/submission-candidate-010.components.csv": "fd508404258836062aaf90078620a525720cd8477babe5ec45c5b16cf6ed9a52",
+    "artifacts/submission-candidate-010.manifest.json": "7eaefab4bef33a743cefd676482078584929de44393e9826409a9b4caf58988c",
+    "artifacts/final-model-081/report.json": "b162aade078fb930b3d6993d5e0108863c0b6f873326634f83964f5c4532c9a0",
+    "artifacts/final-model-081/test_predictions.npz": "52a5ffeaee70f13e1406cc7d983643947ab6eddc4f0a2ef7e888a98437d632a0",
+    "artifacts/final-model-081/train_prefix.npy": "c7eee79a22472bc207cc89a91ece2d2b702422a7747b6cd229d9b5ba4b2f9285",
+    "artifacts/final-model-081/decision.json": "17ed20ce1c3a95b78a45f4c9a55e0e7966c76ddf7d2e9516fa67f80fa7e4bd69",
+    "artifacts/final-model-081/prefix.json": "ad1800812fd43b331d8419ec8dbc052c8abd48e31f40da076f4966f87d83614b",
+    "artifacts/final-model-081/adapter/model.pt": "e6593af28a62f335bbbae06be783e4e0416727ba3dc19196a30ff56b211ee5a2",
+    "artifacts/final-model-081/adapter/report.json": "1da4a10d09b75795325b8d752a4dc15aedda9f5704a1d7efead9ed58816f7c2e",
+    "artifacts/final-model-081/adapter/training_predictions.npz": "5ab7b0abef00a398d070898b4a4a19bced6139d217c273fc14e240797b2d12d3",
+    "artifacts/final-model-081/validation-replay/model.pt": "e6593af28a62f335bbbae06be783e4e0416727ba3dc19196a30ff56b211ee5a2",
+    "artifacts/final-model-081/validation-replay/report.json": "7750426f50fd62f41af7f340c1bf5b3dcc92f60af6070d133b7d7faefa934eb2",
+    "artifacts/final-model-081/validation-replay/training_predictions.npz": "5ab7b0abef00a398d070898b4a4a19bced6139d217c273fc14e240797b2d12d3",
+    "reports/candidate010-verification.json": "4ba0d2e6b9dc54d2f43030b819f73facef6192140817ba06ae17fa7b87e20d22",
+    "reports/final-candidate010-summary.json": "cd949b32c5207dfcf88c7f2eb9a67fe5060b811f336db1c01ebf3eaa75443812"
+  },
+  "scope": "Development400only;holdout/testselectionforbidden. Preserve009/010; no upload.",
+  "bias": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Fixedshortschedule mayunderfit andone seed leaves seed uncertainty. Results test thisoneprotocol,not alljointfinetuning."
+}

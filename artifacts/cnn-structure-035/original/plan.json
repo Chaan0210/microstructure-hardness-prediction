@@ -1,0 +1,43 @@
+{
+  "split": "original",
+  "variants": [
+    "tiny128",
+    "cov128",
+    "covmorph128",
+    "tiny256"
+  ],
+  "hypotheses": {
+    "pooling": "tiny128→cov128 isolates added rank12 covariance statistics",
+    "fusion": "cov128→covmorph128 adds26 train-fold-normalized compact features",
+    "resolution": "tiny128→tiny256 keeps architecture,seed,optimizer,80epochs,800steps/fold,batch32 equal"
+  },
+  "fixed_schedule": {
+    "seed": 20261003,
+    "epochs": 80,
+    "batch": 32,
+    "optimizer": "AdamW",
+    "lr": 0.002,
+    "weight_decay": 0.01,
+    "cosine_min_lr": 0.0001,
+    "last_weight_average": 5,
+    "clip_grad_norm": 5.0
+  },
+  "augmentation": "Same seeded NumPy batch D4 order; no resizecrop/intensity jitter. Compact features are D4-summary features, no augmentation-dependent recomputation.",
+  "morphology_scaler": "MinMaxScaler(clip=True)→StandardScaler fit ONLY outer train; joint network uses standardized26inputs",
+  "comparison": "All baseline and inner-selected compactKRR components freshly refit per outerfold; all4CNNs freshly trained. Fixed ensemble .5baseline+.25compactKRR+.25CNN. Compare newly trained Tiny128 reference plus recorded003 for drift.",
+  "data_scope": "development400 only, same original and two predefined repartitions. No holdout/test or externaldata.",
+  "selection": "No earlystop/checkpoint selection by validation curves; no tuned ensemble weights",
+  "source_sha256": {
+    "cnn_structure_experiment.py": "11906ac8964fd99db073ed5b1f206980ed51da3e86e07d6f58259f21f4d4a720",
+    "cnn_texture_fusion.py": "2f13c9ea5872f663279caaf6f88b752ba2cc29f1958a2b85c371767ee30aac7d",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc"
+  },
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  },
+  "split_manifest_sha256": "35293da0fda17e745939c316619f58281f50636c34696988e1b869bd9cc46193",
+  "repeated_selection_caveat": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

@@ -1,0 +1,168 @@
+{
+  "study": "110 fixed weakpixelnoise frozenDINO-B head augmentation",
+  "completed_utc": "2026-10-03T17:41:50.487273+00:00",
+  "deadline_utc": "2026-10-03T18:34:00+00:00",
+  "study_elapsed_minutes": 5.932732016666667,
+  "status": "Completed; fixedcandidate rejected at originalOOF; best011 preserved.",
+  "duplicate_audit": {
+    "089": "Changeshidden dropout.50to.25;110retains.50.",
+    "061": "Mixesdifferentimagefeatures/targets usingBeta.4;110keepssameimage andunchangedtarget.",
+    "071_072": "TVdenoisingbeforeDINO orraw/TVpredictionmixture;110doesnotdenoiseoraverageinferenceviews.",
+    "106": "GroupNormremoval inscratchCNN;110retainsfrozenofficialB andexistinghead.",
+    "046_104": "D4orpatch-phase featureaveraging;110norotation/crop/patchshift."
+  },
+  "perturbation": "Image/pixelspace, BEFORE504resize/backbone. For eachnative256uint8 raw image, independentPCG64seed=first8SHA256(noise110:ID)littleendian; addGaussianN(0,2^2)inuint8intensityunits,clip0..255,rinttointeger,uint8. Onefixedview perimage. Sigma2/255 is0.784%fullscale, chosen asweak2code-level perturbation, notfromlabelorvalidation optimization. No intensityshift/contrastjitter/noiselevel sweep. Clipping/quantization can change mean; recordactualpixelchanges.",
+  "learning_budget": "Freshcontrolandcandidate foreachfold. Same01132wideGELUdropout.5,12epochs,seed20270215+k, effective16/micro2,AdamWwd.1,cosine3e-4to1e-5,SmoothL1beta1,clip1. 320*12=3840presentations,240updates. Sameinit/order/dropoutstream. Controlallidentity; candidateview=(epoch+IDhashparity)%2: exactly6identity/6noise pertrainimage. No doubleddataset/extraepochs/earlystop.",
+  "same_learning_budget_verified": true,
+  "original_identity_testtime_input": true,
+  "actual_perturbation": {
+    "native_pixel_RMS_uint8_quantiles_0_50_100": [
+      2.0026646982345016,
+      2.020103506324853,
+      2.0381680569374825
+    ],
+    "native_mean_pixel_shift_minmax": [
+      -0.0230865478515625,
+      0.021148681640625
+    ],
+    "max_absolute_pixel_change_uint8": 11.0,
+    "B_feature_delta_RMS_quantiles_0_50_100": [
+      0.023093152919530496,
+      0.04070112972386813,
+      0.10461641983500684
+    ],
+    "feature_extraction_seconds": 50.951153874979354,
+    "interpretation": "Measuredsmallpixelperturbation, not proof ofphysicalstructureorhardnessinvariance."
+  },
+  "result": {
+    "scores": {
+      "reference009": 13.105157912721568,
+      "reference011": 13.0539977718711,
+      "control_head": 13.957820652670737,
+      "noise_head": 13.989574568654026,
+      "control": 13.0539977718711,
+      "primary": 13.057267710128741
+    },
+    "comparison": {
+      "gain": -0.003269938257641769,
+      "fold_gains": [
+        0.0030998825240438066,
+        0.0045766128698065955,
+        -0.029489733125954487,
+        0.006247305098440847,
+        0.002261061374507989
+      ],
+      "positive_folds": 4
+    },
+    "sample_diagnostics": {
+      "original_top5_IDs": [
+        "TRAIN_000206",
+        "TRAIN_000467",
+        "TRAIN_000447",
+        "TRAIN_000475",
+        "TRAIN_000325"
+      ],
+      "gain_without_original_top5": -0.009581723347354298,
+      "historical092_fixed5_gain": -0.003397129753091477,
+      "current_top5_diagnostic_only": [
+        "TRAIN_000206",
+        "TRAIN_000467",
+        "TRAIN_000447",
+        "TRAIN_000475",
+        "TRAIN_000325"
+      ],
+      "improved_rows": 189,
+      "conditional_gain_CI95": [
+        -0.01737639977303438,
+        0.01086576926295622
+      ],
+      "prediction_difference_RMS": 0.15252208863848546
+    },
+    "advance": false,
+    "interpretation": "Fourfolds improvedslightly butfold2 degradationdominated pooledRMSE. Originalgainnegative andbelowpredefined.02 minimum; deletingoriginaltop5improvement contributors also worsens. No evidence toadvance thisfixedsetting; no noiselevel,weight orseedsearch."
+  },
+  "independent_validation": {
+    "passed": true,
+    "split": "original",
+    "models_reloaded": 10,
+    "MPS_reload_max_error": 0.0,
+    "CPU_MPS_head_prediction_max_error": 3.4263589043348475e-05,
+    "all5_controlstates_exactly_match011": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "matched_initialization_order_dropout_hashes": true,
+    "train_only_original_scalers_targets_verified": true,
+    "equal_presentations_and_optimizer_updates": true,
+    "candidate_each_train_sample6noisy6identity_verified": true,
+    "fullfold0_replay_with_heldoutlabels_and_noisyfeatures_perturbed_state_exact": true,
+    "noisy_feature_replay": {
+      "independent3_pixel_preprocessing_and_MPS_feature_replay_exact": true,
+      "MPS_feature_max_error": 0.0,
+      "oneCPU_backbone_feature_max_error": 4.4018030166625977e-05
+    },
+    "top5_diagnostics_gate_recomputed": true,
+    "report_sha256": "0e406415ee6855fc05c690f227568a31797d10737eeed8e91407780c9da64173",
+    "source_sha256": "9c2f313b52ef35fc120c07082220132c8a8474b4c2ee1ff7fa09d0302973c5d6",
+    "seconds": 10.38676950003719,
+    "holdout_test_used": false,
+    "cost": 0
+  },
+  "actual_commands_succeeded": [
+    "input_noise_110.py prepare",
+    "input_noise_110.py extract",
+    "input_noise_110.py original",
+    "validate_input_noise_110.py original"
+  ],
+  "scope": {
+    "development_rows": 400,
+    "candidate_views_per_train_image": {
+      "identity": 6,
+      "noisy": 6
+    },
+    "presentations_per_arm_per_fold": 3840,
+    "updates_per_arm_per_fold": 240,
+    "new_backbone_training": false,
+    "resplits_run": false,
+    "full500_fit": false,
+    "test_inference": false,
+    "additional_holdout_test_selection": false,
+    "new_submission_CSV": false,
+    "upload": false,
+    "new_installs": 0,
+    "existing_packages_unchanged": 26,
+    "external_raw_transfer": false,
+    "cost": 0,
+    "active_research_processes": [],
+    "execution_blockers": [],
+    "best011_protected_files_unchanged": 20
+  },
+  "best011": {
+    "CSV": "artifacts/submission-candidate-011.csv",
+    "SHA256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "last_parent_confirmed_public_RMSE": 11.7352685854,
+    "public_not_refetched": true
+  },
+  "limits": "Noactualphysicalstructurepreservation,realnoiseindependenceorlabelinvariance proved. Weakaugmentation maystilldiscardusefulvariation. No holdout/testselection. Same400historically reused; conditionalinterval isnotselection-adjusted, andfailuredoesnotestablishallnoiseaugmentations impossible.",
+  "evidence_sha256": {
+    "artifacts/input-noise-110/plan.json": "165acc48704dff8e8c46e251b8a090c201894ea070e0441a9f70cff58c981f74",
+    "artifacts/input-noise-110/extraction-benchmark.json": "b1f6784deb3f926e26cc41688e4235bac000714666e34d8a75ff6e454aeb3ed6",
+    "artifacts/input-noise-110/extraction.json": "93d0b97e126268bd626a6f098ed1723e9ef636a1364f8dba79b752c00a2a839b",
+    "artifacts/input-noise-110/noisy_features.npz": "fd057ba5b0f71c739fa85ad7d8684ba96d7a40bd8277be1a138ae32cda3ad7a7",
+    "artifacts/input-noise-110/original/training-benchmark.json": "ca57038b5440be56371a5ecffd2907eac776b769d6e5c74e13f6db57be4a75fc",
+    "artifacts/input-noise-110/original/report.json": "0e406415ee6855fc05c690f227568a31797d10737eeed8e91407780c9da64173",
+    "artifacts/input-noise-110/original/development_predictions.npz": "336b8540a859682432996f011b26d7b1a31733da78fca153955f781c4378ca1d",
+    "reports/input-noise-110-original-validation.json": "c9c2aff25a8c02a2584b2a0e10e7bc3abddfc035d3be042af0390e19bc24b7ec"
+  },
+  "source_sha256": "45da51823131e55bcf714cbd2cdf8fd223eb31a1ec01be1819e5684921427829",
+  "README_change": {
+    "utc": "2026-10-03T17:41:50.487273+00:00",
+    "before_backup": "reports/README-before-110.md",
+    "before_sha256": "8d34a193f75f9ff0e58c208d524314d79760c9fd029e1ba6df528698ff0c53ee",
+    "after_sha256": "dc6ab4867354e8f02785402e586279a8d267714b33e26f8d6d48b0c2998c6b37",
+    "reason": "Appendcompleted110 same-budgetinputnoise experiment; preserveearlierrecords"
+  }
+}

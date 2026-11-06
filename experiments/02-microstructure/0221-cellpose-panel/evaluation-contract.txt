@@ -1,0 +1,122 @@
+221 EVALUATION CONTRACT — DESIGN ONLY, NO REAL DATA OR TRAINING
+
+Scope and status
+Use only the pre-existing development400 ID manifest and the same original plus
+20261031/20261101 partitions when execution is separately coordinated. In this
+review task, do not open any dataset, image, mask, feature cache, OOF, or model.
+No new inference, estimator fitting, or real-data scores are produced. The test
+suite uses invented rows, arithmetic sentinels, and symbolic label dependencies.
+220 is owned by another unidentified worker. Do not modify/stop it or read its
+outputs. Its provenance metadata contains no owner/thread/session field.
+
+A. Frozen, image-local measurement and transform schema
+Before scores, freeze the model hash, mask settings, feature formulas, feature
+names/order, valid/missing semantics, grouping, folds, all seeds and comparison
+recipes in a signed/hashable plan. A fixed pretrained mask extractor may process
+each authorized development image independently; no cross-image adaptation,
+normalization, threshold choice, or label-based mask selection. Predicted masks
+are measurement estimates, not ground-truth grain labels.
+
+Use a declared transform schema, never min/max across all images to decide it.
+For the existing220 feature definitions, z_q50/z_q75/z_q90 can be signed and use
+identity. Other nonnegative feature definitions may use a predeclared log1p.
+Validate this schema/formula correspondence before execution; unexpected negative
+values are an error, not a reason to reclassify a column after seeing data.
+Feature names/order are constants, not the union of columns observed over500 rows.
+Missingness policy is fixed before evaluation: per-column median from fit rows
+only; an all-missing fit column gets fixed0 plus a fixed missing-indicator column.
+Genuine measured0 stays0. Scaling/PCA/feature selection, if specified at all,
+fit only the current estimator's training rows, independently inside each search
+fold. Do not search imputation, positivity, clipping, or mask settings on OOF.
+The synthetic preprocessing fixture below verifies fold locality and legitimate0;
+it does not approve a final feature panel or train an estimator.
+
+B. Exact outer-fold contract for a learned combination
+For outer validation IDs H and outer training IDs T:
+1. Assert disjoint IDs AND groups, T union H equals exactly development400,
+   each validation ID occurs once, and no holdout/test IDs are loaded.
+2. Freeze baseline and candidate recipes independently of H labels. A base recipe
+   means the ENTIRE existing pipeline, not only its final regression head:
+   all trained backbones, target transforms, feature scalers, PCA, hyperparameter
+   choices, residual stages, affine calibration and component blends are inside.
+   Frozen public pretrained image features are label-independent exceptions;
+   any representation fine-tuned on the full development400 is NOT an exception.
+3. Build base predictions Z_T using cross-fitting restricted to T. For each
+   inner validation I subset T, fit each complete base recipe on T minus I,
+   with any tuning/preprocessing contained within T minus I. Predict I. Thus
+   each Z_T[i] has label dependencies contained in T minus its inner fold.
+4. Fit final base recipes using T only, with any tuning within T; predict H to
+   obtain Z_H. Never substitute globally computed OOF values for Z_T. For a
+   residual head, its training target is y_T minus this outer-local base OOF,
+   and its validation anchor is the matching final-T base prediction on H.
+5. Fit the PRECOMMITTED combiner using Z_T, y_T, and any morphology features
+   processed from T only. Apply it to Z_H and H features. For convex two-model
+   blending, a small fixed rule is w=clip(sum((c-b)*(y-b))/sum((c-b)^2),0,1),
+   denominator0 -> w0. No101-point grid, no outcome-selected alternate combiner.
+   This formula is an example exact contract, not authorization to train now.
+6. If combiner hyperparameters/recipes are selected, simple CV over a precomputed
+   Z_T is not a clean inner validation: its training-row base fits can include
+   that inner validation's labels. For each selection split J subset T, rebuild
+   the WHOLE combined procedure inside T minus J, including its own cross-fit
+   features, and evaluate J. Final outer T fit follows the chosen fixed rule.
+   Avoid this extra nesting by precommitting one low-complexity combiner.
+7. H labels are opened only to score completed predictions, never used for
+   checkpoints, patience, transforms, cached model selection, or prediction bounds.
+   Training cache keys contain exact train IDs/groups, training-label digest,
+   recipe/version/source hashes, seed, and parent scope. No cross-scope model
+   reuse without matching provenance. A changed H label must not change any
+   training artefact, hyperparameter, fitted combiner, or H prediction.
+
+C. Baseline equality and report semantics
+For each split, run the same frozen best021 baseline on identical T/H partitions,
+seeds and preprocessing implementation. Verify row IDs, groups, folds and targets
+agree before pairing. Cached baseline OOF may be used only if exact source and
+fit-scope provenance match. Training the corrected full pipeline may require a
+baseline rerun, which this review does not authorize. No baseline scores here.
+A pre-fixed weighted average of two valid outer predictions is a cheaper valid
+screening option; it is not learned stacking. A frozen-downstream replacement
+proxy must be labelled conditional; it does not establish full-refit performance.
+Unit-test a zero-correction/weight0 control reproduces baseline predictions.
+
+D. Candidate selection and uncertainty
+Freeze a small named comparison set, primary endpoint, original-partition screen
+and repeat confirmation rule before any scores. Same400 repartitions are NOT an
+independent holdout. Record every attempt, no selecting favorable seeds/folds or
+rescuing failed arms. Report all prespecified arms and per-fold paired differences.
+An ID-clustered bootstrap can summarize paired conditional prediction uncertainty;
+it excludes model retraining and prior adaptive recipe-selection uncertainty.
+Do not select the best recipe on OOF then present its unadjusted bootstrap as
+confirmatory evidence. Select a recipe inside outer training via full nested
+selection when estimating the selection procedure, or freeze it before reporting
+and explicitly call the three-repartition result adaptively reused development
+evidence. An untouched holdout would offer different evidence, but remains barred.
+No test/public score tuning, new candidate, full500 fit or submission in this task.
+
+E. Reproducible source findings (read-only220)
+1. experiments/grain-cellpose-220/evaluate.py:65-70 and78-80:
+   honest_blend chooses weights from GLOBAL base[tr]/cand[tr] OOF. Models producing
+   those rows may have used current outer H labels; the name does not ensure
+   nested separation. Inner-T OOF or genuinely precommitted fixed weights required.
+2. evaluate.py:82-87 and36: global p021 as stacking input or y-p021 residual target
+   has the same indirect H-label dependency. Regenerate outer-local base OOF.
+3. evaluate.py:47: POSITIVE derives from all F rows;23-29 builds F from all masks.
+   Declare schema from feature definitions and subset authorized IDs first.
+4. evaluate.py:52: RidgeCV sees preprocessing fitted to all outer T. Outer H remains
+   excluded for a standalone model, but RidgeCV's internal selection is not a
+   fully fold-local preprocessing pipeline. Use an explicit inner CV pipeline if
+   making that claim. evaluate.py:55 KFold should respect existing group contract.
+5. evaluate.py:94-100 selects best then bootstraps it; conditional interval does
+   not include selection uncertainty. Report all arms and the correct limitation.
+6. evaluate.py:103 calls segmented grain size true; these are predicted masks.
+7. segment.py:9 enumerates all500 train images; current worker is development400
+   only. No assertion about the other worker's separate authorization is made.
+8. features.py:118-121 builds schema from observed outputs; freeze names/order
+   from definitions. z quantities at61/67-68 can be signed by construction.
+
+Fixtures and limits
+Run with the existing project uv venv:
+  .venv/bin/python -I -B experiments/cellpose-panel-221/test_contract.py
+This performs no external access or ML fits. Arithmetic sentinel predictions
+make label-dependency leaks observable. Tests are contract tests, not verification
+of220's estimator implementation, data quality, segmentation accuracy or accuracy
+of the actual best021 reimplementation. No real output is read.

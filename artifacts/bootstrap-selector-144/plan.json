@@ -1,0 +1,56 @@
+{
+  "study": "144 bootstrap averaging of017 residual model selection",
+  "utc": "2026-10-04T11:56:05.150741+00:00",
+  "diagnostic": {
+    "blocks": 45,
+    "choice_changes_when_one_inner_fold_omitted": 24,
+    "gap_less_than_one_paired_loss_SE": 32,
+    "median_gap_over_SE": 0.5509382349048786,
+    "median_ridge01_rbf01_error_correlation": 0.962973214919523,
+    "median_ridge01_rbf01_prediction_difference_RMS": 3.7373168628565487
+  },
+  "hypothesis": "Argmin selection amongclose,correlated residualmodels on106/107honestrows mayamplifyvalidationnoise. Bootstrapselectionfrequencies maystabilize linear/nonlinear/zero complementarity withoutnewfeatures orhyperparameters. No guaranteedgain.",
+  "procedure": "For eachhonestB, reuse5xN innerOOF squaredloss from140. Sample G uniquegroups Gtimes withreplacement512draws; eachgroupdrawincludesallitsrows. For eachdraw chooseargminweightedloss, tieorder none,ridge1,ridge01,rbf1,rbf01. Normalizewinnercounts/512. Fit eachexistingcandidateonfullB, thenconvexweightedmean of5predictions. Same3honestblockmeans andunchanged015affinebase usedin017.",
+  "draws": 512,
+  "seed": "20271204+10000*splitindex+100*outerfold+block; full500 seed20271204+block. Seed/drawcount fixed,notselected.",
+  "nested": "WeightslearnedonlyfromBinnerOOF andBlabels. ModelsfitB; outerV excluded. HonestanchorA excludesallB; innerfit excludesitsownheldoutsubset. Selectorweights mayintentionallydependonallBvalidationlabels; do notclaiminnervalidationlabels excludedfromselectoritself. No global400OOFweightfit, no pooled320residualfit, no newneuralfit.",
+  "duplicate_audit": {
+    "112": "Convexweight between011 andnewattentionbranch failed; differentobjects/lineage",
+    "117": "Physicalblock-additive RBF andhardselector, no acrosscandidatebootstrapaggregation",
+    "118": "Newhalfgrouptrainingdraws,diagnosticcompositionvariance;144doesnotresampletrainingfits",
+    "119": "Pooled320 versusblockresidualfit;144retainsB106/107",
+    "125": "Learned4basecomponentweights;144leavesallbaseweightsfixed",
+    "137": "Noquadraticcalibrationused"
+  },
+  "criterion": "Run all3preexistingpartitions beforedecision. Advance onlyifpooleduntrimmedMSE strictlybelow017 andindependentvalidationpasses. No foldwin/CIgate, fallbackuniformblend,temperature/shrinkage/grid/seedsearch.",
+  "validation": "Exact017hardwinnerreconstruction; reloadall225fullBmodels, independentlyderive trainlocalscaling/kernel/ridge; independentlyloopgroupbootstrapweights; allsourcehashes,IDgroups/exclusions; outertargetpoisononeblockeachsplit. Upstream1440innerfitsandlabelpoisoncertificates from140reused.",
+  "uncertainty": "10000paired400IDcluster bootstrapseed20271205; fixedfitconditional,overlappingpartitions,adaptivehistorynotaccountedfor.",
+  "resources": "ExistingCPU2, atmost180nonnullfullBfits lessreuse; noimages/holdout/test/newpackages/cost. Full500/testonlyafterpositiveverifiedlock; uploadparentonly.",
+  "hashes": {
+    "bootstrap_selector_144.py": "d9f55f8e50cd7327efb8d45d433b8c16f3ede19265c436dffcd024e69b45abc3",
+    "spatial_joint_140.py": "d050b813cad2d9c7637bb1e20c5e263c6633565eba7963c4fdfcd4a380ac9e3e",
+    "component_ablation_121.py": "49979a38b2ebb96ec86d97d27e92d57e960be8a904e7ec9168b6e7cedbb4e858",
+    "nonlinear_residual_115.py": "63bd7f2bed66edba2916b017f3c8a8e0dfc80509302806808b06bf4d6b126fc9",
+    "validate_nonlinear_residual_115.py": "6fdfd3b17d927738851730cbf616c1fc47d3ece3d04ea5447667073e6c4b7b60",
+    "reports/residual-stability-143-diagnostic.json": "6f4f6acdfdd927ca65080f60c37379c413b5a99c383afb842693b2e1a10eddad",
+    "reports/candidate017-public-submission.json": "a34d3af4dd7a447a683d34102fdeb4229731feb82b98464092ba117a5e064d6c",
+    "reports/candidate017-verification.json": "b2df1deb61c423a780560b83b606460830ac013d5b07a9cf5275bf90d2be953e",
+    "artifacts/spatial-joint-140/features.npz": "e4bbdc20e08a924d00e60c391443f26d5a298287b66bf20b8866d8c3f648f867",
+    "artifacts/spatial-joint-140/extraction.json": "8e35e8c7b0604c3cd48003d8d424be5267d78e8d1aff48bd59604a12c8fc5537",
+    "artifacts/spatial-joint-140/original/report.json": "06e0455be3bae7d6d83fa4b82f5a4e229edd049a61da4cb290b302a9ad37213e",
+    "artifacts/spatial-joint-140/original/predictions.npz": "4017a1a6d2e1fc47b6db1f24b9808b526971bbc7aa4f571d1868289668bbb59d",
+    "artifacts/spatial-joint-140/validation-original.json": "9d78b6d5917ee0017fbc812f2a56ed391e6fcac1ece123d8ccbd73ea2bae5443",
+    "artifacts/spatial-joint-140/20261031/report.json": "c67bd29eb91a3ab3fc84b4fd475afeec4898aeeff771d90c01ae76699e51c27b",
+    "artifacts/spatial-joint-140/20261031/predictions.npz": "d2ba086a0332f0aa40bc1fc494db2ee537e9b3bf01bdad50c913fce5c9ab4449",
+    "artifacts/spatial-joint-140/validation-20261031.json": "bf05e07e8e0a973306e32c3b524e671efd4fc5ec183f7af3eb1f5de2cb8a647e",
+    "artifacts/spatial-joint-140/20261101/report.json": "0d9fa941766a5421a237e2db494ad784040ae1a3b2057af48ead36a67813a251",
+    "artifacts/spatial-joint-140/20261101/predictions.npz": "5c3f92b67d62c95cc23dfeac2d1a76357141b109efe5de03ccac96dcb3c5ca91",
+    "artifacts/spatial-joint-140/validation-20261101.json": "4721bfb07645a7ab23c146e5391ba8757fa0902eb924d8b58ea023e9111665aa"
+  },
+  "protected": {
+    "artifacts/submission-candidate-015.csv": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f",
+    "artifacts/submission-candidate-016.csv": "ceabcb7f019b7234e638510899ae98d2aacee08892f59650fd6cb16ff301cce0",
+    "artifacts/submission-candidate-017.csv": "4256a5d2636053f8f1d115f39b0265a66a10c3169bd4016309ecdd2b63c3be20"
+  },
+  "cost": 0
+}

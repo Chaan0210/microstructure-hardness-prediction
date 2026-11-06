@@ -1,0 +1,181 @@
+{
+  "completed_at_utc": "2026-10-02T02:27:59.500024+00:00",
+  "outcome": "Two optimization controls completed and rejected; preserve best007",
+  "actual_work": {
+    "new_057_trajectories": 60,
+    "new_058_trajectories": 15,
+    "benchmark_and_replay_runs": "Additional small explicit benchmark/replay fits, not included in75 main trajectories",
+    "057_training_seconds": 20.198835624963976,
+    "058_training_seconds": 6.546778374991845,
+    "wall_time_note": "Measured fitting time excludes coding, source audit and artifact validation."
+  },
+  "057": {
+    "hypothesis": "Inner-CV choice of5/15/40/100epoch with unchanged100epochcosine path and3seeds",
+    "selected_epochs": [
+      100,
+      100,
+      100,
+      5,
+      40
+    ],
+    "scores": {
+      "reference007": {
+        "rmse": 13.241596955038409,
+        "fold_rmse": [
+          13.200972349680994,
+          12.726138894776982,
+          14.308109808709345,
+          12.375441992213231,
+          13.513163828337742
+        ]
+      },
+      "selected_mlp": {
+        "rmse": 14.022249634500733,
+        "fold_rmse": [
+          14.446117130508892,
+          13.952434285579072,
+          14.94415012517497,
+          13.0587101655429,
+          13.634484488534
+        ]
+      },
+      "primary": {
+        "rmse": 13.278724530154248,
+        "fold_rmse": [
+          13.200972349680994,
+          12.726138894776982,
+          14.308109808709345,
+          12.567757061469553,
+          13.517833396598753
+        ]
+      },
+      "reference003": {
+        "rmse": 13.705696031698212,
+        "fold_rmse": [
+          13.539394483459153,
+          13.218378105383424,
+          14.680453686399362,
+          12.991004741250547,
+          14.032386512109253
+        ]
+      },
+      "control100": {
+        "rmse": 13.241596955038409,
+        "fold_rmse": [
+          13.200972349680994,
+          12.726138894776982,
+          14.308109808709345,
+          12.375441992213231,
+          13.513163828337742
+        ]
+      }
+    },
+    "comparison": {
+      "gain": -0.037127575115839306,
+      "fold_gains": [
+        0.0,
+        0.0,
+        0.0,
+        -0.19231506925632225,
+        -0.004669568261011392
+      ],
+      "positive_folds": 0,
+      "bootstrap_sd": 0.04303568637573549,
+      "conditional_ci95": [
+        -0.1168278912503808,
+        0.05268076907139778
+      ],
+      "selected_control_mlp_residual_correlation": 0.9827994631144384
+    },
+    "train_rmse": 3.930075201416585,
+    "control007_max_error": 0.0,
+    "validation": "reports/earlystop-057-validation.json",
+    "interpretation": "Training fitgap narrows and standaloneMLP improves slightly14.04924→14.02225, but fixedensemble worsens. Ensemble complementarity matters. Inner213/214 versusouter320 sizes/steps also limit epochtransfer. This does not prove nooverfitting or representationceiling."
+  },
+  "058": {
+    "hypothesis": "Same100epoch3seedhead, onlyhalfMSE replacesSmoothL1",
+    "scores": {
+      "reference007": {
+        "rmse": 13.241596955038409,
+        "fold_rmse": [
+          13.200972349680994,
+          12.726138894776982,
+          14.308109808709345,
+          12.375441992213231,
+          13.513163828337742
+        ]
+      },
+      "mse_mlp": {
+        "rmse": 14.044177332347774,
+        "fold_rmse": [
+          14.481692060732277,
+          13.902683054572151,
+          14.93677865786599,
+          13.173244329910172,
+          13.658289087759119
+        ]
+      },
+      "primary": {
+        "rmse": 13.242392104649582,
+        "fold_rmse": [
+          13.207007649572475,
+          12.71291953219905,
+          14.31163977386378,
+          12.380675472465606,
+          13.515073473978708
+        ]
+      },
+      "reference003": {
+        "rmse": 13.705696031698212,
+        "fold_rmse": [
+          13.539394483459153,
+          13.218378105383424,
+          14.680453686399362,
+          12.991004741250547,
+          14.032386512109253
+        ]
+      }
+    },
+    "comparison": {
+      "gain": -0.0007951496111733292,
+      "fold_gains": [
+        -0.006035299891481216,
+        0.013219362577931548,
+        -0.003529965154434933,
+        -0.005233480252375244,
+        -0.0019096456409659623
+      ],
+      "positive_folds": 1,
+      "bootstrap_sd": 0.0033997322222759606,
+      "conditional_ci95": [
+        -0.007273020981439204,
+        0.00588525507843607
+      ],
+      "mse_control_mlp_residual_correlation": 0.9998481245133625
+    },
+    "train_rmse": 0.5955249952341488,
+    "validation": "reports/mse-058-validation.json",
+    "interpretation": "Prediction change RMS.06125 atensemble and residualcorrelation.999848; loss choice has negligible observed effect inthisfixedconfiguration. Gradientclip1stillactive. curves.train_loss remainsSmoothL1 diagnostic,notoptimizedhalfMSE.",
+    "implementation_failure": "Initial new-module generation assertion aborted before model import/plan/training; corrected batch-index expression, preservedinitialimportfailurelogs. No duplicate experiment."
+  },
+  "validation": {
+    "models_reloaded": 30,
+    "max_reload_error": 0.0,
+    "057_individual_seed100state_matches007": 15,
+    "independent_training_replay_error": 0.0,
+    "protected_files": 18,
+    "independent_readonly_reviews": "audit_pipeline reviewedbothstudies:no blockingmath/leakageissue found"
+  },
+  "best": {
+    "candidate": "007",
+    "public_rmse": 11.9686073575,
+    "submission": "artifacts/submission-candidate-007.csv",
+    "sha256": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c"
+  },
+  "repartitions_run": false,
+  "reason": "Bothoriginalprimarygatesfailed;noexpansion,checkpoint/seed/weightfallbackselection.",
+  "next_judgment": "Simple earlytermination or objectivealignment did not produce a stronger007ensemble. No evidence for anirreducible performanceceiling. Next distinct capacitycontrol would be trainfold-only unsupervised low-rank input compression with a matchedsmallMLP; unlike048supervised4Dkernel, tests redundant3456dimensional inputs driving interpolation. It is notimplemented/running inthisreport and should have a fixed control and nestedselection before anyclaim. Noextra package is required for that study.",
+  "bias": "Same400 reused manytimes; innerCV protects currentepochchoice butdoesnotundo historicalselection. Noindependentnewvalidation.",
+  "scope": "Allworkinsideauthorizedprojectusinguv.venvCPU2threads. Cost0,newinstalls0,holdout/testaccess0,newcandidateCSV0,uploads0.",
+  "running_work": []
+}

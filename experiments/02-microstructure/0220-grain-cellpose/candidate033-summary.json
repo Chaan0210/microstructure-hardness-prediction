@@ -1,0 +1,59 @@
+{
+ "candidate": "033",
+ "weight": 0.75,
+ "n_train": 500,
+ "test_failed_segmentations": 1,
+ "pred_stats": {
+  "mean": 193.76228903150712,
+  "std": 13.031181188781776,
+  "min": 160.7186574254501,
+  "max": 258.07421293848915
+ },
+ "corr_best021_vs_grain_test": 0.7941441427619544,
+ "rms_change_vs_021": 6.431786739325395,
+ "rms_change_vs_023": 5.5148990030816885,
+ "csv": "artifacts/submission-candidate-033.csv",
+ "csv_sha256": "0108e4aabf10521ae24699cc7f4d605776cde95d28f71de777b14f3e784315d5",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "uploaded": false,
+ "formula": "0.25*best021 + 0.75*mean over components (fallback best021 if n_obj<20)",
+ "components": [
+  {
+   "component": "v2@../push-400/feat-u1phdrop-train.npz@../push-400/feat-u1phdrop-test.npz",
+   "train_sha256": "d976a9e54de22a6080503f10703e404ef5222d46b865544df1626ccfc4bf2131",
+   "test_sha256": "48d7e43c0d4eb34e42be997300f0524f2d683163e83cf4ece379de34bd09cba4",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-400/feat-u1phdrop-train.npz@../push-400/feat-u1phdrop-test.npz",
+   "train_sha256": "d976a9e54de22a6080503f10703e404ef5222d46b865544df1626ccfc4bf2131",
+   "test_sha256": "48d7e43c0d4eb34e42be997300f0524f2d683163e83cf4ece379de34bd09cba4",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-400/feat-u1m1sz-train.npz@../push-400/feat-u1m1sz-test.npz",
+   "train_sha256": "009ce142137b9f5990ee470e1982fe71866ee16531666d6e29736c0e6838df6f",
+   "test_sha256": "10b105eb40094d3cb872c81fc996f56cedf0e65e6fb33c6a5484dbacf4c3d245",
+   "n_train_rows": 500
+  }
+ ],
+ "component_corr": [
+  [
+   1.0,
+   0.9888001013352432,
+   0.9747825864869014
+  ],
+  [
+   0.9888001013352432,
+   1.0,
+   0.9859834322925582
+  ],
+  [
+   0.9747825864869014,
+   0.9859834322925582,
+   0.9999999999999999
+  ]
+ ],
+ "dev_evidence": "experiments/push-400/evidence-033.json (dev pooled fixed W0.75 10.361 vs 032 10.382; all 3 partitions better)",
+ "device": "mps"
+}

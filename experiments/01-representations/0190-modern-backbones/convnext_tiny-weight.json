@@ -1,0 +1,42 @@
+{
+  "url": "https://download.pytorch.org/models/convnext_tiny-983f1562.pth",
+  "path": "experiments/modern-backbones-190/weights/convnext_tiny-983f1562.pth",
+  "enum": "ConvNeXt_Tiny_Weights.IMAGENET1K_V1",
+  "bytes": 114419221,
+  "MiB": 109.11867237091064,
+  "SHA256": "983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d",
+  "official_filename_hash_prefix_verified": true,
+  "strict_state_dict_verified": true,
+  "tensor_entries": 182,
+  "parameters": 28589128,
+  "official_transform": "ImageClassification(\n    crop_size=[224]\n    resize_size=[236]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "metadata": {
+    "min_size": [
+      32,
+      32
+    ],
+    "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#convnext",
+    "_docs": "\n        These weights improve upon the results of the original paper by using a modified version of TorchVision's\n        `new training recipe\n        <https://pytorch.org/blog/how-to-train-state-of-the-art-models-using-torchvision-latest-primitives/>`_.\n    ",
+    "num_params": 28589128,
+    "_metrics": {
+      "ImageNet-1K": {
+        "acc@1": 82.52,
+        "acc@5": 96.146
+      }
+    },
+    "_ops": 4.456,
+    "_file_size": 109.119
+  },
+  "seconds_download_and_validation": 2.9478863749973243,
+  "UTC": "2026-10-06T08:50:58.429934+00:00"
+}

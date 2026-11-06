@@ -1,0 +1,95 @@
+{
+  "study": 188,
+  "result": "Smallpositiveaverage224to256effect; uncertaintyincludeszero; best021notbeaten; nofurtherresolution-sweep/retuning/resplitexecuted.",
+  "paired": {
+    "standalone": {
+      "RMSE224": 15.536521834495163,
+      "RMSE256": 15.423282665027568,
+      "gain224_minus256": 0.1132391694675956,
+      "fold_gains": [
+        0.6941643089787082,
+        0.07247672094560897,
+        0.13337051081256135,
+        -0.22821755455362513,
+        -0.14382167843182003
+      ],
+      "positive_folds": 3,
+      "conditional_group_bootstrap_CI95": [
+        -0.34823491334118695,
+        0.620779874192114
+      ]
+    },
+    "fixed10_blend": {
+      "RMSE224": 12.909168834878406,
+      "RMSE256": 12.89765130741817,
+      "gain224_minus256": 0.011517527460235044,
+      "fold_gains": [
+        0.05864952636021492,
+        0.006753579920941277,
+        0.01877330808193456,
+        -0.05209521206283618,
+        0.02069217759068387
+      ],
+      "positive_folds": 4,
+      "conditional_group_bootstrap_CI95": [
+        -0.037185141368029966,
+        0.06359877309159635
+      ]
+    }
+  },
+  "selection": "Allfiveouterfoldsreuse187innerselectedAdamWhigh(tail1e-4/head1e-3), sameheadinitialization/100epochwarmstart/12epoch240updates/BNfixed/layer4only/RMSrule/seeds/orders. 256trainingfoldstatisticsandheadrefitted, no256innerreselection.",
+  "selection_bias": "ResNetchosenusingreuseddevelopmentOOFandbetterstandalonerepresentationthanB0; thisisaposthocbackbonechoice. 224contextselectedoptimizer/LRfixedfor256,soresultisconditionalonthatrecipe,notbest256performance. Longadaptivehistoryandconditionalbootstraparenotindependentconfirmation.",
+  "boundary_evidence": {
+    "high_proxy_n": 100,
+    "standalone224to256": [
+      14.376112716506183,
+      14.469885025809031
+    ],
+    "blend224to256": [
+      12.160764970988051,
+      12.179856317539405
+    ],
+    "interpretation": "Highfinecontrastproxygroupdidnotbenefit. Thisdoesnotsupporttheproposedfine-boundary-benefitmechanismunderthisproxy; proxyisnottruegrainsegmentationandalsorespondstonoise/contrast.",
+    "mean_224_256_roundtrip_gradient_retention": 0.955545815768786,
+    "roundtrip_limitation": "Additionalupsamplingisdiagnosticonly; 224modelinputwasnotupsampledto256."
+  },
+  "failure33": {
+    "n": 33,
+    "diagnostic_only": true,
+    "proxy_mean": {
+      "fine_contrast_sigma1": 0.2351705263822289,
+      "pseudo_boundary_gradient_roundtrip_retention": 0.9495412994465372,
+      "roundtrip_normalized_MSE": 0.14688989688705145
+    },
+    "best021": {
+      "RMSE": 29.482117589329434,
+      "MAE": 29.142190240630892,
+      "bias_y_minus_prediction": 5.649141438008077
+    },
+    "CNN224": {
+      "RMSE": 33.370026959964854,
+      "MAE": 31.778061725547502,
+      "bias_y_minus_prediction": 6.200536973829539
+    },
+    "CNN256": {
+      "RMSE": 33.11387914055954,
+      "MAE": 31.728042845324897,
+      "bias_y_minus_prediction": 6.112031452408727
+    },
+    "blend224": {
+      "RMSE": 29.777093227018103,
+      "MAE": 29.40577738912255,
+      "bias_y_minus_prediction": 5.704280991590221
+    },
+    "blend256": {
+      "RMSE": 29.76990358852151,
+      "MAE": 29.400775501100288,
+      "bias_y_minus_prediction": 5.695430439448137
+    }
+  },
+  "failure33_limit": "Fixedpriorposthocfailuremask,descriptiveonly; notusedforselection.",
+  "numerical_stability": "All5CPUreloadswithinunchanged.002; fullheldoutlabelpoisonreplayexact; scalefloorremainstrain-only.",
+  "future_scope": "Noautomaticexpansion. Parentmayreviewrawpositiveaveragewithitsuncertainty; nootherresolutionswereorwillbesweptunder188.",
+  "cost": 0,
+  "best021_SHA256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b"
+}

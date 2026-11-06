@@ -1,0 +1,23 @@
+import math,csv
+import common as c
+from common import R,P,np
+c.check();cert=c.read(R/'inference-validation.json');assert cert['passed'];assert c.sha(R/'predictions.npz')==cert['predictions_SHA256'] and c.sha(R/'attention.npz')==cert['attention_SHA256'];p=c.load(R/'predictions.npz');a=c.load(R/'attention.npz');ref=c.load(P/'experiments/query-normalization-197/OOF.npz');np.testing.assert_array_equal(p['ids'],ref['ids']);np.testing.assert_array_equal(p['fold'],ref['fold']);np.testing.assert_array_equal(p['197_normal'],ref['mha']);np.testing.assert_array_equal(p['196_normal'],ref['legacy_mha'])
+def stats(x):
+ x=np.asarray(x).ravel();assert np.isfinite(x).all();return {'n':len(x),'mean':float(x.mean()),'std':float(x.std()),'RMS':float(np.sqrt(np.mean(x*x))),'mean_absolute':float(abs(x).mean()),'q0_5_25_50_75_95_100':np.quantile(x,[0,.05,.25,.5,.75,.95,1]).tolist()}
+def rmse(y,q):return math.sqrt(math.fsum((float(v)-float(w))**2 for v,w in zip(y,q))/len(y))
+def corr(x,y):return float(np.corrcoef(x,y)[0,1]) if np.std(x)>0 and np.std(y)>0 else None
+label_free={};performance={};rows=[]
+for study in ['196','197']:
+ old=p[study+'_normal'];new=p[study+'_uniform'];delta=new-old;dist={}
+ for arm in ['normal','uniform']:
+  dist[arm]={n:stats(a[study+'_'+arm+'_'+n]) for n in ['cross_ESS','cross_entropy','cross_KL_uniform','cross_TV_uniform','cross_maxweight','self_ESS','self_offdiagonal_mass','slot_cosine']}
+  if arm=='uniform':assert abs(dist[arm]['cross_ESS']['mean']-1296)<1e-8 and dist[arm]['cross_TV_uniform']['mean']<1e-12
+ self_change=a[study+'_uniform_self_weights']-a[study+'_normal_self_weights'];im_KL=a[study+'_normal_cross_KL_uniform'].mean((1,2));im_TV=a[study+'_normal_cross_TV_uniform'].mean((1,2));label_free[study]={'delta_uniform_minus_original':stats(delta),'fixed10pct_blend_delta':stats(.1*delta),'positive_negative_zero_changes':[int(sum(delta>0)),int(sum(delta<0)),int(sum(delta==0))],'normal_prediction':stats(old),'uniform_prediction':stats(new),'cross_and_self_attention':dist,'self_probability_difference':stats(self_change),'abs_delta_vs_cross_KL_correlation':corr(abs(delta),im_KL),'abs_delta_vs_cross_TV_correlation':corr(abs(delta),im_TV),'by_fold':{str(k):stats(delta[p['fold']==k]) for k in range(5)},'interpretation':'Computedfrompredictions/weights alone; no targetdependent group selection or thresholds'}
+ # Performance below is an explicitly separated postintervention diagnosis, not selection.
+ y=ref['y'];best=ref['best021'];baseblend=.9*best+.1*old;changedblend=.9*best+.1*new;fg=[]
+ for k in range(5):
+  ix=p['fold']==k;fg.append({'fold':k,'normal_RMSE':rmse(y[ix],old[ix]),'uniform_RMSE':rmse(y[ix],new[ix]),'uniform_minus_normal_RMSE':rmse(y[ix],new[ix])-rmse(y[ix],old[ix]),'normal_blend_RMSE':rmse(y[ix],baseblend[ix]),'uniform_blend_RMSE':rmse(y[ix],changedblend[ix]),'uniform_minus_normal_blend_RMSE':rmse(y[ix],changedblend[ix])-rmse(y[ix],baseblend[ix])})
+ performance[study]={'normal_RMSE':rmse(y,old),'uniform_RMSE':rmse(y,new),'uniform_minus_normal_RMSE':rmse(y,new)-rmse(y,old),'normal_blend_RMSE':rmse(y,baseblend),'uniform_blend_RMSE':rmse(y,changedblend),'uniform_minus_normal_blend_RMSE':rmse(y,changedblend)-rmse(y,baseblend),'best021_RMSE':rmse(y,best),'uniform_blend_minus_best021_RMSE':rmse(y,changedblend)-rmse(y,best),'by_fold':fg,'new_gate_or_selection':False}
+ for i,id in enumerate(p['ids']):rows.append({'study':study,'ID':id,'fold':int(p['fold'][i]),'normal':float(old[i]),'cross_uniform':float(new[i]),'delta':float(delta[i]),'normal_cross_KL_mean':float(im_KL[i]),'normal_cross_TV_mean':float(im_TV[i]),'label_in_this_table':False})
+with (R/'label-free-row-diagnostics.csv').open('x',newline='') as f:w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+result={'study':200,'label_free':label_free,'performance_diagnostic_only':performance,'intervention_scope':c.plan['intervention'],'limits':c.plan['limits'],'model_selected':False,'submission_created':False,'new_learning':False};c.write(R/'report.json',result);c.check();c.emit({'label_free':{s:{'delta':v['delta_uniform_minus_original'],'normal_cross_ESS':v['cross_and_self_attention']['normal']['cross_ESS'],'normal_cross_KL':v['cross_and_self_attention']['normal']['cross_KL_uniform'],'normal_cross_TV':v['cross_and_self_attention']['normal']['cross_TV_uniform'],'uniform_slotcos':v['cross_and_self_attention']['uniform']['slot_cosine'],'original_slotcos':v['cross_and_self_attention']['normal']['slot_cosine'],'self_probability_difference':v['self_probability_difference']} for s,v in label_free.items()},'performance_diagnostic_only':performance})

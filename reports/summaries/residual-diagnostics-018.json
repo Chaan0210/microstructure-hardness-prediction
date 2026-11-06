@@ -1,0 +1,379 @@
+{
+  "n": 400,
+  "purpose": "Descriptive residual diagnostics only; no post-hoc feature selection or model calibration",
+  "max_signed_residual_correlations": [
+    {
+      "name": "extra_boundary_interior_5_axis_minor_length_q10",
+      "signed_residual_spearman": -0.1630302064387902,
+      "absolute_residual_spearman": -0.029515496971856073
+    },
+    {
+      "name": "extra_bright_q25_area_q50",
+      "signed_residual_spearman": -0.11617459089639395,
+      "absolute_residual_spearman": -0.040308723730075886
+    },
+    {
+      "name": "extra_bright_q25_area_q10",
+      "signed_residual_spearman": -0.11470024788616182,
+      "absolute_residual_spearman": -0.06578984042752144
+    },
+    {
+      "name": "extra_bright_q25_axis_minor_length_q50",
+      "signed_residual_spearman": -0.11391991017943069,
+      "absolute_residual_spearman": -0.02348405522697545
+    },
+    {
+      "name": "extra_bright_q25_solidity_q90",
+      "signed_residual_spearman": 0.11329362460446032,
+      "absolute_residual_spearman": 0.026661435420589873
+    },
+    {
+      "name": "extra_bright_q25_axis_minor_length_q10",
+      "signed_residual_spearman": -0.10974303993241005,
+      "absolute_residual_spearman": -0.009109370287567801
+    },
+    {
+      "name": "otsu_solidity_q90",
+      "signed_residual_spearman": 0.10370152756881228,
+      "absolute_residual_spearman": 0.010263912414932476
+    },
+    {
+      "name": "extra_bright_q25_inverse_sqrt_diameter",
+      "signed_residual_spearman": 0.10249284729770627,
+      "absolute_residual_spearman": 0.02183132803917464
+    },
+    {
+      "name": "otsu_area_q0",
+      "signed_residual_spearman": -0.08856911934457379,
+      "absolute_residual_spearman": 0.0104256279096473
+    },
+    {
+      "name": "dark60_solidity_q75",
+      "signed_residual_spearman": -0.08783215442349505,
+      "absolute_residual_spearman": 0.09457510442998861
+    },
+    {
+      "name": "hist_30",
+      "signed_residual_spearman": -0.08701110998054126,
+      "absolute_residual_spearman": 0.04572921094279345
+    },
+    {
+      "name": "extra_boundary_interior_9_inverse_sqrt_diameter",
+      "signed_residual_spearman": 0.08649322909075646,
+      "absolute_residual_spearman": -0.0024369109559892353
+    }
+  ],
+  "max_absolute_residual_correlations": [
+    {
+      "name": "extra_bright_q75_interior_equivdiam_std",
+      "signed_residual_spearman": -0.0021213882586766162,
+      "absolute_residual_spearman": 0.2333710835692723
+    },
+    {
+      "name": "extra_bright_q75_interior_count",
+      "signed_residual_spearman": 0.030041131109353306,
+      "absolute_residual_spearman": -0.21753749243093332
+    },
+    {
+      "name": "extra_bright_q75_count",
+      "signed_residual_spearman": 0.021445078749129216,
+      "absolute_residual_spearman": -0.20987496107555742
+    },
+    {
+      "name": "extra_bright_q75_area_mean",
+      "signed_residual_spearman": -0.022173983376801598,
+      "absolute_residual_spearman": 0.20884781508858585
+    },
+    {
+      "name": "lbp_r3_2",
+      "signed_residual_spearman": 0.013619147809847885,
+      "absolute_residual_spearman": -0.20194398270958094
+    },
+    {
+      "name": "lbp_r5_2",
+      "signed_residual_spearman": 0.01091056741773985,
+      "absolute_residual_spearman": -0.19190596534177434
+    },
+    {
+      "name": "extra_bright_q75_axis_minor_length_q90",
+      "signed_residual_spearman": -0.025558847242795266,
+      "absolute_residual_spearman": 0.19097838111488197
+    },
+    {
+      "name": "extra_bright_q75_distance_std",
+      "signed_residual_spearman": -0.020564566028537675,
+      "absolute_residual_spearman": 0.18934074587966174
+    },
+    {
+      "name": "extra_bright_q75_area_q90",
+      "signed_residual_spearman": -0.01945335309972403,
+      "absolute_residual_spearman": 0.18867364677741366
+    },
+    {
+      "name": "extra_bright_q75_distance_q90",
+      "signed_residual_spearman": -0.007992768499648311,
+      "absolute_residual_spearman": 0.186273194501797
+    },
+    {
+      "name": "extra_bright_q75_solidity_q50",
+      "signed_residual_spearman": -0.009314449734290508,
+      "absolute_residual_spearman": -0.1831941800335702
+    },
+    {
+      "name": "extra_bright_q75_solidity_mean",
+      "signed_residual_spearman": -0.006279226745167156,
+      "absolute_residual_spearman": -0.18215251345320904
+    }
+  ],
+  "predefined_proxy_strata": {
+    "grain_scale_sensitivity": {
+      "cuts": [
+        0.013430937618501665,
+        0.10807173231418837,
+        0.1462614643708432,
+        0.19380977565587526,
+        0.722195745090151
+      ],
+      "quartiles": [
+        {
+          "n": 100,
+          "rmse": 13.297364616499692,
+          "mean_residual": 0.11486162313301321
+        },
+        {
+          "n": 100,
+          "rmse": 13.553253686165922,
+          "mean_residual": -0.44913337594948105
+        },
+        {
+          "n": 100,
+          "rmse": 12.871944197821358,
+          "mean_residual": -0.7019369912422235
+        },
+        {
+          "n": 100,
+          "rmse": 15.006227913626306,
+          "mean_residual": 1.8024193567046518
+        }
+      ]
+    },
+    "within_grain_contrast": {
+      "cuts": [
+        0.020028605342736094,
+        0.029786489174272707,
+        0.03373130503195142,
+        0.03878803596647245,
+        0.05763553760745833
+      ],
+      "quartiles": [
+        {
+          "n": 100,
+          "rmse": 16.61677906747433,
+          "mean_residual": 0.39094148272364576
+        },
+        {
+          "n": 100,
+          "rmse": 12.771389189066698,
+          "mean_residual": -0.45287157471466427
+        },
+        {
+          "n": 100,
+          "rmse": 12.636160157783427,
+          "mean_residual": 1.080527020470347
+        },
+        {
+          "n": 100,
+          "rmse": 12.348527965883887,
+          "mean_residual": -0.25238631583336796
+        }
+      ]
+    },
+    "pore_fraction15": {
+      "cuts": [
+        0.00189208984375,
+        0.018154144287109375,
+        0.02391815185546875,
+        0.030101776123046875,
+        0.0550994873046875
+      ],
+      "quartiles": [
+        {
+          "n": 100,
+          "rmse": 13.616661632355065,
+          "mean_residual": -0.027080858260331128
+        },
+        {
+          "n": 100,
+          "rmse": 14.758690420108197,
+          "mean_residual": 1.0858811446928487
+        },
+        {
+          "n": 100,
+          "rmse": 13.228612424248581,
+          "mean_residual": -0.9105025604055939
+        },
+        {
+          "n": 100,
+          "rmse": 13.158868160127014,
+          "mean_residual": 0.6179128866190368
+        }
+      ]
+    },
+    "phase_dark": {
+      "cuts": [
+        0.0392608642578125,
+        0.18782806396484375,
+        0.2318267822265625,
+        0.2725372314453125,
+        0.371856689453125
+      ],
+      "quartiles": [
+        {
+          "n": 100,
+          "rmse": 12.452102007652293,
+          "mean_residual": 0.6163378682269846
+        },
+        {
+          "n": 100,
+          "rmse": 14.644324495013661,
+          "mean_residual": -1.2444797254511804
+        },
+        {
+          "n": 100,
+          "rmse": 13.358342359244286,
+          "mean_residual": -0.7701326874508774
+        },
+        {
+          "n": 100,
+          "rmse": 14.262819494834,
+          "mean_residual": 2.1644851573210335
+        }
+      ]
+    },
+    "grain_alignment": {
+      "cuts": [
+        0.022385161829415957,
+        0.30024384570628426,
+        0.5231050753704485,
+        0.7446777635352205,
+        0.9125655236599287
+      ],
+      "quartiles": [
+        {
+          "n": 100,
+          "rmse": 13.837612609994814,
+          "mean_residual": -2.368317751718117
+        },
+        {
+          "n": 100,
+          "rmse": 15.313892911400947,
+          "mean_residual": 1.3649108986661564
+        },
+        {
+          "n": 100,
+          "rmse": 12.523904544040075,
+          "mean_residual": 1.060985953095554
+        },
+        {
+          "n": 100,
+          "rmse": 12.982349208785799,
+          "mean_residual": 0.7086315126023667
+        }
+      ]
+    },
+    "image_std": {
+      "cuts": [
+        0.045093153370908245,
+        0.06637583223233251,
+        0.07427158713705595,
+        0.08160489084990535,
+        0.104925997722611
+      ],
+      "quartiles": [
+        {
+          "n": 100,
+          "rmse": 13.214914985215305,
+          "mean_residual": 0.9935005887087572
+        },
+        {
+          "n": 100,
+          "rmse": 13.511893967193684,
+          "mean_residual": -0.9055005019394835
+        },
+        {
+          "n": 100,
+          "rmse": 12.744741180483148,
+          "mean_residual": 0.323233977858321
+        },
+        {
+          "n": 100,
+          "rmse": 15.223361338698371,
+          "mean_residual": 0.35497654801836576
+        }
+      ]
+    },
+    "intercept_sensitivity_gap_mean": {
+      "cuts": [
+        1.9139948076278355,
+        8.653688753174556,
+        12.973264540834819,
+        17.31801741557632,
+        77.32159775318517
+      ],
+      "quartiles": [
+        {
+          "n": 100,
+          "rmse": 11.887535979014402,
+          "mean_residual": -0.5039980143370755
+        },
+        {
+          "n": 100,
+          "rmse": 13.312290094617165,
+          "mean_residual": 0.24795177473031543
+        },
+        {
+          "n": 100,
+          "rmse": 13.82536971340963,
+          "mean_residual": -0.7819735193775046
+        },
+        {
+          "n": 100,
+          "rmse": 15.54712153181945,
+          "mean_residual": 1.804230371630225
+        }
+      ]
+    },
+    "intercept_sensitivity_crossings_per_pixel": {
+      "cuts": [
+        0.0037655541590021283,
+        0.028726206054860204,
+        0.04315502417800039,
+        0.06114591718788378,
+        0.09907936237542601
+      ],
+      "quartiles": [
+        {
+          "n": 100,
+          "rmse": 12.500605860089378,
+          "mean_residual": -0.3794078099099741
+        },
+        {
+          "n": 100,
+          "rmse": 11.681453399389413,
+          "mean_residual": 0.3445798307559383
+        },
+        {
+          "n": 100,
+          "rmse": 13.398212697900272,
+          "mean_residual": 0.10600950923610383
+        },
+        {
+          "n": 100,
+          "rmse": 16.707806886711644,
+          "mean_residual": 0.6950290825638925
+        }
+      ]
+    }
+  },
+  "caveats": "Hundreds of inspected correlations imply multiple comparisons. Proxy correlation is not causal or irreducible noise. Only development400 rows used."
+}

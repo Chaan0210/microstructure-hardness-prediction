@@ -1,0 +1,67 @@
+{
+  "summary_path": "experiments/cnn-unfreeze-189/summary.json",
+  "summary_SHA256": "ebf645eae06b145d2f82cea311beb0de31993d35b8060b3c5c87fa075aefba86",
+  "decision": "close_ResNet_local_adaptation_branch_keep_best021",
+  "paired": {
+    "standalone": {
+      "RMSE_layer4": 15.536521834495163,
+      "RMSE_layer3_layer4": 15.489643141423993,
+      "gain_one_minus_two_stage": 0.046878693071169764,
+      "fold_gains": [
+        0.7468806908493768,
+        -0.6453199538935639,
+        0.7621757240145435,
+        -0.510260533949273,
+        -0.26500927565309773
+      ],
+      "positive_folds": 2,
+      "conditional_group_bootstrap_CI95": [
+        -0.7557837438453098,
+        0.8357525122431471
+      ]
+    },
+    "fixed10_blend": {
+      "RMSE_layer4": 12.909168834878406,
+      "RMSE_layer3_layer4": 12.872903426379878,
+      "gain_one_minus_two_stage": 0.03626540849852766,
+      "fold_gains": [
+        0.11020835719141076,
+        -0.013873275893233838,
+        0.07831871190790984,
+        -0.02683825679917895,
+        0.024100471528676337
+      ],
+      "positive_folds": 3,
+      "conditional_group_bootstrap_CI95": [
+        -0.0452772068138326,
+        0.11535457225948222
+      ]
+    }
+  },
+  "score_two_stage_vs021": {
+    "RMSE": {
+      "best021": 12.786200775750695,
+      "standalone": 15.489643141423993,
+      "blend10": 12.872903426379878
+    },
+    "blend_gain": -0.08670265062918325,
+    "fold_blend_gains": [
+      -0.0821036980674652,
+      -0.07172123369180738,
+      -0.10900142999489404,
+      -0.04948174337578948,
+      -0.1168267867330659
+    ],
+    "positive_folds": 0,
+    "conditional_group_bootstrap_CI95": [
+      -0.16637171023364378,
+      -0.007789116611194388
+    ],
+    "gain_after_removing_top5": -0.12410842354973006,
+    "residual_correlation_vs021": 0.8687278327012342,
+    "advance_gate": false,
+    "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+  },
+  "best021_preserved": true,
+  "newCSV_upload": false
+}

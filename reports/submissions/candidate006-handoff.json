@@ -1,0 +1,49 @@
+{
+  "candidate": "006",
+  "path": "artifacts/submission-candidate-006.csv",
+  "sha256": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+  "bytes": 31683,
+  "format": "UTF-8 CSV,header ID,hardness;1000datarows",
+  "rows": 1000,
+  "exact_sample_order": true,
+  "duplicate_ids": 0,
+  "nan_inf": 0,
+  "prediction_range": [
+    167.2898052884532,
+    231.07406000849815
+  ],
+  "all_component_predictions_inside_training_label_range": true,
+  "training_label_range": [
+    151.9798276392398,
+    264.1213029015716
+  ],
+  "fit": "Alltrain500;formerholdoutonlyincludedinfit,noholdoutscore;no testfit",
+  "fixed_recipe": "0.75unchanged003+0.25frozenDINO6/9/12CLS,patchmean,patchstd(3456);StandardScaler+Ridgealpha3456;043excluded",
+  "development_rmse": {
+    "original": 13.423229237711903,
+    "20261031": 13.439650797694618,
+    "20261101": 13.610797519662416
+  },
+  "development_gain_vs005": {
+    "original": 0.09922299405592838,
+    "20261031": 0.04461988195441435,
+    "20261101": 0.04052908010126899
+  },
+  "validation_limit": "Historicallyreused400/folds;Publicimprovementnotguaranteed",
+  "full_cached_regressor_reload_error": 0.0,
+  "raw_image10_cpu_full_ensemble_error": 1.3307928526273827e-05,
+  "verification": "reports/candidate006-verification.json",
+  "verification_command": ".venv/bin/python -I -B verify_candidate006.py",
+  "design": "artifacts/dino-multilayer-044/candidate-design.json",
+  "model_directory": "artifacts/final-model-045",
+  "model_sha256": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+  "fit_seconds": 30.068583958025556,
+  "prediction_seconds": 59.18130045797443,
+  "best005_sha256": "473ef271d35b2c18185690471e2ffbada07a01cf31d07be4c2d489bd76e67ff4",
+  "best005_preserved": true,
+  "043_044_preserved": true,
+  "uploaded": false,
+  "cost": 0,
+  "running_work": [],
+  "completed_at_utc": "2026-10-01T02:09:45.046527+00:00"
+}

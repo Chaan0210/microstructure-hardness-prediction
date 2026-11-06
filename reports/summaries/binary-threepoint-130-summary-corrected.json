@@ -1,0 +1,333 @@
+{
+  "study": "130 fixed centered binary2point and3point nested residual extension",
+  "status": "completed_negative_original_screen_bank_closed",
+  "completed_utc": "2026-10-04T05:17:41.446214+00:00",
+  "reference014_retained": true,
+  "feature_plan": {
+    "pair_dimension": 114,
+    "triple_dimension": 72,
+    "unique_edge_orbits": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        0,
+        16
+      ],
+      [
+        8,
+        16
+      ],
+      [
+        16,
+        16
+      ],
+      [
+        0,
+        32
+      ],
+      [
+        16,
+        32
+      ],
+      [
+        32,
+        32
+      ],
+      [
+        0,
+        64
+      ],
+      [
+        32,
+        64
+      ]
+    ],
+    "threshold_quantiles": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "radii": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "triangles": "0,(r,0),(0,r);0,(r,0),(0,2r)",
+    "definition": "r1/2/4/8/16/32; vertices0,(r,0),(0,r) or0,(r,0),(0,2r). Mean x0*xu*xv ontheir common valid rectangular support, no wrap/padding. Eachmotif D4eightorientations thenmean/populationstd;3*6*2*2=72.",
+    "pair_support": "Allthree triangle-edge displacements, canonical absolute sortedcoordinates underD4 and +/-; deduplicate acrossmotifs/radii before extraction:19orbits,114cols. Each oriented pair uses its full valid pair-domain (not a triangle-specific restricted domain); thus same displacement has one statistic. Eightorientationmean/std.",
+    "scaling": "For each bank independently, fit mean/std on currenttrainingrows only. Scale_j=max(std_j,RMS_j(std),1e-12); multiply1/sqrt(bankwidth). No imagevariance division, PCA or hard clipping. Allconstanttrainbank yields zeros in training; protectedabsolute floor preventsdivisionbyzero. Scale of2pointbank identicalwhen3pointappended."
+  },
+  "paper_evidence": [
+    {
+      "url": "https://arxiv.org/html/2109.02255",
+      "access": "HTML accessed2026-10-04",
+      "finding": "Reduced learned3point representations plusstrongcontrast expansion approximateeffectivebulk/shearmoduli. Their comparator values fromcomplete3pointSCE,not competitionhardness.",
+      "difference": "We do not reproduce Bayesianoptimization/reconstruction/effectivemediumtheory oruncenteredprobabilities; fixed centered lowcostbank only."
+    },
+    {
+      "url": "https://doi.org/10.1016/j.actamat.2025.121132",
+      "institutional_abstract": "https://tore.tuhh.de/entities/publication/2c765e52-4364-4fbf-9004-555a1f88075b",
+      "access": "Publisher403; institutionalabstract accessed",
+      "finding": "Combined3point/Gram/texturedescriptors forMg alloystrainhardening/yieldstress,not hardness.",
+      "negative_evidence": "The standalone three-point negative finding was relayed by the parent task from its public-paper research. This worker did not directly verify the full text. It was not first-hand user-provided evidence."
+    }
+  ],
+  "novelty_vs108": "108 rawintensity-centered triples, line+equal-legcorner,r1..64,compact26+intensity+pairedmoments,KRRdirecttarget,.1blend011. Here binary quantiles,unequal-legtriangle,no collinear motif,r<=32,deduplicatededge controls,and nested014 residual extension. Sharedthirdorder principle,not whollynew family.",
+  "fixture_and_benchmark": {
+    "engineering": {
+      "passed": true,
+      "constant_zero": true,
+      "complement_pair_even_triple_mean_odd_std_even": true,
+      "independent_coordinate_max_error": 1.734723475976807e-18,
+      "D4_max_error": 1.734723475976807e-18,
+      "boundary_finite_value": -0.009571075439453125,
+      "boundary_wrapped_value": -0.01180267333984375,
+      "no_wrap_fixture_distinguishes": true,
+      "pair_orbits_unique": 19,
+      "std_floor_and_block_prefix_passed": true,
+      "label_access": false
+    },
+    "first20_extraction_seconds": 0.9835800005821511,
+    "projected400_seconds": 19.671600011643022,
+    "remaining380_extraction_seconds": 19.115292167058215,
+    "pilot20_reused": true,
+    "real_image_independent_max_error": 3.469446951953614e-18,
+    "constant_columns_on400": 0,
+    "train_fitted_floor_ranges": {
+      "pair": [
+        0.011756104448265354,
+        0.014417469998425895
+      ],
+      "pair_triple": [
+        0.0037022686827051714,
+        0.014417469998425895
+      ]
+    }
+  },
+  "nested_method": {
+    "014_existing_physics_retained": true,
+    "new_residual_targets": "Selectnewlambda/gamma by3foldwithinB (sameCVSEED+100*k+j as014). For I=BminusH, refitphysicsselector insideI, predictH. To obtain newRidge targetswithinI, splitI into3; for eachJ/H2, selectphysicsmodel using3foldWITHINJ, refitonJ,predictH2. Newtargets=r_I-crossfit_selected_physics_I. Thus allnewtrainingtargets andphysicschoices excludeouterH. FullBnewRidge usesr_B minuscrossfitphysicsselectedwithinits3I; fullBphysicsm_B remainsoriginal014selectedmodel. No shortcut ofgloballyselectedphysicsOOF orfullBphysics predictionsinnewCV.",
+    "lambda_candidates": [
+      1,
+      0.1
+    ],
+    "extra_ratio_candidates": [
+      0,
+      0.5,
+      1
+    ],
+    "no_global_outerOOF_residual_fit": true,
+    "new_neural_fits": 0,
+    "training_size_mismatch": "BaseanchorsA213 versusouter320;physicscrossfitstage71/47/31 versusfull106. Honestbutdifferenttrainingamounts; crossfitresidualdistributionmaydiffer. Zerooptiontestsutilityofwholefixedprocedure."
+  },
+  "original_RMSE": {
+    "reference014": 12.968699771878843,
+    "pair": 12.976657518961783,
+    "pair_triple": 12.979599585382005
+  },
+  "contrasts": {
+    "triple_vs014": {
+      "RMSE_gain": -0.010899813503161937,
+      "MSE_gain": -0.28283162371835147,
+      "conditional_gain95": [
+        -0.04571234773976016,
+        0.025222196690589397
+      ],
+      "positive_folds": 1,
+      "fold_gains": [
+        0.02505087404501971,
+        -0.003854149723114375,
+        -0.016522291558272784,
+        -0.05618318245896248,
+        -0.005238357912395131
+      ],
+      "independent_bootstrap_max_error": 7.105427357601002e-15
+    },
+    "triple_vs_pair": {
+      "RMSE_gain": -0.002942066420221323,
+      "MSE_gain": -0.07636503242130743,
+      "conditional_gain95": [
+        -0.0244109065765993,
+        0.01919081920714829
+      ],
+      "positive_folds": 2,
+      "fold_gains": [
+        0.013715786919533457,
+        0.024717968851687644,
+        -0.0028401152256023465,
+        -0.029482239566487323,
+        -0.020629719038470995
+      ],
+      "independent_bootstrap_max_error": 7.105427357601002e-15
+    },
+    "pair_vs014": {
+      "RMSE_gain": -0.007957747082940614,
+      "MSE_gain": -0.20646659129704403,
+      "conditional_gain95": [
+        -0.027410692439829056,
+        0.011904119665757653
+      ],
+      "positive_folds": 2,
+      "fold_gains": [
+        0.011335087125486254,
+        -0.02857211857480202,
+        -0.013682176332670437,
+        -0.026700942892475155,
+        0.015391361126075864
+      ],
+      "independent_bootstrap_max_error": 7.105427357601002e-15
+    }
+  },
+  "inner_selected_counts": {
+    "pair": {
+      "ridge01_full": 3,
+      "ridge1_full": 4,
+      "none": 6,
+      "ridge01_half": 2
+    },
+    "pair_triple": {
+      "ridge01_full": 5,
+      "ridge1_full": 2,
+      "ridge01_half": 2,
+      "none": 6
+    }
+  },
+  "additional_correction_RMS": {
+    "pair": 0.17740380646506784,
+    "pair_triple": 0.3350097125936601
+  },
+  "decision": {
+    "advance": false,
+    "gains": {
+      "reference014": -0.010899813503161937,
+      "pair": -0.002942066420221323
+    },
+    "rule": "3pointaddition mustbeat both014andmatched2pointafterverification. Pairaloneisnotfallback.",
+    "bank_closed_if_false": true
+  },
+  "both_resplits_executed": false,
+  "reason": "pair+triple didnotbeat014 orpaired2point. Prespecifiedbankterminated; noquantile/triangle/radius/ratio revision,no paironlyfallback.",
+  "recommendation": "Retain014. Close this fixedbinarybank; do not generalize to all3pointdescriptors orhardness predictability. No furthertraining onthisbank withoutnewdistinctevidence.",
+  "independent_validation": {
+    "passed": true,
+    "split": "original",
+    "physics_models_independently_checked": 3120,
+    "new_Ridge_models_independently_checked": 240,
+    "physics_rawstat_eigensolve_max_error": 8.615330671091215e-14,
+    "new_Ridge_SVD_max_error": 5.206945985491984e-14,
+    "all_nested_choices_groups_and_training_only_floors_verified": true,
+    "014_reconstruction_max_error": 5.684341886080802e-14,
+    "leakage": {
+      "outer80_target_poison_exact_choices_and_predictions": true,
+      "internal_H_target_poison_exact_crossfit_residual_and4Ridges": true,
+      "internal_H_rows": 36,
+      "upstream112_training_certificate_reused": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+      "new_neural_training": false
+    },
+    "report_sha256": "e368824124f69037df0fea04fbc67036828915750279e2424fc6596113682822",
+    "source_sha256": "439ab46208c98da2d0df3baf3df7a9f882f0562aba0dcd7e6c72492006ef99ee",
+    "seconds": 3.9992841669591144
+  },
+  "execution": {
+    "main_honest_blocks": 15,
+    "main_physics_fits_including_none": 3120,
+    "main_new_Ridge_fits": 240,
+    "main_fit_seconds": 3.826586415991187,
+    "additional_label_poison_replays": "onewholehonestblock andoneinternaltrainingstage",
+    "new_neural_fits": 0,
+    "CPU_threads": 2,
+    "new_installs": 0,
+    "cost": 0,
+    "external_training_data": false,
+    "holdout_decoded_or_scored": false,
+    "test_decoded_inferred_or_fit": false,
+    "protected_old_artifacts_hashed_only": true,
+    "evaluation_server_probing_or_zeroing": false,
+    "new_submission_CSV": false,
+    "uploaded": false
+  },
+  "preserved_failure": {
+    "type": "NumPyint metadata JSON serialization failedbeforefeature extraction; subsequentread failedonpartialJSON.",
+    "repair": "Separatepreflight_v2 castsorbitintegers toPythonint and serializesJSONbeforefilecreation. Originalfeaturealgorithmunchanged.",
+    "files_sha256": {
+      "binary_threepoint_preflight_130.py": "8fecb0edb272c7f46cd78ef7ae51f38526589ee0c40042e8734cccfc678c0f05",
+      "artifacts/binary-threepoint-130/feature-plan.json": "65d3645da7aadf824d989553ce679104c84ffc06f451ae63e078e4697e42d436",
+      "reports/binary-threepoint-130-prepare.log": "05c2df24d9eff61116263e1576cb4ccd604304266a7f3bde33477465b9e71354",
+      "reports/binary-threepoint-130-pilot.log": "917338ee7c247270e81c956e88a05824842a4f809e7bbf8d1b8ca10526a2805c"
+    }
+  },
+  "limitations": [
+    "Same400previouslyusedinmany adaptiveexperiments; conditionalbootstrapdoesnotcoverhistoricalselection orrefitting.",
+    "D4statisticpooling discardsabsoluteorientation; no claim truehardnessD4invariance.",
+    "Quantilephases areimageproxies,notidentifiedphysical phases. Centeredproductsare not rawS3probabilities.",
+    "2pointusespair-specificfullvaliddomain;3pointusestrianglecommondomain. Finite-window boundarysamplepopulationsdiffer explicitly.",
+    "OnefixedsmallbankandstronglyregularizednestedadditiveRidge. Negative resultisnotallhigher-orderstatistics failure.",
+    "The standalone three-point negative finding was relayed by the parent task from its public-paper research. This worker did not directly verify the full text. It was not first-hand user-provided evidence."
+  ],
+  "preservation": {
+    "014_CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "previous_reports_verified": 200,
+    "packages_unchanged": 26,
+    "prior_frozen_sources_inputs_and_models_verified": true
+  },
+  "artifact_sha256": {
+    "artifacts/binary-threepoint-130/serialization-v2/feature-plan.json": "ab3817e3eb3f8de1c54d7113f41f7a5ccdd9937396a6a69cb04ead63a5ca2f8a",
+    "artifacts/binary-threepoint-130/serialization-v2/model-plan.json": "038a94c7e6eb042fda753fb09677b4bc92df73773279e7e1d2304155687b323e",
+    "artifacts/binary-threepoint-130/serialization-v2/extraction.json": "e492f73ad5d9fa146b02efb45a79f5fe98681200bd2eef35b60e0c38e93dd074",
+    "artifacts/binary-threepoint-130/serialization-v2/original/report.json": "e368824124f69037df0fea04fbc67036828915750279e2424fc6596113682822",
+    "artifacts/binary-threepoint-130/serialization-v2/validation-original.json": "56672a1a780795b6ce7c77197c0e8621f8dde72e40018f4814289c7d783d85e3",
+    "artifacts/binary-threepoint-130/serialization-v2/screen-decision.json": "83da985c17d74d1e3745b1fb084c505e3833ce896a78b09e55155c6789c5fc42"
+  },
+  "source_sha256": "4d49a39b1b59ad8bbe6b769ab583cef483ca8b68384fceed5b3c84d26324b9d4",
+  "execution_blockers": [],
+  "provenance_correction": {
+    "file": "reports/binary-threepoint-130-provenance-correction.json",
+    "sha256": "b41820afd8f6e5aad7a65e363996a58a4b5b78ccc04ecdf02d70ce2c8d9a46c3",
+    "original_summary_sha256": "c55d279c4286a2298604951e8be6ff18ffa30900edf9f7361ed0e8c565ab4b64"
+  }
+}

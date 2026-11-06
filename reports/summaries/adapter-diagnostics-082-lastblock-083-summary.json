@@ -1,0 +1,257 @@
+{
+  "diagnostic082": {
+    "training_B_RMSE_before": 0.48434798706965737,
+    "training_B_RMSE_after": 0.37420549296415573,
+    "objective_reduction": {
+      "training_objective_reduction_fraction_range": [
+        0.6812051514467717,
+        0.80570838569814
+      ],
+      "training_objective_reduction_fraction_mean": 0.7480434147871513,
+      "all_initial_up_gradients_positive": true,
+      "all_final_adapter_gradients_positive": true,
+      "initial_down_zero_expected": true,
+      "max_prediction_reload_error": 0.0,
+      "validation_prediction_shift_RMS_range": [
+        0.0834108588644498,
+        0.15272048341706163
+      ],
+      "final_gradients_would_clip_count": 0
+    },
+    "validation_adapter_to_original_norm_ratio_range": {
+      "qkv": [
+        0.002164086672991062,
+        0.00316544777567533
+      ],
+      "proj": [
+        0.001375752570263168,
+        0.002702676844288585
+      ]
+    },
+    "validation_descriptor_relative_L2_median_range": [
+      0.004865601075798887,
+      0.007885693949649334
+    ],
+    "validation_fixed009_contribution_RMS_change_range": [
+      0.01199989905186885,
+      0.021428704773502272
+    ],
+    "decay_only_160step_shrink_fraction": 0.0015987286696498293,
+    "gradient_interpretation": "All15initialup andall15finalfouradaptertensors receive finite nonzero regressiongradients. Initialdown gradients zero as expected becauseup=0. Finalfirst16trainrow combinedgradients belowclip1 inall15probes; not a claim about everyhistorictrainingbatch. Frozenparameters unchanged.",
+    "identity_interpretation": "Not an identity/gradient bug. Near-interpolating fixedheads leave small residuals; unchangedanchor1 has perrowoptimal delta=(y-p0)/3 in quadraticregion. This is an optimum, not a hardcap. Mean74.8% ofavailablelossreduction achieved, so learning occurred; remaininggap couldreflect rankconstraint,optimization andparameterregularization. Endpoint probes do not proveconvergence or isolateLR. Simply increasingupdates is not justified."
+  },
+  "study083": {
+    "hypothesis": "082 found livegradients and mean74.8% of available prediction-loss reduction, not a dead/identity adapter. Remaining limitation may involve the attention-only rank4 update subspace and fixed nearly-interpolatinghead, not simply LR. Test one native full lastblock update, allowing FFN/normalization/attention directions while retaining the same functional anchor. Do not force larger function changes.",
+    "config": {
+      "epochs": 8,
+      "microbatch": 2,
+      "effective_batch": 16,
+      "lr": 1e-06,
+      "weight_decay": 0.0,
+      "anchor_weight": 1.0,
+      "clip": 1.0,
+      "seed": 20270201
+    },
+    "parameters": 7089408,
+    "comparison": "Samehead/scalers/functionanchor/8epochs/dataorder/009formula;nativefullblockparameterizationandLR1e-6. Not a strict LR-matchedrank-onlycausaltest. No sweep or forcedminimum outputchange.",
+    "results": {
+      "original": {
+        "scores": {
+          "reference010": {
+            "rmse": 13.10413742660317,
+            "fold_rmse": [
+              13.022136537716314,
+              12.506331297055734,
+              14.197201444500285,
+              12.180615553418216,
+              13.515909212552927
+            ]
+          },
+          "reference009": {
+            "rmse": 13.105157912721568,
+            "fold_rmse": [
+              13.025386023375454,
+              12.507824306370592,
+              14.197984111621984,
+              12.181376909479603,
+              13.51483530810461
+            ]
+          },
+          "frozenB": {
+            "rmse": 13.615777507504738,
+            "fold_rmse": [
+              13.650648366415224,
+              12.80647915614849,
+              14.045068523498623,
+              13.407892313668881,
+              14.126760079518114
+            ]
+          },
+          "adaptedB": {
+            "rmse": 13.629229024144852,
+            "fold_rmse": [
+              13.638565790038362,
+              12.83463620648344,
+              14.047488044402774,
+              13.426564221032942,
+              14.15756011683585
+            ]
+          },
+          "primary": {
+            "rmse": 13.104168360524616,
+            "fold_rmse": [
+              13.02094139441337,
+              12.506472356167837,
+              14.19808183796214,
+              12.180947678745804,
+              13.515855958196683
+            ]
+          }
+        },
+        "comparison_vs009": {
+          "gain": 0.0009895521969518484,
+          "fold_gains": [
+            0.004444628962083641,
+            0.0013519502027552477,
+            -9.77263401562567e-05,
+            0.00042923073379874666,
+            -0.0010206500920730832
+          ],
+          "positive_folds": 3,
+          "bootstrap_sd": 0.0010158260925411783,
+          "conditional_ci95": [
+            -0.0010771780522970786,
+            0.002894992830792331
+          ]
+        },
+        "comparison_vs010": {
+          "gain": -3.093392144570828e-05,
+          "fold_gains": [
+            0.0011951433029437908,
+            -0.00014105911210293698,
+            -0.0008803934618555331,
+            -0.0003321253275885283,
+            5.325435624392583e-05
+          ],
+          "positive_folds": 2,
+          "bootstrap_sd": 0.0005437327883353112,
+          "conditional_ci95": [
+            -0.0011187251511859842,
+            0.0010121831234005455
+          ]
+        },
+        "fold_training_diagnostics": [
+          {
+            "fold": 0,
+            "fullblock_train_RMSE_before": 0.5243536645432054,
+            "fullblock_train_RMSE_after": 0.3573120131049489,
+            "fullblock_fraction_available_objective_reduction": 0.9161766867207509,
+            "rank4_fraction_available_objective_reduction": 0.7964272218773617,
+            "fullblock_train_shift_RMS": 0.17791611121243492,
+            "fullblock_validation_shift_RMS": 0.13322914636947908,
+            "seconds": 99.65895066701341,
+            "RSS_bytes": 3660103680,
+            "MPS_driver_bytes": 1216987136
+          },
+          {
+            "fold": 1,
+            "fullblock_train_RMSE_before": 0.49430841381221396,
+            "fullblock_train_RMSE_after": 0.34635154560088605,
+            "fullblock_fraction_available_objective_reduction": 0.923411279924637,
+            "rank4_fraction_available_objective_reduction": 0.7353500109074338,
+            "fullblock_train_shift_RMS": 0.15679986514396155,
+            "fullblock_validation_shift_RMS": 0.14091145769620697,
+            "seconds": 98.05589712498477,
+            "RSS_bytes": 2615574528,
+            "MPS_driver_bytes": 1216987136
+          },
+          {
+            "fold": 2,
+            "fullblock_train_RMSE_before": 0.508074463575588,
+            "fullblock_train_RMSE_after": 0.3440792113577232,
+            "fullblock_fraction_available_objective_reduction": 0.879246116027968,
+            "rank4_fraction_available_objective_reduction": 0.7102761154728886,
+            "fullblock_train_shift_RMS": 0.17901544469063957,
+            "fullblock_validation_shift_RMS": 0.14621792058406918,
+            "seconds": 96.66025908401934,
+            "RSS_bytes": 2664349696,
+            "MPS_driver_bytes": 1216987136
+          },
+          {
+            "fold": 3,
+            "fullblock_train_RMSE_before": 0.518636285263156,
+            "fullblock_train_RMSE_after": 0.3650134724658136,
+            "fullblock_fraction_available_objective_reduction": 0.800083523966247,
+            "rank4_fraction_available_objective_reduction": 0.80570838569814,
+            "fullblock_train_shift_RMS": 0.1789026458906093,
+            "fullblock_validation_shift_RMS": 0.11706954199736047,
+            "seconds": 96.60851216700394,
+            "RSS_bytes": 2664906752,
+            "MPS_driver_bytes": 1216987136
+          },
+          {
+            "fold": 4,
+            "fullblock_train_RMSE_before": 0.4833198985979677,
+            "fullblock_train_RMSE_after": 0.36060690171817483,
+            "fullblock_fraction_available_objective_reduction": 0.5898586443405864,
+            "rank4_fraction_available_objective_reduction": 0.7205649735555528,
+            "fullblock_train_shift_RMS": 0.16975103704846325,
+            "fullblock_validation_shift_RMS": 0.11980873450060113,
+            "seconds": 96.69520187500166,
+            "RSS_bytes": 2666512384,
+            "MPS_driver_bytes": 1216987136
+          }
+        ],
+        "mean_fullblock_objective_fraction": 0.8217552501960379
+      }
+    },
+    "validation": {
+      "passed": true,
+      "folds_verified": 5,
+      "frozen_heads_verified": 15,
+      "trainable_lastblock_parameters": 7089408,
+      "only_lastblock_changed": true,
+      "max_MPS_reload_error": 0.0,
+      "max_frozen_control_error": 1.2330400579685374e-05,
+      "max_CPU_MPS_error": 1.8927312254390927e-05,
+      "prefix_rows_independently_rebuilt": 3,
+      "prefix_max_error": 0.0,
+      "development400_image_hashes_verified": true,
+      "leakage_replay": {
+        "outer_validation_labels_perturbed_in_memory": true,
+        "full8epoch_lastblock_replay_max_error": 0.0,
+        "lastblock_and_all_frozen_states_exact": true
+      },
+      "unchanged009_formula_and_coefficients": true,
+      "eligible_for_candidate": false,
+      "best009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+      "protected010_files_verified": 17,
+      "holdout_test_selection_access": false,
+      "cost": 0,
+      "seconds": 114.17937395797344,
+      "source_sha256": "2171c09de6485b54a41455e0e6987f6dea007304cb7457de5aeddf26dbec015d",
+      "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+    },
+    "eligible_for_candidate": false,
+    "decision": "Reject fixedfullblock083 under preregistered criteria; preserve009 andunsubmitted010. Do not increaseLR/epochs orremoveanchor afterseeingresults."
+  },
+  "protected010_files": 17,
+  "protected009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+  "protected010_sha256": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5",
+  "submission_decision": "User explicitly holds010 to preserve the reported remaining submission slots. Keep submittedbest009;010 remains unsubmitted exploratoryartifact.083 creates no newcandidate.",
+  "scope": {
+    "new_install_or_download": false,
+    "cost": 0,
+    "holdout_test_selection_access": false,
+    "uploaded": false
+  },
+  "validator_repair": "Inheritedoutputpath typo caughtbeforeexecution; correctedv2changesonlydestination083. Originalretained,080reportunchanged.",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Trainingoptimum calculation is a perrowlowerbound; it is not a model or an independentvalidation. Same400reused.",
+  "evidence_sha256": {
+    "artifacts/adapter-diagnostics-082/report.json": "ff7deb8c9c008ba338bcc077f2c0499251ba753196d8c1d4f9d85c6259f885ee",
+    "artifacts/dinob-lastblock-083/plan.json": "54e321db24c3581d3a603312c24aaf0ae499858af255231342d5e38f16a3c32a",
+    "reports/dinob-lastblock-083-validation.json": "7393b0f5204c8e793e6f94d4863a62e670109b01994ff86fc4f6a7f44168ad74",
+    "reports/dinob-lastblock-083-validator-repair.json": "e19deff374a34882845f8ab944d9e96f604904c98dfbb5b7486679d5a312bb80"
+  },
+  "source_sha256": "0f8155331367c09b12f5891078f33c0d1d7188f317bfd41c4c7c5b89ab118113"
+}

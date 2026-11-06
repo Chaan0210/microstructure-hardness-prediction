@@ -1,0 +1,67 @@
+{
+  "static_AST_equal_core_operations": {
+    "None.conv1x1": true,
+    "None.conv3x3": true,
+    "Bottleneck.__init__": true,
+    "Bottleneck.forward": true,
+    "ResNet._make_layer": true,
+    "ResNet._forward_impl": true
+  },
+  "SMP_inherits_torchvision_ResNet": true,
+  "SMP_encoder_head_removed": [
+    "fc",
+    "avgpool"
+  ],
+  "our_pool": "Identical parameter-free adaptive average pooling appended to encoder output",
+  "remote_code_executed": false,
+  "key_renaming": false,
+  "models": {
+    "imagenet": {
+      "strict_load": true,
+      "tensor_keys": 318,
+      "omitted_keys": [
+        "fc.weight",
+        "fc.bias"
+      ],
+      "parameter_count": 23508032,
+      "state_hash": "aec333de17d7fcb7fe17cfb5a53e763f878010dd80972c4b829cc7620168d763",
+      "all_finite": true,
+      "all_BN_variances_nonnegative": true,
+      "frozen_eval": true,
+      "stages": [
+        3,
+        4,
+        6,
+        3
+      ],
+      "stride_location": "3x3 conv2 in first bottleneck of stages2/3/4",
+      "BN_eps": 1e-05,
+      "BN_momentum": 0.1
+    },
+    "micronet": {
+      "strict_load": true,
+      "tensor_keys": 318,
+      "omitted_keys": [],
+      "parameter_count": 23508032,
+      "state_hash": "5b1f7913a3d0c1664cf41b31d4c68f5fc17b83591afa85c09d0ea1f8888f1c65",
+      "all_finite": true,
+      "all_BN_variances_nonnegative": true,
+      "frozen_eval": true,
+      "stages": [
+        3,
+        4,
+        6,
+        3
+      ],
+      "stride_location": "3x3 conv2 in first bottleneck of stages2/3/4",
+      "BN_eps": 1e-05,
+      "BN_momentum": 0.1
+    }
+  },
+  "passed": true,
+  "torch": "2.14.0",
+  "torchvision": "0.29.0",
+  "training_started": false,
+  "installations": 0,
+  "version_limit": "HF exact checkpoint pinned; MicroNet v1.0 versus v1.1 label not determined. Static SMP0.2.1 inheritance and torchvision0.11.2 executable core verified against current torchvision; remote modules never imported."
+}

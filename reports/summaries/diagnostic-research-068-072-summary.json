@@ -1,0 +1,288 @@
+{
+  "outcome": "Continued beyond diagnosis and each failed study; completed three distinct fixed hypotheses followedbyoneexplicitposthocfixedmixture,75uniqueOOFheadfits,3headbenchmarkfits,6fullreplays. No new candidate consistentlyimproves008.",
+  "diagnostic_findings": {
+    "input_normalization": "Fixedaffine DINO andglobaltrainingCNN normalization preserve brightness/contrast; perimagebrightnessremoval claimincorrect. CNN128/D4,percentileclipping,tokenLN,andspatialpoolingcanloseinformation inrespectivebranches.",
+    "signed_error": "Across20prespecifiedimageproxies,largestmean signed-errorSpearman magnitude~0.051;doesnotjustify simplebrightnessbiascorrection.",
+    "absolute_error": "Coarseautocorrelation16 andtilemeanvariation correlations~0.134/~0.131;noiseMAD~0.100. Weakmultipleinspected descriptiveassociations,notcausal evidence.",
+    "source": "artifacts/error-diagnostics-068/report.json"
+  },
+  "studies": [
+    {
+      "study": "dinob-prenorm-069",
+      "hypothesis": "Per-token output LayerNorm removes channel mean and scale before descriptor pooling. Same-width pre-LayerNorm CLS/patchmean/std may preserve useful signal. This is not an input brightness-normalization experiment, and retained amplitudes may instead be nuisance.",
+      "reference008_rmse": 13.209632611789585,
+      "primary_rmse": 13.23554422885774,
+      "rmse_gain": -0.02591161706815548,
+      "positive_folds": 0,
+      "full_comparison": {
+        "gain": -0.02591161706815548,
+        "fold_gains": [
+          -0.033878610715689206,
+          -0.02970301172293688,
+          -0.019068659301359148,
+          -0.022572948431056616,
+          -0.025062213280392598
+        ],
+        "positive_folds": 0,
+        "bootstrap_sd": 0.006733367524331921,
+        "conditional_ci95": [
+          -0.038910222409347606,
+          -0.012270622464886657
+        ]
+      },
+      "head_train_rmse": 0.49783969514159176,
+      "fit_seconds": 10.733672958042007,
+      "models_verified": 15,
+      "full_refits": [
+        {
+          "split": "original",
+          "seed": 20261128,
+          "full100epoch_state_exact": true,
+          "prediction_error": 0.0
+        }
+      ],
+      "feature_verification": {
+        "rows_reextracted": 400,
+        "max_error": 0.0,
+        "patch_grid": [
+          36,
+          36
+        ],
+        "weights_unchanged": true,
+        "seconds": 49.49551929201698
+      },
+      "decision": "Rejected at prespecified original screen; no resplit/weight sweep/full500/test/candidate/upload.",
+      "evidence": {
+        "artifacts/dinob-prenorm-069/plan.json": "8f1a5ad05f4dd99b1fdba38422b78149b89e06707fd67fa6946fc262161d3ee3",
+        "artifacts/dinob-prenorm-069/original/report.json": "f7ced16186d06ce8f9ecd93f41821ca7878945eab06d375b20b1eef5d146e56c",
+        "reports/dinob-prenorm-069-validation.json": "73cc08c6c8b8fcf71d082540cca47f8a898b2f821ee756d059aad0a84f3ad015"
+      }
+    },
+    {
+      "study": "dinos-coarse-070",
+      "hypothesis": "068absoluteerrorsweaklyassociatewithcoarseautocorrelation andtilebrightnessvariation. Globaltokenmean/std andorderlessFisher discardspatialsegregation. Fixedcoarseregionalvariancefraction mayaddinformationaboutlongrangepatchheterogeneity.",
+      "reference008_rmse": 13.209632611789585,
+      "primary_rmse": 13.244428199726574,
+      "rmse_gain": -0.03479558793698878,
+      "positive_folds": 1,
+      "full_comparison": {
+        "gain": -0.03479558793698878,
+        "fold_gains": [
+          -0.03795733784512301,
+          0.031695009730579926,
+          -0.0351195623695677,
+          -0.11070669756981744,
+          -0.023339826019512344
+        ],
+        "positive_folds": 1,
+        "bootstrap_sd": 0.028069802721800322,
+        "conditional_ci95": [
+          -0.09080658309271174,
+          0.019865492042884823
+        ]
+      },
+      "head_train_rmse": 0.4587071601300531,
+      "fit_seconds": 7.316272583033424,
+      "models_verified": 15,
+      "full_refits": [
+        {
+          "split": "original",
+          "seed": 20261128,
+          "full100epoch_state_exact": true,
+          "prediction_error": 0.0
+        }
+      ],
+      "feature_verification": {
+        "rows_independently_recomputed": 400,
+        "loop_vs_reshape_max_error": 0.0,
+        "token_cache_verified_sha256": "f7e386b7f455c42225312c941d747834aaaee1ccda9ea3740c46f59b547a3e4f",
+        "upstream_tokens_reextracted400_exact": "reports/fisher-067-validation.json"
+      },
+      "decision": "Rejected at prespecified original screen; no resplit/weight sweep/full500/test/candidate/upload.",
+      "evidence": {
+        "artifacts/dinos-coarse-070/plan.json": "2faf82ab002e79d380c9466193a87e1f9bfa055a2e24e6b668cdcb66f4d89889",
+        "artifacts/dinos-coarse-070/original/report.json": "a4717d700e1b71420da5daa15dd44ea79112e3b2d2da1b684810c64e59d34da0",
+        "reports/dinos-coarse-070-validation.json": "e96b9938c6820f2dba414f9c9deac5bcf9cad7f995606fd62d27c5713c781db8"
+      }
+    },
+    {
+      "study": "dinob-denoised-071",
+      "hypothesis": "068noiseproxyweaklycorrelateswithabsoluteOOFerror(~0.10),while069rawtokenamplitudesdidnothelp. Noise-awareedge-preservingTV preprocessing mayreduce acquisitiontexturewhichDINOencodeswhilepreservingcoarsemorphology.",
+      "reference008_rmse": 13.209632611789585,
+      "primary_rmse": 13.216556730931284,
+      "rmse_gain": -0.006924119141698881,
+      "positive_folds": 2,
+      "full_comparison": {
+        "gain": -0.006924119141698881,
+        "fold_gains": [
+          -0.053560869435852254,
+          0.06633158932150174,
+          -0.06713225122508248,
+          0.03261649998532512,
+          -0.0024739386869292446
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.035342025455523285,
+        "conditional_ci95": [
+          -0.07804736933920893,
+          0.06117847363856242
+        ]
+      },
+      "head_train_rmse": 0.4855617076638992,
+      "fit_seconds": 13.623126833990682,
+      "models_verified": 15,
+      "full_refits": [
+        {
+          "split": "original",
+          "seed": 20261128,
+          "full100epoch_state_exact": true,
+          "prediction_error": 0.0
+        }
+      ],
+      "feature_verification": {
+        "rows_reextracted": 400,
+        "max_error": 0.0,
+        "patch_grid": [
+          36,
+          36
+        ],
+        "weights_unchanged": true,
+        "seconds": 62.392178416019306
+      },
+      "decision": "Rejected at prespecified original screen; no resplit/weight sweep/full500/test/candidate/upload.",
+      "evidence": {
+        "artifacts/dinob-denoised-071/plan.json": "409c6e34c76a9ba6b79253faa2709f45914f8d153d53882af7f8a481ce339227",
+        "artifacts/dinob-denoised-071/original/report.json": "539703de975781b18d22995524bb0c6e004bad7518f767c88926ae318af93920",
+        "reports/dinob-denoised-071-validation.json": "f03f1c4937581fbe395754ab559adce72c03d9f7a953af6e3017202757e0af33"
+      }
+    }
+  ],
+  "posthoc_fixed_mixture072": {
+    "disclosure": "Newexploratoryfollowup chosenafter071 failed its primaryreplacement screen. Doesnotreverse071 gate,claimpreregistrationbefore071 results,orclaimindependentvalidation. Do not search additionalratios ifthisfails.",
+    "formula": ".75*r003+.125*Smean+.0625*Brawmean+.0625*BTVmean = .5*008+.5*071primary. This retains totalBweight.125 and usesfixed50:50 likepriorS/Bcomplementarity064,notoptimizedweights.",
+    "results": {
+      "original": {
+        "reference008_rmse": 13.209632611789585,
+        "primary_rmse": 13.209500703805649,
+        "comparison": {
+          "gain": 0.00013190798393658554,
+          "fold_gains": [
+            -0.02314228429555598,
+            0.037675483323287295,
+            -0.03014873035996679,
+            0.01958186709691212,
+            0.0018516369025221024
+          ],
+          "positive_folds": 3,
+          "bootstrap_sd": 0.017651167766790935,
+          "conditional_ci95": [
+            -0.03537700020911503,
+            0.0342387205645086
+          ]
+        }
+      },
+      "20261031": {
+        "reference008_rmse": 13.180839919990602,
+        "primary_rmse": 13.184848055920671,
+        "comparison": {
+          "gain": -0.004008135930069656,
+          "fold_gains": [
+            0.025040817988690733,
+            0.027246807352668156,
+            -0.042968070629131105,
+            -0.058507332748359175,
+            0.022607200757997603
+          ],
+          "positive_folds": 3,
+          "bootstrap_sd": 0.01625294600347981,
+          "conditional_ci95": [
+            -0.03679695380440662,
+            0.027181427380200688
+          ]
+        }
+      },
+      "20261101": {
+        "reference008_rmse": 13.393004886763789,
+        "primary_rmse": 13.403347867471366,
+        "comparison": {
+          "gain": -0.010342980707576999,
+          "fold_gains": [
+            0.04386556454712576,
+            -0.054590252954414,
+            0.013705207488667881,
+            -0.030983736772931536,
+            -0.024652127114933364
+          ],
+          "positive_folds": 2,
+          "bootstrap_sd": 0.016602050222440313,
+          "conditional_ci95": [
+            -0.04429112168302618,
+            0.02192623171422584
+          ]
+        }
+      }
+    },
+    "models_verified_including15reused": 45,
+    "full_replays": [
+      {
+        "split": "original",
+        "seed": 20261128,
+        "full100epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261031",
+        "seed": 20261128,
+        "full100epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261101",
+        "seed": 20261128,
+        "full100epoch_state_exact": true,
+        "prediction_error": 0.0
+      }
+    ],
+    "decision": "Originaltinygain didnotrepeatineitherresplit;rejected,noadditionalweights,no full500/test/candidate/upload.",
+    "validation_sha256": "c606e1d06bb104620e298ad8d77a14897286e42b21fb498a31b2989a4ad6b242"
+  },
+  "learned": [
+    "069samewidth/sametraining:removingoutputtokenLayerNorm worsenedall5folds. Retainingrawtokenamplitude didnothelpthisrecipe;notproofallnormalizationisoptimal.",
+    "070coarseregionalvariance differsfrom042localvariogramsand067orderlessFisher,butdidnotyieldgeneralizationgain. Spatialinformationaddition aloneisinsufficient;capacityconfoundacknowledged.",
+    "071testsinputnoisesuppression separatelyfromtokenamplitudeandspatialpooling;fixedTVdoesnotjustifyadoption basedonoriginalscreen. No strengthretuning.",
+    "072fixedraw/TVpredictionmean hadoriginalgain0.0001319 butbothresplitsworsened0.0040081/0.0103430. Complementaryerrorsalone didnotyieldstablegain. Noadditionalweightsearch.",
+    "VerylowheadtrainingRMSE versusOOF indicatesgeneralizationgap. Existing400 repeatedlyreused;all3splitsare not independent. No inferredirreduciblenoisefloor orclaimofattainableperformanceceiling."
+  ],
+  "best": {
+    "candidate": "artifacts/submission-candidate-008.csv",
+    "sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+    "parent_confirmed_public_rmse": 11.8898307061,
+    "public_source": "reports/candidate008-public-submission.json",
+    "development_rmse": [
+      13.209632611789585,
+      13.180839919990602,
+      13.393004886763789
+    ],
+    "protected": true
+  },
+  "remaining_problem": "Prizegoalnotachievedorproven. These results eliminate thisdiagnostic-led sequence,notallpossiblemethods. Currentbottleneckisreliableevidenceforanotherdirection andfreshvalidation,notlocalcomputeavailability.",
+  "next_useful_evidence": [
+    "Officialsyntheticimagegeneration andhardnesslabelconstruction definitions,includingwhichlatentvariablesareactuallyvisible andwhichareunobserved. Thiswouldmakeaphysics-basedresidualhypothesisidentifiable.",
+    "Rules-permittedindependentlabeledtraining/validation pairs toassessnewdirections without furtherselectiononthesame400;noholdoutunsealing.",
+    "Ifsuchinformationisnotavailable,report008asthecurrentverifiedresultratherthanclaimprize-readiness ormanufactureevidencefromseed/weight sweeps."
+  ],
+  "constraints": {
+    "holdout100_separate_access": false,
+    "test_access_during_phase": false,
+    "new_package_or_weights": false,
+    "cost": 0,
+    "upload": false,
+    "new_candidate": false,
+    "best008_preserved": true
+  },
+  "technical_blockers": [],
+  "running_experiments": [],
+  "source_sha256": "87ed32f61c2c6ea80c81b9748b5eac05bff25275dcc738eaf924a9311684505b",
+  "diagnostic_report_sha256": "23be3071f880402c95bd6bfc989ea12a6055629ad4d5ea3faebc9423be9a9a6a",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

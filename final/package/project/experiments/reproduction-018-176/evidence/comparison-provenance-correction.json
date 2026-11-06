@@ -1,0 +1,19 @@
+{
+  "correction_to": "comparison-addendum.json",
+  "fact": "Historical final-model-145/block-j/predictions.npz contains500-row train-query candidates/corrections, not1000. Only top-level final-model-145/predictions.npz is1000-row test. The prior addendum recorded an incorrect suspicion before shape inspection.",
+  "verified_shapes": {
+    "block0_candidate_predictions": [
+      5,
+      500
+    ],
+    "block0_correction": [
+      500
+    ],
+    "top_level_primary": [
+      1000
+    ]
+  },
+  "comparison_executed": "compare_training_full500.py independently reloaded the historic fitted residuals and predicted fresh500 features; this valid check is unchanged. Original compare_training.py was not executed.",
+  "fitting_changed": false,
+  "model_selection_changed": false
+}

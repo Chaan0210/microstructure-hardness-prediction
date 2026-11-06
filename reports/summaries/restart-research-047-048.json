@@ -1,0 +1,224 @@
+{
+  "status": "completed_two_bounded_negative_hypotheses",
+  "completed_at_utc": "2026-10-01T15:26:10.176091+00:00",
+  "reconnection": {
+    "actual_command_success": true,
+    "prior_experiment_processes_found": false,
+    "prior046_not_repeated": true,
+    "mps_built": true,
+    "mps_available_in_authorized_execution": true,
+    "mps_single_value_smoke": 1.0,
+    "sandbox_mps_flag": false,
+    "interpretation": "Restrictedread-onlyprobehidMPS;authorizedexecutionavailable. CPUexperimentsunaffected;nohardwareblocker."
+  },
+  "baseline006_original_oof_rmse": 13.423229237711903,
+  "studies": {
+    "047": {
+      "results": {
+        "original": {
+          "scores": {
+            "control_dino": 13.895902699199368,
+            "joint": 14.013022472256248,
+            "old_kernel": 14.482935938822393,
+            "control006": 13.423229237711903,
+            "primary": 13.587488845896774,
+            "diagnostic_dino_replace": 13.607275458403885,
+            "reference003": 13.705696031698212
+          },
+          "comparison": {
+            "gain": -0.16425960818487084,
+            "fold_gains": [
+              -0.48708532241501246,
+              0.08449074116696842,
+              -0.2217345246386273,
+              -0.10061163246959204,
+              -0.07905514756084386
+            ],
+            "bootstrap_sd": 0.07479377655243694,
+            "conditional_ci95": [
+              -0.31011230266479306,
+              -0.012812656896880764
+            ]
+          },
+          "selected_models": [
+            {
+              "kind": "additive",
+              "alpha": 1.0,
+              "rmse": 13.92416647095175
+            },
+            {
+              "kind": "additive",
+              "alpha": 1.0,
+              "rmse": 14.96301339693667
+            },
+            {
+              "kind": "additive",
+              "alpha": 1.0,
+              "rmse": 14.387566142548721
+            },
+            {
+              "kind": "additive",
+              "alpha": 1.0,
+              "rmse": 14.166538899188913
+            },
+            {
+              "kind": "additive",
+              "alpha": 1.0,
+              "rmse": 14.26116912658883
+            }
+          ],
+          "mean_train_rmse": 10.644789391896756,
+          "fold_training_target_range_diagnostic": {
+            "low20": {
+              "rows": 81,
+              "006_rmse": 16.996149985014338,
+              "joint_blend_rmse": 17.36135317983353
+            },
+            "middle60": {
+              "rows": 236,
+              "006_rmse": 8.520447145601374,
+              "joint_blend_rmse": 8.74095189469598
+            },
+            "high20": {
+              "rows": 83,
+              "006_rmse": 19.494114771927965,
+              "joint_blend_rmse": 19.450833068518413
+            }
+          },
+          "seconds": 1.308280375029426,
+          "rss_peak_bytes": 429096960,
+          "oof_sha256": "354304707ab468960c5b686f1c016d26c0af15b0db3298f4a456367d8c24d2aa"
+        }
+      },
+      "models_reloaded": 10,
+      "reload_prediction_max_error": 0.0,
+      "query_batch_independence_error": 5.684341886080802e-14,
+      "minimum_train_kernel_eigenvalue": -7.579850954118816e-15,
+      "mean_train_kernel_diagonal": 1,
+      "samefold_reference003_and006_reproduced": true,
+      "train_only_bounds_scalers_bandwidth_centers_target_and_inner_groups_verified": true,
+      "best006_protected": true,
+      "screen_advanced": false,
+      "scope": "Development400 only; no test/holdoutmodelselection, no costs/packages/newcandidate/upload.",
+      "limits": "Historically reused400 and folds; current nested selection does not remove historical selection bias. Negative result applies to this fixed jointfamily,not a performance ceiling."
+    },
+    "048": {
+      "results": {
+        "original": {
+          "scores": {
+            "control": 13.895902699199368,
+            "latent": 14.218805695930133,
+            "linear_pls_diagnostic": 14.491875559269197,
+            "control_blend": 13.423229237711903,
+            "latent_blend": 13.487099655275172,
+            "linear_pls_diagnostic_blend": 13.572927099182511,
+            "reference003": 13.705696031698212
+          },
+          "comparison": {
+            "gain": -0.06387041756326894,
+            "fold_gains": [
+              -0.18403539655464307,
+              -0.10931377181773705,
+              -0.13927474109622295,
+              0.25359211595288755,
+              -0.11655032573290569
+            ],
+            "bootstrap_sd": 0.06808043708627376,
+            "conditional_ci95": [
+              -0.19621182134665632,
+              0.06846649786943494
+            ]
+          },
+          "selected_alpha": [
+            1.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean_train_rmse": 11.535452180986832,
+          "mean_linear_pls_train_rmse": 12.316904505781867,
+          "pls_n_iter": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "seconds": 1.109879625029862,
+          "rss_peak_bytes": 427982848,
+          "oof_sha256": "9c4477ac34459f0722527b9a754c7cbc0f8fc0694790e74891683bfe6689b9c9"
+        }
+      },
+      "models_reloaded": 10,
+      "max_reload_error": 0.0,
+      "batch_independence_error": 5.684341886080802e-14,
+      "minimum_kernel_eigenvalue": -2.230803680354954e-14,
+      "same006_control_reproduced": true,
+      "fold_only_scaler_target_supervised_PLStraining_scores_bandwidth_inner_groups_verified": true,
+      "best006_protected": true,
+      "screen_advanced": false,
+      "scope": "Development400only;noholdout/testfit,externaldata,installation,cost,candidateCSVorupload",
+      "limits": "CurrentnestedCV controlsalpha,not historicaldevelopment/modelselection. Fixed4Dfailureisnot evidenceofabsoluteperformanceceiling."
+    }
+  },
+  "compute": {
+    "047_regression_seconds": 1.308280375029426,
+    "048_regression_seconds": 1.109879625029862,
+    "max_process_rss_bytes": 429096960,
+    "note": "Wallclockworkincludedcodeimplementationandindependentaudit;regressionnumbersarenottotalinteractiveworktime."
+  },
+  "best006": {
+    "path": "artifacts/submission-candidate-006.csv",
+    "sha256": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "preserved": true,
+    "last_confirmed_public_rmse": 12.2224405924,
+    "last_confirmed_rank": "17/38",
+    "current_daily_submission_quota": "Unknown;UI not checked afterdatechange"
+  },
+  "interpretation": [
+    "CurrentfixedjointDINO/morphfamilydidnotadd useful conditionalprediction and doesnotjustify replacingseparatebranches.",
+    "All5innerselections preferred additiveoverinteraction;nomodelclaimedusefulinteraction.",
+    "Fixed4Dtargetawarecompression alsofailed;increasingreadoutcomplexityoraggressivecompressionisnot supportedbytheseresults.",
+    "Theseare boundednegativeexperiments,not proof ofanirreduciblelabelnoise floor. Morphologymeasurementerror/unobservedgeneratorvariables/noiseversusrecoverablepretrainedsignalremainunresolved.",
+    "All400developmentimages/foldsarehistoricallyreused;currentnestedCVdoesnot eliminate historicalselectionbias. No positivecandidatewasmanufacturedfromdiagnostic-onlyrecipes."
+  ],
+  "scope": {
+    "holdout_for_selection": false,
+    "test_training_or_adaptation": false,
+    "public_reverse_fitting": false,
+    "external_data": false,
+    "new_installation": false,
+    "paid_service": false,
+    "new_candidate_csv": false,
+    "uploaded": false
+  },
+  "next_work_evidence": "Further work should establish what image information is missing or unreliable before another arbitrary kernel/rank/ensembleweight sweep; no evidence here requirespaidresources ornewpackages.",
+  "running_work": [],
+  "blockers": []
+}

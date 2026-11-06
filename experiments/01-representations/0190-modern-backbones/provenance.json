@@ -1,0 +1,111 @@
+{
+  "study": 190,
+  "weights": {
+    "convnext_tiny": {
+      "url": "https://download.pytorch.org/models/convnext_tiny-983f1562.pth",
+      "path": "experiments/modern-backbones-190/weights/convnext_tiny-983f1562.pth",
+      "enum": "ConvNeXt_Tiny_Weights.IMAGENET1K_V1",
+      "bytes": 114419221,
+      "MiB": 109.11867237091064,
+      "SHA256": "983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d",
+      "official_filename_hash_prefix_verified": true,
+      "strict_state_dict_verified": true,
+      "tensor_entries": 182,
+      "parameters": 28589128,
+      "official_transform": "ImageClassification(\n    crop_size=[224]\n    resize_size=[236]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "metadata": {
+        "min_size": [
+          32,
+          32
+        ],
+        "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#convnext",
+        "_docs": "\n        These weights improve upon the results of the original paper by using a modified version of TorchVision's\n        `new training recipe\n        <https://pytorch.org/blog/how-to-train-state-of-the-art-models-using-torchvision-latest-primitives/>`_.\n    ",
+        "num_params": 28589128,
+        "_metrics": {
+          "ImageNet-1K": {
+            "acc@1": 82.52,
+            "acc@5": 96.146
+          }
+        },
+        "_ops": 4.456,
+        "_file_size": 109.119
+      },
+      "seconds_download_and_validation": 2.9478863749973243,
+      "UTC": "2026-10-06T08:50:58.429934+00:00"
+    },
+    "swin_v2_t": {
+      "url": "https://download.pytorch.org/models/swin_v2_t-b137f0e2.pth",
+      "path": "experiments/modern-backbones-190/weights/swin_v2_t-b137f0e2.pth",
+      "enum": "Swin_V2_T_Weights.IMAGENET1K_V1",
+      "bytes": 113902449,
+      "MiB": 108.62584018707275,
+      "SHA256": "b137f0e2d744bbe1e82ad10ddb8dc938676cf04a4332eae66e45c2048ac09711",
+      "official_filename_hash_prefix_verified": true,
+      "strict_state_dict_verified": true,
+      "tensor_entries": 233,
+      "parameters": 28351570,
+      "official_transform": "ImageClassification(\n    crop_size=[256]\n    resize_size=[260]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BICUBIC\n)",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "metadata": {
+        "num_params": 28351570,
+        "min_size": [
+          256,
+          256
+        ],
+        "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#swintransformer-v2",
+        "_metrics": {
+          "ImageNet-1K": {
+            "acc@1": 82.072,
+            "acc@5": 96.132
+          }
+        },
+        "_ops": 5.94,
+        "_file_size": 108.626,
+        "_docs": "These weights reproduce closely the results of the paper using a similar training recipe."
+      },
+      "seconds_download_and_validation": 3.5817435839999234,
+      "UTC": "2026-10-06T08:51:02.075624+00:00"
+    }
+  },
+  "official_docs": {
+    "general": "https://docs.pytorch.org/vision/stable/models.html",
+    "convnext_tiny": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.convnext_tiny.html",
+    "swin_v2_t": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.swin_v2_t.html"
+  },
+  "license": {
+    "code": "TorchvisionBSD-3-Clause:retaincopyright/license/disclaimeronredistribution;binarynoticeandnonendorsementconditions;existingv0.29.0licensecopiedwithverifiedhash.",
+    "path": "experiments/modern-backbones-190/licenses/torchvision-BSD-3-Clause.txt",
+    "SHA256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d",
+    "source": "https://raw.githubusercontent.com/pytorch/vision/v0.29.0/LICENSE",
+    "weights": "Officialdocumentationnotespretrainedweightsmayhaveowntermsderivedfromtrainingdatasets. CodeBSDlicenseisnotassertedasacomprehensiveweight/datasetlicense.",
+    "use_scope": "User-authorizedprivatelocalcomparison; nodistribution,login,paidservice,ornewtermsacceptanceperformed."
+  },
+  "torch": "2.14.0",
+  "torchvision": "0.29.0",
+  "existing_environment": "experiments/pretrained-cnn-185/.venv",
+  "new_packages": [],
+  "only_two_authorized_weight_downloads": true,
+  "total_download_bytes": 228321670,
+  "peak_RSS": 580354048,
+  "swap_growth": 0,
+  "cost": 0
+}

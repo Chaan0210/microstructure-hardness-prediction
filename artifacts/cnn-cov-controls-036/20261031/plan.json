@@ -1,0 +1,34 @@
+{
+  "arms": {
+    "small_trace": "rank6,head32; same trace/meanvariance normalization as035",
+    "small_regularized": "same rank6/head32 and identical initialization;0.5diagonal shrinkage then per-channel divide by sqrt(var+0.1meanvar+1e-4)"
+  },
+  "trainer": "Unmodified035 train_fold reused with explicit constructor binding",
+  "schedule": "same128BOX,seed20261003+fold,80epochs,800steps,batch32,AdamWlr.002wd.01,cosine.0001,clip5,last5weightaverage,train-onlyD4;noepochselection",
+  "blend": {
+    "baseline": 0.5,
+    "compact_kernel": 0.25,
+    "cnn": 0.25
+  },
+  "screening_rule": "Eligible only if original fixed-blend RMSE improves over003 and at least3of5folds improve; among eligible choose lowest blend RMSE, ties by arm order. If none eligible stop. No arbitrary minimum RMSE gain. At most one arm evaluated on both predefined repartitions.",
+  "scope": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "source_sha256": {
+    "cnn_cov_controls_036.py": "5eec45422f1ba4299c813f3a93b8b222aa9a207d538dfc0b0e3f3cd7587103d9",
+    "cnn_cov_regularized.py": "a62abf2ea442873d6f99527e6f018a306d5295845fdf4e3f5e3c9e19614d9edd",
+    "cnn_structure_experiment.py": "11906ac8964fd99db073ed5b1f206980ed51da3e86e07d6f58259f21f4d4a720",
+    "cnn_texture_fusion.py": "2f13c9ea5872f663279caaf6f88b752ba2cc29f1958a2b85c371767ee30aac7d",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc"
+  },
+  "feature_cache_sha256": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  },
+  "attribution": "Original project implementation; no external code/weights/data.",
+  "split": "20261031",
+  "trained_arms": [
+    "small_trace"
+  ]
+}

@@ -1,0 +1,2964 @@
+{
+  "plan": {
+    "secondary_candidate": "compact26+denoised31 nested KRR, .5baseline+.25threeSeedD4CNN+.25kernel",
+    "split_seeds": [
+      20261031,
+      20261101
+    ],
+    "same_fold_component_reuse": "Use newly trained run021 CNN/baseline only after asserting exact IDs, targets and fold memberships. Never use old original-fold OOF.",
+    "comparison": "candidate003 and compact26 mean3D4",
+    "selection_policy": "Prefer simpler compact26 unless both new partitions favor denoised extension; report fold variation and selection bias, no arbitrary numeric cutoff.",
+    "original_cv_rmse": 13.53511407926948,
+    "feature_report_sha256": "87e7ff556b67334561a94577eadf788f4721821c5d815b382e49e793223d0df6",
+    "feature_cache_sha256": "3b347d826c0dfa2f95a05d1163c2ab0656473ab2fc41ebcd65089667c81b1c27",
+    "source_sha256": {
+      "confirm_denoised.py": "897d23d0e8ab5800503f034136c407b06d59922dbe822fa81b9d779c4efb5bfb",
+      "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+      "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+      "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3"
+    },
+    "independent_holdout": false
+  },
+  "seeds": [
+    {
+      "seed": 20261031,
+      "scores": {
+        "baseline": {
+          "oof_rmse": 14.272716700602603,
+          "fold_rmse": [
+            14.407444675755297,
+            16.646232788603253,
+            14.446614135477992,
+            12.440212569736431,
+            13.05439133706975
+          ],
+          "bias": -0.16000619050054923,
+          "prediction_std": 10.815470621301861,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.0,
+              "fold_improvement_rmse": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": -0.6409059676697524,
+              "fold_improvement_rmse": [
+                -0.6004301469816085,
+                -1.1258103766055623,
+                -0.48372504025315344,
+                -0.525149925656013,
+                -0.3783048925081225
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                -0.9096010803697705,
+                -0.3702131931779678
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": -0.6701950350738279,
+              "fold_improvement_rmse": [
+                -0.7874872025790829,
+                -1.3131945457345182,
+                -0.32493532893911414,
+                -0.5524496311558025,
+                -0.25607289367437325
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                -0.9475191323405864,
+                -0.3974541369937757
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": -0.6583220406941148,
+              "fold_improvement_rmse": [
+                -0.7814667742199184,
+                -1.312280628865306,
+                -0.3554057299111548,
+                -0.5673497799688629,
+                -0.15344865776539862
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                -0.919393323511025,
+                -0.39567232592559193
+              ]
+            }
+          }
+        },
+        "candidate003": {
+          "oof_rmse": 13.63181073293285,
+          "fold_rmse": [
+            13.807014528773689,
+            15.520422411997691,
+            13.962889095224838,
+            11.915062644080418,
+            12.676086444561628
+          ],
+          "bias": -0.1878609258808975,
+          "prediction_std": 10.616160263650157,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.6409059676697524,
+              "fold_improvement_rmse": [
+                0.6004301469816085,
+                1.1258103766055623,
+                0.48372504025315344,
+                0.525149925656013,
+                0.3783048925081225
+              ],
+              "better_folds": 5,
+              "conditional_paired_improvement_95": [
+                0.37021319317796775,
+                0.9096010803697704
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": 0.0,
+              "fold_improvement_rmse": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": -0.029289067404075553,
+              "fold_improvement_rmse": [
+                -0.18705705559747443,
+                -0.18738416912895595,
+                0.1587897113140393,
+                -0.02729970549978944,
+                0.12223199883374924
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.127641401927529,
+                0.06704860645320448
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": -0.017416073024362433,
+              "fold_improvement_rmse": [
+                -0.18103662723830993,
+                -0.18647025225974367,
+                0.12831931034199862,
+                -0.042199854312849894,
+                0.22485623474272387
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.11214435269291032,
+                0.07416870938023946
+              ]
+            }
+          }
+        },
+        "mean3_identity": {
+          "oof_rmse": 13.602521665528775,
+          "fold_rmse": [
+            13.619957473176214,
+            15.333038242868735,
+            14.121678806538878,
+            11.887762938580629,
+            12.798318443395377
+          ],
+          "bias": -0.2020069296040419,
+          "prediction_std": 10.585972092470902,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.6701950350738279,
+              "fold_improvement_rmse": [
+                0.7874872025790829,
+                1.3131945457345182,
+                0.32493532893911414,
+                0.5524496311558025,
+                0.25607289367437325
+              ],
+              "better_folds": 5,
+              "conditional_paired_improvement_95": [
+                0.39745413699377546,
+                0.9475191323405863
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": 0.029289067404075553,
+              "fold_improvement_rmse": [
+                0.18705705559747443,
+                0.18738416912895595,
+                -0.1587897113140393,
+                0.02729970549978944,
+                -0.12223199883374924
+              ],
+              "better_folds": 3,
+              "conditional_paired_improvement_95": [
+                -0.0670486064532045,
+                0.12764140192752896
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": 0.0,
+              "fold_improvement_rmse": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": 0.01187299437971312,
+              "fold_improvement_rmse": [
+                0.006020428359164498,
+                0.0009139168692122723,
+                -0.03047040097204068,
+                -0.014900148813060454,
+                0.10262423590897463
+              ],
+              "better_folds": 3,
+              "conditional_paired_improvement_95": [
+                -0.04725230015752278,
+                0.07132119555859102
+              ]
+            }
+          }
+        },
+        "mean3_d4": {
+          "oof_rmse": 13.614394659908488,
+          "fold_rmse": [
+            13.625977901535379,
+            15.333952159737947,
+            14.091208405566837,
+            11.872862789767568,
+            12.900942679304352
+          ],
+          "bias": -0.2054526602107569,
+          "prediction_std": 10.530494957038542,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.6583220406941148,
+              "fold_improvement_rmse": [
+                0.7814667742199184,
+                1.312280628865306,
+                0.3554057299111548,
+                0.5673497799688629,
+                0.15344865776539862
+              ],
+              "better_folds": 5,
+              "conditional_paired_improvement_95": [
+                0.39567232592559193,
+                0.9193933235110249
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": 0.017416073024362433,
+              "fold_improvement_rmse": [
+                0.18103662723830993,
+                0.18647025225974367,
+                -0.12831931034199862,
+                0.042199854312849894,
+                -0.22485623474272387
+              ],
+              "better_folds": 3,
+              "conditional_paired_improvement_95": [
+                -0.07416870938023949,
+                0.11214435269291029
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": -0.01187299437971312,
+              "fold_improvement_rmse": [
+                -0.006020428359164498,
+                -0.0009139168692122723,
+                0.03047040097204068,
+                0.014900148813060454,
+                -0.10262423590897463
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.07132119555859102,
+                0.04725230015752275
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": 0.0,
+              "fold_improvement_rmse": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "cnn_mean3_d4": {
+          "oof_rmse": 13.868946937891785,
+          "fold_rmse": [
+            13.511828392129797,
+            14.514918864955002,
+            15.059271587859543,
+            12.516510637822636,
+            13.60299122884585
+          ],
+          "bias": -0.4613318159906512,
+          "prediction_std": 12.748777030114695,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.40376976271081766,
+              "fold_improvement_rmse": [
+                0.8956162836255004,
+                2.1313139236482517,
+                -0.6126574523815513,
+                -0.07629806808620465,
+                -0.5485998917760995
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.357118485720203,
+                1.189024406410007
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": -0.23713620495893473,
+              "fold_improvement_rmse": [
+                0.2951861366438919,
+                1.0055035470426894,
+                -1.0963824926347048,
+                -0.6014479937422177,
+                -0.926904784284222
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.8185818601136005,
+                0.3734307798702309
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": -0.2664252723630103,
+              "fold_improvement_rmse": [
+                0.1081290810464175,
+                0.8181193779137335,
+                -0.9375927813206655,
+                -0.6287476992420071,
+                -0.8046727854504727
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.8383516418138853,
+                0.3263730236481164
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": -0.25455227798329716,
+              "fold_improvement_rmse": [
+                0.114149509405582,
+                0.8190332947829457,
+                -0.9680631822927062,
+                -0.6436478480550676,
+                -0.7020485495414981
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.8190010723545884,
+                0.3363357170744314
+              ]
+            }
+          }
+        },
+        "denoised_kernel": {
+          "oof_rmse": 13.953997208500867,
+          "fold_rmse": [
+            14.523502697658651,
+            15.002336692202146,
+            14.478712957946609,
+            12.004060032724995,
+            13.55866392574432
+          ],
+          "bias": 0.03075628680433354,
+          "prediction_std": 10.905064427236475,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.3187194921017351,
+              "fold_improvement_rmse": [
+                -0.11605802190335446,
+                1.6438960964011073,
+                -0.03209882246861717,
+                0.4361525370114361,
+                -0.5042725886745689
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.21155218360919945,
+                0.8514620829587182
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": -0.32218647556801727,
+              "fold_improvement_rmse": [
+                -0.7164881688849629,
+                0.5180857197955451,
+                -0.5158238627217706,
+                -0.08899738864457696,
+                -0.8825774811826914
+              ],
+              "better_folds": 1,
+              "conditional_paired_improvement_95": [
+                -0.7533721739235844,
+                0.11526627091543173
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": -0.3514755429720928,
+              "fold_improvement_rmse": [
+                -0.9035452244824373,
+                0.33070155066658913,
+                -0.3570341514077313,
+                -0.1162970941443664,
+                -0.7603454823489422
+              ],
+              "better_folds": 1,
+              "conditional_paired_improvement_95": [
+                -0.7818900291480273,
+                0.08613962731279314
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": -0.3396025485923797,
+              "fold_improvement_rmse": [
+                -0.8975247961232728,
+                0.3316154675358014,
+                -0.387504552379772,
+                -0.13119724295742685,
+                -0.6577212464399675
+              ],
+              "better_folds": 1,
+              "conditional_paired_improvement_95": [
+                -0.7699654542252992,
+                0.08786493757172652
+              ]
+            }
+          }
+        },
+        "denoised_candidate": {
+          "oof_rmse": 13.562334543413382,
+          "fold_rmse": [
+            13.663589851210533,
+            15.222137022200949,
+            13.986324372768673,
+            11.792755816748402,
+            12.907017044181774
+          ],
+          "bias": -0.18764697754685492,
+          "prediction_std": 10.686320094246227,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.7103821571892208,
+              "fold_improvement_rmse": [
+                0.7438548245447638,
+                1.4240957664023046,
+                0.4602897627093192,
+                0.6474567529880293,
+                0.1473742928879762
+              ],
+              "better_folds": 5,
+              "conditional_paired_improvement_95": [
+                0.4541697675173805,
+                0.9640522692765614
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": 0.06947618951946843,
+              "fold_improvement_rmse": [
+                0.14342467756315536,
+                0.29828538979674235,
+                -0.023435277543834232,
+                0.12230682733201625,
+                -0.23093059962014628
+              ],
+              "better_folds": 3,
+              "conditional_paired_improvement_95": [
+                -0.058081325870632215,
+                0.19416372260842632
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": 0.04018712211539288,
+              "fold_improvement_rmse": [
+                -0.043632378034319075,
+                0.1109012206677864,
+                0.13535443377020506,
+                0.09500712183222682,
+                -0.10869860078639704
+              ],
+              "better_folds": 3,
+              "conditional_paired_improvement_95": [
+                -0.07368703970975274,
+                0.1539763427330901
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": 0.052060116495106,
+              "fold_improvement_rmse": [
+                -0.03761194967515458,
+                0.11181513753699868,
+                0.10488403279816438,
+                0.08010697301916636,
+                -0.006074364877422411
+              ],
+              "better_folds": 3,
+              "conditional_paired_improvement_95": [
+                -0.03734831534581025,
+                0.13966539406858428
+              ]
+            }
+          }
+        }
+      },
+      "kernel_selection": [
+        {
+          "fold": 0,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.1857827253129
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.34089234894369
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.37882285974166
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.63042990154413
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 17.225642843718635
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.344513704625252
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.519348508761572
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.773620132329455
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.1857827253129
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.938156245714959
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.155067464393829
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.095592378743586
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.098039749248358
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.19261129907042
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 17.010595220819354
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.063265826689136
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.334688383006844
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.681811793942646
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.155067464393829
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.698128230003485
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.029252435146132
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.347396869897242
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.34804271232169
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.448716424225612
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 17.73678212367668
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.450609247054402
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.419975947834656
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.14178186707083
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.029252435146132
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.914614452370609
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 15.035922031633973
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.905986856123608
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.9067898963397
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 18.00044979330749
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 16.691433599413543
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.255217556304927
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.363662918642682
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 15.047908033507065
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.035922031633973
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.947197098115524
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.360921052107086
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.884479533838718
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.878267134513067
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.959623605066614
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 17.57624641554473
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.26944940214178
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.626595954594066
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.502693147787129
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.360921052107086
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.308395865710562
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 20261101,
+      "scores": {
+        "baseline": {
+          "oof_rmse": 14.314007659085357,
+          "fold_rmse": [
+            14.596285864102628,
+            13.80615142579483,
+            14.395109013364905,
+            14.508284891987218,
+            14.250726440763238
+          ],
+          "bias": 0.17471416697255124,
+          "prediction_std": 10.45073026442836,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.0,
+              "fold_improvement_rmse": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": -0.5840272678769001,
+              "fold_improvement_rmse": [
+                -0.6509951937425917,
+                -0.4640239765264891,
+                -0.636501874706985,
+                -0.46476539426162944,
+                -0.702346438616642
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                -0.8492265150855687,
+                -0.3221386243165758
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": -0.5579925986251926,
+              "fold_improvement_rmse": [
+                -0.7260174628511287,
+                -0.5189318726573422,
+                -0.50755461408861,
+                -0.3900520325944825,
+                -0.6486480526232761
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                -0.814538361685368,
+                -0.30517808041855715
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": -0.5688655698857623,
+              "fold_improvement_rmse": [
+                -0.7041672874265927,
+                -0.6371840080970514,
+                -0.46711923464462934,
+                -0.42299364838428133,
+                -0.618130753537562
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                -0.8162924051240806,
+                -0.3240003171225445
+              ]
+            }
+          }
+        },
+        "candidate003": {
+          "oof_rmse": 13.729980391208457,
+          "fold_rmse": [
+            13.945290670360036,
+            13.342127449268341,
+            13.75860713865792,
+            14.043519497725589,
+            13.548380002146596
+          ],
+          "bias": 0.05744712284967392,
+          "prediction_std": 10.582400517542707,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.5840272678769001,
+              "fold_improvement_rmse": [
+                0.6509951937425917,
+                0.4640239765264891,
+                0.636501874706985,
+                0.46476539426162944,
+                0.702346438616642
+              ],
+              "better_folds": 5,
+              "conditional_paired_improvement_95": [
+                0.3221386243165756,
+                0.8492265150855683
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": 0.0,
+              "fold_improvement_rmse": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": 0.0260346692517075,
+              "fold_improvement_rmse": [
+                -0.07502226910853693,
+                -0.05490789613085312,
+                0.12894726061837503,
+                0.07471336166714693,
+                0.05369838599336596
+              ],
+              "better_folds": 3,
+              "conditional_paired_improvement_95": [
+                -0.04970072736932063,
+                0.10316693776128265
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": 0.015161697991137757,
+              "fold_improvement_rmse": [
+                -0.053172093684001,
+                -0.17316003157056237,
+                0.1693826400623557,
+                0.04177174587734811,
+                0.08421568507908006
+              ],
+              "better_folds": 3,
+              "conditional_paired_improvement_95": [
+                -0.07190530519897384,
+                0.09962359356403341
+              ]
+            }
+          }
+        },
+        "mean3_identity": {
+          "oof_rmse": 13.756015060460165,
+          "fold_rmse": [
+            13.870268401251499,
+            13.287219553137488,
+            13.887554399276295,
+            14.118232859392736,
+            13.602078388139962
+          ],
+          "bias": 0.048586661932519204,
+          "prediction_std": 10.486824806909933,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.5579925986251926,
+              "fold_improvement_rmse": [
+                0.7260174628511287,
+                0.5189318726573422,
+                0.50755461408861,
+                0.3900520325944825,
+                0.6486480526232761
+              ],
+              "better_folds": 5,
+              "conditional_paired_improvement_95": [
+                0.3051780804185571,
+                0.8145383616853676
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": -0.0260346692517075,
+              "fold_improvement_rmse": [
+                0.07502226910853693,
+                0.05490789613085312,
+                -0.12894726061837503,
+                -0.07471336166714693,
+                -0.05369838599336596
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.10316693776128268,
+                0.04970072736932054
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": 0.0,
+              "fold_improvement_rmse": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                0.0,
+                0.0
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": -0.010872971260569742,
+              "fold_improvement_rmse": [
+                0.021850175424535934,
+                -0.11825213543970925,
+                0.04043537944398068,
+                -0.03294161578979882,
+                0.0305172990857141
+              ],
+              "better_folds": 3,
+              "conditional_paired_improvement_95": [
+                -0.05833907573162813,
+                0.03688678545651677
+              ]
+            }
+          }
+        },
+        "mean3_d4": {
+          "oof_rmse": 13.745142089199595,
+          "fold_rmse": [
+            13.892118576676035,
+            13.168967417697779,
+            13.927989778720276,
+            14.085291243602937,
+            13.632595687225676
+          ],
+          "bias": 0.050406182326526904,
+          "prediction_std": 10.462689667258736,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.5688655698857623,
+              "fold_improvement_rmse": [
+                0.7041672874265927,
+                0.6371840080970514,
+                0.46711923464462934,
+                0.42299364838428133,
+                0.618130753537562
+              ],
+              "better_folds": 5,
+              "conditional_paired_improvement_95": [
+                0.3240003171225444,
+                0.8162924051240803
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": -0.015161697991137757,
+              "fold_improvement_rmse": [
+                0.053172093684001,
+                0.17316003157056237,
+                -0.1693826400623557,
+                -0.04177174587734811,
+                -0.08421568507908006
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.0996235935640337,
+                0.07190530519897384
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": 0.010872971260569742,
+              "fold_improvement_rmse": [
+                -0.021850175424535934,
+                0.11825213543970925,
+                -0.04043537944398068,
+                0.03294161578979882,
+                -0.0305172990857141
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.03688678545651682,
+                0.05833907573162803
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": 0.0,
+              "fold_improvement_rmse": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "cnn_mean3_d4": {
+          "oof_rmse": 14.162930650575309,
+          "fold_rmse": [
+            14.32464125718833,
+            13.881615376219688,
+            14.170448467339302,
+            14.388128414708257,
+            14.043809362880598
+          ],
+          "bias": -0.06950259553675252,
+          "prediction_std": 12.794586304243147,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.15107700851004857,
+              "fold_improvement_rmse": [
+                0.2716446069142968,
+                -0.07546395042485798,
+                0.22466054602560348,
+                0.12015647727896095,
+                0.2069170778826397
+              ],
+              "better_folds": 4,
+              "conditional_paired_improvement_95": [
+                -0.5802927840672223,
+                0.8843408186358566
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": -0.4329502593668515,
+              "fold_improvement_rmse": [
+                -0.3793505868282949,
+                -0.5394879269513471,
+                -0.41184132868138157,
+                -0.3446089169826685,
+                -0.49542936073400234
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                -0.9845846649278078,
+                0.11669116708626577
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": -0.406915590115144,
+              "fold_improvement_rmse": [
+                -0.45437285593683185,
+                -0.5943958230822002,
+                -0.28289406806300654,
+                -0.26989555531552156,
+                -0.4417309747406364
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                -0.962381676481076,
+                0.139250345859205
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": -0.41778856137571374,
+              "fold_improvement_rmse": [
+                -0.4325226805122959,
+                -0.7126479585219094,
+                -0.24245868861902586,
+                -0.3028371711053204,
+                -0.4112136756549223
+              ],
+              "better_folds": 0,
+              "conditional_paired_improvement_95": [
+                -0.9733994104930079,
+                0.13395422987252173
+              ]
+            }
+          }
+        },
+        "denoised_kernel": {
+          "oof_rmse": 13.915929711290845,
+          "fold_rmse": [
+            13.539999618457808,
+            13.178942355296286,
+            14.518844106754804,
+            14.461693138836072,
+            13.831557567308522
+          ],
+          "bias": 0.11804593692983857,
+          "prediction_std": 11.01541083273737,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.398077947794512,
+              "fold_improvement_rmse": [
+                1.05628624564482,
+                0.6272090704985445,
+                -0.12373509338989841,
+                0.046591753151146165,
+                0.41916887345471565
+              ],
+              "better_folds": 4,
+              "conditional_paired_improvement_95": [
+                -0.10899863126640125,
+                0.9274078932185595
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": -0.18594932008238807,
+              "fold_improvement_rmse": [
+                0.40529105190222836,
+                0.16318509397205538,
+                -0.7602369680968835,
+                -0.4181736411104833,
+                -0.2831775651619264
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.6213385895342971,
+                0.24502643869250887
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": -0.15991465083068057,
+              "fold_improvement_rmse": [
+                0.33026878279369143,
+                0.10827719784120227,
+                -0.6312897074785084,
+                -0.34346027944333635,
+                -0.22947917916856042
+              ],
+              "better_folds": 2,
+              "conditional_paired_improvement_95": [
+                -0.5797399490730752,
+                0.27070126190174354
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": -0.1707876220912503,
+              "fold_improvement_rmse": [
+                0.35211895821822736,
+                -0.009974937598506983,
+                -0.5908543280345278,
+                -0.37640189523313516,
+                -0.19896188008284632
+              ],
+              "better_folds": 1,
+              "conditional_paired_improvement_95": [
+                -0.5873871896506864,
+                0.2614921892410573
+              ]
+            }
+          }
+        },
+        "denoised_candidate": {
+          "oof_rmse": 13.677678757385682,
+          "fold_rmse": [
+            13.775347411645622,
+            13.234957663246316,
+            13.91586263229474,
+            13.942826189596378,
+            13.50616693727542
+          ],
+          "bias": 0.09949291883454763,
+          "prediction_std": 10.580745610432537,
+          "paired_vs": {
+            "baseline": {
+              "improvement_rmse": 0.6363289016996756,
+              "fold_improvement_rmse": [
+                0.8209384524570051,
+                0.5711937625485142,
+                0.4792463810701655,
+                0.5654587023908402,
+                0.7445595034878174
+              ],
+              "better_folds": 5,
+              "conditional_paired_improvement_95": [
+                0.38911682905682343,
+                0.8852784515280757
+              ]
+            },
+            "candidate003": {
+              "improvement_rmse": 0.05230163382277553,
+              "fold_improvement_rmse": [
+                0.1699432587144134,
+                0.1071697860220251,
+                -0.15725549363681957,
+                0.10069330812921073,
+                0.042213064871175376
+              ],
+              "better_folds": 4,
+              "conditional_paired_improvement_95": [
+                -0.07449080348819197,
+                0.1695298512903021
+              ]
+            },
+            "mean3_identity": {
+              "improvement_rmse": 0.07833630307448303,
+              "fold_improvement_rmse": [
+                0.09492098960587647,
+                0.052261889891171975,
+                -0.02830823301844454,
+                0.17540666979635766,
+                0.09591145086454134
+              ],
+              "better_folds": 4,
+              "conditional_paired_improvement_95": [
+                -0.02980812948096707,
+                0.18493715091656368
+              ]
+            },
+            "mean3_d4": {
+              "improvement_rmse": 0.06746333181391329,
+              "fold_improvement_rmse": [
+                0.1167711650304124,
+                -0.06599024554853727,
+                0.01212714642553614,
+                0.14246505400655884,
+                0.12642874995025544
+              ],
+              "better_folds": 4,
+              "conditional_paired_improvement_95": [
+                -0.02619637357194149,
+                0.15996726972186592
+              ]
+            }
+          }
+        }
+      },
+      "kernel_selection": [
+        {
+          "fold": 0,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.529734625096154
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.902975952858252
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.91036624869865
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 18.026953131166945
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 17.436756862085165
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.312398160711933
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.767633544590801
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.642922683189038
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.529734625096154
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.365677099510746
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.632160804258406
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.990144847176943
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.988974083239697
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 18.082120099614272
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 18.659801532200607
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 16.149393111162805
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.10129632273015
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 15.181719198053683
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.632160804258406
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.348822967285809
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.363658707051801
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.59053943215788
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.588862823445268
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.673783116325467
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 18.38656909586083
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.877570940348809
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.724541132885815
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.875469642753359
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.363658707051801
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.058026592004724
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 13.920188621303858
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.263576972258733
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.246904075173063
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.25099305937933
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 16.526700030515013
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.456733449864318
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.065589138066299
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.050819751919914
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 13.920188621303858
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.833145474027093
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.020706655895633
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.799977643443132
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.772936853350743
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.736538526364484
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 18.8771415553601
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.971349263127268
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.657271016345709
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.59453497015403
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.020706655895633
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.971259900278426
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 1.011208749958314,
+  "parent_validation_report_sha256": "bcdf8bf2f5bb6573813a94aff40eb3ff5484a38cd4917322f3e433cabd7deba8",
+  "provenance": {
+    "source_sha256": {
+      "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+      "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+      "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc"
+    },
+    "split_manifest_sha256": "35293da0fda17e745939c316619f58281f50636c34696988e1b869bd9cc46193",
+    "baseline_development_oof_sha256": "a29b8c4222ee9c9c6fc9fc89c59fd490a7d5435b43363bed9715991bc8a406aa",
+    "baseline_model_sha256": "7667b2b36483ba1b93a8e2874d4de96d12f38492ea6815f9ce24c87d09bab83e",
+    "baseline_feature_cache": "artifacts/run-003/train_features.npz",
+    "baseline_selected_development_X_sha256": "6eadbf9733b6752de48deac29b91b0ddd9293960e5daa07c5c45e4b03f8d2462",
+    "baseline_feature_names": [
+      "intensity_mean",
+      "intensity_std",
+      "intensity_q0",
+      "intensity_q10",
+      "intensity_q25",
+      "intensity_q50",
+      "intensity_q75",
+      "intensity_q90",
+      "intensity_q100",
+      "hist_0",
+      "hist_1",
+      "hist_2",
+      "hist_3",
+      "hist_4",
+      "hist_5",
+      "hist_6",
+      "hist_7",
+      "hist_8",
+      "hist_9",
+      "hist_10",
+      "hist_11",
+      "hist_12",
+      "hist_13",
+      "hist_14",
+      "hist_15",
+      "hist_16",
+      "hist_17",
+      "hist_18",
+      "hist_19",
+      "hist_20",
+      "hist_21",
+      "hist_22",
+      "hist_23",
+      "hist_24",
+      "hist_25",
+      "hist_26",
+      "hist_27",
+      "hist_28",
+      "hist_29",
+      "hist_30",
+      "hist_31",
+      "entropy",
+      "gradient_s0_mean",
+      "gradient_s0_std",
+      "gradient_s0_q0",
+      "gradient_s0_q10",
+      "gradient_s0_q25",
+      "gradient_s0_q50",
+      "gradient_s0_q75",
+      "gradient_s0_q90",
+      "gradient_s0_q100",
+      "laplace_s0_mean",
+      "laplace_s0_std",
+      "laplace_s0_q0",
+      "laplace_s0_q10",
+      "laplace_s0_q25",
+      "laplace_s0_q50",
+      "laplace_s0_q75",
+      "laplace_s0_q90",
+      "laplace_s0_q100",
+      "anisotropy_s0",
+      "residual_s0",
+      "gradient_s1_mean",
+      "gradient_s1_std",
+      "gradient_s1_q0",
+      "gradient_s1_q10",
+      "gradient_s1_q25",
+      "gradient_s1_q50",
+      "gradient_s1_q75",
+      "gradient_s1_q90",
+      "gradient_s1_q100",
+      "laplace_s1_mean",
+      "laplace_s1_std",
+      "laplace_s1_q0",
+      "laplace_s1_q10",
+      "laplace_s1_q25",
+      "laplace_s1_q50",
+      "laplace_s1_q75",
+      "laplace_s1_q90",
+      "laplace_s1_q100",
+      "anisotropy_s1",
+      "residual_s1",
+      "gradient_s2_mean",
+      "gradient_s2_std",
+      "gradient_s2_q0",
+      "gradient_s2_q10",
+      "gradient_s2_q25",
+      "gradient_s2_q50",
+      "gradient_s2_q75",
+      "gradient_s2_q90",
+      "gradient_s2_q100",
+      "laplace_s2_mean",
+      "laplace_s2_std",
+      "laplace_s2_q0",
+      "laplace_s2_q10",
+      "laplace_s2_q25",
+      "laplace_s2_q50",
+      "laplace_s2_q75",
+      "laplace_s2_q90",
+      "laplace_s2_q100",
+      "anisotropy_s2",
+      "residual_s2",
+      "gradient_s4_mean",
+      "gradient_s4_std",
+      "gradient_s4_q0",
+      "gradient_s4_q10",
+      "gradient_s4_q25",
+      "gradient_s4_q50",
+      "gradient_s4_q75",
+      "gradient_s4_q90",
+      "gradient_s4_q100",
+      "laplace_s4_mean",
+      "laplace_s4_std",
+      "laplace_s4_q0",
+      "laplace_s4_q10",
+      "laplace_s4_q25",
+      "laplace_s4_q50",
+      "laplace_s4_q75",
+      "laplace_s4_q90",
+      "laplace_s4_q100",
+      "anisotropy_s4",
+      "residual_s4",
+      "fft_0_2",
+      "fft_2_4",
+      "fft_4_8",
+      "fft_8_12",
+      "fft_12_16",
+      "fft_16_24",
+      "fft_24_32",
+      "fft_32_48",
+      "fft_48_64",
+      "fft_64_96",
+      "fft_96_128",
+      "fft_128_182",
+      "autocorr_1",
+      "autocorr_anisotropy_1",
+      "autocorr_2",
+      "autocorr_anisotropy_2",
+      "autocorr_4",
+      "autocorr_anisotropy_4",
+      "autocorr_8",
+      "autocorr_anisotropy_8",
+      "autocorr_16",
+      "autocorr_anisotropy_16",
+      "autocorr_32",
+      "autocorr_anisotropy_32",
+      "autocorr_64",
+      "autocorr_anisotropy_64",
+      "glcm_contrast_1",
+      "glcm_contrast_1_angle_std",
+      "glcm_contrast_2",
+      "glcm_contrast_2_angle_std",
+      "glcm_contrast_4",
+      "glcm_contrast_4_angle_std",
+      "glcm_contrast_8",
+      "glcm_contrast_8_angle_std",
+      "glcm_dissimilarity_1",
+      "glcm_dissimilarity_1_angle_std",
+      "glcm_dissimilarity_2",
+      "glcm_dissimilarity_2_angle_std",
+      "glcm_dissimilarity_4",
+      "glcm_dissimilarity_4_angle_std",
+      "glcm_dissimilarity_8",
+      "glcm_dissimilarity_8_angle_std",
+      "glcm_homogeneity_1",
+      "glcm_homogeneity_1_angle_std",
+      "glcm_homogeneity_2",
+      "glcm_homogeneity_2_angle_std",
+      "glcm_homogeneity_4",
+      "glcm_homogeneity_4_angle_std",
+      "glcm_homogeneity_8",
+      "glcm_homogeneity_8_angle_std",
+      "glcm_energy_1",
+      "glcm_energy_1_angle_std",
+      "glcm_energy_2",
+      "glcm_energy_2_angle_std",
+      "glcm_energy_4",
+      "glcm_energy_4_angle_std",
+      "glcm_energy_8",
+      "glcm_energy_8_angle_std",
+      "glcm_correlation_1",
+      "glcm_correlation_1_angle_std",
+      "glcm_correlation_2",
+      "glcm_correlation_2_angle_std",
+      "glcm_correlation_4",
+      "glcm_correlation_4_angle_std",
+      "glcm_correlation_8",
+      "glcm_correlation_8_angle_std",
+      "glcm_ASM_1",
+      "glcm_ASM_1_angle_std",
+      "glcm_ASM_2",
+      "glcm_ASM_2_angle_std",
+      "glcm_ASM_4",
+      "glcm_ASM_4_angle_std",
+      "glcm_ASM_8",
+      "glcm_ASM_8_angle_std",
+      "lbp_r1_0",
+      "lbp_r1_1",
+      "lbp_r1_2",
+      "lbp_r1_3",
+      "lbp_r1_4",
+      "lbp_r1_5",
+      "lbp_r1_6",
+      "lbp_r1_7",
+      "lbp_r1_8",
+      "lbp_r1_9",
+      "lbp_r3_0",
+      "lbp_r3_1",
+      "lbp_r3_2",
+      "lbp_r3_3",
+      "lbp_r3_4",
+      "lbp_r3_5",
+      "lbp_r3_6",
+      "lbp_r3_7",
+      "lbp_r3_8",
+      "lbp_r3_9",
+      "lbp_r3_10",
+      "lbp_r3_11",
+      "lbp_r3_12",
+      "lbp_r3_13",
+      "lbp_r3_14",
+      "lbp_r3_15",
+      "lbp_r3_16",
+      "lbp_r3_17",
+      "lbp_r3_18",
+      "lbp_r3_19",
+      "lbp_r3_20",
+      "lbp_r3_21",
+      "lbp_r3_22",
+      "lbp_r3_23",
+      "lbp_r3_24",
+      "lbp_r3_25",
+      "lbp_r5_0",
+      "lbp_r5_1",
+      "lbp_r5_2",
+      "lbp_r5_3",
+      "lbp_r5_4",
+      "lbp_r5_5",
+      "lbp_r5_6",
+      "lbp_r5_7",
+      "lbp_r5_8",
+      "lbp_r5_9",
+      "lbp_r5_10",
+      "lbp_r5_11",
+      "lbp_r5_12",
+      "lbp_r5_13",
+      "lbp_r5_14",
+      "lbp_r5_15",
+      "lbp_r5_16",
+      "lbp_r5_17",
+      "lbp_r5_18",
+      "lbp_r5_19",
+      "lbp_r5_20",
+      "lbp_r5_21",
+      "lbp_r5_22",
+      "lbp_r5_23",
+      "lbp_r5_24",
+      "lbp_r5_25",
+      "lbp_r5_26",
+      "lbp_r5_27",
+      "lbp_r5_28",
+      "lbp_r5_29",
+      "lbp_r5_30",
+      "lbp_r5_31",
+      "lbp_r5_32",
+      "lbp_r5_33",
+      "lbp_r5_34",
+      "lbp_r5_35",
+      "lbp_r5_36",
+      "lbp_r5_37",
+      "lbp_r5_38",
+      "lbp_r5_39",
+      "lbp_r5_40",
+      "lbp_r5_41",
+      "otsu_fraction",
+      "otsu_boundary",
+      "otsu_count",
+      "otsu_area_mean",
+      "otsu_area_std",
+      "otsu_area_q0",
+      "otsu_area_q10",
+      "otsu_area_q25",
+      "otsu_area_q50",
+      "otsu_area_q75",
+      "otsu_area_q90",
+      "otsu_area_q100",
+      "otsu_eccentricity_mean",
+      "otsu_eccentricity_std",
+      "otsu_eccentricity_q0",
+      "otsu_eccentricity_q10",
+      "otsu_eccentricity_q25",
+      "otsu_eccentricity_q50",
+      "otsu_eccentricity_q75",
+      "otsu_eccentricity_q90",
+      "otsu_eccentricity_q100",
+      "otsu_solidity_mean",
+      "otsu_solidity_std",
+      "otsu_solidity_q0",
+      "otsu_solidity_q10",
+      "otsu_solidity_q25",
+      "otsu_solidity_q50",
+      "otsu_solidity_q75",
+      "otsu_solidity_q90",
+      "otsu_solidity_q100",
+      "otsu_axis_major_length_mean",
+      "otsu_axis_major_length_std",
+      "otsu_axis_major_length_q0",
+      "otsu_axis_major_length_q10",
+      "otsu_axis_major_length_q25",
+      "otsu_axis_major_length_q50",
+      "otsu_axis_major_length_q75",
+      "otsu_axis_major_length_q90",
+      "otsu_axis_major_length_q100",
+      "otsu_alignment",
+      "otsu_distance_mean",
+      "otsu_distance_std",
+      "otsu_distance_q0",
+      "otsu_distance_q10",
+      "otsu_distance_q25",
+      "otsu_distance_q50",
+      "otsu_distance_q75",
+      "otsu_distance_q90",
+      "otsu_distance_q100",
+      "dark10_fraction",
+      "dark10_boundary",
+      "dark10_count",
+      "dark10_area_mean",
+      "dark10_area_std",
+      "dark10_area_q0",
+      "dark10_area_q10",
+      "dark10_area_q25",
+      "dark10_area_q50",
+      "dark10_area_q75",
+      "dark10_area_q90",
+      "dark10_area_q100",
+      "dark10_eccentricity_mean",
+      "dark10_eccentricity_std",
+      "dark10_eccentricity_q0",
+      "dark10_eccentricity_q10",
+      "dark10_eccentricity_q25",
+      "dark10_eccentricity_q50",
+      "dark10_eccentricity_q75",
+      "dark10_eccentricity_q90",
+      "dark10_eccentricity_q100",
+      "dark10_solidity_mean",
+      "dark10_solidity_std",
+      "dark10_solidity_q0",
+      "dark10_solidity_q10",
+      "dark10_solidity_q25",
+      "dark10_solidity_q50",
+      "dark10_solidity_q75",
+      "dark10_solidity_q90",
+      "dark10_solidity_q100",
+      "dark10_axis_major_length_mean",
+      "dark10_axis_major_length_std",
+      "dark10_axis_major_length_q0",
+      "dark10_axis_major_length_q10",
+      "dark10_axis_major_length_q25",
+      "dark10_axis_major_length_q50",
+      "dark10_axis_major_length_q75",
+      "dark10_axis_major_length_q90",
+      "dark10_axis_major_length_q100",
+      "dark10_alignment",
+      "dark10_distance_mean",
+      "dark10_distance_std",
+      "dark10_distance_q0",
+      "dark10_distance_q10",
+      "dark10_distance_q25",
+      "dark10_distance_q50",
+      "dark10_distance_q75",
+      "dark10_distance_q90",
+      "dark10_distance_q100",
+      "dark25_fraction",
+      "dark25_boundary",
+      "dark25_count",
+      "dark25_area_mean",
+      "dark25_area_std",
+      "dark25_area_q0",
+      "dark25_area_q10",
+      "dark25_area_q25",
+      "dark25_area_q50",
+      "dark25_area_q75",
+      "dark25_area_q90",
+      "dark25_area_q100",
+      "dark25_eccentricity_mean",
+      "dark25_eccentricity_std",
+      "dark25_eccentricity_q0",
+      "dark25_eccentricity_q10",
+      "dark25_eccentricity_q25",
+      "dark25_eccentricity_q50",
+      "dark25_eccentricity_q75",
+      "dark25_eccentricity_q90",
+      "dark25_eccentricity_q100",
+      "dark25_solidity_mean",
+      "dark25_solidity_std",
+      "dark25_solidity_q0",
+      "dark25_solidity_q10",
+      "dark25_solidity_q25",
+      "dark25_solidity_q50",
+      "dark25_solidity_q75",
+      "dark25_solidity_q90",
+      "dark25_solidity_q100",
+      "dark25_axis_major_length_mean",
+      "dark25_axis_major_length_std",
+      "dark25_axis_major_length_q0",
+      "dark25_axis_major_length_q10",
+      "dark25_axis_major_length_q25",
+      "dark25_axis_major_length_q50",
+      "dark25_axis_major_length_q75",
+      "dark25_axis_major_length_q90",
+      "dark25_axis_major_length_q100",
+      "dark25_alignment",
+      "dark25_distance_mean",
+      "dark25_distance_std",
+      "dark25_distance_q0",
+      "dark25_distance_q10",
+      "dark25_distance_q25",
+      "dark25_distance_q50",
+      "dark25_distance_q75",
+      "dark25_distance_q90",
+      "dark25_distance_q100",
+      "dark40_fraction",
+      "dark40_boundary",
+      "dark40_count",
+      "dark40_area_mean",
+      "dark40_area_std",
+      "dark40_area_q0",
+      "dark40_area_q10",
+      "dark40_area_q25",
+      "dark40_area_q50",
+      "dark40_area_q75",
+      "dark40_area_q90",
+      "dark40_area_q100",
+      "dark40_eccentricity_mean",
+      "dark40_eccentricity_std",
+      "dark40_eccentricity_q0",
+      "dark40_eccentricity_q10",
+      "dark40_eccentricity_q25",
+      "dark40_eccentricity_q50",
+      "dark40_eccentricity_q75",
+      "dark40_eccentricity_q90",
+      "dark40_eccentricity_q100",
+      "dark40_solidity_mean",
+      "dark40_solidity_std",
+      "dark40_solidity_q0",
+      "dark40_solidity_q10",
+      "dark40_solidity_q25",
+      "dark40_solidity_q50",
+      "dark40_solidity_q75",
+      "dark40_solidity_q90",
+      "dark40_solidity_q100",
+      "dark40_axis_major_length_mean",
+      "dark40_axis_major_length_std",
+      "dark40_axis_major_length_q0",
+      "dark40_axis_major_length_q10",
+      "dark40_axis_major_length_q25",
+      "dark40_axis_major_length_q50",
+      "dark40_axis_major_length_q75",
+      "dark40_axis_major_length_q90",
+      "dark40_axis_major_length_q100",
+      "dark40_alignment",
+      "dark40_distance_mean",
+      "dark40_distance_std",
+      "dark40_distance_q0",
+      "dark40_distance_q10",
+      "dark40_distance_q25",
+      "dark40_distance_q50",
+      "dark40_distance_q75",
+      "dark40_distance_q90",
+      "dark40_distance_q100",
+      "dark60_fraction",
+      "dark60_boundary",
+      "dark60_count",
+      "dark60_area_mean",
+      "dark60_area_std",
+      "dark60_area_q0",
+      "dark60_area_q10",
+      "dark60_area_q25",
+      "dark60_area_q50",
+      "dark60_area_q75",
+      "dark60_area_q90",
+      "dark60_area_q100",
+      "dark60_eccentricity_mean",
+      "dark60_eccentricity_std",
+      "dark60_eccentricity_q0",
+      "dark60_eccentricity_q10",
+      "dark60_eccentricity_q25",
+      "dark60_eccentricity_q50",
+      "dark60_eccentricity_q75",
+      "dark60_eccentricity_q90",
+      "dark60_eccentricity_q100",
+      "dark60_solidity_mean",
+      "dark60_solidity_std",
+      "dark60_solidity_q0",
+      "dark60_solidity_q10",
+      "dark60_solidity_q25",
+      "dark60_solidity_q50",
+      "dark60_solidity_q75",
+      "dark60_solidity_q90",
+      "dark60_solidity_q100",
+      "dark60_axis_major_length_mean",
+      "dark60_axis_major_length_std",
+      "dark60_axis_major_length_q0",
+      "dark60_axis_major_length_q10",
+      "dark60_axis_major_length_q25",
+      "dark60_axis_major_length_q50",
+      "dark60_axis_major_length_q75",
+      "dark60_axis_major_length_q90",
+      "dark60_axis_major_length_q100",
+      "dark60_alignment",
+      "dark60_distance_mean",
+      "dark60_distance_std",
+      "dark60_distance_q0",
+      "dark60_distance_q10",
+      "dark60_distance_q25",
+      "dark60_distance_q50",
+      "dark60_distance_q75",
+      "dark60_distance_q90",
+      "dark60_distance_q100",
+      "extra_bright_otsu_fraction",
+      "extra_bright_otsu_count",
+      "extra_bright_otsu_area_mean",
+      "extra_bright_otsu_area_std",
+      "extra_bright_otsu_area_q10",
+      "extra_bright_otsu_area_q50",
+      "extra_bright_otsu_area_q90",
+      "extra_bright_otsu_eccentricity_mean",
+      "extra_bright_otsu_eccentricity_std",
+      "extra_bright_otsu_eccentricity_q10",
+      "extra_bright_otsu_eccentricity_q50",
+      "extra_bright_otsu_eccentricity_q90",
+      "extra_bright_otsu_solidity_mean",
+      "extra_bright_otsu_solidity_std",
+      "extra_bright_otsu_solidity_q10",
+      "extra_bright_otsu_solidity_q50",
+      "extra_bright_otsu_solidity_q90",
+      "extra_bright_otsu_axis_minor_length_mean",
+      "extra_bright_otsu_axis_minor_length_std",
+      "extra_bright_otsu_axis_minor_length_q10",
+      "extra_bright_otsu_axis_minor_length_q50",
+      "extra_bright_otsu_axis_minor_length_q90",
+      "extra_bright_otsu_interior_count",
+      "extra_bright_otsu_interior_equivdiam_mean",
+      "extra_bright_otsu_interior_equivdiam_std",
+      "extra_bright_otsu_interior_equivdiam_q10",
+      "extra_bright_otsu_interior_equivdiam_q50",
+      "extra_bright_otsu_interior_equivdiam_q90",
+      "extra_bright_otsu_inverse_sqrt_diameter",
+      "extra_bright_otsu_distance_mean",
+      "extra_bright_otsu_distance_std",
+      "extra_bright_otsu_distance_q10",
+      "extra_bright_otsu_distance_q50",
+      "extra_bright_otsu_distance_q90",
+      "extra_bright_q25_fraction",
+      "extra_bright_q25_count",
+      "extra_bright_q25_area_mean",
+      "extra_bright_q25_area_std",
+      "extra_bright_q25_area_q10",
+      "extra_bright_q25_area_q50",
+      "extra_bright_q25_area_q90",
+      "extra_bright_q25_eccentricity_mean",
+      "extra_bright_q25_eccentricity_std",
+      "extra_bright_q25_eccentricity_q10",
+      "extra_bright_q25_eccentricity_q50",
+      "extra_bright_q25_eccentricity_q90",
+      "extra_bright_q25_solidity_mean",
+      "extra_bright_q25_solidity_std",
+      "extra_bright_q25_solidity_q10",
+      "extra_bright_q25_solidity_q50",
+      "extra_bright_q25_solidity_q90",
+      "extra_bright_q25_axis_minor_length_mean",
+      "extra_bright_q25_axis_minor_length_std",
+      "extra_bright_q25_axis_minor_length_q10",
+      "extra_bright_q25_axis_minor_length_q50",
+      "extra_bright_q25_axis_minor_length_q90",
+      "extra_bright_q25_interior_count",
+      "extra_bright_q25_interior_equivdiam_mean",
+      "extra_bright_q25_interior_equivdiam_std",
+      "extra_bright_q25_interior_equivdiam_q10",
+      "extra_bright_q25_interior_equivdiam_q50",
+      "extra_bright_q25_interior_equivdiam_q90",
+      "extra_bright_q25_inverse_sqrt_diameter",
+      "extra_bright_q25_distance_mean",
+      "extra_bright_q25_distance_std",
+      "extra_bright_q25_distance_q10",
+      "extra_bright_q25_distance_q50",
+      "extra_bright_q25_distance_q90",
+      "extra_bright_q50_fraction",
+      "extra_bright_q50_count",
+      "extra_bright_q50_area_mean",
+      "extra_bright_q50_area_std",
+      "extra_bright_q50_area_q10",
+      "extra_bright_q50_area_q50",
+      "extra_bright_q50_area_q90",
+      "extra_bright_q50_eccentricity_mean",
+      "extra_bright_q50_eccentricity_std",
+      "extra_bright_q50_eccentricity_q10",
+      "extra_bright_q50_eccentricity_q50",
+      "extra_bright_q50_eccentricity_q90",
+      "extra_bright_q50_solidity_mean",
+      "extra_bright_q50_solidity_std",
+      "extra_bright_q50_solidity_q10",
+      "extra_bright_q50_solidity_q50",
+      "extra_bright_q50_solidity_q90",
+      "extra_bright_q50_axis_minor_length_mean",
+      "extra_bright_q50_axis_minor_length_std",
+      "extra_bright_q50_axis_minor_length_q10",
+      "extra_bright_q50_axis_minor_length_q50",
+      "extra_bright_q50_axis_minor_length_q90",
+      "extra_bright_q50_interior_count",
+      "extra_bright_q50_interior_equivdiam_mean",
+      "extra_bright_q50_interior_equivdiam_std",
+      "extra_bright_q50_interior_equivdiam_q10",
+      "extra_bright_q50_interior_equivdiam_q50",
+      "extra_bright_q50_interior_equivdiam_q90",
+      "extra_bright_q50_inverse_sqrt_diameter",
+      "extra_bright_q50_distance_mean",
+      "extra_bright_q50_distance_std",
+      "extra_bright_q50_distance_q10",
+      "extra_bright_q50_distance_q50",
+      "extra_bright_q50_distance_q90",
+      "extra_bright_q75_fraction",
+      "extra_bright_q75_count",
+      "extra_bright_q75_area_mean",
+      "extra_bright_q75_area_std",
+      "extra_bright_q75_area_q10",
+      "extra_bright_q75_area_q50",
+      "extra_bright_q75_area_q90",
+      "extra_bright_q75_eccentricity_mean",
+      "extra_bright_q75_eccentricity_std",
+      "extra_bright_q75_eccentricity_q10",
+      "extra_bright_q75_eccentricity_q50",
+      "extra_bright_q75_eccentricity_q90",
+      "extra_bright_q75_solidity_mean",
+      "extra_bright_q75_solidity_std",
+      "extra_bright_q75_solidity_q10",
+      "extra_bright_q75_solidity_q50",
+      "extra_bright_q75_solidity_q90",
+      "extra_bright_q75_axis_minor_length_mean",
+      "extra_bright_q75_axis_minor_length_std",
+      "extra_bright_q75_axis_minor_length_q10",
+      "extra_bright_q75_axis_minor_length_q50",
+      "extra_bright_q75_axis_minor_length_q90",
+      "extra_bright_q75_interior_count",
+      "extra_bright_q75_interior_equivdiam_mean",
+      "extra_bright_q75_interior_equivdiam_std",
+      "extra_bright_q75_interior_equivdiam_q10",
+      "extra_bright_q75_interior_equivdiam_q50",
+      "extra_bright_q75_interior_equivdiam_q90",
+      "extra_bright_q75_inverse_sqrt_diameter",
+      "extra_bright_q75_distance_mean",
+      "extra_bright_q75_distance_std",
+      "extra_bright_q75_distance_q10",
+      "extra_bright_q75_distance_q50",
+      "extra_bright_q75_distance_q90",
+      "extra_whitehat_3_mean",
+      "extra_whitehat_3_std",
+      "extra_whitehat_3_q10",
+      "extra_whitehat_3_q50",
+      "extra_whitehat_3_q90",
+      "extra_blackhat_3_mean",
+      "extra_blackhat_3_std",
+      "extra_blackhat_3_q10",
+      "extra_blackhat_3_q50",
+      "extra_blackhat_3_q90",
+      "extra_whitehat_5_mean",
+      "extra_whitehat_5_std",
+      "extra_whitehat_5_q10",
+      "extra_whitehat_5_q50",
+      "extra_whitehat_5_q90",
+      "extra_blackhat_5_mean",
+      "extra_blackhat_5_std",
+      "extra_blackhat_5_q10",
+      "extra_blackhat_5_q50",
+      "extra_blackhat_5_q90",
+      "extra_whitehat_9_mean",
+      "extra_whitehat_9_std",
+      "extra_whitehat_9_q10",
+      "extra_whitehat_9_q50",
+      "extra_whitehat_9_q90",
+      "extra_blackhat_9_mean",
+      "extra_blackhat_9_std",
+      "extra_blackhat_9_q10",
+      "extra_blackhat_9_q50",
+      "extra_blackhat_9_q90",
+      "extra_whitehat_17_mean",
+      "extra_whitehat_17_std",
+      "extra_whitehat_17_q10",
+      "extra_whitehat_17_q50",
+      "extra_whitehat_17_q90",
+      "extra_blackhat_17_mean",
+      "extra_blackhat_17_std",
+      "extra_blackhat_17_q10",
+      "extra_blackhat_17_q50",
+      "extra_blackhat_17_q90",
+      "extra_whitehat_33_mean",
+      "extra_whitehat_33_std",
+      "extra_whitehat_33_q10",
+      "extra_whitehat_33_q50",
+      "extra_whitehat_33_q90",
+      "extra_blackhat_33_mean",
+      "extra_blackhat_33_std",
+      "extra_blackhat_33_q10",
+      "extra_blackhat_33_q50",
+      "extra_blackhat_33_q90",
+      "extra_boundary_interior_5_fraction",
+      "extra_boundary_interior_5_count",
+      "extra_boundary_interior_5_area_mean",
+      "extra_boundary_interior_5_area_std",
+      "extra_boundary_interior_5_area_q10",
+      "extra_boundary_interior_5_area_q50",
+      "extra_boundary_interior_5_area_q90",
+      "extra_boundary_interior_5_eccentricity_mean",
+      "extra_boundary_interior_5_eccentricity_std",
+      "extra_boundary_interior_5_eccentricity_q10",
+      "extra_boundary_interior_5_eccentricity_q50",
+      "extra_boundary_interior_5_eccentricity_q90",
+      "extra_boundary_interior_5_solidity_mean",
+      "extra_boundary_interior_5_solidity_std",
+      "extra_boundary_interior_5_solidity_q10",
+      "extra_boundary_interior_5_solidity_q50",
+      "extra_boundary_interior_5_solidity_q90",
+      "extra_boundary_interior_5_axis_minor_length_mean",
+      "extra_boundary_interior_5_axis_minor_length_std",
+      "extra_boundary_interior_5_axis_minor_length_q10",
+      "extra_boundary_interior_5_axis_minor_length_q50",
+      "extra_boundary_interior_5_axis_minor_length_q90",
+      "extra_boundary_interior_5_interior_count",
+      "extra_boundary_interior_5_interior_equivdiam_mean",
+      "extra_boundary_interior_5_interior_equivdiam_std",
+      "extra_boundary_interior_5_interior_equivdiam_q10",
+      "extra_boundary_interior_5_interior_equivdiam_q50",
+      "extra_boundary_interior_5_interior_equivdiam_q90",
+      "extra_boundary_interior_5_inverse_sqrt_diameter",
+      "extra_boundary_interior_5_distance_mean",
+      "extra_boundary_interior_5_distance_std",
+      "extra_boundary_interior_5_distance_q10",
+      "extra_boundary_interior_5_distance_q50",
+      "extra_boundary_interior_5_distance_q90",
+      "extra_boundary_density_5",
+      "extra_boundary_interior_9_fraction",
+      "extra_boundary_interior_9_count",
+      "extra_boundary_interior_9_area_mean",
+      "extra_boundary_interior_9_area_std",
+      "extra_boundary_interior_9_area_q10",
+      "extra_boundary_interior_9_area_q50",
+      "extra_boundary_interior_9_area_q90",
+      "extra_boundary_interior_9_eccentricity_mean",
+      "extra_boundary_interior_9_eccentricity_std",
+      "extra_boundary_interior_9_eccentricity_q10",
+      "extra_boundary_interior_9_eccentricity_q50",
+      "extra_boundary_interior_9_eccentricity_q90",
+      "extra_boundary_interior_9_solidity_mean",
+      "extra_boundary_interior_9_solidity_std",
+      "extra_boundary_interior_9_solidity_q10",
+      "extra_boundary_interior_9_solidity_q50",
+      "extra_boundary_interior_9_solidity_q90",
+      "extra_boundary_interior_9_axis_minor_length_mean",
+      "extra_boundary_interior_9_axis_minor_length_std",
+      "extra_boundary_interior_9_axis_minor_length_q10",
+      "extra_boundary_interior_9_axis_minor_length_q50",
+      "extra_boundary_interior_9_axis_minor_length_q90",
+      "extra_boundary_interior_9_interior_count",
+      "extra_boundary_interior_9_interior_equivdiam_mean",
+      "extra_boundary_interior_9_interior_equivdiam_std",
+      "extra_boundary_interior_9_interior_equivdiam_q10",
+      "extra_boundary_interior_9_interior_equivdiam_q50",
+      "extra_boundary_interior_9_interior_equivdiam_q90",
+      "extra_boundary_interior_9_inverse_sqrt_diameter",
+      "extra_boundary_interior_9_distance_mean",
+      "extra_boundary_interior_9_distance_std",
+      "extra_boundary_interior_9_distance_q10",
+      "extra_boundary_interior_9_distance_q50",
+      "extra_boundary_interior_9_distance_q90",
+      "extra_boundary_density_9",
+      "extra_localcontrast_2_mean",
+      "extra_localcontrast_2_std",
+      "extra_localcontrast_2_q10",
+      "extra_localcontrast_2_q50",
+      "extra_localcontrast_2_q90",
+      "extra_localcontrast_4_mean",
+      "extra_localcontrast_4_std",
+      "extra_localcontrast_4_q10",
+      "extra_localcontrast_4_q50",
+      "extra_localcontrast_4_q90",
+      "extra_localcontrast_8_mean",
+      "extra_localcontrast_8_std",
+      "extra_localcontrast_8_q10",
+      "extra_localcontrast_8_q50",
+      "extra_localcontrast_8_q90",
+      "extra_localcontrast_16_mean",
+      "extra_localcontrast_16_std",
+      "extra_localcontrast_16_q10",
+      "extra_localcontrast_16_q50",
+      "extra_localcontrast_16_q90"
+    ],
+    "development_ids": [
+      "TRAIN_000001",
+      "TRAIN_000002",
+      "TRAIN_000003",
+      "TRAIN_000004",
+      "TRAIN_000005",
+      "TRAIN_000006",
+      "TRAIN_000007",
+      "TRAIN_000008",
+      "TRAIN_000010",
+      "TRAIN_000011",
+      "TRAIN_000012",
+      "TRAIN_000013",
+      "TRAIN_000014",
+      "TRAIN_000015",
+      "TRAIN_000016",
+      "TRAIN_000018",
+      "TRAIN_000019",
+      "TRAIN_000020",
+      "TRAIN_000023",
+      "TRAIN_000025",
+      "TRAIN_000026",
+      "TRAIN_000027",
+      "TRAIN_000028",
+      "TRAIN_000029",
+      "TRAIN_000030",
+      "TRAIN_000031",
+      "TRAIN_000032",
+      "TRAIN_000033",
+      "TRAIN_000035",
+      "TRAIN_000036",
+      "TRAIN_000038",
+      "TRAIN_000039",
+      "TRAIN_000041",
+      "TRAIN_000043",
+      "TRAIN_000044",
+      "TRAIN_000045",
+      "TRAIN_000046",
+      "TRAIN_000047",
+      "TRAIN_000048",
+      "TRAIN_000049",
+      "TRAIN_000051",
+      "TRAIN_000052",
+      "TRAIN_000053",
+      "TRAIN_000054",
+      "TRAIN_000056",
+      "TRAIN_000058",
+      "TRAIN_000060",
+      "TRAIN_000061",
+      "TRAIN_000062",
+      "TRAIN_000063",
+      "TRAIN_000064",
+      "TRAIN_000068",
+      "TRAIN_000069",
+      "TRAIN_000070",
+      "TRAIN_000071",
+      "TRAIN_000073",
+      "TRAIN_000074",
+      "TRAIN_000077",
+      "TRAIN_000078",
+      "TRAIN_000079",
+      "TRAIN_000080",
+      "TRAIN_000081",
+      "TRAIN_000082",
+      "TRAIN_000083",
+      "TRAIN_000085",
+      "TRAIN_000087",
+      "TRAIN_000088",
+      "TRAIN_000089",
+      "TRAIN_000090",
+      "TRAIN_000091",
+      "TRAIN_000092",
+      "TRAIN_000093",
+      "TRAIN_000094",
+      "TRAIN_000095",
+      "TRAIN_000096",
+      "TRAIN_000097",
+      "TRAIN_000100",
+      "TRAIN_000101",
+      "TRAIN_000102",
+      "TRAIN_000104",
+      "TRAIN_000105",
+      "TRAIN_000106",
+      "TRAIN_000108",
+      "TRAIN_000109",
+      "TRAIN_000110",
+      "TRAIN_000111",
+      "TRAIN_000113",
+      "TRAIN_000115",
+      "TRAIN_000116",
+      "TRAIN_000117",
+      "TRAIN_000119",
+      "TRAIN_000120",
+      "TRAIN_000122",
+      "TRAIN_000123",
+      "TRAIN_000125",
+      "TRAIN_000126",
+      "TRAIN_000127",
+      "TRAIN_000128",
+      "TRAIN_000129",
+      "TRAIN_000130",
+      "TRAIN_000131",
+      "TRAIN_000132",
+      "TRAIN_000133",
+      "TRAIN_000134",
+      "TRAIN_000136",
+      "TRAIN_000138",
+      "TRAIN_000139",
+      "TRAIN_000140",
+      "TRAIN_000141",
+      "TRAIN_000142",
+      "TRAIN_000143",
+      "TRAIN_000144",
+      "TRAIN_000145",
+      "TRAIN_000146",
+      "TRAIN_000147",
+      "TRAIN_000148",
+      "TRAIN_000149",
+      "TRAIN_000150",
+      "TRAIN_000151",
+      "TRAIN_000152",
+      "TRAIN_000154",
+      "TRAIN_000155",
+      "TRAIN_000156",
+      "TRAIN_000157",
+      "TRAIN_000158",
+      "TRAIN_000159",
+      "TRAIN_000161",
+      "TRAIN_000163",
+      "TRAIN_000164",
+      "TRAIN_000168",
+      "TRAIN_000169",
+      "TRAIN_000170",
+      "TRAIN_000171",
+      "TRAIN_000173",
+      "TRAIN_000175",
+      "TRAIN_000176",
+      "TRAIN_000177",
+      "TRAIN_000179",
+      "TRAIN_000180",
+      "TRAIN_000182",
+      "TRAIN_000183",
+      "TRAIN_000184",
+      "TRAIN_000185",
+      "TRAIN_000186",
+      "TRAIN_000187",
+      "TRAIN_000189",
+      "TRAIN_000190",
+      "TRAIN_000191",
+      "TRAIN_000193",
+      "TRAIN_000194",
+      "TRAIN_000196",
+      "TRAIN_000197",
+      "TRAIN_000198",
+      "TRAIN_000199",
+      "TRAIN_000200",
+      "TRAIN_000201",
+      "TRAIN_000202",
+      "TRAIN_000203",
+      "TRAIN_000204",
+      "TRAIN_000206",
+      "TRAIN_000207",
+      "TRAIN_000208",
+      "TRAIN_000209",
+      "TRAIN_000210",
+      "TRAIN_000211",
+      "TRAIN_000212",
+      "TRAIN_000215",
+      "TRAIN_000216",
+      "TRAIN_000218",
+      "TRAIN_000219",
+      "TRAIN_000220",
+      "TRAIN_000221",
+      "TRAIN_000222",
+      "TRAIN_000223",
+      "TRAIN_000224",
+      "TRAIN_000225",
+      "TRAIN_000226",
+      "TRAIN_000227",
+      "TRAIN_000228",
+      "TRAIN_000229",
+      "TRAIN_000231",
+      "TRAIN_000232",
+      "TRAIN_000233",
+      "TRAIN_000235",
+      "TRAIN_000236",
+      "TRAIN_000237",
+      "TRAIN_000238",
+      "TRAIN_000240",
+      "TRAIN_000241",
+      "TRAIN_000242",
+      "TRAIN_000243",
+      "TRAIN_000244",
+      "TRAIN_000245",
+      "TRAIN_000246",
+      "TRAIN_000247",
+      "TRAIN_000248",
+      "TRAIN_000249",
+      "TRAIN_000250",
+      "TRAIN_000251",
+      "TRAIN_000252",
+      "TRAIN_000253",
+      "TRAIN_000254",
+      "TRAIN_000256",
+      "TRAIN_000257",
+      "TRAIN_000258",
+      "TRAIN_000259",
+      "TRAIN_000260",
+      "TRAIN_000262",
+      "TRAIN_000265",
+      "TRAIN_000266",
+      "TRAIN_000267",
+      "TRAIN_000268",
+      "TRAIN_000269",
+      "TRAIN_000270",
+      "TRAIN_000271",
+      "TRAIN_000272",
+      "TRAIN_000273",
+      "TRAIN_000274",
+      "TRAIN_000275",
+      "TRAIN_000276",
+      "TRAIN_000277",
+      "TRAIN_000278",
+      "TRAIN_000280",
+      "TRAIN_000281",
+      "TRAIN_000282",
+      "TRAIN_000284",
+      "TRAIN_000285",
+      "TRAIN_000287",
+      "TRAIN_000288",
+      "TRAIN_000289",
+      "TRAIN_000290",
+      "TRAIN_000291",
+      "TRAIN_000292",
+      "TRAIN_000294",
+      "TRAIN_000295",
+      "TRAIN_000297",
+      "TRAIN_000298",
+      "TRAIN_000299",
+      "TRAIN_000300",
+      "TRAIN_000301",
+      "TRAIN_000302",
+      "TRAIN_000304",
+      "TRAIN_000305",
+      "TRAIN_000307",
+      "TRAIN_000308",
+      "TRAIN_000309",
+      "TRAIN_000311",
+      "TRAIN_000314",
+      "TRAIN_000315",
+      "TRAIN_000317",
+      "TRAIN_000318",
+      "TRAIN_000319",
+      "TRAIN_000320",
+      "TRAIN_000321",
+      "TRAIN_000322",
+      "TRAIN_000323",
+      "TRAIN_000325",
+      "TRAIN_000326",
+      "TRAIN_000328",
+      "TRAIN_000331",
+      "TRAIN_000332",
+      "TRAIN_000333",
+      "TRAIN_000334",
+      "TRAIN_000335",
+      "TRAIN_000337",
+      "TRAIN_000338",
+      "TRAIN_000339",
+      "TRAIN_000340",
+      "TRAIN_000342",
+      "TRAIN_000343",
+      "TRAIN_000344",
+      "TRAIN_000345",
+      "TRAIN_000346",
+      "TRAIN_000347",
+      "TRAIN_000348",
+      "TRAIN_000349",
+      "TRAIN_000350",
+      "TRAIN_000351",
+      "TRAIN_000352",
+      "TRAIN_000354",
+      "TRAIN_000355",
+      "TRAIN_000356",
+      "TRAIN_000357",
+      "TRAIN_000358",
+      "TRAIN_000359",
+      "TRAIN_000360",
+      "TRAIN_000361",
+      "TRAIN_000363",
+      "TRAIN_000364",
+      "TRAIN_000365",
+      "TRAIN_000367",
+      "TRAIN_000368",
+      "TRAIN_000370",
+      "TRAIN_000371",
+      "TRAIN_000372",
+      "TRAIN_000373",
+      "TRAIN_000374",
+      "TRAIN_000375",
+      "TRAIN_000376",
+      "TRAIN_000377",
+      "TRAIN_000378",
+      "TRAIN_000379",
+      "TRAIN_000380",
+      "TRAIN_000382",
+      "TRAIN_000383",
+      "TRAIN_000384",
+      "TRAIN_000385",
+      "TRAIN_000386",
+      "TRAIN_000387",
+      "TRAIN_000389",
+      "TRAIN_000390",
+      "TRAIN_000391",
+      "TRAIN_000393",
+      "TRAIN_000394",
+      "TRAIN_000395",
+      "TRAIN_000396",
+      "TRAIN_000399",
+      "TRAIN_000400",
+      "TRAIN_000401",
+      "TRAIN_000402",
+      "TRAIN_000403",
+      "TRAIN_000404",
+      "TRAIN_000406",
+      "TRAIN_000407",
+      "TRAIN_000408",
+      "TRAIN_000409",
+      "TRAIN_000410",
+      "TRAIN_000412",
+      "TRAIN_000413",
+      "TRAIN_000414",
+      "TRAIN_000415",
+      "TRAIN_000416",
+      "TRAIN_000417",
+      "TRAIN_000418",
+      "TRAIN_000420",
+      "TRAIN_000421",
+      "TRAIN_000422",
+      "TRAIN_000423",
+      "TRAIN_000424",
+      "TRAIN_000426",
+      "TRAIN_000427",
+      "TRAIN_000428",
+      "TRAIN_000429",
+      "TRAIN_000430",
+      "TRAIN_000431",
+      "TRAIN_000432",
+      "TRAIN_000433",
+      "TRAIN_000434",
+      "TRAIN_000435",
+      "TRAIN_000438",
+      "TRAIN_000439",
+      "TRAIN_000440",
+      "TRAIN_000441",
+      "TRAIN_000442",
+      "TRAIN_000443",
+      "TRAIN_000444",
+      "TRAIN_000445",
+      "TRAIN_000447",
+      "TRAIN_000448",
+      "TRAIN_000449",
+      "TRAIN_000451",
+      "TRAIN_000453",
+      "TRAIN_000454",
+      "TRAIN_000455",
+      "TRAIN_000456",
+      "TRAIN_000457",
+      "TRAIN_000458",
+      "TRAIN_000459",
+      "TRAIN_000461",
+      "TRAIN_000462",
+      "TRAIN_000463",
+      "TRAIN_000464",
+      "TRAIN_000465",
+      "TRAIN_000466",
+      "TRAIN_000467",
+      "TRAIN_000469",
+      "TRAIN_000470",
+      "TRAIN_000471",
+      "TRAIN_000473",
+      "TRAIN_000474",
+      "TRAIN_000475",
+      "TRAIN_000477",
+      "TRAIN_000478",
+      "TRAIN_000479",
+      "TRAIN_000481",
+      "TRAIN_000482",
+      "TRAIN_000483",
+      "TRAIN_000484",
+      "TRAIN_000487",
+      "TRAIN_000488",
+      "TRAIN_000489",
+      "TRAIN_000490",
+      "TRAIN_000491",
+      "TRAIN_000492",
+      "TRAIN_000493",
+      "TRAIN_000494",
+      "TRAIN_000496",
+      "TRAIN_000497",
+      "TRAIN_000498",
+      "TRAIN_000499"
+    ],
+    "development_target_sha256": "9da316bc7e6ca798ef299f24fe48ca2b1f4e60529f71e8d75dc58c4c90429ef0",
+    "panels": {
+      "run-022": {
+        "cache_sha256": "3b347d826c0dfa2f95a05d1163c2ab0656473ab2fc41ebcd65089667c81b1c27",
+        "report_sha256": "87e7ff556b67334561a94577eadf788f4721821c5d815b382e49e793223d0df6",
+        "selected_X_sha256": "81d7ad1fab8c3cade3824b6b887a55e9fb3d6a6b31455fa3359f55863a5e04f8",
+        "feature_names": [
+          "inverse_sqrt_grain_diameter",
+          "grain_size_cv",
+          "phase_dark",
+          "phase_light",
+          "pore_fraction15",
+          "pore_fraction30",
+          "pore_diameter",
+          "grain_aspect",
+          "grain_alignment",
+          "within_grain_contrast",
+          "grain_scale_sensitivity",
+          "boundary_fraction",
+          "intercept_median_gap_mean",
+          "intercept_sensitivity_gap_mean",
+          "intercept_median_gap_cv",
+          "intercept_sensitivity_gap_cv",
+          "intercept_median_gap_inv_sqrt_mean",
+          "intercept_sensitivity_gap_inv_sqrt_mean",
+          "intercept_median_directional_cv",
+          "intercept_sensitivity_directional_cv",
+          "intercept_median_uncensored_coverage",
+          "intercept_sensitivity_uncensored_coverage",
+          "intercept_median_crossings_per_pixel",
+          "intercept_sensitivity_crossings_per_pixel",
+          "image_mean",
+          "image_std",
+          "denoised_grain_median_grain_count",
+          "denoised_grain_range_grain_count",
+          "denoised_grain_median_interior_count",
+          "denoised_grain_range_interior_count",
+          "denoised_grain_median_interior_diam_mean",
+          "denoised_grain_range_interior_diam_mean",
+          "denoised_grain_median_interior_diam_cv",
+          "denoised_grain_range_interior_diam_cv",
+          "denoised_grain_median_interior_inv_sqrt_diam",
+          "denoised_grain_range_interior_inv_sqrt_diam",
+          "denoised_grain_median_interior_area_weighted_diam",
+          "denoised_grain_range_interior_area_weighted_diam",
+          "denoised_grain_median_aspect_area_weighted_mean",
+          "denoised_grain_range_aspect_area_weighted_mean",
+          "denoised_grain_median_alignment",
+          "denoised_grain_range_alignment",
+          "denoised_grain_median_boundary_fraction",
+          "denoised_grain_range_boundary_fraction",
+          "denoised_grain_median_within_region_std",
+          "denoised_grain_range_within_region_std",
+          "denoised_grain_median_region_mean_std",
+          "denoised_grain_range_region_mean_std",
+          "denoised_grain_median_region_mean_iqr",
+          "denoised_grain_range_region_mean_iqr",
+          "denoised_grain_median_small_region_area_fraction",
+          "denoised_grain_range_small_region_area_fraction",
+          "denoised_grain_median_interior_area_fraction",
+          "denoised_grain_range_interior_area_fraction",
+          "denoised_grain_median_interior_diam_q90_q10_ratio",
+          "denoised_grain_range_interior_diam_q90_q10_ratio",
+          "denoised_noise_sigma"
+        ],
+        "blocks": [
+          "size",
+          "size",
+          "phase",
+          "phase",
+          "phase",
+          "phase",
+          "phase",
+          "shape",
+          "shape",
+          "intensity",
+          "size",
+          "shape",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intercepts",
+          "intensity",
+          "intensity",
+          "denoised_grain_size",
+          "denoised_grain_size",
+          "denoised_grain_support",
+          "denoised_grain_support",
+          "denoised_grain_size",
+          "denoised_grain_size",
+          "denoised_grain_size",
+          "denoised_grain_size",
+          "denoised_grain_size",
+          "denoised_grain_size",
+          "denoised_grain_size",
+          "denoised_grain_size",
+          "denoised_grain_shape",
+          "denoised_grain_shape",
+          "denoised_grain_shape",
+          "denoised_grain_shape",
+          "denoised_grain_support",
+          "denoised_grain_support",
+          "denoised_grain_texture",
+          "denoised_grain_texture",
+          "denoised_grain_texture",
+          "denoised_grain_texture",
+          "denoised_grain_texture",
+          "denoised_grain_texture",
+          "denoised_grain_support",
+          "denoised_grain_support",
+          "denoised_grain_support",
+          "denoised_grain_support",
+          "denoised_grain_size",
+          "denoised_grain_size",
+          "denoised_noise"
+        ]
+      }
+    }
+  },
+  "caveat": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. The original CNN seed, compact panel, averaging and D4 hypotheses were explored on reused development data. These new partitions evaluate robustness, not independent confirmation. Primary recipe is fixed before training. Do not select the best split, initialization seed, or secondary endpoint."
+}

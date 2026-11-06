@@ -1,0 +1,14 @@
+{
+  "lambdas": [
+    null,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "ridge_alpha": 10.0,
+  "n_shared_measurement_parameters": 11,
+  "objective": "Joint original-image hardness MSE plus coefficient and measurement penalties; exact ridge variable projection.",
+  "features": "Soft mean/quantile darkness fractions, count/area means, spatial heterogeneity, size correlation, noise interactions,16fixed morphology controls.",
+  "selection": "Three inner folds choose regularization, all learned measurement/head/preprocessing re-fit per training subset.",
+  "source_sha256": "9e7c9d08d61cf5955ab61944c08a3c83d5f255ede26ce5157a410ef75287d967"
+}

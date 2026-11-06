@@ -1,0 +1,972 @@
+{
+  "study": "111 independent problem-definition and representation review",
+  "completed_utc": "2026-10-03T18:02:55.805587+00:00",
+  "deadline_utc": "2026-10-03T18:34:00+00:00",
+  "status": "completed_no_supported_nonduplicate_training_hypothesis",
+  "main_conclusion_ko": "공식 단서와 현재 구현 사이에서 바로 새 통제 학습을 정당화할 미검증·비중복 누락을 확인하지 못했다. 일부 표현 손실과 측정 한계는 실제지만 이미 평가한 가설군과 겹친다. best011을 유지하고 새 후보를 만들지 않는다. 이는 가능한 모든 개선을 배제하거나 성능 상한을 주장하는 결론이 아니다.",
+  "official_sources": [
+    {
+      "id": "official_page",
+      "url": "https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai",
+      "checked_utc": "2026-10-03",
+      "access": "Web text open; description lines24–31",
+      "paraphrase": "256×256 synthetic images contain grain, phase, pore, elongation/alignment and image-quality differences. The hardness target is a synthetic proxy rather than a laboratory measurement. General physical trends do not guarantee a feature-target relation."
+    },
+    {
+      "id": "official_pdf",
+      "url": "https://cfiles.dacon.co.kr/competitions/daker_9monthly/%E1%84%86%E1%85%B5%E1%84%89%E1%85%A6%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9_%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC.pdf",
+      "checked_utc": "2026-10-03",
+      "access": "Successfully followed official-page link0;3-page PDF text. Direct-open failed earlier. No PDF bytes saved, no invented SHA. No comparison-image screenshot viewed.",
+      "paraphrase": "Physical length calibration is absent. Train examples are confounded comparisons. Absolute direction differs from alignment. Pore and heterogeneity effects should not be assigned an assumed sign. These accessed documents do not expose the exact target equation, generator coefficients or a rotation-invariance guarantee."
+    }
+  ],
+  "archive_metadata_only": {
+    "entries": 1502,
+    "documentation_or_generator_extensions_found": [],
+    "member_content_read": false
+  },
+  "observability_matrix": [
+    {
+      "factor": "결정립 크기/경계",
+      "observed": "영상 내 픽셀 간격·선·폐곡선·국소 주파수",
+      "conditional_proxy": "분할 직경/선 절편/경계밀도는 영상 처리 가정에 의존",
+      "hidden_or_unknown": "실제 생성 셀·프레임 밖 윤곽·물리 길이 환산·타깃의 크기 집계식",
+      "current_coverage": "native519/795, compact26 inverse sqrt diameter+intercepts, DINO504",
+      "implication": "픽셀 크기는 관측 가능하지만 역제곱근 크기가 정확한 생성식이라고 제약하지 않음"
+    },
+    {
+      "factor": "상·기공·명암",
+      "observed": "밝기 분포·검은 반점·밝기 경계",
+      "conditional_proxy": "multi-Otsu/threshold가 분리한 상·기공 후보",
+      "hidden_or_unknown": "검은 상/경계/기공의 참 마스크, 생성 대비·노이즈와 물성 간 관계",
+      "current_coverage": "raw mean/std, hist/quantiles, phase fractions, pore candidates, CNN inputstats, fixed ImageNet normalization",
+      "implication": "per-image contrast normalization은 일부 수작업 분기에만 있음. 전체 입력에서 밝기를 삭제하지 않음. 효과 부호를 강제하지 않음"
+    },
+    {
+      "factor": "신장·정렬·절대 방향",
+      "observed": "형상 장단축, 경계 방향, 영상 좌표축 대비 방향",
+      "conditional_proxy": "구조 텐서 coherence, 면적 가중 nematic magnitude, aspect ratio",
+      "hidden_or_unknown": "절대 방향의 생성 타깃 의존 여부·방향별 하중 정보·정렬 정의",
+      "current_coverage": "방향 통계+학습 CNN/DINO. CNN은 D4 학습증강, 현재 추론 identity. DINO에 정확한 회전불변성 없음",
+      "implication": "D4는 경험적 귀납 가정이며 문서 보증 아님. 신장 가중 정렬은022/028에서 이미 구현"
+    },
+    {
+      "factor": "분포·공간 불균일성",
+      "observed": "영상 내 크기·밝기·구조의 지역적 변화",
+      "conditional_proxy": "CV/quantiles/local contrast/FFT/AC/global deep-token moments",
+      "hidden_or_unknown": "타깃이 어떤 공간 배치/장거리 연결/가중 집계를 쓰는지",
+      "current_coverage": "현재 전역 요약은 명시적 배치에 제한. positional/contextual DINO와 CLS도 사용.019/042/070/092/093에서 여러 공간 확장 평가",
+      "implication": "전역 요약에 추상적 비단사성이 있지만 실제 픽셀 배치 변화에 표현 불변임을 뜻하지 않음"
+    },
+    {
+      "factor": "영상 품질과 가려진 구조",
+      "observed": "blur·contrast·high-frequency residual의 영상상 징후",
+      "conditional_proxy": "noise sigma, TV/NLM segmentation sensitivity, native/resize sensitivity",
+      "hidden_or_unknown": "노이즈의 참 실현값·진짜 경계·변환별 타깃 불변성",
+      "current_coverage": "다중 sigma/native handcrafted, pretrained S/B, measured denoising experiments",
+      "implication": "예측 오차가 latent noise floor라는 주장은 검증되지 않음"
+    }
+  ],
+  "claims_checked": [
+    {
+      "claim": "모든 영상을 같은 크기로 resize하면 결정립 크기 정보가 사라진다",
+      "verdict": "그대로는 성립하지 않음",
+      "evidence": "256→504는 전 영상 공통1.96875배. 상대 픽셀 크기 순서를 정규화하지 않는다. 패치 stride는 약7.111 native px. 고주파 변형/정량 오차와 신규 정보 없음은 별개.039에서504가252보다 유리했다."
+    },
+    {
+      "claim": "DINO patch14는 패치 내부를 평균내 버린다",
+      "verdict": "구현과 수치 검사가 반박",
+      "evidence": "S/B 유효 grayscale linear projection은 각각384×196/768×196, 수치 rank196. 평균과 표준편차가 같은 두 패턴을 구분. 이후 LayerNorm·attention·pooling 및 최종 경도 회귀의 정보 보존은 보장하지 않음."
+    },
+    {
+      "claim": "CNN128 축소는 native 정보를 완전히 보존한다",
+      "verdict": "반박",
+      "evidence": "서로 다른 checker/stripe fixture가 BOX128에서 모두128로 같아짐. 그러나 다른 native/DINO 분기가 있고 native CNN035/106이 이미 비교되어 전체앙상블 결함으로 비약할 수 없음."
+    },
+    {
+      "claim": "CNN의 국소 수용 영역은33픽셀이므로 멀리 있는 구조는 볼 수 없다",
+      "verdict": "합성곱 경로에만 적용되는 설명",
+      "evidence": "합성곱 kernel/stride의 기하적 영역은33px지만 GroupNorm의 공간 통계와 최종 pooling이 전역 의존을 만든다. GN 먼 위치 교란 효과를 별도 계산으로 확인. 명시적인 장거리 위치 관계 학습과는 다름."
+    },
+    {
+      "claim": "전역 patch mean/std이면 입력 배치에 불변이다",
+      "verdict": "과도한 결론",
+      "evidence": "추상 token 순열은 moments를 보존하지만 실제 DINO token은 위치 임베딩과 전체 context를 이미 포함하고 CLS도 보존한다. 입력 픽셀 순열이 단순 token 순열이 된다는 보장은 없음."
+    },
+    {
+      "claim": "절대 방향과 정렬을 구분하라는 설명은 타깃 회전 불변을 뜻한다",
+      "verdict": "접근한 공식 자료로는 입증 불가",
+      "evidence": "scalar target만으로 회전 불변을 도출할 수 없음. 현재 CNN D4 증강은 가정이고 DINO/전체ensemble은 정확히 불변이 아님.046은 그 방향의 고정 평균이 결합에서 실패."
+    },
+    {
+      "claim": "방향 크기/정렬을 연결하는 새 특징이 전혀 시도되지 않았다",
+      "verdict": "중복 감사에서 반박",
+      "evidence": "현재 compact26의 area-only alignment는 circular shape의 임의각을 과대 해석할 수 있음. 하지만 elongation-weighted alignment가 denoised/connected 특징에 이미 존재하며 방향 cross-scale native019도 평가.111에서 모델은 수정하지 않음."
+    }
+  ],
+  "numerical_evidence": {
+    "utc": "2026-10-03T17:56:23.918286+00:00",
+    "patch_projection": {
+      "S": {
+        "shape": [
+          384,
+          196
+        ],
+        "rank_tests": {
+          "float32": {
+            "rank": 196,
+            "tolerance": 0.00019755178557274945
+          },
+          "float64": {
+            "rank": 196,
+            "tolerance": 3.679688751189959e-13
+          }
+        },
+        "largest_singular": 4.315584606431902,
+        "smallest_singular": 0.022654950527963943,
+        "condition": 190.4919015870283,
+        "equal_pixel_mean_std_fixture_embedding_L2_difference": 13.48360265970034,
+        "manual_vs_conv_max_error": 8.881784197001252e-16,
+        "patch_norm": "Identity",
+        "meaning": "Learned pre-transformer linear patch map, using stored float32 normalization constants cast to float64. Full column rank distinguishes all real-valued 14x14 grayscale patches in exact arithmetic at this stage; not full network invertibility or predictive sufficiency."
+      },
+      "B": {
+        "shape": [
+          768,
+          196
+        ],
+        "rank_tests": {
+          "float32": {
+            "rank": 196,
+            "tolerance": 0.0004095334502057271
+          },
+          "float64": {
+            "rank": 196,
+            "tolerance": 7.628154944735153e-13
+          }
+        },
+        "largest_singular": 4.4731973654470885,
+        "smallest_singular": 0.08770096443140343,
+        "condition": 51.005110313762444,
+        "equal_pixel_mean_std_fixture_embedding_L2_difference": 19.855262470930178,
+        "manual_vs_conv_max_error": 1.3322676295501878e-15,
+        "patch_norm": "Identity",
+        "meaning": "Learned pre-transformer linear patch map, using stored float32 normalization constants cast to float64. Full column rank distinguishes all real-valued 14x14 grayscale patches in exact arithmetic at this stage; not full network invertibility or predictive sufficiency."
+      }
+    },
+    "box_downsampling": {
+      "input_unequal_pixels": 32768,
+      "output_max_difference": 0,
+      "output_unique_values": [
+        128
+      ],
+      "meaning": "Exact collision for two binary patterns under current BOX256to128 downsampling. Does not prove grain-size loss across all branches; DINO and native descriptors receive other representations."
+    },
+    "token_moments": {
+      "mean_equal": true,
+      "std_equal": true,
+      "adjacent_squared_difference_original": 4.0,
+      "adjacent_squared_difference_permuted": 12.0,
+      "meaning": "Abstract tokens only: moment pooling forgets token order. DINO tokens already encode position and global context; input patch permutations need not yield token permutations, and CLS is also retained."
+    },
+    "alignment": {
+      "circular_region_arbitrary_equal_angle_unweighted_order": 1.0,
+      "elongation_weighted_order": 0.0,
+      "rotation_of_angles_magnitude_error": 1.1102230246251565e-16,
+      "current_compact26_source": "grain_features.py:43 / compact_regression.py:44 uses area-only weighting",
+      "already_tested_weighted_sources": [
+        "denoised_grain_features.py:78",
+        "connected_grain_features.py:123"
+      ],
+      "meaning": "No useful orientation for circles; weighted order encodes both shape anisotropy and coherence, not pure angular concentration. Absolute orientation rotates while order magnitude stays constant; no claim target invariant."
+    },
+    "CNN_support": {
+      "conv_only_receptive_width_at_input_resolution": 33,
+      "stride_at_input_resolution": 16,
+      "current128_map_side": 8,
+      "nominal_native_width_excluding_norm": 66,
+      "native_stride": 32,
+      "GN_distant_fixture_effect": 0.9713200412796109,
+      "qualification": "33 input pixels is convolution-only support. GroupNorm aggregates across spatial positions per sample/group, coupling distant locations even before global pooling; full effective dependence is not restricted to this width. BOX support yields nominal 66 native pixels excluding global normalization."
+    },
+    "DINO_scale": {
+      "native_image_side": 256,
+      "resized_side": 504,
+      "common_scale": 1.96875,
+      "token_grid_side": 36,
+      "patch_stride_native_equivalent": 7.111111111111111,
+      "meaning": "Same fixed scale across all images preserves relative pixel-scale differences, not per-image size normalization. Bicubic interpolation adds no independent detail; physical length calibration unknown."
+    },
+    "source_sha256": {
+      "problem_definition_111.py": "6d0d8f97f3147acaaf86289c7fdc66ad2c0e08ea2b42e4fc046256a13353f86a",
+      "candidate_pipeline.py": "7495e2b0c6ff14d163cc6bc539798b94f20605f4c02d3cb3305363422ecc1b28",
+      "candidate008_pipeline.py": "57204586a6e7f96dee7b5a172ca6e4e163b479ec7d37e6f9988d48029448f2e5",
+      "candidate009_pipeline.py": "46d65ec53837ae031990eae5eafe32c0706226eb799d390dcfdb33c7c117cd71",
+      "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+      "cnn_experiment.py": "054b27a4b4dd806e31ac1dbd653e5d0866712c349afdabf338c1b6e5df417b20",
+      "grain_features.py": "0b2dcc4d9a528718c418ee784ccb0dee836f8887fbe12989139aab4a0ed705e0",
+      "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+      "latent_features.py": "9b003e8da3f1e488d88af97b9395a80ffb5bc82785adbad1b378f0d869a9978a",
+      "native_texture_features.py": "e5c061688ad86f00c7532b1c3f3a349ee113abf92f5f387b32f4001a6054988a",
+      "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+      "connected_grain_features.py": "1b0374672595d13639ed1caf397c54dbb73c59bea79137250a6a4cfae3fee186",
+      "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353",
+      "dino_spatial_039.py": "6a5a2546cf3266dd67fcaccae2dfe978bc431349cec2d5ab784b9a065e79c692",
+      "dinob_062.py": "209407c04766b687696d8a06ae158c3af4912a7b399d153301238a34074a56f9",
+      "dino_texture_042.py": "abcc42db466f0fb10502ad57db939c09fac7e7a1103ceffd88dccd7ab8a551b9",
+      "dino_multilayer_044.py": "9a4b8348112809e63eb1b341087f05582efd932c62e89174e6becd3d821dae67",
+      "src/microstructure/features.py": "24732babe8c725149a0e1a9b84a1e9c0328a8e4d3d42be64a9d89ad85f10cb83",
+      "src/microstructure_v2/features.py": "199c6d5a5ff4fd30191d98cf3db0613616c121100514cc5df24bf53b8d630ee9",
+      "src/microstructure_v2/extra.py": "b59aacf672c65de5af59c26e26930e707b004fd53a8eb4ad74f7bb5f28a19bc9"
+    },
+    "seconds": 1.9060093750013039,
+    "preservation": {
+      "protected_files": 20,
+      "previous_reports": 200,
+      "packages": 26,
+      "unchanged": true
+    }
+  },
+  "numerical_independent_validation": {
+    "passed": true,
+    "independent_patch_checks": {
+      "S": {
+        "gram_positive_eigenvalues": 196,
+        "gram_vs_SVD_extreme_singular_max_error": 5.755812493291046e-15,
+        "linear_patch_fixture_recovery_max_error": 2.6617597015388128e-14,
+        "weight_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9"
+      },
+      "B": {
+        "gram_positive_eigenvalues": 196,
+        "gram_vs_SVD_extreme_singular_max_error": 1.2045919817182948e-14,
+        "linear_patch_fixture_recovery_max_error": 1.0935696792557792e-14,
+        "weight_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73"
+      }
+    },
+    "BOX_manual_two_by_two_average_exact": true,
+    "GN_manual_formula_effect_error": 2.220446049250313e-16,
+    "token_moment_collision_checked": true,
+    "protected20_unchanged": true,
+    "previous200_reports_unchanged": true,
+    "packages_unchanged": 26,
+    "source_sha256": "4dac5ed733519835e58e6ee37fb52315a65012cac0696f0447c5fa54b498e598",
+    "numerical_report_sha256": "2710c7f1a6d7a9eefd9fd33b324ba17cd42358a1fff4b57b05d48995f09561f6",
+    "scope": "No real images, labels, data caches, model fitting or predictions."
+  },
+  "hypothesis_evidence_ledger": [
+    {
+      "study": "019",
+      "hypothesis": "Native frequency-dependent direction and local heterogeneity",
+      "source": "reports/followup-research-summary-024.json",
+      "source_sha256": "dcb6d035730c771fac351269593b6feec95c70faa0b5aeb1f29af885fc80e48e",
+      "evidence": {
+        "original003": {
+          "json_path": [
+            "experiments",
+            "run-019",
+            "scores",
+            "candidate003",
+            "rmse"
+          ],
+          "value": 13.705696031698212
+        },
+        "native_blend": {
+          "json_path": [
+            "experiments",
+            "run-019",
+            "scores",
+            "native_kernel_blend",
+            "rmse"
+          ],
+          "value": 14.028223009491127
+        },
+        "combined_blend": {
+          "json_path": [
+            "experiments",
+            "run-019",
+            "scores",
+            "combined_kernel_blend",
+            "rmse"
+          ],
+          "value": 13.7392910131262
+        }
+      },
+      "interpretation_ko": "원본003 대비 이 방향 패널은 이득 없음. 절대 각도와 모든 고차 방향 관계가 불필요하다는 증명은 아님."
+    },
+    {
+      "study": "035",
+      "hypothesis": "Native256 CNN, morphology fusion and covariance",
+      "source": "reports/cnn-structure-035-summary.json",
+      "source_sha256": "695a894a94e6d66db41f8398eb10691819814a1477005303b8663e14b0f69e1e",
+      "evidence": {
+        "decision": {
+          "json_path": [
+            "decision"
+          ],
+          "value": "Preserve candidate003. Covariance improvement reverses on second repartition; morphology fusion is inconsistent; matched256 ensemble is worse on all3partitions."
+        }
+      },
+      "interpretation_ko": "native 해상도는 이미 비교했고 세 분할 결합에서 실패. 공분산/융합은 일관되지 않았음."
+    },
+    {
+      "study": "036",
+      "hypothesis": "Controlled covariance CNN",
+      "source": "reports/cnn-cov-controls-036-summary.json",
+      "source_sha256": "0b78340340451f1bbf978e8f17ca5f33d70332ba5674cdc00da556d0fc8cb436",
+      "evidence": {
+        "scores": {
+          "json_path": [
+            "results"
+          ],
+          "value": {
+            "original": {
+              "baseline": 13.98273103376079,
+              "compact_kernel": 14.482935938822393,
+              "small_trace": 14.137744748310938,
+              "small_regularized": 14.61965717140252,
+              "small_trace_blend": 13.354656849375033,
+              "small_regularized_blend": 13.54906488913144,
+              "reference003": 13.705696031698212,
+              "reference_cov035": 13.567773890275364
+            },
+            "20261031": {
+              "baseline": 14.272716700602603,
+              "compact_kernel": 14.381024891086929,
+              "small_trace": 14.857710497494182,
+              "small_trace_blend": 13.728295397511216,
+              "reference003": 13.63181073293285,
+              "reference_cov035": 13.599941528289083
+            },
+            "20261101": {
+              "baseline": 14.314007659085357,
+              "compact_kernel": 14.343291339552492,
+              "small_trace": 15.05100457624939,
+              "small_trace_blend": 13.804532390195169,
+              "reference003": 13.729980391208457,
+              "reference_cov035": 13.829958469549123
+            }
+          }
+        }
+      },
+      "interpretation_ko": "원본의 큰 개선이 두 재분할에서 역전. 원본 하나의 개선을 강한 구조 증거로 취급하지 않음."
+    },
+    {
+      "study": "039",
+      "hypothesis": "S whole504 vs252 and native crops",
+      "source": "reports/dino-039-summary.json",
+      "source_sha256": "7011c987906f992b0f5b4a7c97a86e046a876426e5fa81b281c55f3b7ebf7378",
+      "evidence": {
+        "scores": {
+          "json_path": [
+            "results"
+          ],
+          "value": {
+            "original": {
+              "control252": 14.967381624073983,
+              "full504": 14.543425199587686,
+              "native196x4": 14.865795545927249,
+              "control252_blend": 13.697138129537061,
+              "full504_blend": 13.522452231767831,
+              "native196x4_blend": 13.695943082061154,
+              "reference003": 13.705696031698212
+            },
+            "20261031": {
+              "control252": 14.767691224379154,
+              "full504": 14.225715205252632,
+              "control252_blend": 13.618671587333806,
+              "full504_blend": 13.484270679649033,
+              "reference003": 13.63181073293285
+            },
+            "20261101": {
+              "control252": 14.994699007122438,
+              "full504": 14.67018389948982,
+              "control252_blend": 13.715545558128364,
+              "full504_blend": 13.651326599763685,
+              "reference003": 13.729980391208457
+            }
+          }
+        }
+      },
+      "interpretation_ko": "동일 스케일 확대의 토큰화 변화는 당시 대조군 대비 세 분할에서 유용했다. 크기 정보가 모두 소실됐다는 주장에 반하는 경험적 근거. native crop 요약은504보다 낫지 않았음."
+    },
+    {
+      "study": "042",
+      "hypothesis": "DINO lag semivariograms",
+      "source": "reports/dino-042-summary.json",
+      "source_sha256": "fb1979d45cf516963f73c1d86f02b343ead9db49a5302facce699e2f4a41a001",
+      "evidence": {
+        "original": {
+          "json_path": [
+            "results",
+            "original",
+            "comparison",
+            "gain_vs005"
+          ],
+          "value": -0.033335191660643915
+        },
+        "20261031": {
+          "json_path": [
+            "results",
+            "20261031",
+            "comparison",
+            "gain_vs005"
+          ],
+          "value": 0.022982031896768618
+        },
+        "20261101": {
+          "json_path": [
+            "results",
+            "20261101",
+            "comparison",
+            "gain_vs005"
+          ],
+          "value": -0.01766545352633031
+        }
+      },
+      "interpretation_ko": "개선 부호가 분할별로 다름. h/v 평균은 방향차를 버리므로 순수 정렬 측정으로 부르면 안 됨. 기존 보고서 errata를 유지."
+    },
+    {
+      "study": "046",
+      "hypothesis": "DINO D4 mean",
+      "source": "reports/dino-046-summary.json",
+      "source_sha256": "d198bb90f64f2380e4dc3470c8f357c9f940e749dcfa0462222cf5dc6336d83d",
+      "evidence": {
+        "reference006": {
+          "json_path": [
+            "results",
+            "original",
+            "scores",
+            "control006_blend"
+          ],
+          "value": 13.423229237711903
+        },
+        "d4": {
+          "json_path": [
+            "results",
+            "original",
+            "scores",
+            "d4mean_blend"
+          ],
+          "value": 13.46073472143051
+        },
+        "gain": {
+          "json_path": [
+            "results",
+            "original",
+            "comparison",
+            "gain"
+          ],
+          "value": -0.037505483718607735
+        }
+      },
+      "interpretation_ko": "DINO 단독 개선이 결합 개선으로 이어지지 않음. 라벨 회전 불변성 검증도 아니며 전체 앙상블은 D4 평균하지 않았음."
+    },
+    {
+      "study": "066",
+      "hypothesis": "B252+504 multiscale concatenation",
+      "source": "reports/dinob-multiscale-066-summary.json",
+      "source_sha256": "66c712d8f9e1057953ec1afc3e5d69399a88ac981adfc6a8ce610bacaab57db7",
+      "evidence": {
+        "reference008": {
+          "json_path": [
+            "scores",
+            "reference008",
+            "rmse"
+          ],
+          "value": 13.209632611789585
+        },
+        "primary": {
+          "json_path": [
+            "scores",
+            "primary",
+            "rmse"
+          ],
+          "value": 13.251466117757952
+        },
+        "fold_wins": {
+          "json_path": [
+            "comparison",
+            "positive_folds"
+          ],
+          "value": 1
+        }
+      },
+      "interpretation_ko": "중복되지 않는 스케일 결합은 이미 시도했고 원본에서 실패. 첫 층 모수 수도 증가했으므로 순수한 크기 신호 부재로 해석하지 않음."
+    },
+    {
+      "study": "069–071",
+      "hypothesis": "Pre-LayerNorm amplitude, coarse spatial variance, TV input",
+      "source": "reports/diagnostic-research-068-072-summary.json",
+      "source_sha256": "d88b3eceef22ef438601800e20744863485645c3581f975d76b3e570aa192158",
+      "evidence": {
+        "69": {
+          "json_path": [
+            "studies",
+            0,
+            "primary_rmse"
+          ],
+          "value": 13.23554422885774
+        },
+        "70": {
+          "json_path": [
+            "studies",
+            1,
+            "primary_rmse"
+          ],
+          "value": 13.244428199726574
+        },
+        "71": {
+          "json_path": [
+            "studies",
+            2,
+            "primary_rmse"
+          ],
+          "value": 13.216556730931284
+        },
+        "reference008": {
+          "json_path": [
+            "studies",
+            0,
+            "reference008_rmse"
+          ],
+          "value": 13.209632611789585
+        }
+      },
+      "interpretation_ko": "세 고정 비교가 모두008보다 나쁨. 전역 요약의 한계는 가능하지만 기존 변형의 실패를 무시하고 같은 축을 새 가설로 부르지 않음."
+    },
+    {
+      "study": "092–093",
+      "hypothesis": "Coordinate-aware patch attention versus matched mean",
+      "source": "reports/patch-replication-093-summary.json",
+      "source_sha256": "1f2c72128da7c0612064e29b3d9349aa8ea634ff973e9ea26da07b04b0b565ca",
+      "evidence": {
+        "original_all400": {
+          "json_path": [
+            "results",
+            "original",
+            "all400"
+          ],
+          "value": {
+            "n": 400,
+            "reference011_RMSE": 13.0539977718711,
+            "attention_blend_RMSE": 13.012539733759176,
+            "RMSE_gain": 0.041458038111922946,
+            "mean_squared_error_gain": 1.080667505354262,
+            "MAE_gain": 0.033389432441660316,
+            "positive_gain_rows": 209,
+            "negative_gain_rows": 191,
+            "prediction_change_RMS": 0.6907017070761784,
+            "conditional_paired_gain_CI95": [
+              -0.026387145853750165,
+              0.11109755785318402
+            ],
+            "bootstrap_sd": 0.03549074026599145
+          }
+        },
+        "selection_bias": {
+          "json_path": [
+            "selection_bias"
+          ],
+          "value": "This extension was selected after observing092 original gains. The092 >=3positivefold gate against011 failed(2/5) andremains recorded;093 deliberately relaxes it posthoc. Same400 historicallyreused rows andoriginal-selectedtop5 are notindependent confirmation or unbiased subgroups. No revised pre-registration claim."
+        },
+        "assessment": {
+          "json_path": [
+            "descriptive_assessment_flags_not_promotion_gates"
+          ],
+          "value": {
+            "attention_beats_mean_standalone_all3": true,
+            "attention_blend_beats_mean_blend_all3": true,
+            "attention_blend_beats011_all3": true,
+            "remaining395_improves_all3": false,
+            "remaining395_CI_lower_positive_all3": false
+          }
+        }
+      },
+      "interpretation_ko": "attention은 자체 mean보다 낫지만011 대비 이득이 원본에서 정한 소수 표본에 집중. 고정395 재분할 평가까지 보고한 기존 결론을 유지; 새 후보로 승격하지 않음."
+    },
+    {
+      "study": "096",
+      "hypothesis": "Directional wavelet scattering order2",
+      "source": "reports/wavelet-scattering-096-summary.json",
+      "source_sha256": "a57a50da9dfe2b6f94fc96db50a62820a343b116c0cf8b9bd5ec4befcd55f2a6",
+      "evidence": {
+        "reference011": {
+          "json_path": [
+            "scores",
+            "reference011",
+            "rmse"
+          ],
+          "value": 13.0539977718711
+        },
+        "order1_blend": {
+          "json_path": [
+            "scores",
+            "order1_blend",
+            "rmse"
+          ],
+          "value": 13.18140750319685
+        },
+        "order2_blend": {
+          "json_path": [
+            "scores",
+            "order2_blend",
+            "rmse"
+          ],
+          "value": 13.150322057066235
+        }
+      },
+      "interpretation_ko": "두 차수 모두011보다 나쁨. 방향/고차 통계 미사용을 새 누락으로 단정할 근거 없음."
+    },
+    {
+      "study": "097–098",
+      "hypothesis": "Segmentation fidelity and NLM",
+      "source": "reports/grain-visual-audit-097-nlm098-summary.json",
+      "source_sha256": "e10b75952425a7d2d0e71360ded6f8b59d7ec1a7cc9e665d0e0f63bcd96b118d",
+      "evidence": {
+        "status": {
+          "json_path": [
+            "status"
+          ],
+          "value": "097 image audit and098 fixed measurementpilot completed"
+        },
+        "information_limit": {
+          "json_path": [
+            "remaining_information_limit"
+          ],
+          "value": "No real grain geometry annotation, physical pixel size, or originalcrop metadata; hence neither existing extractor can be designated true and no label repair is supported. Overall competition objective remains ongoing."
+        }
+      },
+      "interpretation_ko": "영상 분할이 생성기의 실제 결정립이라는 보장은 없음. 측정 안정성과 경도 예측 이득은 별개."
+    },
+    {
+      "study": "099",
+      "hypothesis": "Patch distribution beyond moments",
+      "source": "reports/sliced-distribution-099-summary.json",
+      "source_sha256": "bfb76f4ff9f5d37f25cb4bf17040d69cac8ccc9e36165f94295990129e2c2850",
+      "evidence": {
+        "labelblind_pass": {
+          "json_path": [
+            "result",
+            "labelblind_gate_pass"
+          ],
+          "value": false
+        },
+        "checks": {
+          "json_path": [
+            "result",
+            "gate_checks"
+          ],
+          "value": {
+            "synthetic_same_moments_different_shape": true,
+            "not_reconstructed_by_fixed_moment_model": true,
+            "not_reconstructed_by_fixed_nuisance_model": true,
+            "checker_stability": false,
+            "geographic_stability": true,
+            "momentmatched_shape_above_sampling_difference": false
+          }
+        }
+      },
+      "interpretation_ko": "평균/분산 밖 정보는 수치상 존재하지만 사전 안정성 조건을 충족하지 못해 hardness CV를 하지 않았음. 예측 실패 실험과 구분."
+    },
+    {
+      "study": "100–101",
+      "hypothesis": "Frame-censored size measurement",
+      "source": "reports/frame-features-101-summary.json",
+      "source_sha256": "f4e9cc32229759533f385ac52954c0cc375f0958fef89a6180f673dfe3d440ee",
+      "evidence": {
+        "reference011": {
+          "json_path": [
+            "scores",
+            "reference011",
+            "rmse"
+          ],
+          "value": 13.0539977718711
+        },
+        "control57": {
+          "json_path": [
+            "scores",
+            "control57_blend",
+            "rmse"
+          ],
+          "value": 13.076997203485996
+        },
+        "extension59": {
+          "json_path": [
+            "scores",
+            "extension59_blend",
+            "rmse"
+          ],
+          "value": 13.07734081347264
+        }
+      },
+      "interpretation_ko": "프레임 제외의 실제 한계를 진단한 뒤 all-region 직경을 추가했으나 결합은 악화. 가려진 결정립 크기를 정답처럼 복원했다고 주장할 수 없음."
+    },
+    {
+      "study": "102",
+      "hypothesis": "Self-supervised denoising assumptions",
+      "source": "reports/blindspot-preflight-102-summary.json",
+      "source_sha256": "f4ea276cd15dc7e9f261ebd77d9b47c5b63b623738e6272b3048bb74d060d3e3",
+      "evidence": {
+        "decision": {
+          "json_path": [
+            "decision_ko"
+          ],
+          "value": "균일 영역 확보 조건12/24<18/24로 선행 공학 기준을 통과하지 못했다. 원본의 비중첩HH 상관은 대부분 작고 iid대조보다 큰 경고는1/24에 그쳤다. 그1장도 균일 영역 조건을 충족하지 않는다. 상관 잡음이 입증됐다고 결론내리지 않는다. 이 단일관측 진단은 미세조직과 잡음을 충분히 구분하지 못하므로 요청대로 Noise2Self 복원 가설을 학습 전에 중단한다."
+        }
+      },
+      "interpretation_ko": "노이즈 독립성을 확인했다고도 상관 잡음을 입증했다고도 하지 않음. 구조와 잡음 식별이 부족해 학습 전 중단."
+    },
+    {
+      "study": "103–104",
+      "hypothesis": "Pipeline correctness and patch-origin averaging",
+      "source": "reports/pipeline-audit-103-patch-phase-104-summary.json",
+      "source_sha256": "eb7b8fa1ab0570352f84633df71e593949417c0d37d160b8e7a8c2ffbd25548f",
+      "evidence": {
+        "audit": {
+          "json_path": [
+            "outcome"
+          ],
+          "value": "Completed focused103 end-to-end lineage audit; executed and independentlyvalidated104 patch-phase experiment; no promotion."
+        },
+        "reference011": {
+          "json_path": [
+            "experiment104",
+            "scores",
+            "reference011",
+            "rmse"
+          ],
+          "value": 13.0539977718711
+        },
+        "phase_blend": {
+          "json_path": [
+            "experiment104",
+            "scores",
+            "primary",
+            "rmse"
+          ],
+          "value": 13.070856759152019
+        }
+      },
+      "interpretation_ko": "103에서 새 수치 버그 없음.104의 고정 위치 평균은 원본에서 실패. 경계 변화까지 섞여 순수 aliasing 검사는 아님."
+    },
+    {
+      "study": "106",
+      "hypothesis": "Remove GroupNorm to preserve amplitude",
+      "source": "reports/research-batch-105-108-summary.json",
+      "source_sha256": "2299e268c4259f67dd3bf2db425aaa803dc1ecceb6ba5c2ab5b2be67afac5069",
+      "evidence": {
+        "reference011": {
+          "json_path": [
+            "studies",
+            "106",
+            "reference011_RMSE"
+          ],
+          "value": 13.0539977718711
+        },
+        "GN_control": {
+          "json_path": [
+            "studies",
+            "106",
+            "matched_control_blend_RMSE"
+          ],
+          "value": 13.08727917667893
+        },
+        "affine": {
+          "json_path": [
+            "studies",
+            "106",
+            "primary_blend_RMSE"
+          ],
+          "value": 13.097202750835429
+        }
+      },
+      "interpretation_ko": "정규화 없는 native CNN은 실제로 실행했고 대조/011 모두보다 나쁨. 현재 CNN의 정규화가 일부 진폭을 약화할 가능성과 실험 결과를 구분."
+    },
+    {
+      "study": "107/109",
+      "hypothesis": "Persistence after numerical correction",
+      "source": "reports/persistence-repair-109-summary.json",
+      "source_sha256": "fe55e5369cd6d3ad0e1d3ec13b7f96ab3c48bb6389d8c75c3ef083e0b8f0bc6b",
+      "evidence": {
+        "reference011": {
+          "json_path": [
+            "OOF",
+            "reference011_RMSE"
+          ],
+          "value": 13.0539977718711
+        },
+        "original107": {
+          "json_path": [
+            "OOF",
+            "original107_persistence_blend_RMSE"
+          ],
+          "value": 24.04635545247622
+        },
+        "repaired109": {
+          "json_path": [
+            "OOF",
+            "repaired_persistence_blend_RMSE"
+          ],
+          "value": 13.120860659817945
+        },
+        "repaired_curve": {
+          "json_path": [
+            "OOF",
+            "repaired_curve_blend_RMSE"
+          ],
+          "value": 13.087334263400573
+        }
+      },
+      "interpretation_ko": "107은 수치 스케일 확대 문제.109가 그것을 완화한 뒤에도 이득 없음. 원본 폭주만으로 topology 가설을 기각하지 않고 수정 실험을 함께 보존."
+    },
+    {
+      "study": "108",
+      "hypothesis": "Three-point intensity interactions",
+      "source": "reports/research-batch-105-108-summary.json",
+      "source_sha256": "2299e268c4259f67dd3bf2db425aaa803dc1ecceb6ba5c2ab5b2be67afac5069",
+      "evidence": {
+        "reference011": {
+          "json_path": [
+            "studies",
+            "108",
+            "reference011_RMSE"
+          ],
+          "value": 13.0539977718711
+        },
+        "two_point_control": {
+          "json_path": [
+            "studies",
+            "108",
+            "matched_control_blend_RMSE"
+          ],
+          "value": 13.102693869973313
+        },
+        "three_point": {
+          "json_path": [
+            "studies",
+            "108",
+            "primary_blend_RMSE"
+          ],
+          "value": 13.081205676895332
+        }
+      },
+      "interpretation_ko": "동일 회귀 대조보다 개선됐으나011에는 추가 이득 없음. 고차 정보 존재와 앙상블 보완 이득은 다름."
+    },
+    {
+      "study": "110",
+      "hypothesis": "Weak native-pixel noise augmentation",
+      "source": "reports/input-noise-110-summary.json",
+      "source_sha256": "bd53eb1470820326e2ab1970e61d784187188e957df7311148ef5c8ad72ade41",
+      "evidence": {
+        "scores": {
+          "json_path": [
+            "result",
+            "scores"
+          ],
+          "value": {
+            "reference009": 13.105157912721568,
+            "reference011": 13.0539977718711,
+            "control_head": 13.957820652670737,
+            "noise_head": 13.989574568654026,
+            "control": 13.0539977718711,
+            "primary": 13.057267710128741
+          }
+        },
+        "comparison": {
+          "json_path": [
+            "result",
+            "comparison"
+          ],
+          "value": {
+            "gain": -0.003269938257641769,
+            "fold_gains": [
+              0.0030998825240438066,
+              0.0045766128698065955,
+              -0.029489733125954487,
+              0.006247305098440847,
+              0.002261061374507989
+            ],
+            "positive_folds": 4
+          }
+        },
+        "top5_removed_gain": {
+          "json_path": [
+            "result",
+            "sample_diagnostics",
+            "gain_without_original_top5"
+          ],
+          "value": -0.009581723347354298
+        }
+      },
+      "interpretation_ko": "네 fold의 작은 이득보다 한 fold 악화가 커 전체 실패. 정해진 강도의 결과이며 실제 라벨 불변 또는 구조 보존 증거가 아님."
+    }
+  ],
+  "current_model": {
+    "formula": ".9 * calibrated009 + .1 * freshBshorthead; 009 calibrates008,008=.75*003+.125*Smean3+.125*Bmean3,003=.5*baseline795+.25*compact26+.25*singleCNN128",
+    "CNN": "Single model128 BOX with D4 training augmentation, identity inference; no TV31 or 3seedD4 inference in011. Foldtrain image and target scalar normalization. GroupNorm within model.",
+    "DINO": "Full504 bicubic; fixed ImageNet affine; frozen S/B normalizedblocks6/9/12 CLS+patch mean/std. Existing three-seed heads plus011 short B head; feature/target scaler fit onlytraining fold.",
+    "best011_original_OOF": 13.0539977718711,
+    "best011_resplits": [
+      13.015176056591201,
+      13.272377948565081
+    ],
+    "CSV_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5"
+  },
+  "next_verification_conditions_ko": [
+    "절대 방향을 타깃에 쓰거나 완전히 지우기 전에, 접근한 공식 자료가 보장하지 않는 대칭 가정을 명시해야 한다. 현재는 추가 변환/증강 탐색을 진행하지 않는다.",
+    "새 형태 측정은 기존097/100의 구조·노이즈·프레임 fixture에서 무엇을 실제 측정하는지 먼저 입증해야 한다. 참 생성 마스크가 없으므로 안정성을 정확성으로 대체하지 않는다.",
+    "새 공간 표현은 기존 방향/공분산/attention/분포 특징과의 차이 및 왜 경도에 도움이 될지 근거를 먼저 제시해야 한다. 근거가 생길 때만 하나의 고정 대조, foldtrain 전처리, 기존3분할 확인 순서를 따른다. 지금 새 학습을 예약하거나 시작하지 않는다."
+  ],
+  "limits": [
+    "Same400 images and existing resplits have substantial historical selection reuse; no independent validation or selection-adjusted confidence claim.",
+    "Historical studies use different reference candidates; ledger retains each comparison reference rather than ranking all scores as matched trials.",
+    "Fixture checks are mathematical counterexamples or implementation checks, not physical validation and not extra model training data.",
+    "No exact generator equation or true masks are available in the inspected official sources/archive documentation; this is an information limit, not evidence of irreducible error."
+  ],
+  "scope": {
+    "real_image_reads": 0,
+    "real_label_reads": 0,
+    "feature_cache_decodes": 0,
+    "new_model_training": false,
+    "holdout_selection": false,
+    "test_inference_or_selection": false,
+    "new_CSV": false,
+    "upload": false,
+    "new_installs": 0,
+    "new_datasets_or_weights": 0,
+    "cost": 0,
+    "CPU_threads": 2
+  },
+  "actual_commands_succeeded": [
+    ".venv/bin/python -I -B problem_definition_111.py",
+    ".venv/bin/python -I -B validate_problem_definition_111.py"
+  ],
+  "preservation": {
+    "protected_files": 20,
+    "previous_report_files": 200,
+    "packages": 26
+  },
+  "execution_blockers": [],
+  "remaining_scientific_unknowns": [
+    "Exact target generating equation and latent-variable effects",
+    "Absolute-orientation dependence of target",
+    "Recoverable morphology versus image-quality nuisance and latent residual error"
+  ],
+  "source_sha256": {
+    "problem_definition_111.py": "6d0d8f97f3147acaaf86289c7fdc66ad2c0e08ea2b42e4fc046256a13353f86a",
+    "validate_problem_definition_111.py": "4dac5ed733519835e58e6ee37fb52315a65012cac0696f0447c5fa54b498e598",
+    "summarize_problem_definition_111.py": "26bbccb6796c5e3d438968283801f5cbf53a90406eaa970b4f90253701ece3da"
+  },
+  "artifact_sha256": {
+    "artifacts/problem-definition-111/plan.json": "f9513595fd3dd7be776a9033dceabdd0608c2ee781ae24cd2ef8a40119f4be9a",
+    "artifacts/problem-definition-111/numerical-audit.json": "2710c7f1a6d7a9eefd9fd33b324ba17cd42358a1fff4b57b05d48995f09561f6",
+    "artifacts/problem-definition-111/validation.json": "8869e8ba1392b8f06b66bbfc4139adf1c7964539b43c717b2a93d5d2166e9b5f"
+  },
+  "README_change": {
+    "utc": "2026-10-03T18:02:55.870277+00:00",
+    "before_backup": "reports/README-before-111.md",
+    "before_sha256": "dc6ab4867354e8f02785402e586279a8d267714b33e26f8d6d48b0c2998c6b37",
+    "after_sha256": "edb3727edd539413466863e2e137d063c6cfac03fef9072382c5f6b9ea39ab5e",
+    "reason": "Append111 source/representation audit; no model changes"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "passed": true,
+  "archive": "deliverables/reproduction-011-014-015-v136.zip",
+  "archive_SHA256": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+  "archive_bytes": 444821907,
+  "file_count": 72,
+  "validation": {
+    "passed": true,
+    "created_utc": "2026-10-04T08:22:48.906890+00:00",
+    "candidates": {
+      "011": {
+        "expected_SHA256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+        "checks": {
+          "validation-raw": {
+            "rows": 1000,
+            "ID_order_exact": true,
+            "duplicates": 0,
+            "finite": true,
+            "max_abs_error_vs_original": 8.526512829121202e-14,
+            "CSV_SHA256": "4b96dcc33560edaf753afe24f5bafbd65add8c3feea4fea2ba5be6cc0fb3792a",
+            "byte_exact_vs_original": false
+          },
+          "validation-reload": {
+            "rows": 1000,
+            "ID_order_exact": true,
+            "duplicates": 0,
+            "finite": true,
+            "max_abs_error_vs_original": 8.526512829121202e-14,
+            "CSV_SHA256": "5839596c3fc64124d8f0ecbd62711474074d163ba52f246d7650f7ae6294abc7",
+            "byte_exact_vs_original": false
+          },
+          "validation-cpu": {
+            "rows": 1000,
+            "ID_order_exact": true,
+            "duplicates": 0,
+            "finite": true,
+            "max_abs_error_vs_original": 6.4418048282277596e-06,
+            "CSV_SHA256": "8b486427e0e4b09a8a7c6ce57e871fcc8aee2b5814c238ff2c6fb7303b41eabf",
+            "byte_exact_vs_original": false
+          }
+        }
+      },
+      "014": {
+        "expected_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+        "checks": {
+          "validation-raw": {
+            "rows": 1000,
+            "ID_order_exact": true,
+            "duplicates": 0,
+            "finite": true,
+            "max_abs_error_vs_original": 0.0,
+            "CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+            "byte_exact_vs_original": true
+          },
+          "validation-reload": {
+            "rows": 1000,
+            "ID_order_exact": true,
+            "duplicates": 0,
+            "finite": true,
+            "max_abs_error_vs_original": 0.0,
+            "CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+            "byte_exact_vs_original": true
+          },
+          "validation-cpu": {
+            "rows": 1000,
+            "ID_order_exact": true,
+            "duplicates": 0,
+            "finite": true,
+            "max_abs_error_vs_original": 9.655896263893737e-06,
+            "CSV_SHA256": "d5dd8763db13bd18d981c6b1faa5fdf4a9464a864d1d5a50370401041ab82165",
+            "byte_exact_vs_original": false
+          }
+        }
+      },
+      "015": {
+        "expected_SHA256": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f",
+        "checks": {
+          "validation-raw": {
+            "rows": 1000,
+            "ID_order_exact": true,
+            "duplicates": 0,
+            "finite": true,
+            "max_abs_error_vs_original": 0.0,
+            "CSV_SHA256": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f",
+            "byte_exact_vs_original": true
+          },
+          "validation-reload": {
+            "rows": 1000,
+            "ID_order_exact": true,
+            "duplicates": 0,
+            "finite": true,
+            "max_abs_error_vs_original": 0.0,
+            "CSV_SHA256": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f",
+            "byte_exact_vs_original": true
+          },
+          "validation-cpu": {
+            "rows": 1000,
+            "ID_order_exact": true,
+            "duplicates": 0,
+            "finite": true,
+            "max_abs_error_vs_original": 5.4175818604562664e-06,
+            "CSV_SHA256": "be8825f5911b71369e5b382e686017b79aa4016a0ebc2eaae8468d257cd1276e",
+            "byte_exact_vs_original": false
+          }
+        }
+      }
+    },
+    "011_roundoff": {
+      "011_max_abs_error": 8.526512829121202e-14,
+      "011_rows_differing_float": 8,
+      "baseline_max_error_vs_historical": 5.684341886080802e-14,
+      "baseline_repeated_prediction_max_error": 5.684341886080802e-14,
+      "cause_evidence": "Parallel ExtraTrees prediction accumulation differs at floating-point roundoff; baseline is used only by011. No change to model or output rounding."
+    },
+    "independent_directory": true,
+    "original_project_study_imports": false,
+    "verified_source_files": 32,
+    "raw1000_feature_extraction": true,
+    "final_code_MPS_reload_and_CPU_inference": true,
+    "fit_backward_guard_in_final_inference": true,
+    "network_disabled": true,
+    "environment_versions_exact": true,
+    "training_entrypoint_import_and_plan_checked": true,
+    "full_training_execution": false,
+    "full_training_exact_state_reproduction": "NOT VERIFIED; new consolidated training driver was not run end-to-end. Prior project training evidence is not substituted for this check.",
+    "data_in_distribution": false,
+    "new_model_training": false,
+    "new_install": false,
+    "cost": 0,
+    "uploaded": false
+  },
+  "all_archive_members_hash_verified": true,
+  "privacy_scan_passed": true,
+  "allowed_contents": "source, model weights/support vectors, derived split metadata, environment, provenance/license, documentation and aggregate verification only",
+  "raw_competition_data_and_feature_caches_excluded": true,
+  "previous_ZIPs_and_candidates_preserved": {
+    "deliverables/source-code-candidate003.zip": "e9426f2b987bef6562a38ffc568beb9def5fd9347e0191a8475832b13462af0f",
+    "deliverables/source-code-run006.zip": "70c96cd35299af87621b6ff9573ffe5beb6ac9e2d845fc28e4ccd45428d31b81",
+    "deliverables/source-code-run007.zip": "8309df35ee8d81ea8e060cc75a3d6a16a486684abb7135a77337d818bd58521f",
+    "deliverables/source-code-candidate004.zip": "c3249be5a230a5087fa7f792592b7c41bffe0143d4061068955926bcd0638f56",
+    "deliverables/source-code.zip": "f6fae963fd8bcf83e18521d209048ffafee316dac31eee90dc4dbf7d0841aaae",
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-014.csv": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "artifacts/submission-candidate-015.csv": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f"
+  },
+  "standalone_directory": "deliverables/reproduction-011-014-015-v136",
+  "cost": 0,
+  "uploaded": false,
+  "remaining_limit": "Full consolidated training driver not executed; no claim of exact retraining weights. Saved-model1000 inference checked."
+}

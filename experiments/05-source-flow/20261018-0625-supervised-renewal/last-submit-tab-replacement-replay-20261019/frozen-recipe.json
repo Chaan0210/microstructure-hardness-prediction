@@ -1,0 +1,60 @@
+{
+  "frozen_utc": "2026-10-19T00:35:51.551272+00:00",
+  "candidate": "candidate-source-flow38-tabreplace.csv",
+  "status": "user_requested_exploratory_last_submission",
+  "authorization": "User explicitly permits remaining submission attempts and requests a last candidate in this thread; no final-selection change authorized.",
+  "construction": "source_current + eligible*.384*(control_P104_Tab - legacy083_Tab); legacy083_Tab = preserved076_Tab + (079-078)/.384. This replaces the entire legacyTab block with the equalmean of the two sourceF38 encoders' three-seed TabPFN heads; all other contributions stay fixed.",
+  "coefficient": 0.384,
+  "learning_changes": false,
+  "weights_fitted": false,
+  "source_candidate": "candidate-source-flow38-v1/candidate-source-flow38.csv",
+  "source_candidate_sha256": "0134d548df303294cb610454a62c1126c134727c8c67f1d537f902e9ead0d75b",
+  "source_recipe_sha256": "192b118e0638e4351f7435b005904bf304cf4748769f7543a7ef56ac61e96084",
+  "source_predictions": "candidate-source-flow38-v1/test-predictions.npz",
+  "control_predictions": "candidate-flow46-v1/test-predictions.npz",
+  "control_predictions_sha256": "420c2a272ceb80327e1216b52cfb93e3751eac8a28bc143692a68e5b57054356",
+  "incumbent_components": "experiments/082-fusion-20261018-0155/reproduction/incumbent-components.npz",
+  "incumbent_components_sha256": "743e26c8f1b0128d0cb11e9fe873364fa0792b6c67e822783094fd77a88a0ca9",
+  "legacy_difference_csvs": [
+    "artifacts/submission-candidate-079.csv",
+    "artifacts/submission-candidate-078.csv"
+  ],
+  "validation": {
+    "rmse": 8.966191527939781,
+    "gain": 0.011469675189662354,
+    "fold_gains": [
+      -0.0345398805432513,
+      0.10789092449979165,
+      -0.07099680598760827,
+      0.027678700333519046,
+      0.03936783245932851
+    ],
+    "positive_folds": 3,
+    "ci95": [
+      -0.06509088635218516,
+      0.08751179243105879
+    ],
+    "top10_positive_removed_gain": -0.055127772416236454,
+    "seed_gains": [
+      0.011111302402552425,
+      0.011826084396011183
+    ],
+    "positive_images": 215,
+    "checks": {
+      "gain_at_least_point_one": false,
+      "four_folds": false,
+      "positive_interval": false,
+      "positive_influence": false,
+      "both_seed_gains_positive": true
+    },
+    "passes_declared_resource_gate": false
+  },
+  "current_conditional_rmse": 8.977661203129443,
+  "promotion_gate_passed": false,
+  "full_confirmation_passed": false,
+  "limitations": "Small adaptiveconditionalCVgain0.01147;2of5folds worse,bootstrapCIcrosses0,influence sensitivitynegative. User accepts an exploratory submission; this is not a validated replacement. No Public or test values used to choose weights.",
+  "test_access_policy": "Only frozen arithmetic/inference and artifact validation after this recipe is saved.",
+  "no_final_selection_change": true,
+  "no_new_terms": true,
+  "no_cost": true
+}

@@ -1,0 +1,96 @@
+{
+  "complete": true,
+  "no_optimizer_steps": true,
+  "no_new_training_images": true,
+  "hardness_read": false,
+  "training_source_ids": [
+    "TRAIN_000236",
+    "TRAIN_000267",
+    "TRAIN_000170",
+    "TRAIN_000008",
+    "TRAIN_000458",
+    "TRAIN_000038",
+    "TRAIN_000111",
+    "TRAIN_000249",
+    "TRAIN_000429",
+    "TRAIN_000123",
+    "TRAIN_000292",
+    "TRAIN_000225",
+    "TRAIN_000467",
+    "TRAIN_000433",
+    "TRAIN_000049",
+    "TRAIN_000039",
+    "TRAIN_000494",
+    "TRAIN_000179",
+    "TRAIN_000386",
+    "TRAIN_000466",
+    "TRAIN_000184",
+    "TRAIN_000113",
+    "TRAIN_000044",
+    "TRAIN_000033",
+    "TRAIN_000071",
+    "TRAIN_000025",
+    "TRAIN_000019",
+    "TRAIN_000395",
+    "TRAIN_000045",
+    "TRAIN_000041",
+    "TRAIN_000077"
+  ],
+  "initial_model_state_sha256": "7d07bdb575743cc2a20ff94e03f5e5624f393c4cd8b08d7e147b53926ba00020",
+  "cases": [
+    {
+      "case": "actual_initial_training_batch",
+      "shape": [
+        31,
+        1984
+      ],
+      "pairs_per_source": 64,
+      "duplicate_fraction": 0.327116935483871,
+      "modes": {
+        "gather": {
+          "repetitions": 40,
+          "unique_gradient_hashes": 40,
+          "maximum_repeat_gradient_difference": 1.1641532182693481e-10,
+          "maximum_reference_gradient_error": 1.9019211617947451e-10,
+          "maximum_reference_loss_error": 7.031238047350286e-08
+        },
+        "aggregated": {
+          "repetitions": 40,
+          "unique_gradient_hashes": 1,
+          "maximum_repeat_gradient_difference": 0.0,
+          "maximum_reference_gradient_error": 2.2823104040350928e-10,
+          "maximum_reference_loss_error": 7.031238047350286e-08
+        }
+      }
+    },
+    {
+      "case": "duplicate_edge_numeric_fixture",
+      "shape": [
+        16,
+        1984
+      ],
+      "pairs_per_source": 64,
+      "duplicate_fraction": 0.984375,
+      "modes": {
+        "gather": {
+          "repetitions": 40,
+          "unique_gradient_hashes": 40,
+          "maximum_repeat_gradient_difference": 7.450580596923828e-09,
+          "maximum_reference_gradient_error": 7.465150522051323e-09,
+          "maximum_reference_loss_error": 1.770277258117403e-08
+        },
+        "aggregated": {
+          "repetitions": 40,
+          "unique_gradient_hashes": 1,
+          "maximum_repeat_gradient_difference": 0.0,
+          "maximum_reference_gradient_error": 2.287693028069082e-09,
+          "maximum_reference_loss_error": 1.770277258117403e-08
+        }
+      }
+    }
+  ],
+  "seconds": 1.4353010409977287,
+  "prototype_used_for_original_OOF": false,
+  "source_sha256": "ae43dfca940c095b5973f9894e12ed4749fec6aa9eb4b3aeae0934ca684e4b0f",
+  "prototype_sha256": "21b1b42d41fcc993d8d65ac1b5733ca72264709ec1391d298e0edb06acbbdf11"
+}

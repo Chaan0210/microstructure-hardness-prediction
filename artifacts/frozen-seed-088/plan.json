@@ -1,0 +1,71 @@
+{
+  "study": "088 fixed three-seed average of084/085 fresh frozen head",
+  "created_utc": "2026-10-02T09:17:45.642655+00:00",
+  "hypothesis": "Same new regularized12epoch B head has unmeasured initialization/order/dropout variability. Average exactly3fixed seeds to reduce this algorithmic variance without changing representation, optimizer,regularization,training length,normalization,calibration or total10%weight.",
+  "diagnostic_basis": "087 rules out changed features/input scaling and shows old/new interpolation differs, but cannot causally separate regularization from length/capacity/batch. Existing old3seed averaging reduces MSE by1.53..1.66; transfer to new recipe is untested. This is a controlled seed-only test, not attribution of prior improvement to one regularizer.",
+  "seeds": [
+    20270215,
+    20270222,
+    20270308
+  ],
+  "config": {
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "seed_rule": "Reuse20270215 per fold from084/085; add20270222 and20270308. Each actualseed=base+fold,full500=base. All3 equally weighted; never drop/rank/select a seed. Same12epochs and data-order/dropout algorithm, with seed as sole changed variable.",
+  "formula": ".9*samefold009+.1*mean(new_head_seed20270215,new_head_seed20270222,new_head_seed20270308)",
+  "gate": "Run allthree existing partitions unchanged. Require pooledRMSE below011 and >=3/5 improvedfolds in EACH partition, plus independent verification and originalbase-seed replay exact. Otherwise reject wholebundle. No alternate seeds/ratios/epochs/head settings; no fallbackcandidate.",
+  "full500": "If eligible, lock012; retain existing full500011 head as firstseed, fit onlytwo additional full500 heads withsameCFG andfixedseeds. Keep009 unchanged. Infer1000onlyafterallmodelsarefixed. Parent controls submission.",
+  "duplicate_audit": "052 averages three old S64wide100epoch heads;063/064 averages old B64wide100epoch heads.084/085/086 use exactlyone new32wide12epoch seed per fold/full500. No new-recipe seed average found.057 early stopping was old S recipe and failed; avoid repeating it.",
+  "selection_bias": "011 recipe was discovered from084 control after seeing original data and all400 rows have been reused. Diagnosis is descriptive, not independent validation or a causal factorial experiment. New seed experiment isolates algorithmic randomness only. The new seeds are fixed before seeing any of their development outcomes. Same400 historical reuse remains; no Public score informs seeds or weights.",
+  "sources": {
+    "frozen_seed_088.py": "8ffd3bcc2da2bcb8417cb94d75697eabfd54e3840cd666b2f52a5f64adc4df7e",
+    "validate_frozen_seed_088.py": "22daf430f1a259f029595555e106504ee01f468be8288ef4dd6317934b152606",
+    "diagnose_frozen_head_087.py": "8d320a4b5428405674c3dea60ea9f20988a00cb45773c5a067f3c1ef8e61cf31",
+    "dinob_joint_084.py": "1f87129e3fbd695df60558e92c0463817f5cbdd7304b99ccc002dedf6c8093a6"
+  },
+  "evidence": {
+    "artifacts/frozen-head-diagnostics-087/report.json": "87b11a1f039319898ea4e9afe161a30d32a919b3bdcc77937c6f920bafe294bd",
+    "reports/candidate011-public-submission.json": "9220b3d414da739824cda4a76f7867603b14333b2cef5b0de82a5ec802473b71",
+    "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f"
+  },
+  "protected011": {
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-011.components.csv": "1e5d67fed120150f9a1f665eacdc5e5aca817a29e12bdba4aea27347e3380739",
+    "artifacts/submission-candidate-011.manifest.json": "497cc7377fcc35cb9f6142bc0ee9868fbc3fa50aa40bf10c7a45d6ef3931fe94",
+    "artifacts/submission-candidate-011.reproduced.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/final-model-086/decision.json": "83b779a44abf26db1b496b4d7aa2ce6cce0ea4e20cb9e147db331554cabee03f",
+    "artifacts/final-model-086/head/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/head/report.json": "1a46ff5c0e94c7e4797f62986347fd5e378a4829965ad4144a47f6c8afd07053",
+    "artifacts/final-model-086/head/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "artifacts/final-model-086/report.json": "d2d7eb583640ba97d422aa1bc0a53365954c9bba047610b7972815c50bb26608",
+    "artifacts/final-model-086/test_predictions.npz": "eb8b4af03053e3a82c19f3a7d7f2cf569eb46e9b764980cdc0b567bbbe1e1cbc",
+    "artifacts/final-model-086/validation-replay/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/validation-replay/report.json": "e87d4bce70bf24d7273a3c46693f0c6cfdab1ae252d8b3f6c30b52beb807317b",
+    "artifacts/final-model-086/validation-replay/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+    "verify_candidate011.py": "12147b31d5a4acdb8837c9a2f9ac9be4b3a102efde9eb357414a9cebb2cb73e9",
+    "finalize_candidate011.py": "9aef57b8930cdf5c0ee7205d08a6ca31f42052c29bb1af49d92b2b31c31fec52",
+    "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+    "reports/final-candidate011-summary.json": "168316e3c35fcbe00035c880df29f3b9eb3e76b6ff588ddce7a37922e84588ad",
+    "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+    "artifacts/frozen-complement-085/plan.json": "47ea467c9f5dacafc2bd1cabad34906c619f5d7f599ee0393a27b68266ab9ce0"
+  },
+  "cost": 0,
+  "scope": "Development400onlybeforelock;noholdout/testselection/install/download;009/010/011preserved,010unsubmitted,no upload.",
+  "limits": "011 recipe was discovered from084 control after seeing original data and all400 rows have been reused. Diagnosis is descriptive, not independent validation or a causal factorial experiment. New seed experiment isolates algorithmic randomness only."
+}

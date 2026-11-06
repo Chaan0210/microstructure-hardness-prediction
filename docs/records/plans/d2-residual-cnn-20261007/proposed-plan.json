@@ -1,0 +1,92 @@
+{
+  "status": "PROPOSED_ONLY_NO_TRAINING_AUTHORIZED_THIS_TURN",
+  "primary_estimand": "Complete021-family pairedanchor plusrawimage residualCNN versus SAME pairedanchor zero-correction; existing021 onlyseparate competitivebenchmark. Not unchanged021deploymentanchor correction.",
+  "partitions": "Original4005fold only forminimum firststudy; both existingrepartitions onlyafternewdecision, unchangedrecipe iflaterapproved. No firstfoldscore gate.",
+  "outer_logic": [
+    "Use locked204outerT320/V80",
+    "Use preselectedmiddlej0 only: A213/B107, nochoicebylabels/results",
+    "Buildcomplete021-familyG_A fitonlyA. Internal C142/D71 andnew E94/95/F47/48 hierarchy excludesB,V throughout. Saveoneanchorobject andidenticalpredictionpath forB andV.",
+    "ConstructresidualrB=yB-G_A(B) afteranchorfrozen. Exclude allouterV labels fromanchortraining,scalers,allresidualtargetsandselection.",
+    "TrainfixedResidualCNN_B on imagesB,rB; permutedcontrol usesfixedwithinB permutation ofrB. Both useidenticalinit,order,D4andtrainingsteps; same residualmean/std, noearlystopping.",
+    "PredictR0=G_A(V), R1=G_A(V)+CNNtrue_B(V), Rperm=G_A(V)+CNNperm_B(V). Neveraddthese residuals tosavedP021_T. CompareP021_T onlyasseparatebenchmark.",
+    "Ifeverdeployed, repeatsameanchor/residualdisjointA/Bpolicyonfutureauthorized500, noexisting021500substitution. Currentturnforbids500fits."
+  ],
+  "anchor_recipe": "Retainfull021-familyweights,.9/.1 short,.9/.1 L,allthreecurrentseeds,legacycompact26,physics57+528residual5candidates/512bootstrap. Do notapply218failedchanges. RootKRRselectionallA. Existing500-specific400selectionexceptiondoesnotapplytopairedanchors; thisisexplicitpolicychangefromlegacyfull500deployment.",
+  "anchor_seed_mapping": "Cachedmiddlej0 root offset k+100; cachedC offsets root+100*(ell+1). New Eseed offset Coffset+100*(m+1); deepGroupKFold3 seed20270110+Coffset. S/B/L readout seeds20261128/20261205/20261219 plusnodeoffset. CNNseed20261003/20261023/20261043 plusnodeoffset. Record exactresidualselector/bootstrapseedmapping withgeneralizedimplementation beforeanyfit; outerVcannotselectmapping.",
+  "residual_CNN": {
+    "architecture": "Existingcnn_controls.TinyCNN91905params; fourconv16/32/64/96,GN4,SiLU,mean/stdpool,MLP194->64->1,dropout.15",
+    "images": "Existingdevelopment-onlyBOX128 cache; no newdata orbackbonefeatureextraction",
+    "normalization": "EachB imagepixelmean/popstd, residualmean/popstd fromtrueB only; permutedB hasidenticalmultiset. Residualstd floor1e-6, invert mean/std atprediction. Legitimate residual0 kept.",
+    "objective": "MSE standardizedresidual",
+    "optimizer": "AdamW lr.002 wd.01 clip5; cosine80epoch minlr.0001, batch32, D4, last5statesaverage76-80",
+    "epochs": 80,
+    "seed": "20264000+outerk botharms",
+    "permutation_seed": "20264050+outerk",
+    "validation": "V neverearlystop/checkpoint/normalization/augmentationselection. Onlyfinalfixedmodelscore. Savecurves fordiagnostics afterfitslocked."
+  },
+  "comparisons": [
+    "R1-R0 primarysignedcorrectioneffect",
+    "R1-Rperm targetalignmentcontrol",
+    "R1-P021 competitionrelevance; improvementoverweakerpairedanchor alonenotpromotion"
+  ],
+  "evaluation": "All5folds beforedecision. Whole400pairedID10000bootstrap; originalonlynotindependentnewdata. Reportperfold/targettail/known3asdescriptive, nooutcometrimmingorOOFlambda. No ad-hocweight/seed/epochrescue. IfR1 failszeroanchororpermutationcontrol onpointestimate, noautomaticrepartition. PositivepointswithCIincluding0 remainuncertain; fullsafeimplementationandstrongerconfirmationrequired beforepromotion.",
+  "run_stages": [
+    "First implementnodegraph andstaticlabel-flow/cachehashaudit; do notimport moduleswithtop-leveltrain",
+    "Afterauthorization only, one8update MPSprobe onfuturetrainingE subset, discardweights; stopif6GB/swapgrowth or25minbudget forecastviolated",
+    "Buildfirstfoldj0 anchorandbothresidualarms; predeclaredclean/complementpoison checks, resourcegateonly; donotinspectfoldscoreforselection",
+    "Completeother4folds; validateallmodels andscoreallarms; stop/reportbeforeanyrepartition/full500/test/submission"
+  ],
+  "models_main": {
+    "new_anchor_CNN": 135,
+    "direct_residual_CNN": 5,
+    "permuted_residual_control_CNN": 5,
+    "total_main_CNN": 145,
+    "new_long_S_B_MLP": 270,
+    "new_L_MLP": 15,
+    "new_shortB_MLP": 15,
+    "new_KRR_final": 45,
+    "new_KRR_inner": 1215,
+    "affine_OLS": 20,
+    "nonnull_residual_classical_fits": 240,
+    "zeroresidual_objects_no_fit": 60,
+    "CNN_verification": 34,
+    "total_CNN_main_plus_verification": 179,
+    "discarded_probe_updates": 8,
+    "main_CNN_updates": 35600,
+    "verification_CNN_updates": 8480,
+    "reused_base_component_nodes": 20
+  },
+  "CPU_validation_additional_lower_bound": {
+    "first_anchor_poison_long_S_B_and_L_heads": 57,
+    "first_anchor_poison_shortB_heads": 3,
+    "first_anchor_poison_KRR_innerplusfinal": 252,
+    "first_anchor_poison_nonnull_residualfits": 48,
+    "first_anchor_poison_affines": 4,
+    "note": "These areadditional tolistedmainheads andCNNverification34. Anyimplementation-time verification expansion mustbedisclosedbeforeexecution; thesearecountsnotcompletedwork."
+  },
+  "device": "MPSsingleworker forCNN (includingoldmodelquery); CPU2 forfrozen-featurelongreadouts/KRR/affine/residualmath; shortB follows existingMPSroutineunlessexplicitlylockedCPUequivalencebeforetraining. Noexternalresource.",
+  "time_memory": {
+    "204_main_MPS_fits": 540,
+    "204_main_plus48validation_elapsed_seconds": 4622.851904084004,
+    "204_deep_sec_per_update_p10_p50_p90": [
+      0.017095999646524432,
+      0.01738597749998007,
+      0.017588786103980965
+    ],
+    "extrapolated_CNN_main_and_verification_seconds_p10_p50_p90": [
+      753.591664418797,
+      766.3738881991216,
+      775.313691463481
+    ],
+    "recommended_total_budget_minutes": [
+      15,
+      25
+    ],
+    "forecast_not_benchmark": "Smaller94-95trainingcount and changedtargets not yetbenchmarked; CPUheads,oldmodelrequery/I/O andverification overheadaddedroughly. No assurance Maccurrentloadmatches204.",
+    "historical204_peak_RSS_plus_MPS_bytes": 895221760,
+    "proposed_cap_bytes": 6000000000,
+    "probe_only_after_training_authorization": true
+  },
+  "scientific_limit": "A/Bsplit residualtargets varywithG_A acrossfolds. Separatepairedpackages keeptraining-vs-evaluationanchoridenticalwithinfold, but differentfoldshavedifferenttargetfunctions anddeploymentn333vsCV213 shiftsstillremain. Neverpoolthese targetstooneCNN withoutexplicitgeneralizationdesign.",
+  "decision_now": "Feasibleinprinciplebutnotyetimplemented/end-to-endvalidated; notacheapcached10fitdrop-in. Benefit evidenceweak. Recommendparentweigh179CNN+CPUheadworkagainstspeculativebenefit; do notlaunchfromthisplanningturn."
+}

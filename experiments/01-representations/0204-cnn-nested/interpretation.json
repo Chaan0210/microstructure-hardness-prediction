@@ -1,0 +1,406 @@
+{
+  "study": 204,
+  "UTC": "2026-10-06T18:14:38.598248+00:00",
+  "decision": "모든 중첩 단계에 CNN 6개 seed를 적용하고 같은 후단 정책으로 재적합한 후보가 사전 개발 기준에 미달했습니다. best021을 유지하며, 이번 작업에서 추가 seed·가중치·구조 탐색은 하지 않습니다.",
+  "R_F_N_definition": {
+    "R": "old3alllevels,refit same downstream;must reproduce021 before newCNN starts",
+    "F": "203cached6outer withold3postprocess,diagnostic only",
+    "N": "all6alllevels,fullrefit same downstream policy;onlycandidate"
+  },
+  "main_result": {
+    "reference": "R",
+    "new": "N",
+    "by_partition": {
+      "original": {
+        "reference_RMSE": 12.786200775750695,
+        "new_RMSE": 12.740881738449936,
+        "gain": 0.045319037300759035,
+        "fold_gains": [
+          0.06427984238465712,
+          0.2013969221538332,
+          -0.0067218828635144945,
+          -0.004671138073613079,
+          -0.01647039069311873
+        ],
+        "positive_folds": 2,
+        "conditional_CI95": [
+          -0.009066875556940922,
+          0.10004991409612186
+        ],
+        "influence": {
+          "positive_IDs": 198,
+          "net_SSE_gain": 462.74512185624997,
+          "top_benefit_removal": {
+            "1": {
+              "benefit_sum": 100.37180375324363,
+              "net_fraction": 0.21690515796387747,
+              "gain_after_removal": 0.035821975380921245
+            },
+            "5": {
+              "benefit_sum": 349.9058067590545,
+              "net_fraction": 0.756152340094795,
+              "gain_after_removal": 0.011555859189803286
+            },
+            "10": {
+              "benefit_sum": 552.4253191402762,
+              "net_fraction": 1.193800416359408,
+              "gain_after_removal": -0.009384281582418552
+            }
+          }
+        }
+      },
+      "20261031": {
+        "reference_RMSE": 12.621902419708583,
+        "new_RMSE": 12.645836800779215,
+        "gain": -0.023934381070631616,
+        "fold_gains": [
+          -0.0658470333311989,
+          -0.06339312629667226,
+          -0.03792990401383278,
+          0.03303124915588285,
+          0.021095437418257035
+        ],
+        "positive_folds": 2,
+        "conditional_CI95": [
+          -0.07471978062824562,
+          0.02588888357040972
+        ],
+        "influence": {
+          "positive_IDs": 201,
+          "net_SSE_gain": -241.90707971858524,
+          "top_benefit_removal": {
+            "1": {
+              "benefit_sum": 44.45708313977275,
+              "net_fraction": null,
+              "gain_after_removal": -0.02851219597413568
+            },
+            "5": {
+              "benefit_sum": 202.04933002534432,
+              "net_fraction": null,
+              "gain_after_removal": -0.04558303195906355
+            },
+            "10": {
+              "benefit_sum": 359.5869543158475,
+              "net_fraction": null,
+              "gain_after_removal": -0.06348974801309026
+            }
+          }
+        }
+      },
+      "20261101": {
+        "reference_RMSE": 13.032449212752852,
+        "new_RMSE": 13.03656927503765,
+        "gain": -0.004120062284798109,
+        "fold_gains": [
+          -0.057110849329724545,
+          0.08453426650762808,
+          0.04639110318781725,
+          0.02289471167892465,
+          -0.11835033408046236
+        ],
+        "positive_folds": 3,
+        "conditional_CI95": [
+          -0.05167382794468711,
+          0.04238611060263693
+        ],
+        "influence": {
+          "positive_IDs": 205,
+          "net_SSE_gain": -42.96239194928202,
+          "top_benefit_removal": {
+            "1": {
+              "benefit_sum": 59.417389519507424,
+              "net_fraction": null,
+              "gain_after_removal": -0.009942454088111674
+            },
+            "5": {
+              "benefit_sum": 211.28696108310731,
+              "net_fraction": null,
+              "gain_after_removal": -0.025492503882277973
+            },
+            "10": {
+              "benefit_sum": 355.8210597061316,
+              "net_fraction": null,
+              "gain_after_removal": -0.04087892062889509
+            }
+          }
+        }
+      }
+    },
+    "pooled": {
+      "reference_RMSE": 12.814628144604061,
+      "new_RMSE": 12.808843225521507,
+      "gain": 0.005784919082554296,
+      "conditional_CI95": [
+        -0.026273519539496214,
+        0.03731951544595677
+      ],
+      "influence": {
+        "positive_IDs": 212,
+        "net_SSE_gain": 59.29188339612712,
+        "top_benefit_removal": {
+          "1": {
+            "benefit_sum": 45.90858489002085,
+            "net_fraction": 0.7742811032550122,
+            "gain_after_removal": 0.0013183881492278005
+          },
+          "5": {
+            "benefit_sum": 173.79464435541766,
+            "net_fraction": 2.9311709192015605,
+            "gain_after_removal": -0.011677158787087194
+          },
+          "10": {
+            "benefit_sum": 290.42130196178414,
+            "net_fraction": 4.898162873685239,
+            "gain_after_removal": -0.024396847335559357
+          }
+        }
+      }
+    },
+    "prediction_delta_RMS": 0.4920359851017012,
+    "exact_MSE_change": {
+      "cross": -0.3903291191253207,
+      "delta_square": 0.24209941063500154,
+      "MSE_change": -0.14822970849031905
+    }
+  },
+  "downstream_adaptation_result": {
+    "reference": "F",
+    "new": "N",
+    "by_partition": {
+      "original": {
+        "reference_RMSE": 12.74550800303232,
+        "new_RMSE": 12.740881738449936,
+        "gain": 0.004626264582384465,
+        "fold_gains": [
+          -0.005341878114196064,
+          0.004388846014700576,
+          0.004014077750344569,
+          0.016729995001103504,
+          0.004005226823954544
+        ],
+        "positive_folds": 4,
+        "conditional_CI95": [
+          -0.005901200300260489,
+          0.0148392579535229
+        ],
+        "influence": {
+          "positive_IDs": 204,
+          "net_SSE_gain": 47.16271287755749,
+          "top_benefit_removal": {
+            "1": {
+              "benefit_sum": 15.94549750689498,
+              "net_fraction": 0.3380954261111364,
+              "gain_after_removal": 0.003095427833665454
+            },
+            "5": {
+              "benefit_sum": 62.29902378641205,
+              "net_fraction": 1.3209380882764532,
+              "gain_after_removal": -0.0015519622406330313
+            },
+            "10": {
+              "benefit_sum": 92.99390022789777,
+              "net_fraction": 1.9717674101853708,
+              "gain_after_removal": -0.004823034800132575
+            }
+          }
+        }
+      },
+      "20261031": {
+        "reference_RMSE": 12.64422148497035,
+        "new_RMSE": 12.645836800779215,
+        "gain": -0.001615315808864537,
+        "fold_gains": [
+          0.00231505178374114,
+          -0.00943871512921568,
+          -0.006246081597067743,
+          -0.004219388791041112,
+          0.009979503611944551
+        ],
+        "positive_folds": 2,
+        "conditional_CI95": [
+          -0.00938989985164942,
+          0.0060285065278521165
+        ],
+        "influence": {
+          "positive_IDs": 196,
+          "net_SSE_gain": -16.340572382435056,
+          "top_benefit_removal": {
+            "1": {
+              "benefit_sum": 8.291582742025298,
+              "net_fraction": null,
+              "gain_after_removal": -0.002453911393304864
+            },
+            "5": {
+              "benefit_sum": 35.96970312362441,
+              "net_fraction": null,
+              "gain_after_removal": -0.005339546791548244
+            },
+            "10": {
+              "benefit_sum": 60.00545229803561,
+              "net_fraction": null,
+              "gain_after_removal": -0.007964954839373206
+            }
+          }
+        }
+      },
+      "20261101": {
+        "reference_RMSE": 13.034443298359745,
+        "new_RMSE": 13.03656927503765,
+        "gain": -0.002125976677904262,
+        "fold_gains": [
+          -0.007029434230410914,
+          -0.005409739239956579,
+          0.008764856638126872,
+          -0.0012138009651447845,
+          -0.005625639981071018
+        ],
+        "positive_folds": 1,
+        "conditional_CI95": [
+          -0.010615752292785484,
+          0.006527398648332113
+        ],
+        "influence": {
+          "positive_IDs": 197,
+          "net_SSE_gain": -22.170545880159718,
+          "top_benefit_removal": {
+            "1": {
+              "benefit_sum": 16.33507138377172,
+              "net_fraction": null,
+              "gain_after_removal": -0.0037272324223884823
+            },
+            "5": {
+              "benefit_sum": 44.822840829711225,
+              "net_fraction": null,
+              "gain_after_removal": -0.00664014388899048
+            },
+            "10": {
+              "benefit_sum": 70.84809952462038,
+              "net_fraction": null,
+              "gain_after_removal": -0.009588730235471132
+            }
+          }
+        }
+      }
+    },
+    "pooled": {
+      "reference_RMSE": 12.809124655423076,
+      "new_RMSE": 12.808843225521507,
+      "gain": 0.000281429901569652,
+      "conditional_CI95": [
+        -0.00557922367833581,
+        0.006175909594955305
+      ],
+      "influence": {
+        "positive_IDs": 199,
+        "net_SSE_gain": 2.8838648716535484,
+        "top_benefit_removal": {
+          "1": {
+            "benefit_sum": 8.658970452335097,
+            "net_fraction": 3.0025576223931125,
+            "gain_after_removal": -0.0005691552759152785
+          },
+          "5": {
+            "benefit_sum": 31.290278232007722,
+            "net_fraction": 10.85011941425207,
+            "gain_after_removal": -0.002903755963540533
+          },
+          "10": {
+            "benefit_sum": 52.53999015703984,
+            "net_fraction": 18.218603331061935,
+            "gain_after_removal": -0.005196792691428698
+          }
+        }
+      }
+    },
+    "prediction_delta_RMS": 0.09177951777149267,
+    "exact_MSE_change": {
+      "cross": -0.01563314206150233,
+      "delta_square": 0.008423479882367739,
+      "MSE_change": -0.007209662179135598
+    }
+  },
+  "mechanism_diagnostics": {
+    "affine_delta_RMS": 0.07560785890968359,
+    "residual_delta_RMS": 0.058214825120987676,
+    "affine_MSE_term": -0.03078991963813174,
+    "residual_MSE_term": 0.024262291769366683,
+    "interaction_MSE_term": -0.0006820343104058659,
+    "N_minus_F_MSE": -0.007209662179135598,
+    "new_slope_range": [
+      1.0616416076614368,
+      1.187617741230055
+    ],
+    "old_slope_range": [
+      1.0456949466358776,
+      1.174292636680815
+    ],
+    "changed_bootstrap_blocks": 43,
+    "blocks": 45,
+    "same_outer6CNN_for_F_and_N": true,
+    "not_additive_causal_stage_effects": true
+  },
+  "limits": "400uniqueIDsnot1200independent. Conditionalfixed-fitbootstrap;adaptivehistoricalselection,trainingdependence,unknownfamilygroups andrefituncertainty notcorrected. Negativepointestimate/gatefailurealone notuniversalharm. Nisasingle6seedrealization. Residualanchor213vsouter320size mismatchretained.",
+  "review_application": "라벨 오염 검사를 학습집합 여집합 전체로 확대; 엄격한 MPS clean 대조; arm별 새 anchor/residual; 모든 단계 raw 차분; R 중간값 exact 재현. Claude의 일반적 seed/L 우선 제안은 수정됐고 추가 권고는 자동 채택하지 않음.",
+  "coverage_audit": "coverage-audit.json",
+  "official_ratio_correction": "기존2026-09-30 공식 페이지 확인 기록에 Public 30%/Private 70% 존재. 앞선 일괄 미확인 표현 정정. 현재 계정 최종 선택은 변경하지 않음.",
+  "resources": {
+    "preflight-resources.json": {
+      "observed_seconds": 21.557739374999073,
+      "max_RSS_plus_MPS_driver_bytes": 394002432,
+      "swap_growth_bytes": 0
+    },
+    "study-resources.json": {
+      "observed_seconds": 4619.353958292006,
+      "max_RSS_plus_MPS_driver_bytes": 895221760,
+      "swap_growth_bytes": 0
+    },
+    "model-validation-resources.json": {
+      "observed_seconds": 206.17064133301028,
+      "max_RSS_plus_MPS_driver_bytes": 627015680,
+      "swap_growth_bytes": 0
+    },
+    "N-downstream-resources.json": {
+      "observed_seconds": 19.389798749994952,
+      "max_RSS_plus_MPS_driver_bytes": 643153920,
+      "swap_growth_bytes": 0
+    }
+  },
+  "peak_bytes": 895221760,
+  "swap_growth_bytes": 0,
+  "fits": {
+    "main_CNN": 540,
+    "validation_CNN": 48,
+    "phases": {
+      "main": 540,
+      "clean": 6,
+      "nan": 6,
+      "finite": 36
+    },
+    "all_updates": 259200,
+    "nonnull_downstream_primary_R_plus_N": 1440,
+    "nonnull_downstream_outer_poison": 1440
+  },
+  "scope": {
+    "new_raw_image_reads": false,
+    "holdout_test_full500_new_submission_CSV_upload": false,
+    "install_download": false,
+    "new_roadmap_experiments": false,
+    "local_compute_cost": 0
+  },
+  "review_execution": {
+    "one_CLI_invocation": true,
+    "CLI_reported_num_turns": 2,
+    "answer_segments": 2,
+    "original_result_tail_preserved": "response.md",
+    "complete_answer": "response-complete.md",
+    "tools": 0,
+    "hooks": 0,
+    "MCP": 0,
+    "networkviolations": 0,
+    "new_manual_call_after_initial": false,
+    "list_token_cost_USD": 0.6139434,
+    "list_cost_is_not_invoice": true,
+    "Pro_and_user_confirmed_extra_usage_OFF": true
+  },
+  "remaining_scientific_limits": "같은 400개 표본의 적응적 재사용, 미확인 생성 family 의존성, 단일 seed 집합의 실현, 잔차 anchor와 outer 모델의 학습 크기 차이."
+}

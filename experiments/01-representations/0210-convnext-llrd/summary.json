@@ -1,0 +1,411 @@
+{
+  "study": 210,
+  "decision": "사전 primary 기준 미달. 이 고정 LLRD 정책을 종료하고 비율 탐색 없이 best021을 유지한다.",
+  "ratio": 0.8,
+  "initial_LRs": [
+    0.0001,
+    7.868852459016394e-06,
+    9.836065573770491e-06,
+    1.2295081967213114e-05,
+    1e-05
+  ],
+  "effective_decay_policy": "모든 tail 파라미터는 기존 tail 기준 LR로 같은 multiplicative decay. 내장 AdamW weight decay 0.",
+  "comparisons": {
+    "primary_uniform_vs_LLRD": {
+      "baseline_RMSE": 16.76418504639125,
+      "candidate_RMSE": 16.768129052196088,
+      "gain": -0.003944005804836337,
+      "conditional_CI95": [
+        -0.01321240480664647,
+        0.005391779873496193
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "baseline_RMSE": 17.526875733014364,
+          "candidate_RMSE": 17.523987700162735,
+          "gain": 0.0028880328516294185
+        },
+        {
+          "fold": 1,
+          "baseline_RMSE": 15.225499093071278,
+          "candidate_RMSE": 15.221666783228171,
+          "gain": 0.003832309843106785
+        },
+        {
+          "fold": 2,
+          "baseline_RMSE": 18.56245263276958,
+          "candidate_RMSE": 18.579525108421148,
+          "gain": -0.017072475651566776
+        },
+        {
+          "fold": 3,
+          "baseline_RMSE": 15.19720864127489,
+          "candidate_RMSE": 15.189933300595934,
+          "gain": 0.007275340678956965
+        },
+        {
+          "fold": 4,
+          "baseline_RMSE": 17.048827159788544,
+          "candidate_RMSE": 17.06249243368098,
+          "gain": -0.013665273892435437
+        }
+      ],
+      "positive_folds": 3,
+      "top5_removed_gain": -0.008389994631261999,
+      "top5_removed_IDs": [
+        "TRAIN_000146",
+        "TRAIN_000274",
+        "TRAIN_000125",
+        "TRAIN_000150",
+        "TRAIN_000071"
+      ],
+      "top5_share_of_positive_squared_error_improvement": 0.16529246506085665,
+      "positive_ID_count": 208,
+      "prediction_delta_RMS": 0.08306883753524871
+    },
+    "frozen100_vs_LLRD": {
+      "baseline_RMSE": 16.50462462159319,
+      "candidate_RMSE": 16.768129052196088,
+      "gain": -0.26350443060289663,
+      "conditional_CI95": [
+        -0.4037477984889283,
+        -0.12798344988116694
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "baseline_RMSE": 17.357862520301858,
+          "candidate_RMSE": 17.523987700162735,
+          "gain": -0.16612517986087738
+        },
+        {
+          "fold": 1,
+          "baseline_RMSE": 14.965286412690254,
+          "candidate_RMSE": 15.221666783228171,
+          "gain": -0.25638037053791685
+        },
+        {
+          "fold": 2,
+          "baseline_RMSE": 18.301060865627303,
+          "candidate_RMSE": 18.579525108421148,
+          "gain": -0.2784642427938451
+        },
+        {
+          "fold": 3,
+          "baseline_RMSE": 14.861751800411744,
+          "candidate_RMSE": 15.189933300595934,
+          "gain": -0.3281815001841899
+        },
+        {
+          "fold": 4,
+          "baseline_RMSE": 16.761786462859874,
+          "candidate_RMSE": 17.06249243368098,
+          "gain": -0.30070597082110595
+        }
+      ],
+      "positive_folds": 0,
+      "top5_removed_gain": -0.3263964967618911,
+      "top5_removed_IDs": [
+        "TRAIN_000321",
+        "TRAIN_000078",
+        "TRAIN_000147",
+        "TRAIN_000052",
+        "TRAIN_000120"
+      ],
+      "top5_share_of_positive_squared_error_improvement": 0.18642646064130475,
+      "positive_ID_count": 185,
+      "prediction_delta_RMS": 1.3984575026252168
+    },
+    "head_only112_vs_LLRD": {
+      "baseline_RMSE": 16.615123203661955,
+      "candidate_RMSE": 16.768129052196088,
+      "gain": -0.15300584853413213,
+      "conditional_CI95": [
+        -0.26220362858829765,
+        -0.046173675516772233
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "baseline_RMSE": 17.43860247389884,
+          "candidate_RMSE": 17.523987700162735,
+          "gain": -0.08538522626389522
+        },
+        {
+          "fold": 1,
+          "baseline_RMSE": 15.061222180777191,
+          "candidate_RMSE": 15.221666783228171,
+          "gain": -0.1604446024509798
+        },
+        {
+          "fold": 2,
+          "baseline_RMSE": 18.305461157145114,
+          "candidate_RMSE": 18.579525108421148,
+          "gain": -0.2740639512760339
+        },
+        {
+          "fold": 3,
+          "baseline_RMSE": 15.091590167701733,
+          "candidate_RMSE": 15.189933300595934,
+          "gain": -0.09834313289420038
+        },
+        {
+          "fold": 4,
+          "baseline_RMSE": 16.926911223767437,
+          "candidate_RMSE": 17.06249243368098,
+          "gain": -0.13558120991354272
+        }
+      ],
+      "positive_folds": 0,
+      "top5_removed_gain": -0.19690583218308078,
+      "top5_removed_IDs": [
+        "TRAIN_000052",
+        "TRAIN_000101",
+        "TRAIN_000219",
+        "TRAIN_000147",
+        "TRAIN_000120"
+      ],
+      "top5_share_of_positive_squared_error_improvement": 0.15244072145780513,
+      "positive_ID_count": 189,
+      "prediction_delta_RMS": 1.0363667708518225
+    },
+    "fixed_blend_uniform_vs_LLRD": {
+      "baseline_RMSE": 12.95863858063985,
+      "candidate_RMSE": 12.95851294050402,
+      "gain": 0.0001256401358293857,
+      "conditional_CI95": [
+        -0.000794717897833852,
+        0.0010218392579573797
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "baseline_RMSE": 13.111688031547846,
+          "candidate_RMSE": 13.112013542907759,
+          "gain": -0.0003255113599127668
+        },
+        {
+          "fold": 1,
+          "baseline_RMSE": 12.256630981148383,
+          "candidate_RMSE": 12.255731485806482,
+          "gain": 0.0008994953419012575
+        },
+        {
+          "fold": 2,
+          "baseline_RMSE": 14.024212267715946,
+          "candidate_RMSE": 14.024629359047108,
+          "gain": -0.00041709133116185626
+        },
+        {
+          "fold": 3,
+          "baseline_RMSE": 12.133134552581039,
+          "candidate_RMSE": 12.131845489198572,
+          "gain": 0.0012890633824671482
+        },
+        {
+          "fold": 4,
+          "baseline_RMSE": 13.17568667935627,
+          "candidate_RMSE": 13.176324643542754,
+          "gain": -0.0006379641864846519
+        }
+      ],
+      "positive_folds": 2,
+      "top5_removed_gain": -0.00037703306563052763,
+      "top5_removed_IDs": [
+        "TRAIN_000120",
+        "TRAIN_000071",
+        "TRAIN_000125",
+        "TRAIN_000227",
+        "TRAIN_000274"
+      ],
+      "top5_share_of_positive_squared_error_improvement": 0.17637376898124918,
+      "positive_ID_count": 203,
+      "prediction_delta_RMS": 0.008306883753524246
+    },
+    "best021_vs_LLRD_blend": {
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.95851294050402,
+      "gain": -0.17231216475332545,
+      "conditional_CI95": [
+        -0.2820342062686717,
+        -0.060728247790295016
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "baseline_RMSE": 12.824291360960531,
+          "candidate_RMSE": 13.112013542907759,
+          "gain": -0.28772218194722754
+        },
+        {
+          "fold": 1,
+          "baseline_RMSE": 12.180402220733276,
+          "candidate_RMSE": 12.255731485806482,
+          "gain": -0.07532926507320603
+        },
+        {
+          "fold": 2,
+          "baseline_RMSE": 13.763278947548145,
+          "candidate_RMSE": 14.024629359047108,
+          "gain": -0.2613504114989631
+        },
+        {
+          "fold": 3,
+          "baseline_RMSE": 12.12245059832636,
+          "candidate_RMSE": 12.131845489198572,
+          "gain": -0.009394890872211903
+        },
+        {
+          "fold": 4,
+          "baseline_RMSE": 12.970287133386918,
+          "candidate_RMSE": 13.176324643542754,
+          "gain": -0.20603751015583605
+        }
+      ],
+      "positive_folds": 0,
+      "top5_removed_gain": -0.2259211224362101,
+      "top5_removed_IDs": [
+        "TRAIN_000128",
+        "TRAIN_000087",
+        "TRAIN_000202",
+        "TRAIN_000206",
+        "TRAIN_000227"
+      ],
+      "top5_share_of_positive_squared_error_improvement": 0.21589705224500158,
+      "positive_ID_count": 183,
+      "prediction_delta_RMS": 0.9026008599798352
+    }
+  },
+  "training_generalization_gap": {
+    "baseline_train_curve": {
+      "0": 5.849854510199074,
+      "3": 5.265044122843632,
+      "6": 4.578711139607047,
+      "9": 4.075372442520192,
+      "12": 3.8087147847231657
+    },
+    "candidate_train_curve": {
+      "0": 5.849854510199074,
+      "3": 5.253204048321491,
+      "6": 4.5590437211887,
+      "9": 4.044252065100786,
+      "12": 3.7666448292689267
+    },
+    "baseline_final_train_RMSE": 3.8087147847231657,
+    "candidate_final_train_RMSE": 3.7666448292689267,
+    "train_RMSE_increase": -0.04206995545423897,
+    "OOF_gain": -0.003944005804836337,
+    "baseline_OOF_minus_train_gap": 12.955470261668086,
+    "candidate_OOF_minus_train_gap": 13.00148422292716,
+    "gap_reduction": -0.04601396125907442,
+    "folds": [
+      {
+        "fold": 0,
+        "baseline_train_RMSE": 4.133974168294171,
+        "candidate_train_RMSE": 4.0906943890224134,
+        "train_RMSE_increase": -0.04327977927175741,
+        "baseline_OOF_RMSE": 17.526875733014364,
+        "candidate_OOF_RMSE": 17.523987700162735,
+        "OOF_gain": 0.0028880328516294185,
+        "baseline_gap": 13.392901564720194,
+        "candidate_gap": 13.433293311140321
+      },
+      {
+        "fold": 1,
+        "baseline_train_RMSE": 3.6411323359563976,
+        "candidate_train_RMSE": 3.600517443854891,
+        "train_RMSE_increase": -0.040614892101506594,
+        "baseline_OOF_RMSE": 15.225499093071278,
+        "candidate_OOF_RMSE": 15.221666783228171,
+        "OOF_gain": 0.003832309843106785,
+        "baseline_gap": 11.58436675711488,
+        "candidate_gap": 11.62114933937328
+      },
+      {
+        "fold": 2,
+        "baseline_train_RMSE": 3.7032293708994644,
+        "candidate_train_RMSE": 3.661110290190314,
+        "train_RMSE_increase": -0.04211908070915049,
+        "baseline_OOF_RMSE": 18.56245263276958,
+        "candidate_OOF_RMSE": 18.579525108421148,
+        "OOF_gain": -0.017072475651566776,
+        "baseline_gap": 14.859223261870117,
+        "candidate_gap": 14.918414818230834
+      },
+      {
+        "fold": 3,
+        "baseline_train_RMSE": 3.9042881836710337,
+        "candidate_train_RMSE": 3.8579989305975535,
+        "train_RMSE_increase": -0.0462892530734802,
+        "baseline_OOF_RMSE": 15.19720864127489,
+        "candidate_OOF_RMSE": 15.189933300595934,
+        "OOF_gain": 0.007275340678956965,
+        "baseline_gap": 11.292920457603858,
+        "candidate_gap": 11.33193436999838
+      },
+      {
+        "fold": 4,
+        "baseline_train_RMSE": 3.6368365993164535,
+        "candidate_train_RMSE": 3.598982577893319,
+        "train_RMSE_increase": -0.037854021423134654,
+        "baseline_OOF_RMSE": 17.048827159788544,
+        "candidate_OOF_RMSE": 17.06249243368098,
+        "OOF_gain": -0.013665273892435437,
+        "baseline_gap": 13.411990560472091,
+        "candidate_gap": 13.463509855787661
+      }
+    ],
+    "candidate_clip_fraction": 0.9974999999999999,
+    "baseline_clip_fraction": 0.9974999999999999,
+    "interpretation": "격차 감소를 train 오차 증가와 OOF 개선으로 분리해 해석한다. 학습 오차 증가만으로 일반화 개선을 주장하지 않는다."
+  },
+  "primary_criteria": {
+    "technical": true,
+    "gain_at_least_0_02": false,
+    "at_least3_folds": true,
+    "CI_lower_positive": false,
+    "top5_removed_positive": false
+  },
+  "primary_passed": false,
+  "ensemble_criteria": {
+    "technical": true,
+    "gain_at_least_0_02": false,
+    "at_least3_folds": false,
+    "CI_lower_positive": false,
+    "top5_removed_positive": false
+  },
+  "ensemble_passed": false,
+  "recovery_diagnostics": {
+    "beats_frozen100_point": false,
+    "beats_head_only112_point": false
+  },
+  "counts": {
+    "control_fits": 1,
+    "candidate_fits": 5,
+    "total_updates": 1440,
+    "head_refits": 0,
+    "inner_fits": 0
+  },
+  "same400_IDs_reused": true,
+  "conditional_CI_not_selection_adjusted": true,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 202610210,
+  "gain_definition": "대조 RMSE - 후보 RMSE. 양수가 개선.",
+  "best021_replaced": false,
+  "extra_ratio_search": false,
+  "EMA": false,
+  "cost": 0,
+  "install_download_holdout_test_full500_newCSV_submission": false,
+  "limitations": [
+    "기존 마지막 stage 내부의 blockwise LLRD 한 비율만 평가했다. 전체 backbone LLRD의 일반적 효용을 판정한 결과가 아니다.",
+    "명목 평균 LR과 실제 decay factor를 맞췄지만 AdamW의 실제 parameter 이동량이나 gradient는 같지 않다.",
+    "같은 개발 400장의 적응적 반복 사용이다. 조건부 CI는 재학습·seed 분산·누적 선택 편향을 보정하지 않는다.",
+    "고정 앙상블은 기존 021에 후보를 10% 추가하는 blend다. 209의 기존 첫 seed 출력 치환과 다르다.",
+    "190의 update별 RNG 해시는 없다. 새 fold 0의 exact 대조 재현과 독립 head dropout RNG 소비 검증을 사용했다."
+  ],
+  "validation_SHA256": "e5150e16a25210ad1af34ee879e1e9a1ef1f1c46257c2efdac6f24c64007b9e9",
+  "OOF_SHA256": "faeaeb8d7daf43c1938559d734db467e3db1cca30ff31bad93f3d9b3202f38f4",
+  "plan_SHA256": "e02d739ccaeb46c3f5e8e5ba7b8518ba3e69c30c247db5ae26dcb8894bb9eb53",
+  "bootstrap_SHA256": "ff432bf8bf7e7e9a319467d9b5a331307f450792a9272adc51d1181d33de215a"
+}

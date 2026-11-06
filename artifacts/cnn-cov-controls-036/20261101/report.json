@@ -1,0 +1,4544 @@
+{
+  "scores": {
+    "baseline": {
+      "rmse": 14.314007659085357,
+      "fold_rmse": [
+        14.596285864102628,
+        13.806151425794823,
+        14.395109013364907,
+        14.50828489198722,
+        14.250726440763236
+      ]
+    },
+    "compact_kernel": {
+      "rmse": 14.343291339552492,
+      "fold_rmse": [
+        14.171835729734706,
+        13.14074751661951,
+        14.746291537774207,
+        15.13638868911744,
+        14.441830990051324
+      ]
+    },
+    "small_trace": {
+      "rmse": 15.05100457624939,
+      "fold_rmse": [
+        15.753845345745338,
+        14.396585680716372,
+        14.952510115722337,
+        15.263078844944836,
+        14.855276394054377
+      ]
+    },
+    "small_trace_blend": {
+      "rmse": 13.804532390195169,
+      "fold_rmse": [
+        14.144393481644192,
+        13.105657223647844,
+        13.756896675405786,
+        14.243030278159688,
+        13.743628949081888
+      ],
+      "comparison": {
+        "gain": -0.07455199898671161,
+        "fold_gains": [
+          -0.1991028112841544,
+          0.23647022562049358,
+          0.0017104632521363072,
+          -0.19951078043409964,
+          -0.19524894693529227
+        ],
+        "conditional_ci95": [
+          -0.20781315682382492,
+          0.06703225934683522
+        ]
+      }
+    },
+    "reference003": {
+      "rmse": 13.729980391208457,
+      "fold_rmse": [
+        13.945290670360038,
+        13.342127449268338,
+        13.758607138657922,
+        14.043519497725589,
+        13.548380002146596
+      ]
+    },
+    "reference_cov035": {
+      "rmse": 13.829958469549123,
+      "fold_rmse": [
+        13.70016182927812,
+        13.761145359015327,
+        13.745933229434831,
+        14.33358666831603,
+        13.596794235432904
+      ]
+    }
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "train_ids": [
+        "TRAIN_000002",
+        "TRAIN_000003",
+        "TRAIN_000004",
+        "TRAIN_000005",
+        "TRAIN_000006",
+        "TRAIN_000007",
+        "TRAIN_000008",
+        "TRAIN_000010",
+        "TRAIN_000011",
+        "TRAIN_000012",
+        "TRAIN_000013",
+        "TRAIN_000015",
+        "TRAIN_000016",
+        "TRAIN_000018",
+        "TRAIN_000019",
+        "TRAIN_000023",
+        "TRAIN_000025",
+        "TRAIN_000026",
+        "TRAIN_000027",
+        "TRAIN_000028",
+        "TRAIN_000029",
+        "TRAIN_000030",
+        "TRAIN_000031",
+        "TRAIN_000032",
+        "TRAIN_000033",
+        "TRAIN_000035",
+        "TRAIN_000036",
+        "TRAIN_000038",
+        "TRAIN_000039",
+        "TRAIN_000041",
+        "TRAIN_000044",
+        "TRAIN_000045",
+        "TRAIN_000046",
+        "TRAIN_000047",
+        "TRAIN_000048",
+        "TRAIN_000051",
+        "TRAIN_000052",
+        "TRAIN_000053",
+        "TRAIN_000056",
+        "TRAIN_000058",
+        "TRAIN_000060",
+        "TRAIN_000062",
+        "TRAIN_000063",
+        "TRAIN_000064",
+        "TRAIN_000068",
+        "TRAIN_000069",
+        "TRAIN_000070",
+        "TRAIN_000071",
+        "TRAIN_000073",
+        "TRAIN_000074",
+        "TRAIN_000078",
+        "TRAIN_000079",
+        "TRAIN_000080",
+        "TRAIN_000081",
+        "TRAIN_000083",
+        "TRAIN_000085",
+        "TRAIN_000087",
+        "TRAIN_000088",
+        "TRAIN_000089",
+        "TRAIN_000090",
+        "TRAIN_000091",
+        "TRAIN_000094",
+        "TRAIN_000095",
+        "TRAIN_000096",
+        "TRAIN_000097",
+        "TRAIN_000100",
+        "TRAIN_000101",
+        "TRAIN_000102",
+        "TRAIN_000105",
+        "TRAIN_000106",
+        "TRAIN_000108",
+        "TRAIN_000109",
+        "TRAIN_000110",
+        "TRAIN_000111",
+        "TRAIN_000113",
+        "TRAIN_000116",
+        "TRAIN_000117",
+        "TRAIN_000119",
+        "TRAIN_000120",
+        "TRAIN_000122",
+        "TRAIN_000123",
+        "TRAIN_000125",
+        "TRAIN_000127",
+        "TRAIN_000129",
+        "TRAIN_000130",
+        "TRAIN_000131",
+        "TRAIN_000132",
+        "TRAIN_000133",
+        "TRAIN_000134",
+        "TRAIN_000138",
+        "TRAIN_000139",
+        "TRAIN_000142",
+        "TRAIN_000143",
+        "TRAIN_000144",
+        "TRAIN_000145",
+        "TRAIN_000146",
+        "TRAIN_000147",
+        "TRAIN_000148",
+        "TRAIN_000149",
+        "TRAIN_000150",
+        "TRAIN_000152",
+        "TRAIN_000154",
+        "TRAIN_000155",
+        "TRAIN_000156",
+        "TRAIN_000157",
+        "TRAIN_000159",
+        "TRAIN_000161",
+        "TRAIN_000163",
+        "TRAIN_000164",
+        "TRAIN_000169",
+        "TRAIN_000170",
+        "TRAIN_000171",
+        "TRAIN_000173",
+        "TRAIN_000175",
+        "TRAIN_000176",
+        "TRAIN_000177",
+        "TRAIN_000179",
+        "TRAIN_000180",
+        "TRAIN_000182",
+        "TRAIN_000184",
+        "TRAIN_000185",
+        "TRAIN_000186",
+        "TRAIN_000187",
+        "TRAIN_000189",
+        "TRAIN_000190",
+        "TRAIN_000193",
+        "TRAIN_000194",
+        "TRAIN_000196",
+        "TRAIN_000197",
+        "TRAIN_000199",
+        "TRAIN_000200",
+        "TRAIN_000201",
+        "TRAIN_000203",
+        "TRAIN_000204",
+        "TRAIN_000206",
+        "TRAIN_000208",
+        "TRAIN_000209",
+        "TRAIN_000210",
+        "TRAIN_000211",
+        "TRAIN_000212",
+        "TRAIN_000215",
+        "TRAIN_000216",
+        "TRAIN_000218",
+        "TRAIN_000219",
+        "TRAIN_000220",
+        "TRAIN_000222",
+        "TRAIN_000223",
+        "TRAIN_000224",
+        "TRAIN_000226",
+        "TRAIN_000227",
+        "TRAIN_000228",
+        "TRAIN_000231",
+        "TRAIN_000232",
+        "TRAIN_000235",
+        "TRAIN_000236",
+        "TRAIN_000238",
+        "TRAIN_000240",
+        "TRAIN_000241",
+        "TRAIN_000242",
+        "TRAIN_000243",
+        "TRAIN_000244",
+        "TRAIN_000245",
+        "TRAIN_000246",
+        "TRAIN_000247",
+        "TRAIN_000248",
+        "TRAIN_000250",
+        "TRAIN_000252",
+        "TRAIN_000253",
+        "TRAIN_000254",
+        "TRAIN_000256",
+        "TRAIN_000259",
+        "TRAIN_000265",
+        "TRAIN_000266",
+        "TRAIN_000268",
+        "TRAIN_000269",
+        "TRAIN_000270",
+        "TRAIN_000271",
+        "TRAIN_000272",
+        "TRAIN_000273",
+        "TRAIN_000274",
+        "TRAIN_000275",
+        "TRAIN_000276",
+        "TRAIN_000277",
+        "TRAIN_000280",
+        "TRAIN_000281",
+        "TRAIN_000282",
+        "TRAIN_000284",
+        "TRAIN_000285",
+        "TRAIN_000287",
+        "TRAIN_000288",
+        "TRAIN_000289",
+        "TRAIN_000290",
+        "TRAIN_000291",
+        "TRAIN_000292",
+        "TRAIN_000294",
+        "TRAIN_000299",
+        "TRAIN_000300",
+        "TRAIN_000301",
+        "TRAIN_000302",
+        "TRAIN_000304",
+        "TRAIN_000305",
+        "TRAIN_000307",
+        "TRAIN_000308",
+        "TRAIN_000309",
+        "TRAIN_000311",
+        "TRAIN_000314",
+        "TRAIN_000315",
+        "TRAIN_000317",
+        "TRAIN_000318",
+        "TRAIN_000319",
+        "TRAIN_000320",
+        "TRAIN_000321",
+        "TRAIN_000322",
+        "TRAIN_000325",
+        "TRAIN_000326",
+        "TRAIN_000328",
+        "TRAIN_000331",
+        "TRAIN_000332",
+        "TRAIN_000333",
+        "TRAIN_000334",
+        "TRAIN_000335",
+        "TRAIN_000337",
+        "TRAIN_000338",
+        "TRAIN_000339",
+        "TRAIN_000342",
+        "TRAIN_000343",
+        "TRAIN_000344",
+        "TRAIN_000346",
+        "TRAIN_000347",
+        "TRAIN_000348",
+        "TRAIN_000349",
+        "TRAIN_000350",
+        "TRAIN_000352",
+        "TRAIN_000354",
+        "TRAIN_000355",
+        "TRAIN_000359",
+        "TRAIN_000360",
+        "TRAIN_000361",
+        "TRAIN_000363",
+        "TRAIN_000364",
+        "TRAIN_000365",
+        "TRAIN_000367",
+        "TRAIN_000370",
+        "TRAIN_000371",
+        "TRAIN_000372",
+        "TRAIN_000373",
+        "TRAIN_000379",
+        "TRAIN_000380",
+        "TRAIN_000383",
+        "TRAIN_000384",
+        "TRAIN_000385",
+        "TRAIN_000386",
+        "TRAIN_000387",
+        "TRAIN_000389",
+        "TRAIN_000390",
+        "TRAIN_000393",
+        "TRAIN_000394",
+        "TRAIN_000396",
+        "TRAIN_000399",
+        "TRAIN_000401",
+        "TRAIN_000402",
+        "TRAIN_000403",
+        "TRAIN_000404",
+        "TRAIN_000406",
+        "TRAIN_000407",
+        "TRAIN_000408",
+        "TRAIN_000409",
+        "TRAIN_000410",
+        "TRAIN_000412",
+        "TRAIN_000413",
+        "TRAIN_000416",
+        "TRAIN_000417",
+        "TRAIN_000418",
+        "TRAIN_000420",
+        "TRAIN_000421",
+        "TRAIN_000424",
+        "TRAIN_000427",
+        "TRAIN_000428",
+        "TRAIN_000429",
+        "TRAIN_000430",
+        "TRAIN_000432",
+        "TRAIN_000433",
+        "TRAIN_000434",
+        "TRAIN_000438",
+        "TRAIN_000439",
+        "TRAIN_000441",
+        "TRAIN_000442",
+        "TRAIN_000443",
+        "TRAIN_000444",
+        "TRAIN_000445",
+        "TRAIN_000447",
+        "TRAIN_000451",
+        "TRAIN_000453",
+        "TRAIN_000454",
+        "TRAIN_000455",
+        "TRAIN_000456",
+        "TRAIN_000458",
+        "TRAIN_000459",
+        "TRAIN_000461",
+        "TRAIN_000462",
+        "TRAIN_000463",
+        "TRAIN_000464",
+        "TRAIN_000465",
+        "TRAIN_000467",
+        "TRAIN_000469",
+        "TRAIN_000471",
+        "TRAIN_000474",
+        "TRAIN_000475",
+        "TRAIN_000477",
+        "TRAIN_000478",
+        "TRAIN_000479",
+        "TRAIN_000482",
+        "TRAIN_000483",
+        "TRAIN_000487",
+        "TRAIN_000489",
+        "TRAIN_000493",
+        "TRAIN_000494",
+        "TRAIN_000496",
+        "TRAIN_000498",
+        "TRAIN_000499"
+      ],
+      "validation_ids": [
+        "TRAIN_000001",
+        "TRAIN_000014",
+        "TRAIN_000020",
+        "TRAIN_000043",
+        "TRAIN_000049",
+        "TRAIN_000054",
+        "TRAIN_000061",
+        "TRAIN_000077",
+        "TRAIN_000082",
+        "TRAIN_000092",
+        "TRAIN_000093",
+        "TRAIN_000104",
+        "TRAIN_000115",
+        "TRAIN_000126",
+        "TRAIN_000128",
+        "TRAIN_000136",
+        "TRAIN_000140",
+        "TRAIN_000141",
+        "TRAIN_000151",
+        "TRAIN_000158",
+        "TRAIN_000168",
+        "TRAIN_000183",
+        "TRAIN_000191",
+        "TRAIN_000198",
+        "TRAIN_000202",
+        "TRAIN_000207",
+        "TRAIN_000221",
+        "TRAIN_000225",
+        "TRAIN_000229",
+        "TRAIN_000233",
+        "TRAIN_000237",
+        "TRAIN_000249",
+        "TRAIN_000251",
+        "TRAIN_000257",
+        "TRAIN_000258",
+        "TRAIN_000260",
+        "TRAIN_000262",
+        "TRAIN_000267",
+        "TRAIN_000278",
+        "TRAIN_000295",
+        "TRAIN_000297",
+        "TRAIN_000298",
+        "TRAIN_000323",
+        "TRAIN_000340",
+        "TRAIN_000345",
+        "TRAIN_000351",
+        "TRAIN_000356",
+        "TRAIN_000357",
+        "TRAIN_000358",
+        "TRAIN_000368",
+        "TRAIN_000374",
+        "TRAIN_000375",
+        "TRAIN_000376",
+        "TRAIN_000377",
+        "TRAIN_000378",
+        "TRAIN_000382",
+        "TRAIN_000391",
+        "TRAIN_000395",
+        "TRAIN_000400",
+        "TRAIN_000414",
+        "TRAIN_000415",
+        "TRAIN_000422",
+        "TRAIN_000423",
+        "TRAIN_000426",
+        "TRAIN_000431",
+        "TRAIN_000435",
+        "TRAIN_000440",
+        "TRAIN_000448",
+        "TRAIN_000449",
+        "TRAIN_000457",
+        "TRAIN_000466",
+        "TRAIN_000470",
+        "TRAIN_000473",
+        "TRAIN_000481",
+        "TRAIN_000484",
+        "TRAIN_000488",
+        "TRAIN_000490",
+        "TRAIN_000491",
+        "TRAIN_000492",
+        "TRAIN_000497"
+      ],
+      "kernel_selection": {
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.763697481373816
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.91999660513756
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.93562587071909
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 18.07707225580796
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 17.830996577538247
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 15.724234730908595
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.219428870450061
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.763697481373816
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.8770682497046
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.525891668426343
+          }
+        ]
+      },
+      "models": {
+        "small_trace": {
+          "train_rmse": 8.994580935842112,
+          "validation_rmse": 15.753845345745338,
+          "seconds": 14.86222650000127,
+          "curve": [
+            {
+              "epoch": 1,
+              "augmented_train_rmse": 18.533543334775654,
+              "lr": 0.0019992675844286868
+            },
+            {
+              "epoch": 2,
+              "augmented_train_rmse": 18.30563355628425,
+              "lr": 0.0019970714670464714
+            },
+            {
+              "epoch": 3,
+              "augmented_train_rmse": 18.15551070649999,
+              "lr": 0.00199341503410718
+            },
+            {
+              "epoch": 4,
+              "augmented_train_rmse": 17.88184582239405,
+              "lr": 0.0019883039235653803
+            },
+            {
+              "epoch": 5,
+              "augmented_train_rmse": 17.650508711205386,
+              "lr": 0.0019817460163830685
+            },
+            {
+              "epoch": 6,
+              "augmented_train_rmse": 17.14566777085197,
+              "lr": 0.001973751424377792
+            },
+            {
+              "epoch": 7,
+              "augmented_train_rmse": 16.76384331536732,
+              "lr": 0.0019643324746309644
+            },
+            {
+              "epoch": 8,
+              "augmented_train_rmse": 16.01600141412021,
+              "lr": 0.0019535036904803956
+            },
+            {
+              "epoch": 9,
+              "augmented_train_rmse": 16.5270930183361,
+              "lr": 0.0019412817691263596
+            },
+            {
+              "epoch": 10,
+              "augmented_train_rmse": 16.338084147762423,
+              "lr": 0.001927685555885722,
+              "validation_rmse_diagnostic": 16.49181922760414
+            },
+            {
+              "epoch": 11,
+              "augmented_train_rmse": 16.35852337471398,
+              "lr": 0.0019127360151338269
+            },
+            {
+              "epoch": 12,
+              "augmented_train_rmse": 15.202959784877162,
+              "lr": 0.0018964561979789491
+            },
+            {
+              "epoch": 13,
+              "augmented_train_rmse": 16.706376247402495,
+              "lr": 0.001878871206719157
+            },
+            {
+              "epoch": 14,
+              "augmented_train_rmse": 16.33652769004996,
+              "lr": 0.0018600081561363873
+            },
+            {
+              "epoch": 15,
+              "augmented_train_rmse": 15.009280912563332,
+              "lr": 0.0018398961316874179
+            },
+            {
+              "epoch": 16,
+              "augmented_train_rmse": 15.592628255914677,
+              "lr": 0.0018185661446562
+            },
+            {
+              "epoch": 17,
+              "augmented_train_rmse": 15.26868265041177,
+              "lr": 0.0017960510843367074
+            },
+            {
+              "epoch": 18,
+              "augmented_train_rmse": 16.82026837504745,
+              "lr": 0.0017723856673200293
+            },
+            {
+              "epoch": 19,
+              "augmented_train_rmse": 15.999556410828559,
+              "lr": 0.0017476063839639011
+            },
+            {
+              "epoch": 20,
+              "augmented_train_rmse": 15.15786664350991,
+              "lr": 0.00172175144212722,
+              "validation_rmse_diagnostic": 15.715252795974745
+            },
+            {
+              "epoch": 21,
+              "augmented_train_rmse": 14.808352924250416,
+              "lr": 0.0016948607082562946
+            },
+            {
+              "epoch": 22,
+              "augmented_train_rmse": 14.618493082036732,
+              "lr": 0.0016669756459136746
+            },
+            {
+              "epoch": 23,
+              "augmented_train_rmse": 14.35552458724056,
+              "lr": 0.001638139251844342
+            },
+            {
+              "epoch": 24,
+              "augmented_train_rmse": 14.370404283556597,
+              "lr": 0.0016083959896778493
+            },
+            {
+              "epoch": 25,
+              "augmented_train_rmse": 16.058230296364894,
+              "lr": 0.001577791721368622
+            },
+            {
+              "epoch": 26,
+              "augmented_train_rmse": 15.573442921873596,
+              "lr": 0.0015463736364801513
+            },
+            {
+              "epoch": 27,
+              "augmented_train_rmse": 14.19143550755091,
+              "lr": 0.0015141901794221073
+            },
+            {
+              "epoch": 28,
+              "augmented_train_rmse": 14.06312739101972,
+              "lr": 0.0014812909747525694
+            },
+            {
+              "epoch": 29,
+              "augmented_train_rmse": 14.501074180998838,
+              "lr": 0.0014477267506605566
+            },
+            {
+              "epoch": 30,
+              "augmented_train_rmse": 14.195309108337577,
+              "lr": 0.0014135492607468352,
+              "validation_rmse_diagnostic": 16.49778841993152
+            },
+            {
+              "epoch": 31,
+              "augmented_train_rmse": 14.092715070433645,
+              "lr": 0.0013788112042236182
+            },
+            {
+              "epoch": 32,
+              "augmented_train_rmse": 13.452710431189715,
+              "lr": 0.0013435661446562
+            },
+            {
+              "epoch": 33,
+              "augmented_train_rmse": 13.649741892815568,
+              "lr": 0.0013078684273718204
+            },
+            {
+              "epoch": 34,
+              "augmented_train_rmse": 13.415958407613074,
+              "lr": 0.0012717730956631102
+            },
+            {
+              "epoch": 35,
+              "augmented_train_rmse": 13.952361965513552,
+              "lr": 0.0012353358059153218
+            },
+            {
+              "epoch": 36,
+              "augmented_train_rmse": 13.623936655324568,
+              "lr": 0.0011986127417882193
+            },
+            {
+              "epoch": 37,
+              "augmented_train_rmse": 12.82029896989718,
+              "lr": 0.0011616605275849457
+            },
+            {
+              "epoch": 38,
+              "augmented_train_rmse": 12.87087119131524,
+              "lr": 0.0011245361409414525
+            },
+            {
+              "epoch": 39,
+              "augmented_train_rmse": 12.599360886390842,
+              "lr": 0.001087296824971115
+            },
+            {
+              "epoch": 40,
+              "augmented_train_rmse": 12.874916740549265,
+              "lr": 0.0010499999999999997,
+              "validation_rmse_diagnostic": 15.78781095640614
+            },
+            {
+              "epoch": 41,
+              "augmented_train_rmse": 13.225102548732432,
+              "lr": 0.0010127031750288848
+            },
+            {
+              "epoch": 42,
+              "augmented_train_rmse": 12.819588879619916,
+              "lr": 0.0009754638590585473
+            },
+            {
+              "epoch": 43,
+              "augmented_train_rmse": 12.392639973882224,
+              "lr": 0.0009383394724150542
+            },
+            {
+              "epoch": 44,
+              "augmented_train_rmse": 11.991634187831275,
+              "lr": 0.0009013872582117808
+            },
+            {
+              "epoch": 45,
+              "augmented_train_rmse": 12.715389623522722,
+              "lr": 0.0008646641940846781
+            },
+            {
+              "epoch": 46,
+              "augmented_train_rmse": 11.864816860824059,
+              "lr": 0.0008282269043368899
+            },
+            {
+              "epoch": 47,
+              "augmented_train_rmse": 11.986788693299628,
+              "lr": 0.0007921315726281792
+            },
+            {
+              "epoch": 48,
+              "augmented_train_rmse": 11.412075639314212,
+              "lr": 0.0007564338553438
+            },
+            {
+              "epoch": 49,
+              "augmented_train_rmse": 11.911374907831627,
+              "lr": 0.0007211887957763818
+            },
+            {
+              "epoch": 50,
+              "augmented_train_rmse": 11.706787592045536,
+              "lr": 0.0006864507392531648,
+              "validation_rmse_diagnostic": 14.763417698006805
+            },
+            {
+              "epoch": 51,
+              "augmented_train_rmse": 11.814945986429766,
+              "lr": 0.0006522732493394436
+            },
+            {
+              "epoch": 52,
+              "augmented_train_rmse": 11.28466860123158,
+              "lr": 0.0006187090252474306
+            },
+            {
+              "epoch": 53,
+              "augmented_train_rmse": 11.340919487167595,
+              "lr": 0.0005858098205778927
+            },
+            {
+              "epoch": 54,
+              "augmented_train_rmse": 11.018622147962931,
+              "lr": 0.0005536263635198487
+            },
+            {
+              "epoch": 55,
+              "augmented_train_rmse": 11.041898810582666,
+              "lr": 0.0005222082786313778
+            },
+            {
+              "epoch": 56,
+              "augmented_train_rmse": 11.32679531114128,
+              "lr": 0.0004916040103221507
+            },
+            {
+              "epoch": 57,
+              "augmented_train_rmse": 10.369713537259637,
+              "lr": 0.000461860748155658
+            },
+            {
+              "epoch": 58,
+              "augmented_train_rmse": 10.963416472445425,
+              "lr": 0.0004330243540863257
+            },
+            {
+              "epoch": 59,
+              "augmented_train_rmse": 10.317891500774639,
+              "lr": 0.0004051392917437056
+            },
+            {
+              "epoch": 60,
+              "augmented_train_rmse": 10.079706664089358,
+              "lr": 0.00037824855787277996,
+              "validation_rmse_diagnostic": 15.64188845462894
+            },
+            {
+              "epoch": 61,
+              "augmented_train_rmse": 10.147312999183203,
+              "lr": 0.00035239361603609876
+            },
+            {
+              "epoch": 62,
+              "augmented_train_rmse": 9.921434042430315,
+              "lr": 0.00032761433267997075
+            },
+            {
+              "epoch": 63,
+              "augmented_train_rmse": 9.540885185599372,
+              "lr": 0.0003039489156632922
+            },
+            {
+              "epoch": 64,
+              "augmented_train_rmse": 10.50433930002413,
+              "lr": 0.00028143385534380006
+            },
+            {
+              "epoch": 65,
+              "augmented_train_rmse": 9.98056645826102,
+              "lr": 0.0002601038683125823
+            },
+            {
+              "epoch": 66,
+              "augmented_train_rmse": 9.28575607243611,
+              "lr": 0.0002399918438636125
+            },
+            {
+              "epoch": 67,
+              "augmented_train_rmse": 9.449663329095346,
+              "lr": 0.00022112879328084297
+            },
+            {
+              "epoch": 68,
+              "augmented_train_rmse": 9.357895338976261,
+              "lr": 0.00020354380202105066
+            },
+            {
+              "epoch": 69,
+              "augmented_train_rmse": 9.332984932174487,
+              "lr": 0.00018726398486617276
+            },
+            {
+              "epoch": 70,
+              "augmented_train_rmse": 9.038462163181478,
+              "lr": 0.00017231444411427765,
+              "validation_rmse_diagnostic": 15.869615649080371
+            },
+            {
+              "epoch": 71,
+              "augmented_train_rmse": 9.753087548455412,
+              "lr": 0.0001587182308736401
+            },
+            {
+              "epoch": 72,
+              "augmented_train_rmse": 8.841031004336026,
+              "lr": 0.0001464963095196042
+            },
+            {
+              "epoch": 73,
+              "augmented_train_rmse": 9.109887531351056,
+              "lr": 0.00013566752536903524
+            },
+            {
+              "epoch": 74,
+              "augmented_train_rmse": 8.670870557228666,
+              "lr": 0.00012624857562220732
+            },
+            {
+              "epoch": 75,
+              "augmented_train_rmse": 9.125953096925253,
+              "lr": 0.00011825398361693112
+            },
+            {
+              "epoch": 76,
+              "augmented_train_rmse": 9.284940923655059,
+              "lr": 0.00011169607643461924
+            },
+            {
+              "epoch": 77,
+              "augmented_train_rmse": 9.041251494426927,
+              "lr": 0.00010658496589282003
+            },
+            {
+              "epoch": 78,
+              "augmented_train_rmse": 9.023539001608999,
+              "lr": 0.00010292853295352844
+            },
+            {
+              "epoch": 79,
+              "augmented_train_rmse": 8.76589639539081,
+              "lr": 0.00010073241557131325
+            },
+            {
+              "epoch": 80,
+              "augmented_train_rmse": 8.543853514618522,
+              "lr": 0.0001,
+              "validation_rmse_diagnostic": 15.84121445585431
+            }
+          ],
+          "memory": {
+            "process_peak_rss_bytes": 923795456,
+            "current_allocated_memory": 3851008,
+            "driver_allocated_memory": 95518720,
+            "recommended_max_memory": 12713115648
+          },
+          "reload_max_abs_difference": 0.0,
+          "parameters": 86881
+        }
+      },
+      "checkpoint_sha256": {
+        "baseline.joblib": "2cb01b8175a085ec6d4dfc47be262d698c4ee0585c5c249b0c3b11f408c78e85",
+        "small_trace.pt": "953036ef6637c647705c64b828d8aae5642242e497ba80b2ca240f1d5078dde4",
+        "small_trace-morph-scaler.joblib": "5ff705beaadc535f30de85d33c0bd2d82223b83805564120b8468f22bf446497",
+        "kernel.joblib": "ca818e87bab6aab5d9b09eeac2623bda264798a3ebead8ae5bcfa6fb55d6f93b"
+      }
+    },
+    {
+      "fold": 1,
+      "train_ids": [
+        "TRAIN_000001",
+        "TRAIN_000002",
+        "TRAIN_000003",
+        "TRAIN_000005",
+        "TRAIN_000007",
+        "TRAIN_000008",
+        "TRAIN_000010",
+        "TRAIN_000011",
+        "TRAIN_000013",
+        "TRAIN_000014",
+        "TRAIN_000015",
+        "TRAIN_000018",
+        "TRAIN_000019",
+        "TRAIN_000020",
+        "TRAIN_000023",
+        "TRAIN_000025",
+        "TRAIN_000026",
+        "TRAIN_000027",
+        "TRAIN_000028",
+        "TRAIN_000029",
+        "TRAIN_000033",
+        "TRAIN_000035",
+        "TRAIN_000036",
+        "TRAIN_000038",
+        "TRAIN_000039",
+        "TRAIN_000041",
+        "TRAIN_000043",
+        "TRAIN_000044",
+        "TRAIN_000045",
+        "TRAIN_000046",
+        "TRAIN_000049",
+        "TRAIN_000053",
+        "TRAIN_000054",
+        "TRAIN_000056",
+        "TRAIN_000060",
+        "TRAIN_000061",
+        "TRAIN_000062",
+        "TRAIN_000064",
+        "TRAIN_000068",
+        "TRAIN_000069",
+        "TRAIN_000070",
+        "TRAIN_000071",
+        "TRAIN_000073",
+        "TRAIN_000077",
+        "TRAIN_000078",
+        "TRAIN_000079",
+        "TRAIN_000080",
+        "TRAIN_000082",
+        "TRAIN_000085",
+        "TRAIN_000087",
+        "TRAIN_000088",
+        "TRAIN_000089",
+        "TRAIN_000090",
+        "TRAIN_000092",
+        "TRAIN_000093",
+        "TRAIN_000094",
+        "TRAIN_000095",
+        "TRAIN_000096",
+        "TRAIN_000097",
+        "TRAIN_000100",
+        "TRAIN_000101",
+        "TRAIN_000104",
+        "TRAIN_000105",
+        "TRAIN_000106",
+        "TRAIN_000110",
+        "TRAIN_000111",
+        "TRAIN_000113",
+        "TRAIN_000115",
+        "TRAIN_000116",
+        "TRAIN_000117",
+        "TRAIN_000120",
+        "TRAIN_000122",
+        "TRAIN_000125",
+        "TRAIN_000126",
+        "TRAIN_000127",
+        "TRAIN_000128",
+        "TRAIN_000131",
+        "TRAIN_000132",
+        "TRAIN_000133",
+        "TRAIN_000134",
+        "TRAIN_000136",
+        "TRAIN_000140",
+        "TRAIN_000141",
+        "TRAIN_000142",
+        "TRAIN_000143",
+        "TRAIN_000144",
+        "TRAIN_000146",
+        "TRAIN_000147",
+        "TRAIN_000148",
+        "TRAIN_000149",
+        "TRAIN_000151",
+        "TRAIN_000152",
+        "TRAIN_000157",
+        "TRAIN_000158",
+        "TRAIN_000159",
+        "TRAIN_000163",
+        "TRAIN_000168",
+        "TRAIN_000169",
+        "TRAIN_000170",
+        "TRAIN_000171",
+        "TRAIN_000173",
+        "TRAIN_000176",
+        "TRAIN_000177",
+        "TRAIN_000179",
+        "TRAIN_000180",
+        "TRAIN_000182",
+        "TRAIN_000183",
+        "TRAIN_000184",
+        "TRAIN_000185",
+        "TRAIN_000186",
+        "TRAIN_000189",
+        "TRAIN_000190",
+        "TRAIN_000191",
+        "TRAIN_000194",
+        "TRAIN_000198",
+        "TRAIN_000199",
+        "TRAIN_000200",
+        "TRAIN_000201",
+        "TRAIN_000202",
+        "TRAIN_000203",
+        "TRAIN_000204",
+        "TRAIN_000206",
+        "TRAIN_000207",
+        "TRAIN_000208",
+        "TRAIN_000209",
+        "TRAIN_000210",
+        "TRAIN_000211",
+        "TRAIN_000212",
+        "TRAIN_000215",
+        "TRAIN_000216",
+        "TRAIN_000221",
+        "TRAIN_000222",
+        "TRAIN_000223",
+        "TRAIN_000224",
+        "TRAIN_000225",
+        "TRAIN_000226",
+        "TRAIN_000227",
+        "TRAIN_000229",
+        "TRAIN_000231",
+        "TRAIN_000232",
+        "TRAIN_000233",
+        "TRAIN_000235",
+        "TRAIN_000236",
+        "TRAIN_000237",
+        "TRAIN_000238",
+        "TRAIN_000241",
+        "TRAIN_000242",
+        "TRAIN_000243",
+        "TRAIN_000244",
+        "TRAIN_000245",
+        "TRAIN_000249",
+        "TRAIN_000250",
+        "TRAIN_000251",
+        "TRAIN_000252",
+        "TRAIN_000254",
+        "TRAIN_000256",
+        "TRAIN_000257",
+        "TRAIN_000258",
+        "TRAIN_000259",
+        "TRAIN_000260",
+        "TRAIN_000262",
+        "TRAIN_000266",
+        "TRAIN_000267",
+        "TRAIN_000268",
+        "TRAIN_000269",
+        "TRAIN_000270",
+        "TRAIN_000271",
+        "TRAIN_000272",
+        "TRAIN_000273",
+        "TRAIN_000274",
+        "TRAIN_000275",
+        "TRAIN_000276",
+        "TRAIN_000277",
+        "TRAIN_000278",
+        "TRAIN_000280",
+        "TRAIN_000281",
+        "TRAIN_000282",
+        "TRAIN_000284",
+        "TRAIN_000285",
+        "TRAIN_000287",
+        "TRAIN_000290",
+        "TRAIN_000291",
+        "TRAIN_000292",
+        "TRAIN_000295",
+        "TRAIN_000297",
+        "TRAIN_000298",
+        "TRAIN_000299",
+        "TRAIN_000301",
+        "TRAIN_000302",
+        "TRAIN_000305",
+        "TRAIN_000307",
+        "TRAIN_000308",
+        "TRAIN_000314",
+        "TRAIN_000315",
+        "TRAIN_000317",
+        "TRAIN_000318",
+        "TRAIN_000320",
+        "TRAIN_000321",
+        "TRAIN_000322",
+        "TRAIN_000323",
+        "TRAIN_000325",
+        "TRAIN_000326",
+        "TRAIN_000328",
+        "TRAIN_000331",
+        "TRAIN_000332",
+        "TRAIN_000335",
+        "TRAIN_000337",
+        "TRAIN_000338",
+        "TRAIN_000339",
+        "TRAIN_000340",
+        "TRAIN_000342",
+        "TRAIN_000343",
+        "TRAIN_000344",
+        "TRAIN_000345",
+        "TRAIN_000347",
+        "TRAIN_000348",
+        "TRAIN_000350",
+        "TRAIN_000351",
+        "TRAIN_000352",
+        "TRAIN_000356",
+        "TRAIN_000357",
+        "TRAIN_000358",
+        "TRAIN_000359",
+        "TRAIN_000361",
+        "TRAIN_000363",
+        "TRAIN_000365",
+        "TRAIN_000367",
+        "TRAIN_000368",
+        "TRAIN_000371",
+        "TRAIN_000372",
+        "TRAIN_000373",
+        "TRAIN_000374",
+        "TRAIN_000375",
+        "TRAIN_000376",
+        "TRAIN_000377",
+        "TRAIN_000378",
+        "TRAIN_000379",
+        "TRAIN_000380",
+        "TRAIN_000382",
+        "TRAIN_000383",
+        "TRAIN_000384",
+        "TRAIN_000386",
+        "TRAIN_000387",
+        "TRAIN_000389",
+        "TRAIN_000390",
+        "TRAIN_000391",
+        "TRAIN_000393",
+        "TRAIN_000394",
+        "TRAIN_000395",
+        "TRAIN_000396",
+        "TRAIN_000399",
+        "TRAIN_000400",
+        "TRAIN_000401",
+        "TRAIN_000403",
+        "TRAIN_000404",
+        "TRAIN_000407",
+        "TRAIN_000408",
+        "TRAIN_000409",
+        "TRAIN_000410",
+        "TRAIN_000413",
+        "TRAIN_000414",
+        "TRAIN_000415",
+        "TRAIN_000416",
+        "TRAIN_000417",
+        "TRAIN_000418",
+        "TRAIN_000420",
+        "TRAIN_000421",
+        "TRAIN_000422",
+        "TRAIN_000423",
+        "TRAIN_000426",
+        "TRAIN_000427",
+        "TRAIN_000428",
+        "TRAIN_000430",
+        "TRAIN_000431",
+        "TRAIN_000432",
+        "TRAIN_000435",
+        "TRAIN_000438",
+        "TRAIN_000439",
+        "TRAIN_000440",
+        "TRAIN_000441",
+        "TRAIN_000442",
+        "TRAIN_000443",
+        "TRAIN_000447",
+        "TRAIN_000448",
+        "TRAIN_000449",
+        "TRAIN_000451",
+        "TRAIN_000453",
+        "TRAIN_000454",
+        "TRAIN_000456",
+        "TRAIN_000457",
+        "TRAIN_000458",
+        "TRAIN_000459",
+        "TRAIN_000461",
+        "TRAIN_000462",
+        "TRAIN_000463",
+        "TRAIN_000465",
+        "TRAIN_000466",
+        "TRAIN_000467",
+        "TRAIN_000469",
+        "TRAIN_000470",
+        "TRAIN_000471",
+        "TRAIN_000473",
+        "TRAIN_000474",
+        "TRAIN_000477",
+        "TRAIN_000479",
+        "TRAIN_000481",
+        "TRAIN_000482",
+        "TRAIN_000483",
+        "TRAIN_000484",
+        "TRAIN_000488",
+        "TRAIN_000489",
+        "TRAIN_000490",
+        "TRAIN_000491",
+        "TRAIN_000492",
+        "TRAIN_000493",
+        "TRAIN_000494",
+        "TRAIN_000496",
+        "TRAIN_000497",
+        "TRAIN_000498",
+        "TRAIN_000499"
+      ],
+      "validation_ids": [
+        "TRAIN_000004",
+        "TRAIN_000006",
+        "TRAIN_000012",
+        "TRAIN_000016",
+        "TRAIN_000030",
+        "TRAIN_000031",
+        "TRAIN_000032",
+        "TRAIN_000047",
+        "TRAIN_000048",
+        "TRAIN_000051",
+        "TRAIN_000052",
+        "TRAIN_000058",
+        "TRAIN_000063",
+        "TRAIN_000074",
+        "TRAIN_000081",
+        "TRAIN_000083",
+        "TRAIN_000091",
+        "TRAIN_000102",
+        "TRAIN_000108",
+        "TRAIN_000109",
+        "TRAIN_000119",
+        "TRAIN_000123",
+        "TRAIN_000129",
+        "TRAIN_000130",
+        "TRAIN_000138",
+        "TRAIN_000139",
+        "TRAIN_000145",
+        "TRAIN_000150",
+        "TRAIN_000154",
+        "TRAIN_000155",
+        "TRAIN_000156",
+        "TRAIN_000161",
+        "TRAIN_000164",
+        "TRAIN_000175",
+        "TRAIN_000187",
+        "TRAIN_000193",
+        "TRAIN_000196",
+        "TRAIN_000197",
+        "TRAIN_000218",
+        "TRAIN_000219",
+        "TRAIN_000220",
+        "TRAIN_000228",
+        "TRAIN_000240",
+        "TRAIN_000246",
+        "TRAIN_000247",
+        "TRAIN_000248",
+        "TRAIN_000253",
+        "TRAIN_000265",
+        "TRAIN_000288",
+        "TRAIN_000289",
+        "TRAIN_000294",
+        "TRAIN_000300",
+        "TRAIN_000304",
+        "TRAIN_000309",
+        "TRAIN_000311",
+        "TRAIN_000319",
+        "TRAIN_000333",
+        "TRAIN_000334",
+        "TRAIN_000346",
+        "TRAIN_000349",
+        "TRAIN_000354",
+        "TRAIN_000355",
+        "TRAIN_000360",
+        "TRAIN_000364",
+        "TRAIN_000370",
+        "TRAIN_000385",
+        "TRAIN_000402",
+        "TRAIN_000406",
+        "TRAIN_000412",
+        "TRAIN_000424",
+        "TRAIN_000429",
+        "TRAIN_000433",
+        "TRAIN_000434",
+        "TRAIN_000444",
+        "TRAIN_000445",
+        "TRAIN_000455",
+        "TRAIN_000464",
+        "TRAIN_000475",
+        "TRAIN_000478",
+        "TRAIN_000487"
+      ],
+      "kernel_selection": {
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.00450550002993
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 18.373156723788778
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 18.339865909253216
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 18.29468453301881
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 20.02537772276744
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 16.862745149673515
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.460333913779902
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 15.380873155464531
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 15.00450550002993
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.398416417608095
+          }
+        ]
+      },
+      "models": {
+        "small_trace": {
+          "train_rmse": 7.627043271063887,
+          "validation_rmse": 14.396585680716372,
+          "seconds": 14.234916874964256,
+          "curve": [
+            {
+              "epoch": 1,
+              "augmented_train_rmse": 18.102463520974286,
+              "lr": 0.0019992675844286868
+            },
+            {
+              "epoch": 2,
+              "augmented_train_rmse": 17.50968222026427,
+              "lr": 0.0019970714670464714
+            },
+            {
+              "epoch": 3,
+              "augmented_train_rmse": 17.743102114301767,
+              "lr": 0.00199341503410718
+            },
+            {
+              "epoch": 4,
+              "augmented_train_rmse": 17.699255877035803,
+              "lr": 0.0019883039235653803
+            },
+            {
+              "epoch": 5,
+              "augmented_train_rmse": 17.574784211807767,
+              "lr": 0.0019817460163830685
+            },
+            {
+              "epoch": 6,
+              "augmented_train_rmse": 16.558103268564704,
+              "lr": 0.001973751424377792
+            },
+            {
+              "epoch": 7,
+              "augmented_train_rmse": 15.861847291560842,
+              "lr": 0.0019643324746309644
+            },
+            {
+              "epoch": 8,
+              "augmented_train_rmse": 15.695843846120669,
+              "lr": 0.0019535036904803956
+            },
+            {
+              "epoch": 9,
+              "augmented_train_rmse": 15.677281523507308,
+              "lr": 0.0019412817691263596
+            },
+            {
+              "epoch": 10,
+              "augmented_train_rmse": 15.69919087779115,
+              "lr": 0.001927685555885722,
+              "validation_rmse_diagnostic": 17.064998470173297
+            },
+            {
+              "epoch": 11,
+              "augmented_train_rmse": 14.593758301043872,
+              "lr": 0.0019127360151338269
+            },
+            {
+              "epoch": 12,
+              "augmented_train_rmse": 14.837851856745338,
+              "lr": 0.0018964561979789491
+            },
+            {
+              "epoch": 13,
+              "augmented_train_rmse": 14.33779792443963,
+              "lr": 0.001878871206719157
+            },
+            {
+              "epoch": 14,
+              "augmented_train_rmse": 14.878547582843506,
+              "lr": 0.0018600081561363873
+            },
+            {
+              "epoch": 15,
+              "augmented_train_rmse": 15.49734323815665,
+              "lr": 0.0018398961316874179
+            },
+            {
+              "epoch": 16,
+              "augmented_train_rmse": 15.222477575506105,
+              "lr": 0.0018185661446562
+            },
+            {
+              "epoch": 17,
+              "augmented_train_rmse": 15.060293136541167,
+              "lr": 0.0017960510843367074
+            },
+            {
+              "epoch": 18,
+              "augmented_train_rmse": 14.08608568765551,
+              "lr": 0.0017723856673200293
+            },
+            {
+              "epoch": 19,
+              "augmented_train_rmse": 14.13658864757523,
+              "lr": 0.0017476063839639011
+            },
+            {
+              "epoch": 20,
+              "augmented_train_rmse": 14.305229354422163,
+              "lr": 0.00172175144212722,
+              "validation_rmse_diagnostic": 15.208589060894624
+            },
+            {
+              "epoch": 21,
+              "augmented_train_rmse": 13.550457913025701,
+              "lr": 0.0016948607082562946
+            },
+            {
+              "epoch": 22,
+              "augmented_train_rmse": 13.855720531082778,
+              "lr": 0.0016669756459136746
+            },
+            {
+              "epoch": 23,
+              "augmented_train_rmse": 13.788952827692894,
+              "lr": 0.001638139251844342
+            },
+            {
+              "epoch": 24,
+              "augmented_train_rmse": 13.257552460435965,
+              "lr": 0.0016083959896778493
+            },
+            {
+              "epoch": 25,
+              "augmented_train_rmse": 13.248583347763198,
+              "lr": 0.001577791721368622
+            },
+            {
+              "epoch": 26,
+              "augmented_train_rmse": 13.28489001520079,
+              "lr": 0.0015463736364801513
+            },
+            {
+              "epoch": 27,
+              "augmented_train_rmse": 13.804483645367613,
+              "lr": 0.0015141901794221073
+            },
+            {
+              "epoch": 28,
+              "augmented_train_rmse": 12.544265635409412,
+              "lr": 0.0014812909747525694
+            },
+            {
+              "epoch": 29,
+              "augmented_train_rmse": 13.188931256315295,
+              "lr": 0.0014477267506605566
+            },
+            {
+              "epoch": 30,
+              "augmented_train_rmse": 13.77334001269322,
+              "lr": 0.0014135492607468352,
+              "validation_rmse_diagnostic": 15.22119130636312
+            },
+            {
+              "epoch": 31,
+              "augmented_train_rmse": 12.915803543025028,
+              "lr": 0.0013788112042236182
+            },
+            {
+              "epoch": 32,
+              "augmented_train_rmse": 13.203469843321876,
+              "lr": 0.0013435661446562
+            },
+            {
+              "epoch": 33,
+              "augmented_train_rmse": 13.939245226243537,
+              "lr": 0.0013078684273718204
+            },
+            {
+              "epoch": 34,
+              "augmented_train_rmse": 12.813381944245094,
+              "lr": 0.0012717730956631102
+            },
+            {
+              "epoch": 35,
+              "augmented_train_rmse": 12.143728715696747,
+              "lr": 0.0012353358059153218
+            },
+            {
+              "epoch": 36,
+              "augmented_train_rmse": 12.201014775225914,
+              "lr": 0.0011986127417882193
+            },
+            {
+              "epoch": 37,
+              "augmented_train_rmse": 12.230734943726445,
+              "lr": 0.0011616605275849457
+            },
+            {
+              "epoch": 38,
+              "augmented_train_rmse": 12.254896031829183,
+              "lr": 0.0011245361409414525
+            },
+            {
+              "epoch": 39,
+              "augmented_train_rmse": 11.577152681294507,
+              "lr": 0.001087296824971115
+            },
+            {
+              "epoch": 40,
+              "augmented_train_rmse": 11.683904480457349,
+              "lr": 0.0010499999999999997,
+              "validation_rmse_diagnostic": 13.474430890588701
+            },
+            {
+              "epoch": 41,
+              "augmented_train_rmse": 11.472018702467546,
+              "lr": 0.0010127031750288848
+            },
+            {
+              "epoch": 42,
+              "augmented_train_rmse": 12.323433617064977,
+              "lr": 0.0009754638590585473
+            },
+            {
+              "epoch": 43,
+              "augmented_train_rmse": 11.022215966202799,
+              "lr": 0.0009383394724150542
+            },
+            {
+              "epoch": 44,
+              "augmented_train_rmse": 11.459986272023345,
+              "lr": 0.0009013872582117808
+            },
+            {
+              "epoch": 45,
+              "augmented_train_rmse": 11.326393503983352,
+              "lr": 0.0008646641940846781
+            },
+            {
+              "epoch": 46,
+              "augmented_train_rmse": 11.238667384492759,
+              "lr": 0.0008282269043368899
+            },
+            {
+              "epoch": 47,
+              "augmented_train_rmse": 10.476262207218683,
+              "lr": 0.0007921315726281792
+            },
+            {
+              "epoch": 48,
+              "augmented_train_rmse": 9.716991858438854,
+              "lr": 0.0007564338553438
+            },
+            {
+              "epoch": 49,
+              "augmented_train_rmse": 10.132320354136201,
+              "lr": 0.0007211887957763818
+            },
+            {
+              "epoch": 50,
+              "augmented_train_rmse": 10.456882045789067,
+              "lr": 0.0006864507392531648,
+              "validation_rmse_diagnostic": 13.323914245161536
+            },
+            {
+              "epoch": 51,
+              "augmented_train_rmse": 9.35710681802285,
+              "lr": 0.0006522732493394436
+            },
+            {
+              "epoch": 52,
+              "augmented_train_rmse": 9.971341858255846,
+              "lr": 0.0006187090252474306
+            },
+            {
+              "epoch": 53,
+              "augmented_train_rmse": 9.276154550483234,
+              "lr": 0.0005858098205778927
+            },
+            {
+              "epoch": 54,
+              "augmented_train_rmse": 9.584516723879,
+              "lr": 0.0005536263635198487
+            },
+            {
+              "epoch": 55,
+              "augmented_train_rmse": 9.747765297582838,
+              "lr": 0.0005222082786313778
+            },
+            {
+              "epoch": 56,
+              "augmented_train_rmse": 10.000994587768435,
+              "lr": 0.0004916040103221507
+            },
+            {
+              "epoch": 57,
+              "augmented_train_rmse": 9.632518079134108,
+              "lr": 0.000461860748155658
+            },
+            {
+              "epoch": 58,
+              "augmented_train_rmse": 8.523637329987839,
+              "lr": 0.0004330243540863257
+            },
+            {
+              "epoch": 59,
+              "augmented_train_rmse": 8.378960893643807,
+              "lr": 0.0004051392917437056
+            },
+            {
+              "epoch": 60,
+              "augmented_train_rmse": 8.571490328492882,
+              "lr": 0.00037824855787277996,
+              "validation_rmse_diagnostic": 13.481054523840738
+            },
+            {
+              "epoch": 61,
+              "augmented_train_rmse": 8.165282259754592,
+              "lr": 0.00035239361603609876
+            },
+            {
+              "epoch": 62,
+              "augmented_train_rmse": 8.143511256932934,
+              "lr": 0.00032761433267997075
+            },
+            {
+              "epoch": 63,
+              "augmented_train_rmse": 8.577960184795069,
+              "lr": 0.0003039489156632922
+            },
+            {
+              "epoch": 64,
+              "augmented_train_rmse": 7.906758367144991,
+              "lr": 0.00028143385534380006
+            },
+            {
+              "epoch": 65,
+              "augmented_train_rmse": 7.4613237551503175,
+              "lr": 0.0002601038683125823
+            },
+            {
+              "epoch": 66,
+              "augmented_train_rmse": 7.203236180710974,
+              "lr": 0.0002399918438636125
+            },
+            {
+              "epoch": 67,
+              "augmented_train_rmse": 7.464798754563723,
+              "lr": 0.00022112879328084297
+            },
+            {
+              "epoch": 68,
+              "augmented_train_rmse": 7.743678868997066,
+              "lr": 0.00020354380202105066
+            },
+            {
+              "epoch": 69,
+              "augmented_train_rmse": 7.117980065610599,
+              "lr": 0.00018726398486617276
+            },
+            {
+              "epoch": 70,
+              "augmented_train_rmse": 7.29373178898964,
+              "lr": 0.00017231444411427765,
+              "validation_rmse_diagnostic": 14.524930394713625
+            },
+            {
+              "epoch": 71,
+              "augmented_train_rmse": 7.679203025125157,
+              "lr": 0.0001587182308736401
+            },
+            {
+              "epoch": 72,
+              "augmented_train_rmse": 8.051951659980327,
+              "lr": 0.0001464963095196042
+            },
+            {
+              "epoch": 73,
+              "augmented_train_rmse": 7.698922028312792,
+              "lr": 0.00013566752536903524
+            },
+            {
+              "epoch": 74,
+              "augmented_train_rmse": 7.558685084469824,
+              "lr": 0.00012624857562220732
+            },
+            {
+              "epoch": 75,
+              "augmented_train_rmse": 7.232057185406019,
+              "lr": 0.00011825398361693112
+            },
+            {
+              "epoch": 76,
+              "augmented_train_rmse": 7.221360835219284,
+              "lr": 0.00011169607643461924
+            },
+            {
+              "epoch": 77,
+              "augmented_train_rmse": 7.40920112598232,
+              "lr": 0.00010658496589282003
+            },
+            {
+              "epoch": 78,
+              "augmented_train_rmse": 7.446175568702387,
+              "lr": 0.00010292853295352844
+            },
+            {
+              "epoch": 79,
+              "augmented_train_rmse": 6.94862716369747,
+              "lr": 0.00010073241557131325
+            },
+            {
+              "epoch": 80,
+              "augmented_train_rmse": 7.320987270297267,
+              "lr": 0.0001,
+              "validation_rmse_diagnostic": 14.395263833656799
+            }
+          ],
+          "memory": {
+            "process_peak_rss_bytes": 923795456,
+            "current_allocated_memory": 3851008,
+            "driver_allocated_memory": 95518720,
+            "recommended_max_memory": 12713115648
+          },
+          "reload_max_abs_difference": 0.0,
+          "parameters": 86881
+        }
+      },
+      "checkpoint_sha256": {
+        "baseline.joblib": "ab5634226a1d8615c12c27db78b680787634c0eba902c02506558628b0355bb8",
+        "small_trace.pt": "4e129f1340b576189b3cd85adf7316a077a7649e1af7625ebb71c2d0083649f8",
+        "small_trace-morph-scaler.joblib": "715e625473c6065b2252c6c4224b414d3958e1a1be9bca75aa4365264486f9fb",
+        "kernel.joblib": "6da1bb17f09bc8ce1db208a99739b300a4f13f27e082a54737a67f6cd0832357"
+      }
+    },
+    {
+      "fold": 2,
+      "train_ids": [
+        "TRAIN_000001",
+        "TRAIN_000003",
+        "TRAIN_000004",
+        "TRAIN_000005",
+        "TRAIN_000006",
+        "TRAIN_000010",
+        "TRAIN_000011",
+        "TRAIN_000012",
+        "TRAIN_000013",
+        "TRAIN_000014",
+        "TRAIN_000015",
+        "TRAIN_000016",
+        "TRAIN_000018",
+        "TRAIN_000019",
+        "TRAIN_000020",
+        "TRAIN_000023",
+        "TRAIN_000026",
+        "TRAIN_000027",
+        "TRAIN_000028",
+        "TRAIN_000030",
+        "TRAIN_000031",
+        "TRAIN_000032",
+        "TRAIN_000033",
+        "TRAIN_000036",
+        "TRAIN_000039",
+        "TRAIN_000041",
+        "TRAIN_000043",
+        "TRAIN_000045",
+        "TRAIN_000047",
+        "TRAIN_000048",
+        "TRAIN_000049",
+        "TRAIN_000051",
+        "TRAIN_000052",
+        "TRAIN_000053",
+        "TRAIN_000054",
+        "TRAIN_000056",
+        "TRAIN_000058",
+        "TRAIN_000060",
+        "TRAIN_000061",
+        "TRAIN_000062",
+        "TRAIN_000063",
+        "TRAIN_000069",
+        "TRAIN_000070",
+        "TRAIN_000073",
+        "TRAIN_000074",
+        "TRAIN_000077",
+        "TRAIN_000078",
+        "TRAIN_000079",
+        "TRAIN_000081",
+        "TRAIN_000082",
+        "TRAIN_000083",
+        "TRAIN_000085",
+        "TRAIN_000087",
+        "TRAIN_000089",
+        "TRAIN_000091",
+        "TRAIN_000092",
+        "TRAIN_000093",
+        "TRAIN_000094",
+        "TRAIN_000095",
+        "TRAIN_000096",
+        "TRAIN_000097",
+        "TRAIN_000100",
+        "TRAIN_000102",
+        "TRAIN_000104",
+        "TRAIN_000105",
+        "TRAIN_000106",
+        "TRAIN_000108",
+        "TRAIN_000109",
+        "TRAIN_000113",
+        "TRAIN_000115",
+        "TRAIN_000117",
+        "TRAIN_000119",
+        "TRAIN_000123",
+        "TRAIN_000126",
+        "TRAIN_000127",
+        "TRAIN_000128",
+        "TRAIN_000129",
+        "TRAIN_000130",
+        "TRAIN_000131",
+        "TRAIN_000132",
+        "TRAIN_000133",
+        "TRAIN_000136",
+        "TRAIN_000138",
+        "TRAIN_000139",
+        "TRAIN_000140",
+        "TRAIN_000141",
+        "TRAIN_000142",
+        "TRAIN_000144",
+        "TRAIN_000145",
+        "TRAIN_000146",
+        "TRAIN_000147",
+        "TRAIN_000148",
+        "TRAIN_000149",
+        "TRAIN_000150",
+        "TRAIN_000151",
+        "TRAIN_000152",
+        "TRAIN_000154",
+        "TRAIN_000155",
+        "TRAIN_000156",
+        "TRAIN_000157",
+        "TRAIN_000158",
+        "TRAIN_000159",
+        "TRAIN_000161",
+        "TRAIN_000164",
+        "TRAIN_000168",
+        "TRAIN_000170",
+        "TRAIN_000171",
+        "TRAIN_000173",
+        "TRAIN_000175",
+        "TRAIN_000179",
+        "TRAIN_000182",
+        "TRAIN_000183",
+        "TRAIN_000184",
+        "TRAIN_000185",
+        "TRAIN_000187",
+        "TRAIN_000189",
+        "TRAIN_000190",
+        "TRAIN_000191",
+        "TRAIN_000193",
+        "TRAIN_000196",
+        "TRAIN_000197",
+        "TRAIN_000198",
+        "TRAIN_000199",
+        "TRAIN_000200",
+        "TRAIN_000201",
+        "TRAIN_000202",
+        "TRAIN_000203",
+        "TRAIN_000206",
+        "TRAIN_000207",
+        "TRAIN_000209",
+        "TRAIN_000210",
+        "TRAIN_000215",
+        "TRAIN_000216",
+        "TRAIN_000218",
+        "TRAIN_000219",
+        "TRAIN_000220",
+        "TRAIN_000221",
+        "TRAIN_000223",
+        "TRAIN_000224",
+        "TRAIN_000225",
+        "TRAIN_000227",
+        "TRAIN_000228",
+        "TRAIN_000229",
+        "TRAIN_000232",
+        "TRAIN_000233",
+        "TRAIN_000235",
+        "TRAIN_000237",
+        "TRAIN_000238",
+        "TRAIN_000240",
+        "TRAIN_000241",
+        "TRAIN_000242",
+        "TRAIN_000243",
+        "TRAIN_000245",
+        "TRAIN_000246",
+        "TRAIN_000247",
+        "TRAIN_000248",
+        "TRAIN_000249",
+        "TRAIN_000250",
+        "TRAIN_000251",
+        "TRAIN_000252",
+        "TRAIN_000253",
+        "TRAIN_000254",
+        "TRAIN_000256",
+        "TRAIN_000257",
+        "TRAIN_000258",
+        "TRAIN_000259",
+        "TRAIN_000260",
+        "TRAIN_000262",
+        "TRAIN_000265",
+        "TRAIN_000266",
+        "TRAIN_000267",
+        "TRAIN_000268",
+        "TRAIN_000269",
+        "TRAIN_000270",
+        "TRAIN_000271",
+        "TRAIN_000274",
+        "TRAIN_000276",
+        "TRAIN_000277",
+        "TRAIN_000278",
+        "TRAIN_000280",
+        "TRAIN_000282",
+        "TRAIN_000285",
+        "TRAIN_000288",
+        "TRAIN_000289",
+        "TRAIN_000291",
+        "TRAIN_000292",
+        "TRAIN_000294",
+        "TRAIN_000295",
+        "TRAIN_000297",
+        "TRAIN_000298",
+        "TRAIN_000299",
+        "TRAIN_000300",
+        "TRAIN_000301",
+        "TRAIN_000304",
+        "TRAIN_000305",
+        "TRAIN_000307",
+        "TRAIN_000309",
+        "TRAIN_000311",
+        "TRAIN_000314",
+        "TRAIN_000317",
+        "TRAIN_000318",
+        "TRAIN_000319",
+        "TRAIN_000320",
+        "TRAIN_000321",
+        "TRAIN_000322",
+        "TRAIN_000323",
+        "TRAIN_000325",
+        "TRAIN_000326",
+        "TRAIN_000328",
+        "TRAIN_000331",
+        "TRAIN_000332",
+        "TRAIN_000333",
+        "TRAIN_000334",
+        "TRAIN_000335",
+        "TRAIN_000337",
+        "TRAIN_000338",
+        "TRAIN_000340",
+        "TRAIN_000343",
+        "TRAIN_000345",
+        "TRAIN_000346",
+        "TRAIN_000347",
+        "TRAIN_000348",
+        "TRAIN_000349",
+        "TRAIN_000350",
+        "TRAIN_000351",
+        "TRAIN_000352",
+        "TRAIN_000354",
+        "TRAIN_000355",
+        "TRAIN_000356",
+        "TRAIN_000357",
+        "TRAIN_000358",
+        "TRAIN_000359",
+        "TRAIN_000360",
+        "TRAIN_000364",
+        "TRAIN_000368",
+        "TRAIN_000370",
+        "TRAIN_000371",
+        "TRAIN_000372",
+        "TRAIN_000373",
+        "TRAIN_000374",
+        "TRAIN_000375",
+        "TRAIN_000376",
+        "TRAIN_000377",
+        "TRAIN_000378",
+        "TRAIN_000379",
+        "TRAIN_000380",
+        "TRAIN_000382",
+        "TRAIN_000383",
+        "TRAIN_000385",
+        "TRAIN_000386",
+        "TRAIN_000389",
+        "TRAIN_000391",
+        "TRAIN_000395",
+        "TRAIN_000399",
+        "TRAIN_000400",
+        "TRAIN_000402",
+        "TRAIN_000404",
+        "TRAIN_000406",
+        "TRAIN_000408",
+        "TRAIN_000409",
+        "TRAIN_000410",
+        "TRAIN_000412",
+        "TRAIN_000413",
+        "TRAIN_000414",
+        "TRAIN_000415",
+        "TRAIN_000417",
+        "TRAIN_000420",
+        "TRAIN_000421",
+        "TRAIN_000422",
+        "TRAIN_000423",
+        "TRAIN_000424",
+        "TRAIN_000426",
+        "TRAIN_000427",
+        "TRAIN_000429",
+        "TRAIN_000431",
+        "TRAIN_000432",
+        "TRAIN_000433",
+        "TRAIN_000434",
+        "TRAIN_000435",
+        "TRAIN_000438",
+        "TRAIN_000439",
+        "TRAIN_000440",
+        "TRAIN_000441",
+        "TRAIN_000444",
+        "TRAIN_000445",
+        "TRAIN_000448",
+        "TRAIN_000449",
+        "TRAIN_000451",
+        "TRAIN_000453",
+        "TRAIN_000455",
+        "TRAIN_000457",
+        "TRAIN_000458",
+        "TRAIN_000461",
+        "TRAIN_000462",
+        "TRAIN_000463",
+        "TRAIN_000464",
+        "TRAIN_000465",
+        "TRAIN_000466",
+        "TRAIN_000469",
+        "TRAIN_000470",
+        "TRAIN_000471",
+        "TRAIN_000473",
+        "TRAIN_000475",
+        "TRAIN_000477",
+        "TRAIN_000478",
+        "TRAIN_000479",
+        "TRAIN_000481",
+        "TRAIN_000482",
+        "TRAIN_000483",
+        "TRAIN_000484",
+        "TRAIN_000487",
+        "TRAIN_000488",
+        "TRAIN_000489",
+        "TRAIN_000490",
+        "TRAIN_000491",
+        "TRAIN_000492",
+        "TRAIN_000493",
+        "TRAIN_000494",
+        "TRAIN_000497",
+        "TRAIN_000499"
+      ],
+      "validation_ids": [
+        "TRAIN_000002",
+        "TRAIN_000007",
+        "TRAIN_000008",
+        "TRAIN_000025",
+        "TRAIN_000029",
+        "TRAIN_000035",
+        "TRAIN_000038",
+        "TRAIN_000044",
+        "TRAIN_000046",
+        "TRAIN_000064",
+        "TRAIN_000068",
+        "TRAIN_000071",
+        "TRAIN_000080",
+        "TRAIN_000088",
+        "TRAIN_000090",
+        "TRAIN_000101",
+        "TRAIN_000110",
+        "TRAIN_000111",
+        "TRAIN_000116",
+        "TRAIN_000120",
+        "TRAIN_000122",
+        "TRAIN_000125",
+        "TRAIN_000134",
+        "TRAIN_000143",
+        "TRAIN_000163",
+        "TRAIN_000169",
+        "TRAIN_000176",
+        "TRAIN_000177",
+        "TRAIN_000180",
+        "TRAIN_000186",
+        "TRAIN_000194",
+        "TRAIN_000204",
+        "TRAIN_000208",
+        "TRAIN_000211",
+        "TRAIN_000212",
+        "TRAIN_000222",
+        "TRAIN_000226",
+        "TRAIN_000231",
+        "TRAIN_000236",
+        "TRAIN_000244",
+        "TRAIN_000272",
+        "TRAIN_000273",
+        "TRAIN_000275",
+        "TRAIN_000281",
+        "TRAIN_000284",
+        "TRAIN_000287",
+        "TRAIN_000290",
+        "TRAIN_000302",
+        "TRAIN_000308",
+        "TRAIN_000315",
+        "TRAIN_000339",
+        "TRAIN_000342",
+        "TRAIN_000344",
+        "TRAIN_000361",
+        "TRAIN_000363",
+        "TRAIN_000365",
+        "TRAIN_000367",
+        "TRAIN_000384",
+        "TRAIN_000387",
+        "TRAIN_000390",
+        "TRAIN_000393",
+        "TRAIN_000394",
+        "TRAIN_000396",
+        "TRAIN_000401",
+        "TRAIN_000403",
+        "TRAIN_000407",
+        "TRAIN_000416",
+        "TRAIN_000418",
+        "TRAIN_000428",
+        "TRAIN_000430",
+        "TRAIN_000442",
+        "TRAIN_000443",
+        "TRAIN_000447",
+        "TRAIN_000454",
+        "TRAIN_000456",
+        "TRAIN_000459",
+        "TRAIN_000467",
+        "TRAIN_000474",
+        "TRAIN_000496",
+        "TRAIN_000498"
+      ],
+      "kernel_selection": {
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.792330871265596
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.72670001458281
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.72359428351279
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.7942516520896
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 19.712894920111985
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 16.545635913440766
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.172370951057362
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 15.238552003193812
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.792330871265596
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.176489059511349
+          }
+        ]
+      },
+      "models": {
+        "small_trace": {
+          "train_rmse": 7.737625804666556,
+          "validation_rmse": 14.952510115722337,
+          "seconds": 14.285012166015804,
+          "curve": [
+            {
+              "epoch": 1,
+              "augmented_train_rmse": 18.43418511983875,
+              "lr": 0.0019992675844286868
+            },
+            {
+              "epoch": 2,
+              "augmented_train_rmse": 17.829439516408765,
+              "lr": 0.0019970714670464714
+            },
+            {
+              "epoch": 3,
+              "augmented_train_rmse": 17.800553792030257,
+              "lr": 0.00199341503410718
+            },
+            {
+              "epoch": 4,
+              "augmented_train_rmse": 17.33714632978975,
+              "lr": 0.0019883039235653803
+            },
+            {
+              "epoch": 5,
+              "augmented_train_rmse": 16.785123794770183,
+              "lr": 0.0019817460163830685
+            },
+            {
+              "epoch": 6,
+              "augmented_train_rmse": 16.743906781241805,
+              "lr": 0.001973751424377792
+            },
+            {
+              "epoch": 7,
+              "augmented_train_rmse": 16.186180323586957,
+              "lr": 0.0019643324746309644
+            },
+            {
+              "epoch": 8,
+              "augmented_train_rmse": 15.95130694608226,
+              "lr": 0.0019535036904803956
+            },
+            {
+              "epoch": 9,
+              "augmented_train_rmse": 15.555095855952061,
+              "lr": 0.0019412817691263596
+            },
+            {
+              "epoch": 10,
+              "augmented_train_rmse": 15.371904699558701,
+              "lr": 0.001927685555885722,
+              "validation_rmse_diagnostic": 15.383058207804883
+            },
+            {
+              "epoch": 11,
+              "augmented_train_rmse": 15.509685823453502,
+              "lr": 0.0019127360151338269
+            },
+            {
+              "epoch": 12,
+              "augmented_train_rmse": 16.38563816960461,
+              "lr": 0.0018964561979789491
+            },
+            {
+              "epoch": 13,
+              "augmented_train_rmse": 15.778391882839644,
+              "lr": 0.001878871206719157
+            },
+            {
+              "epoch": 14,
+              "augmented_train_rmse": 15.923167873660685,
+              "lr": 0.0018600081561363873
+            },
+            {
+              "epoch": 15,
+              "augmented_train_rmse": 15.94191452583939,
+              "lr": 0.0018398961316874179
+            },
+            {
+              "epoch": 16,
+              "augmented_train_rmse": 15.418815093538752,
+              "lr": 0.0018185661446562
+            },
+            {
+              "epoch": 17,
+              "augmented_train_rmse": 15.645849452302441,
+              "lr": 0.0017960510843367074
+            },
+            {
+              "epoch": 18,
+              "augmented_train_rmse": 15.088429998934114,
+              "lr": 0.0017723856673200293
+            },
+            {
+              "epoch": 19,
+              "augmented_train_rmse": 14.69667457467218,
+              "lr": 0.0017476063839639011
+            },
+            {
+              "epoch": 20,
+              "augmented_train_rmse": 13.987672898780325,
+              "lr": 0.00172175144212722,
+              "validation_rmse_diagnostic": 14.871579870108858
+            },
+            {
+              "epoch": 21,
+              "augmented_train_rmse": 14.345543306572475,
+              "lr": 0.0016948607082562946
+            },
+            {
+              "epoch": 22,
+              "augmented_train_rmse": 14.809185321946904,
+              "lr": 0.0016669756459136746
+            },
+            {
+              "epoch": 23,
+              "augmented_train_rmse": 14.027317381313619,
+              "lr": 0.001638139251844342
+            },
+            {
+              "epoch": 24,
+              "augmented_train_rmse": 14.850295911531703,
+              "lr": 0.0016083959896778493
+            },
+            {
+              "epoch": 25,
+              "augmented_train_rmse": 14.292737399292477,
+              "lr": 0.001577791721368622
+            },
+            {
+              "epoch": 26,
+              "augmented_train_rmse": 13.383335566125174,
+              "lr": 0.0015463736364801513
+            },
+            {
+              "epoch": 27,
+              "augmented_train_rmse": 14.586979075699608,
+              "lr": 0.0015141901794221073
+            },
+            {
+              "epoch": 28,
+              "augmented_train_rmse": 15.034580131199158,
+              "lr": 0.0014812909747525694
+            },
+            {
+              "epoch": 29,
+              "augmented_train_rmse": 14.6960436387046,
+              "lr": 0.0014477267506605566
+            },
+            {
+              "epoch": 30,
+              "augmented_train_rmse": 13.692127697681643,
+              "lr": 0.0014135492607468352,
+              "validation_rmse_diagnostic": 14.3880878736296
+            },
+            {
+              "epoch": 31,
+              "augmented_train_rmse": 12.957993252333864,
+              "lr": 0.0013788112042236182
+            },
+            {
+              "epoch": 32,
+              "augmented_train_rmse": 14.190268304432816,
+              "lr": 0.0013435661446562
+            },
+            {
+              "epoch": 33,
+              "augmented_train_rmse": 13.292803092125826,
+              "lr": 0.0013078684273718204
+            },
+            {
+              "epoch": 34,
+              "augmented_train_rmse": 13.393534677476817,
+              "lr": 0.0012717730956631102
+            },
+            {
+              "epoch": 35,
+              "augmented_train_rmse": 13.662989460657435,
+              "lr": 0.0012353358059153218
+            },
+            {
+              "epoch": 36,
+              "augmented_train_rmse": 13.034966189271481,
+              "lr": 0.0011986127417882193
+            },
+            {
+              "epoch": 37,
+              "augmented_train_rmse": 12.720293839935346,
+              "lr": 0.0011616605275849457
+            },
+            {
+              "epoch": 38,
+              "augmented_train_rmse": 12.649435372111396,
+              "lr": 0.0011245361409414525
+            },
+            {
+              "epoch": 39,
+              "augmented_train_rmse": 12.255112423790374,
+              "lr": 0.001087296824971115
+            },
+            {
+              "epoch": 40,
+              "augmented_train_rmse": 12.252997659809136,
+              "lr": 0.0010499999999999997,
+              "validation_rmse_diagnostic": 13.896517401880876
+            },
+            {
+              "epoch": 41,
+              "augmented_train_rmse": 12.141190973866184,
+              "lr": 0.0010127031750288848
+            },
+            {
+              "epoch": 42,
+              "augmented_train_rmse": 12.135872970020216,
+              "lr": 0.0009754638590585473
+            },
+            {
+              "epoch": 43,
+              "augmented_train_rmse": 12.14701651286248,
+              "lr": 0.0009383394724150542
+            },
+            {
+              "epoch": 44,
+              "augmented_train_rmse": 12.377889278268686,
+              "lr": 0.0009013872582117808
+            },
+            {
+              "epoch": 45,
+              "augmented_train_rmse": 11.682152959500085,
+              "lr": 0.0008646641940846781
+            },
+            {
+              "epoch": 46,
+              "augmented_train_rmse": 11.3190946578171,
+              "lr": 0.0008282269043368899
+            },
+            {
+              "epoch": 47,
+              "augmented_train_rmse": 11.388478483136154,
+              "lr": 0.0007921315726281792
+            },
+            {
+              "epoch": 48,
+              "augmented_train_rmse": 11.436035839085784,
+              "lr": 0.0007564338553438
+            },
+            {
+              "epoch": 49,
+              "augmented_train_rmse": 11.286138093856756,
+              "lr": 0.0007211887957763818
+            },
+            {
+              "epoch": 50,
+              "augmented_train_rmse": 11.164719305666903,
+              "lr": 0.0006864507392531648,
+              "validation_rmse_diagnostic": 14.638803028194852
+            },
+            {
+              "epoch": 51,
+              "augmented_train_rmse": 10.730104601082006,
+              "lr": 0.0006522732493394436
+            },
+            {
+              "epoch": 52,
+              "augmented_train_rmse": 10.745683828528989,
+              "lr": 0.0006187090252474306
+            },
+            {
+              "epoch": 53,
+              "augmented_train_rmse": 10.644354589622376,
+              "lr": 0.0005858098205778927
+            },
+            {
+              "epoch": 54,
+              "augmented_train_rmse": 10.737122794109201,
+              "lr": 0.0005536263635198487
+            },
+            {
+              "epoch": 55,
+              "augmented_train_rmse": 10.87729449737648,
+              "lr": 0.0005222082786313778
+            },
+            {
+              "epoch": 56,
+              "augmented_train_rmse": 10.433316081111046,
+              "lr": 0.0004916040103221507
+            },
+            {
+              "epoch": 57,
+              "augmented_train_rmse": 9.846731342222482,
+              "lr": 0.000461860748155658
+            },
+            {
+              "epoch": 58,
+              "augmented_train_rmse": 10.436456953839775,
+              "lr": 0.0004330243540863257
+            },
+            {
+              "epoch": 59,
+              "augmented_train_rmse": 10.161054194512886,
+              "lr": 0.0004051392917437056
+            },
+            {
+              "epoch": 60,
+              "augmented_train_rmse": 9.685439678677447,
+              "lr": 0.00037824855787277996,
+              "validation_rmse_diagnostic": 14.961147152730126
+            },
+            {
+              "epoch": 61,
+              "augmented_train_rmse": 9.996944328293797,
+              "lr": 0.00035239361603609876
+            },
+            {
+              "epoch": 62,
+              "augmented_train_rmse": 9.38722659041592,
+              "lr": 0.00032761433267997075
+            },
+            {
+              "epoch": 63,
+              "augmented_train_rmse": 9.56468192160703,
+              "lr": 0.0003039489156632922
+            },
+            {
+              "epoch": 64,
+              "augmented_train_rmse": 10.308940019367489,
+              "lr": 0.00028143385534380006
+            },
+            {
+              "epoch": 65,
+              "augmented_train_rmse": 10.053975061202731,
+              "lr": 0.0002601038683125823
+            },
+            {
+              "epoch": 66,
+              "augmented_train_rmse": 9.582663945824745,
+              "lr": 0.0002399918438636125
+            },
+            {
+              "epoch": 67,
+              "augmented_train_rmse": 9.237442647673884,
+              "lr": 0.00022112879328084297
+            },
+            {
+              "epoch": 68,
+              "augmented_train_rmse": 8.781769419921988,
+              "lr": 0.00020354380202105066
+            },
+            {
+              "epoch": 69,
+              "augmented_train_rmse": 9.45194697402913,
+              "lr": 0.00018726398486617276
+            },
+            {
+              "epoch": 70,
+              "augmented_train_rmse": 8.690746806237712,
+              "lr": 0.00017231444411427765,
+              "validation_rmse_diagnostic": 14.956852846667017
+            },
+            {
+              "epoch": 71,
+              "augmented_train_rmse": 8.550954224633315,
+              "lr": 0.0001587182308736401
+            },
+            {
+              "epoch": 72,
+              "augmented_train_rmse": 8.678296330655936,
+              "lr": 0.0001464963095196042
+            },
+            {
+              "epoch": 73,
+              "augmented_train_rmse": 8.527937705493185,
+              "lr": 0.00013566752536903524
+            },
+            {
+              "epoch": 74,
+              "augmented_train_rmse": 8.894996144663743,
+              "lr": 0.00012624857562220732
+            },
+            {
+              "epoch": 75,
+              "augmented_train_rmse": 8.538864943759641,
+              "lr": 0.00011825398361693112
+            },
+            {
+              "epoch": 76,
+              "augmented_train_rmse": 8.561041966308947,
+              "lr": 0.00011169607643461924
+            },
+            {
+              "epoch": 77,
+              "augmented_train_rmse": 8.547322191548664,
+              "lr": 0.00010658496589282003
+            },
+            {
+              "epoch": 78,
+              "augmented_train_rmse": 8.51447149354648,
+              "lr": 0.00010292853295352844
+            },
+            {
+              "epoch": 79,
+              "augmented_train_rmse": 8.178289648041556,
+              "lr": 0.00010073241557131325
+            },
+            {
+              "epoch": 80,
+              "augmented_train_rmse": 8.420716901857952,
+              "lr": 0.0001,
+              "validation_rmse_diagnostic": 15.025679321707967
+            }
+          ],
+          "memory": {
+            "process_peak_rss_bytes": 923795456,
+            "current_allocated_memory": 3851008,
+            "driver_allocated_memory": 95518720,
+            "recommended_max_memory": 12713115648
+          },
+          "reload_max_abs_difference": 0.0,
+          "parameters": 86881
+        }
+      },
+      "checkpoint_sha256": {
+        "baseline.joblib": "b83255fe5ace06dcc299ce9fd44627f70502486a20a13a934743d54cd764867e",
+        "small_trace.pt": "adc7a092c052ed7c509e30faa57d8caa01dc409ef176a82f68e4de1fa5f32404",
+        "small_trace-morph-scaler.joblib": "ccad4b70bffb5c884ee5498ded39fb38c3e236abde8127505a672c01cc6abf4b",
+        "kernel.joblib": "3b42ecff73ac79fe1cf5d23b1ea3cd51d9e9a112403251367bd1c3e3996c1242"
+      }
+    },
+    {
+      "fold": 3,
+      "train_ids": [
+        "TRAIN_000001",
+        "TRAIN_000002",
+        "TRAIN_000004",
+        "TRAIN_000005",
+        "TRAIN_000006",
+        "TRAIN_000007",
+        "TRAIN_000008",
+        "TRAIN_000010",
+        "TRAIN_000012",
+        "TRAIN_000014",
+        "TRAIN_000015",
+        "TRAIN_000016",
+        "TRAIN_000019",
+        "TRAIN_000020",
+        "TRAIN_000023",
+        "TRAIN_000025",
+        "TRAIN_000028",
+        "TRAIN_000029",
+        "TRAIN_000030",
+        "TRAIN_000031",
+        "TRAIN_000032",
+        "TRAIN_000035",
+        "TRAIN_000038",
+        "TRAIN_000039",
+        "TRAIN_000041",
+        "TRAIN_000043",
+        "TRAIN_000044",
+        "TRAIN_000046",
+        "TRAIN_000047",
+        "TRAIN_000048",
+        "TRAIN_000049",
+        "TRAIN_000051",
+        "TRAIN_000052",
+        "TRAIN_000054",
+        "TRAIN_000056",
+        "TRAIN_000058",
+        "TRAIN_000061",
+        "TRAIN_000062",
+        "TRAIN_000063",
+        "TRAIN_000064",
+        "TRAIN_000068",
+        "TRAIN_000071",
+        "TRAIN_000073",
+        "TRAIN_000074",
+        "TRAIN_000077",
+        "TRAIN_000080",
+        "TRAIN_000081",
+        "TRAIN_000082",
+        "TRAIN_000083",
+        "TRAIN_000087",
+        "TRAIN_000088",
+        "TRAIN_000089",
+        "TRAIN_000090",
+        "TRAIN_000091",
+        "TRAIN_000092",
+        "TRAIN_000093",
+        "TRAIN_000096",
+        "TRAIN_000100",
+        "TRAIN_000101",
+        "TRAIN_000102",
+        "TRAIN_000104",
+        "TRAIN_000108",
+        "TRAIN_000109",
+        "TRAIN_000110",
+        "TRAIN_000111",
+        "TRAIN_000113",
+        "TRAIN_000115",
+        "TRAIN_000116",
+        "TRAIN_000119",
+        "TRAIN_000120",
+        "TRAIN_000122",
+        "TRAIN_000123",
+        "TRAIN_000125",
+        "TRAIN_000126",
+        "TRAIN_000128",
+        "TRAIN_000129",
+        "TRAIN_000130",
+        "TRAIN_000131",
+        "TRAIN_000133",
+        "TRAIN_000134",
+        "TRAIN_000136",
+        "TRAIN_000138",
+        "TRAIN_000139",
+        "TRAIN_000140",
+        "TRAIN_000141",
+        "TRAIN_000142",
+        "TRAIN_000143",
+        "TRAIN_000145",
+        "TRAIN_000148",
+        "TRAIN_000149",
+        "TRAIN_000150",
+        "TRAIN_000151",
+        "TRAIN_000154",
+        "TRAIN_000155",
+        "TRAIN_000156",
+        "TRAIN_000158",
+        "TRAIN_000159",
+        "TRAIN_000161",
+        "TRAIN_000163",
+        "TRAIN_000164",
+        "TRAIN_000168",
+        "TRAIN_000169",
+        "TRAIN_000173",
+        "TRAIN_000175",
+        "TRAIN_000176",
+        "TRAIN_000177",
+        "TRAIN_000179",
+        "TRAIN_000180",
+        "TRAIN_000182",
+        "TRAIN_000183",
+        "TRAIN_000186",
+        "TRAIN_000187",
+        "TRAIN_000190",
+        "TRAIN_000191",
+        "TRAIN_000193",
+        "TRAIN_000194",
+        "TRAIN_000196",
+        "TRAIN_000197",
+        "TRAIN_000198",
+        "TRAIN_000199",
+        "TRAIN_000200",
+        "TRAIN_000202",
+        "TRAIN_000204",
+        "TRAIN_000206",
+        "TRAIN_000207",
+        "TRAIN_000208",
+        "TRAIN_000211",
+        "TRAIN_000212",
+        "TRAIN_000215",
+        "TRAIN_000216",
+        "TRAIN_000218",
+        "TRAIN_000219",
+        "TRAIN_000220",
+        "TRAIN_000221",
+        "TRAIN_000222",
+        "TRAIN_000223",
+        "TRAIN_000225",
+        "TRAIN_000226",
+        "TRAIN_000228",
+        "TRAIN_000229",
+        "TRAIN_000231",
+        "TRAIN_000232",
+        "TRAIN_000233",
+        "TRAIN_000236",
+        "TRAIN_000237",
+        "TRAIN_000240",
+        "TRAIN_000241",
+        "TRAIN_000242",
+        "TRAIN_000244",
+        "TRAIN_000245",
+        "TRAIN_000246",
+        "TRAIN_000247",
+        "TRAIN_000248",
+        "TRAIN_000249",
+        "TRAIN_000251",
+        "TRAIN_000252",
+        "TRAIN_000253",
+        "TRAIN_000257",
+        "TRAIN_000258",
+        "TRAIN_000259",
+        "TRAIN_000260",
+        "TRAIN_000262",
+        "TRAIN_000265",
+        "TRAIN_000267",
+        "TRAIN_000268",
+        "TRAIN_000270",
+        "TRAIN_000272",
+        "TRAIN_000273",
+        "TRAIN_000274",
+        "TRAIN_000275",
+        "TRAIN_000277",
+        "TRAIN_000278",
+        "TRAIN_000280",
+        "TRAIN_000281",
+        "TRAIN_000284",
+        "TRAIN_000287",
+        "TRAIN_000288",
+        "TRAIN_000289",
+        "TRAIN_000290",
+        "TRAIN_000291",
+        "TRAIN_000292",
+        "TRAIN_000294",
+        "TRAIN_000295",
+        "TRAIN_000297",
+        "TRAIN_000298",
+        "TRAIN_000300",
+        "TRAIN_000302",
+        "TRAIN_000304",
+        "TRAIN_000305",
+        "TRAIN_000308",
+        "TRAIN_000309",
+        "TRAIN_000311",
+        "TRAIN_000314",
+        "TRAIN_000315",
+        "TRAIN_000318",
+        "TRAIN_000319",
+        "TRAIN_000321",
+        "TRAIN_000323",
+        "TRAIN_000325",
+        "TRAIN_000326",
+        "TRAIN_000328",
+        "TRAIN_000331",
+        "TRAIN_000333",
+        "TRAIN_000334",
+        "TRAIN_000335",
+        "TRAIN_000337",
+        "TRAIN_000339",
+        "TRAIN_000340",
+        "TRAIN_000342",
+        "TRAIN_000343",
+        "TRAIN_000344",
+        "TRAIN_000345",
+        "TRAIN_000346",
+        "TRAIN_000347",
+        "TRAIN_000348",
+        "TRAIN_000349",
+        "TRAIN_000350",
+        "TRAIN_000351",
+        "TRAIN_000354",
+        "TRAIN_000355",
+        "TRAIN_000356",
+        "TRAIN_000357",
+        "TRAIN_000358",
+        "TRAIN_000360",
+        "TRAIN_000361",
+        "TRAIN_000363",
+        "TRAIN_000364",
+        "TRAIN_000365",
+        "TRAIN_000367",
+        "TRAIN_000368",
+        "TRAIN_000370",
+        "TRAIN_000371",
+        "TRAIN_000372",
+        "TRAIN_000374",
+        "TRAIN_000375",
+        "TRAIN_000376",
+        "TRAIN_000377",
+        "TRAIN_000378",
+        "TRAIN_000382",
+        "TRAIN_000383",
+        "TRAIN_000384",
+        "TRAIN_000385",
+        "TRAIN_000387",
+        "TRAIN_000389",
+        "TRAIN_000390",
+        "TRAIN_000391",
+        "TRAIN_000393",
+        "TRAIN_000394",
+        "TRAIN_000395",
+        "TRAIN_000396",
+        "TRAIN_000399",
+        "TRAIN_000400",
+        "TRAIN_000401",
+        "TRAIN_000402",
+        "TRAIN_000403",
+        "TRAIN_000404",
+        "TRAIN_000406",
+        "TRAIN_000407",
+        "TRAIN_000409",
+        "TRAIN_000412",
+        "TRAIN_000413",
+        "TRAIN_000414",
+        "TRAIN_000415",
+        "TRAIN_000416",
+        "TRAIN_000418",
+        "TRAIN_000420",
+        "TRAIN_000422",
+        "TRAIN_000423",
+        "TRAIN_000424",
+        "TRAIN_000426",
+        "TRAIN_000428",
+        "TRAIN_000429",
+        "TRAIN_000430",
+        "TRAIN_000431",
+        "TRAIN_000432",
+        "TRAIN_000433",
+        "TRAIN_000434",
+        "TRAIN_000435",
+        "TRAIN_000439",
+        "TRAIN_000440",
+        "TRAIN_000441",
+        "TRAIN_000442",
+        "TRAIN_000443",
+        "TRAIN_000444",
+        "TRAIN_000445",
+        "TRAIN_000447",
+        "TRAIN_000448",
+        "TRAIN_000449",
+        "TRAIN_000451",
+        "TRAIN_000453",
+        "TRAIN_000454",
+        "TRAIN_000455",
+        "TRAIN_000456",
+        "TRAIN_000457",
+        "TRAIN_000459",
+        "TRAIN_000463",
+        "TRAIN_000464",
+        "TRAIN_000466",
+        "TRAIN_000467",
+        "TRAIN_000469",
+        "TRAIN_000470",
+        "TRAIN_000471",
+        "TRAIN_000473",
+        "TRAIN_000474",
+        "TRAIN_000475",
+        "TRAIN_000477",
+        "TRAIN_000478",
+        "TRAIN_000479",
+        "TRAIN_000481",
+        "TRAIN_000483",
+        "TRAIN_000484",
+        "TRAIN_000487",
+        "TRAIN_000488",
+        "TRAIN_000490",
+        "TRAIN_000491",
+        "TRAIN_000492",
+        "TRAIN_000493",
+        "TRAIN_000496",
+        "TRAIN_000497",
+        "TRAIN_000498"
+      ],
+      "validation_ids": [
+        "TRAIN_000003",
+        "TRAIN_000011",
+        "TRAIN_000013",
+        "TRAIN_000018",
+        "TRAIN_000026",
+        "TRAIN_000027",
+        "TRAIN_000033",
+        "TRAIN_000036",
+        "TRAIN_000045",
+        "TRAIN_000053",
+        "TRAIN_000060",
+        "TRAIN_000069",
+        "TRAIN_000070",
+        "TRAIN_000078",
+        "TRAIN_000079",
+        "TRAIN_000085",
+        "TRAIN_000094",
+        "TRAIN_000095",
+        "TRAIN_000097",
+        "TRAIN_000105",
+        "TRAIN_000106",
+        "TRAIN_000117",
+        "TRAIN_000127",
+        "TRAIN_000132",
+        "TRAIN_000144",
+        "TRAIN_000146",
+        "TRAIN_000147",
+        "TRAIN_000152",
+        "TRAIN_000157",
+        "TRAIN_000170",
+        "TRAIN_000171",
+        "TRAIN_000184",
+        "TRAIN_000185",
+        "TRAIN_000189",
+        "TRAIN_000201",
+        "TRAIN_000203",
+        "TRAIN_000209",
+        "TRAIN_000210",
+        "TRAIN_000224",
+        "TRAIN_000227",
+        "TRAIN_000235",
+        "TRAIN_000238",
+        "TRAIN_000243",
+        "TRAIN_000250",
+        "TRAIN_000254",
+        "TRAIN_000256",
+        "TRAIN_000266",
+        "TRAIN_000269",
+        "TRAIN_000271",
+        "TRAIN_000276",
+        "TRAIN_000282",
+        "TRAIN_000285",
+        "TRAIN_000299",
+        "TRAIN_000301",
+        "TRAIN_000307",
+        "TRAIN_000317",
+        "TRAIN_000320",
+        "TRAIN_000322",
+        "TRAIN_000332",
+        "TRAIN_000338",
+        "TRAIN_000352",
+        "TRAIN_000359",
+        "TRAIN_000373",
+        "TRAIN_000379",
+        "TRAIN_000380",
+        "TRAIN_000386",
+        "TRAIN_000408",
+        "TRAIN_000410",
+        "TRAIN_000417",
+        "TRAIN_000421",
+        "TRAIN_000427",
+        "TRAIN_000438",
+        "TRAIN_000458",
+        "TRAIN_000461",
+        "TRAIN_000462",
+        "TRAIN_000465",
+        "TRAIN_000482",
+        "TRAIN_000489",
+        "TRAIN_000494",
+        "TRAIN_000499"
+      ],
+      "kernel_selection": {
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.193827515005184
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.210839480766662
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.199423675902125
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.245300015373545
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 17.24265429438461
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.780952297530867
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.27643034112608
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.262613763472707
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.193827515005184
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.799994732611156
+          }
+        ]
+      },
+      "models": {
+        "small_trace": {
+          "train_rmse": 9.464523818802025,
+          "validation_rmse": 15.263078844944836,
+          "seconds": 14.307348957983777,
+          "curve": [
+            {
+              "epoch": 1,
+              "augmented_train_rmse": 17.681038927953537,
+              "lr": 0.0019992675844286868
+            },
+            {
+              "epoch": 2,
+              "augmented_train_rmse": 17.18209187037098,
+              "lr": 0.0019970714670464714
+            },
+            {
+              "epoch": 3,
+              "augmented_train_rmse": 17.12932407057206,
+              "lr": 0.00199341503410718
+            },
+            {
+              "epoch": 4,
+              "augmented_train_rmse": 16.802401074424523,
+              "lr": 0.0019883039235653803
+            },
+            {
+              "epoch": 5,
+              "augmented_train_rmse": 16.506149394291622,
+              "lr": 0.0019817460163830685
+            },
+            {
+              "epoch": 6,
+              "augmented_train_rmse": 16.81015646066812,
+              "lr": 0.001973751424377792
+            },
+            {
+              "epoch": 7,
+              "augmented_train_rmse": 16.633809427020413,
+              "lr": 0.0019643324746309644
+            },
+            {
+              "epoch": 8,
+              "augmented_train_rmse": 15.876759332675778,
+              "lr": 0.0019535036904803956
+            },
+            {
+              "epoch": 9,
+              "augmented_train_rmse": 15.474125415656877,
+              "lr": 0.0019412817691263596
+            },
+            {
+              "epoch": 10,
+              "augmented_train_rmse": 15.733780543411907,
+              "lr": 0.001927685555885722,
+              "validation_rmse_diagnostic": 16.983080919047048
+            },
+            {
+              "epoch": 11,
+              "augmented_train_rmse": 16.015065349281148,
+              "lr": 0.0019127360151338269
+            },
+            {
+              "epoch": 12,
+              "augmented_train_rmse": 16.29866567230868,
+              "lr": 0.0018964561979789491
+            },
+            {
+              "epoch": 13,
+              "augmented_train_rmse": 16.419664915933534,
+              "lr": 0.001878871206719157
+            },
+            {
+              "epoch": 14,
+              "augmented_train_rmse": 15.625338032221151,
+              "lr": 0.0018600081561363873
+            },
+            {
+              "epoch": 15,
+              "augmented_train_rmse": 15.092089951857451,
+              "lr": 0.0018398961316874179
+            },
+            {
+              "epoch": 16,
+              "augmented_train_rmse": 14.748360688558632,
+              "lr": 0.0018185661446562
+            },
+            {
+              "epoch": 17,
+              "augmented_train_rmse": 14.693610563486892,
+              "lr": 0.0017960510843367074
+            },
+            {
+              "epoch": 18,
+              "augmented_train_rmse": 14.26700401600397,
+              "lr": 0.0017723856673200293
+            },
+            {
+              "epoch": 19,
+              "augmented_train_rmse": 14.656399734871773,
+              "lr": 0.0017476063839639011
+            },
+            {
+              "epoch": 20,
+              "augmented_train_rmse": 14.55788083689389,
+              "lr": 0.00172175144212722,
+              "validation_rmse_diagnostic": 17.028087022629116
+            },
+            {
+              "epoch": 21,
+              "augmented_train_rmse": 14.603420373389243,
+              "lr": 0.0016948607082562946
+            },
+            {
+              "epoch": 22,
+              "augmented_train_rmse": 14.305794580381106,
+              "lr": 0.0016669756459136746
+            },
+            {
+              "epoch": 23,
+              "augmented_train_rmse": 14.11982738906293,
+              "lr": 0.001638139251844342
+            },
+            {
+              "epoch": 24,
+              "augmented_train_rmse": 14.632111121664492,
+              "lr": 0.0016083959896778493
+            },
+            {
+              "epoch": 25,
+              "augmented_train_rmse": 14.257530645323518,
+              "lr": 0.001577791721368622
+            },
+            {
+              "epoch": 26,
+              "augmented_train_rmse": 15.01645595943664,
+              "lr": 0.0015463736364801513
+            },
+            {
+              "epoch": 27,
+              "augmented_train_rmse": 15.11734293647093,
+              "lr": 0.0015141901794221073
+            },
+            {
+              "epoch": 28,
+              "augmented_train_rmse": 13.768196100369735,
+              "lr": 0.0014812909747525694
+            },
+            {
+              "epoch": 29,
+              "augmented_train_rmse": 13.84242795553872,
+              "lr": 0.0014477267506605566
+            },
+            {
+              "epoch": 30,
+              "augmented_train_rmse": 13.807291054381434,
+              "lr": 0.0014135492607468352,
+              "validation_rmse_diagnostic": 15.342761737856645
+            },
+            {
+              "epoch": 31,
+              "augmented_train_rmse": 13.431530094300951,
+              "lr": 0.0013788112042236182
+            },
+            {
+              "epoch": 32,
+              "augmented_train_rmse": 13.03685282614359,
+              "lr": 0.0013435661446562
+            },
+            {
+              "epoch": 33,
+              "augmented_train_rmse": 13.117074975605606,
+              "lr": 0.0013078684273718204
+            },
+            {
+              "epoch": 34,
+              "augmented_train_rmse": 13.056724214668797,
+              "lr": 0.0012717730956631102
+            },
+            {
+              "epoch": 35,
+              "augmented_train_rmse": 14.217712743732449,
+              "lr": 0.0012353358059153218
+            },
+            {
+              "epoch": 36,
+              "augmented_train_rmse": 12.961352440058418,
+              "lr": 0.0011986127417882193
+            },
+            {
+              "epoch": 37,
+              "augmented_train_rmse": 13.122223407718932,
+              "lr": 0.0011616605275849457
+            },
+            {
+              "epoch": 38,
+              "augmented_train_rmse": 13.202708557036217,
+              "lr": 0.0011245361409414525
+            },
+            {
+              "epoch": 39,
+              "augmented_train_rmse": 13.15547369552984,
+              "lr": 0.001087296824971115
+            },
+            {
+              "epoch": 40,
+              "augmented_train_rmse": 12.446304956128344,
+              "lr": 0.0010499999999999997,
+              "validation_rmse_diagnostic": 15.15458348224807
+            },
+            {
+              "epoch": 41,
+              "augmented_train_rmse": 12.649649434861702,
+              "lr": 0.0010127031750288848
+            },
+            {
+              "epoch": 42,
+              "augmented_train_rmse": 12.211773345083209,
+              "lr": 0.0009754638590585473
+            },
+            {
+              "epoch": 43,
+              "augmented_train_rmse": 12.153824709836123,
+              "lr": 0.0009383394724150542
+            },
+            {
+              "epoch": 44,
+              "augmented_train_rmse": 11.693433863352752,
+              "lr": 0.0009013872582117808
+            },
+            {
+              "epoch": 45,
+              "augmented_train_rmse": 12.676813315782772,
+              "lr": 0.0008646641940846781
+            },
+            {
+              "epoch": 46,
+              "augmented_train_rmse": 12.855136674266697,
+              "lr": 0.0008282269043368899
+            },
+            {
+              "epoch": 47,
+              "augmented_train_rmse": 12.70388544425693,
+              "lr": 0.0007921315726281792
+            },
+            {
+              "epoch": 48,
+              "augmented_train_rmse": 11.789269489934275,
+              "lr": 0.0007564338553438
+            },
+            {
+              "epoch": 49,
+              "augmented_train_rmse": 11.967507466988588,
+              "lr": 0.0007211887957763818
+            },
+            {
+              "epoch": 50,
+              "augmented_train_rmse": 11.679258493184449,
+              "lr": 0.0006864507392531648,
+              "validation_rmse_diagnostic": 16.20810898230982
+            },
+            {
+              "epoch": 51,
+              "augmented_train_rmse": 12.02266742411265,
+              "lr": 0.0006522732493394436
+            },
+            {
+              "epoch": 52,
+              "augmented_train_rmse": 11.677227697115613,
+              "lr": 0.0006187090252474306
+            },
+            {
+              "epoch": 53,
+              "augmented_train_rmse": 11.29200850692878,
+              "lr": 0.0005858098205778927
+            },
+            {
+              "epoch": 54,
+              "augmented_train_rmse": 11.050021892051472,
+              "lr": 0.0005536263635198487
+            },
+            {
+              "epoch": 55,
+              "augmented_train_rmse": 10.956109320908713,
+              "lr": 0.0005222082786313778
+            },
+            {
+              "epoch": 56,
+              "augmented_train_rmse": 10.782858419552174,
+              "lr": 0.0004916040103221507
+            },
+            {
+              "epoch": 57,
+              "augmented_train_rmse": 11.469880172086501,
+              "lr": 0.000461860748155658
+            },
+            {
+              "epoch": 58,
+              "augmented_train_rmse": 11.173913118248251,
+              "lr": 0.0004330243540863257
+            },
+            {
+              "epoch": 59,
+              "augmented_train_rmse": 10.225177509149578,
+              "lr": 0.0004051392917437056
+            },
+            {
+              "epoch": 60,
+              "augmented_train_rmse": 10.76979448338349,
+              "lr": 0.00037824855787277996,
+              "validation_rmse_diagnostic": 15.195544920540382
+            },
+            {
+              "epoch": 61,
+              "augmented_train_rmse": 10.48581295197425,
+              "lr": 0.00035239361603609876
+            },
+            {
+              "epoch": 62,
+              "augmented_train_rmse": 10.449928182928451,
+              "lr": 0.00032761433267997075
+            },
+            {
+              "epoch": 63,
+              "augmented_train_rmse": 10.952157187288364,
+              "lr": 0.0003039489156632922
+            },
+            {
+              "epoch": 64,
+              "augmented_train_rmse": 10.291805786964149,
+              "lr": 0.00028143385534380006
+            },
+            {
+              "epoch": 65,
+              "augmented_train_rmse": 10.372077800995351,
+              "lr": 0.0002601038683125823
+            },
+            {
+              "epoch": 66,
+              "augmented_train_rmse": 9.875215323934352,
+              "lr": 0.0002399918438636125
+            },
+            {
+              "epoch": 67,
+              "augmented_train_rmse": 10.421896111003296,
+              "lr": 0.00022112879328084297
+            },
+            {
+              "epoch": 68,
+              "augmented_train_rmse": 9.905699530193354,
+              "lr": 0.00020354380202105066
+            },
+            {
+              "epoch": 69,
+              "augmented_train_rmse": 9.863309496630752,
+              "lr": 0.00018726398486617276
+            },
+            {
+              "epoch": 70,
+              "augmented_train_rmse": 9.614345797432629,
+              "lr": 0.00017231444411427765,
+              "validation_rmse_diagnostic": 15.127536778631516
+            },
+            {
+              "epoch": 71,
+              "augmented_train_rmse": 9.928962054536015,
+              "lr": 0.0001587182308736401
+            },
+            {
+              "epoch": 72,
+              "augmented_train_rmse": 9.94512278416485,
+              "lr": 0.0001464963095196042
+            },
+            {
+              "epoch": 73,
+              "augmented_train_rmse": 9.769364273271869,
+              "lr": 0.00013566752536903524
+            },
+            {
+              "epoch": 74,
+              "augmented_train_rmse": 9.214020734195731,
+              "lr": 0.00012624857562220732
+            },
+            {
+              "epoch": 75,
+              "augmented_train_rmse": 9.515448347593532,
+              "lr": 0.00011825398361693112
+            },
+            {
+              "epoch": 76,
+              "augmented_train_rmse": 9.563704584046985,
+              "lr": 0.00011169607643461924
+            },
+            {
+              "epoch": 77,
+              "augmented_train_rmse": 9.589867037909613,
+              "lr": 0.00010658496589282003
+            },
+            {
+              "epoch": 78,
+              "augmented_train_rmse": 9.720473842537364,
+              "lr": 0.00010292853295352844
+            },
+            {
+              "epoch": 79,
+              "augmented_train_rmse": 9.513700125591502,
+              "lr": 0.00010073241557131325
+            },
+            {
+              "epoch": 80,
+              "augmented_train_rmse": 9.644686590984763,
+              "lr": 0.0001,
+              "validation_rmse_diagnostic": 15.276558046035683
+            }
+          ],
+          "memory": {
+            "process_peak_rss_bytes": 923795456,
+            "current_allocated_memory": 3851008,
+            "driver_allocated_memory": 95518720,
+            "recommended_max_memory": 12713115648
+          },
+          "reload_max_abs_difference": 0.0,
+          "parameters": 86881
+        }
+      },
+      "checkpoint_sha256": {
+        "baseline.joblib": "8dcde986a8ba7d52ec2a5635ab4405f854222ba690e09a20567238b0025d4f7d",
+        "small_trace.pt": "f7016883e5f2ca79b51ac79674aafd0442d735c8b09651345ab2c79716f8a078",
+        "small_trace-morph-scaler.joblib": "5d7afbb00cb0c416110d4cf657a08168e8686f03d3476480be3d7156b2ed9256",
+        "kernel.joblib": "09445d00caed05e18dfcccfddfce832250543b0c531e378a50ca20ae24315baa"
+      }
+    },
+    {
+      "fold": 4,
+      "train_ids": [
+        "TRAIN_000001",
+        "TRAIN_000002",
+        "TRAIN_000003",
+        "TRAIN_000004",
+        "TRAIN_000006",
+        "TRAIN_000007",
+        "TRAIN_000008",
+        "TRAIN_000011",
+        "TRAIN_000012",
+        "TRAIN_000013",
+        "TRAIN_000014",
+        "TRAIN_000016",
+        "TRAIN_000018",
+        "TRAIN_000020",
+        "TRAIN_000025",
+        "TRAIN_000026",
+        "TRAIN_000027",
+        "TRAIN_000029",
+        "TRAIN_000030",
+        "TRAIN_000031",
+        "TRAIN_000032",
+        "TRAIN_000033",
+        "TRAIN_000035",
+        "TRAIN_000036",
+        "TRAIN_000038",
+        "TRAIN_000043",
+        "TRAIN_000044",
+        "TRAIN_000045",
+        "TRAIN_000046",
+        "TRAIN_000047",
+        "TRAIN_000048",
+        "TRAIN_000049",
+        "TRAIN_000051",
+        "TRAIN_000052",
+        "TRAIN_000053",
+        "TRAIN_000054",
+        "TRAIN_000058",
+        "TRAIN_000060",
+        "TRAIN_000061",
+        "TRAIN_000063",
+        "TRAIN_000064",
+        "TRAIN_000068",
+        "TRAIN_000069",
+        "TRAIN_000070",
+        "TRAIN_000071",
+        "TRAIN_000074",
+        "TRAIN_000077",
+        "TRAIN_000078",
+        "TRAIN_000079",
+        "TRAIN_000080",
+        "TRAIN_000081",
+        "TRAIN_000082",
+        "TRAIN_000083",
+        "TRAIN_000085",
+        "TRAIN_000088",
+        "TRAIN_000090",
+        "TRAIN_000091",
+        "TRAIN_000092",
+        "TRAIN_000093",
+        "TRAIN_000094",
+        "TRAIN_000095",
+        "TRAIN_000097",
+        "TRAIN_000101",
+        "TRAIN_000102",
+        "TRAIN_000104",
+        "TRAIN_000105",
+        "TRAIN_000106",
+        "TRAIN_000108",
+        "TRAIN_000109",
+        "TRAIN_000110",
+        "TRAIN_000111",
+        "TRAIN_000115",
+        "TRAIN_000116",
+        "TRAIN_000117",
+        "TRAIN_000119",
+        "TRAIN_000120",
+        "TRAIN_000122",
+        "TRAIN_000123",
+        "TRAIN_000125",
+        "TRAIN_000126",
+        "TRAIN_000127",
+        "TRAIN_000128",
+        "TRAIN_000129",
+        "TRAIN_000130",
+        "TRAIN_000132",
+        "TRAIN_000134",
+        "TRAIN_000136",
+        "TRAIN_000138",
+        "TRAIN_000139",
+        "TRAIN_000140",
+        "TRAIN_000141",
+        "TRAIN_000143",
+        "TRAIN_000144",
+        "TRAIN_000145",
+        "TRAIN_000146",
+        "TRAIN_000147",
+        "TRAIN_000150",
+        "TRAIN_000151",
+        "TRAIN_000152",
+        "TRAIN_000154",
+        "TRAIN_000155",
+        "TRAIN_000156",
+        "TRAIN_000157",
+        "TRAIN_000158",
+        "TRAIN_000161",
+        "TRAIN_000163",
+        "TRAIN_000164",
+        "TRAIN_000168",
+        "TRAIN_000169",
+        "TRAIN_000170",
+        "TRAIN_000171",
+        "TRAIN_000175",
+        "TRAIN_000176",
+        "TRAIN_000177",
+        "TRAIN_000180",
+        "TRAIN_000183",
+        "TRAIN_000184",
+        "TRAIN_000185",
+        "TRAIN_000186",
+        "TRAIN_000187",
+        "TRAIN_000189",
+        "TRAIN_000191",
+        "TRAIN_000193",
+        "TRAIN_000194",
+        "TRAIN_000196",
+        "TRAIN_000197",
+        "TRAIN_000198",
+        "TRAIN_000201",
+        "TRAIN_000202",
+        "TRAIN_000203",
+        "TRAIN_000204",
+        "TRAIN_000207",
+        "TRAIN_000208",
+        "TRAIN_000209",
+        "TRAIN_000210",
+        "TRAIN_000211",
+        "TRAIN_000212",
+        "TRAIN_000218",
+        "TRAIN_000219",
+        "TRAIN_000220",
+        "TRAIN_000221",
+        "TRAIN_000222",
+        "TRAIN_000224",
+        "TRAIN_000225",
+        "TRAIN_000226",
+        "TRAIN_000227",
+        "TRAIN_000228",
+        "TRAIN_000229",
+        "TRAIN_000231",
+        "TRAIN_000233",
+        "TRAIN_000235",
+        "TRAIN_000236",
+        "TRAIN_000237",
+        "TRAIN_000238",
+        "TRAIN_000240",
+        "TRAIN_000243",
+        "TRAIN_000244",
+        "TRAIN_000246",
+        "TRAIN_000247",
+        "TRAIN_000248",
+        "TRAIN_000249",
+        "TRAIN_000250",
+        "TRAIN_000251",
+        "TRAIN_000253",
+        "TRAIN_000254",
+        "TRAIN_000256",
+        "TRAIN_000257",
+        "TRAIN_000258",
+        "TRAIN_000260",
+        "TRAIN_000262",
+        "TRAIN_000265",
+        "TRAIN_000266",
+        "TRAIN_000267",
+        "TRAIN_000269",
+        "TRAIN_000271",
+        "TRAIN_000272",
+        "TRAIN_000273",
+        "TRAIN_000275",
+        "TRAIN_000276",
+        "TRAIN_000278",
+        "TRAIN_000281",
+        "TRAIN_000282",
+        "TRAIN_000284",
+        "TRAIN_000285",
+        "TRAIN_000287",
+        "TRAIN_000288",
+        "TRAIN_000289",
+        "TRAIN_000290",
+        "TRAIN_000294",
+        "TRAIN_000295",
+        "TRAIN_000297",
+        "TRAIN_000298",
+        "TRAIN_000299",
+        "TRAIN_000300",
+        "TRAIN_000301",
+        "TRAIN_000302",
+        "TRAIN_000304",
+        "TRAIN_000307",
+        "TRAIN_000308",
+        "TRAIN_000309",
+        "TRAIN_000311",
+        "TRAIN_000315",
+        "TRAIN_000317",
+        "TRAIN_000319",
+        "TRAIN_000320",
+        "TRAIN_000322",
+        "TRAIN_000323",
+        "TRAIN_000332",
+        "TRAIN_000333",
+        "TRAIN_000334",
+        "TRAIN_000338",
+        "TRAIN_000339",
+        "TRAIN_000340",
+        "TRAIN_000342",
+        "TRAIN_000344",
+        "TRAIN_000345",
+        "TRAIN_000346",
+        "TRAIN_000349",
+        "TRAIN_000351",
+        "TRAIN_000352",
+        "TRAIN_000354",
+        "TRAIN_000355",
+        "TRAIN_000356",
+        "TRAIN_000357",
+        "TRAIN_000358",
+        "TRAIN_000359",
+        "TRAIN_000360",
+        "TRAIN_000361",
+        "TRAIN_000363",
+        "TRAIN_000364",
+        "TRAIN_000365",
+        "TRAIN_000367",
+        "TRAIN_000368",
+        "TRAIN_000370",
+        "TRAIN_000373",
+        "TRAIN_000374",
+        "TRAIN_000375",
+        "TRAIN_000376",
+        "TRAIN_000377",
+        "TRAIN_000378",
+        "TRAIN_000379",
+        "TRAIN_000380",
+        "TRAIN_000382",
+        "TRAIN_000384",
+        "TRAIN_000385",
+        "TRAIN_000386",
+        "TRAIN_000387",
+        "TRAIN_000390",
+        "TRAIN_000391",
+        "TRAIN_000393",
+        "TRAIN_000394",
+        "TRAIN_000395",
+        "TRAIN_000396",
+        "TRAIN_000400",
+        "TRAIN_000401",
+        "TRAIN_000402",
+        "TRAIN_000403",
+        "TRAIN_000406",
+        "TRAIN_000407",
+        "TRAIN_000408",
+        "TRAIN_000410",
+        "TRAIN_000412",
+        "TRAIN_000414",
+        "TRAIN_000415",
+        "TRAIN_000416",
+        "TRAIN_000417",
+        "TRAIN_000418",
+        "TRAIN_000421",
+        "TRAIN_000422",
+        "TRAIN_000423",
+        "TRAIN_000424",
+        "TRAIN_000426",
+        "TRAIN_000427",
+        "TRAIN_000428",
+        "TRAIN_000429",
+        "TRAIN_000430",
+        "TRAIN_000431",
+        "TRAIN_000433",
+        "TRAIN_000434",
+        "TRAIN_000435",
+        "TRAIN_000438",
+        "TRAIN_000440",
+        "TRAIN_000442",
+        "TRAIN_000443",
+        "TRAIN_000444",
+        "TRAIN_000445",
+        "TRAIN_000447",
+        "TRAIN_000448",
+        "TRAIN_000449",
+        "TRAIN_000454",
+        "TRAIN_000455",
+        "TRAIN_000456",
+        "TRAIN_000457",
+        "TRAIN_000458",
+        "TRAIN_000459",
+        "TRAIN_000461",
+        "TRAIN_000462",
+        "TRAIN_000464",
+        "TRAIN_000465",
+        "TRAIN_000466",
+        "TRAIN_000467",
+        "TRAIN_000470",
+        "TRAIN_000473",
+        "TRAIN_000474",
+        "TRAIN_000475",
+        "TRAIN_000478",
+        "TRAIN_000481",
+        "TRAIN_000482",
+        "TRAIN_000484",
+        "TRAIN_000487",
+        "TRAIN_000488",
+        "TRAIN_000489",
+        "TRAIN_000490",
+        "TRAIN_000491",
+        "TRAIN_000492",
+        "TRAIN_000494",
+        "TRAIN_000496",
+        "TRAIN_000497",
+        "TRAIN_000498",
+        "TRAIN_000499"
+      ],
+      "validation_ids": [
+        "TRAIN_000005",
+        "TRAIN_000010",
+        "TRAIN_000015",
+        "TRAIN_000019",
+        "TRAIN_000023",
+        "TRAIN_000028",
+        "TRAIN_000039",
+        "TRAIN_000041",
+        "TRAIN_000056",
+        "TRAIN_000062",
+        "TRAIN_000073",
+        "TRAIN_000087",
+        "TRAIN_000089",
+        "TRAIN_000096",
+        "TRAIN_000100",
+        "TRAIN_000113",
+        "TRAIN_000131",
+        "TRAIN_000133",
+        "TRAIN_000142",
+        "TRAIN_000148",
+        "TRAIN_000149",
+        "TRAIN_000159",
+        "TRAIN_000173",
+        "TRAIN_000179",
+        "TRAIN_000182",
+        "TRAIN_000190",
+        "TRAIN_000199",
+        "TRAIN_000200",
+        "TRAIN_000206",
+        "TRAIN_000215",
+        "TRAIN_000216",
+        "TRAIN_000223",
+        "TRAIN_000232",
+        "TRAIN_000241",
+        "TRAIN_000242",
+        "TRAIN_000245",
+        "TRAIN_000252",
+        "TRAIN_000259",
+        "TRAIN_000268",
+        "TRAIN_000270",
+        "TRAIN_000274",
+        "TRAIN_000277",
+        "TRAIN_000280",
+        "TRAIN_000291",
+        "TRAIN_000292",
+        "TRAIN_000305",
+        "TRAIN_000314",
+        "TRAIN_000318",
+        "TRAIN_000321",
+        "TRAIN_000325",
+        "TRAIN_000326",
+        "TRAIN_000328",
+        "TRAIN_000331",
+        "TRAIN_000335",
+        "TRAIN_000337",
+        "TRAIN_000343",
+        "TRAIN_000347",
+        "TRAIN_000348",
+        "TRAIN_000350",
+        "TRAIN_000371",
+        "TRAIN_000372",
+        "TRAIN_000383",
+        "TRAIN_000389",
+        "TRAIN_000399",
+        "TRAIN_000404",
+        "TRAIN_000409",
+        "TRAIN_000413",
+        "TRAIN_000420",
+        "TRAIN_000432",
+        "TRAIN_000439",
+        "TRAIN_000441",
+        "TRAIN_000451",
+        "TRAIN_000453",
+        "TRAIN_000463",
+        "TRAIN_000469",
+        "TRAIN_000471",
+        "TRAIN_000477",
+        "TRAIN_000479",
+        "TRAIN_000483",
+        "TRAIN_000493"
+      ],
+      "kernel_selection": {
+        "selected": {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.387924272945359
+        },
+        "inner_scores": [
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.01,
+            "inner_rmse": 17.98677050496655
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 0.1,
+            "inner_rmse": 17.962668436721263
+          },
+          {
+            "bandwidth": 0.25,
+            "alpha": 1.0,
+            "inner_rmse": 17.90120976765249
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.01,
+            "inner_rmse": 18.15966329240726
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 0.1,
+            "inner_rmse": 15.93242714313429
+          },
+          {
+            "bandwidth": 1.0,
+            "alpha": 1.0,
+            "inner_rmse": 14.968648144281744
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.688472018425871
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.387924272945359
+          },
+          {
+            "bandwidth": 4.0,
+            "alpha": 1.0,
+            "inner_rmse": 15.077016108580304
+          }
+        ]
+      },
+      "models": {
+        "small_trace": {
+          "train_rmse": 10.506880056716778,
+          "validation_rmse": 14.855276394054377,
+          "seconds": 14.265562915999908,
+          "curve": [
+            {
+              "epoch": 1,
+              "augmented_train_rmse": 18.589206094663506,
+              "lr": 0.0019992675844286868
+            },
+            {
+              "epoch": 2,
+              "augmented_train_rmse": 17.992936549825924,
+              "lr": 0.0019970714670464714
+            },
+            {
+              "epoch": 3,
+              "augmented_train_rmse": 17.639134414730265,
+              "lr": 0.00199341503410718
+            },
+            {
+              "epoch": 4,
+              "augmented_train_rmse": 17.5034172922396,
+              "lr": 0.0019883039235653803
+            },
+            {
+              "epoch": 5,
+              "augmented_train_rmse": 17.140162538593074,
+              "lr": 0.0019817460163830685
+            },
+            {
+              "epoch": 6,
+              "augmented_train_rmse": 17.149279968996538,
+              "lr": 0.001973751424377792
+            },
+            {
+              "epoch": 7,
+              "augmented_train_rmse": 16.80101460963075,
+              "lr": 0.0019643324746309644
+            },
+            {
+              "epoch": 8,
+              "augmented_train_rmse": 16.754722394699467,
+              "lr": 0.0019535036904803956
+            },
+            {
+              "epoch": 9,
+              "augmented_train_rmse": 16.09788170708624,
+              "lr": 0.0019412817691263596
+            },
+            {
+              "epoch": 10,
+              "augmented_train_rmse": 16.827431794199654,
+              "lr": 0.001927685555885722,
+              "validation_rmse_diagnostic": 16.070323055045897
+            },
+            {
+              "epoch": 11,
+              "augmented_train_rmse": 16.58104397451807,
+              "lr": 0.0019127360151338269
+            },
+            {
+              "epoch": 12,
+              "augmented_train_rmse": 16.202497536882987,
+              "lr": 0.0018964561979789491
+            },
+            {
+              "epoch": 13,
+              "augmented_train_rmse": 15.534980915683665,
+              "lr": 0.001878871206719157
+            },
+            {
+              "epoch": 14,
+              "augmented_train_rmse": 15.827053767349312,
+              "lr": 0.0018600081561363873
+            },
+            {
+              "epoch": 15,
+              "augmented_train_rmse": 15.929796264956742,
+              "lr": 0.0018398961316874179
+            },
+            {
+              "epoch": 16,
+              "augmented_train_rmse": 15.468964877380136,
+              "lr": 0.0018185661446562
+            },
+            {
+              "epoch": 17,
+              "augmented_train_rmse": 15.540242336743852,
+              "lr": 0.0017960510843367074
+            },
+            {
+              "epoch": 18,
+              "augmented_train_rmse": 15.676252591570803,
+              "lr": 0.0017723856673200293
+            },
+            {
+              "epoch": 19,
+              "augmented_train_rmse": 15.150854646919898,
+              "lr": 0.0017476063839639011
+            },
+            {
+              "epoch": 20,
+              "augmented_train_rmse": 14.820062189983576,
+              "lr": 0.00172175144212722,
+              "validation_rmse_diagnostic": 14.74412589617869
+            },
+            {
+              "epoch": 21,
+              "augmented_train_rmse": 14.506451057237998,
+              "lr": 0.0016948607082562946
+            },
+            {
+              "epoch": 22,
+              "augmented_train_rmse": 14.285968916736628,
+              "lr": 0.0016669756459136746
+            },
+            {
+              "epoch": 23,
+              "augmented_train_rmse": 14.968429952636756,
+              "lr": 0.001638139251844342
+            },
+            {
+              "epoch": 24,
+              "augmented_train_rmse": 14.762963640364392,
+              "lr": 0.0016083959896778493
+            },
+            {
+              "epoch": 25,
+              "augmented_train_rmse": 14.655894148058852,
+              "lr": 0.001577791721368622
+            },
+            {
+              "epoch": 26,
+              "augmented_train_rmse": 14.565348948607802,
+              "lr": 0.0015463736364801513
+            },
+            {
+              "epoch": 27,
+              "augmented_train_rmse": 14.43357899218651,
+              "lr": 0.0015141901794221073
+            },
+            {
+              "epoch": 28,
+              "augmented_train_rmse": 15.288962957628588,
+              "lr": 0.0014812909747525694
+            },
+            {
+              "epoch": 29,
+              "augmented_train_rmse": 13.721403802363096,
+              "lr": 0.0014477267506605566
+            },
+            {
+              "epoch": 30,
+              "augmented_train_rmse": 13.558641416179016,
+              "lr": 0.0014135492607468352,
+              "validation_rmse_diagnostic": 15.239738887131187
+            },
+            {
+              "epoch": 31,
+              "augmented_train_rmse": 14.004274804807173,
+              "lr": 0.0013788112042236182
+            },
+            {
+              "epoch": 32,
+              "augmented_train_rmse": 13.739604903542741,
+              "lr": 0.0013435661446562
+            },
+            {
+              "epoch": 33,
+              "augmented_train_rmse": 13.811280019461357,
+              "lr": 0.0013078684273718204
+            },
+            {
+              "epoch": 34,
+              "augmented_train_rmse": 13.820015133747786,
+              "lr": 0.0012717730956631102
+            },
+            {
+              "epoch": 35,
+              "augmented_train_rmse": 13.617753391709657,
+              "lr": 0.0012353358059153218
+            },
+            {
+              "epoch": 36,
+              "augmented_train_rmse": 13.434562984144838,
+              "lr": 0.0011986127417882193
+            },
+            {
+              "epoch": 37,
+              "augmented_train_rmse": 13.283822554317743,
+              "lr": 0.0011616605275849457
+            },
+            {
+              "epoch": 38,
+              "augmented_train_rmse": 14.156195400682947,
+              "lr": 0.0011245361409414525
+            },
+            {
+              "epoch": 39,
+              "augmented_train_rmse": 14.442144956252308,
+              "lr": 0.001087296824971115
+            },
+            {
+              "epoch": 40,
+              "augmented_train_rmse": 13.911249534087542,
+              "lr": 0.0010499999999999997,
+              "validation_rmse_diagnostic": 15.025082390642305
+            },
+            {
+              "epoch": 41,
+              "augmented_train_rmse": 13.528390350247477,
+              "lr": 0.0010127031750288848
+            },
+            {
+              "epoch": 42,
+              "augmented_train_rmse": 13.245395588308991,
+              "lr": 0.0009754638590585473
+            },
+            {
+              "epoch": 43,
+              "augmented_train_rmse": 12.734590892548844,
+              "lr": 0.0009383394724150542
+            },
+            {
+              "epoch": 44,
+              "augmented_train_rmse": 13.091226906963286,
+              "lr": 0.0009013872582117808
+            },
+            {
+              "epoch": 45,
+              "augmented_train_rmse": 12.627227258064872,
+              "lr": 0.0008646641940846781
+            },
+            {
+              "epoch": 46,
+              "augmented_train_rmse": 12.4420758911939,
+              "lr": 0.0008282269043368899
+            },
+            {
+              "epoch": 47,
+              "augmented_train_rmse": 12.989217140788071,
+              "lr": 0.0007921315726281792
+            },
+            {
+              "epoch": 48,
+              "augmented_train_rmse": 13.549838875256023,
+              "lr": 0.0007564338553438
+            },
+            {
+              "epoch": 49,
+              "augmented_train_rmse": 13.427759248623214,
+              "lr": 0.0007211887957763818
+            },
+            {
+              "epoch": 50,
+              "augmented_train_rmse": 12.778467342095727,
+              "lr": 0.0006864507392531648,
+              "validation_rmse_diagnostic": 14.145029994626812
+            },
+            {
+              "epoch": 51,
+              "augmented_train_rmse": 12.895925534035769,
+              "lr": 0.0006522732493394436
+            },
+            {
+              "epoch": 52,
+              "augmented_train_rmse": 12.308196627915747,
+              "lr": 0.0006187090252474306
+            },
+            {
+              "epoch": 53,
+              "augmented_train_rmse": 12.739118699500368,
+              "lr": 0.0005858098205778927
+            },
+            {
+              "epoch": 54,
+              "augmented_train_rmse": 12.446483837863747,
+              "lr": 0.0005536263635198487
+            },
+            {
+              "epoch": 55,
+              "augmented_train_rmse": 12.049406154281622,
+              "lr": 0.0005222082786313778
+            },
+            {
+              "epoch": 56,
+              "augmented_train_rmse": 12.417070521240843,
+              "lr": 0.0004916040103221507
+            },
+            {
+              "epoch": 57,
+              "augmented_train_rmse": 12.718027882831581,
+              "lr": 0.000461860748155658
+            },
+            {
+              "epoch": 58,
+              "augmented_train_rmse": 12.624033141721902,
+              "lr": 0.0004330243540863257
+            },
+            {
+              "epoch": 59,
+              "augmented_train_rmse": 11.80870705429041,
+              "lr": 0.0004051392917437056
+            },
+            {
+              "epoch": 60,
+              "augmented_train_rmse": 11.835461776530225,
+              "lr": 0.00037824855787277996,
+              "validation_rmse_diagnostic": 14.172122876962218
+            },
+            {
+              "epoch": 61,
+              "augmented_train_rmse": 11.89407203376636,
+              "lr": 0.00035239361603609876
+            },
+            {
+              "epoch": 62,
+              "augmented_train_rmse": 11.666296267396845,
+              "lr": 0.00032761433267997075
+            },
+            {
+              "epoch": 63,
+              "augmented_train_rmse": 11.417066920718487,
+              "lr": 0.0003039489156632922
+            },
+            {
+              "epoch": 64,
+              "augmented_train_rmse": 11.54093893398651,
+              "lr": 0.00028143385534380006
+            },
+            {
+              "epoch": 65,
+              "augmented_train_rmse": 11.112333801521343,
+              "lr": 0.0002601038683125823
+            },
+            {
+              "epoch": 66,
+              "augmented_train_rmse": 11.576692904743702,
+              "lr": 0.0002399918438636125
+            },
+            {
+              "epoch": 67,
+              "augmented_train_rmse": 11.463116076658217,
+              "lr": 0.00022112879328084297
+            },
+            {
+              "epoch": 68,
+              "augmented_train_rmse": 11.404802168677262,
+              "lr": 0.00020354380202105066
+            },
+            {
+              "epoch": 69,
+              "augmented_train_rmse": 11.389672668028293,
+              "lr": 0.00018726398486617276
+            },
+            {
+              "epoch": 70,
+              "augmented_train_rmse": 11.428958151770344,
+              "lr": 0.00017231444411427765,
+              "validation_rmse_diagnostic": 14.623984856414534
+            },
+            {
+              "epoch": 71,
+              "augmented_train_rmse": 11.249498179238822,
+              "lr": 0.0001587182308736401
+            },
+            {
+              "epoch": 72,
+              "augmented_train_rmse": 11.097733567789856,
+              "lr": 0.0001464963095196042
+            },
+            {
+              "epoch": 73,
+              "augmented_train_rmse": 11.64888630350652,
+              "lr": 0.00013566752536903524
+            },
+            {
+              "epoch": 74,
+              "augmented_train_rmse": 11.160258598516474,
+              "lr": 0.00012624857562220732
+            },
+            {
+              "epoch": 75,
+              "augmented_train_rmse": 11.18981677625312,
+              "lr": 0.00011825398361693112
+            },
+            {
+              "epoch": 76,
+              "augmented_train_rmse": 11.162566204254903,
+              "lr": 0.00011169607643461924
+            },
+            {
+              "epoch": 77,
+              "augmented_train_rmse": 10.842382097076905,
+              "lr": 0.00010658496589282003
+            },
+            {
+              "epoch": 78,
+              "augmented_train_rmse": 11.014799682110437,
+              "lr": 0.00010292853295352844
+            },
+            {
+              "epoch": 79,
+              "augmented_train_rmse": 10.927715335283922,
+              "lr": 0.00010073241557131325
+            },
+            {
+              "epoch": 80,
+              "augmented_train_rmse": 11.051749583781973,
+              "lr": 0.0001,
+              "validation_rmse_diagnostic": 14.949417322125838
+            }
+          ],
+          "memory": {
+            "process_peak_rss_bytes": 923795456,
+            "current_allocated_memory": 3851008,
+            "driver_allocated_memory": 95518720,
+            "recommended_max_memory": 12713115648
+          },
+          "reload_max_abs_difference": 0.0,
+          "parameters": 86881
+        }
+      },
+      "checkpoint_sha256": {
+        "baseline.joblib": "adbb8a2aeffc147e74aabca21ca99d6e7d7762ec17d9d5a47ff801527bb9d3b4",
+        "small_trace.pt": "3891c6a031c8509e4019a53561111a2a4ee17af5260d9cdc21ad1be56dffd08f",
+        "small_trace-morph-scaler.joblib": "af630c55676cf3bf5d00488fda803cf26706f2b2adcd8f8ca7aba1f81b6d86b4",
+        "kernel.joblib": "c8a6611920bc0295c0257186ca3706266c56fc169f606bca5ae1a778bec9a95a"
+      }
+    }
+  ],
+  "elapsed_seconds": 82.96998499997426,
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "all_baseline_kernel_components_refit": true,
+  "fixed_035_controls_reused_for_reporting_only": true
+}

@@ -1,0 +1,35 @@
+{
+  "study": 187,
+  "status": "probe_passed_full_nested_running",
+  "UTC": "2026-10-06T06:13:47.583808+00:00",
+  "execution_session": 52113,
+  "sequence": [
+    "run resnet50",
+    "run efficientnet_b0",
+    "validate resnet50",
+    "validate efficientnet_b0",
+    "summarize"
+  ],
+  "logs": [
+    "experiments/cnn-scale-floor-187/resnet50.log",
+    "experiments/cnn-scale-floor-187/efficientnet_b0.log",
+    "experiments/cnn-scale-floor-187/resnet50-validation.log",
+    "experiments/cnn-scale-floor-187/efficientnet_b0-validation.log",
+    "experiments/cnn-scale-floor-187/summary.log"
+  ],
+  "probe_gate": {
+    "passed": true,
+    "new_reload_checks": 7,
+    "all_new_CPU_MPS_within_002": true,
+    "all_three_original_CPU_failures_reproduced": true,
+    "original_CPU_tolerance_unchanged": 0.002,
+    "all_new_features_predictions_gradients_finite": true,
+    "train_only_and_unit_invariance_passed": true,
+    "accuracy_not_used_for_gate": true,
+    "prediction_ranges_diagnostic_only": true,
+    "seconds": 160.6053641660037
+  },
+  "probe_detail_SHA256": "24fe6f6c940c0eafad646626ac8629769c4a4881d0c63221780fc3951cac8e66",
+  "constraint": "Onlytrain-onlyRMSfloorchanged; nootheraxes/rawdata/newinstall/download/cost/holdout/test/full500/CSV/upload;CPU2/MPS6GB/swap0",
+  "resume_note": "Checkliveprocessesandlogsfirst;doNOTstartduplicatejobs. Fullrunisnotblindlyidempotentafterouterselection;inspectbeforeanyresume."
+}

@@ -1,0 +1,134 @@
+{
+  "valid": true,
+  "label_blind_ids_match": true,
+  "n_images": 40,
+  "n_conditions": 160,
+  "all_finite": true,
+  "sensitivity_recalculation_max_error": 0.0,
+  "fixture_mask_recalculation_max_error": 0,
+  "benchmark_repeat_feature_max_error": 0.0,
+  "protected_best006_unchanged": true,
+  "protected_sha256": {
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/dino-multilayer-044/candidate-design.json": "b783348c7b39c8a457ddcf0f5b12f64a1fece8614886fe0d3706ce42411f703e",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b"
+  },
+  "report_sha256": "e9e6d58e0f86a9b92ba99684c6b976c02022d99bddc7c2bd8d6ba34a128f782c",
+  "plan_sha256": "b99ac216a5d9eb5e32cf51cc1501d12450dbde82228773ec23653db2a184145a",
+  "descriptors": [
+    {
+      "descriptor": "grain_diameter",
+      "baseline_sensitivity": 0.16579458792185092,
+      "new_sensitivity": 0.04466434017272433,
+      "relative_reduction": 0.7306043536609449,
+      "gate_pass": true,
+      "baseline_identity_iqr": 3.727971871289771,
+      "candidate_identity_iqr": 0.7592835094043826,
+      "spread_gate_informative": true,
+      "baseline_identity_range": [
+        8.082853083340583,
+        22.373891319368926
+      ],
+      "candidate_identity_range": [
+        5.470942345409049,
+        7.929622044750147
+      ]
+    },
+    {
+      "descriptor": "dark_phase_fraction",
+      "baseline_sensitivity": 0.046206967774526465,
+      "new_sensitivity": 0.05777739693155464,
+      "relative_reduction": -0.25040442414416253,
+      "gate_pass": false,
+      "baseline_identity_iqr": 0.14221268616786364,
+      "candidate_identity_iqr": 0.12201034646398978,
+      "spread_gate_informative": true,
+      "baseline_identity_range": [
+        0.08382311967481544,
+        0.5053322771558965
+      ],
+      "candidate_identity_range": [
+        0.05990666309262034,
+        0.514075048622366
+      ]
+    },
+    {
+      "descriptor": "pore_fraction",
+      "baseline_sensitivity": 0.1707408165844496,
+      "new_sensitivity": 3.871040729183512,
+      "relative_reduction": -21.67202890685994,
+      "gate_pass": false,
+      "baseline_identity_iqr": 0.00499725341796875,
+      "candidate_identity_iqr": 0.058864593505859375,
+      "spread_gate_informative": true,
+      "baseline_identity_range": [
+        0.000396728515625,
+        0.0185394287109375
+      ],
+      "candidate_identity_range": [
+        0.0164642333984375,
+        0.17485809326171875
+      ]
+    },
+    {
+      "descriptor": "alignment",
+      "baseline_sensitivity": 0.06454759434578006,
+      "new_sensitivity": 0.024468337088334458,
+      "relative_reduction": 0.6209256543743813,
+      "gate_pass": true,
+      "baseline_identity_iqr": 0.21263286235886134,
+      "candidate_identity_iqr": 0.028292864390623895,
+      "spread_gate_informative": true,
+      "baseline_identity_range": [
+        0.007245629494462579,
+        0.4463334412179084
+      ],
+      "candidate_identity_range": [
+        0.005583660910122048,
+        0.1743642546868857
+      ]
+    }
+  ],
+  "audit_caveats": [
+    "Two-start output masks are unions, not consensus. Precision and per-start feature disagreement checks prevent recall-only promotion; this run fails strongly.",
+    "Noise parameter is conditional AR innovation scale, not observed marginal residual standard deviation. HH calibration is a proxy.",
+    "Affine stability partly comes from image-local percentile normalization and cannot be attributed solely to joint inverse rendering.",
+    "IQR ratio gate is uninformative when baseline IQR is near zero; raw IQR and informativeness are reported per descriptor.",
+    "Initialization disagreement and degeneracy gates concern identity images only, not all perturbed versions.",
+    "This evaluator checks the recorded implementation, not correctness of synthetic generator assumptions."
+  ],
+  "seconds": 0.19170408399077132,
+  "posthoc_nuisance_diagnostics": {
+    "scope": "Identity only, explanatory; not a revised gate",
+    "blur_sigma_quantiles": [
+      0.30510413646698,
+      0.3423667550086975,
+      0.4527586102485657
+    ],
+    "innovation_to_initial_HH_ratio_quantiles": [
+      0.5016117595709306,
+      0.5074437895782491,
+      0.5130298159933459
+    ],
+    "innovation_near_lower_bound_fraction": 1.0,
+    "warning": "A small fitted innovation scale and blur can indicate fitting observed noise into latent fields; not proof of a unique cause."
+  },
+  "fixture_summary": {
+    "boundary_precision_range": [
+      0.22940236922667376,
+      0.2707053129588341
+    ],
+    "grain_relative_error_range": [
+      0.8283277337695995,
+      0.8528806650626923
+    ],
+    "pore_precision_by_fixture": [
+      0.7214076246334311,
+      0.021962616822429906,
+      0.7264437689969605,
+      0.018458197611292075,
+      0.7318611987381703,
+      0.029346210995542348
+    ]
+  }
+}

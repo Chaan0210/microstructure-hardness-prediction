@@ -1,0 +1,94 @@
+{
+  "model": "convnext_tiny",
+  "scores": {
+    "head_only112": {
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 16.615123203661955,
+        "blend10": 12.953058140789041
+      },
+      "blend_gain": -0.16685736503834647,
+      "fold_blend_gains": [
+        -0.28026762839222386,
+        -0.07221108748873029,
+        -0.24984486491971403,
+        -0.021167303478026867,
+        -0.19092413603974911
+      ],
+      "positive_folds": 0,
+      "conditional_group_bootstrap_CI95": [
+        -0.272852532552664,
+        -0.05661780497706062
+      ],
+      "gain_after_removing_top5": -0.22130137168326058,
+      "residual_correlation_vs021": 0.8526142197284273,
+      "advance_gate": false,
+      "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+    },
+    "last_stage112": {
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 16.76418504639125,
+        "blend10": 12.95863858063985
+      },
+      "blend_gain": -0.17243780488915483,
+      "fold_blend_gains": [
+        -0.2873966705873148,
+        -0.07622876041510729,
+        -0.26093332016780124,
+        -0.010683954254679051,
+        -0.2053995459693514
+      ],
+      "positive_folds": 0,
+      "conditional_group_bootstrap_CI95": [
+        -0.2815781264675586,
+        -0.060897318329955916
+      ],
+      "gain_after_removing_top5": -0.2260306560788532,
+      "residual_correlation_vs021": 0.8476100188587488,
+      "advance_gate": false,
+      "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+    }
+  },
+  "laststage_blend_gain_vs_matched_head": -0.005580439850808361,
+  "laststage_advance_gate": false,
+  "pairing_proof": [
+    {
+      "fold": 0,
+      "paired_same_initial_head_seed_orders_updates": true,
+      "head_control_tail_frozen": true,
+      "fine_tail_trained": true,
+      "optimizer_state_reset_equally": true
+    },
+    {
+      "fold": 1,
+      "paired_same_initial_head_seed_orders_updates": true,
+      "head_control_tail_frozen": true,
+      "fine_tail_trained": true,
+      "optimizer_state_reset_equally": true
+    },
+    {
+      "fold": 2,
+      "paired_same_initial_head_seed_orders_updates": true,
+      "head_control_tail_frozen": true,
+      "fine_tail_trained": true,
+      "optimizer_state_reset_equally": true
+    },
+    {
+      "fold": 3,
+      "paired_same_initial_head_seed_orders_updates": true,
+      "head_control_tail_frozen": true,
+      "fine_tail_trained": true,
+      "optimizer_state_reset_equally": true
+    },
+    {
+      "fold": 4,
+      "paired_same_initial_head_seed_orders_updates": true,
+      "head_control_tail_frozen": true,
+      "fine_tail_trained": true,
+      "optimizer_state_reset_equally": true
+    }
+  ],
+  "OOF_SHA256": "e50496b6c7089363c93fbc4becb27d50843565349f361ad4e7c249917548868c",
+  "seconds": 287.2756704159983
+}

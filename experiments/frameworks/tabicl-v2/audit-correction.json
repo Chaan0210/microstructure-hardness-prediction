@@ -1,0 +1,1 @@
+{"reason":"Official TabICLRegressor.fit converts y to float32 before StandardScaler. Original audit incorrectly compared the mean of float64 labels (difference 4.42e-8). Corrected reference reproduces official float32 conversion and float64 accumulation; prediction/model code unchanged; failed audit log retained."}

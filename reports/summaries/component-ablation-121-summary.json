@@ -1,0 +1,453 @@
+{
+  "study": "121 candidate013 four-group component ablation",
+  "completed_utc": "2026-10-04T03:01:53.966215+00:00",
+  "status": "completed_diagnostic_keep013",
+  "lineage": {
+    "008": ".375 baseline795 + .1875 compact26KRR + .1875 TinyCNN128 + .125 DINO-S mean3 + .125 DINO-B mean3",
+    "009": "Foldtrain-only affine of008 from3innerOOF fits;320train uses213/214 calibration sources",
+    "011": ".9 calibrated009 + .1 DINO-B shorthead32/12epochs",
+    "013": "011 + mean3 selected physics57 residualmodels; eachtrainedon106/107 honestrows using213/214 whole011 anchors",
+    "legacy_physics": "baseline795 combinesbase_et .375,base_ridge .375,morph_ridge .25; morphology/texture/statisticalproxies,notexactphysicalequation. Compact26 containsinverse_sqrt_grain_diameter,phase/porefractions,alignment,lineintercepts etc.",
+    "new_residual": "57features=compact26+TV31, none/Ridge1/Ridge.1/RBF1/RBF.1 choseninsidehonestblock. Distinctfromlegacydirecttargetregression.",
+    "DINO": "FrozenS/B full504 multilayer6/9/12CLS+patchmean/std andMLP. No supervisedbackbonefinetuningin013.",
+    "CNN": "Tiny128 BOX,80epochs,D4train,identityinference,singleseed,last5weightaverage.",
+    "group_scope": "no_legacy_physics removesonlylegacydirecttargetregressors;57physicalresidualfeatures remain bydesign. no_DINO removesbothlongheadsandshorthead throughoutanchorsandtop-level. no_CNN removesCNNthroughoutanchorsandtop-level.",
+    "domain_limit": "Proxyfeaturesandimagebasedlearnersdo notproveactualgrainmasks,absolutephysicalscale orcausalhardnesslaw."
+  },
+  "reference013_pooled_RMSE": 13.082021904976907,
+  "reference013_pooled_MSE": 171.1392971222956,
+  "ablation_table": [
+    {
+      "removed_group": "no_DINO",
+      "refit_pipeline_RMSE": 13.612279757313164,
+      "refit_minus013_RMSE": 0.5302578523362573,
+      "refit_minus013_MSE": 14.154863069062117,
+      "ID_cluster95_RMSE_change_CI": [
+        0.26670130260861136,
+        0.792145961228123
+      ],
+      "per_partition_RMSE": [
+        13.651997206316848,
+        13.527915662385372,
+        13.6565350907241
+      ],
+      "per_partition_RMSE_change": [
+        0.6064608785355539,
+        0.5614223825734719,
+        0.4239266814943399
+      ],
+      "folds_worse_after_removal": 15,
+      "IDs_worse_after_removal": 234,
+      "frozen_trainmean_replacement_RMSE": 14.02193110000295,
+      "frozen_minus013_RMSE": 0.9399091950260434,
+      "frozen_MSE_change_decomposition": {
+        "cross_term": 6.92547247549816,
+        "squared_prediction_change": 18.549782175436214
+      },
+      "refit_base_before_new_residual_RMSE": 13.653643254399947,
+      "refit_residual_incremental_RMSE_gain": 0.041363497086782886
+    },
+    {
+      "removed_group": "no_CNN",
+      "refit_pipeline_RMSE": 13.260327683943624,
+      "refit_minus013_RMSE": 0.17830577896671684,
+      "refit_minus013_MSE": 4.696993163266086,
+      "ID_cluster95_RMSE_change_CI": [
+        0.05631050432489282,
+        0.30325873683934057
+      ],
+      "per_partition_RMSE": [
+        13.065564283199738,
+        13.247649732245502,
+        13.464756863382128
+      ],
+      "per_partition_RMSE_change": [
+        0.02002795541844371,
+        0.28115645243360277,
+        0.23214845415236773
+      ],
+      "folds_worse_after_removal": 13,
+      "IDs_worse_after_removal": 205,
+      "frozen_trainmean_replacement_RMSE": 13.4371485022762,
+      "frozen_minus013_RMSE": 0.35512659729929297,
+      "frozen_MSE_change_decomposition": {
+        "cross_term": 2.813429547939154,
+        "squared_prediction_change": 6.604233201988789
+      },
+      "refit_base_before_new_residual_RMSE": 13.28943360014452,
+      "refit_residual_incremental_RMSE_gain": 0.029105916200895976
+    },
+    {
+      "removed_group": "no_legacy_physics",
+      "refit_pipeline_RMSE": 12.951140028557479,
+      "refit_minus013_RMSE": -0.13088187641942817,
+      "refit_minus013_MSE": -3.407269082991803,
+      "ID_cluster95_RMSE_change_CI": [
+        -0.40985312451410916,
+        0.1497805842944186
+      ],
+      "per_partition_RMSE": [
+        13.05125085261727,
+        12.707777681522563,
+        13.090963360156707
+      ],
+      "per_partition_RMSE_change": [
+        0.005714524835976675,
+        -0.25871559828933677,
+        -0.14164504907305364
+      ],
+      "folds_worse_after_removal": 5,
+      "IDs_worse_after_removal": 203,
+      "frozen_trainmean_replacement_RMSE": 14.261699392417748,
+      "frozen_minus013_RMSE": 1.1796774874408413,
+      "frozen_MSE_change_decomposition": {
+        "cross_term": -2.9498832796527377,
+        "squared_prediction_change": 35.20665571704594
+      },
+      "refit_base_before_new_residual_RMSE": 13.041850583703836,
+      "refit_residual_incremental_RMSE_gain": 0.09071055514635695
+    },
+    {
+      "removed_group": "no_new_residual",
+      "refit_pipeline_RMSE": 13.114339251644072,
+      "refit_minus013_RMSE": 0.032317346667165125,
+      "refit_minus013_MSE": 0.846596884916778,
+      "ID_cluster95_RMSE_change_CI": [
+        -0.09341147304826199,
+        0.16064077971619034
+      ],
+      "per_partition_RMSE": [
+        13.0539977718711,
+        13.015176056591201,
+        13.272377948565081
+      ],
+      "per_partition_RMSE_change": [
+        0.008461444089805426,
+        0.04868277677930166,
+        0.039769539335321014
+      ],
+      "folds_worse_after_removal": 10,
+      "IDs_worse_after_removal": 174,
+      "frozen_trainmean_replacement_RMSE": 13.114339251644072,
+      "frozen_minus013_RMSE": 0.032317346667165125,
+      "frozen_MSE_change_decomposition": {
+        "cross_term": -1.0686974417066217,
+        "squared_prediction_change": 1.9152943266234088
+      },
+      "refit_base_before_new_residual_RMSE": 13.114339251644072,
+      "refit_residual_incremental_RMSE_gain": null
+    }
+  ],
+  "standalone_diagnostics": {
+    "component_order": [
+      "baseline",
+      "kernel",
+      "cnn",
+      "Smean",
+      "Bmean",
+      "Bshort"
+    ],
+    "pooled_raw_RMSE": {
+      "baseline": 14.190584019488787,
+      "kernel": 14.40253816493673,
+      "cnn": 14.621918907129915,
+      "Smean": 14.261857086209606,
+      "Bmean": 13.870420175273859,
+      "Bshort": 14.03530783020205
+    },
+    "pooled_error_correlation": [
+      [
+        0.9999999999999999,
+        0.9164194940838039,
+        0.8378671157391943,
+        0.7972189718868555,
+        0.8271097517006878,
+        0.8480696876697641
+      ],
+      [
+        0.916419494083804,
+        1.0,
+        0.7773332091226806,
+        0.7756701699167472,
+        0.8020067833710633,
+        0.8212779882572889
+      ],
+      [
+        0.8378671157391944,
+        0.7773332091226806,
+        1.0,
+        0.6907257815275973,
+        0.7027365949916814,
+        0.7178460018118541
+      ],
+      [
+        0.7972189718868555,
+        0.7756701699167471,
+        0.6907257815275974,
+        1.0,
+        0.8865397731521123,
+        0.884804370726072
+      ],
+      [
+        0.8271097517006878,
+        0.8020067833710633,
+        0.7027365949916814,
+        0.8865397731521122,
+        0.9999999999999999,
+        0.9629151103180343
+      ],
+      [
+        0.848069687669764,
+        0.8212779882572889,
+        0.7178460018118541,
+        0.8848043707260719,
+        0.9629151103180342,
+        1.0
+      ]
+    ],
+    "most_correlated_pairs": [
+      {
+        "left": "Bmean",
+        "right": "Bshort",
+        "error_correlation": 0.9629151103180343
+      },
+      {
+        "left": "baseline",
+        "right": "kernel",
+        "error_correlation": 0.9164194940838039
+      },
+      {
+        "left": "Smean",
+        "right": "Bmean",
+        "error_correlation": 0.8865397731521123
+      },
+      {
+        "left": "Smean",
+        "right": "Bshort",
+        "error_correlation": 0.884804370726072
+      },
+      {
+        "left": "baseline",
+        "right": "Bshort",
+        "error_correlation": 0.8480696876697641
+      }
+    ],
+    "interpretation": "Standaloneaccuracyanderrorcorrelationarenotconditionalimportance. Weights/capacity/groupdimensiondiffer;highcorrelationdoesnoteliminatecomplementarity."
+  },
+  "retrained_downstream": {
+    "calibrators_fitted": 180,
+    "residual_blocks_fitted": 135,
+    "serialized_residual_models_including_none": 2160,
+    "selected_kind_counts": {
+      "no_DINO": {
+        "rbf01": 7,
+        "ridge1": 8,
+        "none": 15,
+        "ridge01": 9,
+        "rbf1": 6
+      },
+      "no_CNN": {
+        "rbf01": 10,
+        "ridge1": 12,
+        "none": 14,
+        "ridge01": 8,
+        "rbf1": 1
+      },
+      "no_legacy_physics": {
+        "rbf01": 8,
+        "ridge1": 14,
+        "none": 12,
+        "rbf1": 4,
+        "ridge01": 7
+      }
+    },
+    "outer_affine_slope_ranges": {
+      "no_DINO": [
+        1.0128375511317909,
+        1.1399288325782155
+      ],
+      "no_CNN": [
+        1.0583302242679637,
+        1.1809058768237164
+      ],
+      "no_legacy_physics": [
+        0.9309728904369444,
+        1.1049224400014792
+      ]
+    },
+    "new_neural_fits": 0,
+    "why_no_base_retraining": "Brancheswereindependentlyfitonsamefolds anddonotconsumeotherbranches. Reusingexactcheckpointsisremovingwholebranchwithoutchangingremainingbaselearners. Sharedfeature/parameterdeletionwouldrequireactualbaseretraining."
+  },
+  "decision": {
+    "keep013": true,
+    "no_candidate_promotion": true,
+    "least_supported_group_in_this_comparison": "no_legacy_physics",
+    "scope": "Diagnosticprocedurecomparison,notunbiasednewcandidateassessment;all4fixedarmsreported."
+  },
+  "interpretation_ko": [
+    "기존 수작업 특징 회귀를 학습평균으로 대체한 고정모델 민감도와, 제거 후 보정기·잔차까지 재학습한 성능은 서로 다른 질문에 답한다. 두 결과를 특징 중요도로 혼동하지 않는다.",
+    "legacy_physics 제거는 기존795/26차원 직접 회귀의 제거다. 새로운57차원 물리 특징 잔차는 남아 있으므로 물리 도메인 지식이 불필요하다는 결론이 아니다.",
+    "정규화로 남은 CNN/DINO의 상대 비중이 커지고 보정·잔차도 바뀐다. 관측 효과를 제거한 특징군의 순수 인과 효과나 고유 정보량으로 해석하지 않는다.",
+    "세 재분할은 같은400개 ID를 재사용하며 조건부 bootstrap은 반복적인 연구 선택 편향을 제거하지 않는다."
+  ],
+  "next_experiment": {
+    "status": "proposed_not_run",
+    "hypothesis": "ThelegacydirecttargetgroupmayberedundantormisweightedrelativeCNN/DINO,whilephysicalresidualfeaturesretainconditionalvalue. Groupablationdoesnotidentifywhetherbaseline795orcompact26causestheeffect.",
+    "fixed_followup": "Splitonlytheidentifiedlegacygroup: two fixed one-at-a-time removals baseline795 andcompact26KRR, keepotherbranches,renormalize008/refitallnestedaffineand115residuals exactlyas121. Compareexisting013 andgroup-removal121descriptively;noOOFweightgrid,featurezeroing orkernelsearch.",
+    "cache_feasibility": "Allrequired180middle/deepcomponentcachesalreadyverified. No newneuralfits orrawimages required;existingCPU2 and115fivechoices.",
+    "why": "Distinguishwhethersimplelegacyensemble redundancyorcompactphysicsmappingistheissue beforechangingrepresentation. Ifbothsingleomissionsworsenbutjointomissionhelps,reportinteractionanddo notclaimindividualfeatureimportance.",
+    "candidate_policy": "Keep013 duringfollowup. Anynewproductionrecipe mustbelockedandindependentlyverifiedbeforefull500/test;noPublicreverseengineering orupload."
+  },
+  "verification": {
+    "parts": {
+      "original": {
+        "passed": true,
+        "models_reloaded": 720,
+        "choices_recomputed": 45,
+        "independent_OLS_and_kernel_max_error": 5.3290705182007514e-14,
+        "exact_no_residual_equals011": true,
+        "frozen_intervention_independently_verified": true,
+        "source_indices_and_removed_paths_audited": true,
+        "report_sha256": "f5bb1994e7e9862e48c272770f358bc612f22806d0eaf05cf41f201b2a23e928"
+      },
+      "20261031": {
+        "passed": true,
+        "models_reloaded": 720,
+        "choices_recomputed": 45,
+        "independent_OLS_and_kernel_max_error": 5.1514348342607263e-14,
+        "exact_no_residual_equals011": true,
+        "frozen_intervention_independently_verified": true,
+        "source_indices_and_removed_paths_audited": true,
+        "report_sha256": "074a6a30a3f5d7a16caf2adc6aa755f8c22a39945705e2846c10e091b33b7c4e"
+      },
+      "20261101": {
+        "passed": true,
+        "models_reloaded": 720,
+        "choices_recomputed": 45,
+        "independent_OLS_and_kernel_max_error": 6.483702463810914e-14,
+        "exact_no_residual_equals011": true,
+        "frozen_intervention_independently_verified": true,
+        "source_indices_and_removed_paths_audited": true,
+        "report_sha256": "485bb269398191f4b978e755420912e0f271b234211be44ef711a26e43cd2fb1"
+      }
+    },
+    "total_main_models_reloaded": 2160,
+    "max_independent_OLS_kernel_error": 6.483702463810914e-14,
+    "lineage_source_audit": {
+      "original": {
+        "CNN15_reload_max_error_this_split": 3.024714985144783e-05,
+        "legacy_baseline": {
+          "weights": {
+            "base_et": 0.375,
+            "base_ridge": 0.375,
+            "morph_ridge": 0.25
+          },
+          "models": {
+            "base_et": "Pipeline(steps=[('columntransformer',\n                 ColumnTransformer(transformers=[('base', 'passthrough',\n                                                  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,\n                                                   10, 11, 12, 13, 14, 15, 16,\n                                                   17, 18, 19, 20, 21, 22, 23,\n                                                   24, 25, 26, 27, 28, 29, ...])])),\n                ('extratreesregressor',\n                 ExtraTreesRegressor(max_features=0.8, min_samples_leaf=2,\n                                     n_estimators=400, n_jobs=2,\n                                     random_state=20260930))])",
+            "base_ridge": "Pipeline(steps=[('columntransformer',\n                 ColumnTransformer(transformers=[('base', 'passthrough',\n                                                  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,\n                                                   10, 11, 12, 13, 14, 15, 16,\n                                                   17, 18, 19, 20, 21, 22, 23,\n                                                   24, 25, 26, 27, 28, 29, ...])])),\n                ('minmaxscaler', MinMaxScaler(clip=True)),\n                ('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=100))])",
+            "morph_ridge": "Pipeline(steps=[('minmaxscaler', MinMaxScaler(clip=True)),\n                ('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=1000))])"
+          }
+        },
+        "exact013_formula": true,
+        "no_raw_image_reads": true
+      },
+      "20261031": {
+        "CNN15_reload_max_error_this_split": 2.0917548511079076e-05,
+        "legacy_baseline": {
+          "weights": {
+            "base_et": 0.375,
+            "base_ridge": 0.375,
+            "morph_ridge": 0.25
+          },
+          "models": {
+            "base_et": "Pipeline(steps=[('columntransformer',\n                 ColumnTransformer(transformers=[('base', 'passthrough',\n                                                  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,\n                                                   10, 11, 12, 13, 14, 15, 16,\n                                                   17, 18, 19, 20, 21, 22, 23,\n                                                   24, 25, 26, 27, 28, 29, ...])])),\n                ('extratreesregressor',\n                 ExtraTreesRegressor(max_features=0.8, min_samples_leaf=2,\n                                     n_estimators=400, n_jobs=2,\n                                     random_state=20260930))])",
+            "base_ridge": "Pipeline(steps=[('columntransformer',\n                 ColumnTransformer(transformers=[('base', 'passthrough',\n                                                  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,\n                                                   10, 11, 12, 13, 14, 15, 16,\n                                                   17, 18, 19, 20, 21, 22, 23,\n                                                   24, 25, 26, 27, 28, 29, ...])])),\n                ('minmaxscaler', MinMaxScaler(clip=True)),\n                ('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=100))])",
+            "morph_ridge": "Pipeline(steps=[('minmaxscaler', MinMaxScaler(clip=True)),\n                ('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=1000))])"
+          }
+        },
+        "exact013_formula": true,
+        "no_raw_image_reads": true
+      },
+      "20261101": {
+        "CNN15_reload_max_error_this_split": 2.354503709511846e-05,
+        "legacy_baseline": {
+          "weights": {
+            "base_et": 0.375,
+            "base_ridge": 0.375,
+            "morph_ridge": 0.25
+          },
+          "models": {
+            "base_et": "Pipeline(steps=[('columntransformer',\n                 ColumnTransformer(transformers=[('base', 'passthrough',\n                                                  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,\n                                                   10, 11, 12, 13, 14, 15, 16,\n                                                   17, 18, 19, 20, 21, 22, 23,\n                                                   24, 25, 26, 27, 28, 29, ...])])),\n                ('extratreesregressor',\n                 ExtraTreesRegressor(max_features=0.8, min_samples_leaf=2,\n                                     n_estimators=400, n_jobs=2,\n                                     random_state=20260930))])",
+            "base_ridge": "Pipeline(steps=[('columntransformer',\n                 ColumnTransformer(transformers=[('base', 'passthrough',\n                                                  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,\n                                                   10, 11, 12, 13, 14, 15, 16,\n                                                   17, 18, 19, 20, 21, 22, 23,\n                                                   24, 25, 26, 27, 28, 29, ...])])),\n                ('minmaxscaler', MinMaxScaler(clip=True)),\n                ('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=100))])",
+            "morph_ridge": "Pipeline(steps=[('minmaxscaler', MinMaxScaler(clip=True)),\n                ('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=1000))])"
+          }
+        },
+        "exact013_formula": true,
+        "no_raw_image_reads": true
+      }
+    },
+    "label_and_removed_path_interventions": {
+      "passed": true,
+      "original_bitexact_replay_failure_preserved": true,
+      "prediction_tolerance": 1e-10,
+      "reason": "Originalfirstouterlabelreplaydifferedby5.684341886080802e-14;usestheexistingindependentOLS1e-10tolerance. No changes toablationmodels orchoices.",
+      "source_sha256": "497314c10160fa3f79e18e9948581533473b06496ea0bb6e5c6a7bc06e54fa93",
+      "incumbent115_control_inner5choices_predictions_exact": true,
+      "arms": {
+        "no_DINO": {
+          "outer80_predictions_within_1e_10_calibrators_choices_exact": true,
+          "removed_branch_output_intervention_all_levels_within_1e_10": true,
+          "inner_label_intervention_fixed5fits_within_1e_10": true
+        },
+        "no_CNN": {
+          "outer80_predictions_within_1e_10_calibrators_choices_exact": true,
+          "removed_branch_output_intervention_all_levels_within_1e_10": true,
+          "inner_label_intervention_fixed5fits_within_1e_10": true
+        },
+        "no_legacy_physics": {
+          "outer80_predictions_within_1e_10_calibrators_choices_exact": true,
+          "removed_branch_output_intervention_all_levels_within_1e_10": true,
+          "inner_label_intervention_fixed5fits_within_1e_10": true
+        }
+      },
+      "upstream_independent_training_certificate_reused": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+      "scope": "Outer/deepbasepredictortrainingnotrerun;existing112certificatesandcachetrainmembershipverified. Newtrainablecalibratorsandresidualsreplayed."
+    },
+    "independent_scalar_pooled_metrics": true,
+    "original_bitexact_replay_failure_log": "reports/validate_component_ablation_121-replay.log"
+  },
+  "resources": {
+    "main_downstream_fit_seconds": 3.5026870829751715,
+    "benchmark": {
+      "first_block_seconds_reused": 0.02697258396074176,
+      "RSS_bytes": 392314880,
+      "projected135blocks_seconds": 3.6412988347001374,
+      "passed": true
+    },
+    "cost": 0,
+    "new_packages": 0
+  },
+  "scope": {
+    "development400_only": true,
+    "holdout_or_test_selection": false,
+    "test_inference": false,
+    "new_CSV": false,
+    "uploaded": false,
+    "013_preserved": true
+  },
+  "execution_blockers": [],
+  "evidence_sha256": {
+    "artifacts/component-ablation-121/original/predictions.npz": "120f21a4d0dc782af26fea08792aa0f7e922acccfde80c722c3906aab53c3c1e",
+    "artifacts/component-ablation-121/original/report.json": "f5bb1994e7e9862e48c272770f358bc612f22806d0eaf05cf41f201b2a23e928",
+    "artifacts/component-ablation-121/validation-original.json": "64d8d4b96094663635765ab9eb6a95b3421882d50dad096b2dd39767927af128",
+    "artifacts/component-ablation-121/20261031/predictions.npz": "ab3c75e02e5a523b6f8f5b9291140e9c685ac84c905e38422b434fa91644edcd",
+    "artifacts/component-ablation-121/20261031/report.json": "074a6a30a3f5d7a16caf2adc6aa755f8c22a39945705e2846c10e091b33b7c4e",
+    "artifacts/component-ablation-121/validation-20261031.json": "5ca1eaf49b5ae91a772fcb0a8fc022ffc455b5eb185ceef50222a26680cb705a",
+    "artifacts/component-ablation-121/20261101/predictions.npz": "94cca58d588f5ae48a5051df4e2866228b53a5a75420c0bb778011b1d64aeb1a",
+    "artifacts/component-ablation-121/20261101/report.json": "485bb269398191f4b978e755420912e0f271b234211be44ef711a26e43cd2fb1",
+    "artifacts/component-ablation-121/validation-20261101.json": "28b602987bb66ec8a58f05082c5b18cf04d38f8799ce584a8aedb7b733330e7e",
+    "artifacts/component-ablation-121/plan.json": "d4e48f721a77c662def09157975eb114550bc692ccaaad575f0ef175729405ed",
+    "artifacts/component-ablation-121/replay-validation.json": "bd3395b7fbf4b8e545ead638a09b8fca91a1f2983acb74a034346ee3e8b6262a"
+  },
+  "source_sha256": "91a38b611b4b414544f524ef515dc9ff6f968ac7a9d5dd1182ecfdfe82192064"
+}

@@ -1,0 +1,315 @@
+{
+  "study": 168,
+  "status": "completed_no_promotion",
+  "implementation": {
+    "exact_scope": "Exact positive-length ordinary H1 over F2 for 2D closed-square top-cell sublevel cubical complex. Faces enter at minimum incident pixel intensity. Nonperiodic finite rectangle; holes touching exterior omitted. Not vertex lower-star/rips graph PH, not threshold Betti approximation, not TopTemp exact reproduction.",
+    "passed": true,
+    "random_small_images": 300,
+    "independent_GF2_reductions": 640,
+    "hand_fixtures": [
+      {
+        "name": "closed_ring",
+        "H1": [
+          [
+            40,
+            150
+          ]
+        ]
+      },
+      {
+        "name": "open_ring",
+        "H1": []
+      },
+      {
+        "name": "delayed_gate",
+        "H1": [
+          [
+            90,
+            150
+          ]
+        ]
+      },
+      {
+        "name": "multiple_rings",
+        "H1": [
+          [
+            40,
+            130
+          ],
+          [
+            40,
+            180
+          ]
+        ]
+      },
+      {
+        "name": "corner_touch",
+        "H1": []
+      },
+      {
+        "name": "corner_closed_hole",
+        "H1": [
+          [
+            40,
+            200
+          ]
+        ]
+      },
+      {
+        "name": "merge_pairing",
+        "H1": [
+          [
+            40,
+            220
+          ],
+          [
+            100,
+            180
+          ]
+        ]
+      },
+      {
+        "name": "uniform",
+        "H1": []
+      }
+    ],
+    "D4_equalleveltie_polarity_Euler_UF_passed": true,
+    "joint_existingdescriptor_collision": {
+      "old_both_H0_diagrams_equal": true,
+      "all132Betti_equal": true,
+      "all36C2_andS2_equal": true,
+      "H1_A": [
+        [
+          100,
+          180
+        ],
+        [
+          100,
+          240
+        ]
+      ],
+      "H1_B": [
+        [
+          100,
+          220
+        ],
+        [
+          100,
+          240
+        ]
+      ],
+      "PI_L2_difference": 9.106410728044813e-07,
+      "interpretation": "Strict nonidentity with concatenation of these particular descriptors. Boundary/contrast association, not proof of mechanical relevance or independence from full018deepfeatures."
+    }
+  },
+  "pilot": {
+    "passed": true,
+    "checks": {
+      "joint_descriptor_collision": true,
+      "distinct_PI_atleast12": true,
+      "bounded1_noise": true,
+      "bounded4_noise": true,
+      "time": true,
+      "memory": true
+    },
+    "n_images": 16,
+    "targets_or_errors_read": false,
+    "selection": "smallestSHA256(ID)amonglocked400",
+    "projected400_paired_seconds": 160.95107290002488,
+    "median_paired_seconds": 0.400390166500074,
+    "peak_RSS_bytes": 80920576,
+    "median_noise_relative_PI_change": {
+      "1": 0.006951036424944325,
+      "4": 0.06664542220768666
+    },
+    "noise_RMS_to_between_image_feature_RMS": {
+      "1": 0.008318126163910967,
+      "4": 0.08007989099975618
+    },
+    "median_relative_H1_H0_PI": 0.2037559019192061,
+    "median_relative_H1_dual_unpadded_H0_PI": 0.03703124387383845,
+    "boundary_distinction_every_image": true,
+    "real_validation": {
+      "UF_images_bothpolarities": 16,
+      "D4_images": 2,
+      "all256Euler_bothpolarities_images": 2,
+      "full_GF2_actual8x8crops": 4
+    },
+    "seconds": 35.883237416000156,
+    "limits": [
+      "H1 overlaps strongly with opposite-polarityH0 byplanarduality; extra information concerns exterior/boundaryattachment.",
+      "Boundednoise diagnostic isnot allrealnoise/blur robustness or materialtopology validation.",
+      "Engineering difference isnot residualpredictivevalue; no target read.",
+      "PI is lossy, fullH1 diagram exactforstatedcellcomplex only; intensity inversion swaps banks,doesnot implyequalH1."
+    ],
+    "plan_sha256": "8d3695144ab595b8e7b19fc585d41c871cdfc711e58fb58002ebce5afee3c8f1"
+  },
+  "features": {
+    "passed": true,
+    "rows": 400,
+    "width": 32,
+    "cache_sha256": "3b3136fda4a20845dd62b0504a954949c00bfcfe214aa57295725ebb9c8579e4",
+    "seconds": 167.547672875,
+    "peak_RSS_bytes": 310919168,
+    "all400_image_hashes_verified": true,
+    "pilot16_exactly_reproduced": true,
+    "labels_used": false,
+    "stats": {
+      "h0": {
+        "min": 2.458745574945681e-07,
+        "max": 0.0020653064950470587,
+        "min_column_std": 8.99833311000275e-07,
+        "max_column_std": 0.0005144251724323219,
+        "zero_variance_columns": 0
+      },
+      "h1": {
+        "min": 3.120249977435042e-07,
+        "max": 0.002063444269159001,
+        "min_column_std": 2.457157261977969e-06,
+        "max_column_std": 0.0005159880212166388,
+        "zero_variance_columns": 0
+      }
+    }
+  },
+  "model_design": "Exact018 cachedbase/anchors; appendone32wideblock. TrainonlyMinMaxclip/StandardScaler/1sqrtblocksize, fixedexisting residuallearner settings. H0control diagnostics only, not fallback.",
+  "RMSE": {
+    "original": {
+      "reference018": 12.811945280526919,
+      "h0": 12.807977482616469,
+      "h1": 12.807968171010419
+    },
+    "20261031": {
+      "reference018": 12.645872618239814,
+      "h0": 12.650649304031546,
+      "h1": 12.651460131605512
+    },
+    "20261101": {
+      "reference018": 13.048624416802191,
+      "h0": 13.050638874272837,
+      "h1": 13.05068772804484
+    }
+  },
+  "fold_gains_vs018": {
+    "original": [
+      0.012639482540496516,
+      -0.0021465652354866194,
+      0.007606318568408099,
+      0.0006911300560865641,
+      0.00045340273591598645
+    ],
+    "20261031": [
+      -0.0032721664613237778,
+      0.0014238448787793345,
+      -0.01860952610728539,
+      -0.001660026234073797,
+      -0.004559741595146605
+    ],
+    "20261101": [
+      -0.0027974884656547516,
+      0.007886733183122274,
+      -0.006184886820980395,
+      -0.011523208127364626,
+      0.003106214010731634
+    ]
+  },
+  "original_gate_passed": true,
+  "partitions_executed": [
+    "original",
+    "20261031",
+    "20261101"
+  ],
+  "pooled_RMSE": {
+    "reference018": 12.836544645642636,
+    "h0": 12.837476258147285,
+    "h1": 12.837756064387577
+  },
+  "conditional_IDcluster_CI95_ifextended": {
+    "reference018": [
+      -0.006026194862850743,
+      0.0036775258020265576
+    ],
+    "h0": [
+      -0.0010609799129089657,
+      0.000491071157957945
+    ]
+  },
+  "candidate": false,
+  "failure_group_diagnostic_posthoc": {
+    "persistent_large": {
+      "n": 33,
+      "original_RMSE": {
+        "reference018": 29.571979000365157,
+        "h0": 29.55115838759972,
+        "h1": 29.5482990798345
+      }
+    },
+    "stable_sign_min5": {
+      "n": 233,
+      "original_RMSE": {
+        "reference018": 16.395046977990326,
+        "h0": 16.386998575946876,
+        "h1": 16.386869883639896
+      }
+    },
+    "persistent_disagreement": {
+      "n": 16,
+      "original_RMSE": {
+        "reference018": 14.890477429124267,
+        "h0": 14.864411489101906,
+        "h1": 14.875351605287678
+      }
+    }
+  },
+  "audit": {
+    "passed": true,
+    "residual_models_verified": 1800,
+    "independent_max_error": 7.238654120556021e-14,
+    "reloaded_predictions_exact": true,
+    "independent_bootstrap_exact": true,
+    "outer_label_poison_exact": true,
+    "inner_label_poison_exact": true,
+    "base018_reconstructed_exact": true,
+    "upstream146_exclusion_certificate_sha256": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b"
+  },
+  "resources": {
+    "feature_seconds": 167.547672875,
+    "feature_RSS_bytes": 310919168,
+    "model_benchmark": {
+      "first_block_seconds": 0.10565433299962024,
+      "projected90blocks_seconds": 9.508942439942984,
+      "RSS_bytes": 523534336,
+      "passed": true
+    }
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a"
+  },
+  "best_retained": "018",
+  "new_installs_or_data_downloads": false,
+  "holdout_test_access": false,
+  "full500_training_newCSV_upload": false,
+  "limitations": [
+    "Exact H1 only for stated2Dclosed-square/nonperiodic/uint8 filtration; not universalPHengine or exactTopTemp reproduction. PI is a lossy32dim summary, not fullbarcode.",
+    "Planarduality implies strong overlap with oldopposite-polarityH0; addedboundaryassociation neednot bephysicalhardnesssignal.",
+    "No physicalscale, verifiedphasemask or causalfeature interpretation.",
+    "Same400adaptivelyreused; overlappingresplits andconditionalbootstrap do not constitute independentvalidation.",
+    "Engineering correctness/nonidentity/noise tolerability doesnot establish predictionbenefit.",
+    "H0 is matchedcontrol only, notfallbackcandidate or permission toretryold109features."
+  ],
+  "remaining_blockers": [],
+  "evidence_sha256": {
+    "artifacts/cubical-h1-168/plan.json": "8d3695144ab595b8e7b19fc585d41c871cdfc711e58fb58002ebce5afee3c8f1",
+    "artifacts/cubical-h1-168/implementation-validation.json": "755d302afa2c182508c96f4672779b33ea4ad0c05fe498f1d4aa4db98fedbe69",
+    "artifacts/cubical-h1-168/pilot.json": "7b1916d29a70067fc64c29918831dddf6bc3a43e0cd0afe64cc517f19d5de05e",
+    "artifacts/cubical-h1-168/model-lock.json": "567b8a5b38a4783ef6b64b39a53d5bf26ffe9dba254f79449363572f268ca6d4",
+    "artifacts/cubical-h1-168/features.npz": "3b3136fda4a20845dd62b0504a954949c00bfcfe214aa57295725ebb9c8579e4",
+    "artifacts/cubical-h1-168/original/report.json": "d9ca6029cc9800ebf3b19c035a962e0743310b806b66326a8102462d60f89309",
+    "artifacts/cubical-h1-168/validation-original.json": "eff7cf7c5a3eeb3d4aefb54f19210c7b5869ee20fbc8ea52ef0604398fe412ad"
+  }
+}

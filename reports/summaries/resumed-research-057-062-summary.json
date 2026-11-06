@@ -1,0 +1,77 @@
+{
+  "completed_at_utc": "2026-10-02T02:44:47.785773+00:00",
+  "outcome": "Resumedactualdevelopment,completedfivecontrolledstudies;nonepromoted",
+  "baseline007_rmse": 13.241596955038409,
+  "studies": [
+    {
+      "study": "057",
+      "primary_rmse": 13.278724530154248,
+      "gain_vs007": -0.037127575115839306,
+      "positive_folds": 0,
+      "seconds": 20.198835624963976,
+      "models_verified": 15,
+      "report": "artifacts/earlystop-057/original/report.json",
+      "validation": "reports/earlystop-057-validation.json"
+    },
+    {
+      "study": "058",
+      "primary_rmse": 13.242392104649582,
+      "gain_vs007": -0.0007951496111733292,
+      "positive_folds": 1,
+      "seconds": 6.546778374991845,
+      "models_verified": 15,
+      "report": "artifacts/mse-058/original/report.json",
+      "validation": "reports/mse-058-validation.json"
+    },
+    {
+      "study": "059",
+      "primary_rmse": 13.248855404164779,
+      "gain_vs007": -0.007258449126370081,
+      "positive_folds": 1,
+      "seconds": 18.438553582993336,
+      "models_verified": 15,
+      "report": "artifacts/adapted-mlp-059/original/report.json",
+      "validation": "reports/representation-059-validation.json"
+    },
+    {
+      "study": "060",
+      "primary_rmse": 13.429565626124171,
+      "gain_vs007": -0.18796867108576265,
+      "positive_folds": 1,
+      "seconds": 6.9279475410003215,
+      "models_verified": 15,
+      "report": "artifacts/pca-mlp-060/original/report.json",
+      "validation": "reports/representation-060-validation.json"
+    },
+    {
+      "study": "061",
+      "primary_rmse": 13.243239642199292,
+      "gain_vs007": -0.0016426871608832272,
+      "positive_folds": 2,
+      "seconds": 8.163896625046618,
+      "models_verified": 15,
+      "report": "artifacts/mixup-061/original/report.json",
+      "validation": "reports/mixup-061-validation.json"
+    }
+  ],
+  "main_training_trajectories": 120,
+  "compute_seconds_sum": 60.2760117489961,
+  "timing_limit": "Computeonly;excludescoding,sourceaudits,benchmarks/replays/toolapproval/walltime.",
+  "validated_saved_head_models": 75,
+  "independent_reviews": "audit_pipeline source-only reviews057-061; all reported no blocking math/leakage issues.059provenance gap independentlyclosedby37historicalhashanchors.",
+  "best007": {
+    "file": "artifacts/submission-candidate-007.csv",
+    "sha256": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "public_rmse": 11.9686073575,
+    "public_source": "Priorparentconfirmedsubmission; no liveleaderboardreadthisphase"
+  },
+  "scientific_conclusion": "Neitherepochselection,lossalignment,weakRidge-adaptedlastblock+MLP,rank64inputprojection,norfixedmixup producednewbest. This doesnotproveirreduciblenoisefloor orprizeperformanceceiling. Reused400foldvalidation andhistoricalselectionbiasremain.",
+  "next_step": "reports/dinob-062-proposed-study.json",
+  "blocker": "NewofficialViT-B14checkpointdownloadapprovalrequired; existinglocalexecutionworks. No newpackage required.",
+  "running_work": [],
+  "cost": 0,
+  "new_packages": 0,
+  "holdout_test_access": false,
+  "candidateCSV_created": false,
+  "uploaded": false
+}

@@ -1,0 +1,9 @@
+{
+  "study": "220-v4 TabPFN exploratory arm (written before running)",
+  "license_status": "TabPFN v2 weights: Prior Labs License 1.1 (Apache-2.0 derivative + attribution clause 'Built with TabPFN'). Commercial and non-commercial use allowed; not literally in the competition's example list. Use in a submission only after the user decides. Existing private weights/env reused (experiments/tabpfn-v2), offline, no download.",
+  "arms": {"C_tabpfn": "TabPFNRegressor v2, n_estimators=8, default preprocessing, raw v3 features (NaN allowed), trained on outer-training folds only; no tuning",
+           "D_krr_tabpfn_mean": "0.5*KRR(v3, nested family selection as v3) + 0.5*TabPFN"},
+  "blend": "fixed 0.5 with best021, fallback best021 if n_obj<20",
+  "baseline": "v3 arm B blend (oof-v3.npz)",
+  "adoption_rule": "same as v3: better in all three partitions and pooled gain >= 0.10 vs v3 blend"
+}

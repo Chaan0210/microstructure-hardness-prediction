@@ -1,0 +1,129 @@
+{
+  "study": 164,
+  "status": "completed_negative_for018_promotion",
+  "original": {
+    "split": "original",
+    "RMSE": {
+      "base": 14.413529844995427,
+      "primary": 13.595008699772409,
+      "fixed20blend": 12.865547853374904,
+      "zero_blend": 12.955201309934711,
+      "reference018": 12.811945280526919
+    },
+    "fold_blend_gains": [
+      -0.0942457241898218,
+      0.0038081035321724244,
+      -0.028719620375294852,
+      -0.04963374077387961,
+      -0.09803642687067082
+    ],
+    "resplit_gate_passed": false,
+    "correction_improves_matched_base": true,
+    "direct_target_study163": {
+      "standalone": 13.725350788553692,
+      "fixed20blend": 12.90017324566177,
+      "reference018": 12.811945280526919,
+      "fold_blend_gains": [
+        -0.154380993690026,
+        0.05429886013561891,
+        -0.04141025104982532,
+        -0.122882959038769,
+        -0.17425595068378996
+      ],
+      "residual_correlation": 0.9569126032729358,
+      "qualifies_resplits": false,
+      "study162": {
+        "standalone": 13.741985684213935,
+        "fixed20blend": 12.88891456697648
+      }
+    },
+    "oof_sha256": "52a29eb61864ed1560a22e40f0d126fb402453ae0cb82f3ac43dc602b7dbd55c"
+  },
+  "interpretation": "CrossfittedcompactKRR residual TabICL improves matched KRR and directtargetTabICL90 standalone. Fixed20%blend still worsens018 and improves only1of5 folds; does not qualify for resplits.",
+  "resource": {
+    "outerfolds": 5,
+    "main_kernel_fits": 420,
+    "main_TabICL_fits": 5,
+    "wall_seconds_sum": 24.04642733399851,
+    "cpu_process_seconds_sum": 42.001908,
+    "peak_rss_bytes": 1105641472,
+    "first_fold": {
+      "wall_seconds": 4.879064124999786,
+      "cpu_process_seconds": 8.502896,
+      "peak_rss_bytes": 1049198592
+    },
+    "extra_audit_fits": "84KRR+1TabICL for wholeouterlabelpoison;28KRR for anchorheldoutlabelpoison"
+  },
+  "validation": {
+    "passed": true,
+    "network_blocked": true,
+    "folds": [
+      {
+        "split": "original",
+        "fold": 0,
+        "kernel_models_verified": 84,
+        "own_label_and_outer_label_exclusion": true,
+        "320_residuals_independently_reconstructed": true,
+        "tabicl_reload_max_abs": 0.0,
+        "scaler_pca_train_only": true
+      },
+      {
+        "split": "original",
+        "fold": 1,
+        "kernel_models_verified": 84,
+        "own_label_and_outer_label_exclusion": true,
+        "320_residuals_independently_reconstructed": true,
+        "tabicl_reload_max_abs": 0.0,
+        "scaler_pca_train_only": true
+      },
+      {
+        "split": "original",
+        "fold": 2,
+        "kernel_models_verified": 84,
+        "own_label_and_outer_label_exclusion": true,
+        "320_residuals_independently_reconstructed": true,
+        "tabicl_reload_max_abs": 0.0,
+        "scaler_pca_train_only": true
+      },
+      {
+        "split": "original",
+        "fold": 3,
+        "kernel_models_verified": 84,
+        "own_label_and_outer_label_exclusion": true,
+        "320_residuals_independently_reconstructed": true,
+        "tabicl_reload_max_abs": 0.0,
+        "scaler_pca_train_only": true
+      },
+      {
+        "split": "original",
+        "fold": 4,
+        "kernel_models_verified": 84,
+        "own_label_and_outer_label_exclusion": true,
+        "320_residuals_independently_reconstructed": true,
+        "tabicl_reload_max_abs": 0.0,
+        "scaler_pca_train_only": true
+      }
+    ],
+    "kernel_models_independently_verified": 420,
+    "max_kernel_functional_error": 0.0,
+    "whole_outer_label_poison_exact": true,
+    "anchor_heldout_label_poison_including_grid_selection_exact": true,
+    "global_oof_residual_cache_reused": false,
+    "residual_model_inner_selection": false,
+    "original_BalancedKernel_class_exact_copy": true,
+    "protected_files": 87,
+    "plan_sha256": "4ad881aa60f11aabc38df7bc426bfb5cbab0b7c9c1567b5fd06a18c35b02b464",
+    "audit_source_sha256": "c0ecde8de009743eb339f78fb32471839de4bacc102404bb6802aadf0dd07113",
+    "seconds": 28.91763224999977
+  },
+  "resplit_executed": false,
+  "holdout_or_test_access": false,
+  "full500_or_new_csv": false,
+  "new_installs_downloads_external_API_cost": false,
+  "best_retained": "018",
+  "best018_csv_sha256": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+  "plan_sha256": "4ad881aa60f11aabc38df7bc426bfb5cbab0b7c9c1567b5fd06a18c35b02b464",
+  "audit_sha256": "68d243990725220f3ece37bf26043a7f4de0469f75974cc8f423b8086117dec8",
+  "implementation_sha256": "855efa227ea7a4679057a1ac708cef74cd6151d154d600f1691eacf9aa7f093f",
+  "next_hypothesis_not_run": "Image-quality-conditioned strongly-shrunk low-dimensional component adjustment needs duplicate review. Existing078 tests training-size reliability;077 fits scalar contrast calibration;125 globally constrained weights;126 diagnoses image-domain heterogeneity. These must be considered before claiming novelty. No monotone porosity/uniformity assumptions, zeroing submission, test-based learning or extra candidate fit was added."
+}

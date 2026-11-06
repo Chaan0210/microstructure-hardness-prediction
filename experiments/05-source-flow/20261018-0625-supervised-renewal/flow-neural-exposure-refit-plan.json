@@ -1,0 +1,14 @@
+{
+  "frozen_utc": "2026-10-18T13:13:19.941299+00:00",
+  "control": "runs/flow-neural-pfn-f0-ck",
+  "hypothesis": "Fixed updates reduce each image's expected gradient exposures by one-third in the320-row refit compared with the213-row selector. Learning improved versus the untrained control but remained below the actual lead; test exposure-matched refitting as a separate recipe.",
+  "rule": "ceil(selected_inner_updates*Nouter/Ninner); cosinehorizon=ceil(inner_horizon*Nouter/Ninner)",
+  "fixed_inner_selection": 100,
+  "inner_reference_horizon": 200,
+  "inner_rows": 213,
+  "outer_rows": 320,
+  "outer_updates": 151,
+  "outer_horizon": 301,
+  "confirmation_protocol_changed": false,
+  "old_failure_preserved": true
+}

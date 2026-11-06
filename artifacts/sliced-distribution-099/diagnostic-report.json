@@ -1,0 +1,60 @@
+{
+  "labelblind_gate_pass": false,
+  "gate_checks": {
+    "synthetic_same_moments_different_shape": true,
+    "not_reconstructed_by_fixed_moment_model": true,
+    "not_reconstructed_by_fixed_nuisance_model": true,
+    "checker_stability": false,
+    "geographic_stability": true,
+    "momentmatched_shape_above_sampling_difference": false
+  },
+  "M_to_H": {
+    "OOF_R2": 0.44605051811141816,
+    "residual_fraction": 0.5539494818885818,
+    "SSE": 502.20482030975177,
+    "null_SSE": 906.5895658889024
+  },
+  "M_to_Q": {
+    "OOF_R2": 0.8617005949502019,
+    "residual_fraction": 0.13829940504979815,
+    "SSE": 8630.178229246332,
+    "null_SSE": 62402.135613951636
+  },
+  "noise_contrast_to_H": {
+    "OOF_R2": 0.12487211609316773,
+    "residual_fraction": 0.8751278839068323,
+    "SSE": 793.3818083683689,
+    "null_SSE": 906.5895658889024
+  },
+  "region_ratios": {
+    "checker_H_to_between_H": 0.5782229091697398,
+    "left_right_Q_to_between_Q": 0.8201626903220588,
+    "nearestmoment_H_to_checker_H": 1.3121251055798022,
+    "diagonalquadrant_Q_to_between_Q": 1.2117137671588805
+  },
+  "shape_amplitude_associations": {
+    "shape_amplitude_noise_spearman": 0.45865973676156635,
+    "shape_amplitude_contrast_spearman": 0.03673627302524894
+  },
+  "synthetic": {
+    "channel_mean_max_error": 6.660481494182556e-18,
+    "channel_std_max_error": 1.4432899320127035e-15,
+    "quantile_RMS_difference": 0.1752888678019213,
+    "standardized_shape_RMS_difference": 0.9701425001453321
+  },
+  "median_distances": {
+    "betweenH": 0.08983595682209286,
+    "betweenQ": 0.7265097505788934,
+    "checkerH": 0.05194520830171767,
+    "left_rightQ": 0.5958561915799931,
+    "nearestmomentH": 0.06815861192725611
+  },
+  "rawQ_vs_matchedGaussian_RMS_median": 0.10953924852247916,
+  "seconds": 0.3548963749781251,
+  "summary_sha256": "203b2f0300f576ad9f8322c7f14bb4aed376c3d00aadeeb4903890eee8cd3673",
+  "reconstruction_predictions_sha256": "3e53abb57c96cc1ac520bc2527b9c6fe46b0a49819eac47bca0438abc0510643",
+  "plan_sha256": "a6a0407ae596caa7686ddec69cb6444d2b8159c30422d024b33be23743053f42",
+  "interpretation": "Syntheticfixture proves the representation can distinguish equalmoments. Actualnearestmomentpairs are approximate. Crossfitremainingvariance only rejects the specified reconstruction models, not arbitrary nonlinear dependence or all imagingnuisance. Geographical differences may reflect genuine heterogeneity, not just samplingnoise.",
+  "no_hardness_labels_used": true,
+  "CV_started": false
+}

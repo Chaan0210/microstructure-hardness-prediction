@@ -1,0 +1,27 @@
+The frozen38-field challenger uses the existing H300 continuous flow/confidence fields, with the8raw brightness summaries removed. It is a conditional development improvement, not a new verified Public result or a passed end-to-end confirmation.
+
+Measured original400 development RMSE: 9.0068780643 versus complete083 at9.2017068026. All5folds improve. The repeated500-image component/block check is separately reported in ../flow-block-stress/eligibility-matched-results.json; it is not a complete-incumbent comparison. All500labels have influenced prior research. Source-local auxiliary checks remain separate from this historical H300 checkpoint.
+
+Exact construction:
+  p083 + eligible * [
+    .384 * (mean3 TabPFN(P104+F38) - mean3 TabPFN(P104))
+    + .128 * (Ridge100(P104+F38) - Ridge100(P104))
+    + .128 * (exp(log-Ridge100(P104+F38)) - exp(log-Ridge100(P104)))
+  ]
+The fixed production failure mask keeps083 unchanged on failed rows. Native local TabPFN3.5 uses8estimators, seeds0/100/200 and CPU inference. Both linear models use training-median imputation, StandardScaler, alpha100 and ordinary exp for the log inverse. All heads are fitted on the500provided original training labels. No test-based calibration, clipping, selection or fitting is performed.
+
+The physical104 controls are the identical, already verified full500 controls in ../candidate-flow46-v1. Their training context and inference cache are pinned by hash in frozen-recipe.json. The original H300 CPU C4 test feature cache is reused only for inference, selecting its first38declared columns after this recipe was frozen. No further image-model fitting is performed in this candidate.
+
+Required existing dependencies, feature columns, model/hash references and seeds are in frozen-recipe.json. Saved new heads are in models/. Fitted-state hashes and installed package versions are in fit-complete.json. Validation of1000ordered uniqueIDs, schema, finite values and unchanged fallback is in csv-verification.json. Saved-state replay is in replay-verification.json.
+
+From ., replay the output from saved states:
+  experiments/tabpfn-v2/.venv/bin/python experiments/supervised-renewal-20261018-0625/flow38_finalize.py replay
+
+To refit in a fresh directory without replacing this candidate:
+  experiments/tabpfn-v2/.venv/bin/python experiments/supervised-renewal-20261018-0625/flow38_finalize.py fit --output-dir experiments/supervised-renewal-20261018-0625/replay-flow38-v1
+  experiments/tabpfn-v2/.venv/bin/python experiments/supervised-renewal-20261018-0625/flow38_finalize.py predict --output-dir experiments/supervised-renewal-20261018-0625/replay-flow38-v1
+  experiments/tabpfn-v2/.venv/bin/python experiments/supervised-renewal-20261018-0625/flow38_finalize.py replay --output-dir experiments/supervised-renewal-20261018-0625/replay-flow38-v1
+These commands use pinned existing feature caches and the verified physical-control artifact. Image-cache regeneration code and source weights are preserved through ../candidate-flow46-v1/REPRODUCE.txt, ../domain_semantics.py and the original incumbent preservation manifests.
+
+CSV SHA256:67181d539493940ee55c901d54c1e44217e8d98a6c4085a0cb318f24a5f7a997.
+Current replay is byte-identical with maximum numerical difference0.0. No upload, submission attempt, final-selection change, paid resource use, package installation or shared-environment change occurred.

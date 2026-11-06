@@ -1,0 +1,67 @@
+{
+  "created_UTC": "2026-10-07T14:19:07.019650+00:00",
+  "status": "deferred_before_any_inference_or_training_due_to_concurrent220",
+  "current_shell_confirmed": true,
+  "own_active_training_sessions": 0,
+  "best021_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+  "study219": "complete_rejected_not_rerun",
+  "external_process_listing": "not attempted or bypassed",
+  "review_scope": [
+    "docs/records/roadmap-audit/roadmap-30-after-215.md",
+    "parallel-audit-20261007/AUDIT.md",
+    "prior001-219 reports and synthesis recorded in current task",
+    "parent residual-evidence and split-stability conclusions accepted; not repeated"
+  ],
+  "remaining_directions_ranked": [
+    {
+      "name": "Existing frozen Cellpose-SAM grain instance measurements",
+      "status": "selected in principle; collision with concurrently created220 extraction prevents duplicate execution"
+    },
+    {
+      "name": "Smooth signed higher-moment DINO pooling",
+      "status": "not executed; untested alone is insufficient evidence after failed related pooling studies"
+    },
+    {
+      "name": "Exact physical generator or true grain masks",
+      "status": "information unavailable; no invented ground truth"
+    }
+  ],
+  "concurrent220_observation": {
+    "log_last_lines": [
+      "{\"done\": 300, \"n\": 500, \"sec\": 687}",
+      "{\"done\": 325, \"n\": 500, \"sec\": 744}",
+      "{\"done\": 350, \"n\": 500, \"sec\": 802}"
+    ],
+    "log_mtime_UTC": "2026-10-07T14:18:43.905171+00:00",
+    "segmentation_completion_exists": false,
+    "evaluation_results_exist": false,
+    "ownership": "unknown to this worker; no external process stopped or modified",
+    "log_progress_observed": "300 to325 images between reads; evidence of recent progress, not a process-table assertion",
+    "scope": "segment.py enumerates all500 training images; current worker authorization is development400 only. Current worker has not opened those500 images or masks."
+  },
+  "evaluation_audit": [
+    {
+      "source": "experiments/grain-cellpose-220/evaluate.py:65",
+      "issue": "honest_blend trains weights on global OOF rows. Their base/candidate estimators were fitted using current outer-validation labels. This is not nested leakage-free learned blending. Use precommitted fixed weights for screening or fully outer-local inner OOF generation."
+    },
+    {
+      "source": "experiments/grain-cellpose-220/evaluate.py:82",
+      "issue": "Stacking input p021 and residual targets y-p021 use global OOF. For any outer split, training rows depend indirectly on that split validation labels through their base estimators. Must regenerate base OOF within outer train for learned stack/residual correction."
+    },
+    {
+      "source": "experiments/grain-cellpose-220/evaluate.py:47",
+      "issue": "POSITIVE columns are selected using all F rows, including100 nondevelopment images and outer-validation data. Declare signed/nonnegative transforms from feature definitions or fit within training fold, and subset development before any learned preprocessing."
+    },
+    {
+      "source": "experiments/grain-cellpose-220/evaluate.py:94",
+      "issue": "Selects the best among multiple evaluated recipes then bootstraps same predictions. Conditional interval omits model-selection/retraining uncertainty and cannot establish selected-method generalization."
+    },
+    {
+      "source": "experiments/grain-cellpose-220/evaluate.py:103",
+      "issue": "Segmented grain measurements are estimates, not true ground-truth grain sizes."
+    }
+  ],
+  "next_safe_action": "Parent identifies220 owner and coordinates one extraction/evaluation path. No duplicate MPS job. Standalone or fixed-weight prespecified CV can screen new image-local morphology after dev-only/fold-local fixes; learned residual/stacking requires nested base recomputation. No full500 fit/test/submission by this worker.",
+  "files_unchanged_in220": true,
+  "network_install_cost_submission": false
+}

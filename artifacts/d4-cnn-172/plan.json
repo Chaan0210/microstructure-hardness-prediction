@@ -1,0 +1,51 @@
+{
+  "study": 172,
+  "created_UTC": "2026-10-05T17:15:26.017274+00:00",
+  "hypothesis": "Exact D4 weight sharing may lower augmented training error versus ordinary CNN with same approximate parameter count and optimizer updates; neither physical D4 invariance nor generalization gain assumed.",
+  "novelty_sha256": "2a9b1cff238b36a9c3a15d3c52d081c3625b45186bc2bcebe97bbd8c33b70a29",
+  "architecture": "Lift Z2->D4 with 8 rotated/reflected tied kernels; each subsequent D4->D4 convolution mixes ALL8 input orientations by K_g[h,u]=K[g^-1*h,g^-1*u]. Four width4/12/24/36 stages, kernels5/3/3/3. Finite square zero padding, 2x2 averagepool BEFORE stride1 conv, dimensions128->64->32->16->8. GroupNorm4 with perbasechannel affine tied across8 orientations, SiLU; global orientation+space mean/std plus inputmean/std;74->64->1head/dropout.15. One image forward, not 8 independently processed images or outputTTA.",
+  "controls": "Reuse validated legacy129 D4 TinyCNN91,905params. New PoolCNN uses identical91905weights/initialstate, replaces stride2conv by avgpool2+stride1conv. It controls changed downsampling. GroupCNN91,593params(-0.3395%); headhidden64,dropout.15,GroupNorm4 retained, fewer basechannels replicatedover8 orientations. Width/pooling statistics change jointly with representation; not a pure single-coordinate architecture causal effect.",
+  "equivariance_scope": "Exact discrete90degree rotations/reflections on compatible square even pyramids only, numerical tolerance. No arbitraryangle/translationequivariance, physical target guarantee, or DINO property. Dropout occurs only after invariant pooling; eval predictions invariant, train path invariant for fixed dropoutmask.",
+  "training": "Originalfold0T320/V80. Same seed20261003,80epochs/800updates,batch32,unweightedMSE,AdamWlr.002,wd.01,clip5,epochcosineeta.0001,last5weightaverage. SameNumPyorder/D4draws/LR andactualinputhashes as129. AllnormalizationfromT320only; nocachedfullpopulationfit. No validationduringtraining or earlyselection. cleantrain20epochdiagnostics only.",
+  "compute_control": "Parameter and update counts matched; arithmetic cannot simultaneously match when tied kernels expanded over8 orientations. Report exact convMACs, measuredsamebatchstep times, driver/RSS andwallseconds. PoolCNN MACs sameaslegacy, group~7.3x. No claim equal FLOPs. Onefixedwidth, no speed/accuracy sweep.",
+  "engineering_gate": "Beforedevelopmentfit:64compositionchecks; independent slow groupconv forward/backprop and8actions; all8orientations influenceoutput; everyfeaturestage permutations andpooled prediction CPU/MPS; controlledinitialstate;16noise-free32px toy examples300updates, finalstandardizedMSE<.001 all8views; syntheticbenchmark projection<600s/fit andRSS/driver<3GB.",
+  "fold0_scope": "Two newmainfits (pool_control,group), plusonefullgroup outside80label-poison replay. Compare legacy129 and171p0 context, finalidentity/all8viewtrainingloss andall80validationRMSE; fixed80%complete018+20%CNN complementarity. No learnedblendratio, no staleCNNreplacement inside018.",
+  "decision": "Only recommend later5fold confirmation if group train8viewRMSE<bothlegacy andpoolcontrol AND group80validationRMSE<both AND fixed20%blendRMSE<018 andbothmatchedblends, withalltechnicalaudits passing. Currenttask stopsafterfold0 irrespectiveofgain; no automaticfold1-4/resplits/full500/test/newCSV/upload. Singlefold repeatedadaptive400development not confirmatory.",
+  "diagnostics": "Sparse/dense labelKDEbw.4trainSD/q20 threshold and166persistentlarge33 postfit only, not modelinputs or trainingweights. All80primary, subgroup harmsgains reported.",
+  "resources": "existinguv.venv CPU2/MPS,zero cost,nonewpackages/downloads;2mainfits+1poison,each<600s,RSSeach/driver<3GB. No holdout data or test access.",
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a"
+  },
+  "source_sha256": {
+    "d4_cnn_172.py": "88319fbb3ee2461a797b92daa70a56853338e466421ac8a7ba85732da2de2529",
+    "test_d4_172.py": "96079a332f636c268b7ff5b51a4d71426047f0ede8b0c7c53a2fe32b9070cb06",
+    "study_d4_172.py": "f13d483afc8573d3b4c324e6b1cf13bf41e0a7b7c768022483345daf0b300282",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+    "density_cnn_169.py": "4f6ae0760f13fe84a1fef2e6c276aabb8f0a39591f75348c2e9c2c67d532fce0",
+    "cnn_update_budget_128.py": "c1b8af1f93b01d904e0bcbef5dc7789f88b5ff899f6af45ca141ea681111da8f",
+    "dropout_cnn_171.py": "01c9088aa52d6dadf5f2914e3d1c5fd781f6f63984dcd9ca215384c7ab6b78c8",
+    "label_density_169.py": "6bdf9b5ae9f3955b7ef84b4347c36c58cef7dfb1466a8357aad708b643fd35ee"
+  },
+  "inputs": {
+    "artifacts/nested-calibration-074/development_features.npz": "3847b24ee1708faf0cab928698a7892f8cc0f1c38394c1e2f29f76abd71f80b7",
+    "artifacts/nested-calibration-074/extraction.json": "9ced9fa46890029bb27db8d25d9351fb3fed35f999340544327847f150cb541b",
+    "artifacts/bootstrap-selector-144/original/predictions.npz": "ec2ac0b3d80a62c63f542f5d6c537c911045f93846fdd21df945a85fc22957ef",
+    "artifacts/bootstrap-selector-144/original/report.json": "1d6d0fc65062dd04c1762abad44b757c1d4cd07fcb4336dec13aaaa3dc087625",
+    "artifacts/failure-review-166/analysis.npz": "aa23eb8c7fd5d3eb00dc5510c0892e650a011f2dc52b76e0a53870cfea533c8c",
+    "artifacts/cnn-dropout-171/fold-0/evaluation.json": "971fbe1d8082575e5c7ac3b5c84274cd05579d88740cf7b955994d0178d86680",
+    "artifacts/cnn-memorization-170/report.json": "8101b0a34c6ddeb3a5f45c43bdc1c2247634d0d0204ed247324ed3b4f8007b19",
+    "artifacts/cnn-memorization-170/replay.npz": "78dabb0a9d8d3925efc8db0e52133b4f4f80c30e991312cccdd4c4c09d7315a3",
+    "artifacts/run-001/split_manifest.json": "35293da0fda17e745939c316619f58281f50636c34696988e1b869bd9cc46193",
+    "artifacts/cnn-seed-mean-133/audit/original.npz": "13316028888b8f43000bc0b86fb6f8b87aaeb5167db96f265734845fb6975fdf",
+    "artifacts/cnn-orientation-129/original/fold-0-D4/model.pt": "bfbe0d163f13edd0e837906a73e4014cb363437336ea83ac416bbe794e2589e8",
+    "artifacts/cnn-orientation-129/original/fold-0-D4/report.json": "6bf702999f7f81c102e573cc7912b183d619bd602fa8e8e73f2fcae475a8690b",
+    "artifacts/cnn-orientation-129/original/fold-0-D4/streams.npz": "f2605d423d2307ce651ad35fd9d84e7c1a9b0de72a10dfee3d3832eeea0ef8cc",
+    "artifacts/cnn-orientation-129/original/fold-0-D4/predictions.npz": "823d87e258d520e2b3baf0246ded623a158acaae0cea7af1fa46a8e287f994c2"
+  }
+}

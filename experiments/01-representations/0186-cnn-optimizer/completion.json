@@ -1,0 +1,66 @@
+{
+  "completed_UTC": "2026-10-06T05:54:00.801604+00:00",
+  "execution_complete": true,
+  "independent_Python_fsum_metrics_ID_order_finite_checks": [
+    {
+      "model": "resnet50",
+      "procedure": "selected",
+      "Python_fsum_standalone_RMSE": 16.084004689873392,
+      "Python_fsum_blend_RMSE": 12.907363523076791
+    },
+    {
+      "model": "resnet50",
+      "procedure": "AdamW",
+      "Python_fsum_standalone_RMSE": 15.58303632814918,
+      "Python_fsum_blend_RMSE": 12.907992346403628
+    },
+    {
+      "model": "resnet50",
+      "procedure": "SGD",
+      "Python_fsum_standalone_RMSE": 16.11479424716185,
+      "Python_fsum_blend_RMSE": 12.88545917608172
+    },
+    {
+      "model": "efficientnet_b0",
+      "procedure": "selected",
+      "Python_fsum_standalone_RMSE": 17.09462796373864,
+      "Python_fsum_blend_RMSE": 13.004752701970657
+    },
+    {
+      "model": "efficientnet_b0",
+      "procedure": "AdamW",
+      "Python_fsum_standalone_RMSE": 17.09462796373864,
+      "Python_fsum_blend_RMSE": 13.004752701970657
+    },
+    {
+      "model": "efficientnet_b0",
+      "procedure": "SGD",
+      "Python_fsum_standalone_RMSE": 16.83448565133772,
+      "Python_fsum_blend_RMSE": 12.965076160379294
+    }
+  ],
+  "structural_label_poison_verification_passed": true,
+  "CPU_strict_failures": 3,
+  "CPU_strict_failures_only_inner_ResNet": true,
+  "all20_outer_CPU_checks_passed": true,
+  "new_followup_training_executed": false,
+  "best021_CSV_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+  "protected_files_unchanged": 101,
+  "active_training_validation_processes": [],
+  "external_execution_blockers": [],
+  "remaining_model_limitations": [
+    "nearconstantfeaturestandardization instability",
+    "3 innerCPUabsolute-tolerance failures",
+    "no primaryOOFensemble gain",
+    "12epochnotproof offullconvergence"
+  ],
+  "sha256": {
+    "summary.json": "19ba8fdddd520c21396bb9c20b4767891b1c9c1c81a9c33a52f30e81194461c7",
+    "interpretation.json": "5985502dbfb3a07c178cf8950ab907faadbc264a847b239cf5071241a4f080e3",
+    "plan.json": "36b307d03fad0e06b497782b63de1c1af486fafbf84dcc7801351975a9f08b8e",
+    "scaling-diagnostic.json": "564fb5d311b9434e8755ed3c37b2db992eaa4f2e2126ae218c51fe93c7853243",
+    "domain-adaptation-plan.json": "5f9009df3a34ee9833df07d05f6c7e6ddbb2a677e980b54310890313740f172b",
+    "followup-priority-after-scaling.json": "a31273846f0f462cf6951b02e36560e242f974dbbd8e84ad84b0e24b9a6fc65b",
+    "validation-failure-collection-policy.json": "724a0b879f739b238691db75c76058e78fd882d60a822afd3bb151a31869e7c4"
+  }
+}

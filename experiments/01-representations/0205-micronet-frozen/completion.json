@@ -1,0 +1,43 @@
+{
+  "study": 205,
+  "completed": true,
+  "UTC": "2026-10-06T23:19:13.183818+00:00",
+  "decision": "사전 기준 미달. 이 MicroNet mean2048 EDF32 분기를 종료하고 best021을 유지함.",
+  "advance": false,
+  "weight_downloads": 1,
+  "safe_weights_only_strict_load": true,
+  "remote_code_executed": false,
+  "new_installs": 0,
+  "main_Ridge_fits": 10,
+  "validation_fit_counts": {
+    "heldout_poison": 10,
+    "permuted_train_y": 10,
+    "independent_solver": 10
+  },
+  "neural_gradient_fits": 0,
+  "all_validation_passed": true,
+  "scores_computed_after_all_models_validated": true,
+  "preservation_all_passed": true,
+  "preserved_files": 74,
+  "best021_SHA256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+  "resources": {
+    "peak_RSS_plus_MPS_bytes": 851345408,
+    "swap_growth_bytes": 0,
+    "monitored_seconds_total": 16.13352462599869
+  },
+  "artifact_manifest_SHA256": "57b8fbf403bbb556f59556758e05eb02e02ab8228f5becedf14e4eda1732df56",
+  "report_SHA256": "febe8e85a1fd4416a5fd63aacc1fb4fc57427f19a25f170f50d9da995eb6fe4f",
+  "report_summary_SHA256": "ffc93e2407fa273deef117c773f89b8e19e8fbfad5dd8f37bdffe87f7a17e840",
+  "management_record": "docs/records/roadmap-audit/205-completion.md",
+  "no_holdout_test_full500_submission_CSV_upload": true,
+  "cost": 0,
+  "next_experiment_started": false,
+  "remaining_execution_blockers": [],
+  "remaining_scientific_limits": [
+    "같은 개발400의 반복 사용이며 독립 holdout 아님.",
+    "조건부 CI는 누적 선택과 재학습 불확실성을 보정하지 않음.",
+    "가중치 출처의 효과이며 사전학습 데이터만의 인과 효과 아님.",
+    "HF 체크포인트의 v1.0/v1.1 대응은 미확인.",
+    "두 모델 모두 동결 mean2048+Ridge EDF32 조건; 모든 MicroNet 활용법의 성능 한계를 뜻하지 않음."
+  ]
+}

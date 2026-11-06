@@ -1,0 +1,8 @@
+{
+  "study": "220-v8 segmentation TTA for noisy images (written before any TTA result)",
+  "motivation": "C-blend dev error concentrates in the noisiest tercile (RMSE 14.9 vs 9.4-9.9; ~54% of SSE). Feature test-retest reliability on the 40 noisiest train images: sizefield_std_s32 0.80, tile8_logA_std 0.79, sp_count_frac 0.93, sp_contiguity 0.88, neighbors_std 0.72 (reliability-noisy.json).",
+  "rule": "images with HH-MAD noise > median train noise: v3 features averaged (nanmean) over 4 views {original masks-v3, transpose, flipud, rot90}; each view segmented with the masks-v3 rule. Other images unchanged. Same rule for test.",
+  "model": "the TabPFN setting adopted after v7 (C: n_est=8 single seed; or S: n_est=32 x 3 seeds), refit per fold on the averaged features",
+  "adoption_rule": "better in all three partitions AND pooled gain >= 0.03 vs the adopted v7 blend",
+  "blend": "fixed 0.5 with best021; fallback best021 if (averaged) n_obj < 20"
+}

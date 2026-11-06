@@ -1,0 +1,158 @@
+{
+  "study": 199,
+  "status": "completed_records_and_diagnostics_only",
+  "UTC": "2026-10-06T13:13:20.300116+00:00",
+  "Public_result": {
+    "candidate": "022",
+    "status": "submitted_exploratory_worse_keep021",
+    "Public_RMSE": 11.5435627849,
+    "best021_Public_RMSE": 11.48785178,
+    "worse_than021": 0.0557110049,
+    "submission_number": 18,
+    "submission_ID": "400339db-959f-4123-b7a7-8a72622bf789",
+    "submitted_time_local": "2026-10-06 21:55",
+    "timezone": "Asia/Seoul",
+    "submitted_time_UTC": "2026-10-06T12:55:00Z",
+    "timestamp_precision": "minute as parent reported",
+    "rank": 28,
+    "participants": 107,
+    "reported_quota_date": "2026-10-06",
+    "daily_used": 2,
+    "daily_limit": 5,
+    "daily_remaining": 3,
+    "source": "Parent01a0f244-6000-7496-a632-e5f79ee2c02a reported verified actual submission; this worker did not independently browse the site.",
+    "recorded_UTC": "2026-10-06T13:03:10.435866+00:00",
+    "CSV_absolute_path": "artifacts/submission-candidate-022.csv",
+    "CSV_SHA256": "5b562a321f0d6bdde7aea764585a0c31ce70c09432a5f54f9ec9f43ecfc66421",
+    "current_best": "021",
+    "promoted_best": false,
+    "194_CI_gate_failed_preserved": true,
+    "worker_uploaded": false,
+    "no_public_score_loss_weight_label_inference": true,
+    "next_action": "Record and existing-prediction diagnostics only. No new training, test threshold fitting, automatic resubmissions or CE-weight adjustment."
+  },
+  "best_remains": "021",
+  "interpretation": {
+    "conclusion": "계산/형식/재현오류를지지하는새증거는없다.현재증거는작고불확실하며표본·라벨구간에집중된OOF이득이새학습조건/실제평가로안정적으로이어지지않은것과부합한다.원인을확정하지는않는다.",
+    "technical_error_evidence": "198저장증빙57개hash·021/022CSVhash·독립계산식·null치환·동일seed반복exact확인.현재작업새학습/추론없음;업로드된서버파일은부모확인에의존.공통구현/데이터오류전체부재를증명한것은아님.",
+    "concentration": "개선202/400,상위5순SSE이득73.1%;상위10제외gain−.0066407.반면어느fold하나를빼도전체gain은+.0153~+.0346으로단일fold만의현상은아님.",
+    "label_range": "상위hardness사분위>=204.4378499의gain+.09691,그외각100개는−.00496/−.01415/−.01720.상위구간이순SSEgain127.6%를제공.이구간진단으로Public구성이나개별정답을추정하지않음.",
+    "morphology": "inverse_sqrt_grain_diameter Q1 gain+.06862,Q4−.00413;공극추정분율은양끝Q1/Q4가대부분개선;grain_alignment중간Q2/Q3개선·양끝악화.상관된사후구간이며물리인과/새분기threshold근거가아님.",
+    "bias_variance": "전역평균오차−.241745→−.219066;예측std11.995142→11.998171로거의같음.MSEgain.630931중bias²개선.010451,centerederrorvariance개선.620481.라벨상하구간의평균회귀는조건부y진단이라전역rescaling의정당화가아님.",
+    "shift_transfer": "OOF→full500동일dev400delta상관.02460,부호일치46%.같은seed인fold0도rawdelta상관.13295이나학습데이터/학습포함상태가달라seed원인만분리할수없음.동일seed동일데이터재학습은exact이므로수치비결정성실패와구분.",
+    "unlabeled_test_shift": "deltaRMS OOF.303446/full500동일dev400 .335632/test1000 .501859;test는OOF의1.654배.계수차만으로설명되지않는rawCNN변화확대가있지만dataset차이·학습량·seed·unknownPublicsubset과혼재하므로Public오류원인으로확정불가.",
+    "uncertainty": "194조건부95CI가원래0을포함했고반복사용400/사후선택으로선택편향미보정.하나의Public반전으로CE전체가무효라고하거나특정라벨/형태구간때문이라고단정불가.",
+    "prohibited_actions_not_done": [
+      "Public점수의SSE/label/gradient역산",
+      "CE계수/혼합계수/클리핑조정",
+      "test통계로threshold/scaler/model학습",
+      "추가holdout100라벨열람/점수선택",
+      "새모델학습/추론/추가제출"
+    ]
+  },
+  "193_198_synthesis": [
+    {
+      "study": 193,
+      "meaning": "동일TinyCNN에서 true CE가 detach/고정순열보다 단독OOF를 개선:15.03231815→14.72499846. CEgradient가trunk에전달되고scalarhead에는직접전달되지않음을 검증.",
+      "limit": "고정10%추가12.79322535는best02112.78620078보다악화.단독개선과앙상블보완성은다름.원본400재사용·1seed/fold.순열대조는학습난도차이도포함.",
+      "status": "추가방식 기준미달"
+    },
+    {
+      "study": 194,
+      "meaning": "기존첫CNN seed만고정치환하면12.76150457,원본400평균gain.02469621;detach는best021 exact.",
+      "limit": "조건부95CI[-.00809346,.05882551]로0포함.198탐색선택전부터기준미달.상위5가순SSE개선73.1%,상위10제외악화.",
+      "status": "CI기준미달 유지"
+    },
+    {
+      "study": 195,
+      "meaning": "기존CLS/mean/std에max또는min만추가,train-only스케일/fullRidge EDF32대조.두추가군이기준보다모든fold악화.",
+      "limit": "이특징·Ridge·EDF의음성결과.모든극값통계/MLP/signedGeM무용성으로일반화불가.",
+      "status": "max/min 확대종료;GeM정의미확인"
+    },
+    {
+      "study": 196,
+      "meaning": "4query4head cross/self mixer의mean대MHA.거의uniform한attention과약한score경로를확인.고정10%결합12.84086447로best021미달.",
+      "limit": "parameter count equal != effective capacity equal;mean투영중복·tiedQKV제약.출력slotcosine과rawquerycosine구별.20epoch로MHA전체능력판정불가.",
+      "status": "사전기준미달"
+    },
+    {
+      "study": 197,
+      "meaning": "crossQ투영직전affinefreeLN한변경으로단독16.44024945→15.82276548,5/5fold개선.5fold mean은196학습exact.",
+      "limit": "결합12.82464418은best021미달,상위5이득제외pairedgain음수.정규화는중심화·스케일·gradientgeometry동시변경;순수temperature효과아님.",
+      "status": "사전기준미달·확대없음"
+    },
+    {
+      "study": 198,
+      "meaning": "선택된194식을전체500에서3회학습/검증해022생성.동일seed반복exact,1000test형식/CPU-MPS/독립계산검증통과.",
+      "limit": "Public11.5435627849로021보다.0557110049악화.기술재현성은일반화증명이아님.전체500치환효과와OOF효과의표본별방향은약하게연결됨.",
+      "status": "실제제출악화·best021 유지"
+    }
+  ],
+  "remaining_plan_review": {
+    "current_unresolved": [
+      "signed-GeM정확한음수처리공식미확인;195는max/min만검증.정의가고정되기전구현하지않음.",
+      "외부DSB증강세부주장의본문독립확인미완료.현재증강·라벨불변성근거없는새증강학습안은없음."
+    ],
+    "not_live_plans": [
+      "reports/next-research-plan-021.json은이전실험번호021의옛mean3D4/TV계획이며후보021용새계획이아님.후속denoised023와129/151/172기록이있으므로그대로재실행하지않음.",
+      "195–197 실패후자동확대계획은없음.출처연구근거행을이미검증된새성능개선안으로간주하지않음."
+    ],
+    "selected_next_controls_count": 2,
+    "new_learning_authorization": "Not granted in199; parent explicitly requests conclusion before deciding."
+  },
+  "next_controls": [
+    {
+      "priority": 1,
+      "name": "194고정치환의기존두재분할재검증",
+      "question": "원본5fold의작은CE첫seed치환이득이기존두partition에서도유지되는가?",
+      "design": "같은개발400,기존20261031/20261101각5fold.193그대로true/detach/permuted,CE.3·seed20261003+fold·80epoch·train-onlyquartile·last5평균.각split의기존첫CNN/checkpoint·best021·보정계수/잔차를고정하고194같은첫seed치환식사용.",
+      "controls": "detach는해당split의기존첫CNNexact가필수.고정순열은단순auxregularization과truebin의차이진단.다른새seed·가중치·threshold탐색없음.",
+      "scope_if_later_authorized": "2partitions×5fold×3arms=30fullCNNfits.기존downstream고정이므로새nestedfit0.실행전소스/체크포인트/seed계보재확인·계획잠금필요.",
+      "decision_before_execution": "원래194paired/reference기준을각partition에유지해모든결과와CI/top5/라벨구간방향을보고;한쪽이라도방향반전하면이고정CE치환분기의일반화근거부족으로종료.결과로원본가중치수정안함.",
+      "limits": "같은400의재분할이므로새독립표본검증이아니고선택편향보정도아님.통과해도Public재제출을자동승인하지않음.",
+      "existing_frozen_inputs_verified": {
+        "20261031": {
+          "artifacts/cnn-seed-mean-133/audit/20261031.npz": "7a2fae739518314365bf5ff8968af19b2b0b63a670953ce85f292688d202913e",
+          "experiments/dinol-177/20261031/predictions.npz": "bccc5ca678ca6bc2469920c74f26ba9557632a3ca17a9e9a83acece685235f2c",
+          "artifacts/spatial-joint-140/20261031/adjacent-fold-0/report.json": "79e71c6dbc11f79d8e763c4ccf3d7ae48cf481d8412f4e6c20d87c5a8e121b89",
+          "artifacts/spatial-joint-140/20261031/adjacent-fold-1/report.json": "eb97dc04793357058c8329c251b03c4098d5a31e799b7bdf4dc2055fb421abb6",
+          "artifacts/spatial-joint-140/20261031/adjacent-fold-2/report.json": "1fb99d2e5c8b648d35d68e2181ec3b243fafb6e6d7a56279339f460ef061e0e8",
+          "artifacts/spatial-joint-140/20261031/adjacent-fold-3/report.json": "b4864d578e99f2c14aa3fc7f2bc4febc2210817f44e1b9f5133ea883793b7b2b",
+          "artifacts/spatial-joint-140/20261031/adjacent-fold-4/report.json": "dd801549724aa130bfd2075b58993f6f85f8271c272d68a720f2b2c33f0414e4"
+        },
+        "20261101": {
+          "artifacts/cnn-seed-mean-133/audit/20261101.npz": "cbfd7a9cddad3b19cbf1d213a9d0796bf57ffe73aead1ba4fccc5b7cf101f096",
+          "experiments/dinol-177/20261101/predictions.npz": "91d0226a32cf27e62655f830b23523ac3d35d314425fcba0c843972872516495",
+          "artifacts/spatial-joint-140/20261101/adjacent-fold-0/report.json": "2efebf106d246915eb582647cdec64f4a226aacdb0fb3ba761d34e996b145b66",
+          "artifacts/spatial-joint-140/20261101/adjacent-fold-1/report.json": "ab43cb0bb5fb59a6580b5a2ed0b6eb72a3291c08dacbc1d28cd6b43ae8a34105",
+          "artifacts/spatial-joint-140/20261101/adjacent-fold-2/report.json": "676d483c4523cd32cdc78af3c43aa920c0ccc0a640d8705ff8e0d852fe9dc0a1",
+          "artifacts/spatial-joint-140/20261101/adjacent-fold-3/report.json": "f52dccc8b85a2376e8f70ac347361c20772fcd1641b9fc82420fbc44d6b597e2",
+          "artifacts/spatial-joint-140/20261101/adjacent-fold-4/report.json": "3c3582eab765d73dadeb020e6424b6cf6223160ac775e0a73defd03c40f85498"
+        }
+      },
+      "executed": false
+    },
+    {
+      "priority": 2,
+      "name": "197저장모델의cross-attention균등집계반사실",
+      "question": "정규화후학습된모델이실제로비균등cross집계에의존하는가,아니면같은weight에서균등화해도유사한가?",
+      "design": "기존197MHA5fold최종checkpoint를고정.해당heldout80의같은token/norm/weights/seed에서원래cross-softmax와cross가중치만1/1296으로강제한두조건을비교.자기attention/Q잔차/FFN/head는그대로.새학습·gradientupdate0.",
+      "controls": "먼저정상경로저장OOF exact재현.196체크포인트의동일교란은이미거의uniform했던기준의수치대조로만사용.단독·고정10%결합변화와출력shift기록.",
+      "scope_if_later_authorized": "개발400저장token추론만;test/전체500/추가제출없음.온도/층위/머릿수탐색없음.",
+      "decision_before_execution": "비균등집계제거시예측/OOF의변화유무를메커니즘증거로보고.유리한추론경로를새후보로선택하지않음.",
+      "limits": "균등화는학습분포밖개입일수있고재학습능력비교가아님.효과가있어도197이best021을이겼다는뜻이아님.",
+      "executed": false
+    }
+  ],
+  "diagnostics_path": "experiments/submission022-diagnostic-199/diagnostics.json",
+  "diagnostics_SHA256": "fdbf40d819229be9d3452145c17bac44ed7fbd84fbb5b93dbe9d3652669e84b9",
+  "validation_path": "experiments/submission022-diagnostic-199/validation.json",
+  "validation_SHA256": "827d9ea57d1474e60ceb247a5b0a3738685c9c8087b4805f0699031741f9625c",
+  "plan_SHA256": "703ff34cb906d64b76311ac5bcaa4eac0a77465a7bfd4d52b0e0588faecb6824",
+  "row_CSV_SHA256": "47af31e0231f66c695362dd78d28390aea3cbe93027bf53f4ce851bd4a9b7f9c",
+  "stratum_CSV_SHA256": "6fc452694457e78e9d1a0ce626a57a84ad1cc34329ae0d62c0edd657041e9637",
+  "new_train_or_inference": false,
+  "new_submission": false,
+  "cost": 0,
+  "remaining_blockers": []
+}

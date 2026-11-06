@@ -1,0 +1,31 @@
+Completed October 19, 2026, before the 08:00 KST review target and official 10:00 KST deadline.
+
+The run achieved a modest recorded Public improvement. The user manually submitted candidate-flow38-v1.csv and reported Public RMSE 8.8706337276, improving on verified submission 083's 8.9179249297 by 0.0472912021. This Public result comes from the user's report; it was not independently checked in the competition UI. A substantial breakthrough has not been demonstrated.
+
+The effective change was to retain 38 continuous flow, confidence and spatial measurements from the auxiliary segmenter before hard-mask extraction. The final source challenger retrains that representation with two fixed seeds and tests it without exposing the new encoder or its eligibility ranking to validation originals. It retains the fixed .384 TabPFN / .128 Ridge / .128 log-Ridge paired block adjustment to 083. Exact construction, fields, training settings and dependencies are in the frozen recipe and reproduction notes.
+
+Complete matched original-400 conditional validation:
+  083                         9.2017068026
+  Submitted global flow38     9.0068780643
+  New two-encoder source38    8.9776612031
+The new source candidate improves by 0.0292168611 over submitted flow38, wins 4/5 folds, and gives paired image-ID interval [0.0040101, 0.0544460]. Removing the ten largest positive error contributors leaves gain 0.0060708. Both fixed encoder seeds improve individually. The middle-noise group is slightly worse; the other noise groups and all predefined hardness/morphology tertiles improve. Difficult and fallback images remain in the primary score.
+
+Direct supervised image models, longer CPSAM training, learned grain/flow measurements, source-local phase features, scattering/geometry features, and larger tabular ensembles were implemented and tested. They did not beat the chosen system in their recorded tests. Raw brightness alone was worse than 083 (9.2633); extra spatial flow geometry lost both screening folds. Failed runs, learning curves and reasons for closing branches remain in EXPERIMENTS.md and the experiment folders. These failures do not establish a performance ceiling.
+
+The all-500 repeated component test also favored the 38-field block, but it is not a complete-incumbent comparison. All 500 labels have influenced prior research, and inherited P104/083 representations remain globally trained. The original complete end-to-end confirmation protocol has not passed. Reused-data intervals do not establish immunity to adaptive overfitting or a probability of improving Private RMSE.
+
+Recommendation: keep global flow38 as the best recorded Public result. The new source file is a separate exploratory candidate with a small conditional advantage. Its evidence does not establish a reliable replacement or substantial improvement. It has no recorded Public score.
+
+Working source candidate:
+  candidate-source-flow38-v1/candidate-source-flow38.csv
+  SHA256 0134d548df303294cb610454a62c1126c134727c8c67f1d537f902e9ead0d75b
+All 1,000 IDs, schema, row count, finite predictions and fallback behavior passed. Saved-state replay and an independent-directory reproduction are byte-identical, with maximum difference 0.0. Six fixed training-image feature checks also reproduce exactly. A metadata-only guard repair was required; the original code, failure logs, recipe and weights were preserved, and the learning/prediction rules did not change.
+
+Recipe and instructions: candidate-source-flow38-v1/REPRODUCE.txt
+Preservation: source-candidate-preservation.json; current-best-protection.json
+Validation and action record: FINAL-RESULT.json
+
+The reproduction example in REPRODUCE.txt has already been executed and its output retained. For another replay, choose an unused directory, for example from the project root:
+  .venv/bin/python experiments/supervised-renewal-20261018-0625/reproduce_source_flow38.py --mode states --output-dir experiments/supervised-renewal-20261018-0625/repro-source-flow38-user
+
+All study jobs finished. The 52 selected protected artifact/code boundaries matched their recorded hashes; existing full preservation manifests were reused. 076, 082, 083 and the submitted flow38 pipelines remain preserved. Work used local resources only, with no purchases, installations, agent uploads, submission attempts or final-selection changes.

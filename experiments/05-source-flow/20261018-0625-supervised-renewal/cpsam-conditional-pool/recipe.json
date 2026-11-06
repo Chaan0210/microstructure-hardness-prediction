@@ -1,0 +1,10 @@
+{
+  "primary": "Physical104+32train-fittedPCAconditionalcomponents+4softbinfractions",
+  "control": "Sameviewsphysical104+32train-fittedPCAglobalcomponents+same4fractions;physical104alonecachedmatchedn8x3head.",
+  "readout": "localTabPFN3.5n8, seeds0/100/200+fold,CPU;PCAfullSVDwithtraining-onlyStandardScaler",
+  "formula": "Complete083+.384*(augmentedphysical104prediction -matchedphysical104prediction),existingfailedmaskfallback.",
+  "source_sha256": "8e54afe8258e9fc7a91c29c0a2ae2695c798d5654bd64550ceeef4d567814f8d",
+  "features_sha256": "3c6a59e28985382c85e2fb843974be4f965a7e7cbd1ba6e0e4150835981cd0b1",
+  "physical_sha256": "1aef29a4fad342509227fdb81dbcd62b3ccef245b9da94fed7483072e67add77",
+  "scope": "Newpreprocessingtrain-only,fixedexternalimagefeatures; inheritedphysical104 remainsconditional."
+}

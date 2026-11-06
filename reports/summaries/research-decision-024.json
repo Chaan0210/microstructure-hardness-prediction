@@ -1,0 +1,114 @@
+{
+  "panel": "run-022",
+  "cnn_seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "cnn_aggregation": "mean3_d4",
+  "weights": {
+    "baseline": 0.5,
+    "kernel": 0.25,
+    "cnn": 0.25
+  },
+  "original_development_oof_rmse": 13.53511407926948,
+  "comparison_candidate003_original_oof_rmse": 13.705696031698212,
+  "repartition_results": [
+    {
+      "seed": 20261031,
+      "candidate003": 13.63181073293285,
+      "candidate004": 13.562334543413382,
+      "paired_vs_candidate003": {
+        "improvement_rmse": 0.06947618951946843,
+        "fold_improvement_rmse": [
+          0.14342467756315536,
+          0.29828538979674235,
+          -0.023435277543834232,
+          0.12230682733201625,
+          -0.23093059962014628
+        ],
+        "better_folds": 3,
+        "conditional_paired_improvement_95": [
+          -0.058081325870632215,
+          0.19416372260842632
+        ]
+      },
+      "paired_vs_compact3D4": {
+        "improvement_rmse": 0.052060116495106,
+        "fold_improvement_rmse": [
+          -0.03761194967515458,
+          0.11181513753699868,
+          0.10488403279816438,
+          0.08010697301916636,
+          -0.006074364877422411
+        ],
+        "better_folds": 3,
+        "conditional_paired_improvement_95": [
+          -0.03734831534581025,
+          0.13966539406858428
+        ]
+      }
+    },
+    {
+      "seed": 20261101,
+      "candidate003": 13.729980391208457,
+      "candidate004": 13.677678757385682,
+      "paired_vs_candidate003": {
+        "improvement_rmse": 0.05230163382277553,
+        "fold_improvement_rmse": [
+          0.1699432587144134,
+          0.1071697860220251,
+          -0.15725549363681957,
+          0.10069330812921073,
+          0.042213064871175376
+        ],
+        "better_folds": 4,
+        "conditional_paired_improvement_95": [
+          -0.07449080348819197,
+          0.1695298512903021
+        ]
+      },
+      "paired_vs_compact3D4": {
+        "improvement_rmse": 0.06746333181391329,
+        "fold_improvement_rmse": [
+          0.1167711650304124,
+          -0.06599024554853727,
+          0.01212714642553614,
+          0.14246505400655884,
+          0.12642874995025544
+        ],
+        "better_folds": 4,
+        "conditional_paired_improvement_95": [
+          -0.02619637357194149,
+          0.15996726972186592
+        ]
+      }
+    }
+  ],
+  "rationale": "Denoised57 panel fixed-weight recipe improves both new partitions slightly. Native texture extension and ET/HGB did not help. Stronger prominence improves segmentation stability but not combined OOF, so keep already-confirmed weak version. No more sweep.",
+  "important_limit": "CNN seed/D4 alone had no reproducible gain (+.0174/-.0152) on fresh partitions. Overall candidate gain is small and conditional paired intervals include zero. Same400 rows and repeated model selection: no independent validation or prize guarantee. No posthoc weights/scale/negative clipping.",
+  "strong_prominence_control": {
+    "run-022": {
+      "median_count": 515.0,
+      "median_setting_range": 420.0,
+      "noise_range_spearman": 0.7884195968340258,
+      "count_at_most_one": 0,
+      "original_cv_rmse": 13.53511407926948
+    },
+    "run-025": {
+      "median_count": 90.0,
+      "median_setting_range": 256.0,
+      "noise_range_spearman": 0.24862052514399346,
+      "count_at_most_one": 0,
+      "original_cv_rmse": 13.542219468075258
+    }
+  },
+  "fulltrain_fit_scope": "After this decision and development-only kernel choice, train500 may be used for final fit. No new holdout score; test inference only after frozen models.",
+  "public_score_used_for_selection": false,
+  "reference_reports": {
+    "artifacts/frozen-validation-021/report.json": "bcdf8bf2f5bb6573813a94aff40eb3ff5484a38cd4917322f3e433cabd7deba8",
+    "artifacts/denoised-confirmation-023/report.json": "b9722d6f41faf256a942bc4b44612abeb22d6f1eee56c64302bf508b79cb416c",
+    "artifacts/run-022/report.json": "87e7ff556b67334561a94577eadf788f4721821c5d815b382e49e793223d0df6",
+    "artifacts/run-025/report.json": "6817fd5f9a2525f750803cecf8c388d8ea9c4fa0f111b853675f8194629b7a5d"
+  }
+}

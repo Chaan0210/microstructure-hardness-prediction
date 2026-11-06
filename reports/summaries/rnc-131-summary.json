@@ -1,0 +1,166 @@
+{
+  "study": "131 fixed RNC CNN representation control",
+  "status": "completed_negative_original_screen",
+  "completed_utc": "2026-10-04T05:35:48.555625+00:00",
+  "results": {
+    "original": {
+      "RMSE": {
+        "mse": 14.482584949107597,
+        "rnc": 15.358999440492973,
+        "legacyCNN": 15.032317843077912,
+        "raw_mse": 12.912475664679324,
+        "raw_rnc": 13.150093736729593,
+        "raw_legacy": 13.065975963657763
+      },
+      "fit_seconds": 144.73260120896157,
+      "validation_seconds": 34.7776428750949,
+      "train_RMSE_mean": {
+        "mse": 11.408510353199933,
+        "rnc": 7.065441145123673
+      },
+      "pair_distance_spearman_mean_diagnostic": {
+        "mse": 0.2740943967507663,
+        "rnc": 0.23836103009653486
+      },
+      "independent_float64_Ridge_RMSE": {
+        "mse": 14.48258608936919,
+        "rnc": 15.358998043472122
+      },
+      "max_CPU_reload_error": 6.728729439942072e-05,
+      "max_independent_Ridge_error": 0.000214801504512252
+    }
+  },
+  "contrasts": {
+    "original": {
+      "standalone": {
+        "RMSE_gain": -0.8764144913853755,
+        "conditional_gain95": [
+          -1.8476079674950712,
+          0.13288520531424503
+        ],
+        "positive_folds": 2,
+        "fold_gains": [
+          -0.9997332347278522,
+          0.17647362621104534,
+          -0.5043305080935259,
+          0.6941267208135322,
+          -3.5908903192677357
+        ]
+      },
+      "raw_matched": {
+        "RMSE_gain": -0.2376180720502692,
+        "conditional_gain95": [
+          -0.5362269800966251,
+          0.0634085558868766
+        ],
+        "positive_folds": 2,
+        "fold_gains": [
+          -0.33985382114275,
+          0.2120090702089943,
+          -0.05371354075631807,
+          0.006287697219415023,
+          -0.9695159700736227
+        ]
+      },
+      "raw_legacy": {
+        "RMSE_gain": -0.08411777307182966,
+        "conditional_gain95": [
+          -0.3531802228733765,
+          0.19704584074745102
+        ],
+        "positive_folds": 3,
+        "fold_gains": [
+          -0.21655201446947103,
+          0.09571218495376144,
+          0.20855663362764254,
+          0.07387848365983452,
+          -0.5615955292915107
+        ]
+      }
+    }
+  },
+  "decision": {
+    "advance": false,
+    "rule": "Original5fold. Advance unchanged recipe to both known resplits only if RNC standalone RMSE<mse and raw4way RNC<both matchedMSE and legacyCNN raw4way. No rescue ratios/seeds/temperatures/epochs. Any positive screen still requires new honest full014 integration in a separate task.",
+    "RMSE": {
+      "mse": 14.482584949107597,
+      "rnc": 15.358999440492973,
+      "legacyCNN": 15.032317843077912,
+      "raw_mse": 12.912475664679324,
+      "raw_rnc": 13.150093736729593,
+      "raw_legacy": 13.065975963657763
+    },
+    "reason": "Fixed RNC screen failed. No tuning/rescue blend; retain014, close this small configuration."
+  },
+  "reference014_retained": true,
+  "130_provenance_correction": "reports/binary-threepoint-130-provenance-correction.json",
+  "paper_and_repository": {
+    "paper": "https://arxiv.org/html/2210.01189v2",
+    "repository": "https://github.com/kaiwenzha/Rank-N-Contrast",
+    "loss_read": "https://raw.githubusercontent.com/kaiwenzha/Rank-N-Contrast/main/loss.py",
+    "read_only": true,
+    "external_code_downloaded_or_executed": false,
+    "formula": "Eq3 all i!=j, logsumexp over k!=i with |yi-yk|>=|yi-yj|, minus similarity(i,j); similarity=-Euclidean(z_i,z_j)/2. Ties included, no embedding normalization.",
+    "paper_difference": "Small TinyCNN128 and AdamW,64dim pre-dropout latent,400 development images,40epochs versus paper larger ResNets/400epochs/SGD/batch256. Fixed Ridge10 regressor instead of optimized iterative regressor. This is a constrained transfer screen, not reproduction."
+  },
+  "novelty_vs120": "120 penalizes scalar ordering of frozen DINO head;043/083/084 supervised adaptation uses MSE/SmoothL1. No project supervised latent distance RNC found. Existing DINO pretraining is not this target-aware objective.",
+  "configuration": "40epochs,320train,16distinctimages x2 independently sampled batchD4views=32views/update;20updates/epoch=800;25600imageviews each. Same initial state,order,D4,dropout seed; AdamW .002->.0001 epochcosine wd.01 clip5. Fixed final state; no best epoch/weight averaging. Both same update/image budget, not equal FLOPs; RNC extra pair arithmetic measured.",
+  "regression": "Freeze encoder; identity embeddings. StandardScaler fit320train only, Ridge(alpha10,fit_interceptTrue) on standardized trainingtarget. Identical exact solve perarm; no hyperparameter search/earlystop. No extra CNN backprop.",
+  "validation": {
+    "loss_and_gradient_fixtures": {
+      "passed": true,
+      "independent_double_loop_loss_error": 0.0,
+      "independent_gradient_error": 1.1275702593849246e-17,
+      "MPS_loss_error": 9.57597900974605e-08,
+      "MPS_gradient_error": 3.725290298461914e-09,
+      "ties_selfmask_permutation_collapsed_finite_passed": true
+    },
+    "all_models_reload_trainstatistics_SVD_streams_group_exclusion": true,
+    "outer80label_poison_both_arms_exact_each_partition": true
+  },
+  "execution": {
+    "main_CNN_fits": 10,
+    "additional_poison_CNN_fits": 2,
+    "CPU_threads": 2,
+    "device": "MPS",
+    "cost": 0,
+    "new_installs": 0,
+    "external_code_downloaded_or_executed": false,
+    "holdout_or_test_decode_fit_inference": false,
+    "new_submission_CSV": false,
+    "uploaded": false
+  },
+  "limitations": [
+    "Constrained TinyCNN/40epoch/AdamW/Ridge10 transfer test, not original paper reproduction. No general RNC failure claim.",
+    "One paired seed/fold,64dim feature scale and fixed tau2,small16IDtwo-viewbatch; no hyperparameter search.",
+    "D4 label preservation is an empirical augmentation assumption, not established physics invariance.",
+    "Raw4way is a base-branch screen, not complete014; new honest downstream integration required before promotion.",
+    "Same400adaptively reused development labels; bootstrap fixed-fit conditional, not independent replication or historical-selection correction.",
+    "MSE scalar65parameters train, RNC scalarhead dormant; encoder/latentarchitecture and update/image budgets equal, FLOPs differ."
+  ],
+  "preservation": {
+    "014_CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "previous_reports_verified": 200,
+    "packages_unchanged": 26,
+    "frozen130_originals_preserved": true
+  },
+  "source_sha256": {
+    "rnc_study_131.py": "00c8f08e4f95da3b00d2395b4ee65b09ed0785868cbe85168d9853aeda8b8051",
+    "validate_rnc_131.py": "fcdb55d72605d4a0bc951a29d0ea0ea92c9fe40e0c2c9b8805970b5fb00523b9",
+    "validate_rnc_v2_131.py": "de59ea34c343f5b992ee0b6db640971e788a14692948b85ed48be3879b674556",
+    "summarize_rnc_131.py": "98fc272c872c5158d1fb5ae3dc1a9151c1e0ca9a0fe737f82e1b261777b214c9"
+  },
+  "artifact_sha256": {
+    "artifacts/rnc-131/plan.json": "6f8e6920b555ce9aa9e65c3f00f24117198aa85e4e5c62b951d503600a4c15a5",
+    "artifacts/rnc-131/fixtures.json": "f2bf5550a008c28c7418ad416a4a7bb8a22bcf424a3f09e45d4ab451b84eb391",
+    "artifacts/rnc-131/screen-decision.json": "1350e7d204c070934387bc3927586a4a1d20a362489319db07863a56c9d7923b",
+    "artifacts/rnc-131/original/report.json": "85d53ef43f88c9f59e31b6508937057bdb4d557e6e04d4baf55fa78880ea444f",
+    "artifacts/rnc-131/validation-original.json": "de31a70b83c5debf1297e679dded37a9f34b044d6e42902060b373d1e52b9c8c"
+  },
+  "preserved_validation_failure": {
+    "original_validator_sha256": "fcdb55d72605d4a0bc951a29d0ea0ea92c9fe40e0c2c9b8805970b5fb00523b9",
+    "original_failure_log_sha256": "e2caf9501e44b6f3b365e025db610ec0af4b2384c4af0d238a2d172466df5af4",
+    "reason": "Original1e-9 tolerance compared float32 Ridge output with float64 independent SVD; observedmax0.000215. Separatev2 uses1e-3 and reports independentfloat64OOF endpoints; originalmodelsunchanged."
+  },
+  "execution_blockers": []
+}

@@ -1,0 +1,20 @@
+{
+  "harness_noise_units": "normalized0to1, while study noise uses0to255 gray units",
+  "harness_scaled_max_difference": 19.273540496826172,
+  "legacy_audit_noise_max_difference": 0.0,
+  "legacy_gate_mismatches": 0,
+  "diagnostic_noise_exceptions": [
+    {
+      "id": "TRAIN_000019",
+      "stored": 0.0,
+      "actual_pixel_noise": 19.273534789681435
+    },
+    {
+      "id": "TRAIN_000060",
+      "stored": 0.0,
+      "actual_pixel_noise": 19.27354048937559
+    }
+  ],
+  "explanation": "The production gate exactly matches audit061 on original400. Stored diagnostic noise is zero on segmentation-failure rows; raw harness noise, multiplied by255, supplies their actual per-image value. Auxiliary eligibility has always used the correctly aligned raw harness proxy.",
+  "nonexception_scaled_noise_max_difference": 2.8498470783233643e-06
+}

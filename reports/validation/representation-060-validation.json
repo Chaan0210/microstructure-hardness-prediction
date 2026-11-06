@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "experiment": "060",
+  "results": {
+    "original": {
+      "scores": {
+        "reference007": {
+          "rmse": 13.241596955038409,
+          "fold_rmse": [
+            13.200972349680994,
+            12.726138894776982,
+            14.308109808709345,
+            12.375441992213231,
+            13.513163828337742
+          ]
+        },
+        "pca_mlp": {
+          "rmse": 14.87440328930596,
+          "fold_rmse": [
+            15.486257798951415,
+            13.83995027139496,
+            16.40723864256745,
+            13.768504338311471,
+            14.700400346454865
+          ]
+        },
+        "primary": {
+          "rmse": 13.429565626124171,
+          "fold_rmse": [
+            13.359947260474613,
+            12.725805578553679,
+            14.551751270899638,
+            12.648404053248482,
+            13.769395628047977
+          ]
+        },
+        "reference003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.680453686399362,
+            12.991004741250547,
+            14.032386512109253
+          ]
+        }
+      },
+      "comparison": {
+        "gain": -0.18796867108576265,
+        "fold_gains": [
+          -0.15897491079361892,
+          0.00033331622330301514,
+          -0.24364146219029337,
+          -0.2729620610352512,
+          -0.25623179971023546
+        ],
+        "positive_folds": 1,
+        "bootstrap_sd": 0.07144497181202324,
+        "conditional_ci95": [
+          -0.32641497311047213,
+          -0.046974120739418826
+        ],
+        "pca_original_mlp_residual_correlation": 0.9351870385848393
+      },
+      "train_rmse": 3.0684108155286753,
+      "model_reload_max_error": 0.0,
+      "standalone_labelrange_exceedances": 0,
+      "seconds": 6.9279475410003215
+    }
+  },
+  "models_verified": 15,
+  "feature_reproduction_max_error": 0.0,
+  "independent100epoch_replay_error": 0.0,
+  "protected_files": 18,
+  "043_historical_anchor_files_verified": 0,
+  "seconds": 1.2897628329810686,
+  "scope": "Development400only,noholdout/test/candidateCSV/upload/install/cost; no alternative hyperparameters selected.",
+  "bias": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

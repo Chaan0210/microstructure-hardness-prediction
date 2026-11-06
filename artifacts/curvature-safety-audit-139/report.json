@@ -1,0 +1,5486 @@
+{
+  "created_utc": "2026-10-04T11:31:39.405092+00:00",
+  "calibrators_checked": 64,
+  "new_fits": 0,
+  "test_predictions_or_features_decoded": false,
+  "full500_labels_decoded": false,
+  "all_training_moments_and_stored_ranges_checked": true,
+  "min_train_prediction_std": 8.984395034625532,
+  "min_train_quadratic_RMS": 1.0485251051310007,
+  "max_penalized_normal_matrix_condition_number": 2.0000000000000098,
+  "min_derivative_over_each_observed_train_query_interval": 0.5901663512822589,
+  "negative_intervals": [],
+  "nonmonotone_intervals": [],
+  "max_extrapolation_distance_train_std": 0.9224065131198068,
+  "max_abs_curvature_base_contribution_observed": 8.28924920906764,
+  "development_outer_queries_outside_meta_training_range": 15,
+  "production_main": {
+    "name": "full500/main",
+    "train_rows": 500,
+    "query_rows": 500,
+    "stored_prediction_range_exact": true,
+    "prediction_scale": 10.674456368460286,
+    "quadratic_scale": 1.3199526289264958,
+    "curvature": 0.34382233009702984,
+    "quadratic_coefficient_in_z": 0.2604808101156305,
+    "linear_coefficient_in_z": 11.75922075005137,
+    "constant_in_z": 193.9050354430963,
+    "train_orthogonality_max_abs": 3.8191672047105384e-16,
+    "penalized_normal_matrix_eigenvalues": [
+      0.9999999999999987,
+      1.0000000000000016,
+      1.9999999999999998
+    ],
+    "condition_number": 2.0000000000000027,
+    "train_interval": {
+      "input_range": [
+        171.24594234809143,
+        230.1868863053708
+      ],
+      "calibrated_exact_range": [
+        169.96313851977453,
+        236.6877953195123
+      ],
+      "derivative_range": [
+        0.9973180491220007,
+        1.26680099342676
+      ],
+      "strictly_increasing": true,
+      "negative_output_possible_in_interval": false
+    },
+    "observed_query_interval": {
+      "input_range": [
+        171.24594234809143,
+        230.1868863053708
+      ],
+      "calibrated_exact_range": [
+        169.96313851977453,
+        236.6877953195123
+      ],
+      "derivative_range": [
+        0.9973180491220007,
+        1.26680099342676
+      ],
+      "strictly_increasing": true,
+      "negative_output_possible_in_interval": false
+    },
+    "combined_train_query_interval": {
+      "input_range": [
+        171.24594234809143,
+        230.1868863053708
+      ],
+      "calibrated_exact_range": [
+        169.96313851977453,
+        236.6877953195123
+      ],
+      "derivative_range": [
+        0.9973180491220007,
+        1.26680099342676
+      ],
+      "strictly_increasing": true,
+      "negative_output_possible_in_interval": false
+    },
+    "query_outside_train_range": 0,
+    "max_extrapolation_distance_in_train_std": 0.0,
+    "query_curvature_correction_before_point9_range": [
+      -0.26881922097249944,
+      2.407791771476673
+    ],
+    "max_abs_query_curvature_contribution_to_base": 2.1670125943290057,
+    "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+    "vertex": {
+      "raw_input": -46.88610824433988,
+      "calibrated_value": 61.18962294586194,
+      "is_global_minimum": true
+    },
+    "real_zero_crossing_raw_inputs": [],
+    "globally_nonnegative_calibration": true,
+    "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+  },
+  "all_curves": [
+    {
+      "name": "original/outer0",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.946099902457163,
+      "quadratic_scale": 1.2344069984156754,
+      "curvature": 0.20775771504402324,
+      "quadratic_coefficient_in_z": 0.16830568468153054,
+      "linear_coefficient_in_z": 11.841354621952409,
+      "constant_in_z": 193.56315755338792,
+      "train_orthogonality_max_abs": 2.55351295663786e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.999999999999998,
+        1.000000000000002,
+        2.0
+      ],
+      "condition_number": 2.000000000000004,
+      "train_interval": {
+        "input_range": [
+          171.11340992604067,
+          224.62900447168585
+        ],
+        "calibrated_exact_range": [
+          169.81188175096545,
+          228.32648920254303
+        ],
+        "derivative_range": [
+          1.0182395347700202,
+          1.1685849954767134
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.22555409720988,
+          226.7395585172683
+        ],
+        "calibrated_exact_range": [
+          171.9688169786763,
+          230.79910808989678
+        ],
+        "derivative_range": [
+          1.0241733432456515,
+          1.174514336690681
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.11340992604067,
+          226.7395585172683
+        ],
+        "calibrated_exact_range": [
+          169.81188175096545,
+          230.79910808989678
+        ],
+        "derivative_range": [
+          1.0182395347700202,
+          1.174514336690681
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.19281333665780695,
+      "query_curvature_correction_before_point9_range": [
+        -0.17114497101671033,
+        1.228490397608755
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.1056413578478794,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -191.32981807008633,
+        "calibrated_value": -14.715130176694942,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [
+        -293.68081313679033,
+        -88.97882300338239
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer0/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 11.109872714799172,
+      "quadratic_scale": 1.3111675063950081,
+      "curvature": 0.796467076853136,
+      "quadratic_coefficient_in_z": 0.6074487607178307,
+      "linear_coefficient_in_z": 12.359407546711243,
+      "constant_in_z": 193.7635005008277,
+      "train_orthogonality_max_abs": 2.877197697620124e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999996,
+        1.0000000000000007,
+        2.0
+      ],
+      "condition_number": 2.000000000000001,
+      "train_interval": {
+        "input_range": [
+          171.20775369911124,
+          227.07155153113217
+        ],
+        "calibrated_exact_range": [
+          170.49125239698625,
+          235.17036389393178
+        ],
+        "derivative_range": [
+          0.8828702348301467,
+          1.4327299931182536
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.94996181640178,
+          224.62900447168585
+        ],
+        "calibrated_exact_range": [
+          171.14923693522604,
+          231.70021490308483
+        ],
+        "derivative_range": [
+          0.8901756883046852,
+          1.4086883348738037
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.20775369911124,
+          227.07155153113217
+        ],
+        "calibrated_exact_range": [
+          170.49125239698625,
+          235.17036389393178
+        ],
+        "derivative_range": [
+          0.8828702348301467,
+          1.4327299931182536
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.6317812541631631,
+        3.1880449151944634
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.8692404236750173,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 81.5112746114054,
+        "calibrated_value": 130.89607661918615,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer0/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.976071146844077,
+      "quadratic_scale": 1.152347805914927,
+      "curvature": 0.3770383595767005,
+      "quadratic_coefficient_in_z": 0.32719145872573097,
+      "linear_coefficient_in_z": 11.649705939544033,
+      "constant_in_z": 193.09801205712566,
+      "train_orthogonality_max_abs": 3.909236002201255e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999997,
+        1.0000000000000009,
+        1.9999999999999998
+      ],
+      "condition_number": 2.0000000000000004,
+      "train_interval": {
+        "input_range": [
+          167.63348140868848,
+          218.92601229318134
+        ],
+        "calibrated_exact_range": [
+          167.72414984348137,
+          222.18281018485698
+        ],
+        "derivative_range": [
+          0.9224233361368197,
+          1.2010304846158608
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          174.32577385927863,
+          216.58061111204142
+        ],
+        "calibrated_exact_range": [
+          174.01891140242486,
+          219.38085158600512
+        ],
+        "derivative_range": [
+          0.9587740578558456,
+          1.1882909000438249
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          167.63348140868848,
+          218.92601229318134
+        ],
+        "calibrated_exact_range": [
+          167.72414984348137,
+          222.18281018485698
+        ],
+        "derivative_range": [
+          0.9224233361368197,
+          1.2010304846158608
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.3281748761538397,
+        1.0782692000071499
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.970442280006435,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -2.1878161268053873,
+        "calibrated_value": 89.40058593359451,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer0/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.874697020943499,
+      "quadratic_scale": 1.0485251051310007,
+      "curvature": 0.043648147668365105,
+      "quadratic_coefficient_in_z": 0.04162813790034316,
+      "linear_coefficient_in_z": 10.764442906329839,
+      "constant_in_z": 193.35816593115996,
+      "train_orthogonality_max_abs": 1.328117263102991e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        1.0,
+        1.0000000000000004,
+        2.0
+      ],
+      "condition_number": 2.0,
+      "train_interval": {
+        "input_range": [
+          174.77483087795838,
+          217.6319749911628
+        ],
+        "calibrated_exact_range": [
+          173.18046277303523,
+          220.00100988590427
+        ],
+        "derivative_range": [
+          1.0741831267062996,
+          1.1107756745239237
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.11340992604067,
+          221.34314503316182
+        ],
+        "calibrated_exact_range": [
+          169.25314936444843,
+          224.12916707334674
+        ],
+        "derivative_range": [
+          1.0710569099684415,
+          1.1139443683328831
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.11340992604067,
+          221.34314503316182
+        ],
+        "calibrated_exact_range": [
+          169.25314936444843,
+          224.12916707334674
+        ],
+        "derivative_range": [
+          1.0710569099684415,
+          1.1139443683328831
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 6,
+      "max_extrapolation_distance_in_train_std": 0.3758262186807261,
+      "query_curvature_correction_before_point9_range": [
+        -0.04230953323162803,
+        0.26108984998970863
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.23498086499073778,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -1083.3070412744878,
+        "calibrated_value": -502.5246967675796,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [
+        -2168.255212544317,
+        1.6411299953414016
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer1",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.854294187645735,
+      "quadratic_scale": 1.3308245258987361,
+      "curvature": 0.11412729041281504,
+      "quadratic_coefficient_in_z": 0.08575682833598387,
+      "linear_coefficient_in_z": 11.328376213825733,
+      "constant_in_z": 194.41283687316715,
+      "train_orthogonality_max_abs": 2.7755575615628914e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        1.0,
+        1.0,
+        2.0
+      ],
+      "condition_number": 2.0,
+      "train_interval": {
+        "input_range": [
+          164.81681636390485,
+          225.60200925301854
+        ],
+        "calibrated_exact_range": [
+          163.77121483465694,
+          227.24725997063862
+        ],
+        "derivative_range": [
+          1.0000233075113596,
+          1.0885131310182254
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          175.32100554951623,
+          229.26652297120108
+        ],
+        "calibrated_exact_range": [
+          174.35596272616692,
+          231.24590585465353
+        ],
+        "derivative_range": [
+          1.015315088337212,
+          1.0938478541102787
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          164.81681636390485,
+          229.26652297120108
+        ],
+        "calibrated_exact_range": [
+          163.77121483465694,
+          231.24590585465353
+        ],
+        "derivative_range": [
+          1.0000233075113596,
+          1.0938478541102787
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.3376095815012519,
+      "query_curvature_correction_before_point9_range": [
+        -0.08712499061869576,
+        0.709222904644257
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.6383006141798313,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -522.1165193769118,
+        "calibrated_value": -179.7034583890144,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [
+        -1018.9895796308385,
+        -25.24345912298523
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer1/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.639821302237506,
+      "quadratic_scale": 1.16319931273147,
+      "curvature": 0.29198324189368957,
+      "quadratic_coefficient_in_z": 0.25101737827547643,
+      "linear_coefficient_in_z": 10.687993049380594,
+      "constant_in_z": 193.18186455279564,
+      "train_orthogonality_max_abs": 3.7945650794700186e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999997,
+        1.0000000000000007,
+        2.0
+      ],
+      "condition_number": 2.000000000000001,
+      "train_interval": {
+        "input_range": [
+          171.66291929511482,
+          220.1224836979244
+        ],
+        "calibrated_exact_range": [
+          172.44612382363465,
+          221.67309672926876
+        ],
+        "derivative_range": [
+          0.9083840279498324,
+          1.1232880893001542
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.1722451248413,
+          215.63236943596814
+        ],
+        "calibrated_exact_range": [
+          173.82222257669412,
+          216.67410922181813
+        ],
+        "derivative_range": [
+          0.9150774486337865,
+          1.1033757396388877
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.66291929511482,
+          220.1224836979244
+        ],
+        "calibrated_exact_range": [
+          172.44612382363465,
+          221.67309672926876
+        ],
+        "derivative_range": [
+          0.9083840279498324,
+          1.1232880893001542
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.26196170375494926,
+        0.8501783164449719
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.7651604848004747,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -33.17217794932614,
+        "calibrated_value": 79.41165847343423,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer1/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.80816573157833,
+      "quadratic_scale": 1.2868184041665678,
+      "curvature": 0.4070699416418114,
+      "quadratic_coefficient_in_z": 0.3163382963157555,
+      "linear_coefficient_in_z": 12.182315439234296,
+      "constant_in_z": 194.86389911460626,
+      "train_orthogonality_max_abs": 8.339703471362678e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999997,
+        1.0000000000000016,
+        2.0
+      ],
+      "condition_number": 2.000000000000001,
+      "train_interval": {
+        "input_range": [
+          169.50569544729265,
+          219.68730863813175
+        ],
+        "calibrated_exact_range": [
+          168.15640681948534,
+          224.68205211717094
+        ],
+        "derivative_range": [
+          0.9905299128254096,
+          1.262312979359835
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          175.64539265794193,
+          225.60200925301854
+        ],
+        "calibrated_exact_range": [
+          174.34004080357522,
+          232.24299109502846
+        ],
+        "derivative_range": [
+          1.0237824455639892,
+          1.2943469330040445
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          169.50569544729265,
+          225.60200925301854
+        ],
+        "calibrated_exact_range": [
+          168.15640681948534,
+          232.24299109502846
+        ],
+        "derivative_range": [
+          0.9905299128254096,
+          1.2943469330040445
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 5,
+      "max_extrapolation_distance_in_train_std": 0.5472437008997504,
+      "query_curvature_correction_before_point9_range": [
+        -0.318606374158598,
+        2.1077372067390203
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.8969634860651183,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -13.384245317520197,
+        "calibrated_value": 77.57742827827816,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer1/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.680687400034994,
+      "quadratic_scale": 1.2709918070060666,
+      "curvature": 0.3323440499747595,
+      "quadratic_coefficient_in_z": 0.26148402227519096,
+      "linear_coefficient_in_z": 11.438807288731027,
+      "constant_in_z": 194.61938302967553,
+      "train_orthogonality_max_abs": 2.2827015459582655e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999957,
+        1.0000000000000049,
+        2.0
+      ],
+      "condition_number": 2.000000000000009,
+      "train_interval": {
+        "input_range": [
+          171.880811728636,
+          222.16131116842274
+        ],
+        "calibrated_exact_range": [
+          169.29234253219116,
+          229.4043956672447
+        ],
+        "derivative_range": [
+          1.0552423104585906,
+          1.335825948799277
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          164.81681636390485,
+          224.09525151420178
+        ],
+        "calibrated_exact_range": [
+          161.9773459834975,
+          231.99823900030253
+        ],
+        "derivative_range": [
+          1.0158226240445447,
+          1.3466180456280357
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          164.81681636390485,
+          224.09525151420178
+        ],
+        "calibrated_exact_range": [
+          161.9773459834975,
+          231.99823900030253
+        ],
+        "derivative_range": [
+          1.0158226240445447,
+          1.3466180456280357
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.729699769533474,
+      "query_curvature_correction_before_point9_range": [
+        -0.2618174515444542,
+        2.2625129618804003
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.0362616656923604,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -17.218277276079903,
+        "calibrated_value": 69.51966273871562,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer2",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.860498858380934,
+      "quadratic_scale": 1.3099149758627713,
+      "curvature": 0.7356617677268058,
+      "quadratic_coefficient_in_z": 0.5616103192058435,
+      "linear_coefficient_in_z": 11.880758894176672,
+      "constant_in_z": 194.26036399926534,
+      "train_orthogonality_max_abs": 1.2212453270876723e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999996,
+        1.0000000000000002,
+        1.9999999999999998
+      ],
+      "condition_number": 2.000000000000001,
+      "train_interval": {
+        "input_range": [
+          173.38377391533425,
+          227.6812514376421
+        ],
+        "calibrated_exact_range": [
+          172.56560127718484,
+          234.6655544968271
+        ],
+        "derivative_range": [
+          0.8851661540959951,
+          1.4022312003806943
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          170.1657694135758,
+          220.2754609486555
+        ],
+        "calibrated_exact_range": [
+          169.76643963639307,
+          224.54206700053743
+        ],
+        "derivative_range": [
+          0.8545216799404048,
+          1.3317071985909354
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          170.1657694135758,
+          227.6812514376421
+        ],
+        "calibrated_exact_range": [
+          169.76643963639307,
+          234.6655544968271
+        ],
+        "derivative_range": [
+          0.8545216799404048,
+          1.4022312003806943
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.2963035624533174,
+      "query_curvature_correction_before_point9_range": [
+        -0.5767164281468177,
+        2.891697711468934
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.602527940322041,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 80.4316594746463,
+        "calibrated_value": 131.42656844990756,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer2/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.15959460912107,
+      "quadratic_scale": 1.2635376692339861,
+      "curvature": 0.9845194423241151,
+      "quadratic_coefficient_in_z": 0.7791769618716436,
+      "linear_coefficient_in_z": 12.298378748602863,
+      "constant_in_z": 194.77949928263803,
+      "train_orthogonality_max_abs": 4.586836909249473e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999986,
+        1.0000000000000018,
+        1.9999999999999996
+      ],
+      "condition_number": 2.0000000000000027,
+      "train_interval": {
+        "input_range": [
+          168.8891098624255,
+          220.38575770417532
+        ],
+        "calibrated_exact_range": [
+          167.45359241090122,
+          228.67738578393846
+        ],
+        "derivative_range": [
+          0.8001461550043037,
+          1.5776316592401942
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          174.91062747974138,
+          227.63462317044144
+        ],
+        "calibrated_exact_range": [
+          172.5453994808415,
+          240.51009001933403
+        ],
+        "derivative_range": [
+          0.8910577552185723,
+          1.6870734978526267
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          168.8891098624255,
+          227.63462317044144
+        ],
+        "calibrated_exact_range": [
+          167.45359241090122,
+          240.51009001933403
+        ],
+        "derivative_range": [
+          0.8001461550043037,
+          1.6870734978526267
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.7134994795715811,
+      "query_curvature_correction_before_point9_range": [
+        -0.7794233304015716,
+        6.828261190219306
+      ],
+      "max_abs_query_curvature_contribution_to_base": 6.145435071197376,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 115.89153686370734,
+        "calibrated_value": 146.25069028115908,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer2/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.322547365733246,
+      "quadratic_scale": 1.3033721776687517,
+      "curvature": 1.4383168358035474,
+      "quadratic_coefficient_in_z": 1.1035350151298775,
+      "linear_coefficient_in_z": 10.48816623593603,
+      "constant_in_z": 193.70615968090735,
+      "train_orthogonality_max_abs": 2.7260405722016756e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999993,
+        1.0000000000000004,
+        2.0
+      ],
+      "condition_number": 2.0000000000000013,
+      "train_interval": {
+        "input_range": [
+          173.82122640589319,
+          226.14712477931147
+        ],
+        "calibrated_exact_range": [
+          177.19961387127603,
+          236.44776189773674
+        ],
+        "derivative_range": [
+          0.5903787383191773,
+          1.6742034234104695
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.83974780471527,
+          227.6812514376421
+        ],
+        "calibrated_exact_range": [
+          177.21055206405583,
+          239.0405764486879
+        ],
+        "derivative_range": [
+          0.5907623714696785,
+          1.7059797405696988
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          173.82122640589319,
+          227.6812514376421
+        ],
+        "calibrated_exact_range": [
+          177.19961387127603,
+          239.0405764486879
+        ],
+        "derivative_range": [
+          0.5903787383191773,
+          1.7059797405696988
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.14861899916519747,
+      "query_curvature_correction_before_point9_range": [
+        -1.180922162690192,
+        8.50112891504361
+      ],
+      "max_abs_query_curvature_contribution_to_base": 7.651016023539249,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 145.31837138878856,
+        "calibrated_value": 168.78587407952972,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer2/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.954977455231846,
+      "quadratic_scale": 1.3775745892422218,
+      "curvature": 0.5213181561252339,
+      "quadratic_coefficient_in_z": 0.3784318905098281,
+      "linear_coefficient_in_z": 12.3080989106731,
+      "constant_in_z": 193.72250527530818,
+      "train_orthogonality_max_abs": 4.233373776140784e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999978,
+        1.000000000000002,
+        1.9999999999999998
+      ],
+      "condition_number": 2.0000000000000044,
+      "train_interval": {
+        "input_range": [
+          168.85051811489342,
+          230.8382880927146
+        ],
+        "calibrated_exact_range": [
+          167.18023768518412,
+          238.99539050659652
+        ],
+        "derivative_range": [
+          0.9630716556065989,
+          1.3540032398802806
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.38377391533425,
+          225.21541456052822
+        ],
+        "calibrated_exact_range": [
+          171.6108893756909,
+          231.48169836409411
+        ],
+        "derivative_range": [
+          0.9916610511053928,
+          1.31854206973503
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          168.85051811489342,
+          230.8382880927146
+        ],
+        "calibrated_exact_range": [
+          167.18023768518412,
+          238.99539050659652
+        ],
+        "derivative_range": [
+          0.9630716556065989,
+          1.3540032398802806
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.39099612233264214,
+        2.2475804938362
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.02282244445258,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 16.14179192993595,
+        "calibrated_value": 93.64551480892325,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer3",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.620781642512753,
+      "quadratic_scale": 1.27890007836479,
+      "curvature": 0.5784309811031945,
+      "quadratic_coefficient_in_z": 0.45228786117737996,
+      "linear_coefficient_in_z": 11.683591718131293,
+      "constant_in_z": 193.24706328394257,
+      "train_orthogonality_max_abs": 5.079270337660091e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999986,
+        1.0000000000000016,
+        2.0
+      ],
+      "condition_number": 2.000000000000003,
+      "train_interval": {
+        "input_range": [
+          171.1394706373637,
+          227.07501065388982
+        ],
+        "calibrated_exact_range": [
+          170.68393594844542,
+          234.7467835703835
+        ],
+        "derivative_range": [
+          0.9210181233192777,
+          1.3695773586591118
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          166.74511583598894,
+          230.1596971749227
+        ],
+        "calibrated_exact_range": [
+          166.71408249643724,
+          239.00965297972078
+        ],
+        "derivative_range": [
+          0.8857788384400359,
+          1.3943141293549663
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          166.74511583598894,
+          230.1596971749227
+        ],
+        "calibrated_exact_range": [
+          166.71408249643724,
+          239.00965297972078
+        ],
+        "derivative_range": [
+          0.8857788384400359,
+          1.3943141293549663
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.41375060228948524,
+      "query_curvature_correction_before_point9_range": [
+        -0.4702115004811605,
+        4.323562772037407
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.8912064948336664,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 56.288093084428425,
+        "calibrated_value": 117.7938358412263,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer3/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.851025922796643,
+      "quadratic_scale": 1.369666920871614,
+      "curvature": 0.3754756764560261,
+      "quadratic_coefficient_in_z": 0.2741364858378013,
+      "linear_coefficient_in_z": 11.891433359870119,
+      "constant_in_z": 193.72446566445032,
+      "train_orthogonality_max_abs": 1.8764332810566026e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999993,
+        1.0000000000000004,
+        1.9999999999999998
+      ],
+      "condition_number": 2.0000000000000013,
+      "train_interval": {
+        "input_range": [
+          167.43668815908416,
+          230.090129093504
+        ],
+        "calibrated_exact_range": [
+          165.85399772649663,
+          235.78333159049717
+        ],
+        "derivative_range": [
+          0.9702577781004258,
+          1.2620005885931598
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.1394706373637,
+          220.66190774226712
+        ],
+        "calibrated_exact_range": [
+          169.47857260526533,
+          224.09186991612782
+        ],
+        "derivative_range": [
+          0.9874996111226095,
+          1.2180985178699164
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          167.43668815908416,
+          230.090129093504
+        ],
+        "calibrated_exact_range": [
+          165.85399772649663,
+          235.78333159049717
+        ],
+        "derivative_range": [
+          0.9702577781004258,
+          1.2620005885931598
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.28625312808968306,
+        1.2345600224374629
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.1111040201937166,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -40.93173157577152,
+        "calibrated_value": 64.76845774737765,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer3/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.548682495692935,
+      "quadratic_scale": 1.2660343777989698,
+      "curvature": 0.8484028812167752,
+      "quadratic_coefficient_in_z": 0.6701262588870165,
+      "linear_coefficient_in_z": 11.103984536118721,
+      "constant_in_z": 192.88395333167284,
+      "train_orthogonality_max_abs": 9.507261957353452e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.999999999999998,
+        1.000000000000002,
+        2.0
+      ],
+      "condition_number": 2.000000000000004,
+      "train_interval": {
+        "input_range": [
+          173.83063754625533,
+          225.89745364151372
+        ],
+        "calibrated_exact_range": [
+          174.41902189165404,
+          233.14846622576056
+        ],
+        "derivative_range": [
+          0.814402638833391,
+          1.4415234476266912
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          175.02275901544584,
+          227.07501065388982
+        ],
+        "calibrated_exact_range": [
+          175.39844733209665,
+          234.8542929930695
+        ],
+        "derivative_range": [
+          0.8287611926303207,
+          1.4557065792522252
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          173.83063754625533,
+          227.07501065388982
+        ],
+        "calibrated_exact_range": [
+          174.41902189165404,
+          234.8542929930695
+        ],
+        "derivative_range": [
+          0.814402638833391,
+          1.4557065792522252
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.11163071908334518,
+      "query_curvature_correction_before_point9_range": [
+        -0.7262716796890354,
+        4.840629338269539
+      ],
+      "max_abs_query_curvature_contribution_to_base": 4.356566404442585,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 106.2147143795158,
+        "calibrated_value": 146.88572876457977,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer3/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.678192395655486,
+      "quadratic_scale": 1.3289263768510364,
+      "curvature": 0.8415984359524777,
+      "quadratic_coefficient_in_z": 0.6332919946601491,
+      "linear_coefficient_in_z": 9.108463753026305,
+      "constant_in_z": 192.91279922999476,
+      "train_orthogonality_max_abs": 1.1076290455956585e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999999,
+        1.0000000000000002,
+        2.0
+      ],
+      "condition_number": 2.0000000000000004,
+      "train_interval": {
+        "input_range": [
+          174.1417527610508,
+          224.36253726253184
+        ],
+        "calibrated_exact_range": [
+          176.99847069957752,
+          227.9391483842679
+        ],
+        "derivative_range": [
+          0.6747882777932405,
+          1.3538808555289636
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.4659898699213,
+          224.95252317048568
+        ],
+        "calibrated_exact_range": [
+          175.88667185716542,
+          228.74027242646196
+        ],
+        "derivative_range": [
+          0.6521283740759369,
+          1.3618587287349926
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          172.4659898699213,
+          224.95252317048568
+        ],
+        "calibrated_exact_range": [
+          175.88667185716542,
+          228.74027242646196
+        ],
+        "derivative_range": [
+          0.6521283740759369,
+          1.3618587287349926
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 4,
+      "max_extrapolation_distance_in_train_std": 0.17314833417465106,
+      "query_curvature_correction_before_point9_range": [
+        -0.6454615370937059,
+        5.344547857895339
+      ],
+      "max_abs_query_curvature_contribution_to_base": 4.810093072105805,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 124.23928320944289,
+        "calibrated_value": 160.161669956398,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer4",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 11.075140876151128,
+      "quadratic_scale": 1.386414786179467,
+      "curvature": 0.3685667420946112,
+      "quadratic_coefficient_in_z": 0.26584161231449926,
+      "linear_coefficient_in_z": 11.958298346705389,
+      "constant_in_z": 193.36656728156444,
+      "train_orthogonality_max_abs": 2.2204460492503132e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        1.0,
+        1.0000000000000004,
+        2.0
+      ],
+      "condition_number": 2.0,
+      "train_interval": {
+        "input_range": [
+          171.5312070563512,
+          228.33280127123584
+        ],
+        "calibrated_exact_range": [
+          170.22405295763403,
+          233.0216593010996
+        ],
+        "derivative_range": [
+          0.9824530015157181,
+          1.228668260535398
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.32853441101952,
+          219.17008835636727
+        ],
+        "calibrated_exact_range": [
+          171.0087674471937,
+          221.94568336900986
+        ],
+        "derivative_range": [
+          0.9859091397432909,
+          1.1889510701142507
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.5312070563512,
+          228.33280127123584
+        ],
+        "calibrated_exact_range": [
+          170.22405295763403,
+          233.0216593010996
+        ],
+        "derivative_range": [
+          0.9824530015157181,
+          1.228668260535398
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.2782565306438343,
+        0.9743655636638666
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.87692900729748,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -55.11963883143662,
+        "calibrated_value": 58.88715103836722,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer4/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.523663874966674,
+      "quadratic_scale": 1.271614832367319,
+      "curvature": 0.9957701055352919,
+      "quadratic_coefficient_in_z": 0.7830752521826935,
+      "linear_coefficient_in_z": 11.877909417056891,
+      "constant_in_z": 193.35667074383602,
+      "train_orthogonality_max_abs": 3.3358813885450714e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999987,
+        1.0000000000000013,
+        2.0
+      ],
+      "condition_number": 2.0000000000000027,
+      "train_interval": {
+        "input_range": [
+          167.26803646396078,
+          224.03823229996408
+        ],
+        "calibrated_exact_range": [
+          167.9581534734016,
+          233.06125001260023
+        ],
+        "derivative_range": [
+          0.7453713849886731,
+          1.5481946519250356
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.36783663390798,
+          228.33280127123584
+        ],
+        "calibrated_exact_range": [
+          172.7678578157511,
+          239.84048807506218
+        ],
+        "derivative_range": [
+          0.8316325195150102,
+          1.608926869611228
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          167.26803646396078,
+          228.33280127123584
+        ],
+        "calibrated_exact_range": [
+          167.9581534734016,
+          239.84048807506218
+        ],
+        "derivative_range": [
+          0.7453713849886731,
+          1.608926869611228
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 3,
+      "max_extrapolation_distance_in_train_std": 0.40808686236050634,
+      "query_curvature_correction_before_point9_range": [
+        -0.7838066706301455,
+        7.198323457173594
+      ],
+      "max_abs_query_curvature_contribution_to_base": 6.478491111456235,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 114.56044658825013,
+        "calibrated_value": 148.31478884086494,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer4/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.995223766787658,
+      "quadratic_scale": 1.3017634355675003,
+      "curvature": -0.03563998350385465,
+      "quadratic_coefficient_in_z": -0.027378233656038663,
+      "linear_coefficient_in_z": 10.921566344970893,
+      "constant_in_z": 194.09772934633463,
+      "train_orthogonality_max_abs": 1.3343525554180285e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999997,
+        1.0000000000000013,
+        1.9999999999999996
+      ],
+      "condition_number": 2.0000000000000004,
+      "train_interval": {
+        "input_range": [
+          168.4511123081454,
+          220.60333996066953
+        ],
+        "calibrated_exact_range": [
+          165.9377986613841,
+          222.91000901275143
+        ],
+        "derivative_range": [
+          1.0781294075805323,
+          1.1067134233319806
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.43114072727855,
+          226.94179939042996
+        ],
+        "calibrated_exact_range": [
+          170.3382085086597,
+          229.73267851021126
+        ],
+        "derivative_range": [
+          1.0746553733477604,
+          1.1045320170882877
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          168.4511123081454,
+          226.94179939042996
+        ],
+        "calibrated_exact_range": [
+          165.9377986613841,
+          229.73267851021126
+        ],
+        "derivative_range": [
+          1.0746553733477604,
+          1.1067134233319806
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.6341488272450689,
+      "query_curvature_correction_before_point9_range": [
+        -0.24696974828063872,
+        0.0277693953438916
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.22227277345257485,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 2187.6765039254633,
+        "calibrated_value": 1283.2897214792147,
+        "is_global_minimum": false
+      },
+      "real_zero_crossing_raw_inputs": [
+        4351.651141333653,
+        23.7018665172736
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "original/outer4/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.05313925213077,
+      "quadratic_scale": 1.3368784002026677,
+      "curvature": 0.16969368852660097,
+      "quadratic_coefficient_in_z": 0.12693277750682172,
+      "linear_coefficient_in_z": 10.997253440669162,
+      "constant_in_z": 192.56461398852116,
+      "train_orthogonality_max_abs": 2.3657088749022025e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999994,
+        1.0000000000000013,
+        2.0
+      ],
+      "condition_number": 2.0000000000000013,
+      "train_interval": {
+        "input_range": [
+          172.31844485622142,
+          226.3359748983247
+        ],
+        "calibrated_exact_range": [
+          171.14091477918024,
+          231.1761322695107
+        ],
+        "derivative_range": [
+          1.0435594816905744,
+          1.1792455019336963
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.5312070563512,
+          224.5420442086305
+        ],
+        "calibrated_exact_range": [
+          170.32016367192614,
+          229.06468943699758
+        ],
+        "derivative_range": [
+          1.0415820280016315,
+          1.1747393478076769
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.5312070563512,
+          226.3359748983247
+        ],
+        "calibrated_exact_range": [
+          170.32016367192614,
+          231.1761322695107
+        ],
+        "derivative_range": [
+          1.0415820280016315,
+          1.1792455019336963
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.0783076589437828,
+      "query_curvature_correction_before_point9_range": [
+        -0.13002824286376835,
+        1.0462396416399578
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.941615677475962,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -243.1297019162891,
+        "calibrated_value": -45.63151157843512,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [
+        -433.7403835049693,
+        -52.519020327608814
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer0",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.890128751103118,
+      "quadratic_scale": 1.262739373362922,
+      "curvature": 0.5217065809370423,
+      "quadratic_coefficient_in_z": 0.4131546001829622,
+      "linear_coefficient_in_z": 12.262996519008686,
+      "constant_in_z": 193.5532152440809,
+      "train_orthogonality_max_abs": 4.4408920985006264e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999999,
+        1.0000000000000002,
+        2.0
+      ],
+      "condition_number": 2.0000000000000004,
+      "train_interval": {
+        "input_range": [
+          171.74743170548098,
+          227.83783821502752
+        ],
+        "calibrated_exact_range": [
+          170.23730607072835,
+          235.66937337647852
+        ],
+        "derivative_range": [
+          0.9711417326335491,
+          1.361951264102485
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          168.83213913359683,
+          230.13042781504512
+        ],
+        "calibrated_exact_range": [
+          167.43575191296128,
+          238.81007913797387
+        ],
+        "derivative_range": [
+          0.950829451175596,
+          1.3779248667769628
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          168.83213913359683,
+          230.13042781504512
+        ],
+        "calibrated_exact_range": [
+          167.43575191296128,
+          238.81007913797387
+        ],
+        "derivative_range": [
+          0.950829451175596,
+          1.3779248667769628
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.2677004687927906,
+      "query_curvature_correction_before_point9_range": [
+        -0.42223142456412516,
+        3.73170813990664
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.358537325915976,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 32.36563526602822,
+        "calibrated_value": 102.55756642483495,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer0/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.896797312237188,
+      "quadratic_scale": 1.1485521730121693,
+      "curvature": 0.518126678219798,
+      "quadratic_coefficient_in_z": 0.4511128796709074,
+      "linear_coefficient_in_z": 10.67453934531484,
+      "constant_in_z": 192.32856507928304,
+      "train_orthogonality_max_abs": 8.339703471362678e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999997,
+        1.0,
+        2.0
+      ],
+      "condition_number": 2.000000000000001,
+      "train_interval": {
+        "input_range": [
+          170.08500690687302,
+          217.20827965567398
+        ],
+        "calibrated_exact_range": [
+          171.96507431340984,
+          218.3983514859296
+        ],
+        "derivative_range": [
+          0.8063288369027501,
+          1.1643864578536498
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.2408475405734,
+          224.1532233470585
+        ],
+        "calibrated_exact_range": [
+          173.72104794150437,
+          226.6681918351614
+        ],
+        "derivative_range": [
+          0.8227096000251859,
+          1.2171563498989424
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          170.08500690687302,
+          224.1532233470585
+        ],
+        "calibrated_exact_range": [
+          171.96507431340984,
+          226.6681918351614
+        ],
+        "derivative_range": [
+          0.8063288369027501,
+          1.2171563498989424
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 4,
+      "max_extrapolation_distance_in_train_std": 0.6373380629540858,
+      "query_curvature_correction_before_point9_range": [
+        -0.45390095870317937,
+        3.0581416567835498
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.752327491105195,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 63.96562420617013,
+        "calibrated_value": 129.18151510046206,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer0/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 11.210472124836858,
+      "quadratic_scale": 1.2653900568760332,
+      "curvature": 0.28148653827530634,
+      "quadratic_coefficient_in_z": 0.22245041103786925,
+      "linear_coefficient_in_z": 11.975369224558385,
+      "constant_in_z": 193.85702017348294,
+      "train_orthogonality_max_abs": 1.230106262025995e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999991,
+        1.0000000000000002,
+        2.0
+      ],
+      "condition_number": 2.0000000000000018,
+      "train_interval": {
+        "input_range": [
+          168.39518234587425,
+          226.74847450765435
+        ],
+        "calibrated_exact_range": [
+          167.89635893447812,
+          231.01772179861507
+        ],
+        "derivative_range": [
+          0.9784221832480713,
+          1.1849986119021916
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.74743170548098,
+          218.9951651169524
+        ],
+        "calibrated_exact_range": [
+          171.19616513681967,
+          221.9364653448114
+        ],
+        "derivative_range": [
+          0.9902894777058668,
+          1.1575511294235472
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          168.39518234587425,
+          226.74847450765435
+        ],
+        "calibrated_exact_range": [
+          167.89635893447812,
+          231.01772179861507
+        ],
+        "derivative_range": [
+          0.9784221832480713,
+          1.1849986119021916
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.22884465103969887,
+        0.7837316326031473
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.7053584693428325,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -107.9875389966302,
+        "calibrated_value": 32.68686612048984,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer0/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.158672676150713,
+      "quadratic_scale": 1.2450283429596969,
+      "curvature": 0.590248912583032,
+      "quadratic_coefficient_in_z": 0.4740847193726409,
+      "linear_coefficient_in_z": 11.386150035042617,
+      "constant_in_z": 194.56085948889256,
+      "train_orthogonality_max_abs": 6.557578986571018e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999959,
+        1.0000000000000044,
+        2.0
+      ],
+      "condition_number": 2.0000000000000084,
+      "train_interval": {
+        "input_range": [
+          171.35685617307144,
+          222.32256873899516
+        ],
+        "calibrated_exact_range": [
+          170.24119718984934,
+          228.02524261635983
+        ],
+        "derivative_range": [
+          0.8996510947141462,
+          1.3679143926423716
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          175.7192709097663,
+          227.83783821502752
+        ],
+        "calibrated_exact_range": [
+          174.25327344084837,
+          235.70939742530618
+        ],
+        "derivative_range": [
+          0.9397321336850647,
+          1.4185876422407013
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.35685617307144,
+          227.83783821502752
+        ],
+        "calibrated_exact_range": [
+          170.24119718984934,
+          235.70939742530618
+        ],
+        "derivative_range": [
+          0.8996510947141462,
+          1.4185876422407013
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.5429124110850064,
+      "query_curvature_correction_before_point9_range": [
+        -0.478056629590693,
+        4.073116741654819
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.6658050674893374,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 73.4389554841137,
+        "calibrated_value": 126.19522391638338,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer1",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.134657097016412,
+      "quadratic_scale": 1.3417701729544838,
+      "curvature": 0.4669970402085841,
+      "quadratic_coefficient_in_z": 0.348045477252106,
+      "linear_coefficient_in_z": 11.3364738731557,
+      "constant_in_z": 193.2347763049716,
+      "train_orthogonality_max_abs": 8.326672684688674e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999999,
+        1.0000000000000007,
+        2.0
+      ],
+      "condition_number": 2.0000000000000004,
+      "train_interval": {
+        "input_range": [
+          171.66739933869863,
+          228.95706162629085
+        ],
+        "calibrated_exact_range": [
+          170.52515981881658,
+          237.29213764992136
+        ],
+        "derivative_range": [
+          0.9712973591258898,
+          1.3595586859293851
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          174.7342720929159,
+          224.83045355255453
+        ],
+        "calibrated_exact_range": [
+          173.53587723121953,
+          231.73947558784135
+        ],
+        "derivative_range": [
+          0.9920820528584582,
+          1.331591994175053
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.66739933869863,
+          228.95706162629085
+        ],
+        "calibrated_exact_range": [
+          170.52515981881658,
+          237.29213764992136
+        ],
+        "derivative_range": [
+          0.9712973591258898,
+          1.3595586859293851
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.36076905369431345,
+        2.5866037029318063
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.327943332638626,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 28.348212379562426,
+        "calibrated_value": 100.92238591607727,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer1/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.797029487074756,
+      "quadratic_scale": 1.4573471064559458,
+      "curvature": -0.9233807187218429,
+      "quadratic_coefficient_in_z": -0.6336038371581697,
+      "linear_coefficient_in_z": 10.196668328979603,
+      "constant_in_z": 194.63043718278294,
+      "train_orthogonality_max_abs": 1.0925011547485108e-15,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999973,
+        1.0000000000000022,
+        2.0
+      ],
+      "condition_number": 2.0000000000000053,
+      "train_interval": {
+        "input_range": [
+          175.13102660822386,
+          228.53667807772246
+        ],
+        "calibrated_exact_range": [
+          172.11786807724815,
+          222.46405242672702
+        ],
+        "derivative_range": [
+          0.5901663512822589,
+          1.2952589909489065
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.66739933869863,
+          219.94696624107348
+        ],
+        "calibrated_exact_range": [
+          167.5523798993549,
+          216.90762939173806
+        ],
+        "derivative_range": [
+          0.7035727497855658,
+          1.3409878235179788
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.66739933869863,
+          228.53667807772246
+        ],
+        "calibrated_exact_range": [
+          167.5523798993549,
+          222.46405242672702
+        ],
+        "derivative_range": [
+          0.5901663512822589,
+          1.3409878235179788
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 7,
+      "max_extrapolation_distance_in_train_std": 0.35353851635281947,
+      "query_curvature_correction_before_point9_range": [
+        -3.7966739752392678,
+        0.7092424625856504
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.417006577715341,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 273.2374970800413,
+        "calibrated_value": 235.65451205169057,
+        "is_global_minimum": false
+      },
+      "real_zero_crossing_raw_inputs": [
+        462.1772728530192,
+        84.29772130706333
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer1/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.725756309277848,
+      "quadratic_scale": 1.2855382754317923,
+      "curvature": 0.31819367709889634,
+      "quadratic_coefficient_in_z": 0.2475178555006618,
+      "linear_coefficient_in_z": 11.345003716271087,
+      "constant_in_z": 193.53568520895894,
+      "train_orthogonality_max_abs": 7.609979417618444e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999951,
+        1.0000000000000049,
+        2.0
+      ],
+      "condition_number": 2.0000000000000098,
+      "train_interval": {
+        "input_range": [
+          169.02787475005087,
+          225.0815677134503
+        ],
+        "calibrated_exact_range": [
+          168.4953537247086,
+          228.5301754591724
+        ],
+        "derivative_range": [
+          0.950421375765598,
+          1.19162559957513
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.89889586053664,
+          228.95706162629085
+        ],
+        "calibrated_exact_range": [
+          173.17592571745405,
+          233.1806282643722
+        ],
+        "derivative_range": [
+          0.9713818300015344,
+          1.208302208228473
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          169.02787475005087,
+          228.95706162629085
+        ],
+        "calibrated_exact_range": [
+          168.4953537247086,
+          233.1806282643722
+        ],
+        "derivative_range": [
+          0.950421375765598,
+          1.208302208228473
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.3613259336768832,
+      "query_curvature_correction_before_point9_range": [
+        -0.24999689158320013,
+        2.2250417077095457
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.002537536938591,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -51.84150780721768,
+        "calibrated_value": 63.53586250741989,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer1/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.751393967521235,
+      "quadratic_scale": 1.2090228175389794,
+      "curvature": 0.5568267792861459,
+      "quadratic_coefficient_in_z": 0.46055936348628385,
+      "linear_coefficient_in_z": 10.603089291815294,
+      "constant_in_z": 192.51074056770628,
+      "train_orthogonality_max_abs": 1.0168397795632275e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999994,
+        1.0,
+        2.0
+      ],
+      "condition_number": 2.0000000000000013,
+      "train_interval": {
+        "input_range": [
+          172.00491727236437,
+          219.0867906466793
+        ],
+        "calibrated_exact_range": [
+          171.82696333723806,
+          224.18731189891267
+        ],
+        "derivative_range": [
+          0.8840753548274671,
+          1.3401500129863513
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          175.31296500416806,
+          218.81142324143477
+        ],
+        "calibrated_exact_range": [
+          174.80452923515386,
+          223.8186455302809
+        ],
+        "derivative_range": [
+          0.9161198898114704,
+          1.3374825724999344
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          172.00491727236437,
+          219.0867906466793
+        ],
+        "calibrated_exact_range": [
+          171.82696333723806,
+          224.18731189891267
+        ],
+        "derivative_range": [
+          0.8840753548274671,
+          1.3401500129863513
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.4626642781535463,
+        2.595097734244116
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.3355879608197045,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 80.73932475431069,
+        "calibrated_value": 131.48413279276937,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer2",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.666847721905187,
+      "quadratic_scale": 1.2323219254905542,
+      "curvature": 0.4282390216690161,
+      "quadratic_coefficient_in_z": 0.3475058041335633,
+      "linear_coefficient_in_z": 12.214320934614925,
+      "constant_in_z": 194.34524412352752,
+      "train_orthogonality_max_abs": 1.7763568394002506e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999981,
+        1.0000000000000027,
+        2.0
+      ],
+      "condition_number": 2.000000000000004,
+      "train_interval": {
+        "input_range": [
+          170.0640098017177,
+          222.96759350177678
+        ],
+        "calibrated_exact_range": [
+          168.24137265768326,
+          229.4885924604524
+        ],
+        "derivative_range": [
+          0.9961387081391905,
+          1.319289303317083
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.09812038584468,
+          232.8067633149193
+        ],
+        "calibrated_exact_range": [
+          170.28026580185215,
+          242.76497362377197
+        ],
+        "derivative_range": [
+          1.0085636517809111,
+          1.3793898363773753
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          170.0640098017177,
+          232.8067633149193
+        ],
+        "calibrated_exact_range": [
+          168.24137265768326,
+          242.76497362377197
+        ],
+        "derivative_range": [
+          0.9961387081391905,
+          1.3793898363773753
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.9224065131198068,
+      "query_curvature_correction_before_point9_range": [
+        -0.3499497125758218,
+        3.9358087661394343
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.542227889525491,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 6.984293071195339,
+        "calibrated_value": 87.0163634838594,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer2/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.954149780387398,
+      "quadratic_scale": 1.204000200596593,
+      "curvature": -0.3209668000208382,
+      "quadratic_coefficient_in_z": -0.26658367653244264,
+      "linear_coefficient_in_z": 11.343540670288425,
+      "constant_in_z": 196.11482288136014,
+      "train_orthogonality_max_abs": 1.5428451422020956e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999962,
+        1.0000000000000036,
+        2.0
+      ],
+      "condition_number": 2.0000000000000075,
+      "train_interval": {
+        "input_range": [
+          173.38564397190373,
+          221.56802769212084
+        ],
+        "calibrated_exact_range": [
+          169.30240728485504,
+          223.7583832449951
+        ],
+        "derivative_range": [
+          1.0005727237126485,
+          1.259837482488527
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.78965642654063,
+          221.83000353117842
+        ],
+        "calibrated_exact_range": [
+          169.81095816674795,
+          224.02032447451725
+        ],
+        "derivative_range": [
+          0.9991630569947714,
+          1.2576635304441008
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          173.38564397190373,
+          221.83000353117842
+        ],
+        "calibrated_exact_range": [
+          169.30240728485504,
+          224.02032447451725
+        ],
+        "derivative_range": [
+          0.9991630569947714,
+          1.259837482488527
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.02631825367684876,
+      "query_curvature_correction_before_point9_range": [
+        -1.5361780219700436,
+        0.26662803943637503
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.3825602197730393,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 407.5168590779581,
+        "calibrated_value": 316.78604759045066,
+        "is_global_minimum": false
+      },
+      "real_zero_crossing_raw_inputs": [
+        750.6561246809179,
+        64.3775934749984
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer2/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.44393176646865,
+      "quadratic_scale": 1.2301724983903333,
+      "curvature": 0.47296798910241084,
+      "quadratic_coefficient_in_z": 0.38447290093160436,
+      "linear_coefficient_in_z": 12.185457351914772,
+      "constant_in_z": 193.67478413464474,
+      "train_orthogonality_max_abs": 2.251719937267923e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.999999999999999,
+        1.0000000000000004,
+        2.0
+      ],
+      "condition_number": 2.000000000000002,
+      "train_interval": {
+        "input_range": [
+          171.71515595546256,
+          221.71397631012553
+        ],
+        "calibrated_exact_range": [
+          169.27663927035724,
+          228.5179595698273
+        ],
+        "derivative_range": [
+          1.0086172183127387,
+          1.3610915019829046
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          170.0640098017177,
+          222.96759350177678
+        ],
+        "calibrated_exact_range": [
+          167.6208745051235,
+          230.22978673779173
+        ],
+        "derivative_range": [
+          0.9969772125356486,
+          1.3699290669192277
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          170.0640098017177,
+          222.96759350177678
+        ],
+        "calibrated_exact_range": [
+          167.6208745051235,
+          230.22978673779173
+        ],
+        "derivative_range": [
+          0.9969772125356486,
+          1.3699290669192277
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.15809622186981734,
+      "query_curvature_correction_before_point9_range": [
+        -0.3972909859234868,
+        2.1480099688618512
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.9332089719756662,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 28.64182141333481,
+        "calibrated_value": 97.12352492005283,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer2/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.330843147988567,
+      "quadratic_scale": 1.3212111460844997,
+      "curvature": 0.6149550992078656,
+      "quadratic_coefficient_in_z": 0.4654480103580169,
+      "linear_coefficient_in_z": 10.990891117864278,
+      "constant_in_z": 193.70774476766547,
+      "train_orthogonality_max_abs": 9.130806183833063e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999993,
+        1.0000000000000007,
+        2.0
+      ],
+      "condition_number": 2.0000000000000013,
+      "train_interval": {
+        "input_range": [
+          169.2749368722312,
+          223.77517694554325
+        ],
+        "calibrated_exact_range": [
+          169.69713255234143,
+          228.6708662413829
+        ],
+        "derivative_range": [
+          0.8443991242508989,
+          1.3197650559329603
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.31568113091237,
+          221.74216361901364
+        ],
+        "calibrated_exact_range": [
+          171.4384977666269,
+          226.00579149484344
+        ],
+        "derivative_range": [
+          0.8621990512704468,
+          1.3020325602083949
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          169.2749368722312,
+          223.77517694554325
+        ],
+        "calibrated_exact_range": [
+          169.69713255234143,
+          228.6708662413829
+        ],
+        "derivative_range": [
+          0.8443991242508989,
+          1.3197650559329603
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.4686517693481247,
+        2.5801122206333766
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.322100998570039,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 72.46540147593373,
+        "calibrated_value": 128.82418909845646,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer3",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.750514682078713,
+      "quadratic_scale": 1.2981007577093175,
+      "curvature": 0.8092804445499077,
+      "quadratic_coefficient_in_z": 0.6234342286171972,
+      "linear_coefficient_in_z": 12.387410193684422,
+      "constant_in_z": 193.9239065413117,
+      "train_orthogonality_max_abs": 4.579669976578771e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999986,
+        1.0000000000000016,
+        2.0
+      ],
+      "condition_number": 2.000000000000003,
+      "train_interval": {
+        "input_range": [
+          171.12850111400965,
+          233.5302155912098
+        ],
+        "calibrated_exact_range": [
+          169.56280746496935,
+          246.4537807132799
+        ],
+        "derivative_range": [
+          0.8955820108065924,
+          1.5688045494826888
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          169.7619895252653,
+          226.4096526274248
+        ],
+        "calibrated_exact_range": [
+          168.34905726699463,
+          235.55651132038514
+        ],
+        "derivative_range": [
+          0.8808393645730357,
+          1.491984168577388
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          169.7619895252653,
+          233.5302155912098
+        ],
+        "calibrated_exact_range": [
+          168.34905726699463,
+          246.4537807132799
+        ],
+        "derivative_range": [
+          0.8808393645730357,
+          1.5688045494826888
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.1271112713349755,
+      "query_curvature_correction_before_point9_range": [
+        -0.6455289140570781,
+        4.031629874056296
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.6284668866506666,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 88.11605022493178,
+        "calibrated_value": 132.39057862035742,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer3/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.353985223362935,
+      "quadratic_scale": 1.2303704626491005,
+      "curvature": 0.9407406950397494,
+      "quadratic_coefficient_in_z": 0.7645995442821737,
+      "linear_coefficient_in_z": 11.138328005640842,
+      "constant_in_z": 192.57117632652628,
+      "train_orthogonality_max_abs": 5.003822082817607e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999993,
+        1.0000000000000004,
+        2.0
+      ],
+      "condition_number": 2.0000000000000013,
+      "train_interval": {
+        "input_range": [
+          170.41845687554368,
+          221.40597741422022
+        ],
+        "calibrated_exact_range": [
+          172.03620335706006,
+          229.12016642944437
+        ],
+        "derivative_range": [
+          0.7559179706964334,
+          1.4832167222362553
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          176.30528215605574,
+          221.59217238349902
+        ],
+        "calibrated_exact_range": [
+          176.7333221179144,
+          229.39658118202937
+        ],
+        "derivative_range": [
+          0.8398891195543537,
+          1.4858726538695017
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          170.41845687554368,
+          221.59217238349902
+        ],
+        "calibrated_exact_range": [
+          172.03620335706006,
+          229.39658118202937
+        ],
+        "derivative_range": [
+          0.7559179706964334,
+          1.4858726538695017
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.01798292785454896,
+      "query_curvature_correction_before_point9_range": [
+        -0.7699925077598125,
+        4.774570318982963
+      ],
+      "max_abs_query_curvature_contribution_to_base": 4.2971132870846676,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 117.42457647242469,
+        "calibrated_value": 152.00669009023244,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer3/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.358070412494794,
+      "quadratic_scale": 1.174589375532616,
+      "curvature": 0.8530437342490476,
+      "quadratic_coefficient_in_z": 0.7262484677781424,
+      "linear_coefficient_in_z": 10.523450753563866,
+      "constant_in_z": 194.45366334236815,
+      "train_orthogonality_max_abs": 7.50573312422641e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999987,
+        1.0000000000000013,
+        2.0
+      ],
+      "condition_number": 2.0000000000000027,
+      "train_interval": {
+        "input_range": [
+          171.71236295276077,
+          224.61952619198917
+        ],
+        "calibrated_exact_range": [
+          174.58324757482274,
+          230.72330778995294
+        ],
+        "derivative_range": [
+          0.7029740306158598,
+          1.419236149555159
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.12850111400965,
+          222.38529104383073
+        ],
+        "calibrated_exact_range": [
+          174.17511539650147,
+          227.58619027380064
+        ],
+        "derivative_range": [
+          0.6950696544938455,
+          1.3889888653794302
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.12850111400965,
+          224.61952619198917
+        ],
+        "calibrated_exact_range": [
+          174.17511539650147,
+          230.72330778995294
+        ],
+        "derivative_range": [
+          0.6950696544938455,
+          1.419236149555159
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.05636781905313317,
+      "query_curvature_correction_before_point9_range": [
+        -0.7293540190761995,
+        4.155794581182304
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.740215123064074,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 119.78673292529375,
+        "calibrated_value": 156.33206285848453,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer3/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.127101990760137,
+      "quadratic_scale": 1.3324488532533583,
+      "curvature": 0.9884003356643543,
+      "quadratic_coefficient_in_z": 0.7417923271508982,
+      "linear_coefficient_in_z": 11.211134807417974,
+      "constant_in_z": 194.3818367229012,
+      "train_orthogonality_max_abs": 8.010207243089915e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999953,
+        1.0000000000000047,
+        2.0
+      ],
+      "condition_number": 2.0000000000000093,
+      "train_interval": {
+        "input_range": [
+          169.88289815598557,
+          224.1961020353863
+        ],
+        "calibrated_exact_range": [
+          170.99908246435837,
+          232.58028943932132
+        ],
+        "derivative_range": [
+          0.7409749768354675,
+          1.5266580323201104
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          177.56678534126132,
+          233.5302155912098
+        ],
+        "calibrated_exact_range": [
+          177.11969587637785,
+          247.46045946173587
+        ],
+        "derivative_range": [
+          0.8521284262827101,
+          1.661683299381578
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          169.88289815598557,
+          233.5302155912098
+        ],
+        "calibrated_exact_range": [
+          170.99908246435837,
+          247.46045946173587
+        ],
+        "derivative_range": [
+          0.7409749768354675,
+          1.661683299381578
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.9216964107145218,
+      "query_curvature_correction_before_point9_range": [
+        -0.7521855735344241,
+        9.210276898964043
+      ],
+      "max_abs_query_curvature_contribution_to_base": 8.28924920906764,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 118.66030310896076,
+        "calibrated_value": 152.02175187514752,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer4",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.717120233695573,
+      "quadratic_scale": 1.3786212180817572,
+      "curvature": 0.2963997750228313,
+      "quadratic_coefficient_in_z": 0.2149972531506865,
+      "linear_coefficient_in_z": 11.67517782821587,
+      "constant_in_z": 193.37951171981433,
+      "train_orthogonality_max_abs": 1.7486012637846215e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999996,
+        1.0000000000000004,
+        2.0
+      ],
+      "condition_number": 2.000000000000001,
+      "train_interval": {
+        "input_range": [
+          169.74738312479946,
+          228.50819913418601
+        ],
+        "calibrated_exact_range": [
+          168.11094728213732,
+          233.2639867178811
+        ],
+        "derivative_range": [
+          0.9987909083453536,
+          1.2187766429744287
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          178.015722868187,
+          221.5299597517058
+        ],
+        "calibrated_exact_range": [
+          176.49726136599799,
+          224.8502240174939
+        ],
+        "derivative_range": [
+          1.0297454953667682,
+          1.1926518676355833
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          169.74738312479946,
+          228.50819913418601
+        ],
+        "calibrated_exact_range": [
+          168.11094728213732,
+          233.2639867178811
+        ],
+        "derivative_range": [
+          0.9987909083453536,
+          1.2187766429744287
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.22522202165290847,
+        0.9666159589402074
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.8699543630461867,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -97.04159251531675,
+        "calibrated_value": 34.877745624078244,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer4/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.970739838468129,
+      "quadratic_scale": 1.4476041330059706,
+      "curvature": 0.06458012762457829,
+      "quadratic_coefficient_in_z": 0.04461173200056893,
+      "linear_coefficient_in_z": 11.699925161274356,
+      "constant_in_z": 192.74994416208187,
+      "train_orthogonality_max_abs": 1.0508026373916974e-15,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999964,
+        1.000000000000003,
+        1.9999999999999996
+      ],
+      "condition_number": 2.0000000000000067,
+      "train_interval": {
+        "input_range": [
+          166.45281112703003,
+          226.71912248619844
+        ],
+        "calibrated_exact_range": [
+          164.6277560188309,
+          229.0568987114014
+        ],
+        "derivative_range": [
+          1.0467355462958203,
+          1.091412325691663
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          174.03230262157854,
+          228.50819913418601
+        ],
+        "calibrated_exact_range": [
+          172.5827731959935,
+          231.0107054275718
+        ],
+        "derivative_range": [
+          1.0523543947336564,
+          1.0927386086667075
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          166.45281112703003,
+          228.50819913418601
+        ],
+        "calibrated_exact_range": [
+          164.6277560188309,
+          231.0107054275718
+        ],
+        "derivative_range": [
+          1.0467355462958203,
+          1.0927386086667075
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.16307711916695894,
+      "query_curvature_correction_before_point9_range": [
+        -0.04677594162177859,
+        0.3573322682849077
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.32159904145641693,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -1245.5310247007426,
+        "calibrated_value": -574.3590798591949,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [
+        -2490.3411709404318,
+        -0.7208784610539851
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer4/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.914465206735992,
+      "quadratic_scale": 1.1846264126198567,
+      "curvature": 0.8070201695846714,
+      "quadratic_coefficient_in_z": 0.6812444505605008,
+      "linear_coefficient_in_z": 11.990720968357394,
+      "constant_in_z": 193.75026902972357,
+      "train_orthogonality_max_abs": 3.127388801761004e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999993,
+        1.0000000000000009,
+        2.0
+      ],
+      "condition_number": 2.0000000000000013,
+      "train_interval": {
+        "input_range": [
+          173.22301895918574,
+          222.84037606953623
+        ],
+        "calibrated_exact_range": [
+          172.8139391211281,
+          229.2284254679735
+        ],
+        "derivative_range": [
+          0.8532436923264468,
+          1.4207382217597015
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.6396139324509,
+          225.9438062505114
+        ],
+        "calibrated_exact_range": [
+          171.47724655569118,
+          233.69266583329352
+        ],
+        "derivative_range": [
+          0.8351336247436314,
+          1.456233454733609
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.6396139324509,
+          225.9438062505114
+        ],
+        "calibrated_exact_range": [
+          171.47724655569118,
+          233.69266583329352
+        ],
+        "derivative_range": [
+          0.8351336247436314,
+          1.456233454733609
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.2843410210387435,
+      "query_curvature_correction_before_point9_range": [
+        -0.7082823184464282,
+        4.13206927931888
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.7188623513869916,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 98.62195271349854,
+        "calibrated_value": 140.9874945136481,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261031/outer4/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.52597865454837,
+      "quadratic_scale": 1.2451115564877653,
+      "curvature": 0.4914948996072752,
+      "quadratic_coefficient_in_z": 0.39473964966937863,
+      "linear_coefficient_in_z": 10.71522306222375,
+      "constant_in_z": 193.1628910323753,
+      "train_orthogonality_max_abs": 6.640586315514955e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999996,
+        1.0000000000000004,
+        2.0
+      ],
+      "condition_number": 2.000000000000001,
+      "train_interval": {
+        "input_range": [
+          171.4634394727813,
+          221.301688079296
+        ],
+        "calibrated_exact_range": [
+          172.0411297187747,
+          223.62584863624554
+        ],
+        "derivative_range": [
+          0.8574813734569472,
+          1.212604167660074
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          169.74738312479946,
+          221.62860652214601
+        ],
+        "calibrated_exact_range": [
+          170.5801351371914,
+          224.02265207419686
+        ],
+        "derivative_range": [
+          0.8452536017686446,
+          1.214933627345105
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          169.74738312479946,
+          221.62860652214601
+        ],
+        "calibrated_exact_range": [
+          170.5801351371914,
+          224.02265207419686
+        ],
+        "derivative_range": [
+          0.8452536017686446,
+          1.214933627345105
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.1630305745718295,
+      "query_curvature_correction_before_point9_range": [
+        -0.39694513497543793,
+        2.172282324847855
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.9550540923630695,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 51.12374130809857,
+        "calibrated_value": 120.44660488695139,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer0",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 11.225235388993307,
+      "quadratic_scale": 1.2654796932696448,
+      "curvature": 0.8018583903936622,
+      "quadratic_coefficient_in_z": 0.6336398716299311,
+      "linear_coefficient_in_z": 12.623962122527663,
+      "constant_in_z": 193.59553835182996,
+      "train_orthogonality_max_abs": 6.022959908591474e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999984,
+        1.0000000000000016,
+        2.0
+      ],
+      "condition_number": 2.000000000000003,
+      "train_interval": {
+        "input_range": [
+          171.68875666399515,
+          226.10653705486624
+        ],
+        "calibrated_exact_range": [
+          170.81435334087394,
+          234.57584256735362
+        ],
+        "derivative_range": [
+          0.8980551518514366,
+          1.4453513145091812
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          168.45386007493238,
+          223.06158574158124
+        ],
+        "calibrated_exact_range": [
+          167.96186040374343,
+          230.2214424803397
+        ],
+        "derivative_range": [
+          0.8655208133122322,
+          1.4147273133597313
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          168.45386007493238,
+          226.10653705486624
+        ],
+        "calibrated_exact_range": [
+          167.96186040374343,
+          234.57584256735362
+        ],
+        "derivative_range": [
+          0.8655208133122322,
+          1.4453513145091812
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.28818073536655525,
+      "query_curvature_correction_before_point9_range": [
+        -0.6691899209957087,
+        3.3934677407641893
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.0541209666877704,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 82.39493118745297,
+        "calibrated_value": 130.71896334200807,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer0/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.272948456230155,
+      "quadratic_scale": 1.2279884448514957,
+      "curvature": 0.5400055395124072,
+      "quadratic_coefficient_in_z": 0.4397480625949307,
+      "linear_coefficient_in_z": 11.467024679409583,
+      "constant_in_z": 193.74844981047394,
+      "train_orthogonality_max_abs": 4.169851735681339e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999989,
+        1.0000000000000002,
+        1.9999999999999998
+      ],
+      "condition_number": 2.000000000000002,
+      "train_interval": {
+        "input_range": [
+          171.06327620550408,
+          219.3766947686363
+        ],
+        "calibrated_exact_range": [
+          169.8663998292504,
+          224.08106679633477
+        ],
+        "derivative_range": [
+          0.9208276421985094,
+          1.323462601773394
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.68875666399515,
+          226.10653705486624
+        ],
+        "calibrated_exact_range": [
+          170.4439897262832,
+          233.1764837949571
+        ],
+        "derivative_range": [
+          0.9260402789070948,
+          1.3795478438748354
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.06327620550408,
+          226.10653705486624
+        ],
+        "calibrated_exact_range": [
+          169.8663998292504,
+          233.1764837949571
+        ],
+        "derivative_range": [
+          0.9208276421985094,
+          1.3795478438748354
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 3,
+      "max_extrapolation_distance_in_train_std": 0.6551032855760649,
+      "query_curvature_correction_before_point9_range": [
+        -0.4398221711358508,
+        3.6762366375265305
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.3086129737738776,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 60.57030920380359,
+        "calibrated_value": 118.99391068740366,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer0/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.476292928242707,
+      "quadratic_scale": 1.3424085685283103,
+      "curvature": 0.90667598126159,
+      "quadratic_coefficient_in_z": 0.6754098584573128,
+      "linear_coefficient_in_z": 12.231108982733085,
+      "constant_in_z": 194.077897642189,
+      "train_orthogonality_max_abs": 1.4219194418673367e-15,
+      "penalized_normal_matrix_eigenvalues": [
+        0.999999999999996,
+        1.000000000000004,
+        2.0
+      ],
+      "condition_number": 2.000000000000008,
+      "train_interval": {
+        "input_range": [
+          174.4541487947386,
+          233.15143088643907
+        ],
+        "calibrated_exact_range": [
+          172.87452817182748,
+          247.91016085595578
+        ],
+        "derivative_range": [
+          0.9171307413344086,
+          1.63956796805057
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.2598988354419,
+          226.03327197033633
+        ],
+        "calibrated_exact_range": [
+          170.89174358026185,
+          236.55126367397608
+        ],
+        "derivative_range": [
+          0.8901242463345237,
+          1.5519587499842145
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          172.2598988354419,
+          233.15143088643907
+        ],
+        "calibrated_exact_range": [
+          170.89174358026185,
+          247.91016085595578
+        ],
+        "derivative_range": [
+          0.8901242463345237,
+          1.63956796805057
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.20944908416805288,
+      "query_curvature_correction_before_point9_range": [
+        -0.7211481094798572,
+        4.280878825096204
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.852790942586584,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 99.93821876193218,
+        "calibrated_value": 138.70410309572213,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer0/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.808190220089857,
+      "quadratic_scale": 1.3041035173112627,
+      "curvature": 0.7407916228842857,
+      "quadratic_coefficient_in_z": 0.5680466412755437,
+      "linear_coefficient_in_z": 12.140594527911233,
+      "constant_in_z": 193.1802403606543,
+      "train_orthogonality_max_abs": 1.0790952762711802e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999989,
+        1.0000000000000002,
+        2.0
+      ],
+      "condition_number": 2.000000000000002,
+      "train_interval": {
+        "input_range": [
+          171.72872270461116,
+          225.71105251872908
+        ],
+        "calibrated_exact_range": [
+          170.8184770336331,
+          234.07411036132078
+        ],
+        "derivative_range": [
+          0.9092838411326224,
+          1.4342842688582345
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.4841585601196,
+          222.30225146920657
+        ],
+        "calibrated_exact_range": [
+          171.50815771547695,
+          229.24142492055378
+        ],
+        "derivative_range": [
+          0.9166307664807289,
+          1.4011322723587651
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.72872270461116,
+          225.71105251872908
+        ],
+        "calibrated_exact_range": [
+          170.8184770336331,
+          234.07411036132078
+        ],
+        "derivative_range": [
+          0.9092838411326224,
+          1.4342842688582345
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.5786933768734103,
+        2.987730963336866
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.6889578670031793,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 78.23306514997904,
+        "calibrated_value": 128.311431718385,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer1",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 11.532642090021444,
+      "quadratic_scale": 1.31633540694371,
+      "curvature": 0.33067000840699645,
+      "quadratic_coefficient_in_z": 0.25120497911299955,
+      "linear_coefficient_in_z": 12.470177338305563,
+      "constant_in_z": 193.50260853661322,
+      "train_orthogonality_max_abs": 1.249000902703301e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999996,
+        1.0000000000000009,
+        1.9999999999999996
+      ],
+      "condition_number": 2.0000000000000004,
+      "train_interval": {
+        "input_range": [
+          165.33945961324315,
+          228.73949352123657
+        ],
+        "calibrated_exact_range": [
+          164.36712865120137,
+          233.72380137518167
+        ],
+        "derivative_range": [
+          0.9742074942764325,
+          1.2136989924813246
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          174.0346278573649,
+          216.21952219796714
+        ],
+        "calibrated_exact_range": [
+          172.98082618821445,
+          218.82438312303876
+        ],
+        "derivative_range": [
+          1.007053200210129,
+          1.1664052214078986
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          165.33945961324315,
+          228.73949352123657
+        ],
+        "calibrated_exact_range": [
+          164.36712865120137,
+          233.72380137518167
+        ],
+        "derivative_range": [
+          0.9742074942764325,
+          1.2136989924813246
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.2605729980916841,
+        0.6436941752208213
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.5793247576987391,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -92.56025137234474,
+        "calibrated_value": 38.74321304425851,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer1/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 11.346370102923437,
+      "quadratic_scale": 1.26444675474093,
+      "curvature": 0.36260518250038476,
+      "quadratic_coefficient_in_z": 0.28676983126480343,
+      "linear_coefficient_in_z": 12.0185745596008,
+      "constant_in_z": 194.53220153061827,
+      "train_orthogonality_max_abs": 2.027590406475051e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999979,
+        1.0000000000000013,
+        2.0
+      ],
+      "condition_number": 2.0000000000000044,
+      "train_interval": {
+        "input_range": [
+          168.38887775474467,
+          227.42694933302772
+        ],
+        "calibrated_exact_range": [
+          167.75427332350662,
+          231.00792353447193
+        ],
+        "derivative_range": [
+          0.9398965426417762,
+          1.202912276141964
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          170.18608843318566,
+          219.55751478500565
+        ],
+        "calibrated_exact_range": [
+          169.45066020709714,
+          221.6796293204304
+        ],
+        "derivative_range": [
+          0.9479031504493798,
+          1.1678537953253054
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          168.38887775474467,
+          227.42694933302772
+        ],
+        "calibrated_exact_range": [
+          167.75427332350662,
+          231.00792353447193
+        ],
+        "derivative_range": [
+          0.9398965426417762,
+          1.202912276141964
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.290098502345789,
+        1.2408609697701383
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.1167748727931244,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -42.58587505648353,
+        "calibrated_value": 68.60705294751826,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer1/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.788192431971808,
+      "quadratic_scale": 1.2096992634210297,
+      "curvature": -0.2212638338722532,
+      "quadratic_coefficient_in_z": -0.18290813308964002,
+      "linear_coefficient_in_z": 10.699448323082487,
+      "constant_in_z": 193.98710715025416,
+      "train_orthogonality_max_abs": 4.586836909249473e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999987,
+        1.0000000000000013,
+        1.9999999999999996
+      ],
+      "condition_number": 2.000000000000002,
+      "train_interval": {
+        "input_range": [
+          170.9212287615793,
+          225.6215725671246
+        ],
+        "calibrated_exact_range": [
+          170.29332370987288,
+          223.8041081137481
+        ],
+        "derivative_range": [
+          0.8922873650781794,
+          1.0642189630758507
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          169.07606535504863,
+          228.73949352123657
+        ],
+        "calibrated_exact_range": [
+          168.32431518781627,
+          226.57091160950037
+        ],
+        "derivative_range": [
+          0.8824872597264367,
+          1.0700185956006372
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          169.07606535504863,
+          228.73949352123657
+        ],
+        "calibrated_exact_range": [
+          168.32431518781627,
+          226.57091160950037
+        ],
+        "derivative_range": [
+          0.8824872597264367,
+          1.0700185956006372
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 3,
+      "max_extrapolation_distance_in_train_std": 0.28901235992711183,
+      "query_curvature_correction_before_point9_range": [
+        -1.623013948196139,
+        0.18406867809395866
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.460712553376525,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 509.50438533422073,
+        "calibrated_value": 350.4566316112153,
+        "is_global_minimum": false
+      },
+      "real_zero_crossing_raw_inputs": [
+        981.7297571290737,
+        37.27901353936775
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer1/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.022023737416704,
+      "quadratic_scale": 1.2645421095526552,
+      "curvature": 0.6435168817889123,
+      "quadratic_coefficient_in_z": 0.508893200888789,
+      "linear_coefficient_in_z": 11.146666462945356,
+      "constant_in_z": 192.13458978662356,
+      "train_orthogonality_max_abs": 4.627658588624485e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999974,
+        1.0000000000000018,
+        1.9999999999999998
+      ],
+      "condition_number": 2.000000000000005,
+      "train_interval": {
+        "input_range": [
+          172.66881001338805,
+          219.52400764244135
+        ],
+        "calibrated_exact_range": [
+          171.82546900020566,
+          225.5182739264571
+        ],
+        "derivative_range": [
+          0.9085345104687597,
+          1.3833266978151388
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          165.33945961324315,
+          228.41958631565333
+        ],
+        "calibrated_exact_range": [
+          165.43867530267286,
+          238.22469138213742
+        ],
+        "derivative_range": [
+          0.8342648779754143,
+          1.4734672045184385
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          165.33945961324315,
+          228.41958631565333
+        ],
+        "calibrated_exact_range": [
+          165.43867530267286,
+          238.22469138213742
+        ],
+        "derivative_range": [
+          0.8342648779754143,
+          1.4734672045184385
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 3,
+      "max_extrapolation_distance_in_train_std": 0.8876030337067359,
+      "query_curvature_correction_before_point9_range": [
+        -0.5177597739448144,
+        5.41818756197074
+      ],
+      "max_abs_query_curvature_contribution_to_base": 4.876368805773666,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 83.00944919123366,
+        "calibrated_value": 131.09615725345668,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer2",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.414368201220483,
+      "quadratic_scale": 1.3045495118729364,
+      "curvature": 0.5912670150106014,
+      "quadratic_coefficient_in_z": 0.45323462975485057,
+      "linear_coefficient_in_z": 11.373485355663206,
+      "constant_in_z": 194.15828087100462,
+      "train_orthogonality_max_abs": 6.716849298982197e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999967,
+        1.0000000000000027,
+        1.9999999999999996
+      ],
+      "condition_number": 2.000000000000006,
+      "train_interval": {
+        "input_range": [
+          172.20886482421884,
+          224.6550984127988
+        ],
+        "calibrated_exact_range": [
+          172.0846913675562,
+          231.17828991661685
+        ],
+        "derivative_range": [
+          0.9075811106081594,
+          1.345911447603996
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          175.66659299725552,
+          221.88808726786803
+        ],
+        "calibrated_exact_range": [
+          175.27282204072375,
+          227.48613271491524
+        ],
+        "derivative_range": [
+          0.9364797950631132,
+          1.322785574788358
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          172.20886482421884,
+          224.6550984127988
+        ],
+        "calibrated_exact_range": [
+          172.0846913675562,
+          231.17828991661685
+        ],
+        "derivative_range": [
+          0.9075811106081594,
+          1.345911447603996
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.46484534518302,
+        2.3341035759291673
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.1006932183362506,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 63.61676678745786,
+        "calibrated_value": 122.80662289781937,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer2/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 11.949189861439853,
+      "quadratic_scale": 1.2809121877077958,
+      "curvature": 0.6979047636916735,
+      "quadratic_coefficient_in_z": 0.544849811243174,
+      "linear_coefficient_in_z": 12.759411266265515,
+      "constant_in_z": 194.60788047848771,
+      "train_orthogonality_max_abs": 3.6694695273995786e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999992,
+        1.0000000000000016,
+        2.0
+      ],
+      "condition_number": 2.0000000000000018,
+      "train_interval": {
+        "input_range": [
+          167.1646873255715,
+          228.55192112824966
+        ],
+        "calibrated_exact_range": [
+          167.37780466583936,
+          234.01180283910648
+        ],
+        "derivative_range": [
+          0.8512208515458921,
+          1.3197190669216525
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.20886482421884,
+          223.75507581964897
+        ],
+        "calibrated_exact_range": [
+          171.76860509557167,
+          227.76911801913997
+        ],
+        "derivative_range": [
+          0.8897172621147579,
+          1.2831102587493095
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          167.1646873255715,
+          228.55192112824966
+        ],
+        "calibrated_exact_range": [
+          167.37780466583936,
+          234.01180283910648
+        ],
+        "derivative_range": [
+          0.8512208515458921,
+          1.3197190669216525
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.5608899895542502,
+        2.050693644538573
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.8456242800847158,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 55.62937786947907,
+        "calibrated_value": 119.90721411951458,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer2/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.565084958611912,
+      "quadratic_scale": 1.2785746338800312,
+      "curvature": 0.2561995729254455,
+      "quadratic_coefficient_in_z": 0.20037905190404764,
+      "linear_coefficient_in_z": 11.26880655355648,
+      "constant_in_z": 195.21946510535076,
+      "train_orthogonality_max_abs": 4.1281532183245257e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999989,
+        1.0000000000000009,
+        2.0
+      ],
+      "condition_number": 2.000000000000002,
+      "train_interval": {
+        "input_range": [
+          174.59738080009134,
+          225.96814987105142
+        ],
+        "calibrated_exact_range": [
+          173.79750546456552,
+          229.48859586233317
+        ],
+        "derivative_range": [
+          0.99188134946166,
+          1.1763201941375714
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.36431790459457,
+          222.47381907908542
+        ],
+        "calibrated_exact_range": [
+          171.59152378244343,
+          225.40006367434933
+        ],
+        "derivative_range": [
+          0.9838638806173615,
+          1.1637743369148497
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          172.36431790459457,
+          225.96814987105142
+        ],
+        "calibrated_exact_range": [
+          171.59152378244343,
+          229.48859586233317
+        ],
+        "derivative_range": [
+          0.9838638806173615,
+          1.1763201941375714
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.21136251191965444,
+      "query_curvature_correction_before_point9_range": [
+        -0.21441391741047872,
+        0.985513229437794
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.8869619064940146,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -101.6660486229296,
+        "calibrated_value": 36.787233873059506,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer2/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 8.984395034625532,
+      "quadratic_scale": 1.244807799693833,
+      "curvature": -0.1195200742509108,
+      "quadratic_coefficient_in_z": -0.09601488220133854,
+      "linear_coefficient_in_z": 9.78780041808417,
+      "constant_in_z": 193.36429321527658,
+      "train_orthogonality_max_abs": 8.300732894393693e-18,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999992,
+        1.0,
+        2.0
+      ],
+      "condition_number": 2.0000000000000018,
+      "train_interval": {
+        "input_range": [
+          170.86815798326174,
+          217.01472397951636
+        ],
+        "calibrated_exact_range": [
+          167.99437515980586,
+          218.2290959063138
+        ],
+        "derivative_range": [
+          1.0336997713823224,
+          1.143481549133927
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.71325599710963,
+          224.6550984127988
+        ],
+        "calibrated_exact_range": [
+          171.23806381716298,
+          226.0575123373626
+        ],
+        "derivative_range": [
+          1.015523470072237,
+          1.1367131166169087
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          170.86815798326174,
+          224.6550984127988
+        ],
+        "calibrated_exact_range": [
+          167.99437515980586,
+          226.0575123373626
+        ],
+        "derivative_range": [
+          1.015523470072237,
+          1.143481549133927
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 3,
+      "max_extrapolation_distance_in_train_std": 0.8504049970907007,
+      "query_curvature_correction_before_point9_range": [
+        -1.0071456347617982,
+        0.0963955483219519
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.9064310712856184,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 651.5284993743628,
+        "calibrated_value": 442.8074910503751,
+        "is_global_minimum": false
+      },
+      "real_zero_crossing_raw_inputs": [
+        1261.6650494810658,
+        41.391949267659896
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer3",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.132736704631965,
+      "quadratic_scale": 1.1433219052671735,
+      "curvature": 0.5895872528519771,
+      "quadratic_coefficient_in_z": 0.5156791365019822,
+      "linear_coefficient_in_z": 11.424512398403216,
+      "constant_in_z": 193.3988002137204,
+      "train_orthogonality_max_abs": 1.9984014443252818e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999993,
+        1.0000000000000013,
+        2.0
+      ],
+      "condition_number": 2.0000000000000013,
+      "train_interval": {
+        "input_range": [
+          171.10303322497165,
+          220.7455433115719
+        ],
+        "calibrated_exact_range": [
+          170.36288082656023,
+          227.37520185143254
+        ],
+        "derivative_range": [
+          0.8991246521970007,
+          1.3977906699901963
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          170.93264966904218,
+          227.04671834152907
+        ],
+        "calibrated_exact_range": [
+          170.20983057911116,
+          236.3823457111649
+        ],
+        "derivative_range": [
+          0.8974131253385768,
+          1.4610868621876738
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          170.93264966904218,
+          227.04671834152907
+        ],
+        "calibrated_exact_range": [
+          170.20983057911116,
+          236.3823457111649
+        ],
+        "derivative_range": [
+          0.8974131253385768,
+          1.4610868621876738
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 3,
+      "max_extrapolation_distance_in_train_std": 0.6218630971706505,
+      "query_curvature_correction_before_point9_range": [
+        -0.5172537866038406,
+        4.8238307334353205
+      ],
+      "max_abs_query_curvature_contribution_to_base": 4.341447660091789,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 81.59461872877617,
+        "calibrated_value": 130.12326980026188,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer3/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.448011430011746,
+      "quadratic_scale": 1.1774960934348193,
+      "curvature": 0.8637582895163037,
+      "quadratic_coefficient_in_z": 0.7335551211865803,
+      "linear_coefficient_in_z": 11.86402612945573,
+      "constant_in_z": 192.92026422682628,
+      "train_orthogonality_max_abs": 3.3358813885450714e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999991,
+        1.0000000000000009,
+        1.9999999999999998
+      ],
+      "condition_number": 2.0000000000000018,
+      "train_interval": {
+        "input_range": [
+          169.09469569739767,
+          219.97803000853025
+        ],
+        "calibrated_exact_range": [
+          169.19594088685207,
+          227.67243111173678
+        ],
+        "derivative_range": [
+          0.8072937591796745,
+          1.4911597921274322
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.10303322497165,
+          220.7455433115719
+        ],
+        "calibrated_exact_range": [
+          170.84436358204766,
+          228.8208746497638
+        ],
+        "derivative_range": [
+          0.8342855795152699,
+          1.5014750807163502
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          169.09469569739767,
+          220.7455433115719
+        ],
+        "calibrated_exact_range": [
+          169.19594088685207,
+          228.8208746497638
+        ],
+        "derivative_range": [
+          0.8072937591796745,
+          1.5014750807163502
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.07346022811929392,
+      "query_curvature_correction_before_point9_range": [
+        -0.7339867108046042,
+        4.155413475403606
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.739872127863245,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 109.02767049574042,
+        "calibrated_value": 144.95007359795903,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer3/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.060403284999706,
+      "quadratic_scale": 1.139891443661989,
+      "curvature": -0.016098916314212508,
+      "quadratic_coefficient_in_z": -0.014123201295812434,
+      "linear_coefficient_in_z": 10.08472497834698,
+      "constant_in_z": 193.1814605379831,
+      "train_orthogonality_max_abs": 7.297240537442344e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999999,
+        1.0000000000000002,
+        1.9999999999999998
+      ],
+      "condition_number": 2.0,
+      "train_interval": {
+        "input_range": [
+          173.9545168002356,
+          216.4408872482132
+        ],
+        "calibrated_exact_range": [
+          172.05870091051736,
+          219.3144234419801
+        ],
+        "derivative_range": [
+          1.1049465481328833,
+          1.119565549897472
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.7051282382247,
+          220.57855160700018
+        ],
+        "calibrated_exact_range": [
+          171.77948336776976,
+          223.88337596321676
+        ],
+        "derivative_range": [
+          1.1035228321994066,
+          1.119651361224485
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          173.7051282382247,
+          220.57855160700018
+        ],
+        "calibrated_exact_range": [
+          171.77948336776976,
+          223.88337596321676
+        ],
+        "derivative_range": [
+          1.1035228321994066,
+          1.119651361224485
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 3,
+      "max_extrapolation_distance_in_train_std": 0.45667551748356044,
+      "query_curvature_correction_before_point9_range": [
+        -0.11295160600792563,
+        0.014152445162956478
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.10165644540713306,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 3427.6839751930265,
+        "calibrated_value": 1993.4404060620816,
+        "is_global_minimum": false
+      },
+      "real_zero_crossing_raw_inputs": [
+        6831.629355601348,
+        23.73859478470564
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer3/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.771795609154234,
+      "quadratic_scale": 1.4727645713074982,
+      "curvature": 0.42014183144983547,
+      "quadratic_coefficient_in_z": 0.285274265578537,
+      "linear_coefficient_in_z": 10.883684227858891,
+      "constant_in_z": 194.63229774517453,
+      "train_orthogonality_max_abs": 1.101922291730763e-15,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999958,
+        1.0000000000000036,
+        2.0
+      ],
+      "condition_number": 2.0000000000000084,
+      "train_interval": {
+        "input_range": [
+          172.06733662988347,
+          228.2667751607828
+        ],
+        "calibrated_exact_range": [
+          170.9353044400028,
+          235.35858611533894
+        ],
+        "derivative_range": [
+          0.9784350742113787,
+          1.3142313067851217
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          174.65801851771317,
+          213.1264398106445
+        ],
+        "calibrated_exact_range": [
+          173.49016974162612,
+          216.14551665016134
+        ],
+        "derivative_range": [
+          0.99391460995891,
+          1.2237665672186544
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          172.06733662988347,
+          228.2667751607828
+        ],
+        "calibrated_exact_range": [
+          170.9353044400028,
+          235.35858611533894
+        ],
+        "derivative_range": [
+          0.9784350742113787,
+          1.3142313067851217
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.2965599294365799,
+        1.150146054863302
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.0351314493769719,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 8.314749567898872,
+        "calibrated_value": 90.82466710285374,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer4",
+      "train_rows": 320,
+      "query_rows": 80,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.640706894649066,
+      "quadratic_scale": 1.365317575936355,
+      "curvature": -0.041113229199923475,
+      "quadratic_coefficient_in_z": -0.030112575949025937,
+      "linear_coefficient_in_z": 11.394300940289938,
+      "constant_in_z": 193.90491728282373,
+      "train_orthogonality_max_abs": 3.6914915568786457e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999989,
+        1.0000000000000009,
+        2.0
+      ],
+      "condition_number": 2.000000000000002,
+      "train_interval": {
+        "input_range": [
+          171.22323448033663,
+          230.1135058281826
+        ],
+        "calibrated_exact_range": [
+          169.78074704957092,
+          232.62117496803836
+        ],
+        "derivative_range": [
+          1.0514144373676153,
+          1.0827386741807805
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          170.66931231787163,
+          222.5293865978293
+        ],
+        "calibrated_exact_range": [
+          169.1809124991026,
+          224.6318251276112
+        ],
+        "derivative_range": [
+          1.055448494969212,
+          1.0830333100959493
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          170.66931231787163,
+          230.1135058281826
+        ],
+        "calibrated_exact_range": [
+          169.1809124991026,
+          232.62117496803836
+        ],
+        "derivative_range": [
+          1.0514144373676153,
+          1.0830333100959493
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.05205689508688118,
+      "query_curvature_correction_before_point9_range": [
+        -0.15983543713069748,
+        0.03126418619286935
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.14385189341762775,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 2206.7963500083865,
+        "calibrated_value": 1271.7776152020117,
+        "is_global_minimum": false
+      },
+      "real_zero_crossing_raw_inputs": [
+        4393.561351618597,
+        20.03134839817679
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer4/anchor0",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.608055635933965,
+      "quadratic_scale": 1.3346882289795154,
+      "curvature": -0.032550691966942796,
+      "quadratic_coefficient_in_z": -0.02438823633878199,
+      "linear_coefficient_in_z": 10.564366732604771,
+      "constant_in_z": 192.78302533827767,
+      "train_orthogonality_max_abs": 2.5019110414088035e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999991,
+        1.0000000000000016,
+        1.9999999999999998
+      ],
+      "condition_number": 2.0000000000000018,
+      "train_interval": {
+        "input_range": [
+          168.21818821427598,
+          220.05217932158564
+        ],
+        "calibrated_exact_range": [
+          165.5655630929201,
+          222.52286089312605
+        ],
+        "derivative_range": [
+          1.0851468740168067,
+          1.1125344769055927
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.43761765318743,
+          219.39613254519634
+        ],
+        "calibrated_exact_range": [
+          169.14455112685962,
+          221.81084007966876
+        ],
+        "derivative_range": [
+          1.0854935104267065,
+          1.1108334221899945
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          168.21818821427598,
+          220.05217932158564
+        ],
+        "calibrated_exact_range": [
+          165.5655630929201,
+          222.52286089312605
+        ],
+        "derivative_range": [
+          1.0851468740168067,
+          1.1125344769055927
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.15796076396766723,
+        0.024410822526676503
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.1421646875709005,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 2273.809627401961,
+        "calibrated_value": 1336.8370982797026,
+        "is_global_minimum": false
+      },
+      "real_zero_crossing_raw_inputs": [
+        4523.30216220311,
+        24.317092600811293
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer4/anchor1",
+      "train_rows": 213,
+      "query_rows": 107,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.964113493351572,
+      "quadratic_scale": 1.2435437908701834,
+      "curvature": 0.9635262836332281,
+      "quadratic_coefficient_in_z": 0.774822962172478,
+      "linear_coefficient_in_z": 11.729666386461089,
+      "constant_in_z": 193.48581496659043,
+      "train_orthogonality_max_abs": 5.587601325812994e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.999999999999998,
+        1.0000000000000013,
+        2.0
+      ],
+      "condition_number": 2.000000000000004,
+      "train_interval": {
+        "input_range": [
+          175.12373632920395,
+          223.21217072538366
+        ],
+        "calibrated_exact_range": [
+          174.28068350395472,
+          234.96840427949854
+        ],
+        "derivative_range": [
+          0.8867134633440482,
+          1.6372913847058619
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          173.47405714098895,
+          222.33174809458114
+        ],
+        "calibrated_exact_range": [
+          172.8391292723233,
+          233.53294522494122
+        ],
+        "derivative_range": [
+          0.8609648027450535,
+          1.6235494986069428
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          173.47405714098895,
+          223.21217072538366
+        ],
+        "calibrated_exact_range": [
+          172.8391292723233,
+          234.96840427949854
+        ],
+        "derivative_range": [
+          0.8609648027450535,
+          1.6372913847058619
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 4,
+      "max_extrapolation_distance_in_train_std": 0.16556206322978265,
+      "query_curvature_correction_before_point9_range": [
+        -0.8153506973037934,
+        4.586996925679062
+      ],
+      "max_abs_query_curvature_contribution_to_base": 4.128297233111156,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 118.31329600494776,
+        "calibrated_value": 149.09339235694392,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "20261101/outer4/anchor2",
+      "train_rows": 214,
+      "query_rows": 106,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.097569152924567,
+      "quadratic_scale": 1.3890329364869671,
+      "curvature": 0.20921268461335887,
+      "quadratic_coefficient_in_z": 0.15061751173624663,
+      "linear_coefficient_in_z": 11.484309981780362,
+      "constant_in_z": 194.45110880069518,
+      "train_orthogonality_max_abs": 2.9052565130377925e-17,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999974,
+        1.000000000000003,
+        1.9999999999999998
+      ],
+      "condition_number": 2.000000000000005,
+      "train_interval": {
+        "input_range": [
+          167.97469521687816,
+          223.88994892786826
+        ],
+        "calibrated_exact_range": [
+          165.90427898144318,
+          229.82593451418012
+        ],
+        "derivative_range": [
+          1.060589663776864,
+          1.2257866393024222
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.22323448033663,
+          230.1135058281826
+        ],
+        "calibrated_exact_range": [
+          169.36523513873655,
+          237.51190362662248
+        ],
+        "derivative_range": [
+          1.0701872033672795,
+          1.244173621542674
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          167.97469521687816,
+          230.1135058281826
+        ],
+        "calibrated_exact_range": [
+          165.90427898144318,
+          237.51190362662248
+        ],
+        "derivative_range": [
+          1.060589663776864,
+          1.244173621542674
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.6163420924442806,
+      "query_curvature_correction_before_point9_range": [
+        -0.15062153940504694,
+        1.7725400539399427
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.5952860485459486,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -191.0097228977381,
+        "calibrated_value": -24.463302673213832,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [
+        -319.6973065120061,
+        -62.32213928347008
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "full500/anchor0",
+      "train_rows": 333,
+      "query_rows": 167,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 9.464130343589613,
+      "quadratic_scale": 1.2380870247015923,
+      "curvature": 0.5883581541613909,
+      "quadratic_coefficient_in_z": 0.47521550781391875,
+      "linear_coefficient_in_z": 10.825776600287366,
+      "constant_in_z": 193.2095756344954,
+      "train_orthogonality_max_abs": 3.734083446186713e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999962,
+        1.0000000000000042,
+        2.0
+      ],
+      "condition_number": 2.0000000000000075,
+      "train_interval": {
+        "input_range": [
+          170.14765476955756,
+          219.47895532388463
+        ],
+        "calibrated_exact_range": [
+          168.99782226426308,
+          225.88398915948187
+        ],
+        "derivative_range": [
+          0.8914165543268899,
+          1.4148744315582995
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          172.18524503422643,
+          222.58107382668578
+        ],
+        "calibrated_exact_range": [
+          170.8361913395947,
+          230.32415321402434
+        ],
+        "derivative_range": [
+          0.913037567002936,
+          1.4477912277536136
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          170.14765476955756,
+          222.58107382668578
+        ],
+        "calibrated_exact_range": [
+          168.99782226426308,
+          230.32415321402434
+        ],
+        "derivative_range": [
+          0.8914165543268899,
+          1.4477912277536136
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 3,
+      "max_extrapolation_distance_in_train_std": 0.32777639256652047,
+      "query_curvature_correction_before_point9_range": [
+        -0.4752312966732429,
+        3.9301005670504243
+      ],
+      "max_abs_query_curvature_contribution_to_base": 3.537090510345382,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": 86.13948549109215,
+        "calibrated_value": 131.55468586750322,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "full500/anchor1",
+      "train_rows": 333,
+      "query_rows": 167,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.264899336192018,
+      "quadratic_scale": 1.3313604050168666,
+      "curvature": 0.2242305125182606,
+      "quadratic_coefficient_in_z": 0.16842209793329393,
+      "linear_coefficient_in_z": 11.101185554016736,
+      "constant_in_z": 194.5911952660972,
+      "train_orthogonality_max_abs": 1.6003214769371625e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999996,
+        1.0000000000000009,
+        1.9999999999999998
+      ],
+      "condition_number": 2.000000000000001,
+      "train_interval": {
+        "input_range": [
+          172.75075292646005,
+          225.01923007370658
+        ],
+        "calibrated_exact_range": [
+          171.58705059311816,
+          228.8070778251286
+        ],
+        "derivative_range": [
+          1.011186264185768,
+          1.17827975261877
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.49571628373837,
+          218.19989031724293
+        ],
+        "calibrated_exact_range": [
+          170.32049247034018,
+          220.84631961093567
+        ],
+        "derivative_range": [
+          1.007174124131394,
+          1.1564794758380375
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.49571628373837,
+          225.01923007370658
+        ],
+        "calibrated_exact_range": [
+          170.32049247034018,
+          228.8070778251286
+        ],
+        "derivative_range": [
+          1.007174124131394,
+          1.17827975261877
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 2,
+      "max_extrapolation_distance_in_train_std": 0.12226487582753634,
+      "query_curvature_correction_before_point9_range": [
+        -0.1755178186856947,
+        0.8517666684285998
+      ],
+      "max_abs_query_curvature_contribution_to_base": 0.7665900015857399,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -143.55819864824795,
+        "calibrated_value": 11.663417057445173,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "full500/anchor2",
+      "train_rows": 334,
+      "query_rows": 166,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 11.211222985988522,
+      "quadratic_scale": 1.2848525692208363,
+      "curvature": 0.24385709650610649,
+      "quadratic_coefficient_in_z": 0.18979383498761024,
+      "linear_coefficient_in_z": 12.598654605894762,
+      "constant_in_z": 193.86268586741,
+      "train_orthogonality_max_abs": 2.5528481524314976e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999989,
+        1.0000000000000018,
+        1.9999999999999996
+      ],
+      "condition_number": 2.0000000000000018,
+      "train_interval": {
+        "input_range": [
+          168.3206529869917,
+          227.5912860508722
+        ],
+        "calibrated_exact_range": [
+          165.7228015604544,
+          232.98886538165263
+        ],
+        "derivative_range": [
+          1.0453985173828366,
+          1.2243954883164243
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.24594234809143,
+          230.1868863053708
+        ],
+        "calibrated_exact_range": [
+          168.7938162468011,
+          236.17707968578648
+        ],
+        "derivative_range": [
+          1.0542328744273575,
+          1.2322341861553514
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          168.3206529869917,
+          230.1868863053708
+        ],
+        "calibrated_exact_range": [
+          165.7228015604544,
+          236.17707968578648
+        ],
+        "derivative_range": [
+          1.0453985173828366,
+          1.2322341861553514
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 1,
+      "max_extrapolation_distance_in_train_std": 0.23151802954436707,
+      "query_curvature_correction_before_point9_range": [
+        -0.19346124012082175,
+        1.5894583837254812
+      ],
+      "max_abs_query_curvature_contribution_to_base": 1.430512545352933,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -177.83845577419552,
+        "calibrated_value": -15.214307978300184,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [
+        -278.21634097883657,
+        -77.4605705695545
+      ],
+      "globally_nonnegative_calibration": false,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    },
+    {
+      "name": "full500/main",
+      "train_rows": 500,
+      "query_rows": 500,
+      "stored_prediction_range_exact": true,
+      "prediction_scale": 10.674456368460286,
+      "quadratic_scale": 1.3199526289264958,
+      "curvature": 0.34382233009702984,
+      "quadratic_coefficient_in_z": 0.2604808101156305,
+      "linear_coefficient_in_z": 11.75922075005137,
+      "constant_in_z": 193.9050354430963,
+      "train_orthogonality_max_abs": 3.8191672047105384e-16,
+      "penalized_normal_matrix_eigenvalues": [
+        0.9999999999999987,
+        1.0000000000000016,
+        1.9999999999999998
+      ],
+      "condition_number": 2.0000000000000027,
+      "train_interval": {
+        "input_range": [
+          171.24594234809143,
+          230.1868863053708
+        ],
+        "calibrated_exact_range": [
+          169.96313851977453,
+          236.6877953195123
+        ],
+        "derivative_range": [
+          0.9973180491220007,
+          1.26680099342676
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "observed_query_interval": {
+        "input_range": [
+          171.24594234809143,
+          230.1868863053708
+        ],
+        "calibrated_exact_range": [
+          169.96313851977453,
+          236.6877953195123
+        ],
+        "derivative_range": [
+          0.9973180491220007,
+          1.26680099342676
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "combined_train_query_interval": {
+        "input_range": [
+          171.24594234809143,
+          230.1868863053708
+        ],
+        "calibrated_exact_range": [
+          169.96313851977453,
+          236.6877953195123
+        ],
+        "derivative_range": [
+          0.9973180491220007,
+          1.26680099342676
+        ],
+        "strictly_increasing": true,
+        "negative_output_possible_in_interval": false
+      },
+      "query_outside_train_range": 0,
+      "max_extrapolation_distance_in_train_std": 0.0,
+      "query_curvature_correction_before_point9_range": [
+        -0.26881922097249944,
+        2.407791771476673
+      ],
+      "max_abs_query_curvature_contribution_to_base": 2.1670125943290057,
+      "query_prediction_max_abs_error_independent_polynomial": 2.842170943040401e-14,
+      "vertex": {
+        "raw_input": -46.88610824433988,
+        "calibrated_value": 61.18962294586194,
+        "is_global_minimum": true
+      },
+      "real_zero_crossing_raw_inputs": [],
+      "globally_nonnegative_calibration": true,
+      "note": "Interval statements concern this calibrator only, not shortB/physics residual terms or arbitrary unseen inputs."
+    }
+  ],
+  "mathematical_definition": "q normalization and projection are fit on current training OOF only. Prediction uses the same polynomial at every input, including outside training range. train_pred_range is metadata, not clipping/gating. Penaltylambda1 shrinks the normalized orthogonal quadratic coefficient byhalf but does not bound extrapolation.",
+  "comparison_with109": "109 had tiny per-cell feature scales producing enormous standardized rare features. Here observed64 prediction/q scales and penalized-system conditioning are measured explicitly. Finite outputs alone are not the safety argument.",
+  "unconditional_limit": "Quadratics grow as p²; lambda1 does not guarantee bounded output, monotonicity for all real inputs, or a globally nonnegative complete ensemble. Fold curves may have negative curvature. No claim of zero extrapolation risk.",
+  "existing016_test_verification_used_only_as_prior_evidence": {
+    "path": "reports/candidate016-verification.json",
+    "sha256": "a5b0f3d52b96b4c94ec0916fbe9f674c17197e1f67c9334b310e14013f5b69dc",
+    "finite": true,
+    "prediction_range": [
+      163.36132037801448,
+      237.82362827332486
+    ],
+    "outside_training_label_range": 0,
+    "CSV_byte_exact": true
+  },
+  "decision": {
+    "numerical_or_scope_bug_found": false,
+    "change_model_or_rule": false,
+    "hold_submission_for_bug": false,
+    "note": "Flags are audit warnings, not performance/model-selection rules. Any flag needs concrete investigation before calling it a model bug. No test-selected threshold or repair."
+  },
+  "protected": {
+    "artifacts/submission-candidate-015.csv": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f",
+    "artifacts/submission-candidate-016.csv": "ceabcb7f019b7234e638510899ae98d2aacee08892f59650fd6cb16ff301cce0"
+  },
+  "cost": 0,
+  "uploaded": false,
+  "source_sha256": "32e1902db50acd9d67caf0e14c419f9b328ab818fe149e51fe3fcb47f70d90dc"
+}

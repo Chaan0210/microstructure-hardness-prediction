@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-07",
+  "scope": "Read-only source/report/development-OOF metadata audit; no training, inference, raw-data content, test/holdout content, external call, install or shared-cache write. Initial file-name inventory included data/test paths; none opened.",
+  "recommendation_count": 2,
+  "new_model_fits": 0,
+  "files_SHA256": {
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "experiments/grain-validity-218/run.py": "1f37009fcfafd3ece3d778a2c4d2a240cb60fa997e00b2a15278f5c5a27cf94a",
+    "experiments/grain-validity-218/policy.py": "3106ab38bb202eec8d0dbe7832205f5fd6e76979485d2b49aa8f40bc138cb5da",
+    "experiments/grain-validity-218/results.json": "93879109365b43f81dc331e16450c6314f9599fc2e19b4e8cfb21b1bd3ff1591",
+    "wavelet_scattering_096.py": "8aff60185aefd387f15d16b32861fde234e91bd1c5377227f899f7d324ca3254",
+    "reports/wavelet-scattering-096-summary.json": "a57a50da9dfe2b6f94fc96db50a62820a343b116c0cf8b9bd5ec4befcd55f2a6",
+    "reports/lineal-054-summary.json": "7a2a2b328adfc6e542050c5054a3985b0d6921fbca4b72365a77cb91bba32d54",
+    "reports/betti-055-summary.json": "67c5bfc524b39d293f92845d8d01bdb196d3ffe6815055ce7169c34774122189",
+    "reports/cluster-pair-159-summary.json": "1eb24d7437d1415f77d6128febd3e05b3a35d11efd78faab0e0770e93479ed9d",
+    "reports/cubical-h1-168-summary.json": "377c349f5edcf1934af254197fc17061a9475b653ba4b6c2e7be457818c8cdbc",
+    "reports/wph-182-summary.json": "b0c3ecc8106c93c80ff8d0cfbceb3ef8fb4b6ed956552eee73bf711a954b0fda",
+    "experiments/cnn-nested-204/common.py": "80323a7c1ac7b56cf592c4be3848dc785d8d46cb72b68c4d2ececc2dc4757845",
+    "experiments/cnn-nested-204/pipeline.py": "2cd7404354d415cb28fac71066449549d051be32da79977ee2ce8fdec9964575",
+    "experiments/resolution-repartition-217/common.py": "85b16df29bc0cf8170a20bef36e9856527dc03ea21885fb9658295e473bdbd6e",
+    "experiments/resolution-repartition-217/score.py": "273226a01eab7bef0124c6e67b5fd96f3a7d0408cb26468f09e8909f87003374"
+  },
+  "kymatio_existing_metadata": {
+    "path": ".venv/lib/python3.13/site-packages/kymatio-0.3.0.dist-info/METADATA",
+    "Name": "kymatio",
+    "Version": "0.3.0",
+    "import_executed": false
+  },
+  "218_flag_outer_squared_distance": {
+    "1_of_320": 160.5015673981191,
+    "2_of_320": 80.50314465408806,
+    "3_of_320": 53.83806519453207
+  },
+  "218_no_missing_in_innertrain_but_missing_in_validation": [
+    {
+      "split": "20261031",
+      "outer": 2,
+      "inner": 2,
+      "missing_validation": 2
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "inner": 0,
+      "missing_validation": 1
+    }
+  ],
+  "report_SHA256": "fb940466bc124c6f3c5835024f0ee975a7d07e2240fe37a218025eaab60daa10"
+}

@@ -1,0 +1,69 @@
+{
+  "all_optimizer_parameter_step_counters": 240,
+  "legacy_tail_lr_column": "uniform reference LR; actual five group LRs are in rng-and-groups.npz",
+  "ratio": 0.8,
+  "fold": 1,
+  "RNG_reference_exact_all240": true,
+  "group_LR_mean_and_schedule_exact_all240": true,
+  "effective_decay_fixed_all240": true,
+  "optimizer_has_no_RNG_side_effect_all240": true,
+  "recipe": {
+    "name": "fixed_adamw_low",
+    "optimizer": "AdamW",
+    "head_lr": 0.0001,
+    "tail_lr": 1e-05
+  },
+  "tail_trainable": true,
+  "tail_trainable_parameters": 14290944,
+  "seconds": 45.57448949999525,
+  "updates": 240,
+  "train_n": 320,
+  "prediction_n": 80,
+  "initial_train_RMSE": 5.75500822999025,
+  "final_train_RMSE": 3.600517443854891,
+  "curve": [
+    {
+      "epoch": 0,
+      "train_RMSE": 5.75500822999025
+    },
+    {
+      "epoch": 3,
+      "train_RMSE": 5.040067180117706,
+      "train_augmented_mean_loss": 0.05861507034860551
+    },
+    {
+      "epoch": 6,
+      "train_RMSE": 4.24582484934965,
+      "train_augmented_mean_loss": 0.04989828015677631
+    },
+    {
+      "epoch": 9,
+      "train_RMSE": 3.917034764607506,
+      "train_augmented_mean_loss": 0.042065984150394795
+    },
+    {
+      "epoch": 12,
+      "train_RMSE": 3.600517443854891,
+      "train_augmented_mean_loss": 0.038558009208645674
+    }
+  ],
+  "gradient_norm_min": 0.9870674014091492,
+  "gradient_norm_max": 7.3884968757629395,
+  "gradient_clip_fraction": 0.9958333333333333,
+  "head_lr_first_last": [
+    0.0001,
+    1.1533337816991932e-05
+  ],
+  "tail_lr_first_last": [
+    1e-05,
+    1.1533337816991932e-06
+  ],
+  "same_model_reload_exact": true,
+  "BN_eval_affine_stats_unchanged": true,
+  "nontrainable_gradients_none": true,
+  "head_initial": "0178c7c1b7360339cafe5a37ab2fe628c9105602a5ecf9838c9f53e5e2586f88",
+  "order_sha256": "b5aa252763c10fee9038d2873f91043fa7213fd8e93d9ae1d12c5b3ad7262799",
+  "model_sha256": "bab0fc9006a7acb0c219def1ce3434299f47e34bea9d7869dbb9a3ca02ba40e1",
+  "updates_sha256": "50e49513b3b13782dcbbcce54c006d62c359f69ca3cd882c168b2bfc3f9905b9",
+  "predictions_sha256": "12f0892ede2f9038b122b384e602179e431601f753b874a76d4cc6156e405ae2"
+}

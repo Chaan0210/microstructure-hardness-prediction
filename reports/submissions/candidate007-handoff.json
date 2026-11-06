@@ -1,0 +1,61 @@
+{
+  "submission_path": "artifacts/submission-candidate-007.csv",
+  "submission_sha256": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+  "bytes": 31689,
+  "rows": 1000,
+  "columns": [
+    "ID",
+    "hardness"
+  ],
+  "exact_sample_order": true,
+  "duplicate_ids": 0,
+  "nan_inf": 0,
+  "prediction_range": [
+    166.01824177160836,
+    231.19590295544566
+  ],
+  "training_label_range": [
+    151.9798276392398,
+    264.1213029015716
+  ],
+  "all_component_predictions_inside_training_label_range": true,
+  "full1000_ensemble_reload_max_error": 5.7220458984375e-06,
+  "raw10_full_ensemble_error": 4.9123657959171396e-05,
+  "test_fit": false,
+  "clipping": false,
+  "holdout_scored": false,
+  "uploaded": false,
+  "candidate": "007",
+  "best006_preserved": true,
+  "seeds": [
+    20261128,
+    20261205,
+    20261219
+  ],
+  "fixed_recipe": ".75unchanged003+.25mean3MLP = .375baseline+.1875CNN+.1875compactKRR+sum3MLP/12",
+  "design": "artifacts/seed-stability-052/candidate-design.json",
+  "model_directory": "artifacts/final-model-053",
+  "verification": "reports/candidate007-verification.json",
+  "development_rmse": {
+    "original": 13.241596955038409,
+    "20261031": 13.192251472226435,
+    "20261101": 13.455677846832414
+  },
+  "gain_vs006": {
+    "original": 0.18163228267349396,
+    "20261031": 0.24739932546818366,
+    "20261101": 0.1551196728300024
+  },
+  "limitations": "Repeatedlyreused400;strongtrain-validationgap;~74-78%netSSEgainin10rowsbutgainpositiveaftertheirremoval. NoPublicguarantee.",
+  "fit_seconds": 2.4334838329814374,
+  "prediction_seconds": 0.12453525001183152,
+  "verification_seconds": 154.66572099999757,
+  "model_sha256": {
+    "mlp-seed-20261128.pt": "e5f990b7ae6d0bda291cbd0574b65b01796959915ce1afdf696007957a512226",
+    "mlp-seed-20261205.pt": "550b0944dd3dcb1f36ff8e5238d29e5c31f05fada4a6deb1471809f4a10ddc1f",
+    "mlp-seed-20261219.pt": "d3f5aa1cb9d755385ee04561d12d26610c8440c642aef0fb7466975b05bd9c58"
+  },
+  "cost": 0,
+  "running_work": [],
+  "completed_at_utc": "2026-10-01T16:24:24.077762+00:00"
+}

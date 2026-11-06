@@ -1,0 +1,104 @@
+{
+  "comparator": "candidate-flow38-v1 (global H300 F38)",
+  "encoder_seed_suffixes": [
+    1811,
+    1823
+  ],
+  "rows": 400,
+  "current_best_rmse": 9.006878064271838,
+  "source_candidate_rmse": 8.977661203129443,
+  "gain": 0.029216861142394634,
+  "ci95": [
+    0.004010148546927051,
+    0.05444599631399245
+  ],
+  "positive_folds": 4,
+  "positive_images": 216,
+  "folds": [
+    {
+      "fold": 0,
+      "current_best_rmse": 9.353409799276523,
+      "source_candidate_rmse": 9.27961680888483
+    },
+    {
+      "fold": 1,
+      "current_best_rmse": 8.581186445779448,
+      "source_candidate_rmse": 8.588126555279564
+    },
+    {
+      "fold": 2,
+      "current_best_rmse": 9.501677359556247,
+      "source_candidate_rmse": 9.494083780657744
+    },
+    {
+      "fold": 3,
+      "current_best_rmse": 8.095664950045679,
+      "source_candidate_rmse": 8.033002118272737
+    },
+    {
+      "fold": 4,
+      "current_best_rmse": 9.416717209536092,
+      "source_candidate_rmse": 9.405213855905636
+    }
+  ],
+  "top10_positive_removed_gain": 0.006070833308122303,
+  "diagnostic_groups": {
+    "noise_low": {
+      "n": 203,
+      "current_best_rmse": 7.829634172915112,
+      "source_candidate_rmse": 7.79766795744066
+    },
+    "noise_mid": {
+      "n": 71,
+      "current_best_rmse": 7.627405027974667,
+      "source_candidate_rmse": 7.636847118202899
+    },
+    "noise_high": {
+      "n": 126,
+      "current_best_rmse": 11.22440947856979,
+      "source_candidate_rmse": 11.182257230273434
+    },
+    "target_low": {
+      "n": 134,
+      "current_best_rmse": 9.817863232379226,
+      "source_candidate_rmse": 9.79075039080365
+    },
+    "target_mid": {
+      "n": 136,
+      "current_best_rmse": 6.8556561409949985,
+      "source_candidate_rmse": 6.829192728911142
+    },
+    "target_high": {
+      "n": 130,
+      "current_best_rmse": 10.054168427840372,
+      "source_candidate_rmse": 10.019800093110247
+    },
+    "morph_coarse": {
+      "n": 139,
+      "current_best_rmse": 10.896813822600297,
+      "source_candidate_rmse": 10.854733105725233
+    },
+    "morph_mid": {
+      "n": 128,
+      "current_best_rmse": 8.876856925048138,
+      "source_candidate_rmse": 8.86260492372487
+    },
+    "morph_fine": {
+      "n": 131,
+      "current_best_rmse": 6.662309947927724,
+      "source_candidate_rmse": 6.633264056160607
+    },
+    "morph_missing": {
+      "n": 2,
+      "current_best_rmse": 4.678139647351956,
+      "source_candidate_rmse": 4.678139647351956
+    }
+  },
+  "prediction_files": {
+    "source-h300/proper-summary-s1811-1823.npz": "bbb3ed56d39a14480525dedea4599a57ef42c3037e923ace9ad43a8edaea7a40",
+    "flow-content-ablation/oof.npz": "c543b1885ded534ff7b56ebb9a31210eb382f086bc5f3f170dac57c9cb5d7fff"
+  },
+  "full_system_protocol_passed": false,
+  "coefficients_fit": false,
+  "scope": "Same original400 rows/folds, 320 labeled training rows per fold, same heads/control/fallback rules. New source encoder excludes validation originals; global-H300 comparator and inherited P104/083 have historical global representation exposure. Reused-data conditional comparison only. ID bootstrap does not account for adaptive model search and is not a Private probability."
+}

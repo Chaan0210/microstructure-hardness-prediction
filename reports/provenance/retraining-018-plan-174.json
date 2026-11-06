@@ -1,0 +1,257 @@
+{
+  "study": 174,
+  "status": "plan_only_not_executed",
+  "purpose_ko": "018 전체 학습 재현의 남은 공백을 닫기 위한 별도 과제 실행 명세와 자원 추정. 성능 탐색이나 현재 최고 교체는 하지 않는다.",
+  "scope": "All future files within this project. Existing .venv and local weights only, zero installation/download/network/payment. Current174 forbids full retraining.",
+  "already_verified": {
+    "saved_model_inference": "155 isolated saved-model inference, raw feature extraction, reload and CSV exactness passed historically; not rerun now.",
+    "full500_artifact_exists": "145 assembled trained500 pipeline exists, but incremental reuse is not a standalone fresh training reproduction.",
+    "scope_checks": "135/146/174 establish split-local learned transforms and target exclusion for audited paths.",
+    "does_not_prove": "Neither inference replay nor independent algebra proves a fresh end-to-end neural training run recreates stored weights."
+  },
+  "gaps": [
+    {
+      "id": "G1",
+      "gap": "No standalone fresh018 training entrypoint; candidate018.fit reuses017 and candidate015 inputs reuse nested historical models.",
+      "work": "Create self-contained trainer dependency closure; remove historical study/check/report/model dependencies from fitting. Archive own source and manifest.",
+      "acceptance": "Read audit shows no trained historical weights/OOF cache consulted during fresh fit; references opened only after new outputs frozen."
+    },
+    {
+      "id": "G2",
+      "gap": "Feature regeneration validated for inference, not whole fresh training orchestration.",
+      "work": "Implement ordered dev-ID-only image reader and frozen S/B plus compact26/physics57/spatial528 extraction; stream token summaries.",
+      "acceptance": "Match existing development feature schemas/IDs/values under documented CPU/MPS tolerance; freeze scaler-fit scopes and weight hashes."
+    },
+    {
+      "id": "G3",
+      "gap": "Seeds/node offsets/RNG usage spread across scripts.",
+      "work": "Extract exact split, model init, NumPy order, torch dropout, microbatch and bootstrap seeds into immutable manifest. Preserve unused classifier initialization and CPU long-MLP behavior.",
+      "acceptance": "Original-fold0 components compare with recorded state/batch-order hashes; deviations investigated without validation-based tuning."
+    },
+    {
+      "id": "G4",
+      "gap": "Top final KRR selection400/refit500 differs from CV selection on all currentU.",
+      "work": "Preserve historical top subset IDs in future500 reproduction; keep nestedA/C selection allU. Dev-fold0 control uses original allU, not174subset80.",
+      "acceptance": "All candidate inner scores and chosen setting match intended recipe; fullU refit stats verified.174 is diagnostic and does not authorize recipe changes."
+    },
+    {
+      "id": "G5",
+      "gap": "Freshly coupled 13-node predictions,4affines and residual bootstrap not run as one standalone fresh process.",
+      "work": "Regenerate all nested predictions and train all dependent fits from fresh models.",
+      "acceptance": "Disjoint group/ID ledger and inner/anchor/outer label exclusion, independent KRR/affine/residual algebra; no in-sample anchor replacement."
+    },
+    {
+      "id": "G6",
+      "gap": "MPS exact neural retraining across runs/environment not established for the complete pipeline.",
+      "work": "Record device versions, deterministic settings, optimization traces; repeat representative CNN/longhead/shorthead on fixed training rows.",
+      "acceptance": "Report tensor equality and numeric errors separately; same-device reload must match. No promise of byte-identical retraining before measurement. CPU-vsMPS tolerance fixed before comparison."
+    },
+    {
+      "id": "G7",
+      "gap": "No fresh training resume/crash/provenance contract.",
+      "work": "Exclusive new output directory, PID lock, atomic per-node checkpoint + hash manifest; resume only completed matching nodes.",
+      "acceptance": "Simulated interruption on a small fixture resumes without duplicate updates; preserve018/019/020 and ZIP hashes."
+    },
+    {
+      "id": "G8",
+      "gap": "Development-only reproduction cannot reproduce the exact historic500-trained model.",
+      "work": "First implement/validate dev400-only. Any subsequent historical500 fit requires parent next-task scope; never compute formerholdout subgroup metrics.",
+      "acceptance": "Clearly label dev-only versus500 reproduction. Test inference belongs only to separately authorized fixed-model stage, never training or tuning."
+    }
+  ],
+  "fixed_recipe": {
+    "raw_weights": {
+      "KRR26": 0.3,
+      "CNNmean3": 0.3,
+      "Smean3": 0.2,
+      "Bmean3": 0.2
+    },
+    "base": ".9*outer_affine(raw)+.1*shortB",
+    "correction": "mean of3honest residual blocks;585features=physics57+spatial528; five kinds none/ridge1/ridge01/rbf1/rbf01,512groupbootstrapwinnerfrequencyweights",
+    "counts_per_root": {
+      "base_nodes": 13,
+      "CNN": 39,
+      "CPU_long_MLP": 78,
+      "MPS_short_B": 4,
+      "KRR_final": 13,
+      "KRR_inner_candidate_fits": 351,
+      "affines": 4,
+      "residual_objects_including_none": 60,
+      "residual_nonnull_fits": 48
+    },
+    "CNN": "Existing91905parameter TinyCNN,80epochs,batch32,D4 training,identity query,last5checkpoint mean; exact original seeds/offsets.",
+    "long_MLP": "CPU hidden64/dropout.25/100epochs/batch64/SmoothL1beta1/aux_weight0; seed offsets and initialization preserved.",
+    "short_B": "Existing MPS hidden32/12epochs/effectivebatch16/microbatch2/dropout.5 with manual dropout seeds.",
+    "transform_scope": "Each MinMax/standardization/PCA if any/target stats uses respective training scope. No new PCA in018.",
+    "no_changes": "No174recipe adoption, feature/seed/epoch/weight search, new model family, output clipping, or inference augmentation."
+  },
+  "proposed_execution": [
+    {
+      "stage": 0,
+      "action": "Implement isolated trainer and validator; audit source closure/manifests before any substantive fit.",
+      "directory": "artifacts/retraining-018/attempt-001/",
+      "network": "disabled",
+      "entrypoint_status": "not implemented in174"
+    },
+    {
+      "stage": 1,
+      "action": "Fresh original-fold0 U320/V80 from fixeddevelopment400 cached features; all13nodes and downstream. Existing models only opened afterwards for equality audit.",
+      "estimate_key": 320,
+      "output": "new component states/traces/OOF80, numerical and scope audits; no performance-based choice"
+    },
+    {
+      "stage": 2,
+      "action": "Regenerate all400 development raw features using frozen local encoders, then fresh root400 nested pipeline for end-to-end training orchestration.",
+      "estimate_key": 400,
+      "output": "training provenance/model bundle and reload on allowed development images; not a new unbiased400 OOF estimate"
+    },
+    {
+      "stage": 3,
+      "action": "Only if separately included in parent next-task scope: true historical500 reproduction using originaldevelopment400 selection IDs for top KRR and all500 refit; no formerholdout subgroup scoring.",
+      "estimate_key": 500,
+      "performed": false
+    },
+    {
+      "stage": 4,
+      "action": "Test1000 inference/ID-order/finite/reload/CSV SHA check only after model frozen and separately authorized. Upload coordinated with parent.",
+      "performed": false
+    }
+  ],
+  "resource_estimates": {
+    "basis": "Historical local metadata only; no fresh neural benchmark or fulltraining in174. Sequential fits, CPU threads2, one MPS model at a time.",
+    "rows": [
+      {
+        "root_training_rows": 320,
+        "fresh_CNN_updates_39_models": 18240,
+        "CNN_MPS_raw_seconds": 270.4908369295299,
+        "CNN_CPU_raw_seconds": 1130.3685324825346,
+        "long_MLP_78_scaled_seconds": 42.889119463786486,
+        "short_B_4_scaled_seconds": 20.020142319314182,
+        "mixed_MPS_CPU_cached_feature_run_minutes_budget": [
+          8,
+          15
+        ],
+        "CPU_only_cached_feature_run_minutes_budget": [
+          25,
+          40
+        ],
+        "budget_is_estimate_not_measurement": true
+      },
+      {
+        "root_training_rows": 400,
+        "fresh_CNN_updates_39_models": 22560,
+        "CNN_MPS_raw_seconds": 334.5544562023133,
+        "CNN_CPU_raw_seconds": 1398.0873954389244,
+        "long_MLP_78_scaled_seconds": 53.6113993297331,
+        "short_B_4_scaled_seconds": 25.025177899142726,
+        "mixed_MPS_CPU_cached_feature_run_minutes_budget": [
+          10,
+          18
+        ],
+        "CPU_only_cached_feature_run_minutes_budget": [
+          30,
+          50
+        ],
+        "budget_is_estimate_not_measurement": true
+      },
+      {
+        "root_training_rows": 500,
+        "fresh_CNN_updates_39_models": 26880,
+        "CNN_MPS_raw_seconds": 398.6180754750967,
+        "CNN_CPU_raw_seconds": 1665.8062583953142,
+        "long_MLP_78_scaled_seconds": 67.01424916216638,
+        "short_B_4_scaled_seconds": 31.28147237392841,
+        "mixed_MPS_CPU_cached_feature_run_minutes_budget": [
+          12,
+          22
+        ],
+        "CPU_only_cached_feature_run_minutes_budget": [
+          35,
+          60
+        ],
+        "budget_is_estimate_not_measurement": true
+      }
+    ],
+    "CNN_update_formula": "3seeds*80epochs*(ceil(N/32)+sum3ceil(A/32)+sum9ceil(C/32)). N320:18240; N400:22560; N500:26880.",
+    "benchmark_seconds_per_update": {
+      "cpu": 0.06197195901768282,
+      "mps": 0.01482954149832949
+    },
+    "MLP_scaling": "Six full500 heads observed total-minus-Bextraction9.57s includes overhead; 13node training row sum≈7N. FourshortB row sum≈3N. Batch rounding/warmup/IO can invalidate linear extrapolation.",
+    "dev400_fresh_features_observed_seconds": {
+      "DINO_S": 22.902107333007734,
+      "DINO_B": 50.22351699997671,
+      "physics57_pipeline": 98.72398070897907,
+      "compact26": 8.230562208977062
+    },
+    "dev400_full_raw_to_trained_bundle_MPS_CPU_minutes_budget": [
+      15,
+      25
+    ],
+    "full500_raw_to_trained_bundle_MPS_CPU_minutes_budget_if_authorized": [
+      18,
+      30
+    ],
+    "CPU_only_raw_backbone_time": "Unmeasured: do not quote complete CPU-only raw-feature runtime. Cached-feature CPU budgets exclude encoder extraction.",
+    "validation_budget": "Ranges include basic replay/algebra/provenance checks, not an extra complete label-poison neural retraining. A full rerun roughly adds another training budget; plan at most one outerlabelpoison fold rerun after stage1 if required.",
+    "implementation_time": "Not included in machine-run budgets.",
+    "memory": {
+      "historical_process_RSS_GB_range": [
+        0.48,
+        2.28
+      ],
+      "historical_B_extraction_MPS_driver_GB": 1.454014464,
+      "planned_process_RSS_cap_GB": 4,
+      "planned_MPS_driver_cap_GB": 2,
+      "limits": "M1 unified memory; RSS and driver allocations overlap, do not add as independent RAM. Some historic driver readings occur after cleanup, not peak. Monitor periodically; stop at caps rather than increase blindly. Stream Btokens instead of retaining entire token tensor."
+    }
+  },
+  "stop_rules": [
+    "Missing/changed inputs or protectedhash -> stop.",
+    "Duplicate active training -> reuse status; do not start second job.",
+    "Nonfinite values, scope leakage, source dependence on historical fit artifacts -> stop and diagnose without model tuning.",
+    "Resource cap or sustained excessive runtime -> record incomplete checkpoint and stop; no paid fallback.",
+    "Do not replace best018 even if numeric reproduction differs; report discrepancy."
+  ],
+  "deliverables": [
+    "Standalone train/evaluate/reload CLI source and frozen manifest",
+    "Per-node train/selection/query IDs, RNG/config/feature/model hashes",
+    "Fresh nested component arrays, complete calibration/residual audit",
+    "Resource trace and reproducibility results with explicit tolerance",
+    "Optional later fixed500 bundle/CSV only under next-task scope"
+  ],
+  "sources": {
+    "reports/reproduction-package-155-summary.json": "de955b82cd81e0d0004bb1a38b2db340b77f2fe146e33439386c95a02e31b723",
+    "reports/reproducibility-audit-135-summary.json": "dc2002440c8e164c1a6d7bfdff66ab5ed002db20ddff31ac5cfcb90b18ae2dd5",
+    "reports/nested-selector-146-audit.json": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+    "candidate018_pipeline.py": "318eaeb36e9f69cb3f14aa1b4c59ef0bb904ec595efc95dbdab38a3526ba2389",
+    "candidate015_pipeline.py": "fad825081b1c99bccdaa122bf6aba01167d1b481f4913c1ee9082ce4a9bc16ec",
+    "dinob_mlp_head_063.py": "e841bc72082d27f68b2bdad2d81ccf3eb2b127661bef347506cff6eb6ab04431",
+    "cnn_seed_mean_133.py": "0253abea611ec28ddd90995bb896526d3432f01793a8d62b387a9745b3bd6b5b",
+    "nested_calibration_074.py": "6f795743f2625ff1224f5f693fb906f43f13ff708439a37132761c28dbd275b7",
+    "bootstrap_selector_144.py": "d9f55f8e50cd7327efb8d45d433b8c16f3ede19265c436dffcd024e69b45abc3",
+    "spatial_joint_140.py": "d050b813cad2d9c7637bb1e20c5e263c6633565eba7963c4fdfcd4a380ac9e3e",
+    "artifacts/cnn-benchmark-001/benchmark.json": "67288c8538585cc1f2b9a15c4b6b9d256ddac6ae96353beed1bd6c9ac0757dea",
+    "artifacts/dinob-062/extraction.json": "b0fd01cf33a7b2b7e553968c3a89ede9d6253005d7f6f70a712a45f2deae35b0",
+    "artifacts/dino-multilayer-044/extraction.json": "28b1072dd65354c74257846deba8fd6a5699eec6329f5dbd0bb3f3dae025cf38",
+    "artifacts/run-022/report.json": "87e7ff556b67334561a94577eadf788f4721821c5d815b382e49e793223d0df6",
+    "artifacts/run-012/report.json": "201196e863b7ee017f179fba30dcf59637455dd619aaa92f96fcd234e57f7697",
+    "artifacts/final-model-065/report.json": "1a1f741158576b8ad40f6b12f351a7cdf7e1ada96610b83813b160d250bf9b9f",
+    "artifacts/final-model-086/head/report.json": "1a46ff5c0e94c7e4797f62986347fd5e378a4829965ad4144a47f6c8afd07053",
+    "artifacts/final-model-075/report.json": "89518af430efc46034bf27260fda37ff07f3b38cea2b1c674a5b044e0a976649",
+    "artifacts/final-model-114/fit.json": "26f56195a84a7d6fe67fb41ba531e95667e38f06db771dd4d59a54179cea2a75",
+    "artifacts/final-model-134/fit.json": "4a2cc17481e76a4019072f771855666f54d3cd49cbfe1f040cbbb1ebc02ddc00",
+    "artifacts/nested-fusion-112/benchmark.json": "4b5fc930759d59b1845481ee6af502225cb1cc759897bc60f009f89201343ad2"
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a"
+  },
+  "no_full_training_executed": true,
+  "cost": 0
+}

@@ -1,0 +1,11 @@
+{
+  "primary": "Completepredictor=.75TabPFNmean+.25Ridge100,trainedonexternalzero-shotgrainmeasurements+46originalCPSAMflowdescriptors+source-localphasegeometry/uncertaintyfeatures.",
+  "control": "Samecompletepredictorwithoutnewphasefeatures.",
+  "tabpfn": "Existinglocal3.5n8,seeds0/100/200+fold;nativepreprocessing.",
+  "ridge": "MedianimputerandStandardScalerfitonlyT,Ridgealpha100fixed;noinnerhyperparametersearch.",
+  "source_images": "Phasebase4000+boundaryNLL2000trainedonlyT320;originalCPweightsareeligibleexternal,frozen. OldH300andglobaldataset-trainedU-Netfeaturesarenotused.",
+  "evaluation": "All400originalheldoutsincludingfailedmaskimages. Newpipelinefitisouter-source-local; reference083hasconditionalhistoricalrepresentations. These400labelshavebeenreusedhistorically,notuntouched.",
+  "source_sha256": "02bf3e6a382b03fa4156f98615f9ce3cf78d8c3c04899f1e8d4c938555569534",
+  "grain_feature_sha256": "bf78050f330e21487fd06690acf7fc87716916da61365f46e4176b258571020b",
+  "flow_feature_sha256": "e501a2b6ba8b00b3d4079924cc51790789f3d912d4e71ede24d54db8814628ce"
+}

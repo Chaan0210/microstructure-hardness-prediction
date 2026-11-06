@@ -1,0 +1,15 @@
+{
+  "scope": "All new code, caches, trained models, results, and candidate predictions stay in experiments/probabilistic-grains-900. Do not mutate legacy files. No submission or external communication.",
+  "data": "Original competition train only; no generated/synthetic training examples, no test training. Existing artifacts are read-only.",
+  "execution_order": [
+    "ridge confirmation",
+    "hierarchical grain measurement",
+    "hardness-supervised grain set model",
+    "uncertainty-aware kernel comparison"
+  ],
+  "parallelism": "Independent code preparation and CPU data extraction/audits may run concurrently. Only one MPS training process at a time.",
+  "primary_validation": "Matched saved 3 x 5 folds, 400 unique IDs, exact045 comparator and failure fallback. Conditional on previously developed legacy representation; no claim of fresh independent validation. New object bank uses frozen zero-shot masks and raw train pixels; no U-Net or fine-tuned Cellpose needed for object input.",
+  "selection": "Freeze each method design before its first outer scores. Fixed 20% predictor blend with 045 plus same021-share control. No public score optimization. Hyperparameters/early stopping selected inside outer training only.",
+  "confirmation": "If primary result promising, verify model reloads, ID exclusions, metrics, and more representative train-only splits before candidate recommendation. Any test predictions must follow frozen recipes and remain local.",
+  "authoritative_baseline_public": 9.1590496642
+}

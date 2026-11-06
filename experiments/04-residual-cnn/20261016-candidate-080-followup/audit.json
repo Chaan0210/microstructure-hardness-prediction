@@ -1,0 +1,130 @@
+{
+  "public": {
+    "score080": 8.999772193,
+    "score076": 8.9646534604,
+    "difference080_minus076": 0.03511873260000087,
+    "score078": null,
+    "conclusion": "080 is worse than076; marginal Public CNN effect080-minus078 is unobserved.",
+    "public_inverse_used": false
+  },
+  "assembly": {
+    "all_ids_and_order_exact": true,
+    "composition_max_error": 0.0,
+    "changed_rows": 318,
+    "correction_rms": 1.0087622088160992,
+    "correction_mean_changed": -0.383211889782778,
+    "mask_respected": true,
+    "updates078_vs076_and080_vs078_disjoint": true,
+    "max_cross_product": 0.0,
+    "missing_ID_guards_in_make080": true,
+    "observed_ID_mismatch": false,
+    "manifest_uploaded_flag_is_stale": true
+  },
+  "oof": {
+    "strict073": {
+      "base_rmse": 9.547245150526356,
+      "new_rmse": 9.319649642914404,
+      "gain": 0.22759550761195158,
+      "delta_rms": 1.2371944690419716,
+      "delta_mse": -4.294020497574436,
+      "net_sse_gain": 1717.6081990297744,
+      "top5_net_gain_share": 0.5149382918569287,
+      "gain_without_top5": 0.11446645610214468,
+      "top10_net_gain_share": 0.836539973496581,
+      "gain_without_top10": 0.03981773251751264
+    },
+    "recorded073": {
+      "base_rmse": 9.563562091835122,
+      "new_rmse": 9.33213431735994,
+      "gain": 0.2314277744751827,
+      "delta_rms": 1.2371944690419716,
+      "delta_mse": -4.372988967138737,
+      "net_sse_gain": 1749.1955868554949,
+      "top5_net_gain_share": 0.507753164771337,
+      "gain_without_top5": 0.11813995750783768,
+      "top10_net_gain_share": 0.8223988637206416,
+      "gain_without_top10": 0.04399168485396032
+    },
+    "recorded078": {
+      "base_rmse": 9.501357386655249,
+      "new_rmse": 9.261581568508278,
+      "gain": 0.23977581814697047,
+      "delta_rms": 1.2371944690419716,
+      "delta_mse": -4.498899038815956,
+      "net_sse_gain": 1799.5596155263827,
+      "top5_net_gain_share": 0.5064162614040774,
+      "gain_without_top5": 0.12282296334546494,
+      "top10_net_gain_share": 0.808254491233598,
+      "gain_without_top10": 0.04929797829737126
+    },
+    "spread_projection_diagnostic": {
+      "slope": 0.011796117916922656,
+      "base_rmse": 9.547245150526356,
+      "new_rmse": 9.335678293261347,
+      "gain": 0.21156685726500868,
+      "delta_rms": 1.2341311342875712,
+      "delta_mse": -3.9950007689779334,
+      "net_sse_gain": 1598.0003075911734,
+      "top5_net_gain_share": 0.5426511584234227,
+      "gain_without_top5": 0.1003341157035802,
+      "top10_net_gain_share": 0.8948789967450955,
+      "gain_without_top10": 0.023742738925953688,
+      "limitation": "Projection removes one linear direction on these same predictions; not evidence of information on new data."
+    },
+    "matched_no_image_control": {
+      "base_rmse": 9.501336150488772,
+      "new_rmse": 9.319649642914404,
+      "gain": 0.18168650757436744,
+      "delta_rms": 1.062540810765414,
+      "delta_mse": -3.419519177910199,
+      "net_sse_gain": 1367.8076711640797,
+      "top5_net_gain_share": 0.5283173376432871,
+      "gain_without_top5": 0.08838789236102684,
+      "top10_net_gain_share": 0.8627458156463499,
+      "gain_without_top10": 0.026477941411839012,
+      "limitation": "Passing this specific control does not establish independent generalization or rule out other tabular learners."
+    },
+    "transport_interaction_mse": -0.1259100716772204,
+    "historical_baseline_limit": "078 NPY is aligned through its generating code and shared base400 IDs, but is not a fresh strict-source078 refit; do not relabel it as such."
+  },
+  "holdout": {
+    "nondev_count": 100,
+    "earlier_exposure": [
+      {
+        "stage": "round2/round3 full500 partition2026101501",
+        "holdout_ids_in_training": 100,
+        "holdout_ids_evaluated": 100
+      },
+      {
+        "stage": "round2/round3 full500 partition2026101502",
+        "holdout_ids_in_training": 100,
+        "holdout_ids_evaluated": 100
+      },
+      {
+        "stage": "round2/round3 full500 partition2026101503",
+        "holdout_ids_in_training": 100,
+        "holdout_ids_evaluated": 100
+      }
+    ],
+    "full500_CNN_training_overlap": 100,
+    "historical_augmented_sources_outside_dev": 46,
+    "independent_holdout_available": false
+  },
+  "status": {
+    "confirmed": [
+      "CSV composition and identities match",
+      "078 standalone Public is absent",
+      "100 non-dev images are previously exposed"
+    ],
+    "suspected": [
+      "Selection/sparse-error concentration",
+      "Refit and coefficient transport",
+      "073-trained correction applied to078"
+    ],
+    "unresolved": [
+      "Pure CNN Public effect",
+      "Independent new-data generalization",
+      "Which transport mechanism caused failure"
+    ]
+  }
+}

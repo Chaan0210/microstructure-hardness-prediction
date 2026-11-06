@@ -1,0 +1,46 @@
+{
+  "hypothesis": "Coarse hardness classification supplies an additional supervised gradient to the same64-dimensional hidden representation; this can regularize or interfere with regression. Classifier is not independent of regression sharedMLP.",
+  "reference_url": "https://www.kaggle.com/competitions/csiro-biomass/writeups/1st-place-solution",
+  "source_access": "Official writeup opened but no body exposed by browser. Indexed primary-source snippet confirms SmoothL1 regression plus CrossEntropy classification; seven bins/0.3 and published scores supplied by parent, not independently fully re-read here. No external code, data or weights downloaded.",
+  "transfer_limits": "Own small frozenDINOv2 head, one hardness target, foldtrain quantile bins. Not a reproduction of DINOv3Large five-target trainable-backbone solution or UEP; no pseudo labels/online learning/test adaptation.",
+  "config": {
+    "hidden": 64,
+    "dropout": 0.25,
+    "epochs": 100,
+    "batch_size": 64,
+    "lr": 0.0003,
+    "min_lr": 1e-05,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "beta": 1.0,
+    "aux_weight": 0.3,
+    "bins": 7,
+    "seed": 20261128
+  },
+  "arms": {
+    "regression_only": 0.0,
+    "auxiliary": 0.3
+  },
+  "architecture": "StandardScaler3456 -> Linear64 -> GELU -> Dropout.25 -> Linear1 regression and Linear7 logits, shared bottleneck; backbone frozen cached.",
+  "target": "Foldtrain mean/std, SmoothL1 beta1 on standardized hardness, mean CE coefficient.3. Six quantile boundaries j/7,j1..6 in original hardness, foldtrain only, searchsorted right. Duplicated cutpoints cause error, not silently changed bins.",
+  "paired_controls": "Exactly identical initialized whole model, data permutations, dropout seed, optimizer/scheduler/epochs/regularization and both heads instantiated. Only auxiliary coefficient differs. Regression-only classifier gets no gradient and stays unchanged.",
+  "epoch_rule": "100 fixed epochs,last endpoint,cosine scheduler. Diagnostics epoch0/20/40/60/80/100 do not choose checkpoint. No loss/width/dropout/seed/epoch sweep.",
+  "primary": "auxiliary_blend=.75samefold003+.25auxiliary. Matchedcontrol=.75samefold003+.25regression_only. Compare both to verified samefold006. Weights fixed, no Public adjustment.",
+  "screen": "Advance auxiliary only if original pooled primary RMSE improves both006 and matchedcontrol, and >=3/5folds improve against each. Gate controls compute, not statistical significance. Otherwise stop, no wider search or fallback winner.",
+  "confirmation": "If screen passes, identical recipe on both existing partitions20261031/20261101, refitting all heads/scalers/targetstats/bins within each fold. Only consistency across3partitions supports candidate consideration; no candidate created by this script.",
+  "resource": "CPU2threads. Benchmark originalfold0 training only 10epochs eacharm, same100epoch scheduler; discard benchmark models. Stop if projected original10fits>5minutes or RSS>2GB.",
+  "scope": "Development400 cached features/labels only. No image extraction, holdout/test reads, installs/cost/uploads. Historical repeated-selection bias remains.",
+  "sources": {
+    "auxiliary_head_051.py": "1024afa9838b07d138c9bdec5ea0a5946276da5b33d8ad794cbf5d3be16434b3",
+    "auxiliary_experiment_051.py": "8399a180a56f19a6de0c838f6a2fe20b1d57894ecb12faacf822ab6d282eee3b"
+  },
+  "inputs": {
+    "artifacts/dino-multilayer-044/development_features.npz": "6d26b7d78eaf1d094e829984d5665a38dc11b71c918f108384861259b35c4159",
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/dino-multilayer-044/candidate-design.json": "b783348c7b39c8a457ddcf0f5b12f64a1fece8614886fe0d3706ce42411f703e",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b"
+  }
+}

@@ -1,0 +1,2895 @@
+{
+  "fits": 10,
+  "gradient_updates": 8000,
+  "shadow_optimizer_verification_steps": 8000,
+  "EMA_updates": 8000,
+  "all10_train_normalization_poison_exact": true,
+  "folds": [
+    {
+      "split": "20261031",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 0,
+      "seed": 20261003,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5726978182792664,
+        "x_std": 0.07051518559455872,
+        "y_mean": 193.96636984426385,
+        "y_std": 18.187600270635066
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "cf9457e0e08a277ee20fff10d8dee72b67f04b08d2ed28d9e5f086b82f166bd1",
+          "reference_SHA256": "cf9457e0e08a277ee20fff10d8dee72b67f04b08d2ed28d9e5f086b82f166bd1",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "c9e021d4c8c4cdf145581e8d8f8904cd6a9fd13f3424e4dd9acab0de782918d1",
+          "post_update_theta_SHA256": "7c1c0e669055177daf04bf7557ef84b8962a7547ae28d0b15851f398bf16ec57",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "c6575e5e49ad1cee36501e3ad509d96517aeb91bfcc9e25ac620bb18f9beb846",
+          "reference_SHA256": "c6575e5e49ad1cee36501e3ad509d96517aeb91bfcc9e25ac620bb18f9beb846",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "d1d9980395fae652ee8739c1e02fb029ad508c348eee0305f8f3d9b729b2325f",
+          "post_update_theta_SHA256": "2ed299504b4d2b442a1deb91336844e09f77508e7501b5622e64b9e454b0854c",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "6b143453a9ae16fb47230032905cdaca2536c882d546a9a0b541d89b8f438b2a",
+          "reference_SHA256": "6b143453a9ae16fb47230032905cdaca2536c882d546a9a0b541d89b8f438b2a",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "a3e3cfc647a57109dff54b3817e02b1a23d57fd6ddf5904de35bf94b2f185132",
+          "post_update_theta_SHA256": "f5a514ad242ac21776269dc27804ee5885aeb02b063940c4ea3fa9cb9262a216",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "0a43a110c932f5eed592e33ca2f39d9740914bc4923e12e1db0b2193d017f804",
+          "reference_SHA256": "0a43a110c932f5eed592e33ca2f39d9740914bc4923e12e1db0b2193d017f804",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "4424053bfbda14af53bc9d7f217a5a77060e6c42951af21956cac4cc45ddb784",
+          "post_update_theta_SHA256": "2a181be681baa2f1a189a257f38c3a917fea6ae3d97cb0e9d8103b7c1e75398b",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "ec019a7a3a3dea81e87f5ead799b3514bea714c54f533326d1afb6420cf3434c",
+          "reference_SHA256": "ec019a7a3a3dea81e87f5ead799b3514bea714c54f533326d1afb6420cf3434c",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "6a92c81aac7c870e61b77bb81bf502ed378fc792e653518079dac642b71bae79",
+          "post_update_theta_SHA256": "27d58283acde04d3a81a56b27f423db075018d3d07eec2208a455c684f3b9570",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.530050423692586e-06,
+      "seconds": 19.180719166004565,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "9fff33bd09c3974bdd8d7dca860437252f82cddb1c0a4d4831144102daa46239",
+      "model_SHA256": {
+        "last5_uniform": "4a59b0abb393987bd890e4a51ddae4213bf48824432b72bb69ff7e4c8373d669",
+        "update_ema": "3f7184a45ac02cb9647b73ef3be854eaa05eff948ad4f76ea97449147223ccce"
+      },
+      "streams_SHA256": "c95a0d40f0bb80e7ed58525b0994214c5a8e4da803857e142be0a4a9b5b7bb19",
+      "predictions_SHA256": "7c18b7d418a084e240f95d3feeb1ef4b21fb65eaced1b65d4bdc17510869fd5b"
+    },
+    {
+      "split": "20261031",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 1,
+      "seed": 20261004,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5719364285469055,
+        "x_std": 0.07048609107732773,
+        "y_mean": 193.5828217822237,
+        "y_std": 17.573319235888114
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "46a17c55cace36d584b83bf075f72511079472dd36d4e0662892c9a840d99db2",
+          "reference_SHA256": "46a17c55cace36d584b83bf075f72511079472dd36d4e0662892c9a840d99db2",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "eae45dd3ab439a20df22d259d41897c6752fe76d54db93de984619659b400ff2",
+          "post_update_theta_SHA256": "54aec4a8fb987da4ae93699b35e76a9161f4991e1532bcf3471cdce3611748be",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "02c18b47fb8c08452e683bd69fab2964d4758bf11e264974bc9f20357747549c",
+          "reference_SHA256": "02c18b47fb8c08452e683bd69fab2964d4758bf11e264974bc9f20357747549c",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "75feb4ff6b82d783e7bc557b7687f15db81c48194427965d211a30a23faa75fc",
+          "post_update_theta_SHA256": "68a96a396dd9f166c8f3b1933745aeddd9f32abc1847ca85e856b360c3fa74b1",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "2ca665d5ae3db88f30f84317f08ba9b39d4b39cab3c90ad27aed44487e8e91d9",
+          "reference_SHA256": "2ca665d5ae3db88f30f84317f08ba9b39d4b39cab3c90ad27aed44487e8e91d9",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "1021030155b9f4e2d70267d11f48815663cae582f721577fab25ce5fa369506d",
+          "post_update_theta_SHA256": "443477203a8f3fc3e16fc4530268bc58ae85752c32107882556ff075e9546082",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "89dbc71d7dd513d7159d4a3d98a8d714b3720aa39a85d416ed2e8a562d1b750f",
+          "reference_SHA256": "89dbc71d7dd513d7159d4a3d98a8d714b3720aa39a85d416ed2e8a562d1b750f",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "d0fa3d5fcda3afd2061d60c7b6310d97fd211b94e9890f2dbf1fb9d85e84eace",
+          "post_update_theta_SHA256": "c2d959b54bc533c6f55a6a63418b78794f2dd227cc89f0978be79a7f022f1f92",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "662927868b8a433fa8f80625c13410eb313bf20e7963c38a417bacd96960b6a1",
+          "reference_SHA256": "662927868b8a433fa8f80625c13410eb313bf20e7963c38a417bacd96960b6a1",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "16107a03b8b2789d080e48778562be66ad14958b01997d6330f715425f2982ed",
+          "post_update_theta_SHA256": "6304f35c7cd7e107aa0f3aabef124ed6168f3e8aa3a417800ac890d54aba75ac",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.7358657322663618e-06,
+      "seconds": 18.592799333986477,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "4facd1112e8ed05384fb425df544f1028276ee3daddb11a7d1788c8f2fce2748",
+      "model_SHA256": {
+        "last5_uniform": "88ac1d000f1bd89435b5298e8be607e08f2157f6d76e85acbdffa365c8894557",
+        "update_ema": "01b7c005520d84f65e60f1c352703da0d466f5116d258ed14752fff0518bf28d"
+      },
+      "streams_SHA256": "ebc1559182270749501b0842cf31c50bcd572463372a1f57247a92bc50b2990d",
+      "predictions_SHA256": "efdb2f5ad2339d7045d06b0ffdd2c48c32294fb6d2bae08a360cc710c12efdcf"
+    },
+    {
+      "split": "20261031",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 2,
+      "seed": 20261005,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5725361108779907,
+        "x_std": 0.07100549340248108,
+        "y_mean": 194.69274992766108,
+        "y_std": 17.876947838737433
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "09620795be6d2aa903902dee1afb7c1a6d689869f01fb569f3574cb65d5e7a82",
+          "reference_SHA256": "09620795be6d2aa903902dee1afb7c1a6d689869f01fb569f3574cb65d5e7a82",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "10f95283e9ea90c1f84fe898caf8abcc909af7057912f0744421e75363e0a50f",
+          "post_update_theta_SHA256": "3214aeead7e7596d6a5ba572c97ff303ebace8e1c706fc816ac95d389f498435",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "f8b09f332f19bd40ecb0711df2ae9295b5785758e05fbfe2c9a9b45d18a12120",
+          "reference_SHA256": "f8b09f332f19bd40ecb0711df2ae9295b5785758e05fbfe2c9a9b45d18a12120",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "e14824fe3c7c2a22eb43ca20e133ae5f6abc497fc566f8ac015b3f78a92d6ae7",
+          "post_update_theta_SHA256": "07ebb52235f56a46a2e58b1864e1edb5d3349d731495f949d516560db856c4a4",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "813480a5ee2f4eb3d17b0b15f4c6cad655e495218724730ed81429bee6dec538",
+          "reference_SHA256": "813480a5ee2f4eb3d17b0b15f4c6cad655e495218724730ed81429bee6dec538",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "83599185290d2e20eaa8c98a4c56ef20c7794967291d1d1ca93c3eb297c243e5",
+          "post_update_theta_SHA256": "40ae50f79cd9e6dc430a1131e675b98821796215839ba94d4150c80a1af818b4",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "0fcd7f9e3f7afa5b1e6397dd62b14101940df07ef7f7bf7eed5d09e18314947c",
+          "reference_SHA256": "0fcd7f9e3f7afa5b1e6397dd62b14101940df07ef7f7bf7eed5d09e18314947c",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "0cb5d61c05559148701d2d609c35cd8b716a1fdd8dbc0ae36d5289fbf47aefcb",
+          "post_update_theta_SHA256": "aace1fdbc17e607f43123db576072be7baecf3fba8820e4100d44f4be53a4272",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "673df2ab5a6f9acf8a15c3998ba91637c68bdc0be605a43a41d2c36c9b2fc049",
+          "reference_SHA256": "673df2ab5a6f9acf8a15c3998ba91637c68bdc0be605a43a41d2c36c9b2fc049",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "c021dce3b8436f7990d882a7627ec23ea0a83b4bac7b7429b6b99db237e9090b",
+          "post_update_theta_SHA256": "631a6234cc63374c5d7fa8a0642e75cc2d2e6a7f95c593702f10e2d6787c83b0",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.815131436488926e-06,
+      "seconds": 18.60745495799347,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "da02e9386894361213767a423bc71bc04abfb9facaf48bf988af02c50e40a96d",
+      "model_SHA256": {
+        "last5_uniform": "7be9192823c1f8884508fb9bc77ef68418412b059c9a52978a55c31e15f75a9f",
+        "update_ema": "7c3aca8fca3a7fcf60992043d9ce8f26ece0b4cf659da299760d6e346273adf2"
+      },
+      "streams_SHA256": "1784133156254dafb2a878789d0e7e52f29bf88ae30e7a6624e6f69e8b1299a3",
+      "predictions_SHA256": "bd8e085f9eec98d456aafc0f8bec8d1c0c4ce80d2c5e5e958cf08357f2963df1"
+    },
+    {
+      "split": "20261031",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 3,
+      "seed": 20261006,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5718041658401489,
+        "x_std": 0.07041668891906738,
+        "y_mean": 194.5473407699289,
+        "y_std": 18.327656020030513
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "5d8d8618905a31acc1fc84beb991d8b192074abe569641c93da3d1f2eb640263",
+          "reference_SHA256": "5d8d8618905a31acc1fc84beb991d8b192074abe569641c93da3d1f2eb640263",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "84401e9f1f7a636bcf328281c090ebefe574a74fff85b48e15d0515748674121",
+          "post_update_theta_SHA256": "ccaac22d85bcd46f941c04dca69953b8997abd5aea4f0b3028a2a2437b73af8d",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "dfe6c71d283af1340e2f33aafbe87ed1aad91a18a59e7cf06893e94767b6cd99",
+          "reference_SHA256": "dfe6c71d283af1340e2f33aafbe87ed1aad91a18a59e7cf06893e94767b6cd99",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "4d5adb0f9b0723d0e4ff2b88f6a664bd019115d1aa1c4f77c4b9a18c8eaad8fb",
+          "post_update_theta_SHA256": "409e8d6dbe98c063803f7ffa0d9014f740172362b1d0433fc878dc9871b0cf64",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "7370ba29faab4255955cb859b1a640bf9336675931d1ed529db95992c5ea25c7",
+          "reference_SHA256": "7370ba29faab4255955cb859b1a640bf9336675931d1ed529db95992c5ea25c7",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "8416924dbfe57a0bb0337a7a8d9532fb744e32e98ab106b8926eef598b491f14",
+          "post_update_theta_SHA256": "42c3ba9e114e3844268056d8e467622ef661023f1a4b28e038055799ab0df44f",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "a18e84539b92a3bdce9660cbcf63ba4da9460ec51b6e2d843f6470e5b1ecf77d",
+          "reference_SHA256": "a18e84539b92a3bdce9660cbcf63ba4da9460ec51b6e2d843f6470e5b1ecf77d",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "ce3fbee3f588bbafa246385d36b498aaa90f62a4f24a651a0d00c9307af9d487",
+          "post_update_theta_SHA256": "44112e7e3c9ddda9dd1b8f215a8c2390863c1dcb6ef2bc7eb62066a14a3172ae",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "291362e6a4303a8c7a8a8a2acbb2f12f9c575dc702d7ad37b2e9402177d2c081",
+          "reference_SHA256": "291362e6a4303a8c7a8a8a2acbb2f12f9c575dc702d7ad37b2e9402177d2c081",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "4ccaa945ad8e4f564a350c53c84a47849e7237765177bd6fb48bbb1e0174ff6b",
+          "post_update_theta_SHA256": "02732d2368e9f558b2e31bf1f0a50b8108447ddd742550f8b416b78af7f28d74",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.7660584754608522e-06,
+      "seconds": 18.76339624999673,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "62c2a59be3112944c3046bd979a4f50eab9e98d658910b1971ca3664a2586096",
+      "model_SHA256": {
+        "last5_uniform": "fa071e19639e9bd056c07f1bfe9d8ff043fb65ffd0c68f07c08350bb2898e320",
+        "update_ema": "03add8e0c427ec55cd92a813a70f40b1190263f2561cdbe48b9637a99be9dabe"
+      },
+      "streams_SHA256": "187e465b116f49a4626c7617a39b6eca04cb8531c90fc19fedf22792b2a9184f",
+      "predictions_SHA256": "7b46baca541e615edf86995ff4637c634388b438ccf9069db83c6ebec5942864"
+    },
+    {
+      "split": "20261031",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 4,
+      "seed": 20261007,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5727907419204712,
+        "x_std": 0.07038703560829163,
+        "y_mean": 193.59450897296503,
+        "y_std": 18.166767874690972
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "06fa4a88096e0add1dc458f176fd01a04acb5e235ecbee1536af70c4f44a01d7",
+          "reference_SHA256": "06fa4a88096e0add1dc458f176fd01a04acb5e235ecbee1536af70c4f44a01d7",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "85c06bfd33c0dac5153b00eb605472605a07202ffbd413b9287339f722401536",
+          "post_update_theta_SHA256": "6422bf7c33ac01b842a9ff5748e73210495a23605a8e827474045366aab9557c",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "c8177501cc4ef815449a79544499558480556f48ac428e96641568cf9829aee7",
+          "reference_SHA256": "c8177501cc4ef815449a79544499558480556f48ac428e96641568cf9829aee7",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "091a8ae05c506f311c5d75710542fb280bca14519fc4152ffd6d0e835126fe2b",
+          "post_update_theta_SHA256": "b6bd4140cf18d4285752c814d224e37cd9e5515817c682613561ea3eb4c824ed",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "bc5e9e81f891e65ebebce9afeda8a9032855614eb837880d8b08776de4f84fc2",
+          "reference_SHA256": "bc5e9e81f891e65ebebce9afeda8a9032855614eb837880d8b08776de4f84fc2",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "a9c9632c094f39afd2a538bf59258472adbc047c6a7b8902b7eaa97e7e404b57",
+          "post_update_theta_SHA256": "4574239de3e131211140d84ac9ea839fbef48ef926fbe9627d3dbd58071ccc99",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "17296d30d850f6d05c9e384ba9c023090c67a64ad0576ebead8b6933f605cb5a",
+          "reference_SHA256": "17296d30d850f6d05c9e384ba9c023090c67a64ad0576ebead8b6933f605cb5a",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "20e3e22646cebb01769cbbd6dfdea23b81188d2ab85d63e3893c03fe26fa7cdc",
+          "post_update_theta_SHA256": "e3935e0e0558c2f9ae5285f49415199160cd590a09e06717212b61833dcb662b",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "644791bbd4007efb8bd9a4ef879b46ebf926332fa1f05ab87faa695e930a6c9d",
+          "reference_SHA256": "644791bbd4007efb8bd9a4ef879b46ebf926332fa1f05ab87faa695e930a6c9d",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "406466746ec088439c3acbc76edf540325feb7807efb02fc978990ea3b5c5b56",
+          "post_update_theta_SHA256": "e4f3da9dcd5d252333bfdb2fadcd6000a7bde353bac1a523da1131b00a880fb4",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.822919609706375e-06,
+      "seconds": 18.621997750000446,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "0ce22e8a302c4d468a129fcb6751f875e245d6e5b371625ad205d7626da41f0d",
+      "model_SHA256": {
+        "last5_uniform": "db6cee225ae4738ab66fda776f5a3a13eefb767a10d3598529c88c56e43ef4d1",
+        "update_ema": "4cec11a6e61e1877515bece45ecca6979fa079aac591d2b12dad2a2ccdce88b6"
+      },
+      "streams_SHA256": "c8db6ef403460d739e44d0226ec4b025d72879b169487b8675443566fe330a30",
+      "predictions_SHA256": "db23490f0c780fe01e8d8276506f52fdd7266721c2957c04ed0cb0f60c4efd50"
+    },
+    {
+      "split": "20261101",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 0,
+      "seed": 20261003,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5723443031311035,
+        "x_std": 0.07015552371740341,
+        "y_mean": 194.22917822345988,
+        "y_std": 18.35755522037635
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "46acb5342201a0c25fb1eb8ab0b8c95cd9bd31b2c1c34747448aaec3b339b3b8",
+          "reference_SHA256": "46acb5342201a0c25fb1eb8ab0b8c95cd9bd31b2c1c34747448aaec3b339b3b8",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "5cf0aa1aa3f47205879264f45d8c88a53ee475d1a61f3b7050a250caf63216f5",
+          "post_update_theta_SHA256": "3328130593b94136c4614ed8e289a5a7d8af43dffe91b9fa91910e78640d2541",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "a581193f3c16e563675db32abc65f05fb57ce5b95e80070b46e035941d6e2aac",
+          "reference_SHA256": "a581193f3c16e563675db32abc65f05fb57ce5b95e80070b46e035941d6e2aac",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "444147b12d8ebb276814dd201712c225f5d2615f777c1d662f3f1619766480ee",
+          "post_update_theta_SHA256": "4478a61a93ade27d61029658adef8774f405e3be7f0241399dff06be14f65d38",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "7c08b5bd7d23955348d1674dd45ed6d3c200e192bd93e1c983d23f2078a42347",
+          "reference_SHA256": "7c08b5bd7d23955348d1674dd45ed6d3c200e192bd93e1c983d23f2078a42347",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "044673e39d2cf49c92ee9f283863e918ecf0af8e817fde27fd67f3b32edeb0e9",
+          "post_update_theta_SHA256": "e6c6162a9fde6b59a8f547076dc73507d2c09ea2eab04f5746eb8bbddff1d49c",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "f0adf47e83ab84b021a80afe90969970793f6206e2d8e31a0f96b9628e20d83c",
+          "reference_SHA256": "f0adf47e83ab84b021a80afe90969970793f6206e2d8e31a0f96b9628e20d83c",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "2be01747e7fa01995f4572becb75a16cfb195ac9dfcecdfa14673b6d6d3c5109",
+          "post_update_theta_SHA256": "ff55ec28e6b66520c032b5dd2cdfba645ccfbfbaa0287fd2b009806fc5236f0e",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "3aff6fe596a1b0a4aedb6cbe41954375bba3297d09c0bc446c0ada1d467b0528",
+          "reference_SHA256": "3aff6fe596a1b0a4aedb6cbe41954375bba3297d09c0bc446c0ada1d467b0528",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "2033a83326893f5bcc8fb576a3ff3a5022892fca5e9aea0cc2939cd88c4686ea",
+          "post_update_theta_SHA256": "fd09b4fba0a04e6d5b7345b82ca2337067c9525fd6aace035a2f5280ff216ce4",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.7765747963860434e-06,
+      "seconds": 18.648446917010006,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "a795f4ecae3172577f92903566e89ae78dec51c4c6821fc107f7b839a0d9cd3a",
+      "model_SHA256": {
+        "last5_uniform": "83e43c0c1e66c6a6bfbc2c0eaff849a51f68d66e18c7f3851075b04d1f261032",
+        "update_ema": "c4f1cd7fd7ac943b9c504c35547738d1f8b250ba5ed8f9a6de4bbeec8b0a0c95"
+      },
+      "streams_SHA256": "40536d0b54b5d9159b84630d80524f9e0dc29ce6d6a381595559a5f65138442c",
+      "predictions_SHA256": "23332f7910495c99824d69c3a54e13ba5efd738b2f17d45f8f825522b5acd878"
+    },
+    {
+      "split": "20261101",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 1,
+      "seed": 20261004,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5726154446601868,
+        "x_std": 0.07057330012321472,
+        "y_mean": 193.75381351572622,
+        "y_std": 18.322243806420435
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "19e467be295a1be8d879dc53f071840ae165140602e9b0a981f80a2017253319",
+          "reference_SHA256": "19e467be295a1be8d879dc53f071840ae165140602e9b0a981f80a2017253319",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "3ec64e1a6d476500902893ff3f9823578be41871e5e57f2312c2273130d4cee9",
+          "post_update_theta_SHA256": "b33b92c42e003cbefdbd5a45462c2adab4d715f67e10306e2ef9b5ac19089dd2",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "a7c89355df7721669e5916b20f1b21f851217cea9900414ca0cb21251f4caf20",
+          "reference_SHA256": "a7c89355df7721669e5916b20f1b21f851217cea9900414ca0cb21251f4caf20",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "1b074d7824e031923e2e392174874bb659d1bd74d1a297d2fac866f84ab6df10",
+          "post_update_theta_SHA256": "a27d9ccbb2d97f8ecbe41c93e215ce396ba5b00abc1335cc5497833c340a7fea",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "7f55ba3f514c323148989ae6ae5f5be595c46c32cdff604f5f30ff84174e2d3b",
+          "reference_SHA256": "7f55ba3f514c323148989ae6ae5f5be595c46c32cdff604f5f30ff84174e2d3b",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "0188732c5661ed047371a1acf6649cb01c277ed046ff22c0bffdc3d858b2ee2f",
+          "post_update_theta_SHA256": "7ce8ff9a242044bfe14dda62212f53b4949a3b2aa1b89d5ea692f247be797ded",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "e99fe9e63a2803a1bad6a339664026a7347cee0c63a8a2e360a122f208c0defd",
+          "reference_SHA256": "e99fe9e63a2803a1bad6a339664026a7347cee0c63a8a2e360a122f208c0defd",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "9f4dce3ce66ee0811f91d3f8e1c397c58ec6a763ac9d3d908994841647cc30f2",
+          "post_update_theta_SHA256": "350d00e66bc84ae845c305dca95e48cb4250be6308ca70badf1cca4636e40337",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "a883410839df11cc60ed16339c4dfa7b614af029b7964b5e6ca2a145087a4596",
+          "reference_SHA256": "a883410839df11cc60ed16339c4dfa7b614af029b7964b5e6ca2a145087a4596",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "634dbb31e5b9eeca4d8f04b5508dd3009228894e9968b117c718c2c4e17d05cb",
+          "post_update_theta_SHA256": "360888b47a22ae87073c54436d290874bf7603ef01fc1b3c3e8e8296ed5a5057",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.8052571635340797e-06,
+      "seconds": 18.625734832996386,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "f0dad8be391fcc74490a293f02e061468223133824f230767cc789f9d109d7cc",
+      "model_SHA256": {
+        "last5_uniform": "093cb939ec89d594412d2a5e13dbbc0369dc38fa12ba71b03b50fb3c1be43f28",
+        "update_ema": "dc3a68fe88022586f009cccaa31a49dc4c0cdd12990f9a2afb7d8a371cc03f00"
+      },
+      "streams_SHA256": "aa33e9825cd394928d6f974bce7b00c3a5ac6e8c83ab7f3259eaf0d0c2564f35",
+      "predictions_SHA256": "6203057b0d5a24ec123c8ad4d541259ea83bbfbf933a49abae82d99117e36787"
+    },
+    {
+      "split": "20261101",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 2,
+      "seed": 20261005,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5732678174972534,
+        "x_std": 0.07027915865182877,
+        "y_mean": 194.61151550075948,
+        "y_std": 18.033217923564546
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "94dc4db8fe33625b1c6f7852a5f0e15fd8a0660f288c522e42f0bb6823337191",
+          "reference_SHA256": "94dc4db8fe33625b1c6f7852a5f0e15fd8a0660f288c522e42f0bb6823337191",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "3c99deaf54ecb8f575eaf429205494f436a7086d4edf90e2ab789f6246a91f73",
+          "post_update_theta_SHA256": "866cf69b8bbe4bb7c7385ec68cf9898a341478fc6990a755d4380f27a10a1d21",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "0089bf1fe4d8248f09f4c5fe541800a5e3b24258895ab67d97bda3dab1e8ff14",
+          "reference_SHA256": "0089bf1fe4d8248f09f4c5fe541800a5e3b24258895ab67d97bda3dab1e8ff14",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "7abdf23c4e3463029a5032ab751215cd83f04db874730a1b468dd0dddd668aa6",
+          "post_update_theta_SHA256": "d045a4d1e145b3b307b8f4dfd3994faf15f8b176ffd221ad3adaa001263d39b0",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "6c420218b3a5df0a725c9fb9ee84c56cebd75146c1803c4eebc1fd55c17d2a32",
+          "reference_SHA256": "6c420218b3a5df0a725c9fb9ee84c56cebd75146c1803c4eebc1fd55c17d2a32",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "3f04f26a3ba46932950e45f1f72d2bb4f06cb27091df8a10078dd218aa82eefd",
+          "post_update_theta_SHA256": "af9267c95a81c5836c2bb1fffeaba347ddaca89703836ef3ec6ed00f31420584",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "da3a14f7fe795efe7b95a48a30987f1dff59f5c5e00a0de36bf093addef20086",
+          "reference_SHA256": "da3a14f7fe795efe7b95a48a30987f1dff59f5c5e00a0de36bf093addef20086",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "aa36f07c44ea24a1b9a65d8179dfc0e258847614ac5e736b4285501261b832e0",
+          "post_update_theta_SHA256": "16c3a65c600f27fc587b978bf4030363d3d9965de36e1aafbbe783b57867e7e1",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "35e156e6fcfb12a0f406cf3b961273aeb7362bfca580f4f0b5219774c1acfe0a",
+          "reference_SHA256": "35e156e6fcfb12a0f406cf3b961273aeb7362bfca580f4f0b5219774c1acfe0a",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "54c1eee78b786107df0856c9e2fbadc2d87d8d86d1f658635f3fcb0e87dc79a1",
+          "post_update_theta_SHA256": "dab10ceee2a1088eb221fc779f864ff7ed569a1e45b39c198a8d68548f388625",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.713573914985389e-06,
+      "seconds": 18.625844333000714,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "b2c07f0d713446caa89f6621c04eed3cef5a292d188a677fc7ec01f32381fbde",
+      "model_SHA256": {
+        "last5_uniform": "927fc1088f237a5a488a45249f92097e557f7b29579c9886bde998930a633fec",
+        "update_ema": "292bdf5d6664cdd73b31f9a1264db97e1afbc350c093ac66ff775346367469ea"
+      },
+      "streams_SHA256": "0b0620026b32c6c39ee9214258bfd009c0dec14f8eaf6449cf63d3bee7798f33",
+      "predictions_SHA256": "2dbc3053699fca3e3ed672e3b6e1d1e5b6d2f88153386354b36f16bc5d3cda11"
+    },
+    {
+      "split": "20261101",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 3,
+      "seed": 20261006,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5715368986129761,
+        "x_std": 0.07080253958702087,
+        "y_mean": 193.91447935022236,
+        "y_std": 17.48426021919937
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "c4e98a425fb2fa3ad7da5a3a8da70464ad3e1a778597db4d3a9e687205847510",
+          "reference_SHA256": "c4e98a425fb2fa3ad7da5a3a8da70464ad3e1a778597db4d3a9e687205847510",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "5adb8336289a6d9f01ee9e65bba86236ca772e3451840cd68f38c4db9dbba126",
+          "post_update_theta_SHA256": "7f80b6c7a6a799f1ef2edb144a6c8745dfd982ee7d0fdd37232013f5ef96228a",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "71c24fac416c0b1ff3b34b0754a73f98d75e8862e2bfc689f486ced94e378a3b",
+          "reference_SHA256": "71c24fac416c0b1ff3b34b0754a73f98d75e8862e2bfc689f486ced94e378a3b",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "06f2a9e0b88234c71f4f5f69bdcbb738fd579f09dc498bae65173650f327f183",
+          "post_update_theta_SHA256": "3a3c8e0cef0b2ebdacbde02829e0609ea6eb3569cc0eb845f8abe186012fc022",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "1d6c56d70a5ac32a60b331b1103c6622791c0b6fa11fe867f7e5c529fbaa5358",
+          "reference_SHA256": "1d6c56d70a5ac32a60b331b1103c6622791c0b6fa11fe867f7e5c529fbaa5358",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "e8ed70e8f1b30513ea803a0094fe2774643baa35fdfb8224ec404ee07c0815ad",
+          "post_update_theta_SHA256": "e1406700b9aa9ec78a145780bfc9a5f2892d2abba0fad4442fb178e88bb8986f",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "e30cc5c9868d60fd00d88f5f81e106356794540e0546280cc74afd9adcffc076",
+          "reference_SHA256": "e30cc5c9868d60fd00d88f5f81e106356794540e0546280cc74afd9adcffc076",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "1c95fe6b33c7194c9757eda7132a3623fb886cb4bafc0368b8c07762e1a51001",
+          "post_update_theta_SHA256": "cb4c3e20ea55dcda0ced6418c0205d125bf3271c0484564bcede05ac846f7d8a",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "647166681af80ee544ca542a8b8f9ca2a09bb779040f10287d7dc2ebfaf66faa",
+          "reference_SHA256": "647166681af80ee544ca542a8b8f9ca2a09bb779040f10287d7dc2ebfaf66faa",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "4e8ef3f16eeb42281586cc4d4b679dad4cf035188be635f759c3fa568cb2336d",
+          "post_update_theta_SHA256": "48d1b16f61c98ae76e53dd7d77b30f86aae0495ddc8767fde74285ef1c8a64d2",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.6861159275460835e-06,
+      "seconds": 18.575830000001588,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "f493f3e146ba387203c0c7cf6814343000991150a67c3f599e0a9de21887c1b4",
+      "model_SHA256": {
+        "last5_uniform": "1931f70b53619e86322e3f1fdf4b4fd3270f21dea4116c95773fae71282eea65",
+        "update_ema": "234385c19ec65c41b31402963c16e62157658d6efda8d59d72170c4a5e65e1ba"
+      },
+      "streams_SHA256": "9ff6b2973d21d564106e6117f12943566b844efc5e80060b25b60ac924ae6027",
+      "predictions_SHA256": "8850a738905549a314b06188a7ebf04f94959e2ca67366660ecb4c6a89452086"
+    },
+    {
+      "split": "20261101",
+      "historical_RNG_start_end_exact": true,
+      "historical_per_update_RNG_available": false,
+      "historical_final_main_optimizer_scheduler_exact": true,
+      "fold": 4,
+      "seed": 20261007,
+      "gradient_updates": 800,
+      "optimizer_verification_steps": 800,
+      "EMA_updates": 800,
+      "normalization": {
+        "x_mean": 0.5720009803771973,
+        "x_std": 0.0709921270608902,
+        "y_mean": 193.8748047068747,
+        "y_std": 17.94821154464729
+      },
+      "initial_state_exact201": true,
+      "sample_D4_LR_MSE_main_gradient_norm_exact_all800": true,
+      "last5_epoch_states_and_average_exact201": true,
+      "last5_uniform_OOF_exact": true,
+      "optimizer_reference_exact_checks": 800,
+      "EMA_no_side_effect_checks": 800,
+      "proof_samples": [
+        {
+          "update": 1,
+          "live_optimizer_parameters_moments_SHA256": "65cbf8e1a96176f47808009bd2a10fd79e9d0bddbedbf0a1bc0df01fb9d3da1f",
+          "reference_SHA256": "65cbf8e1a96176f47808009bd2a10fd79e9d0bddbedbf0a1bc0df01fb9d3da1f",
+          "optimizer_step_counters": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "f0a4f0da89dfc145afb1ad9f5381b491b904c2dc73076650c1d6273a6dc6a3e9",
+          "post_update_theta_SHA256": "1d17afdeafb16fa11ca556d347460c88ff00d98ed707c82397b01bbc99cee792",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 10,
+          "live_optimizer_parameters_moments_SHA256": "a24fb88e0f43e020f166f5571ccca0a037d0fac8559c329b541bd499fb464751",
+          "reference_SHA256": "a24fb88e0f43e020f166f5571ccca0a037d0fac8559c329b541bd499fb464751",
+          "optimizer_step_counters": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "groups": [
+            {
+              "lr": 0.002,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "bdc37f28b0f941a3c37c7fb70f8c72b43daecb1b1f8ca7d189e301fe32ca31c9",
+          "post_update_theta_SHA256": "f19dbb4f9f2409a6a35285fb2294eb9fbaf9003ece014b9e6de85c9b86026e58",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 100,
+          "live_optimizer_parameters_moments_SHA256": "1441e565caf09c1b188860702f2338bd9124cd7c2c9399a65ffbebf4159915e7",
+          "reference_SHA256": "1441e565caf09c1b188860702f2338bd9124cd7c2c9399a65ffbebf4159915e7",
+          "optimizer_step_counters": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "groups": [
+            {
+              "lr": 0.0019412817691263596,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "b0c7d7841b79b44365c713815504fb88d60ccb28b1fa8df648c407cea7365fb2",
+          "post_update_theta_SHA256": "b42e114e2e776c001a757c2e0cf6b6eff2c5926d42aad6a420ae1bb5a606deb8",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 400,
+          "live_optimizer_parameters_moments_SHA256": "f05499f6eb0ea3affc63da381a26468147ef9635cc753020d5448e1491899c2f",
+          "reference_SHA256": "f05499f6eb0ea3affc63da381a26468147ef9635cc753020d5448e1491899c2f",
+          "optimizer_step_counters": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "groups": [
+            {
+              "lr": 0.001087296824971115,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "03398dc98d3ecb15a5eeb8db29ab68d7f5a6ff65dcefaf797c9c4b183f3bef4d",
+          "post_update_theta_SHA256": "ab65239a3e67742d354b9e61f30b884807ec3b868a2edacac11a9d2fcea3d4af",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        },
+        {
+          "update": 800,
+          "live_optimizer_parameters_moments_SHA256": "48e889ed6655044bb02931e2b4fa8391de6110a504f5f0f84a146a4258bcc7cf",
+          "reference_SHA256": "48e889ed6655044bb02931e2b4fa8391de6110a504f5f0f84a146a4258bcc7cf",
+          "optimizer_step_counters": [
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800,
+            800
+          ],
+          "groups": [
+            {
+              "lr": 0.00010073241557131325,
+              "betas": [
+                0.9,
+                0.999
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01,
+              "amsgrad": false,
+              "maximize": false,
+              "foreach": null,
+              "capturable": false,
+              "differentiable": false,
+              "fused": null,
+              "decoupled_weight_decay": true,
+              "initial_lr": 0.002
+            }
+          ],
+          "EMA_state_SHA256": "c46261ad35034fff3b19ef34e97e9c77e2cfa8f0056ba018e23dcf4987a71550",
+          "post_update_theta_SHA256": "2b659c49e1ac71e0fc1c8460f8fad7271b03acae92a62e058b65cf43e4486c4d",
+          "optimizer_reference_exact": true,
+          "EMA_side_effects_absent": true
+        }
+      ],
+      "BatchNorm_modules": 0,
+      "GroupNorm_modules": 4,
+      "buffers": [],
+      "EMA_direct_state_max_error": 1.6213433913225828e-06,
+      "seconds": 18.600699165996048,
+      "performance_scores_computed": false,
+      "source201_control_fit_SHA256": "d42cde08f635a64182c61b715719751805dad2f4dea9a7e861a59d1a6ecbd01b",
+      "model_SHA256": {
+        "last5_uniform": "f79ba9da9f8d81acfd83c8176e1d97f0ce7cfd2fcd287c0c4fc635436a84e806",
+        "update_ema": "7841600459cdd0a1068f8bfe586fdeb890256c134257bb6cf28d8c4f81b7f0a6"
+      },
+      "streams_SHA256": "cda92c0589a7bd3937444566c8597e2eec24b8680bf0dabc4a18882c3141d9f3",
+      "predictions_SHA256": "2cf049d6b7600b99c3949be72f3a34469c50d39fbd78bf0432365fcdc1d79ea0"
+    }
+  ],
+  "OOF_SHA256": {
+    "20261031": "b7f27b8f0276110c29858e79d2f6ab755d81563a44445a0feba6bc35e472f5ef",
+    "20261101": "ee39557cfcb969e93e9666cad9f61a71b9a0f65d10d45d336d23e591aac2fd06"
+  },
+  "performance_scores_computed": false,
+  "plan_SHA256": "e26f79da9720452fd4367a41604cd8d1e28d59b063582d0c335de5ebde84c8d7"
+}

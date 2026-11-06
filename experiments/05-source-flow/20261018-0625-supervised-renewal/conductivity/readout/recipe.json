@@ -1,0 +1,23 @@
+{
+  "seeds": [
+    0,
+    100,
+    200
+  ],
+  "seed_fold_offset": true,
+  "n_estimators": 8,
+  "device": "CPU",
+  "feature_counts": [
+    104,
+    113,
+    149
+  ],
+  "delta_weight": 0.384,
+  "formula": "Complete083 +.384*(new single-bank prediction -matched single-bank physical104 control),onlyonexistingnonfailedrows.",
+  "interpretation": "This is a defined full combined predictor; it does not pretend that one bank is the whole incumbent or that all incumbent TabPFN members were replaced.",
+  "primary": "physical+marginals+PDE",
+  "control": "physical+marginals",
+  "scope": "Conditional frozen-representation screen onreused400originals.",
+  "physics_file_sha256": "1aef29a4fad342509227fdb81dbcd62b3ccef245b9da94fed7483072e67add77",
+  "pde_file_sha256": "94bccac74769107afb89c387d64edbaabd80ad80c6627f02f75a74dd93f67ed4"
+}

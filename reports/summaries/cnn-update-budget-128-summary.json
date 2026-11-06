@@ -1,0 +1,361 @@
+{
+  "study": "128 pairedCNN updatebudget/data-size contrast",
+  "completed_utc": "2026-10-04T04:33:46.574419+00:00",
+  "status": "completed;014 unchanged",
+  "screen_decision": {
+    "advance": false,
+    "rule": "Originalsmall800 untrimmedMSEstrictlybelow small400,afterindependentvalidation; nofoldcount/CI/minimumgain gate.",
+    "small_budget_RMSE_gain": -0.1789139378567164,
+    "candidate_selection": false
+  },
+  "partitions_completed": [
+    "original"
+  ],
+  "pooled_validation_RMSE": {
+    "small400": 15.418683992044917,
+    "small800": 15.597597929901633,
+    "large800": 14.7065959392644
+  },
+  "pooled_training_RMSE": {
+    "small400": 9.545295706630212,
+    "small800": 3.022689687189826,
+    "large800": 8.305693742986076
+  },
+  "contrasts": [
+    {
+      "contrast": "small_budget",
+      "reference": "small400",
+      "new": "small800",
+      "RMSE_gain": -0.1789139378567164,
+      "MSE_gain": -5.549245136329546,
+      "conditional_ID_cluster95_RMSE_gain_CI": [
+        -0.675087362043989,
+        0.3180678229098982
+      ],
+      "per_partition_RMSE_gain": [
+        -0.1789139378567164
+      ]
+    },
+    {
+      "contrast": "matched800_data",
+      "reference": "small800",
+      "new": "large800",
+      "RMSE_gain": 0.8910019906372337,
+      "MSE_gain": 27.001097062083602,
+      "conditional_ID_cluster95_RMSE_gain_CI": [
+        0.07364349314495178,
+        1.686196462910008
+      ],
+      "per_partition_RMSE_gain": [
+        0.8910019906372337
+      ]
+    }
+  ],
+  "per_partition": [
+    {
+      "split": "original",
+      "RMSE": {
+        "small400": 15.418683992044917,
+        "small800": 15.597597929901633,
+        "large800": 14.7065959392644
+      },
+      "small_budget_gain": -0.1789139378567164,
+      "matched800_data_gain": 0.8910019906372337
+    }
+  ],
+  "sampling_exposure": [
+    {
+      "split": "original",
+      "fold": 0,
+      "arm": "small400",
+      "n_train": 142,
+      "updates": 400,
+      "example_presentations": 12800,
+      "minimum_presentations_per_image": 90,
+      "maximum_presentations_per_image": 91,
+      "boundary_batch_duplicate_presentations": 104,
+      "mean_distinct_images_per_batch": 31.74
+    },
+    {
+      "split": "original",
+      "fold": 0,
+      "arm": "small800",
+      "n_train": 142,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 180,
+      "maximum_presentations_per_image": 181,
+      "boundary_batch_duplicate_presentations": 193,
+      "mean_distinct_images_per_batch": 31.75875
+    },
+    {
+      "split": "original",
+      "fold": 0,
+      "arm": "large800",
+      "n_train": 320,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 80,
+      "maximum_presentations_per_image": 80,
+      "boundary_batch_duplicate_presentations": 0,
+      "mean_distinct_images_per_batch": 32.0
+    },
+    {
+      "split": "original",
+      "fold": 1,
+      "arm": "small400",
+      "n_train": 142,
+      "updates": 400,
+      "example_presentations": 12800,
+      "minimum_presentations_per_image": 90,
+      "maximum_presentations_per_image": 91,
+      "boundary_batch_duplicate_presentations": 117,
+      "mean_distinct_images_per_batch": 31.7075
+    },
+    {
+      "split": "original",
+      "fold": 1,
+      "arm": "small800",
+      "n_train": 142,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 180,
+      "maximum_presentations_per_image": 181,
+      "boundary_batch_duplicate_presentations": 222,
+      "mean_distinct_images_per_batch": 31.7225
+    },
+    {
+      "split": "original",
+      "fold": 1,
+      "arm": "large800",
+      "n_train": 320,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 80,
+      "maximum_presentations_per_image": 80,
+      "boundary_batch_duplicate_presentations": 0,
+      "mean_distinct_images_per_batch": 32.0
+    },
+    {
+      "split": "original",
+      "fold": 2,
+      "arm": "small400",
+      "n_train": 142,
+      "updates": 400,
+      "example_presentations": 12800,
+      "minimum_presentations_per_image": 90,
+      "maximum_presentations_per_image": 91,
+      "boundary_batch_duplicate_presentations": 110,
+      "mean_distinct_images_per_batch": 31.725
+    },
+    {
+      "split": "original",
+      "fold": 2,
+      "arm": "small800",
+      "n_train": 142,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 180,
+      "maximum_presentations_per_image": 181,
+      "boundary_batch_duplicate_presentations": 226,
+      "mean_distinct_images_per_batch": 31.7175
+    },
+    {
+      "split": "original",
+      "fold": 2,
+      "arm": "large800",
+      "n_train": 320,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 80,
+      "maximum_presentations_per_image": 80,
+      "boundary_batch_duplicate_presentations": 0,
+      "mean_distinct_images_per_batch": 32.0
+    },
+    {
+      "split": "original",
+      "fold": 3,
+      "arm": "small400",
+      "n_train": 142,
+      "updates": 400,
+      "example_presentations": 12800,
+      "minimum_presentations_per_image": 90,
+      "maximum_presentations_per_image": 91,
+      "boundary_batch_duplicate_presentations": 113,
+      "mean_distinct_images_per_batch": 31.7175
+    },
+    {
+      "split": "original",
+      "fold": 3,
+      "arm": "small800",
+      "n_train": 142,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 180,
+      "maximum_presentations_per_image": 181,
+      "boundary_batch_duplicate_presentations": 227,
+      "mean_distinct_images_per_batch": 31.71625
+    },
+    {
+      "split": "original",
+      "fold": 3,
+      "arm": "large800",
+      "n_train": 320,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 80,
+      "maximum_presentations_per_image": 80,
+      "boundary_batch_duplicate_presentations": 0,
+      "mean_distinct_images_per_batch": 32.0
+    },
+    {
+      "split": "original",
+      "fold": 4,
+      "arm": "small400",
+      "n_train": 142,
+      "updates": 400,
+      "example_presentations": 12800,
+      "minimum_presentations_per_image": 90,
+      "maximum_presentations_per_image": 91,
+      "boundary_batch_duplicate_presentations": 101,
+      "mean_distinct_images_per_batch": 31.7475
+    },
+    {
+      "split": "original",
+      "fold": 4,
+      "arm": "small800",
+      "n_train": 142,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 180,
+      "maximum_presentations_per_image": 181,
+      "boundary_batch_duplicate_presentations": 206,
+      "mean_distinct_images_per_batch": 31.7425
+    },
+    {
+      "split": "original",
+      "fold": 4,
+      "arm": "large800",
+      "n_train": 320,
+      "updates": 800,
+      "example_presentations": 25600,
+      "minimum_presentations_per_image": 80,
+      "maximum_presentations_per_image": 80,
+      "boundary_batch_duplicate_presentations": 0,
+      "mean_distinct_images_per_batch": 32.0
+    }
+  ],
+  "protocol": {
+    "CNN": "ExistingTinyCNN128BOX (91,905parameters),sameGroupNorm/SiLU/globalmeanstd/dropout.15,AdamWlr.002->.0001,weight_decay.01,gradientclip5,MSE,D4trainingonly; identityinference. Foldtrainpixel/targetmean/std only.",
+    "sampling": "Allarmsfull32examplebatches. Concatenate independentlyshuffled completepermutations oftrainindices, carry remainder into nextpermutation. No drop_last,oversizepadding,or partialbatch; boundarybatchmaycontain an ID twice acrosspermutations. EverycompletepasscoversalltrainIDs; exposurecountdiff<=1. Same seed namespace butpermutationsdependonn. Thisdiffersfromlegacyvariablelastbatch142protocol; do notattribute legacy-to-newdifference tosteps.",
+    "pairing": "CommonTorchinitializationseed across3arms. Independent NumPy namespaces forsampleorder(seed+4100) andD4(seed+4200). Precompute800step augmentation sequence for everyarm;small400 exactlyprefixofsmall800 order andD4. Fullbatchshapeskeepdropout consumption matched; saveMPSrnghash atstart,400,800; checkcommonprefix.",
+    "scheduler": "Explicit per-update LR l_U(t)=.0001+.5*(.002-.0001)*(1+cos(pi*t/U)), t=0..U; optimizerusesl_U(t) atzero-basedupdatet. No epoch-basedscheduler orwarmup. Bothbudgetsfinishatminlr; normalizedprogress identical:l400(t)=l800(2t). The400run isnot anunfinished800schedule. StretchingnormalizedschedulechangesabsoluteLRsequence/integrateddecay; contrastestimatesbudget-with-normalized-schedule recipe,notpurestepcount underidenticalprefixLR. Small800andlarge800haveidenticalentireLRsequence.",
+    "weight_average": "Average5states at95%,96.25%,97.5%,98.75%,100%ofupdates:400[380,385,390,395,400],800[760,770,780,790,800]. Same normalizedlate window andnumberofstates; no endpoint/chosencheckpoint fromvalidation.",
+    "selection_scope": "Noouterlabelsenterfit/scalers/scheduler/seed/earlystop; no validationduringtraining. Outerresultsareonlyresearchscreenbetweentheonefixedbudgetcomparison; not a modelselector fitonglobalOOF. Historical400repeateduse acknowledged."
+  },
+  "interpretation": {
+    "budget_helped_observed": false,
+    "data_gain_at_matched800": 0.8910019906372337,
+    "no_automatic_deployment": "This is a diagnostic ofsmall142/143 models undernewfullbatchstreamprotocol. Evena small800gain doesnotestablish thatcurrent320-rowCNN shouldrun1600updates, nor thatwhole014 improves. No newcandidate ormixtureweight evaluated.",
+    "scheduler_limit": "400and800 complete the same normalizedcosineprogress anduse5 equallynormalizedlate checkpoints. Their absoluteLRsequences differ; this isbudgetwithstretchedschedule,notpureupdatecount atidenticalLRprefix. Small800/large800 haveidenticalabsoluteLRandbatchbudgets.",
+    "sampler_limit": "Concatenatedpermutationskeepeverybatch32 anddropnoexamples. Smalln boundariesmayrepeat anID withinabatch; distinctimagecountsarequantified. The samequeuealgorithm isused foralln, but thisisnotexactlegacyvariablelastbatch sampling. Legacyprotocol reproduced separately.",
+    "historical_bias": "Same400knownexamples/partitions usedadaptively. Screenisresearchcomputeallocation,not independentmodelselection. BootstrapkeepsallpartitionpredictionsforanID together,conditionsonfits,and omitsrefitting,screeningandhistoricalsearchuncertainty.",
+    "seed_limit": "Oneprespecifiedpairedinitializationperouterfold,notindependentmulti-seedvalidation. No chosenbestseed."
+  },
+  "legacy_reproduction": {
+    "passed": true,
+    "legacy_training_reproduced": true,
+    "validation_prediction_max_error": 0.0,
+    "state_max_error": 0.0,
+    "seconds": 7.789395584026352,
+    "projected15mainfit_seconds": 194.73490730160847,
+    "RSS_bytes": 743374848,
+    "MPS_driver_bytes": 27918336,
+    "model_sha256": "bd0b1e42e8b7d2a7f2192608b25c0d82876f546cfe50d566d217b012b432cf0c",
+    "resource_pass": true
+  },
+  "independent_validation": {
+    "original": {
+      "passed": true,
+      "split": "original",
+      "models_reloaded": 15,
+      "MPS_reload_max_error": 0.0,
+      "CPU_MPS_max_error": 1.52587890625e-05,
+      "protocol_checks": [
+        {
+          "fold": 0,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        },
+        {
+          "fold": 1,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        },
+        {
+          "fold": 2,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        },
+        {
+          "fold": 3,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        },
+        {
+          "fold": 4,
+          "all32_batches_and_no_drop_last": true,
+          "small_prefix_and_common_D4": true,
+          "normalized_schedule_endpoints_and_weight_average": true,
+          "MPS_dropout_RNG_consumption_prefix_matched": true
+        }
+      ],
+      "heldout_label_refit": {
+        "all258_outside_training_labels_changed": 258,
+        "prediction_max_error": 0.0,
+        "initialization_order_augmentation_unchanged": true,
+        "state_sha256_exact": true
+      },
+      "report_sha256": "639c72215ebbcf7111daf86e776a89926640057fbd47da8a2d23f3b3fdd8ad89",
+      "source_sha256": "63795edfe1b887642386f9a7d3826ea97cdaef9a2a90401fe836c9392082aaa3",
+      "seconds": 9.919182333047502
+    }
+  },
+  "bootstrap_count_fixture_max_error": 1.5987211554602254e-14,
+  "execution": {
+    "main_models": 15,
+    "legacy_reproduction_fits": 1,
+    "heldout_label_refits": 1,
+    "main_training_seconds": 171.68446450005285,
+    "new_packages": 0,
+    "cost": 0,
+    "holdout_test_access": false,
+    "full500_fit": false,
+    "new_candidate_CSV": false,
+    "uploaded": false
+  },
+  "next_action": {
+    "keep014": true,
+    "automatic_additional_training": false,
+    "if_screen_failed": "Closefixedcomparison; donottrymoreepochs/schedules/seeds. Dataatmatchedbudget maybeusefulbutnoindependentlabelsavailableandholdoutremainssealed.",
+    "if_screen_passed": "Reportbudgeteffectandresplitstability. Any320-rowlongerCNNor014integrationrequiresaseparatefixedcomparison;128doesnotpromotethesemodels."
+  },
+  "evidence_sha256": {
+    "artifacts/cnn-update-budget-128/original/report.json": "639c72215ebbcf7111daf86e776a89926640057fbd47da8a2d23f3b3fdd8ad89",
+    "artifacts/cnn-update-budget-128/original/predictions.npz": "0d8c1d6e7cf8427562a9ffb7e7f4d83e6fb26acc05984c34c44c36075f1bb75d",
+    "artifacts/cnn-update-budget-128/validation-original.json": "3c442187f8faaa3bccb348c7027b2cea0cf0252d43efd91dbb7e89770573465b",
+    "artifacts/cnn-update-budget-128/plan.json": "5f4667d7a302e39b973d8112fc53755be8e2c5bc7b264620f7009e6fed435ef3",
+    "artifacts/cnn-update-budget-128/screen-decision.json": "c2974d15b29684e42424ec8f3e98aeadd2eaa8e2012bbc88c2712b8a2d83d6d1",
+    "artifacts/cnn-update-budget-128/legacy-control/report.json": "e8092c594e0b24f9a7848e75a91177676c86de40b88df07e2bc6fc21ae6c126d"
+  },
+  "source_sha256": "a1a83c80894f5fc30dd0ed7c343b108be8786eed16ab92813b8eb3ba50d3d292",
+  "execution_blockers": []
+}

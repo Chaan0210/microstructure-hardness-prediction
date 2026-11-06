@@ -1,0 +1,52 @@
+{
+  "runs": [
+    {
+      "split": "original",
+      "candidate003_rmse": 13.705696031698212,
+      "nested_replace_rmse": 13.745477926207966,
+      "nested_complement_rmse": 13.697510751459843,
+      "complement_better_folds": 3,
+      "elapsed_seconds": 14.663414000009652,
+      "oof_sha256": "32140b1ea2505e9f09e7f42ab9c558211ea4bf4ebb1415b83f01b84f73a51bfc",
+      "report_sha256": "92b361e3a7abc173ef68176bfb7426fdec97d174d82e781f50ffd81a6b13a06f"
+    },
+    {
+      "split": "20261031",
+      "candidate003_rmse": 13.63181073293285,
+      "nested_replace_rmse": 13.772772747535837,
+      "nested_complement_rmse": 13.677747518201969,
+      "complement_better_folds": 2,
+      "elapsed_seconds": 16.304856000002474,
+      "oof_sha256": "a9eb77dd53de3b875a31e4154a8be6c5e2c5b7dd6483435b71cf1fccf5a9729b",
+      "report_sha256": "c0233e2f5fa451d4d4a7aab6de5779b95b295165eb4cecd8a1a0d52439e3ebc0"
+    },
+    {
+      "split": "20261101",
+      "candidate003_rmse": 13.729980391208457,
+      "nested_replace_rmse": 13.755116422242564,
+      "nested_complement_rmse": 13.717703063434575,
+      "complement_better_folds": 3,
+      "elapsed_seconds": 15.46431508398382,
+      "oof_sha256": "fbf44c19d72dbc6537db357bd92c8f91234f8688e6b168159e1ff3b0a625f06f",
+      "report_sha256": "5c95aabe0fa7047d64a5b68adeb986fa992def0cda65f5ecf1e7365c13afac64"
+    }
+  ],
+  "total_compute_seconds": 46.432585083995946,
+  "original_train_mean_rmse": {
+    "old_hgb": 5.9138954611,
+    "relaxed_hgb": 1.0624464625,
+    "gbr": 8.8964454774
+  },
+  "original_oof_rmse": {
+    "old_hgb": 14.8455303368,
+    "relaxed_hgb": 15.5563364379,
+    "gbr": 14.7492132759
+  },
+  "decision": "No promotion. Tiny original fixed-complement gain not consistent in two repartitions. More flexible HGB fitted training data much better while validation worsened; capacity-underfitting hypothesis unsupported for this panel/profile. No further tree sweep.",
+  "verification": "400 unique IDs/cache rows; every OOF RMSE recomputed; source,feature,parent OOF and protected003 artifact hashes unchanged. Independent source audit found no evident leakage.",
+  "limits": "Feature26 KRR versus57 tree is not a pure estimator comparison; three tree profiles share57. Inner selection targets standalone tree RMSE. All partitions reuse historically inspected400 rows.",
+  "extra_provenance": {
+    "feature_schema_report_sha256": "87e7ff556b67334561a94577eadf788f4721821c5d815b382e49e793223d0df6",
+    "source_sha256": "f31962e33aa8609f8beed556a28987997a2f9dcd1c54ca445366fa9e6be9ca93"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "context_path": "experiments/probabilistic-grains-900/pfn-readout-v2/partition0-fold0-base98-context.npz",
+  "context_sha256": "954dd886bb7478c9ff316d7ca1a19c634872d322169fc52dc7487ce866b675f5",
+  "weights_path": "experiments/tabpfn-v3/weights/tabpfn-v3.5-20260909.safetensors",
+  "weights_sha256": "ece4d67eadfea42eb0e610df5189bea60cb7f31073d81e9c7a019b76eacf0be3",
+  "root_script_sha256": "c3eb51849b05ab6c4a4494713bf54a943d4c12e3de4caad5ee5ae783995077b0",
+  "audit_script_sha256": "6565a9fd65bc14326dc9a13c3e26d1b8708cde9ff6a8f526b3a839b4361af66e",
+  "torch_version": "2.14.1",
+  "tabpfn_version": "9.1.0",
+  "numpy_version": "2.5.3",
+  "seed": 0,
+  "n_estimators": 8,
+  "device": "cpu",
+  "threads": 2,
+  "network": "Offline environment plus root make() socket blocking",
+  "train_query_ids_disjoint": true,
+  "n_training": 320,
+  "n_available_queries": 80,
+  "query_labels_loaded_or_scored": false,
+  "timing_policy": "First8 query CPU time times10 + initialization/fit; if >120s, repeat only8",
+  "repeat_tolerance_atol": 1e-06,
+  "device_tolerance_atol": 0.005,
+  "device_tolerance_rtol": 1e-05,
+  "timing": {
+    "initialization_plus_fit_seconds": 19.107179042010102,
+    "first8_prediction_seconds": 6.7192781250341795,
+    "conservative_full80_projection_seconds": 86.2999602923519,
+    "selected_query_count": 80,
+    "full80_prediction_seconds": 7.399425000010524,
+    "first8_vs_full80_prefix_difference": {
+      "max_absolute": 7.101826156485913e-05,
+      "rms": 3.9956609316891466e-05,
+      "mean_absolute": 3.477776374083419e-05,
+      "mean_signed": 6.128351405010335e-06
+    },
+    "fresh_context_repeat_seconds": 7.394991167006083
+  },
+  "n_replayed_queries": 80,
+  "all_outputs_finite": true,
+  "cpu_fresh_context_repeat": {
+    "max_absolute": 0.0,
+    "rms": 0.0,
+    "mean_absolute": 0.0,
+    "mean_signed": 0.0
+  },
+  "cpu_repeat_within_tolerance": true,
+  "cpu_vs_saved_mps": {
+    "max_absolute": 0.07840200868054126,
+    "rms": 0.02846520987240752,
+    "mean_absolute": 0.022887859358613483,
+    "mean_signed": 0.0016840190558159661
+  },
+  "device_within_declared_tolerance": false,
+  "audit_scope": "One fixed representative context; no heldout target scoring",
+  "query_count_limit": null,
+  "source_hashes_unchanged": {
+    "context": true,
+    "weights": true,
+    "root_script": true
+  }
+}

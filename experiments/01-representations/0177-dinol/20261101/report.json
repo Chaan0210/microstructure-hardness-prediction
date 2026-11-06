@@ -1,0 +1,54 @@
+{
+  "split": "20261101",
+  "RMSE": {
+    "reference018": 13.048624416802191,
+    "B_MLP": 14.02485574576349,
+    "blend_B_MLP": 13.052589976080085,
+    "L_MLP": 14.330638886351583,
+    "blend_L_MLP": 13.032449212752852
+  },
+  "diagnostics": {
+    "MLP": {
+      "gain": 0.016175204049339698,
+      "fold_gains": [
+        0.14923219215223504,
+        0.02289237983830006,
+        -0.06874294588776309,
+        -0.03869899286582168,
+        0.015103552921107877
+      ],
+      "positive_folds": 3,
+      "conditional_cluster_bootstrap_CI95": [
+        -0.05599148331586408,
+        0.0893772351183062
+      ],
+      "CI_not_adjusted_for_model_selection_or_refitting": true,
+      "L_B_error_correlation": 0.9241674229859081,
+      "L_018_error_correlation": 0.8876428246871875,
+      "gain_vs_matched_B_blend": 0.020140763327233913
+    }
+  },
+  "eligible_L_readouts": [
+    "MLP"
+  ],
+  "readouts_executed": [
+    "MLP"
+  ],
+  "seconds": 24.899498749997292,
+  "B_MLP_exact_historical_control": true,
+  "fixed_mixture": [
+    0.9,
+    0.1
+  ],
+  "fold_report_hashes": {
+    "fold-0/report.json": "fcda5bce8c29d7f359d99228e906feeb2e8cf706b0a1a49bc1217f712a034631",
+    "fold-1/report.json": "c8ce25e3f051e9039208d27bdecd1ecd10ca6dd960b5b9af4a97eb7ece8aa489",
+    "fold-2/report.json": "182f23d185ac340465ccd1bd14c0eab8520060786ca7537dcc46caffb5f62312",
+    "fold-3/report.json": "ece098db98e8ab930d0a696a1b797e5b68137ce1345344d0e797ea45b637a435",
+    "fold-4/report.json": "d5dc49cfc8a5b239357ce88da908329ad45f2e0c33610140469b198c009b6bd2"
+  },
+  "predictions_sha256": "91d0226a32cf27e62655f830b23523ac3d35d314425fcba0c843972872516495",
+  "plan_sha256": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4",
+  "code_lock_sha256": "c0efce2a9c709d7ebd9b68ab180e185914d4b96b7f1aa49f3dfa6f5481ebd009",
+  "no_holdout_test_full500": true
+}

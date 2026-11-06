@@ -1,0 +1,85 @@
+{
+  "summary": {
+    "all": {
+      "n_unique_ids": 283,
+      "base_rmse": 9.62197998751094,
+      "aux_rmse": 9.652036734329627,
+      "context_rmse": 9.675337913207885,
+      "aux_gain": -0.030056746818686975,
+      "image_increment": 0.023301178878258,
+      "alignment_null": {
+        "mean": -0.04688562091663212,
+        "q95": 0.03340327318368647,
+        "fraction_at_least_observed": 0.3230769230769231
+      },
+      "conditional_ID_bootstrap_gain_ci95": [
+        -0.18373983311948608,
+        0.12776538569250223
+      ]
+    },
+    "low": {
+      "n_unique_ids": 199,
+      "base_rmse": 8.444765243227975,
+      "aux_rmse": 8.61756452625365,
+      "context_rmse": 8.49981830229575,
+      "aux_gain": -0.17279928302567527,
+      "image_increment": -0.11774622395789969,
+      "alignment_null": {
+        "mean": -0.030544895501433217,
+        "q95": 0.026709416432502235,
+        "fraction_at_least_observed": 1.0
+      },
+      "conditional_ID_bootstrap_gain_ci95": [
+        -0.2699814814701881,
+        -0.08658340422271366
+      ]
+    },
+    "high": {
+      "n_unique_ids": 84,
+      "base_rmse": 11.956941219993682,
+      "aux_rmse": 11.744589361516956,
+      "context_rmse": 12.009473945548637,
+      "aux_gain": 0.2123518584767261,
+      "image_increment": 0.26488458403168025,
+      "alignment_null": {
+        "mean": -0.0755929062241868,
+        "q95": 0.12415982982701435,
+        "fraction_at_least_observed": 0.03076923076923077
+      },
+      "conditional_ID_bootstrap_gain_ci95": [
+        -0.17407296823559162,
+        0.6050994373621388
+      ]
+    },
+    "prediction_row_weighting_diagnostic": {
+      "base_rmse": 9.98427779701143,
+      "aux_rmse": 9.913040908081593,
+      "context_rmse": 10.01191474866836,
+      "aux_gain": 0.07123688892983715,
+      "image_increment": 0.09887384058676751,
+      "n_prediction_rows": 800
+    }
+  },
+  "per_anchor": {
+    "0": {
+      "n_unique_ids": 179,
+      "n_prediction_rows": 400,
+      "base_rmse": 10.163267505140494,
+      "aux_rmse": 10.03757742905376,
+      "context_rmse": 10.218127711146854,
+      "aux_gain": 0.12569007608673388,
+      "image_increment": 0.18055028209309398
+    },
+    "1": {
+      "n_unique_ids": 179,
+      "n_prediction_rows": 400,
+      "base_rmse": 9.815481870940301,
+      "aux_rmse": 9.91122999809239,
+      "context_rmse": 9.815481870940301,
+      "aux_gain": -0.09574812715208836,
+      "image_increment": -0.09574812715208836
+    }
+  },
+  "independent_aggregation_verified": true,
+  "caveat": "High-noise subset matches080 support, but remains a diagnostic on historically explored data; no threshold or weights were refitted after inspecting these subgroup outcomes."
+}

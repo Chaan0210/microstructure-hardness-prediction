@@ -1,0 +1,151 @@
+{
+  "candidate": "012",
+  "study": "113",
+  "locked_utc": "2026-10-04T01:07:12.059669+00:00",
+  "authorization": "Parent explicitly directs pooled all3-partition untrimmed squared-error criterion; removes agent-imposed each-partition-improvement requirement. Earlier plan/decision preserved; this addendum records changed operational rule after results, not retroactive preregistration.",
+  "pooled_development": {
+    "split_count": 3,
+    "unique_IDs": 400,
+    "prediction_pairs": 1200,
+    "incumbent_MSE": 171.98589400721238,
+    "residual_MSE": 171.59775188917644,
+    "MSE_gain": 0.3881421180359439,
+    "incumbent_pooled_RMSE": 13.114339251644072,
+    "residual_pooled_RMSE": 13.099532506512453,
+    "pooled_RMSE_gain": 0.014806745131618726,
+    "ID_cluster_bootstrap_MSE_gain_CI95": [
+      -3.043342864695865,
+      3.882610959329958
+    ],
+    "ID_cluster_bootstrap_RMSE_gain_CI95": [
+      -0.11828747483843075,
+      0.14601381985317347
+    ],
+    "conditional_bootstrap_replicates": 10000,
+    "bootstrap_seed": 20271015,
+    "positive_ID_contributions": 179,
+    "top5_helpful_IDs_diagnostic": [
+      {
+        "ID": "TRAIN_000064",
+        "mean_squared_error_gain": 243.00977088016884
+      },
+      {
+        "ID": "TRAIN_000078",
+        "mean_squared_error_gain": 221.7465076799931
+      },
+      {
+        "ID": "TRAIN_000227",
+        "mean_squared_error_gain": 220.6669361879774
+      },
+      {
+        "ID": "TRAIN_000406",
+        "mean_squared_error_gain": 187.91715049532013
+      },
+      {
+        "ID": "TRAIN_000438",
+        "mean_squared_error_gain": 152.0429872499676
+      }
+    ],
+    "top5_harmful_IDs_diagnostic": [
+      {
+        "ID": "TRAIN_000206",
+        "mean_squared_error_gain": -148.006313896292
+      },
+      {
+        "ID": "TRAIN_000120",
+        "mean_squared_error_gain": -135.86796678162432
+      },
+      {
+        "ID": "TRAIN_000008",
+        "mean_squared_error_gain": -132.75189580526248
+      },
+      {
+        "ID": "TRAIN_000285",
+        "mean_squared_error_gain": -116.16234009868943
+      },
+      {
+        "ID": "TRAIN_000218",
+        "mean_squared_error_gain": -93.57592126943865
+      }
+    ],
+    "fixed092_other395_MSE_gain_diagnostic": -0.7149531042801199,
+    "largest5_gain_removed_MSE_gain_diagnostic": -2.2028519120988337,
+    "limits": "ID-cluster bootstrap retains all3 residuals per sampledID. Conditional on historically selected models andfixedfits;doesnotremove repeated400 selectionbias or representtraininguncertainty. No significanceclaim. Influenceexclusionsdiagnosticonly."
+  },
+  "formula": "unchanged full500 candidate011 + mean of3 honest-block residual regressors; no shrinkage,clip,new ratio,or globalOOF residual fit",
+  "full500_procedure": "GroupKFold3 seed20270110 on500. Each333/334 anchor excludes its166/167 residual block. Anchor011=.9*nested-affine008+.1*shortB. Reuse exact075 middle008 fits; newly train3 deep008 insideeachanchor, fitOLS onlyanchorOOF; trainshortB sameanchor. Within each residualblock use3fold seed20271013+j selectingnone/Ridge1/Ridge.1, allstatistics trainlocal. Refitselected onwholeblock. Averageall3 includingzero. Full500011 retained unchanged.",
+  "training_size_limit": "Residualmodels use166/167 at production versus106/107 in development. Anchors333/334 versus213/214; unchangedprocedure, no assertion of size invariance.",
+  "seed_rule": "Final outer index0;middleoffset100*(j+1);deepseed20270110+offset;shortB base+offset;residualCV20271013+j,matchingdevelopment outer0 rule.",
+  "sources": {
+    "candidate012_residual_pipeline.py": "6324c5e03d2c4cf9b8714dd4b029a094330d58bb8faa8ea376a1e9ffa1df55ae",
+    "residual_physics_113.py": "39f1c1c16bcb8d2d38c332d55eda44e57748e4a17b87ffdff37c7054e13d2554",
+    "nested_fusion_112.py": "00384ff73f0f7da2d11b705956cd0686a753b294686b353c69a72d396677b575",
+    "nested_calibration_074.py": "6f795743f2625ff1224f5f693fb906f43f13ff708439a37132761c28dbd275b7",
+    "candidate009_pipeline.py": "46d65ec53837ae031990eae5eafe32c0706226eb799d390dcfdb33c7c117cd71",
+    "candidate_features.py": "47c239d8836c2f6cc79c9fbde644702f2ca3c5a59f63fec339656b1178495a4e",
+    "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+    "validate_candidate012_residual.py": "4efd2a778724ddd224246232bb92beb7646710024e1ba41518092ba39a953c1d"
+  },
+  "inputs": {
+    "reports/residual-physics-113-pooled-addendum.json": "6cffa2a110c8077633ebc52c063409086832b65d8e7c2db2b6e9cf7b6ee9bd60",
+    "reports/residual-physics-113-summary.json": "8bfeeeebd3918f764fa3eb48d87eb28b28921b8de5c0012d027faecdc1931104",
+    "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+    "artifacts/final-model-075/report.json": "89518af430efc46034bf27260fda37ff07f3b38cea2b1c674a5b044e0a976649",
+    "artifacts/final-model-075/training-inputs.npz": "9d7eb19f1fcb62a5230a8e577fb75d432d68c1459997415d41c688a123643d72",
+    "artifacts/final-model-065/report.json": "1a1f741158576b8ad40f6b12f351a7cdf7e1ada96610b83813b160d250bf9b9f"
+  },
+  "protected011": {
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-011.components.csv": "1e5d67fed120150f9a1f665eacdc5e5aca817a29e12bdba4aea27347e3380739",
+    "artifacts/submission-candidate-011.manifest.json": "497cc7377fcc35cb9f6142bc0ee9868fbc3fa50aa40bf10c7a45d6ef3931fe94",
+    "artifacts/submission-candidate-011.reproduced.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/final-model-086/decision.json": "83b779a44abf26db1b496b4d7aa2ce6cce0ea4e20cb9e147db331554cabee03f",
+    "artifacts/final-model-086/head/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/head/report.json": "1a46ff5c0e94c7e4797f62986347fd5e378a4829965ad4144a47f6c8afd07053",
+    "artifacts/final-model-086/head/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "artifacts/final-model-086/report.json": "d2d7eb583640ba97d422aa1bc0a53365954c9bba047610b7972815c50bb26608",
+    "artifacts/final-model-086/test_predictions.npz": "eb8b4af03053e3a82c19f3a7d7f2cf569eb46e9b764980cdc0b567bbbe1e1cbc",
+    "artifacts/final-model-086/validation-replay/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/validation-replay/report.json": "e87d4bce70bf24d7273a3c46693f0c6cfdab1ae252d8b3f6c30b52beb807317b",
+    "artifacts/final-model-086/validation-replay/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+    "verify_candidate011.py": "12147b31d5a4acdb8837c9a2f9ac9be4b3a102efde9eb357414a9cebb2cb73e9",
+    "finalize_candidate011.py": "9aef57b8930cdf5c0ee7205d08a6ca31f42052c29bb1af49d92b2b31c31fec52",
+    "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+    "reports/final-candidate011-summary.json": "168316e3c35fcbe00035c880df29f3b9eb3e76b6ff588ddce7a37922e84588ad",
+    "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+    "artifacts/frozen-complement-085/plan.json": "47ea467c9f5dacafc2bd1cabad34906c619f5d7f599ee0393a27b68266ab9ce0"
+  },
+  "environment": {
+    "numpy": "2.5.3",
+    "scikit-image": "0.26.0",
+    "scikit-learn": "1.9.1",
+    "cloudpickle": "3.1.2",
+    "filelock": "4.0.7",
+    "packaging": "26.3",
+    "tifffile": "2026.9.20",
+    "networkx": "3.7",
+    "joblib": "1.6.0",
+    "kymatio": "0.3.0",
+    "configparser": "7.2.0",
+    "torch": "2.14.0",
+    "appdirs": "1.4.4",
+    "sympy": "1.14.0",
+    "lazy-loader": "0.6",
+    "setuptools": "84.0.0",
+    "mpmath": "1.3.0",
+    "fsspec": "2026.9.0",
+    "jinja2": "3.1.6",
+    "markupsafe": "3.0.3",
+    "threadpoolctl": "3.7.0",
+    "typing-extensions": "4.16.0",
+    "imageio": "2.38.0",
+    "pillow": "12.3.0",
+    "scipy": "1.18.1",
+    "narwhals": "2.26.0"
+  },
+  "test": "Only after fit lock and validation; raw features and savedmodel inference, no fit/tuning/selection.",
+  "holdout": "Included only as authorized full500 training; no formerholdout subgroup score.",
+  "resource": "Existing CPU2/MPS,9deep008 fits+3shortB,3small residualmodels, existing feature caches and image-only fixed57 extraction. No installs/cost/upload.",
+  "uploaded": false
+}

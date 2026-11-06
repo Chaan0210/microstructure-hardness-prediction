@@ -1,0 +1,58 @@
+{
+  "evidence_cutoff": "Completed runs001\u2013034; only recorded development CV/repartition outcomes and source inspection are used for model hypotheses. Public scores retained for reporting, never weight fitting.",
+  "best_submitted": {
+    "candidate": "artifacts/submission-candidate-003.csv",
+    "reported_public_rmse": 12.4479505141
+  },
+  "recent_controlled_results": {
+    "tree": "Relaxed HGB trainRMSE1.06/OOF15.56 vsoldtrain5.91/OOF14.85. Fixed complement gains inconsistent across repartitions; no promotion.",
+    "connected_boundary": "Original13.7005vs00313.7057, repeat13.6506vs13.6318 and13.6858vs13.7300. 113/400 no closed basin,229/400 largestbasin>50%; true-grain reconstruction unsupported.",
+    "hessian_pores": "Original13.6986vs13.7057; repeats13.6700vs13.6318 and13.7634vs13.7300. Attached-pore fixture passed but real predictive benefit did not reproduce.",
+    "autocovariance": "Original13.7555vs13.7057; repeats13.6913vs13.6318 and13.7787vs13.7300. Reject current fixed panel.",
+    "earlier": "Phase-GMM, native28, all-stage moment/residual CNN variants and multiseed+D4 did not establish a robust improvement over selected recipes. Candidate004 small development gains did not improve reported Public score; that single Public observation does not identify component failure."
+  },
+  "remaining_grounded_approaches": [
+    {
+      "priority": 1,
+      "approach": "Controlled CNN channel-covariance texture pooling and compact morphology fusion",
+      "source_evidence": "cnn_controls.py:36 and cnn_moments.py:15\u201320 only concatenate per-channel means/stds. cnn_residual.py:21\u201324 similarly uses marginal moments. Inspected files contain no channel covariance/Gram pooling or compact-feature input to the CNN head. Existing ensemble combines predictions, not learned joint inputs.",
+      "hypothesis": "Low-rank cross-channel co-occurrence could encode phase/pore/texture relationships missing from marginal moments; morphology input could condition these on size/alignment. This is untested, not an expected guaranteed gain.",
+      "bounded_design": "Start with one low-rank covariance-pooling control at existing resolution/seed/folds/schedule/parameter budget; add compact input as a separate ablation only if warranted. All image/feature/target normalization fit within fold. No residual targets derived from in-sample baseline.",
+      "resources": "Existing PyTorch/sklearn; sequential MPS; no new installation/data/weights. Existing128/80 fivefold78sec gives order-of-minutes reference; new structure needs benchmark. Implementation and review likely30\u201360min, estimates not measurements."
+    },
+    {
+      "priority": 2,
+      "approach": "Match training schedule before excluding native256 learning",
+      "source_evidence": "run009 is128/80 and run010256/40. Their comparison changes both resolution and epochs. Larger final-stage network/covariance is not implied by this control.",
+      "bounded_design": "Same structure/seed/folds and fixed80epoch endpoint at256 versus recorded128/80, only if first hypothesis justifies more image modeling. No random scale crops, no intensity semantics-changing augmentation, no seed sweep.",
+      "resources": "Existing MPS; prior256/40 fivefold99.6sec suggests roughly3\u20134min fit for80epochs, benchmark first. No new packages."
+    },
+    {
+      "priority": 3,
+      "approach": "Optional alternative tree boosting implementation",
+      "evidence": "HGB/GBR/ET now compared; current low-dimensional features show high training/validation gaps and limited incremental information. Different boosting bias remains possible but lower priority than representation.",
+      "resources": "CatBoost would require separate project-local installation approval. Not necessary for the two existing-package paths; no installation performed."
+    }
+  ],
+  "deprioritized": [
+    "More same-recipe CNN seeds or tiny fixed-weight public submissions",
+    "Repeating coarse FFT/GLCM/LoG summaries under a new name",
+    "Noise variance denominator subtraction (independent audit found worse signals)",
+    "Manual prediction-range expansion or tail weighting from residual plots alone",
+    "Treating visually plausible grains/pores or segmentation parameter stability as validated ground truth"
+  ],
+  "scientific_limits": [
+    "Only400 development images for repeated choices; repartitions are robustness checks on reused data, not unseen validation.",
+    "No true grain/pore segmentation or generator latent parameters to directly validate inferred structure.",
+    "Blur/noise and dark phases confound many handcrafted descriptors; current failures are recipe-level evidence, not a proven performance ceiling.",
+    "CNN train/validation gaps already show generalization risk; more complexity needs controlled ablation and lower-dimensional heads.",
+    "No new test/holdout inspection or external training data is justified by these results."
+  ],
+  "next_action_status": "This requested autocovariance hypothesis is complete. Remaining approaches are documented, not yet executed. No active training, no new candidate, best003 preserved.",
+  "evidence_reports": [
+    "reports/tree-controls-027-summary.json",
+    "reports/hypotheses-027-029-summary.json",
+    "reports/pore-hypothesis-030-032-summary.json",
+    "reports/autocov-033-034-summary.json"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "split": "original",
+  "models_verified": 300,
+  "meta_fits_verified": 20,
+  "independent_residual_max_error": 5.639932965095795e-14,
+  "independent_meta_max_error": 2.2737367544323206e-13,
+  "constrained_fixture_passed": true,
+  "whole_outer_label_poison_exact": true,
+  "anchor_B_label_poison_exact": true,
+  "residual_inner_H_label_poison_exact": true,
+  "outer_quality_no_train_stat_leak": true,
+  "all_weight_vectors_positive_sum1_bounded": true,
+  "delta_query_range_all_levels": [
+    -0.001997117899296195,
+    0.0019586621282281468
+  ],
+  "effective_df_range": [
+    0.004946582782475174,
+    0.010719170437454711
+  ],
+  "quality_conditional_diagnostics": {
+    "noise_contrast_ratio": {
+      "below_train_median": {
+        "n": 200,
+        "018_RMSE": 11.312038301144357,
+        "165_RMSE": 11.312209736963649,
+        "mean_MSE_gain": -0.0038786064982338298
+      },
+      "at_or_above_train_median": {
+        "n": 200,
+        "018_RMSE": 14.15378653279309,
+        "165_RMSE": 14.153879325016954,
+        "mean_MSE_gain": -0.0026267312673412292
+      }
+    },
+    "spectral_low_fraction": {
+      "below_train_median": {
+        "n": 199,
+        "018_RMSE": 10.197302266873928,
+        "165_RMSE": 10.197307441956859,
+        "mean_MSE_gain": -0.00010554379657314771
+      },
+      "at_or_above_train_median": {
+        "n": 201,
+        "018_RMSE": 14.956881146146412,
+        "165_RMSE": 14.957094039259148,
+        "mean_MSE_gain": -0.0063684792915271425
+      }
+    }
+  },
+  "diagnostic_only_no_selection": "Fixed2proxies, outertrain median per fold; overlapping subgroups; no tuned cutoffs. Not causal degradation effect.",
+  "upstream_nested_training_certificate_sha256": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+  "report_sha256": "d01177824f4d399aa127c2c03afb4adedfd8a045191a43823d4a6b0ffe475241",
+  "seconds": 5.987705166000524
+}

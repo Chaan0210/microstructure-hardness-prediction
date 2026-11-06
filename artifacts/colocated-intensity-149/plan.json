@@ -1,0 +1,36 @@
+{
+  "study": "149 fixed local grayscale-token crossmoment",
+  "utc": "2026-10-04T12:13:41.277523+00:00",
+  "hypothesis": "ExistingDINO pooled/graphmoments andglobalphysicsstatistics do notexplicitlyassociatebrightnesswithsemanticpatchfeatures atmatchinglocations. Thislocalcrossmodalassociation mayretaincomplementaryinformation. Notprovenphase/grainidentification orremainingerrorcause.",
+  "formula": "SameexistingB504finaltokens andfixed140QR768x32. ResizeoriginalL256to504 withidenticalPILbicubic; nonoverlap14x14patchbrightnessmeansrowmajor36x36. Withinimage centeruanddividebymax(populationSD,1e-6); C=mean_i u_i*(Z_i-meanZ),32features. Appendasanewblockwidth32 to018585=>617.",
+  "control": "Matched32-dimensionalpermutedlocationcrossmoment: sameuandZ butu[fixedpermutation1296seed20271208],sameforallimagesandpartitions. Preservesrawbrightnesshistogram andtokenmarginals; destroysmostexactcolocation. Onlyalignedcanadvance,permutednotfallback. Onepermutationnotuniversalnull.",
+  "duplicate_audit": "047globalDINO/morphologykernelinteraction,056token-tokencovariance,042/070token-onlyspatialmoments,140jointtokenedgeenergy,148directionalenergy allomitpixel-intensity/tokencolocatedcrossmoment. 148closedandnotincluded. Priorrawcontrast/morphologyfeatures remain in018; no claimnewindependentmeasure.",
+  "procedure": "Unchanged0185candidates,512groupbootstrapselectionfrequencies,seeds,3honestresidualblocks,trainlocalMinMaxclip/StandardScaler/kernelsettings; recomputeallinner/fullresidualmodelsforeachbank. No addingparameters tobackbone/MLPs,curve,brightnessnormalizationofmodelinput,fitPCAorhyperparametergrid.",
+  "nested": "Frozenlabelblindfeaturescanextract400once; allregressorpreprocessingonlyBinnertrain/fullB. A-onlynestedanchorswithB/Vexcluded as146audit. No globalOOF fittedblend.",
+  "criterion": "Runall3existingpartitions. AlignedpooleduntrimmedMSE muststrictlybeatBOTH unchanged018 andpermutedcontrol,withindependentvalidation. Noeveryfold/CIgate. Ifnegativeclosecolocationwithoutalternatebrightnesschannels/pooling/permutations/weights.",
+  "validation": "Sourceimagehashes andIDs;3explicitpatchmeanloopandcrossmomentchecks;constant/associationfixtures;core148independentall1800models andexplicitbootstrapweights; outertargetpoisononeblockeachsplit/arm; exact018base/control.",
+  "resources": "ExistingCPU2/PIL/Numpy,400rawdevelopmentimages andBtokencache only,roughlyseconds extraction andminutesverification. Noholdout/test/full500 untilpositiveverifiedlock. Noinstall/cost/upload.",
+  "limits": "DINOtokensglobalcontextmeanslocalassociationisnotlocalreceptivefieldcausalclaim. Same400adaptivehistory,onefixedpermutedcontrol,conditional10000IDclusterbootstrapseed20271209doesnotaccountforsearch. Two smallsequentialhypotheses after018;148failed andpreserved.",
+  "hashes": {
+    "colocated_intensity_149.py": "0ff8534d3f97374c91fbf082aa12c42eedbf2d9316eda13814dc52a6da967325",
+    "directional_energy_148.py": "63d606f90d837cbe6aadecef90a9f0c583b45e20a6832dd4d293d7e131bf0000",
+    "bootstrap_selector_144.py": "d9f55f8e50cd7327efb8d45d433b8c16f3ede19265c436dffcd024e69b45abc3",
+    "reports/directional-energy-148-summary.json": "53a6121df39ebfc5a971ff000c897076a02e804941f754f32a425ccad15b2ca2",
+    "reports/candidate018-public-submission.json": "acafec9f89062fc0368d84ccdd4c9fbd18c9c2ae8ae8f51f7fcc57d3b75e0c31",
+    "artifacts/patch-attention-092/cache.json": "bd57c6eed406a5a7bf5103cb6c49a09def1a81158c66dc79887cb35eebbb5aec",
+    "artifacts/spatial-joint-140/features.npz": "e4bbdc20e08a924d00e60c391443f26d5a298287b66bf20b8866d8c3f648f867",
+    "artifacts/spatial-joint-140/extraction.json": "8e35e8c7b0604c3cd48003d8d424be5267d78e8d1aff48bd59604a12c8fc5537",
+    "artifacts/nested-calibration-074/extraction.json": "9ced9fa46890029bb27db8d25d9351fb3fed35f999340544327847f150cb541b",
+    "artifacts/bootstrap-selector-144/original/report.json": "1d6d0fc65062dd04c1762abad44b757c1d4cd07fcb4336dec13aaaa3dc087625",
+    "artifacts/bootstrap-selector-144/original/predictions.npz": "ec2ac0b3d80a62c63f542f5d6c537c911045f93846fdd21df945a85fc22957ef",
+    "artifacts/bootstrap-selector-144/20261031/report.json": "b348271c8e759ed750d167357ad69f0d731a11dca7070e5c14c4079b5140e2b8",
+    "artifacts/bootstrap-selector-144/20261031/predictions.npz": "bf886dfa0c9c799b73e7c3f1c596bca4f88d67ea5db5faf7f718eb0f31386501",
+    "artifacts/bootstrap-selector-144/20261101/report.json": "f60fac49edcf5970e936d98d7a3f0166c4a5538836a8211c414285b2100345dd",
+    "artifacts/bootstrap-selector-144/20261101/predictions.npz": "dc919a907efa6c9ff4242320701c0d21c09c389982b92ba58a3df3d9bc12ee1f"
+  },
+  "protected": {
+    "artifacts/submission-candidate-017.csv": "4256a5d2636053f8f1d115f39b0265a66a10c3169bd4016309ecdd2b63c3be20",
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16"
+  },
+  "cost": 0
+}

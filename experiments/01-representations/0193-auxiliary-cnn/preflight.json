@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "updates": [
+    {
+      "device": "cpu",
+      "steps": 8,
+      "prediction_loss_gradients_state_optimizer_RNG_exact": true
+    },
+    {
+      "device": "mps",
+      "steps": 8,
+      "prediction_loss_gradients_state_optimizer_RNG_exact": true
+    },
+    {
+      "arm": "detach",
+      "CE_reaches_scalar_head": false,
+      "CE_reaches_trunk": false,
+      "CE_reaches_aux_head": true,
+      "independent_CE_difference": 0.0
+    },
+    {
+      "arm": "true",
+      "CE_reaches_scalar_head": false,
+      "CE_reaches_trunk": true,
+      "CE_reaches_aux_head": true,
+      "independent_CE_difference": 0.0
+    },
+    {
+      "arm": "permuted",
+      "CE_reaches_scalar_head": false,
+      "CE_reaches_trunk": true,
+      "CE_reaches_aux_head": true,
+      "independent_CE_difference": 0.0
+    }
+  ],
+  "plan_SHA256": "4fc76cfc8c0d244918a0865287060f63ee45ccaba2a28bfd30ef620a9270978d",
+  "torch": "2.14.0",
+  "numpy": "2.5.3",
+  "cost": 0
+}

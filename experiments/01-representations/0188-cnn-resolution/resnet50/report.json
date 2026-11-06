@@ -1,0 +1,122 @@
+{
+  "study": 188,
+  "model": "resnet50",
+  "scores256": {
+    "RMSE": {
+      "best021": 12.786200775750695,
+      "standalone": 15.423282665027568,
+      "blend10": 12.89765130741817
+    },
+    "blend_gain": -0.11145053166747587,
+    "fold_blend_gains": [
+      -0.13366252889866104,
+      -0.05109437787763227,
+      -0.16854683382086932,
+      -0.07473869863944671,
+      -0.12023508067105837
+    ],
+    "positive_folds": 0,
+    "conditional_group_bootstrap_CI95": [
+      -0.1836714126792148,
+      -0.041587579102632465
+    ],
+    "gain_after_removing_top5": -0.1460782986339666,
+    "residual_correlation_vs021": 0.8889846978778124,
+    "advance_gate": false,
+    "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+  },
+  "scores224": {
+    "RMSE": {
+      "best021": 12.786200775750695,
+      "standalone": 15.536521834495163,
+      "blend10": 12.909168834878406
+    },
+    "blend_gain": -0.12296805912771092,
+    "fold_blend_gains": [
+      -0.19231205525887596,
+      -0.057847957798573546,
+      -0.18732014190280388,
+      -0.022643486576610528,
+      -0.14092725826174224
+    ],
+    "positive_folds": 0,
+    "conditional_group_bootstrap_CI95": [
+      -0.20453820580923984,
+      -0.04553751383338338
+    ],
+    "gain_after_removing_top5": -0.1534731001547236,
+    "residual_correlation_vs021": 0.8902869583328745,
+    "advance_gate": false,
+    "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+  },
+  "pairing_proof": [
+    {
+      "fold": 0,
+      "recipe": {
+        "name": "adamw_high",
+        "optimizer": "AdamW",
+        "tail_lr": 0.0001,
+        "head_lr": 0.001
+      },
+      "same187_untrained_head_seed_and_weights": true,
+      "same_head100_batch_orders": true,
+      "same_adaptation12_orders_seed_recipe_240updates": true,
+      "no256_reselection": true
+    },
+    {
+      "fold": 1,
+      "recipe": {
+        "name": "adamw_high",
+        "optimizer": "AdamW",
+        "tail_lr": 0.0001,
+        "head_lr": 0.001
+      },
+      "same187_untrained_head_seed_and_weights": true,
+      "same_head100_batch_orders": true,
+      "same_adaptation12_orders_seed_recipe_240updates": true,
+      "no256_reselection": true
+    },
+    {
+      "fold": 2,
+      "recipe": {
+        "name": "adamw_high",
+        "optimizer": "AdamW",
+        "tail_lr": 0.0001,
+        "head_lr": 0.001
+      },
+      "same187_untrained_head_seed_and_weights": true,
+      "same_head100_batch_orders": true,
+      "same_adaptation12_orders_seed_recipe_240updates": true,
+      "no256_reselection": true
+    },
+    {
+      "fold": 3,
+      "recipe": {
+        "name": "adamw_high",
+        "optimizer": "AdamW",
+        "tail_lr": 0.0001,
+        "head_lr": 0.001
+      },
+      "same187_untrained_head_seed_and_weights": true,
+      "same_head100_batch_orders": true,
+      "same_adaptation12_orders_seed_recipe_240updates": true,
+      "no256_reselection": true
+    },
+    {
+      "fold": 4,
+      "recipe": {
+        "name": "adamw_high",
+        "optimizer": "AdamW",
+        "tail_lr": 0.0001,
+        "head_lr": 0.001
+      },
+      "same187_untrained_head_seed_and_weights": true,
+      "same_head100_batch_orders": true,
+      "same_adaptation12_orders_seed_recipe_240updates": true,
+      "no256_reselection": true
+    }
+  ],
+  "seconds": 300.59735858299973,
+  "OOF_sha256": "b8bd7be5b6a236c5cab9033aab2b2d29c76b99f6ffa9a48d82e2ded443bd53ce",
+  "no_new_optimizer_or_resolution_selection": true
+}

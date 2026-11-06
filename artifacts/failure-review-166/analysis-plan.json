@@ -1,0 +1,10 @@
+{
+  "purpose": "Explore persistent018 errors, stable signs, branchdisagreement before proposing interventions. No new training in this phase.",
+  "large": "Top40 absolute errors separately in each of3existing splits; persistentlarge=intersectionall3",
+  "stable_sign": "Same sign in3splits AND minabsoluteerror>=5; also report allsame-sign count",
+  "disagreement": "Range of raw KRR,CNNmean3,DINOmean(Smean3+Bmean3)/2; top40 per split, intersectionall3. Includes raw component calibration differences.",
+  "bins": "Fixedquartiles of400 development label/imageproxy values, descriptive only; report400uniqueIDs, three residuals each, no iid1200 inference.",
+  "visual": "Outcome-selected panels of intersections, persistenterror without highdisagreement, highdisagreement without persistentlarge, and lowerror image-matched controls. Original256 grayscale, no contrast adjustment.",
+  "bias": "Explicit posthoc case selection on same400 previouslyadaptivelyreused; any motivated model gain remains exploratory, including resplits. No causal physics/noise-floor claim.",
+  "scope": "Only existingdevelopmentOOF/cachedproxies and allowlisteddevelopment rawimage samples;noholdout/test."
+}

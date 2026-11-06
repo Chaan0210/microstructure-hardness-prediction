@@ -1,0 +1,60 @@
+{
+  "feature_runs": [
+    "run-012",
+    "run-014"
+  ],
+  "outer_split_seeds": [
+    20261011,
+    20261012
+  ],
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "inner_seed_plus_fold": 20261005,
+  "kernel_bandwidths": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "kernel_alphas": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "cnn": {
+    "architecture": "TinyCNN",
+    "seed_plus_fold": 20261003,
+    "image_size": 128,
+    "epochs": 80,
+    "average_last_epochs": 5,
+    "batch_size": 32,
+    "optimizer": "AdamW",
+    "lr": 0.002,
+    "weight_decay": 0.01,
+    "schedule": "CosineAnnealingLR(T_max=80, eta_min=0.0001)",
+    "augmentation": "batch D4",
+    "endpoint": "fixed; no early stopping"
+  },
+  "baseline_component_weights": {
+    "base_et": 0.375,
+    "base_ridge": 0.375,
+    "morph_ridge": 0.25
+  },
+  "ensemble_weights": {
+    "baseline": 0.5,
+    "cnn": 0.25,
+    "nested_kernel": 0.25
+  },
+  "panel_selection": "Frozen CLI choices; report every panel, no winner selection",
+  "old_oof_prediction_reuse": false,
+  "n_development": 400,
+  "device": "mps",
+  "packages": {
+    "torch": "2.14.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "Pillow": "12.3.0",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "caveat": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

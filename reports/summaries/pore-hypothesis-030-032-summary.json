@@ -1,0 +1,114 @@
+{
+  "hypothesis": "Minimum Hessian curvature at native resolution captures attached and isolated dark blobs without whole-component shape exclusions.",
+  "status": "Completed original nested5fold and two matched development repartitions; no candidate promotion",
+  "novelty_audit": "Previous native28 computes squared LoG tile statistics, not local Hessian minimum eigenvalue and scale-specific maxima/roundness. CNN global mean/std and all-stage moments were already tried and were not repeated. Planned2D-ACF was deferred before implementation/fitting after parent prioritized pore curvature.",
+  "feature_panel": "22 new image-local descriptors plus compact26; sigma1,2,4,8; original fixed baseline50/CNN25/kernel25 ensemble. Thresholdmax(.01,3*HHnoise*discrete-dxx-kernelL2), no variance subtraction or target adjustment.",
+  "target_blind_QA": "16 predefined noise/size-strata development images viewed. V1 noisy maxima rejected before labels/CV; one fixed v2 threshold correction retained. Dark phases, junctions and small-scale texture remain confounders.",
+  "fixtures": {
+    "training_rows_from_fixtures": 0,
+    "D4_checks_passed": 32,
+    "attached_over_isolated_response": 1.0003079757679294,
+    "ridge_over_isolated_response": 0.0005345766968743099
+  },
+  "results": [
+    {
+      "split": "original",
+      "old_kernel": 14.482935938822393,
+      "new_kernel": 14.25397591717558,
+      "candidate003": 13.705696031698212,
+      "pore_blend": 13.698556680879785,
+      "gain_ci95": [
+        -0.061203648782379536,
+        0.0773446736171441
+      ]
+    },
+    {
+      "split": 20261031,
+      "old_kernel": 14.381024891086929,
+      "new_kernel": 14.388302183242814,
+      "candidate003": 13.63181073293285,
+      "pore_blend": 13.6700286420118,
+      "gain_ci95": [
+        -0.08871463703131796,
+        0.014458398198101456
+      ],
+      "better_folds": 2
+    },
+    {
+      "split": 20261101,
+      "old_kernel": 14.343291339552492,
+      "new_kernel": 14.319916711799156,
+      "candidate003": 13.729980391208457,
+      "pore_blend": 13.763447286624242,
+      "gain_ci95": [
+        -0.09264913335444187,
+        0.027247655170038274
+      ],
+      "better_folds": 1
+    }
+  ],
+  "compute_seconds": {
+    "development_features_and_cv": 10.135787959035952,
+    "two_repartitions": 0.7770462920307182,
+    "peak_plateau_diagnostic": 8.15590750001138
+  },
+  "interpretation": [
+    "The original kernel gain .2290 across5fold did not robustly reproduce: new split31 kernel slightly worsened and split1101 only slightly improved.",
+    "Fixed ensemble worsened on both repartitions; do not promote or spend a submission.",
+    "Pore attachment is an algorithmically real representation issue, but this small descriptor panel does not prove reliable pore amount estimation or improve the deployed ensemble.",
+    "Peak equality can theoretically count plateaus multiple times. Actual400-development images showed0 adjacent equal-max plateaus at all4 scales; no trained feature change was made. These remain maximum pixels rather than verified distinct pores.",
+    "Repartitions reuse historically inspected400 images; uncertainty intervals omit fitting and repeated-selection uncertainty. No claim of irreducible performance ceiling."
+  ],
+  "verification": [
+    {
+      "run": "artifacts/run-030",
+      "oof_sha256": "150b867e5b05aca773686c467de5d5bad784f16552403978c200597eaa120e35",
+      "report_sha256": "ac166c7db326f8deabec1ce5953ee2db245d23704d982f73a1b90b8da0409ee1",
+      "rmse_recomputed": 13.698556680879785,
+      "kernel_model_sha256": {}
+    },
+    {
+      "run": "artifacts/pore-confirmation-031/seed-20261031",
+      "oof_sha256": "b7a3cb3a7257eff4124a2cb5fa8b14476b97a2da004fe9b672df46258fa5f5ff",
+      "report_sha256": "60d094d8eedda772623808cafdb43f5641cb4a4e618bc58573e5c2354e684c68",
+      "rmse_recomputed": 13.6700286420118,
+      "kernel_model_sha256": {
+        "kernel-fold3.joblib": "ca0e8b0be4aede0f66cfafa8bb67d9959336649f4b8308cba45f3dbded051653",
+        "kernel-fold1.joblib": "7bd02f367302985d7e6319dac2c6a175d9177057c7935b1578d7f7c0619eb812",
+        "kernel-fold2.joblib": "493f82ab4840763ca94de2ac908bd1f47f8d5fd6ede5bdaaf8e64905fffcbc78",
+        "kernel-fold0.joblib": "8d7a1c4194547f5242a3fde7fb848cab90be278641e65a97de1d3a965665f22c",
+        "kernel-fold4.joblib": "9ee30600a2de5a7c953e783002a3a9b7f81b2e2964fb726b152e2585f612840c"
+      }
+    },
+    {
+      "run": "artifacts/pore-confirmation-031/seed-20261101",
+      "oof_sha256": "27a1d63d6804996263f5759d884ab8ae3fb43dbc96fcd3b47eb55006707aa40d",
+      "report_sha256": "ffc9ad9e6e8d4f594cbe8a1e0d5edf4ab9ea605178fa1e87ab0816618c660ad3",
+      "rmse_recomputed": 13.763447286624242,
+      "kernel_model_sha256": {
+        "kernel-fold3.joblib": "77236e22ebf55dc476873826af204aeb5961b9f632e7b51a2232da5047adeabd",
+        "kernel-fold1.joblib": "d925ad3b01ad502dbfde276a386bc3f452c4b42bde7c187c800f76e4404648b9",
+        "kernel-fold2.joblib": "342f738b2e0d69cba273e79fda217d88a6559197e7edd28657dd6ab20ea10af1",
+        "kernel-fold0.joblib": "74af6a6800b96bd4172cc0911ab17429dcb99f9cdbf96b24ff218ac58218afe2",
+        "kernel-fold4.joblib": "339b77c3293983782a364d45987e33fcbeb79e8457a6b38c61b28e69f3107abb"
+      }
+    }
+  ],
+  "best_preserved": "artifacts/submission-candidate-003.csv",
+  "new_candidate": null,
+  "new_packages": [],
+  "cost": 0,
+  "submission_performed": false,
+  "holdout_test_access": false,
+  "running_work": [],
+  "reproduction": "Original source + frozen plan/QA/cache/OOF/checkpoints preserved in run030 and pore-confirmation031. Scripts intentionally refuse overwriting completed reports; rerun in isolated project copy with matching frozen QA source hashes.",
+  "relevant_files": [
+    "pore_curvature_features.py",
+    "pore_curvature_experiment.py",
+    "confirm_pore_031.py",
+    "pore_diagnostics_032.py",
+    "artifacts/run-030/report.json",
+    "artifacts/pore-confirmation-031/report.json",
+    "reports/pore-peak-diagnostic-032.json"
+  ]
+}

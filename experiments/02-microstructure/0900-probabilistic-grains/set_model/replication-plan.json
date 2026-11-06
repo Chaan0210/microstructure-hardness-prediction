@@ -1,0 +1,46 @@
+{
+  "all_seeds": [
+    731503,
+    731509,
+    731527
+  ],
+  "additional_seeds": [
+    731509,
+    731527
+  ],
+  "original_config": {
+    "seed": 731503,
+    "n_seeds": 1,
+    "encoder_width": 32,
+    "embedding_dim": 16,
+    "head_width": 32,
+    "head_dropout": 0.1,
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "correction_penalty": 0.001,
+    "max_epochs": 160,
+    "patience": 24,
+    "inner_validation_fraction": 0.2,
+    "inner_min_improvement_standardized_mse": 1e-05,
+    "ridge_alphas": [
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "ridge_inner_folds": 4,
+    "fixed_blend_new_predictor_weight": 0.2,
+    "objective": "One direct hardness squared-error loss per original image",
+    "skip": "Fixed training-only Ridge on raw object means/stds and globals",
+    "architecture": "Context-conditioned phi, area-weighted mean/std, small head",
+    "normalization": "Fit within each training subset; equal total object weight per image",
+    "selection": "One inner image split selects epoch, then all outer-training images refit",
+    "epoch_zero": "Ridge skip is eligible if learned correction does not improve inner loss"
+  },
+  "aggregation": "Equal mean of all three, regardless of individual validation scores",
+  "script_sha256": "9d46642182fbaae15a7d7fd5a273431a5f53ca904601ee1699643fbe438027f2",
+  "model_script_sha256": "08e490d99f5f0dfd8b5d07a225a30fa29c5442930caa1d6e15c5921e23f4b2f7",
+  "architecture_grid_epoch_budget_unchanged": true,
+  "stage": "Predetermined seed confirmation after original single-seed result"
+}

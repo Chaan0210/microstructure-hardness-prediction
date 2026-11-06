@@ -1,0 +1,70 @@
+{
+  "feature_caches": 60,
+  "measurement_prior_scope": "Only current outer/inner training IDs among baseline400; no heldout IDs, extra100 or test images learned",
+  "hierarchical_image_inferences": 20400,
+  "converged_inferences": 20400,
+  "quadrature_orders": {
+    "41": 1731,
+    "25": 18266,
+    "61": 282,
+    "81": 97,
+    "121": 13,
+    "161": 11
+  },
+  "fallback_cases": [
+    {
+      "cache": "partition0-fold3-inner0.npz",
+      "tag": "train",
+      "id": "TRAIN_000339",
+      "jacobi_order": 210,
+      "tail_bound": 1.5239706048320948e-23
+    },
+    {
+      "cache": "partition0-fold4-inner1.npz",
+      "tag": "train",
+      "id": "TRAIN_000339",
+      "jacobi_order": 210,
+      "tail_bound": 1.5239706048320948e-23
+    },
+    {
+      "cache": "partition0-fold4-inner1.npz",
+      "tag": "eval",
+      "id": "TRAIN_000171",
+      "jacobi_order": 222,
+      "tail_bound": 1.5239706048320948e-23
+    },
+    {
+      "cache": "partition1-fold3-inner0.npz",
+      "tag": "eval",
+      "id": "TRAIN_000339",
+      "jacobi_order": 210,
+      "tail_bound": 1.5239706048320948e-23
+    },
+    {
+      "cache": "partition2-fold0-inner2.npz",
+      "tag": "eval",
+      "id": "TRAIN_000339",
+      "jacobi_order": 210,
+      "tail_bound": 1.5239706048320948e-23
+    },
+    {
+      "cache": "partition2-fold4-inner1.npz",
+      "tag": "eval",
+      "id": "TRAIN_000061",
+      "jacobi_order": 106,
+      "tail_bound": 1.5239706048320948e-23
+    }
+  ],
+  "fallback_count": 6,
+  "cache_key_counts": {
+    "a89e0418a79cf34a84bd8128ba74f24ba24410495d6419a8f599ac36c2cb6a1b": 9,
+    "f90fbd1d0327a530581ee2977dce707b07a1f40cbb647bd44ab0ab344b46dcfc": 3,
+    "1c504b91609534f02d545a4b520bc3d68e03a7b3a806fa2b2ee75676fc4a8ecc": 48
+  },
+  "stage2_readout_models": 90,
+  "stage4_kernel_models": 30,
+  "prediction_hashes_and_completion_verified": true,
+  "old_converged_cache_allowlist_verified": true,
+  "all_variances_nonnegative": true,
+  "no_model_selection_from_outer_scores": true
+}

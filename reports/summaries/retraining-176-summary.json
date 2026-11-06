@@ -1,0 +1,200 @@
+{
+  "study": 176,
+  "status": "completed",
+  "UTC": "2026-10-05T19:07:37.624606+00:00",
+  "candidate": "018 unchanged",
+  "fresh_fit_counts": {
+    "base_nodes": 13,
+    "CNN": 39,
+    "long_MLP": 78,
+    "short_B": 4,
+    "KRR_final": 13,
+    "KRR_inner": 351,
+    "affines": 4,
+    "residual_objects": 60,
+    "residual_nonnull": 48
+  },
+  "all_neural_tensor_states_exact": true,
+  "neural_states_compared": 121,
+  "full500_train_query_max_error": 0.0,
+  "independent_validation": {
+    "passed": true,
+    "rows": 500,
+    "root_in_sample_queries_not_validation": true,
+    "nodes": 13,
+    "KRR_independent_fits": 364,
+    "residual_objects": 60,
+    "affine_fits": 4,
+    "neural_reloads": 121,
+    "errors": {
+      "kernel": 1.546140993013978e-11,
+      "CPU_head": 0,
+      "MPS_reload": 0,
+      "CPU_MPS": 4.404042687156107e-05,
+      "residual": 1.9184653865522705e-13,
+      "affine": 1.4210854715202004e-13
+    },
+    "seconds": 11.253818666998995,
+    "training_report_sha256": "814e9f31e66669daf972bcc154840ebeee3cf920943bcfdec2110042c9f5dd01",
+    "validator_sha256": "a4842e04d59099b1bc64b20ace42a56c07edd2b7e81e094d9c2f4fe91c4164cc"
+  },
+  "test": {
+    "passed": true,
+    "feature_checks": {
+      "S": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      },
+      "X57": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      },
+      "B": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      },
+      "spatial": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      }
+    },
+    "all_raw_test_image_hashes_match_historical": true,
+    "CSV_bytes_exact": true,
+    "CSV_sha256": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "original_CSV_sha256": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "rows": 1000,
+    "IDs_order_exact": true,
+    "CSV_difference": {
+      "exact": true,
+      "max_abs": 0.0,
+      "RMS": 0.0
+    },
+    "stages": {
+      "components_without_retired_baseline": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      },
+      "short": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      },
+      "base": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      },
+      "corrections": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      },
+      "primary": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      },
+      "residual_candidates": {
+        "exact": true,
+        "max_abs": 0.0,
+        "RMS": 0.0
+      }
+    },
+    "test_fit_tuning": false,
+    "test_target_values_parsed": false,
+    "fit_backward_guards": true,
+    "original_prediction_sha256": "821b7b64418d4032ba8e5594f86fa94b29ba661398e8eb8956179132e880f954",
+    "source_sha256": "1efb938baf2d43bc31746066c19c395e126e4e1f0b10fb01d88fcb84e7812465"
+  },
+  "test_CPU_MPS_max_error_by_component": {
+    "P": 1.52587890625e-05,
+    "raw": 4.577636730118684e-06,
+    "short": 3.7937734504112086e-05,
+    "base": 5.4175818604562664e-06,
+    "corrections": 0.0,
+    "residual_candidates": 0.0,
+    "primary": 5.4175818604562664e-06,
+    "CNN_seeds": 3.0517578125e-05,
+    "S_seeds": 0.0,
+    "B_seeds": 0.0
+  },
+  "isolated_package": {
+    "passed": true,
+    "files_verified": 100,
+    "raw_smoke": {
+      "IDs": [
+        "TEST_000001",
+        "TEST_001000"
+      ],
+      "all_six_banks_exact": true,
+      "fit_guard_active": true
+    },
+    "full1000_reload_CSV_exact": true,
+    "historical_project_files_blocked": true,
+    "selftest_sha256": "f0acb588a6e7cf41a30d963f1be6af15642cb6b965ccaaa796883b3f0d4b6269",
+    "seconds": 6.882109999998647
+  },
+  "resources": {
+    "train_feature_seconds": 266.5797301249986,
+    "training_seconds": 489.96567958299784,
+    "independent_validation_seconds": 11.253818666998995,
+    "test_feature_seconds": 535.1773424170024,
+    "test_extraction_and_two_inference_seconds": 539.5143946659991,
+    "train_feature_peak_main_RSS": 1300316160,
+    "training_peak_main_RSS": 787169280,
+    "training_max_MPS_driver": 129171456,
+    "test_feature_peak_main_RSS": 1392721920,
+    "test_feature_max_MPS_driver": 1521123328
+  },
+  "deliverables": {
+    "CSV": "experiments/reproduction-018-176/test-run/reproduced-018.csv",
+    "CSV_sha256": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "passed": true,
+    "directory": "deliverables/reproduction-018-v176",
+    "ZIP": "deliverables/reproduction-018-v176.zip",
+    "ZIP_sha256": "e93bd3f2bd9f11b40014d65997238495293b07ae0eac49d17490552c198797a6",
+    "ZIP_bytes": 419036048,
+    "files": 101,
+    "manifest_sha256": "6be809a850228181b3e9fe72ced63f0ee84baf113c4a2b905fcc06b508828318",
+    "all_archive_member_hashes_exact": true,
+    "raw_data_labels_caches_excluded": true,
+    "private_absolute_paths_excluded": true
+  },
+  "plan_sha256": "172a5023144613164cf298a49a0fc00ec25bfc264b197ee4cd33d7e4d16bb9f3",
+  "new_model_manifest_sha256": "c9994f70c387b52bdd02e6ca604c5c56f88d7d2b433f81bcff8e100effc60653",
+  "source_corrections": {
+    "root_validator": "Original failed because it retained a development-only root train/query disjoint assertion; separate validated_full500 validator retained full nested exclusions. Original source and failure log preserved.",
+    "extractor": "Initial process source retained; later optional raw hash check changed no numerical feature code.",
+    "comparison_provenance": "Initial suspicion of block cache test1000 shape was wrong; corrected addendum confirms500. Executed comparison independently reloads old residual models on500; model results unchanged."
+  },
+  "preservation": {
+    "passed": true,
+    "protected_files": 9,
+    "report_sha256": "f586e996d10b7928733b0822db699d9915932be842186450e2ba1ab10d985d75"
+  },
+  "learned_artifact_reuse_during_fitting": 0,
+  "official_pretrained_weight_reuse": [
+    "DINOv2 ViT-S/14",
+    "DINOv2 ViT-B/14"
+  ],
+  "new_performance_selection": false,
+  "additional_holdout_evaluation": false,
+  "uploads": 0,
+  "submissions": 0,
+  "new_installs": 0,
+  "new_downloads": 0,
+  "cost": 0,
+  "remaining_blockers": [],
+  "limitations": [
+    "Exact reproduction is verified in this installed M1 Pro/macOS CPU+MPS environment; cross-platform bitwise equality and CPU-only DINO extraction are not claimed.",
+    "Archive isolated execution checked two raw images and all1000 predictions from the explicitly supplied fresh176 cache. Full500 training was executed before packaging with these same training sources, not redundantly repeated from the ZIP.",
+    "Official frozen DINO pretrained weights and fixed source/configuration were reused; all competition-fitted regressors/CNNs/heads/calibrators/residuals were trained afresh.",
+    "This is final500 reproduction, not a new development/holdout performance evaluation; no formerholdout subgroup metrics or test-label fitting/selection.",
+    "Resource RSS values measure the main process; aggregate concurrent child-process RSS was not sampled."
+  ]
+}

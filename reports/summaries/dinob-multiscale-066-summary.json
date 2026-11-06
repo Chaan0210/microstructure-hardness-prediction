@@ -1,0 +1,163 @@
+{
+  "completed_at_utc": "2026-10-02T04:26:53.671039+00:00",
+  "study": "066 fixed ViT-B252+504 concatenated multiscale MLP",
+  "status": "Completed, rejected at original development screen; best008 retained.",
+  "best008_public": {
+    "public_rmse": 11.8898307061,
+    "previous007_public_rmse": 11.9686073575,
+    "improvement_vs007": 0.0787766514,
+    "rank": 19,
+    "participants": 55,
+    "daily_used": 2,
+    "daily_limit": 5,
+    "daily_remaining": 3,
+    "source": "Parent explicitly reported actual submission completed in thread01a0f244-6000-7496-a632-e5f79ee2c02a; not browser rechecked here. No submissionID/time supplied, not invented.",
+    "sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9"
+  },
+  "public_used_for_model_selection": false,
+  "hypothesis": "The fixed504 representation favors smaller native spatial extent per14px patch. A252 representation changes native token scale from~7.1px to~14.2px and global attention grid36x36 to18x18; joint descriptors may retain coarse grain/phase context plus fine boundary texture. This adds no independent image pixels or physical ground truth.",
+  "prior_evidence_and_duplicate_audit": {
+    "039": "S full504 vs252 improved fixedRidgeblend in all3 splits (13.69714->13.52245;13.61867->13.48427;13.71555->13.65133); establishes scale sensitivity, not complementarity ofB252.",
+    "044": "Multilayer6/9/12 retained useful information; retain fixed layers, no layer search.",
+    "064": "S/B head residual correlation0.879/0.885/0.895 and predetermined mean improved OOF all3. Supports evaluating complementary representations instead of requiring standalone dominance.",
+    "negative_evidence": "S native196 crops039, semivariograms042, D4mean046, projectedtoken covariance056 did not yield stable improvement; none concatenated known252+504 full-frame B multi3 features.057-061 changed optimization/loss/adaptation/PCA/mixup onS, not this input.",
+    "duplicate_check": "Reviewed037/039/042/044/046/056/062-065 plans/source; no B252 or jointBresolution study found."
+  },
+  "fixed_primary": "Concatenate B5046912 and B2526912, each blocks6/9/12 normalizedCLS+patchmean+populationstd. Fixed order[B504,B252],13824features. Existing3seed64hidden MLP/config100epoch unchanged.",
+  "fixed_formula": ".75*samefold003 + .125*Smean3 + .125*B_multiscale_mean3",
+  "scores": {
+    "reference008": {
+      "rmse": 13.209632611789585,
+      "fold_rmse": [
+        13.137584839949701,
+        12.597373711388418,
+        14.228655527464698,
+        12.44121172584094,
+        13.56258166849383
+      ]
+    },
+    "reference003": {
+      "rmse": 13.705696031698212,
+      "fold_rmse": [
+        13.539394483459153,
+        13.218378105383424,
+        14.680453686399362,
+        12.991004741250547,
+        14.032386512109253
+      ]
+    },
+    "Smean": {
+      "rmse": 14.049242890525278,
+      "fold_rmse": [
+        14.446117130508892,
+        13.952434285579072,
+        14.94415012517497,
+        13.1480280957738,
+        13.687481162436942
+      ]
+    },
+    "B504mean": {
+      "rmse": 13.615777507504738,
+      "fold_rmse": [
+        13.650648366415224,
+        12.80647915614849,
+        14.045068523498623,
+        13.407892313668881,
+        14.126760079518114
+      ]
+    },
+    "Bmultiscale": {
+      "rmse": 13.738072692107334,
+      "fold_rmse": [
+        14.065918728554227,
+        12.829128360952186,
+        14.35803610646862,
+        13.634311612525874,
+        13.754597351646883
+      ]
+    },
+    "primary": {
+      "rmse": 13.251466117757952,
+      "fold_rmse": [
+        13.20400054132675,
+        12.630374690390711,
+        14.289754243621687,
+        12.496850402688024,
+        13.556047724360806
+      ]
+    }
+  },
+  "comparison": {
+    "gain": -0.041833505968366325,
+    "fold_gains": [
+      -0.06641570137704811,
+      -0.03300097900229382,
+      -0.06109871615698914,
+      -0.055638676847083346,
+      0.006533944133025216
+    ],
+    "positive_folds": 1,
+    "bootstrap_sd": 0.02616707688417382,
+    "conditional_ci95": [
+      -0.09350541373349715,
+      0.008126927126359419
+    ]
+  },
+  "failure_evidence": {
+    "RMSE_worsened_by": 0.041833505968366325,
+    "worse_folds": 4,
+    "standalone_B504_RMSE": 13.615777507504738,
+    "standalone_Bmultiscale_RMSE": 13.738072692107334,
+    "head_residual_correlation": 0.9594266861708032,
+    "crossresolution_channel_correlation_median": 0.7084951298565958,
+    "interpretation": "Input descriptors differ across resolutions, but this single fixed concatenation produces worse head and ensembleOOF;4/5folds worse. Feature diversity alone did not translate into complementary predictive benefit here. First-layer parameter count doubled; cannot attribute failure solely to coarse-scale information. No claim that all multiscale methods fail."
+  },
+  "screen_criterion": "Original primary pooledOOF RMSE strictly lower than008 -> both existingresplits; otherwise reject this direction.",
+  "screen_pass": false,
+  "resplits_run": false,
+  "candidate009_created": false,
+  "no_alternate_scale_ratio_model_fallback": true,
+  "resource": {
+    "feature_extract_seconds": 14.607476875011344,
+    "original15model_fit_seconds": 18.459512250032276,
+    "independent_validation_seconds": 18.39697833399987,
+    "feature_extract_peak_rss_bytes": 1057882112,
+    "mps_driver_bytes": 388661248,
+    "model_parameters": 885320,
+    "new_packages": 0,
+    "new_downloads": 0,
+    "cost": 0
+  },
+  "verification": {
+    "passed": true,
+    "feature_rows_reextracted": 400,
+    "feature_max_error": 0.0,
+    "models_reloaded": 15,
+    "max_reload_error": 0.0,
+    "full100epoch_replay_exact": true,
+    "scalers_targetstats_foldtrain_only_verified": true,
+    "protected_files_verified": 39,
+    "best008_unchanged": true
+  },
+  "selection_data": "Only originaldevelopment400; samegroup folds. No additionalholdoutor testimages/labels opened. Protectedfinaltrain/test caches hashedonly.",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "commands_completed": [
+    ".venv/bin/python -I -B dinob_multiscale_066.py prepare",
+    ".venv/bin/python -I -B dinob_multiscale_066.py benchmark_features",
+    ".venv/bin/python -I -B dinob_multiscale_066.py extract",
+    ".venv/bin/python -I -B dinob_multiscale_066.py benchmark_head",
+    ".venv/bin/python -I -B dinob_multiscale_066.py original",
+    ".venv/bin/python -I -B validate_dinob_multiscale_066.py"
+  ],
+  "deliverables": {
+    "reports/candidate008-public-submission.json": "91554d52f6c8bb48dba445fc7fd2a3abf82b8207d8832a24938fdb65757937c6",
+    "dinob_multiscale_066.py": "5b40844c7a17ec533572df35e1a4630a10c4982722d99c436f59dd90a5437255",
+    "validate_dinob_multiscale_066.py": "5682d233bf6ab05270c0fc996a6345ee022ede675cc5e8846ad03acabbdcdc01",
+    "artifacts/dinob-multiscale-066/plan.json": "8f20d66e886b57c9b9027d76d19300e478cfa45e89f92e99c7ecb7e69f45b870",
+    "artifacts/dinob-multiscale-066/original/report.json": "3b0c2498b49fa54f0272ae069d19395d4119e41ef651a2f71ffa2592430c3417",
+    "reports/dinob-multiscale-066-validation.json": "fb9a628932608adf9da000af6aaad450751474e3da6327ef17cc8b559d774892"
+  },
+  "uploaded_this_study": false,
+  "running_work": [],
+  "blockers": []
+}

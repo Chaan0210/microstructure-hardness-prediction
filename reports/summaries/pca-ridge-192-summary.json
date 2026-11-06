@@ -1,0 +1,58 @@
+{
+  "summary_path": "experiments/pca-ridge-192/summary.json",
+  "summary_SHA256": "9c90aed980dcc99210b49e25027efce92de3355199b9bc0cf1d4a29bd983ee4d",
+  "decision": "reject_current_full_Ridge_hypothesis_keep_best021",
+  "advancement_gate": false,
+  "scores": {
+    "pca128_ridge": {
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 15.37971603539523,
+        "blend10": 12.887708266472885
+      },
+      "blend_gain": -0.10150749072218979,
+      "fold_blend_gains": [
+        -0.20436171056170593,
+        0.027349752419940643,
+        -0.10222339329387431,
+        -0.11706344625429921,
+        -0.10506285969250762
+      ],
+      "positive_folds": 1,
+      "conditional_group_bootstrap_CI95": [
+        -0.18013493146105786,
+        -0.024956070869616463
+      ],
+      "gain_after_removing_top5": -0.13246701746015077,
+      "residual_correlation_vs021": 0.8846660223687333,
+      "advance_gate": false,
+      "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+    },
+    "full_ridge": {
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 15.51706221297084,
+        "blend10": 12.889531130337462
+      },
+      "blend_gain": -0.10333035458676676,
+      "fold_blend_gains": [
+        -0.20329439078209077,
+        0.017556231068851957,
+        -0.1019389316728514,
+        -0.10990285777467079,
+        -0.11300422617290629
+      ],
+      "positive_folds": 1,
+      "conditional_group_bootstrap_CI95": [
+        -0.18492921938169027,
+        -0.02334306890476639
+      ],
+      "gain_after_removing_top5": -0.1362965075025926,
+      "residual_correlation_vs021": 0.8769602847541746,
+      "advance_gate": false,
+      "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+    }
+  },
+  "best021_preserved": true,
+  "no_expansion_full500_test_CSV_upload": true
+}

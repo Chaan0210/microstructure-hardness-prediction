@@ -1,0 +1,48 @@
+{
+  "study": "093 post-hoc fixed092 replication, not candidate selection",
+  "created_utc": "2026-10-02T10:06:28.120651+00:00",
+  "authorization": "User explicitly authorized relaxing the failed092 resplit screen after observing attention improve matchedmean inall5 originalfolds. Purpose is reproducibility and fixedsample tracking, not promotion.",
+  "selection_bias": "This extension was selected after observing092 original gains. The092 >=3positivefold gate against011 failed(2/5) andremains recorded;093 deliberately relaxes it posthoc. Same400 historicallyreused rows andoriginal-selectedtop5 are notindependent confirmation or unbiased subgroups. No revised pre-registration claim.",
+  "unchanged": "Import exact092 Pool,fit_pair,predict,normalize,schedule,CFG andtoken cache. Bothmean andattention trained onthetwo existingresplits;20epochs,seed20270322+fold,all12913parameters,coordinates,.9*011+.1*arm. No settings/ratio/seed/epoch changes orfallbackrecipe.",
+  "config": {
+    "hidden": 16,
+    "epochs": 20,
+    "dropout": 0.25,
+    "lr": 0.001,
+    "min_lr": 1e-05,
+    "weight_decay": 0.1,
+    "clip": 1.0,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "seed": 20270322,
+    "blend_new": 0.1
+  },
+  "fixed_original_top5_ids": [
+    "TRAIN_000438",
+    "TRAIN_000331",
+    "TRAIN_000227",
+    "TRAIN_000071",
+    "TRAIN_000168"
+  ],
+  "top5_definition": "Five largest original squared-error improvements: (y-011)^2-(y-attentionblend)^2, stable descending order. Keep exactlytheseIDs inbothresplits; do not selectnewtop5 for thisprimarytracking.",
+  "comparisons": "Separate: attention versusparameter-matchedmean (standalone andblend); fixedblend versus011; perID gain fororiginaltop5; RMSE/MSE/absolute-error andconditionalbootstrapgain onfixedremaining395; sameIDsignconsistency acrosspartitions. No candidatepromotionthreshold.",
+  "candidate_policy": "No candidateCSV,full500training,testinference,submission orhyperparametersearch regardless of results. End with validity assessment ofthisfixedhypothesis only.",
+  "resources": "092actual paired5foldabout3minutes,cache alreadyvalidated;two resplits about6minutes plus2firstfoldpairreplays ~75seconds. Existinguv CPU2/MPS,cost0;reusecache,nonewdownloads.",
+  "sources": {
+    "patch_replication_093.py": "6c48bc962d5f3a2ef49bb71edebfc82bd9c4557b08f63f8d683c0e3c1e62a214",
+    "validate_patch_replication_093.py": "2dd47614e814408289d7ca26609b5c16ed1d2a3719fe8f4af948ad708d63b306",
+    "summarize_patch_replication_093.py": "bc8a3c81df7307badb78389e08c5253a52f6f91e168cd01598d4596c51b6e3dc",
+    "patch_attention_092.py": "d716a5ddc52bc2032e816f3410c77ecc744729ff0c659348e18f3ac678fb9b5f",
+    "validate_patch_attention_092.py": "12623013e9c69df71d8c2bb0c41fbf3fcc8c33c59054df24f890db9cc0aa11ab"
+  },
+  "evidence": {
+    "reports/patch-attention-092-validation.json": "6becc891c0a749acff9a97720ffbcb8b1edc0d82dfb937ca97571fd4ac5d7b31",
+    "reports/patch-attention-092-summary.json": "ab2ba0c2e27aa804e0e5a60f5877fa8d5b59e2d06e82f8bc924b7cae12635d3e",
+    "artifacts/patch-attention-092/original/report.json": "ac4fd3bc846d0ad89541379a4a2071c035cb06e88523b1112b892b1182bc7d63",
+    "artifacts/patch-attention-092/original/development_predictions.npz": "f91201375901dae1dacd30af1310450bfbbfc55ac7958019d039eab3882f83df",
+    "artifacts/patch-attention-092/cache.json": "bd57c6eed406a5a7bf5103cb6c49a09def1a81158c66dc79887cb35eebbb5aec",
+    "reports/candidate011-public-submission.json": "9220b3d414da739824cda4a76f7867603b14333b2cef5b0de82a5ec802473b71"
+  },
+  "scope": "Development400only,holdout/testunreadforselection,noexternaldata/install/cost/upload,best011preserved.",
+  "limits": "Weak exploratory hypothesis and historicallyreused400. Resplits notindependent. Fixedarchitecture/seed andtinyset mayunderfit/overfit. Attentionweights aremodelweights,notprovenphysicalimportance. ConditionalCIs omit fitting/adaptiveselection."
+}

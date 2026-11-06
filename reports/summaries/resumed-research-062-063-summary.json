@@ -1,0 +1,195 @@
+{
+  "completed_at_utc": "2026-10-02T03:52:23.227334+00:00",
+  "status": "Completed independent062 validation and actual063 fixed MLP training/verification; not promoted.",
+  "environment": {
+    "project": ".",
+    "python": ".venv/bin/python",
+    "uv_venv": true,
+    "device_feature_replay": "MPS",
+    "device_MLP": "CPU",
+    "threads": 2,
+    "new_packages": 0,
+    "network_downloads": 0,
+    "cost": 0
+  },
+  "process_check": "No preexisting project training process found before execution. Initial sandbox ps denied; scoped escalated read succeeded. No duplicate training started.",
+  "project_instructions": "Read project README and required summaries; no project-local AGENTS.md found. README is historical004; newer immutable reports establish007 and062 state.",
+  "062": {
+    "validation_report": "reports/dinob-062-validation.json",
+    "cache_reextracted_rows": 400,
+    "cache_error": 0.0,
+    "ridge_models_verified": 10,
+    "nested_selection_replayed": true,
+    "seconds": 53.218958334007766,
+    "ViTS_ridge_blend_rmse": 13.423229237711903,
+    "ViTB_ridge_blend_rmse": 13.317460998009556
+  },
+  "063": {
+    "plan": "artifacts/dinob-mlp-063/plan.json",
+    "report": "artifacts/dinob-mlp-063/original/report.json",
+    "validation": "reports/dinob-mlp-063-validation.json",
+    "head_config": {
+      "hidden": 64,
+      "dropout": 0.25,
+      "epochs": 100,
+      "batch_size": 64,
+      "lr": 0.0003,
+      "min_lr": 1e-05,
+      "weight_decay": 0.01,
+      "gradient_clip": 1.0,
+      "beta": 1.0,
+      "aux_weight": 0.3,
+      "bins": 7,
+      "seed": 20261128
+    },
+    "effective_aux_weight": 0.0,
+    "seeds": [
+      20261128,
+      20261205,
+      20261219
+    ],
+    "training_models": 30,
+    "training_seconds": 16.694794124981854,
+    "models_reloaded": 30,
+    "reload_max_error": 0.0,
+    "full100epoch_replays": [
+      {
+        "split": "original",
+        "arm": "controlS",
+        "seed": 20261128,
+        "parameter_hash_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "original",
+        "arm": "baseB",
+        "seed": 20261128,
+        "parameter_hash_exact": true,
+        "prediction_error": 0.0
+      }
+    ],
+    "S_control_exact_all15_checkpoints": true,
+    "scores": {
+      "controlS": {
+        "rmse": 14.049242890525278,
+        "fold_rmse": [
+          14.446117130508892,
+          13.952434285579072,
+          14.94415012517497,
+          13.1480280957738,
+          13.687481162436942
+        ]
+      },
+      "baseB": {
+        "rmse": 13.615777507504738,
+        "fold_rmse": [
+          13.650648366415224,
+          12.80647915614849,
+          14.045068523498623,
+          13.407892313668881,
+          14.126760079518114
+        ]
+      },
+      "reference003": {
+        "rmse": 13.705696031698212,
+        "fold_rmse": [
+          13.539394483459153,
+          13.218378105383424,
+          14.680453686399362,
+          12.991004741250547,
+          14.032386512109253
+        ]
+      },
+      "reference007": {
+        "rmse": 13.241596955038409,
+        "fold_rmse": [
+          13.200972349680994,
+          12.726138894776982,
+          14.308109808709345,
+          12.375441992213231,
+          13.513163828337742
+        ]
+      },
+      "primary": {
+        "rmse": 13.232540256094351,
+        "fold_rmse": [
+          13.119153240033091,
+          12.542326934894586,
+          14.192991337031799,
+          12.571463448229109,
+          13.660006044849125
+        ]
+      },
+      "control007": {
+        "rmse": 13.241596955038409,
+        "fold_rmse": [
+          13.200972349680994,
+          12.726138894776982,
+          14.308109808709345,
+          12.375441992213231,
+          13.513163828337742
+        ]
+      }
+    },
+    "comparison": {
+      "gain": 0.009056698944057473,
+      "fold_gains": [
+        0.08181910964790262,
+        0.18381195988239618,
+        0.11511847167754574,
+        -0.1960214560158775,
+        -0.14684221651138252
+      ],
+      "positive_folds": 3,
+      "bootstrap_sd": 0.09300178059368959,
+      "conditional_ci95": [
+        -0.17290442718122784,
+        0.19406972007782616
+      ]
+    },
+    "train_rmse_pooled": {
+      "controlS": 0.6013408249223603,
+      "baseB": 0.5059661954706801
+    },
+    "residual_correlation": 0.8793905468158919,
+    "screen_pass": false,
+    "reason": "Gain0.0090567 < predeclared conditional bootstrap SD0.0930018, despite3/5 positive folds. Do not claim consistent improvement or statistical significance.",
+    "resplits_run": false,
+    "equal_SB_evaluated": false,
+    "final500_fit": false,
+    "test1000_inference": false,
+    "candidateCSV_created": false
+  },
+  "best007": {
+    "path": "artifacts/submission-candidate-007.csv",
+    "sha256": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "public_rmse": 11.9686073575,
+    "public_source": "Previously user/parent confirmed; no leaderboard access this task",
+    "preserved": true
+  },
+  "commands_completed": [
+    ".venv/bin/python -I -B validate_dinob_062.py",
+    ".venv/bin/python -I -B dinob_mlp_063.py prepare",
+    ".venv/bin/python -I -B dinob_mlp_063.py benchmark",
+    ".venv/bin/python -I -B dinob_mlp_063.py original",
+    ".venv/bin/python -I -B validate_dinob_mlp_063.py"
+  ],
+  "holdout_extra_access": false,
+  "test_selection_access": false,
+  "protected_artifact_integrity_checks": "SHA256-only; protected final train/test caches not decoded for selection.",
+  "uploaded": false,
+  "running_work": [],
+  "blockers": [],
+  "scientific_limitations": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "next_step": "Retain007. A different predeclared hypothesis or explicit revision of the research gate is needed before further model-selection work; no new candidate eligible for upload.",
+  "deliverable_sha256": {
+    "validate_dinob_062.py": "acd842e9676fe601dc51f450b632139c75740b4dc8fd6563b3f8041429a9969c",
+    "dinob_mlp_head_063.py": "e841bc72082d27f68b2bdad2d81ccf3eb2b127661bef347506cff6eb6ab04431",
+    "dinob_mlp_063.py": "df37f8524b3dd27408270979b9e954099528be199ea99c4fe9287d69cafce24e",
+    "validate_dinob_mlp_063.py": "77c42195e7ffa355dde3cfba6133234de0e8fbff4252743d2d66c8ad5b78c462",
+    "reports/dinob-062-validation.json": "cee598d5f9c1d3f015e4410d916642fd479188483b3b8f16859a12001875edec",
+    "reports/dinob-mlp-063-validation.json": "026edb869faba055ca9d5c8259c745c03a78f5ff2987640d4062cf05e058db3a",
+    "artifacts/dinob-mlp-063/plan.json": "8eeafeeac45abe4cc520d93d415f690d7b43599960aaa10e11ba3dd690d3d776",
+    "artifacts/dinob-mlp-063/original/report.json": "109b87a6835534fd7837037b4e644fb6e5abdb0599d3915a0ef9ba3659d73ad4"
+  }
+}

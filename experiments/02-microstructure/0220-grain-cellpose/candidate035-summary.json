@@ -1,0 +1,74 @@
+{
+ "candidate": "035",
+ "weight": 0.75,
+ "n_train": 500,
+ "test_failed_segmentations": 1,
+ "pred_stats": {
+  "mean": 193.59831900674064,
+  "std": 13.18163467911537,
+  "min": 158.2412821761597,
+  "max": 260.22655972118736
+ },
+ "corr_best021_vs_grain_test": 0.7910938198505492,
+ "rms_change_vs_021": 6.561474585455739,
+ "rms_change_vs_023": 5.737307832719955,
+ "csv": "artifacts/submission-candidate-035.csv",
+ "csv_sha256": "075c404df5b5f5bbea233e49f3c4073d6b4d10483801327508f64043b2436e4c",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "uploaded": false,
+ "formula": "0.25*best021 + 0.75*mean over components (fallback best021 if n_obj<20)",
+ "components": [
+  {
+   "component": "v3.5@../push-400/feat-u1dm1sz-train.npz@../push-400/feat-u1dm1sz-test.npz",
+   "train_sha256": "acf8c61e2392046e6b5fc148db5137e0cc60c003a9c7dceab58d581d7b7a02e9",
+   "test_sha256": "d06ecb15c593951eec9d62b0103001f1a4bfb19bed39b058067a1b814d8f2a51",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-400/feat-u1dm2sz-train.npz@../push-400/feat-u1dm2sz-test.npz",
+   "train_sha256": "4e18228917fba772747a24230378cda06275fa09bdb4f2bdab36fdee7156e55e",
+   "test_sha256": "fef5d098ac7887f16d9875ebafbfdf418e9bd30e85a1fbc557bea525d5bfcf4b",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-400/feat-u1dmavg-train.npz@../push-400/feat-u1dmavg-test.npz",
+   "train_sha256": "51970206d43f0f989a9981123c03dcd9958e187fa592e9c2ee6e869cb6502c4e",
+   "test_sha256": "0bd1a5798cafd6ce2a974e5c363f97d5a782ed3aa270c927287f90ddae6e2674",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-400/feat-u1dmavg4-train.npz@../push-400/feat-u1dmavg4-test.npz",
+   "train_sha256": "89c7a9f2386a4c775c752aec0c5a54c68280f5b174ac9a3b3ed5183eaa97a203",
+   "test_sha256": "9f6d62a7f943c6a082df0956d127f229fddec90a5270263ef13c928f28928f1c",
+   "n_train_rows": 500
+  }
+ ],
+ "component_corr": [
+  [
+   1.0,
+   0.9971564004020373,
+   0.9985271770128202,
+   0.9983915442220318
+  ],
+  [
+   0.9971564004020375,
+   1.0,
+   0.9988833952902885,
+   0.9986095623044279
+  ],
+  [
+   0.9985271770128202,
+   0.9988833952902885,
+   1.0,
+   0.9995152988239784
+  ],
+  [
+   0.9983915442220318,
+   0.9986095623044279,
+   0.9995152988239783,
+   1.0
+  ]
+ ],
+ "dev_evidence": "experiments/push-400/evidence-035.json (dev pooled fixed W0.75 10.282 vs 033 10.361; all 3 partitions better)",
+ "device": "mps"
+}

@@ -1,0 +1,35 @@
+{
+  "hypothesis": "High-dimensional pretrainedrepresentations include label-irrelevant variation. A train-only supervised4D bottleneck may isolate a small number of hardness-relatedlatentfactors better than previousunsupervisedPCA64(252px). This differs from047jointkernel anddoesnotaddmorphologydata.",
+  "input": "Unchangedfrozen006 DINO6/9/12descriptor3456; existingdevelopment400cache",
+  "pipeline": "FoldStandardScalerX,targetmean/std;PLSRegression4components(scaleFalse,maxiter500,tol1e-6);unwhitened4Dscore RBFgamma=1/medianpositive squaredtraindistance;traincenter+mean-diagonal1;kernelridgealpha(.1,1,10). All transformations refit insideeachinnertrain.",
+  "components": 4,
+  "rank_selection": "None;fixedbeforeevaluation. No alternate ranksearch.",
+  "primary": ".75samefold003+.25PLS4RBF;no learnedensembleweights",
+  "diagnostic": "SamefittedPLS4linear_predict only;notpromotionfallback. Shows whether nonlinearity helps aftertarget-awarecompression.",
+  "inner": "GroupKFold3shuffle seed20261120+outerfold,chooseRBFalpha by pooledinnerOOFRMSE;PLS itself is refit for everyinnertrain,never outer-precomputed insideinnerCV.",
+  "screen": "Originalprimarygain over006>pairedbootstrapSD and>=3/5foldwins;onlythenboth existingrepartitions. Otherwise stopthisfamily;donottune ranks,widths,weightsortails.",
+  "limits": "Supervisedcompressioncanoverfit400samples. Historical400reuse remains selectionoptimism; not independentvalidation.",
+  "scope": "Development400only;holdout/testnotused;no newpackages/externaldata/cost/candidateCSV/upload",
+  "source_sha256": {
+    "supervised_latent_048.py": "8da5868bbf0b31f32752bc14ee47133a3fa3990bd3a957c7c53457b9df2d6d5c",
+    "latent_experiment_048.py": "3505c28348d0f0c6993c5310c6d9b8ec4c9ba7b7761bd59c29b834f42810b088",
+    "joint_kernel_047.py": "482763b91c3d72358a3d0d05a1c4e2cf2ca6d47be5c39802644980aaede83dd3",
+    "joint_experiment_047.py": "d8f3d74c50b90faad746a14c5cf15645fc1f763c18257d3d190e72a84c093a99",
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5"
+  },
+  "input_sha256": {
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/run-012/report.json": "201196e863b7ee017f179fba30dcf59637455dd619aaa92f96fcd234e57f7697",
+    "artifacts/dino-multilayer-044/development_features.npz": "6d26b7d78eaf1d094e829984d5665a38dc11b71c918f108384861259b35c4159"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.manifest.json": "ac411a5e58ee57af5c4a653e7e4296c543a89333ee1a929b576d6e67f7b20e68",
+    "artifacts/submission-candidate-006.components.csv": "3a41ca42fa66e10b9899fc2d25ccfa395d5b728e0cf00a9b213be1ad06e410a5",
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+    "artifacts/final-model-045/decision.json": "cae40d328c87ae4104ad70bdf18b9e8002b5a787ab98307c31a74f6e282f49eb",
+    "artifacts/final-model-045/report.json": "2d344e9f074aeebe45dfb99e001175aef8e6b8485bc85c51bc45af0ce4526e7c",
+    "artifacts/dino-multilayer-044/candidate-design.json": "b783348c7b39c8a457ddcf0f5b12f64a1fece8614886fe0d3706ce42411f703e",
+    "reports/dino-044-validation.json": "14ae9c212008ed0c013e392b0ba00425087901c0fb834c54a24da5b14037b13b"
+  }
+}

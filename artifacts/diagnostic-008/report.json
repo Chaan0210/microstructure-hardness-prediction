@@ -1,0 +1,674 @@
+{
+  "purpose": "Post-hoc bounded diagnostic, no training or promotion by arbitrary 0.15 threshold",
+  "recipes": {
+    "equal_three": {
+      "baseline": 0.3333333333333333,
+      "grain": 0.3333333333333333,
+      "cnn": 0.3333333333333333
+    },
+    "base50_grain25_cnn25": {
+      "baseline": 0.5,
+      "grain": 0.25,
+      "cnn": 0.25
+    },
+    "base75_grain125_cnn125": {
+      "baseline": 0.75,
+      "grain": 0.125,
+      "cnn": 0.125
+    }
+  },
+  "weights_chosen_before_evaluation": true,
+  "caveat": "Recipes fixed now but components previously selected on these same OOF rows. Not a prospectively independent experiment. No optimized weights.",
+  "data_scope": "Existing development OOF, metadata, logs, source and saved CNN checkpoints only. No train/holdout/test image reads.",
+  "seed_bootstrap": 20261004,
+  "bootstrap_replicates": 5000,
+  "n_development": 400,
+  "target_min": 151.9798276392398,
+  "target_max": 264.1213029015716,
+  "normalization_audit": [
+    {
+      "fold": 0,
+      "train_rows": 320,
+      "normalization": {
+        "x_mean": 0.5728470087051392,
+        "x_std": 0.07026451826095581,
+        "y_mean": 193.73146323806947,
+        "y_std": 18.05285930207001
+      },
+      "target_normalization_matches_train_only": true,
+      "image_stats_recomputed": false
+    },
+    {
+      "fold": 1,
+      "train_rows": 320,
+      "normalization": {
+        "x_mean": 0.5725350975990295,
+        "x_std": 0.07114081084728241,
+        "y_mean": 194.49859370150313,
+        "y_std": 18.11673144993726
+      },
+      "target_normalization_matches_train_only": true,
+      "image_stats_recomputed": false
+    },
+    {
+      "fold": 2,
+      "train_rows": 320,
+      "normalization": {
+        "x_mean": 0.5707370638847351,
+        "x_std": 0.0705665796995163,
+        "y_mean": 194.82197431847118,
+        "y_std": 17.963988564393333
+      },
+      "target_normalization_matches_train_only": true,
+      "image_stats_recomputed": false
+    },
+    {
+      "fold": 3,
+      "train_rows": 320,
+      "normalization": {
+        "x_mean": 0.5734490156173706,
+        "x_std": 0.07062018662691116,
+        "y_mean": 193.69935114511995,
+        "y_std": 17.988677734552375
+      },
+      "target_normalization_matches_train_only": true,
+      "image_stats_recomputed": false
+    },
+    {
+      "fold": 4,
+      "train_rows": 320,
+      "normalization": {
+        "x_mean": 0.5721971988677979,
+        "x_std": 0.07019288092851639,
+        "y_mean": 193.63240889387893,
+        "y_std": 18.016885447042245
+      },
+      "target_normalization_matches_train_only": true,
+      "image_stats_recomputed": false
+    }
+  ],
+  "learning_curves": [
+    {
+      "fold": 0,
+      "epoch_1": 18.027836807348454,
+      "epoch_10": 15.151000187818513,
+      "epoch_20": 15.007631499926578,
+      "epoch_30": 13.422467844418717,
+      "epoch_40": 12.706158352272388,
+      "last10_slope_rmse_per_epoch": -0.06808415244763137,
+      "mean_epochs21_30": 13.834083357632602,
+      "mean_epochs31_40": 13.008534460675639,
+      "averaged_model_train_rmse": 12.960186475442196,
+      "averaged_model_validation_rmse": 14.776584430659227,
+      "final_generalization_gap": 1.816397955217031
+    },
+    {
+      "fold": 1,
+      "epoch_1": 18.20639974919592,
+      "epoch_10": 16.99136618186715,
+      "epoch_20": 14.771935382059551,
+      "epoch_30": 14.250382985183379,
+      "epoch_40": 13.512188224314013,
+      "last10_slope_rmse_per_epoch": -0.03955524042416188,
+      "mean_epochs21_30": 14.58052433385638,
+      "mean_epochs31_40": 13.717998840372749,
+      "averaged_model_train_rmse": 13.453426440798463,
+      "averaged_model_validation_rmse": 13.959698508260706,
+      "final_generalization_gap": 0.506272067462243
+    },
+    {
+      "fold": 2,
+      "epoch_1": 18.27570706761244,
+      "epoch_10": 15.201160744932471,
+      "epoch_20": 14.489508516979283,
+      "epoch_30": 13.64942195246937,
+      "epoch_40": 12.973969379455346,
+      "last10_slope_rmse_per_epoch": -0.04098059908496345,
+      "mean_epochs21_30": 14.120255086393371,
+      "mean_epochs31_40": 13.138265061872318,
+      "averaged_model_train_rmse": 12.851688570236353,
+      "averaged_model_validation_rmse": 15.804617715909105,
+      "final_generalization_gap": 2.9529291456727513
+    },
+    {
+      "fold": 3,
+      "epoch_1": 18.595763621965805,
+      "epoch_10": 16.28878794278268,
+      "epoch_20": 15.77360510001384,
+      "epoch_30": 14.604774821416525,
+      "epoch_40": 13.734256148404237,
+      "last10_slope_rmse_per_epoch": -0.05563700356808133,
+      "mean_epochs21_30": 14.718178026876732,
+      "mean_epochs31_40": 13.927264459104133,
+      "averaged_model_train_rmse": 13.77643253531306,
+      "averaged_model_validation_rmse": 13.676052555466098,
+      "final_generalization_gap": -0.10037997984696112
+    },
+    {
+      "fold": 4,
+      "epoch_1": 17.951178682974234,
+      "epoch_10": 15.289364008454145,
+      "epoch_20": 14.243104776765984,
+      "epoch_30": 13.213775310088444,
+      "epoch_40": 12.333347298747094,
+      "last10_slope_rmse_per_epoch": -0.06686103551067162,
+      "mean_epochs21_30": 13.4590585530229,
+      "mean_epochs31_40": 12.618412770657372,
+      "averaged_model_train_rmse": 12.295398592703195,
+      "averaged_model_validation_rmse": 14.038766335752145,
+      "final_generalization_gap": 1.7433677430489496
+    }
+  ],
+  "validation_curve_available": false,
+  "validation_curve_limitation": "Only final averaged-model validation RMSE was logged. Cannot locate validation optimum or establish overfitting onset. Training losses use augmentation/dropout and evolving weights; not directly comparable to final eval losses.",
+  "residual_correlation_order": [
+    "baseline",
+    "grain",
+    "cnn"
+  ],
+  "residual_correlation_matrix": [
+    [
+      1.0,
+      0.9261252067081199,
+      0.9151407208754022
+    ],
+    [
+      0.92612520670812,
+      1.0,
+      0.8778021681094208
+    ],
+    [
+      0.9151407208754022,
+      0.8778021681094209,
+      1.0
+    ]
+  ],
+  "prior_improved_blend_residual_correlation": 0.9917681191142209,
+  "grain_cnn_correction_correlation": 0.21219817745307976,
+  "scores": {
+    "baseline": {
+      "oof_rmse": 13.98273103376079,
+      "fold_rmse": [
+        13.586021526541336,
+        13.41146815780372,
+        14.935891918066302,
+        13.19606164073078,
+        14.69419839701824
+      ],
+      "improvement_vs_baseline": 0.0,
+      "conditional_paired_bootstrap_improvement_95": [
+        0.0,
+        0.0
+      ],
+      "prediction_std": 10.67979328485571,
+      "target_std": 18.034520585010153,
+      "prediction_min": 167.8077558217438,
+      "prediction_max": 231.87124791824564,
+      "bias": -0.01185538750944005,
+      "calibration_slope_diagnostic_only": 1.068690156000818,
+      "target_strata": [
+        {
+          "target_range": [
+            151.9798276392398,
+            181.99045412981755
+          ],
+          "rmse": 16.584734262418745,
+          "mean_prediction_minus_target": 13.59960885969963
+        },
+        {
+          "target_range": [
+            181.99045412981755,
+            192.60157925382563
+          ],
+          "rmse": 8.53537578410258,
+          "mean_prediction_minus_target": 2.3215750257929897
+        },
+        {
+          "target_range": [
+            192.60157925382563,
+            204.43784987760367
+          ],
+          "rmse": 8.576158996489049,
+          "mean_prediction_minus_target": -1.664236878474516
+        },
+        {
+          "target_range": [
+            204.43784987760367,
+            264.1213029015716
+          ],
+          "rmse": 18.98974763355315,
+          "mean_prediction_minus_target": -14.304368557055863
+        }
+      ]
+    },
+    "grain": {
+      "oof_rmse": 14.334262881422177,
+      "fold_rmse": [
+        14.57545150427612,
+        13.664376510543544,
+        15.49825092853062,
+        13.455942725394934,
+        14.385350649893098
+      ],
+      "improvement_vs_baseline": -0.351531847661386,
+      "conditional_paired_bootstrap_improvement_95": [
+        -0.8883003154164318,
+        0.19890648798998503
+      ],
+      "prediction_std": 11.52180646119583,
+      "target_std": 18.034520585010153,
+      "prediction_min": 170.05652506094316,
+      "prediction_max": 231.4021633681578,
+      "bias": 0.30103149505516424,
+      "calibration_slope_diagnostic_only": 0.9514562437923638,
+      "target_strata": [
+        {
+          "target_range": [
+            151.9798276392398,
+            181.99045412981755
+          ],
+          "rmse": 16.92169822342104,
+          "mean_prediction_minus_target": 13.766822381166019
+        },
+        {
+          "target_range": [
+            181.99045412981755,
+            192.60157925382563
+          ],
+          "rmse": 9.297111314258608,
+          "mean_prediction_minus_target": 2.1335310445598163
+        },
+        {
+          "target_range": [
+            192.60157925382563,
+            204.43784987760367
+          ],
+          "rmse": 8.888605869661724,
+          "mean_prediction_minus_target": -1.014082586031564
+        },
+        {
+          "target_range": [
+            204.43784987760367,
+            264.1213029015716
+          ],
+          "rmse": 19.237902836703366,
+          "mean_prediction_minus_target": -13.682144859473617
+        }
+      ]
+    },
+    "cnn": {
+      "oof_rmse": 14.471544110796769,
+      "fold_rmse": [
+        14.776584430659227,
+        13.959698508260706,
+        15.804617715909105,
+        13.676052555466098,
+        14.038766335752145
+      ],
+      "improvement_vs_baseline": -0.488813077035978,
+      "conditional_paired_bootstrap_improvement_95": [
+        -1.0860905124943048,
+        0.09145215494043359
+      ],
+      "prediction_std": 11.659372491688146,
+      "target_std": 18.034520585010153,
+      "prediction_min": 167.95993041992188,
+      "prediction_max": 232.38494873046875,
+      "bias": -0.28119608747248315,
+      "calibration_slope_diagnostic_only": 0.9262784709532775,
+      "target_strata": [
+        {
+          "target_range": [
+            151.9798276392398,
+            181.99045412981755
+          ],
+          "rmse": 16.22498104865538,
+          "mean_prediction_minus_target": 13.187473034001838
+        },
+        {
+          "target_range": [
+            181.99045412981755,
+            192.60157925382563
+          ],
+          "rmse": 9.43554549873744,
+          "mean_prediction_minus_target": 1.4332317410987487
+        },
+        {
+          "target_range": [
+            192.60157925382563,
+            204.43784987760367
+          ],
+          "rmse": 10.067774884788175,
+          "mean_prediction_minus_target": -1.1765145874203151
+        },
+        {
+          "target_range": [
+            204.43784987760367,
+            264.1213029015716
+          ],
+          "rmse": 19.5975186129317,
+          "mean_prediction_minus_target": -14.568974537570206
+        }
+      ]
+    },
+    "prior_grain25": {
+      "oof_rmse": 13.871297052618559,
+      "fold_rmse": [
+        13.650556571626112,
+        13.288299709022736,
+        14.863553630319688,
+        13.047882765399748,
+        14.421349956121915
+      ],
+      "improvement_vs_baseline": 0.11143398114223224,
+      "conditional_paired_bootstrap_improvement_95": [
+        -0.02794701694211019,
+        0.2529073922698822
+      ],
+      "prediction_std": 10.637545951119204,
+      "target_std": 18.034520585010153,
+      "prediction_min": 168.70136428738468,
+      "prediction_max": 229.61150799268881,
+      "bias": 0.0663663331317106,
+      "calibration_slope_diagnostic_only": 1.0869500105319665,
+      "target_strata": [
+        {
+          "target_range": [
+            151.9798276392398,
+            181.99045412981755
+          ],
+          "rmse": 16.548939155473924,
+          "mean_prediction_minus_target": 13.641412240066229
+        },
+        {
+          "target_range": [
+            181.99045412981755,
+            192.60157925382563
+          ],
+          "rmse": 8.397021855511634,
+          "mean_prediction_minus_target": 2.274564030484696
+        },
+        {
+          "target_range": [
+            192.60157925382563,
+            204.43784987760367
+          ],
+          "rmse": 8.374920186789987,
+          "mean_prediction_minus_target": -1.5016983053637778
+        },
+        {
+          "target_range": [
+            204.43784987760367,
+            264.1213029015716
+          ],
+          "rmse": 18.845022587922696,
+          "mean_prediction_minus_target": -14.148812632660304
+        }
+      ]
+    },
+    "prior_cnn25": {
+      "oof_rmse": 13.874364980621555,
+      "fold_rmse": [
+        13.73032800036893,
+        13.30129791144854,
+        14.935092572017012,
+        13.046658887228944,
+        14.274848044593709
+      ],
+      "improvement_vs_baseline": 0.10836605313923542,
+      "conditional_paired_bootstrap_improvement_95": [
+        -0.03933568279901869,
+        0.25465787509703214
+      ],
+      "prediction_std": 10.632326333579792,
+      "target_std": 18.034520585010153,
+      "prediction_min": 169.59643271103442,
+      "prediction_max": 231.9996731213014,
+      "bias": -0.07919056250020126,
+      "calibration_slope_diagnostic_only": 1.0871582084915847,
+      "target_strata": [
+        {
+          "target_range": [
+            151.9798276392398,
+            181.99045412981755
+          ],
+          "rmse": 16.312194975523465,
+          "mean_prediction_minus_target": 13.49657490327518
+        },
+        {
+          "target_range": [
+            181.99045412981755,
+            192.60157925382563
+          ],
+          "rmse": 8.347500427043386,
+          "mean_prediction_minus_target": 2.0994892046194282
+        },
+        {
+          "target_range": [
+            192.60157925382563,
+            204.43784987760367
+          ],
+          "rmse": 8.625637819626673,
+          "mean_prediction_minus_target": -1.5423063057109647
+        },
+        {
+          "target_range": [
+            204.43784987760367,
+            264.1213029015716
+          ],
+          "rmse": 18.968972517446346,
+          "mean_prediction_minus_target": -14.37052005218445
+        }
+      ]
+    },
+    "equal_three": {
+      "oof_rmse": 13.807141125344376,
+      "fold_rmse": [
+        13.952140007817434,
+        13.217231298854273,
+        14.965117376798647,
+        12.942964610518613,
+        13.86914724344034
+      ],
+      "improvement_vs_baseline": 0.17558990841641453,
+      "conditional_paired_bootstrap_improvement_95": [
+        -0.13316329062924476,
+        0.48090713519321737
+      ],
+      "prediction_std": 10.714768248527275,
+      "target_std": 18.034520585010153,
+      "prediction_min": 171.38413629498578,
+      "prediction_max": 228.71461078912458,
+      "bias": 0.002660006691068375,
+      "calibration_slope_diagnostic_only": 1.08623456321125,
+      "target_strata": [
+        {
+          "target_range": [
+            151.9798276392398,
+            181.99045412981755
+          ],
+          "rmse": 16.24117353992491,
+          "mean_prediction_minus_target": 13.517968091622487
+        },
+        {
+          "target_range": [
+            181.99045412981755,
+            192.60157925382563
+          ],
+          "rmse": 8.338840651633616,
+          "mean_prediction_minus_target": 1.9627792704838398
+        },
+        {
+          "target_range": [
+            192.60157925382563,
+            204.43784987760367
+          ],
+          "rmse": 8.56583586575298,
+          "mean_prediction_minus_target": -1.2849446839754768
+        },
+        {
+          "target_range": [
+            204.43784987760367,
+            264.1213029015716
+          ],
+          "rmse": 18.86433297984292,
+          "mean_prediction_minus_target": -14.185162651366579
+        }
+      ]
+    },
+    "base50_grain25_cnn25": {
+      "oof_rmse": 13.792532344172798,
+      "fold_rmse": [
+        13.815467069464772,
+        13.207029204793889,
+        14.897415789429795,
+        12.938257739044408,
+        14.019467929861852
+      ],
+      "improvement_vs_baseline": 0.19019868958799258,
+      "conditional_paired_bootstrap_improvement_95": [
+        -0.04319144112085107,
+        0.41949774544767426
+      ],
+      "prediction_std": 10.629963629063859,
+      "target_std": 18.034520585010153,
+      "prediction_min": 170.49004117667528,
+      "prediction_max": 229.50377007140486,
+      "bias": -0.0009688418590495473,
+      "calibration_slope_diagnostic_only": 1.097409792183515,
+      "target_strata": [
+        {
+          "target_range": [
+            151.9798276392398,
+            181.99045412981755
+          ],
+          "rmse": 16.289152373604857,
+          "mean_prediction_minus_target": 13.538378283641782
+        },
+        {
+          "target_range": [
+            181.99045412981755,
+            192.60157925382563
+          ],
+          "rmse": 8.27822367629866,
+          "mean_prediction_minus_target": 2.052478209311137
+        },
+        {
+          "target_range": [
+            192.60157925382563,
+            204.43784987760367
+          ],
+          "rmse": 8.479655077727058,
+          "mean_prediction_minus_target": -1.3797677326002278
+        },
+        {
+          "target_range": [
+            204.43784987760367,
+            264.1213029015716
+          ],
+          "rmse": 18.84584228252057,
+          "mean_prediction_minus_target": -14.214964127788885
+        }
+      ]
+    },
+    "base75_grain125_cnn125": {
+      "oof_rmse": 13.844061205569698,
+      "fold_rmse": [
+        13.666296623372121,
+        13.265540344718747,
+        14.871263476272762,
+        13.016737985154075,
+        14.316353730177575
+      ],
+      "improvement_vs_baseline": 0.13866982819109275,
+      "conditional_paired_bootstrap_improvement_95": [
+        0.021920909113000243,
+        0.2536537752891434
+      ],
+      "prediction_std": 10.597629836913478,
+      "target_std": 18.034520585010153,
+      "prediction_min": 169.14889849920954,
+      "prediction_max": 230.68750899482524,
+      "bias": -0.006412114684245793,
+      "calibration_slope_diagnostic_only": 1.0947209991860858,
+      "target_strata": [
+        {
+          "target_range": [
+            151.9798276392398,
+            181.99045412981755
+          ],
+          "rmse": 16.408868204800022,
+          "mean_prediction_minus_target": 13.568993571670708
+        },
+        {
+          "target_range": [
+            181.99045412981755,
+            192.60157925382563
+          ],
+          "rmse": 8.325475109775345,
+          "mean_prediction_minus_target": 2.1870266175520596
+        },
+        {
+          "target_range": [
+            192.60157925382563,
+            204.43784987760367
+          ],
+          "rmse": 8.461241131250205,
+          "mean_prediction_minus_target": -1.5220023055373724
+        },
+        {
+          "target_range": [
+            204.43784987760367,
+            264.1213029015716
+          ],
+          "rmse": 18.880546327029137,
+          "mean_prediction_minus_target": -14.259666342422374
+        }
+      ]
+    }
+  },
+  "resizing_diagnosis": {
+    "source": "cnn_experiment.py: PIL BOX resize 256 to 128; four stride-2 convs; final 8x8 feature map",
+    "verified_by_pixel_comparison": false,
+    "finding": "2x2 averaging irreversibly removes some pixel-scale detail; likely relevant to thin boundaries, but grain information loss/accuracy impact was not measured. No images read in this diagnosis. Spatial pooling discards arrangement; multiscale resolution hypothesis remains untested."
+  },
+  "capacity_conclusion": "Only one small scratch architecture/seed/schedule/resolution was tested. No technical performance ceiling established. Falling train loss supports an under-training hypothesis; train/validation gaps also allow generalization limitations. Both require controlled experiments.",
+  "benchmark_based_next_experiments": {
+    "frozen_128px_80epoch": {
+      "hypothesis": "Additional optimization may help because train loss is still falling; validation may also worsen.",
+      "estimated_5fold_training_seconds": 72.0,
+      "protocol": "One fixed 80-epoch run; log diagnostics at40/80 but choose primary80 endpoint beforehand, compare the same predeclared blends; no outer-fold checkpoint tuning."
+    },
+    "frozen_256px_40epoch": {
+      "hypothesis": "Retaining thin boundary details may improve morphology information.",
+      "estimated_5fold_training_seconds_range": [
+        108,
+        216
+      ],
+      "protocol": "Same architecture/seed/40epochs and fixed blends; benchmark256 first, reduce batch only for memory; time/memory projections are unmeasured."
+    },
+    "verification": {
+      "protocol": "After choosing one hypothesis, evaluate baseline and fixed ensemble on two predeclared new development-only grouped fold seeds. Reusing400 rows diagnoses split sensitivity but is not new independent data.",
+      "cnn_extra_time": "Approximately twice chosen 5-fold runtime plus feature-model refits. No extra packages or pretrained weights needed."
+    }
+  },
+  "unchanged_run005_model_sha256": "7667b2b36483ba1b93a8e2874d4de96d12f38492ea6815f9ce24c87d09bab83e",
+  "elapsed_seconds": 0.12749199999962002,
+  "validation": {
+    "rows": 400,
+    "id_unique": true,
+    "standalone_stdlib_rmse_recomputed": true,
+    "all_predictions_finite": true,
+    "fixed_weight_formula_checked": true,
+    "cnn_source_matches_training_hash": true,
+    "diagnostic_script_sha256": "80297f411fc18ab109ae8b35a66c64a726daf540982bb713d0152b493d861e9c"
+  },
+  "conclusions": [
+    "The earlier 0.15 cutoff was an operational filter, not statistical evidence of a performance ceiling.",
+    "All three prespecified fixed blends improve reused development OOF point estimates; 50:25:25 is best among these three but post-hoc component/recipe selection is optimistic.",
+    "75:12.5:12.5 has a conditional interval above zero, but this is not selection-adjusted or an independent confirmation. Do not cherry-pick a claim of significance from it.",
+    "Train losses continue falling in all folds; final generalization gaps alone cannot distinguish under-training from overfitting. No per-epoch validation curve exists.",
+    "Target normalization audited exactly from train-fold targets. Pixel normalization scope verified from source and saved scalars, not recomputed without images.",
+    "No proof of technical ceiling. A single small architecture/seed/resolution/schedule has been tested. No new training, calibration fitting, full-train model, test inference, candidate file or upload in this diagnostic."
+  ]
+}

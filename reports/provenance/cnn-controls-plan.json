@@ -1,0 +1,16 @@
+{
+  "sequence": [
+    "256 short benchmark",
+    "128px80epoch same seed/folds/structure",
+    "256px40epoch same seed/folds/structure"
+  ],
+  "fixed_ensemble": {
+    "baseline_run005": 0.5,
+    "grain_ridge_run006": 0.25,
+    "cnn": 0.25
+  },
+  "epoch_selection": "Fixed80/40 endpoints, average last5; validation curves diagnostic only",
+  "no_test_holdout": true,
+  "no_new_install_or_upload": true,
+  "schedule_caveat": "80epoch cosine changes LR path and optimization length together; cannot attribute purely to more steps."
+}

@@ -1,0 +1,349 @@
+{
+  "study": 202,
+  "RMSE_by_partition": {
+    "original": {
+      "R": 12.786200775750695,
+      "A_no_residual": 12.817625913360777,
+      "B_fixed": 12.913260129242218
+    },
+    "20261031": {
+      "R": 12.621902419708583,
+      "A_no_residual": 12.710759981813485,
+      "B_fixed": 12.800878446022017
+    },
+    "20261101": {
+      "R": 13.032449212752852,
+      "A_no_residual": 13.113570626960225,
+      "B_fixed": 13.186389375920431
+    }
+  },
+  "pooled_RMSE": {
+    "R": 12.814628144604061,
+    "A_no_residual": 12.881778965634663,
+    "B_fixed": 12.96785308533754
+  },
+  "contrasts": {
+    "A_no_residual": {
+      "pooled_RMSE_gain": -0.06715082103060155,
+      "conditional_IDcluster_CI95": [
+        -0.16220728083878222,
+        0.022246910694677383
+      ],
+      "pooled_influence": {
+        "positive_image_count": 210,
+        "net_SSE_gain": -690.2139339956489,
+        "top_benefit_removal": {
+          "1": {
+            "benefit_sum": 93.84035187140216,
+            "net_SSE_fraction": null,
+            "gain_after_removal": -0.0770158406507182
+          },
+          "5": {
+            "benefit_sum": 345.9159671832412,
+            "net_SSE_fraction": null,
+            "gain_after_removal": -0.1039974434095825
+          },
+          "10": {
+            "benefit_sum": 548.1782576219371,
+            "net_SSE_fraction": null,
+            "gain_after_removal": -0.1268742424754894
+          }
+        }
+      },
+      "per_partition": {
+        "original": {
+          "gain": -0.03142513761008203,
+          "fold_gains": [
+            -0.1383252233890211,
+            -0.047275718738294614,
+            -0.05102232963779585,
+            0.09314523105684636,
+            -0.005576089309082377
+          ],
+          "positive_folds": 1,
+          "conditional_CI95": [
+            -0.12425444289854659,
+            0.05954386304205694
+          ],
+          "influence": {
+            "positive_image_count": 207,
+            "net_SSE_gain": -321.84151082001756,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 103.90267238682918,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.04199796356901153
+              },
+              "5": {
+                "benefit_sum": 398.38807758289283,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.07259777311443827
+              },
+              "10": {
+                "benefit_sum": 655.0215778046066,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.10080549135720673
+              }
+            }
+          }
+        },
+        "20261031": {
+          "gain": -0.08885756210490214,
+          "fold_gains": [
+            -0.07586910443515293,
+            -0.15069777010680951,
+            -0.04335301496054811,
+            -0.07251083466624841,
+            -0.10419300352800853
+          ],
+          "positive_folds": 0,
+          "conditional_CI95": [
+            -0.1865430048717589,
+            0.009798011075549557
+          ],
+          "influence": {
+            "positive_image_count": 201,
+            "net_SSE_gain": -900.3994490503055,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 142.8148638525705,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.10396661430871212
+              },
+              "5": {
+                "benefit_sum": 453.4711809053417,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.1372095769413164
+              },
+              "10": {
+                "benefit_sum": 701.6969415566585,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.16703842912717803
+              }
+            }
+          }
+        },
+        "20261101": {
+          "gain": -0.08112141420737373,
+          "fold_gains": [
+            -0.10289083738197391,
+            -0.05964278071730433,
+            -0.0223342416332315,
+            -0.1828362483514816,
+            -0.02756653185764435
+          ],
+          "positive_folds": 0,
+          "conditional_CI95": [
+            -0.21670406940483483,
+            0.04259517929391876
+          ],
+          "influence": {
+            "positive_image_count": 206,
+            "net_SSE_gain": -848.400842116621,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 137.3954747955056,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.09522869257375177
+              },
+              "5": {
+                "benefit_sum": 447.6885084157547,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.12718587542768667
+              },
+              "10": {
+                "benefit_sum": 727.456130562181,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.15692961564012187
+              }
+            }
+          }
+        }
+      },
+      "partition_instability_gain": 0.23576128218661668,
+      "conditional_partition_instability_gain_CI95": [
+        0.07131437155621245,
+        0.3892424665722864
+      ],
+      "exact_MSE_change": {
+        "cross_term": 0.875296795442555,
+        "delta_square_term": 0.8502380395465647,
+        "sum": 1.7255348349891197,
+        "direct": 1.7255348349891202
+      }
+    },
+    "B_fixed": {
+      "pooled_RMSE_gain": -0.15322494073347848,
+      "conditional_IDcluster_CI95": [
+        -0.3243575991661129,
+        0.006754897960864431
+      ],
+      "pooled_influence": {
+        "positive_image_count": 218,
+        "net_SSE_gain": -1580.2076633679287,
+        "top_benefit_removal": {
+          "1": {
+            "benefit_sum": 130.83558718198634,
+            "net_SSE_fraction": null,
+            "gain_after_removal": -0.16653288868014826
+          },
+          "5": {
+            "benefit_sum": 511.14044413288883,
+            "net_SSE_fraction": null,
+            "gain_after_removal": -0.20837265351798706
+          },
+          "10": {
+            "benefit_sum": 830.0717738086469,
+            "net_SSE_fraction": null,
+            "gain_after_removal": -0.24671364405717178
+          }
+        }
+      },
+      "per_partition": {
+        "original": {
+          "gain": -0.1270593534915232,
+          "fold_gains": [
+            -0.23157083604152007,
+            -0.08434275530730773,
+            -0.1151284339738119,
+            -0.10606716632385371,
+            -0.09627670815591927
+          ],
+          "positive_folds": 0,
+          "conditional_CI95": [
+            -0.26983913159684125,
+            0.00967198253167117
+          ],
+          "influence": {
+            "positive_image_count": 189,
+            "net_SSE_gain": -1306.1427550676262,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 153.07659451876924,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.14250400540458052
+              },
+              "5": {
+                "benefit_sum": 521.2593459399235,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.18460127885015432
+              },
+              "10": {
+                "benefit_sum": 865.8281320661237,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.22355281002694483
+              }
+            }
+          }
+        },
+        "20261031": {
+          "gain": -0.17897602631343368,
+          "fold_gains": [
+            -0.12071766145351148,
+            -0.4783996406436497,
+            0.05603940825097631,
+            -0.11729124771687616,
+            -0.24158925278235976
+          ],
+          "positive_folds": 1,
+          "conditional_CI95": [
+            -0.372430541833368,
+            0.009175178468576045
+          ],
+          "influence": {
+            "positive_image_count": 202,
+            "net_SSE_gain": -1820.027318874261,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 167.3760498218628,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.19780166912307529
+              },
+              "5": {
+                "benefit_sum": 627.3118675683523,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.24665991463090187
+              },
+              "10": {
+                "benefit_sum": 1094.6423513277082,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.3024444278558196
+              }
+            }
+          }
+        },
+        "20261101": {
+          "gain": -0.1539401631675794,
+          "fold_gains": [
+            -0.024922805076444732,
+            -0.13190892403694754,
+            -0.16148149863672678,
+            -0.33749706113673206,
+            -0.1008214086830801
+          ],
+          "positive_folds": 0,
+          "conditional_CI95": [
+            -0.36766907585868275,
+            0.04211595143907807
+          ],
+          "influence": {
+            "positive_image_count": 207,
+            "net_SSE_gain": -1614.452916161897,
+            "top_benefit_removal": {
+              "1": {
+                "benefit_sum": 131.27040981116204,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.1670615176940231
+              },
+              "5": {
+                "benefit_sum": 594.1860769485413,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.21820277588659742
+              },
+              "10": {
+                "benefit_sum": 1041.8355678930343,
+                "net_SSE_fraction": null,
+                "gain_after_removal": -0.26630867192912966
+              }
+            }
+          }
+        }
+      },
+      "partition_instability_gain": 0.862077748372966,
+      "conditional_partition_instability_gain_CI95": [
+        0.6770942639357065,
+        1.0486813695553223
+      ],
+      "exact_MSE_change": {
+        "cross_term": 1.4292099648058658,
+        "delta_square_term": 2.521309193613954,
+        "sum": 3.9505191584198194,
+        "direct": 3.9505191584198203
+      }
+    }
+  },
+  "mean_across_partition_prediction_variance": {
+    "R": 3.3703575184754038,
+    "A_no_residual": 3.1345962362887874,
+    "B_fixed": 2.5082797701024377
+  },
+  "primary_only": "B_fixed",
+  "operational_gate_before_independent_validation": {
+    "pooled_gain_at_least_002": false,
+    "all_partition_gains_positive": false,
+    "conditional_CI_lower_positive": false,
+    "pooled_top5_removal_positive": false,
+    "partition_variance_not_increased": true
+  },
+  "passes_numeric_gate": false,
+  "A_diagnostic_not_eligible": true,
+  "uncertainty": "10000 paired bootstrap draws, seed202610202. Resample400 image/group clusters with replacement, retain all3 partition measurements jointly. Also per-partition same draw and conditional95% percentiles. Fixed learned predictions only; excludes fitting and cumulative adaptive selection.",
+  "same400_adaptive_history": true,
+  "new_fits": 0,
+  "holdout_or_test_access": false,
+  "cost": 0,
+  "RSS_bytes": 133971968,
+  "seconds": 1.5135565840027994,
+  "plan_sha256": "49ec28d0bcda203a4290c5aa6b318ff30705b000885bb075032ba63efe25cd17",
+  "source_sha256": "cc6d13e6fb0d1fb3919a2c8e180fe4da7aca5b90abc235ceff63c7ef2710c452"
+}

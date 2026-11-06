@@ -1,0 +1,124 @@
+{
+  "source": "Independent read-only audit by audit_pipeline; each original development400 OOF recomputed and matched reports; no fitting",
+  "measurements": [
+    {
+      "run": "run001",
+      "panel": "base519",
+      "model": "ET400 leaf2 features.8",
+      "oof_rmse_rounded": 14.526233,
+      "recorded_fit_seconds": 10.14
+    },
+    {
+      "run": "run001",
+      "panel": "base519",
+      "model": "ET400 leaf4 features1",
+      "oof_rmse_rounded": 14.563315,
+      "recorded_fit_seconds": 8.67
+    },
+    {
+      "run": "run001",
+      "panel": "base519",
+      "model": "HGB250 leaves8 leaf15 l2=10",
+      "oof_rmse_rounded": 14.727709,
+      "recorded_fit_seconds": 5.34
+    },
+    {
+      "run": "run002",
+      "panel": "base519",
+      "model": "ET600 leaf1 features.6",
+      "oof_rmse_rounded": 14.57823,
+      "recorded_fit_seconds": 18.0
+    },
+    {
+      "run": "run003",
+      "panel": "expanded795",
+      "model": "ET400 leaf2",
+      "oof_rmse_rounded": 14.454199,
+      "recorded_fit_seconds": 14.93
+    },
+    {
+      "run": "run003",
+      "panel": "expanded795",
+      "model": "ET400 leaf4",
+      "oof_rmse_rounded": 14.428919,
+      "recorded_fit_seconds": 12.39
+    },
+    {
+      "run": "run003",
+      "panel": "expanded795",
+      "model": "HGB250 leaves8 leaf15 l2=10",
+      "oof_rmse_rounded": 14.544839,
+      "recorded_fit_seconds": 7.57
+    },
+    {
+      "run": "run012",
+      "panel": "compact26",
+      "model": "HGB200 leaves7 leaf20 l2=10",
+      "oof_rmse_rounded": 15.31352,
+      "recorded_fit_seconds": null
+    },
+    {
+      "run": "run014",
+      "panel": "compact26+phase20",
+      "model": "same HGB",
+      "oof_rmse_rounded": 14.954208,
+      "recorded_fit_seconds": null
+    },
+    {
+      "run": "run019",
+      "panel": "compact26+native28",
+      "model": "ET300 leaf3 features.8",
+      "oof_rmse_rounded": 14.914403,
+      "recorded_fit_seconds": null
+    },
+    {
+      "run": "run019",
+      "panel": "compact26+native28",
+      "model": "same HGB",
+      "oof_rmse_rounded": 15.032402,
+      "recorded_fit_seconds": null
+    },
+    {
+      "run": "run022",
+      "panel": "compact26+denoised31",
+      "model": "ET300 leaf3 features.8",
+      "oof_rmse_rounded": 14.433986,
+      "recorded_fit_seconds": null
+    },
+    {
+      "run": "run022",
+      "panel": "compact26+denoised31",
+      "model": "same HGB",
+      "oof_rmse_rounded": 14.84553,
+      "recorded_fit_seconds": null
+    },
+    {
+      "run": "run025",
+      "panel": "compact26+strong31",
+      "model": "ET300 leaf3 features.8",
+      "oof_rmse_rounded": 14.574858,
+      "recorded_fit_seconds": null
+    },
+    {
+      "run": "run025",
+      "panel": "compact26+strong31",
+      "model": "same HGB",
+      "oof_rmse_rounded": 14.871237,
+      "recorded_fit_seconds": null
+    }
+  ],
+  "time_caveat": "run001/003 sum five-fold fit times; run002 fit+predict; newer individual model times not recorded",
+  "findings": [
+    "HGB all learning_rate=.05 and early_stopping=False.",
+    "GradientBoostingRegressor, RandomForestRegressor and CatBoost have no execution evidence.",
+    "run002 reused earlier ET/HGB OOF except new ETleaf1; run015 imported HGB but fixed={} so it did not execute.",
+    "Baseline005 comprises ET519 .375+Ridge519 .375+Ridge795 .25; final .5 baseline means .1875 ET weight.",
+    "Recent fixed shallow HGB settings were compared against a KRR with nine-setting inner CV; this is not a model-family ceiling test.",
+    "Train scores and learning curves were not recorded for these tree comparisons, so under/overfitting remains unresolved."
+  ],
+  "proposed_existing_package_controls": [
+    "One selected feature panel: old HGB versus leaves15/minleaf5/L2=1 with same lr.05/200 fixed rounds; choose only inside inner CV, record train and validation.",
+    "RF versus ET with matching trees300/leaf3/max_features.8/bootstrap=False on the same panel; optimal versus random split thresholds, not an unlimited forest sweep."
+  ],
+  "new_training_performed": false
+}

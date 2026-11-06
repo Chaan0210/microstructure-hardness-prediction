@@ -1,0 +1,11 @@
+import common as c
+from common import np
+
+def evaluate(d,ps):
+ y=d['y'];fold=d['fold'];p={'best021':d['best021'],**ps};p.update({arm+'_blend':.9*d['best021']+.1*ps[arm] for arm in ps});unique,inv=np.unique(d['groups'],return_inverse=True);draws=np.random.default_rng(202710197).integers(len(unique),size=(3000,len(unique)));counts=np.stack([np.bincount(ix,minlength=len(unique))[inv] for ix in draws]);den=counts.sum(1);scores={n:{'RMSE':c.rmse(y,v),'fold_RMSE':[c.rmse(y[fold==k],v[fold==k]) for k in range(5)]} for n,v in p.items()};pairs={'mean_blend_vs_best021':('best021','mean_blend'),'mha_standalone_vs_mean':('mean','mha'),'mha_blend_vs_mean':('mean_blend','mha_blend'),'mha_standalone_vs_legacy_mha':('legacy_mha','mha'),'mha_blend_vs_legacy_mha':('legacy_mha_blend','mha_blend'),'mha_blend_vs_best021':('best021','mha_blend')};reports={};boot={}
+ for name,(ref,new) in pairs.items():
+  a=(y-p[ref])**2;b=(y-p[new])**2;bb=np.sqrt((counts@a)/den)-np.sqrt((counts@b)/den);boot[name]=bb;order=np.lexsort((d['ids'],-(a-b)));keep=order[5:];fg=[scores[ref]['fold_RMSE'][k]-scores[new]['fold_RMSE'][k] for k in range(5)];reports[name]={'reference':ref,'candidate':new,'gain':scores[ref]['RMSE']-scores[new]['RMSE'],'fold_gains':fg,'positive_folds':sum(v>0 for v in fg),'conditional_paired_groupbootstrap_CI95':np.quantile(bb,[.025,.975]).tolist(),'top5_removed_gain':c.rmse(y[keep],p[ref][keep])-c.rmse(y[keep],p[new][keep]),'top5_removed_IDs':d['ids'][order[:5]].tolist(),'residual_correlation':float(np.corrcoef(y-p[ref],y-p[new])[0,1])}
+ checks={}
+ for control in ['mean','legacy_mha']:
+  a=reports['mha_standalone_vs_'+control];b=reports['mha_blend_vs_'+control];checks.update({control+'_standalone_gain_positive':a['gain']>0,control+'_blend_gain_positive':b['gain']>0,control+'_blend_at_least3folds':b['positive_folds']>=3,control+'_blend_top5removed_positive':b['top5_removed_gain']>0})
+ r=reports['mha_blend_vs_best021'];checks.update({'reference_gain_at_least_0_02':r['gain']>=.02,'reference_at_least3folds':r['positive_folds']>=3,'reference_CI_lower_positive':r['conditional_paired_groupbootstrap_CI95'][0]>0,'reference_top5removed_positive':r['top5_removed_gain']>0});return {'scores':scores,'comparisons':reports,'criteria':checks,'failed_criteria':[n for n,v in checks.items() if not v],'numeric_gate_passed':all(checks.values())},draws,boot

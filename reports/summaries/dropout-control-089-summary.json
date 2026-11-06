@@ -1,0 +1,340 @@
+{
+  "study": "089 matched dropout.50 to.25 ablation",
+  "decision": "Rejected under the predeclared material-improvement gate. Keep best011; no newcandidate/full500/testinference/upload and no substitute parameter sweep.",
+  "config": {
+    "hidden": 32,
+    "dropout": 0.25,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "factor": "Dropout probability only:.50 control versus.25 treatment. Same initialized tensors/seed20270215+fold,32width,12epochs,per-microbatch random-seed stream,permutations,micro2/effective16,AdamWwd.1,cosine lr3e-4..1e-5,SmoothL1beta1,clip1,features,scalers,targets and.9/.1blend. No extra seeds or ratio/epoch search. Masks differ as intended because drop probability differs; RNG seed stream is paired.",
+  "gate": "Allthree partitions must have gain>=.03RMSE vs011,>=3/5improvingfolds,conditionalpaired95%gainCI lower>0,and positiveRMSEgain after removing5largest positive squared-error contributors. Independentvalidation/controlreplay mustpass. No weaker fallback or thresholds changed after outcomes.",
+  "gate_rationale": ".03 is a pre-result operational minimum, comparable to the smallest085 gain. CI and deletion checks exclude tiny or few-row-driven candidates; neither accounts for adaptive selection or correlated observations. They are not a calibrated significance test or Public improvement promise.",
+  "results": {
+    "original": {
+      "scores": {
+        "reference011": 13.0539977718711,
+        "primary": 13.055743088411742,
+        "head": 14.16784032419828,
+        "control_head": 13.957820652670737
+      },
+      "train_RMSE_control_dropout50": 5.557531433630174,
+      "train_RMSE_treatment_dropout25": 3.4844641763444564,
+      "comparison": {
+        "gain": -0.00174531654064225,
+        "fold_gains": [
+          0.0469289386950944,
+          0.0007574730963444409,
+          -0.009158441349754298,
+          0.05542991374293749,
+          -0.09465002869240635
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.01849642427104798,
+        "conditional_ci95": [
+          -0.041233964498825285,
+          0.03274600660862907
+        ]
+      },
+      "sample_diagnostics": {
+        "improved_squared_error_rows": 205,
+        "worse_rows": 195,
+        "squared_error_gain_quantiles": [
+          -62.928246777026516,
+          -9.228060294792401,
+          -2.5105926715503384,
+          0.04437751538016599,
+          3.2910025765440882,
+          8.270921117612108,
+          32.57816602658886
+        ],
+        "absolute_error_gain_mean": 0.012299722211036581,
+        "prediction_difference_RMS": 0.35255187800364884,
+        "prediction_abschange_quantiles": [
+          0.002316703020028399,
+          0.11780112895230843,
+          0.2247986584834223,
+          0.39287203742656374,
+          0.724451403994369,
+          1.2744073986322633
+        ],
+        "gain_without_top5_improvement_rows": -0.016761992074867393,
+        "top5_row_IDs_diagnostic_only": [
+          "TRAIN_000438",
+          "TRAIN_000418",
+          "TRAIN_000332",
+          "TRAIN_000497",
+          "TRAIN_000321"
+        ],
+        "residual_correlation": 0.9996359665385858
+      },
+      "advance": false
+    },
+    "20261031": {
+      "scores": {
+        "reference011": 13.015176056591201,
+        "primary": 13.026891130152373,
+        "head": 14.104391564605631,
+        "control_head": 13.771791193005598
+      },
+      "train_RMSE_control_dropout50": 5.620376733922213,
+      "train_RMSE_treatment_dropout25": 3.3506278863800993,
+      "comparison": {
+        "gain": -0.011715073561171963,
+        "fold_gains": [
+          0.012178041569065101,
+          -0.012194390117999276,
+          -0.01781389318283466,
+          -0.0457678836575397,
+          0.0021189540406396645
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.019362469751918937,
+        "conditional_ci95": [
+          -0.050984084902916345,
+          0.025404999776690588
+        ]
+      },
+      "sample_diagnostics": {
+        "improved_squared_error_rows": 186,
+        "worse_rows": 214,
+        "squared_error_gain_quantiles": [
+          -52.77780546796498,
+          -9.567654101929342,
+          -3.581065017556867,
+          -0.1524141223501907,
+          3.0609268692604488,
+          7.889416080693668,
+          55.16040116517411
+        ],
+        "absolute_error_gain_mean": -0.025523324397572295,
+        "prediction_difference_RMS": 0.3528090774616548,
+        "prediction_abschange_quantiles": [
+          0.0014157108359711401,
+          0.116782578063102,
+          0.25298334755288465,
+          0.39672017449669994,
+          0.7133041575315157,
+          1.0297001566429458
+        ],
+        "gain_without_top5_improvement_rows": -0.03463794597599623,
+        "top5_row_IDs_diagnostic_only": [
+          "TRAIN_000227",
+          "TRAIN_000356",
+          "TRAIN_000125",
+          "TRAIN_000071",
+          "TRAIN_000010"
+        ],
+        "residual_correlation": 0.9996356179368181
+      },
+      "advance": false
+    },
+    "20261101": {
+      "scores": {
+        "reference011": 13.272377948565081,
+        "primary": 13.259018313653455,
+        "head": 14.317495796084732,
+        "control_head": 14.369641875486145
+      },
+      "train_RMSE_control_dropout50": 5.62180661529333,
+      "train_RMSE_treatment_dropout25": 3.39741500586856,
+      "comparison": {
+        "gain": 0.013359634911626728,
+        "fold_gains": [
+          0.050794158074877416,
+          -0.028524319145748933,
+          -0.0003180978332135709,
+          0.04176462889426347,
+          -0.0012096750078320895
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.01707251052680213,
+        "conditional_ci95": [
+          -0.020198617382548266,
+          0.04646919442267313
+        ]
+      },
+      "sample_diagnostics": {
+        "improved_squared_error_rows": 206,
+        "worse_rows": 194,
+        "squared_error_gain_quantiles": [
+          -40.26357404536577,
+          -7.950012733424239,
+          -2.7653645993133322,
+          0.08591018970929234,
+          3.2401532578234935,
+          8.308855322503215,
+          37.891834905193036
+        ],
+        "absolute_error_gain_mean": 0.009737247579505918,
+        "prediction_difference_RMS": 0.3578130912042759,
+        "prediction_abschange_quantiles": [
+          0.00019427509406000354,
+          0.11716204914323214,
+          0.22049624469008222,
+          0.4228967995191937,
+          0.716130728206761,
+          1.051413180246385
+        ],
+        "gain_without_top5_improvement_rows": -0.0030093747265240722,
+        "top5_row_IDs_diagnostic_only": [
+          "TRAIN_000467",
+          "TRAIN_000078",
+          "TRAIN_000453",
+          "TRAIN_000438",
+          "TRAIN_000321"
+        ],
+        "residual_correlation": 0.999637809778472
+      },
+      "advance": false
+    }
+  },
+  "cross_partition_sample_diagnostics": {
+    "same400_rows_not_independent": true,
+    "rows_improved_in_n_partitions": {
+      "0": 54,
+      "1": 160,
+      "2": 121,
+      "3": 65
+    },
+    "rows_positive_mean_squared_error_gain": 192,
+    "between_partition_perID_gain_correlations": [
+      [
+        1.0,
+        0.25305841834144793,
+        0.20682641290959822
+      ],
+      [
+        0.25305841834144793,
+        1.0,
+        0.1955791927106485
+      ],
+      [
+        0.2068264129095982,
+        0.1955791927106485,
+        1.0
+      ]
+    ],
+    "between_partition_prediction_change_correlations": [
+      [
+        0.9999999999999999,
+        0.11015512987050792,
+        0.13915999945599933
+      ],
+      [
+        0.11015512987050792,
+        1.0,
+        0.11736955720013638
+      ],
+      [
+        0.13915999945599933,
+        0.11736955720013638,
+        1.0
+      ]
+    ]
+  },
+  "interpretation": {
+    "training_fit_improved_in_allpartitions": true,
+    "ensemble_improved_partitions": 1,
+    "head_standalone_improved_partitions": 1,
+    "causal_scope": "Initial tensors,features,scalers,targets,seed/permutation/RNGstream,optimizer,width,epochs andblend are paired. Dropout probability is the only changed training factor. The effect is conditional on this historicallyselected recipe andseed; cannot assign all011gain to dropout or generalize to everyseed.",
+    "finding": "Lowering dropout improves training fit, but does not establish better generalization or complementary ensemble predictions. Retain.50 unless the fixed candidate gate passes. A lower trainRMSE alone is not an optimization target.",
+    "remaining_unknown": "Width32 versus64 and fixed12epoch duration remain unresolved independent factors. This experiment does not test them or identify a new successful approach. No claim of a performance ceiling."
+  },
+  "validation": {
+    "passed": true,
+    "eligible_for_candidate": false,
+    "models_verified": 15,
+    "max_MPS_reload_error": 0.0,
+    "max_CPU_MPS_error": 4.172207417241225e-05,
+    "replay": [
+      {
+        "split": "original",
+        "dropout": 0.5,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "original",
+        "dropout": 0.25,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261031",
+        "dropout": 0.5,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261031",
+        "dropout": 0.25,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261101",
+        "dropout": 0.5,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261101",
+        "dropout": 0.25,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      }
+    ],
+    "paired_initial_weights_orders_rng_seeds_exact": true,
+    "dropout_only_source_comparison_passed": true,
+    "foldtrain_only_scalers_targets_verified": true,
+    "per_id_diagnostics_sha256": "542475362535f9a61cb7cc2b20f3fbe076f3915fd341f353492b31df853c90a6",
+    "protected011_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "limits": "Same400 observations repeatedly reused and011 originated as posthoc084control. This ablation estimates one-factor effect conditional on a historicallyselected recipe and fixedseed. Doesnotidentify allcauses of011gain or generalize across allseeds. ConditionalCIs omit model-fit/adaptive-selection uncertainty. No new independent validation.",
+    "holdout_test_selection_access": false,
+    "cost": 0,
+    "seconds": 40.54178258305183,
+    "source_sha256": "805d55891a55b1b5f4bb1bc0bf55614f65133c09f529e7b6f1038d0644a4a03e"
+  },
+  "limits": "Same400 observations repeatedly reused and011 originated as posthoc084control. This ablation estimates one-factor effect conditional on a historicallyselected recipe and fixedseed. Doesnotidentify allcauses of011gain or generalize across allseeds. ConditionalCIs omit model-fit/adaptive-selection uncertainty. No new independent validation.",
+  "best011": {
+    "CSV": "artifacts/submission-candidate-011.csv",
+    "sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "public_rmse_parent_reported": 11.7352685854,
+    "protected_files": 20
+  },
+  "scope": {
+    "cost": 0,
+    "new_install_or_download": false,
+    "holdout_test_selection_access": false,
+    "new_candidate_created": false,
+    "uploaded": false,
+    "010_unsubmitted": true,
+    "last_submission_used": false
+  },
+  "evidence_sha256": {
+    "artifacts/dropout-control-089/plan.json": "e340b77d71dd7b7286bb0e5551d3173b8494a22bb1365de5b0cb1b52e857f601",
+    "reports/dropout-control-089-validation.json": "8d8b8fde2e8b21458ea035cf43424dc8f70a9c4add09d769d1af92cc0697f64c",
+    "artifacts/dropout-control-089/per-id-diagnostics.npz": "542475362535f9a61cb7cc2b20f3fbe076f3915fd341f353492b31df853c90a6",
+    "reports/candidate011-public-submission.json": "9220b3d414da739824cda4a76f7867603b14333b2cef5b0de82a5ec802473b71"
+  },
+  "source_sha256": "e0696636e4875fb21d976a9bc6a4adc5d9a4ec3a35c0a1c1ea086712d169ff46"
+}

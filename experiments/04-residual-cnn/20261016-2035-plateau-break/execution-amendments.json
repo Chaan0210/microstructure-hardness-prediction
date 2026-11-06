@@ -1,0 +1,30 @@
+{
+  "utc": "2026-10-16T11:49:46.444561+00:00",
+  "amendments": [
+    {
+      "kind": "temporary files",
+      "reason": "Write guard blocked Python temporary-file creation outside experiment.",
+      "remedy": "TMPDIR/tempfile redirected inside new experiment; original failure log retained."
+    },
+    {
+      "kind": "inference memory policy",
+      "reason": "Full1000 query default auto policy stalled with pre-existing teacher job; my replay PID83127 interrupted, unrelated PID76231 untouched.",
+      "remedy": "Enable existing TabPFN memory_saving_mode=True, preserving all learned parameters, estimator counts, feature contexts and seeds; check frozen predictions within original numeric tolerance."
+    },
+    {
+      "kind": "CPU scheduling",
+      "reason": "One-thread full-query replay took roughly75 seconds per member.",
+      "remedy": "Restarted only own process with three threads; completed CPU member predictions retained."
+    },
+    {
+      "kind": "Local GPU and query routing",
+      "reason": "Local MPS provides efficient inference with an explicit30% recommended-memory cap.",
+      "remedy": "Replayed only pre-existing deployed noise-gate rows. Separate frozen-model probe found query grouping difference1.05e-6 under auto precision and0 under explicit float32."
+    },
+    {
+      "kind": "Precision mismatch rejected",
+      "reason": "Default GPU automatic precision differed from CPU by0.099956 HV on one frozen member and0.022461 HV on the first bank; refused numerical equivalence.",
+      "remedy": "Set explicit float32; preserve failed automatic-precision outputs separately. All72 member calls subsequently completed. Bank max difference0.000127513 HV, final076 maximum0.0000306983 HV. No fitted weights changed."
+    }
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "study": "119 fixedrbf1 pooled320 versus3blockensemble",
+  "completed_utc": "2026-10-04T02:07:57.644665+00:00",
+  "status": "completed_not_promoted",
+  "per_partition": [
+    {
+      "split": "original",
+      "scores": {
+        "reference011": {
+          "MSE": 170.40685782801563,
+          "RMSE": 13.0539977718711
+        },
+        "reference115": {
+          "MSE": 170.18601807946143,
+          "RMSE": 13.045536327781294
+        },
+        "block_mean": {
+          "MSE": 170.29102245170918,
+          "RMSE": 13.04956023978238
+        },
+        "pooled": {
+          "MSE": 170.23321388912393,
+          "RMSE": 13.047345089677208
+        }
+      },
+      "ensemble": {
+        "mean_individual_MSE_diagnostic": 170.44822529060656,
+        "block_mean_MSE": 170.29102245170918,
+        "averaging_MSE_reduction_exact": 0.15720283889736505,
+        "mean_individual_minus_pooled_MSE": 0.2150114014826272
+      }
+    },
+    {
+      "split": "20261031",
+      "scores": {
+        "reference011": {
+          "MSE": 169.3948077840649,
+          "RMSE": 13.015176056591201
+        },
+        "reference115": {
+          "MSE": 168.12994797540713,
+          "RMSE": 12.9664932798119
+        },
+        "block_mean": {
+          "MSE": 169.22845958866193,
+          "RMSE": 13.008783939656386
+        },
+        "pooled": {
+          "MSE": 169.29849422445986,
+          "RMSE": 13.011475482221831
+        }
+      },
+      "ensemble": {
+        "mean_individual_MSE_diagnostic": 169.3296486477142,
+        "block_mean_MSE": 169.22845958866193,
+        "averaging_MSE_reduction_exact": 0.10118905905229753,
+        "mean_individual_minus_pooled_MSE": 0.031154423254349695
+      }
+    },
+    {
+      "split": "20261101",
+      "scores": {
+        "reference011": {
+          "MSE": 176.15601640955663,
+          "RMSE": 13.272377948565081
+        },
+        "reference115": {
+          "MSE": 175.10192531201818,
+          "RMSE": 13.23260840922976
+        },
+        "block_mean": {
+          "MSE": 175.9845719332244,
+          "RMSE": 13.265917681533548
+        },
+        "pooled": {
+          "MSE": 175.9736906723388,
+          "RMSE": 13.265507554267902
+        }
+      },
+      "ensemble": {
+        "mean_individual_MSE_diagnostic": 176.0624099028823,
+        "block_mean_MSE": 175.9845719332244,
+        "averaging_MSE_reduction_exact": 0.07783796965791381,
+        "mean_individual_minus_pooled_MSE": 0.08871923054351782
+      }
+    }
+  ],
+  "decision": {
+    "eligible_for_candidate": false,
+    "criterion": "Pooled320untrimmedMSE strictlybelowmatchedblockensemble,115and011;independentvalidation. No perpartition/foldgate.",
+    "pooled_MSE": {
+      "reference011": 171.98589400721238,
+      "reference115": 171.1392971222956,
+      "block_mean": 171.83468465786518,
+      "pooled": 171.8351329286409
+    },
+    "pooled_RMSE": {
+      "reference011": 13.114339251644072,
+      "reference115": 13.082021904976907,
+      "block_mean": 13.108572945132707,
+      "pooled": 13.108590043503568
+    },
+    "retain013": true,
+    "no_fallback_or_hyperparameter_search": true
+  },
+  "comparisons": {
+    "reference011": {
+      "MSE_gain": 0.15076107857149168,
+      "RMSE_gain": 0.005749208140503725,
+      "ID_cluster95_MSE_gain_CI": [
+        -0.11622381848855454,
+        0.43413149781851096
+      ],
+      "ID_cluster95_RMSE_gain_CI": [
+        -0.004504596407527961,
+        0.016230022945559287
+      ],
+      "positive_IDs": 182,
+      "fold_RMSE_gains_diagnostic": [
+        0.011704565445105786,
+        0.0141975531571088,
+        0.0034027944526400233,
+        -0.014167289195084365,
+        0.017083491242866344,
+        -0.005858020912492989,
+        0.014364754521407619,
+        -0.012893226929522328,
+        0.01815767540889368,
+        0.006397380081576642,
+        0.009095953548401425,
+        0.00434457831745938,
+        0.007064272934350413,
+        0.013587993593702663,
+        -0.0003053575091698235
+      ],
+      "fixed092_other395_MSE_gain_diagnostic": 0.044878140008389314,
+      "largest5_removed_MSE_gain_diagnostic": -0.04828459624906233,
+      "largest5_IDs": [
+        {
+          "ID": "TRAIN_000227",
+          "MSE_gain": 21.94225070607058
+        },
+        {
+          "ID": "TRAIN_000064",
+          "MSE_gain": 18.261696573478503
+        },
+        {
+          "ID": "TRAIN_000406",
+          "MSE_gain": 15.052022675253511
+        },
+        {
+          "ID": "TRAIN_000331",
+          "MSE_gain": 14.548829680109634
+        },
+        {
+          "ID": "TRAIN_000078",
+          "MSE_gain": 9.572047312074574
+        }
+      ]
+    },
+    "reference115": {
+      "MSE_gain": -0.6958358063452863,
+      "RMSE_gain": -0.0265681385266614,
+      "ID_cluster95_MSE_gain_CI": [
+        -3.853552022530812,
+        2.325287881428708
+      ],
+      "ID_cluster95_RMSE_gain_CI": [
+        -0.144322550544969,
+        0.09076459143205752
+      ],
+      "positive_IDs": 225,
+      "fold_RMSE_gains_diagnostic": [
+        -0.14829585331349548,
+        -0.05549241887184131,
+        0.030139012392210063,
+        0.16455775310367216,
+        0.0037826051516631765,
+        -0.06011204592699393,
+        -0.06449153719425738,
+        0.03180192107395463,
+        -0.0648878266276256,
+        -0.0728378936599654,
+        -0.13443226448836754,
+        0.15237636467349525,
+        -0.0062525980303878015,
+        -0.20273966268424104,
+        0.041792567507078715
+      ],
+      "fixed092_other395_MSE_gain_diagnostic": 0.3601534920789055,
+      "largest5_removed_MSE_gain_diagnostic": -2.0021758705170734,
+      "largest5_IDs": [
+        {
+          "ID": "TRAIN_000206",
+          "MSE_gain": 132.1901297654839
+        },
+        {
+          "ID": "TRAIN_000008",
+          "MSE_gain": 128.52094543623897
+        },
+        {
+          "ID": "TRAIN_000120",
+          "MSE_gain": 107.15197807736035
+        },
+        {
+          "ID": "TRAIN_000218",
+          "MSE_gain": 82.0746667282969
+        },
+        {
+          "ID": "TRAIN_000258",
+          "MSE_gain": 62.58742630875594
+        }
+      ]
+    },
+    "block_mean": {
+      "MSE_gain": -0.00044827077570630536,
+      "RMSE_gain": -1.7098370861390322e-05,
+      "ID_cluster95_MSE_gain_CI": [
+        -0.052081031562219236,
+        0.051500710465404595
+      ],
+      "ID_cluster95_RMSE_gain_CI": [
+        -0.0019783296419649153,
+        0.0019573254713986625
+      ],
+      "positive_IDs": 204,
+      "fold_RMSE_gains_diagnostic": [
+        -0.001985293798473009,
+        0.006594202037227603,
+        0.004178713272869672,
+        0.0011252476124656852,
+        0.0012000786221264548,
+        -0.003365615571839342,
+        -0.0008320383857878255,
+        -0.0014630419873515876,
+        0.00025401696119864425,
+        -0.008261320942368755,
+        0.0019124308007647528,
+        0.005588550611761889,
+        -0.009007807454317174,
+        0.002063223620822896,
+        0.0012846385789746506
+      ],
+      "fixed092_other395_MSE_gain_diagnostic": 0.00223881956214549,
+      "largest5_removed_MSE_gain_diagnostic": -0.026973229501837954,
+      "largest5_IDs": [
+        {
+          "ID": "TRAIN_000064",
+          "MSE_gain": 3.0129328513310156
+        },
+        {
+          "ID": "TRAIN_000290",
+          "MSE_gain": 2.2040311020268177
+        },
+        {
+          "ID": "TRAIN_000331",
+          "MSE_gain": 1.902267600938785
+        },
+        {
+          "ID": "TRAIN_000466",
+          "MSE_gain": 1.7171174302841337
+        },
+        {
+          "ID": "TRAIN_000491",
+          "MSE_gain": 1.6387683583716353
+        }
+      ]
+    }
+  },
+  "ensemble_and_fullsample_decomposition": {
+    "mean_individual_small_model_MSE_diagnostic": 171.946761280401,
+    "sqrt_mean_individual_loss_not_candidate_RMSE": 13.112847184360877,
+    "block_ensemble_MSE": 171.83468465786518,
+    "pooled320_MSE": 171.8351329286409,
+    "averaging_MSE_reduction_exact": 0.1120766225358588,
+    "pooled_extra_MSE_gain_beyond_block_ensemble": -0.00044827077570630536,
+    "total_meanindividual_to_pooled_MSE_gain": 0.11162835176011754,
+    "identity": "meanindividual_loss - pooled_loss = averaging_diversity_gain + (blockensemble_loss-pooled_loss)",
+    "no_extra_candidates": "Individualmodel losses averaged onlyasdiagnostic;noindividualchosen andnolearnedweights.",
+    "interpretation": "Ensembling removesmeanwithin-row dispersion exactly. Pooled320hasessentiallysameerrorasthatensemblehere;largertrainingcohort alone didnotyieldadditionalvalidatedgain underfixedrbf1."
+  },
+  "correction_and_capacity_diagnostics": {
+    "correction_order": [
+      "selected115",
+      "fixedblockmean",
+      "fixedpooled320"
+    ],
+    "correlation": [
+      [
+        1.0,
+        0.5319833801129691,
+        0.5234094460683084
+      ],
+      [
+        0.5319833801129691,
+        1.0,
+        0.9321181609584844
+      ],
+      [
+        0.5234094460683084,
+        0.9321181609584843,
+        0.9999999999999999
+      ]
+    ],
+    "correction_RMS": {
+      "selected115": 1.383941590755697,
+      "fixedblockmean": 0.10184641357938522,
+      "fixedpooled320": 0.09856529951812737
+    },
+    "blockmean_vs_pooled_prediction_difference_RMS": 0.037046495762674166,
+    "block_effective_df_range": [
+      0.9278800507963642,
+      0.9409546362903984
+    ],
+    "pooled_effective_df_range": [
+      0.9395219698870435,
+      0.9414705449014448
+    ]
+  },
+  "verification": {
+    "partitions": {
+      "original": {
+        "passed": true,
+        "split": "original",
+        "models_reloaded": 20,
+        "independent_rawstatistics_eigensolve_max_error": 2.220446049250313e-15,
+        "outer80_excluded_from_all_targets_and_fits": true,
+        "every320target_crossfit_ownlabel_excluded": true,
+        "no_inner_hyperparameter_selection": true,
+        "report_sha256": "37257b73ed51c401fda8a5d99872997cb4fc75c70a4b7dca4bcab98921526d71",
+        "seconds": 0.37722587503958493
+      },
+      "20261031": {
+        "passed": true,
+        "split": "20261031",
+        "models_reloaded": 20,
+        "independent_rawstatistics_eigensolve_max_error": 2.4424906541753444e-15,
+        "outer80_excluded_from_all_targets_and_fits": true,
+        "every320target_crossfit_ownlabel_excluded": true,
+        "no_inner_hyperparameter_selection": true,
+        "report_sha256": "3a535f364393af3de88e96ed359b193b6a7ca3557b88e7031617f8a5a78ddce7",
+        "seconds": 0.37172662501689047
+      },
+      "20261101": {
+        "passed": true,
+        "split": "20261101",
+        "models_reloaded": 20,
+        "independent_rawstatistics_eigensolve_max_error": 2.3869795029440866e-15,
+        "outer80_excluded_from_all_targets_and_fits": true,
+        "every320target_crossfit_ownlabel_excluded": true,
+        "no_inner_hyperparameter_selection": true,
+        "report_sha256": "a6989d209352913d72251a1c363f5cba054d33ef689208c084ca9360b42436fa",
+        "seconds": 0.36550620797788724
+      }
+    },
+    "model_reload_count": 60,
+    "max_independent_eigensolve_error": 2.4424906541753444e-15,
+    "leakage_replay": {
+      "passed": true,
+      "three_outerfolds_labels_perturbed": true,
+      "models_and_predictions_exact": 12,
+      "upstream112_exclusion_retraining_certificate": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+      "new_upstream_retraining": false
+    },
+    "45upstream_anchor_model_hashes_rechecked": true,
+    "independent_pooled_scalar_sum": true,
+    "ensemble_identity_all1200pairs_verified": true
+  },
+  "resource": {
+    "fit_seconds": 0.3911612500087358,
+    "new_upstream_fits": 0,
+    "new_residual_models": 60,
+    "cost": 0,
+    "new_packages": 0
+  },
+  "limits": [
+    "Same400historicallyreusedIDs across3partitions;1200predictionpairs notindependent. Clusterbootstrap isconditionalonfixedfittedmodels anddoesnotremove selectionbias.",
+    "Full320data arecrossfittedpseudo-targets withdependencefromoverlappinganchors;morepairs arenotmoreindependentlabels.",
+    "Pooledfit changestraininglocalfeaturebounds/scales,gamma andkernelcentering aswellasdatausage;thisisnotpurecausaln holdingfeaturemapfixed.",
+    "Kernelregularizationlambda1 keeps effective df below1;thissingleconservativeprobe mayunderfit andcannotrefuteproperlyselectedpooledresiduallearning.",
+    "OOFtargetanchor213/214 differsfrompredictionbase320;final500woulduseanchors333/334. That absolute-size shift remainsunvalidated and119failedpromotion,sofinal500notrun.",
+    "Averagingindividualmodelerrors isdiagnostic,notanadditionalcandidate. No favorablefold/ID/modelselection orOOFweightfit."
+  ],
+  "next_decision": "Keep013. Data pooling alone atfixedrbf1 supplied noincrementalbenefit overmatchedaveraging andlaggedexisting115. Do not runautomaticlambda/kernel sweep or405-fitnestedselection escalation basedonlyonmodelcount. Anyfuturestrictnestedpooledexperiment needsseparatelyjustified capacity/target-reliability hypothesis andbudget;currentdata cannotestablish itwillhelp.",
+  "scope": {
+    "development400_only": true,
+    "full500_retraining": false,
+    "test_holdout_decoded": false,
+    "new_CSV": false,
+    "013_011_preserved": true,
+    "external_transmission": false,
+    "uploaded": false
+  },
+  "execution_blockers": [],
+  "evidence_sha256": {
+    "artifacts/pooled-residual-119/original/report.json": "37257b73ed51c401fda8a5d99872997cb4fc75c70a4b7dca4bcab98921526d71",
+    "artifacts/pooled-residual-119/original/predictions.npz": "eced5e1f868805dffd3c4b9e2a7abb23ea5aff1f97d8851cbde4d93930439425",
+    "artifacts/pooled-residual-119/validation-original.json": "6c8233fd72b04d7c9d14734489b091a234ebcba626d6e7a36e0d385ff713f5c8",
+    "artifacts/pooled-residual-119/20261031/report.json": "3a535f364393af3de88e96ed359b193b6a7ca3557b88e7031617f8a5a78ddce7",
+    "artifacts/pooled-residual-119/20261031/predictions.npz": "920ad99939df709083989f74f071f4fe9d845482f58c7644f8a752798a2f71e3",
+    "artifacts/pooled-residual-119/validation-20261031.json": "733584034f0b054c5b09a92ae65942b1e3d9efc64b6247f1aace5934c9300a11",
+    "artifacts/pooled-residual-119/20261101/report.json": "a6989d209352913d72251a1c363f5cba054d33ef689208c084ca9360b42436fa",
+    "artifacts/pooled-residual-119/20261101/predictions.npz": "30a7cc2824b58d511dc262e3e3dabd793c2cee0fbd7e535e9871c3b9f70c3e3c",
+    "artifacts/pooled-residual-119/validation-20261101.json": "a0cbc59541502363b5aea1f62b9158b81ced5c8ad7e6a06aad1341607f2da649",
+    "artifacts/pooled-residual-119/plan.json": "938c8fe08b0b6ce0d0a64db534609bdd26b11d23e912d9e1aa3a83053095471a",
+    "artifacts/pooled-residual-119/decision.json": "983f821a8aebe96935c45225b812c34b2cde97b6408e5572b5a3727fac6284b8",
+    "artifacts/pooled-residual-119/anchor-audit.json": "0e26d9f2bfbbbdfbd39cc4d1980136f9f71f9e40061d4b1ecaa28fc9b4fdbadb",
+    "artifacts/pooled-residual-119/leakage-validation.json": "35291b345d78d72907dfc2ae9646e22613c99b0edddd53ad87d80f50ad127534"
+  },
+  "source_sha256": "38bc4d4fe7e168c5e028b4652d498dca4862c2a10ba959aee73f318f31d08473"
+}

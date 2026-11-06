@@ -1,0 +1,41 @@
+"""Close authorized small research batch, preserve current best and all failures."""
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[2]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import os
+for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','VECLIB_MAXIMUM_THREADS'):os.environ[k]='2'
+import sys,json,hashlib,datetime,subprocess,importlib.metadata
+from pathlib import Path
+ROOT=_RepoPath(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));assert Path(sys.prefix).resolve()==_repo_path(ROOT, '.venv')
+import amplitude_cnn_106 as a
+import persistence_study_107 as p
+import threepoint_study_108 as t
+
+def main():
+ for m in (a,p,t):m.check()
+ protected=a.read(_repo_path(ROOT, 'reports/candidate011-public-submission.json'))['protected_sha256']
+ for n,h in protected.items():assert a.sha(_repo_path(ROOT, n))==h,n
+ before=a.read(_repo_path(ROOT, 'artifacts/wavelet-scattering-096/environment-before.json'));expected={**before['packages'],**before['allowed_additions']};normalize=lambda n:n.lower().replace('_','-');installed={normalize(d.metadata['Name']):d.version for d in importlib.metadata.distributions()};expected={normalize(n):v for n,v in expected.items()};assert installed==expected,(set(installed.items())-set(expected.items()),set(expected.items())-set(installed.items()))
+ docs=a.read(_repo_path(ROOT, 'reports/readme-update-105.json'));follow=a.read(_repo_path(ROOT, 'reports/readme-update-105-followup.json'));assert a.sha(_repo_path(ROOT, 'reports/README-before-105.md'))==docs['original_sha256'];assert a.sha(_repo_path(ROOT, 'reports/README-before-105-followup.md'))==docs['new_readme_sha256']==follow['before_sha256'];assert a.sha(_repo_path(ROOT, 'README.md'))==follow['after_sha256']
+ studies={};files=['README.md','reports/README-before-105.md','reports/README-before-105-followup.md','reports/readme-update-105.json','reports/readme-update-105-followup.json']
+ for code,module,primary,control in [('106',a,'affine_blend','groupnorm_blend'),('107',p,'persistence_blend','curve_blend'),('108',t,'triple85_blend','control57_blend')]:
+  r=a.read(module.OUT/'original/report.json');vpath=_repo_path(ROOT, f'reports/{module.OUT.name}-original-validation.json');v=a.read(vpath);assert v['passed'];advance=r['advance'] if code=='106' else r['gate']['advance'];assert not advance
+  assert not any((module.OUT/s).exists() for s in ('20261031','20261101'))
+  c=r['affineblend_vs011'] if code=='106' else r['gate']['primary_vs011'];studies[code]={'reference011_RMSE':r['scores']['reference011']['rmse'],'matched_control_blend_RMSE':r['scores'][control]['rmse'],'primary_blend_RMSE':r['scores'][primary]['rmse'],'gain_vs011':c['gain'],'positive_folds_vs011':c['positive_folds'],'advance':False,'original_report':str((module.OUT/'original/report.json').relative_to(ROOT)),'independent_validation':str(vpath.relative_to(ROOT)),'validation':v,'resplits_run':False,'full500_fit':False,'test_inference':False,'candidate_created':False}
+  for path in (module.OUT/'plan.json',module.OUT/'benchmark.json',module.OUT/'original/report.json',module.OUT/'original/development_predictions.npz',vpath):files.append(str(path.relative_to(ROOT)))
+  if (module.OUT/'extraction.json').exists():files.append(str((module.OUT/'extraction.json').relative_to(ROOT)))
+ rep=a.read(a.OUT/'representation-review.json');diagnosis=a.read(p.OUT/'failure-diagnosis.json');files.extend(['artifacts/amplitude-cnn-106/representation-review.json','artifacts/amplitude-cnn-106/representation-descriptors.npz','artifacts/persistence-107/failure-diagnosis.json'])
+ names=['amplitude_cnn_106.py','validate_amplitude_cnn_106.py','representation_review_106.py','persistence_study_107.py','validate_persistence_107.py','diagnose_persistence_107.py','threepoint_study_108.py','validate_threepoint_108.py'];proc=subprocess.run(['ps','-axo','pid=,etime=,command='],capture_output=True,text=True,check=True).stdout;active=[line.strip() for line in proc.splitlines() if any(n in line for n in names) and 'summarize_batch_105_108' not in line];assert not active,active
+ now=datetime.datetime.now(datetime.timezone.utc);start=datetime.datetime.fromisoformat('2026-10-03T16:34:55+00:00');deadline=datetime.datetime.fromisoformat(a.DEADLINE);assert now<deadline
+ summary={'task':'105 README correction and autonomous bounded research106-108','started_utc':start.isoformat(),'completed_utc':now.isoformat(),'maximum_deadline_utc':deadline.isoformat(),'elapsed_minutes':(now-start).total_seconds()/60,'status':'Completed three fixed hypotheses; no promoted candidate; best011 preserved.','actual_commands_succeeded':['amplitude_cnn_106.py prepare/benchmark/original','validate_amplitude_cnn_106.py original','representation_review_106.py','persistence_study_107.py prepare/extract/original','validate_persistence_107.py original','diagnose_persistence_107.py','threepoint_study_108.py prepare/extract/original','validate_threepoint_108.py original'],'studies':studies,
+ 'representation_review':{'geometry_to_noise_ratio_descriptive':{k:v['geometry_to_noise_distance_ratio'] for k,v in rep['results'].items()},'finding':'On6toyfixtures affine-only CNN is more noise-sensitive than matchedGroupNorm. DINO also responds tonoise. These facts do not rank realhardnessmodels or prove actualsize/density/topology recovery.','limitations':rep['limitations'],'no_synthetic_training':True},
+ 'persistence_failure':{'largest_absolute_standardized_validation_feature':max(v['max_abs_standardized_validation_feature'] for v in diagnosis['records']),'explanation':diagnosis['finding'],'no_posthoc_refit':True},
+ 'threepoint_interpretation':'Adding3-site products improves matchedcontrolblend by0.021488 and4/5folds, but doesnotimprovebest011 inanyfold. Novel descriptorinformation and improvedweakbranchalone are insufficient grounds forsubmission.',
+ 'stop_reason':'Completed a small batch of3 distinct fixedhypotheses, continuing twice after failure. Allfailedoriginalpredefinedcriteria, so noeligibleconfirmation/finalfit. This is a boundedresearchdecision, not a time/device/access blocker and not proof othermethods cannotwork. No additional labels or posthocparameter search used toforcea candidate.',
+ 'remaining_uncertainty_and_useful_new_information':['Real grain/phase/pore masks or matched truegeometry on a small representative labeleddiagnostic subset would permit physicalfidelity checks.','Known noise/blur generator conditions or independentnoiserealizations ofidenticalgeometry would distinguish denoising fromfine-structure removal.','A label-generation rule specifyingwhetherabsoluteorientation/intensity/noise affecthardness wouldjustify nuisanceinvariances.','Thoseare informationneeds forphysicalclaims, not a claim that all empirical modeling requiresgeneratoraccess.'],
+ 'execution_blockers':[],'best011':{'last_parent_confirmed_public_RMSE':11.7352685854,'public_not_refetched':True,'CSV':'artifacts/submission-candidate-011.csv','CSV_SHA256':protected['artifacts/submission-candidate-011.csv'],'protected_files_verified':len(protected),'all_protected_hashes_unchanged':True},
+ 'scope':{'development_rows':400,'additional_holdout_samples_decoded':0,'test_samples_or_prediction_values_decoded':0,'protected_test_artifacts_hashed_only':True,'full500_fit':False,'new_submission_CSV':False,'upload':False,'raw_external_transfer':False,'new_packages':0,'existing_packages_unchanged':len(installed),'packages':installed,'CPU_threads_per_process':2,'MPS_used_for106':True,'cost':0,'new_background_training_processes':active,'workspace':str(ROOT)},
+ 'documentation':{'original_preserved':docs,'followup':follow},'evidence_sha256':{n:a.sha(_repo_path(ROOT, n)) for n in files},'source_sha256':a.sha(Path(__file__))}
+ dest=_repo_path(ROOT, 'reports/research-batch-105-108-summary.json');a.write(dest,summary);print(json.dumps({'summary':str(dest),'SHA256':a.sha(dest),'elapsed_minutes':summary['elapsed_minutes'],'models_independently_verified':30,'packages_unchanged':len(installed),'protected_files':len(protected),'active_batch_processes':active,'best011_SHA256':protected['artifacts/submission-candidate-011.csv']}),flush=True)
+if __name__=='__main__':main()

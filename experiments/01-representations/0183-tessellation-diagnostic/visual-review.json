@@ -1,0 +1,96 @@
+{
+  "all16_reviewed": true,
+  "viewed_files": [
+    "overview-1.png",
+    "overview-2.png",
+    "overview-3.png",
+    "overview-4.png",
+    "panels/TRAIN_000104.png",
+    "panels/TRAIN_000242.png"
+  ],
+  "review_timing": "All16 raw/base/h+5 overview panels visually reviewed before aggregate measurement JSON was inspected; no labels or scores. No image replacement orparameterchange.",
+  "images": {
+    "TRAIN_000104": {
+      "systematic_mismatch": true,
+      "observation": "가늘고 길게 보이는 내부 경계 여러 곳이 연결된 큰 cell 안으로 합쳐짐. 강한 어두운 경계는 부분적으로 대응.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000129": {
+      "systematic_mismatch": false,
+      "observation": "잡음과 낮은 대비 때문에 완전한 입계망을 육안으로 확인하기 어려움. 출력된 조밀한 폐곡선 전체를 grain으로 인정할 근거가 부족.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000221": {
+      "systematic_mismatch": true,
+      "observation": "세로로 긴 윤곽 일부는 대응하지만 중앙·하부의 가는 내부 경계 누락과 인접 영역 병합이 반복적으로 보임.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000242": {
+      "systematic_mismatch": false,
+      "observation": "작은 polygon 경계 다수는 대응함. 선이 거칠고 일부 합쳐진 영역이 있으나 영상만으로 전체 cell 정답 여부는 판정 불가.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000257": {
+      "systematic_mismatch": true,
+      "observation": "명확한 가는 대각선·세로 내부 경계가 일부 큰 watershed cell 안에서 사라짐. 어두운 점 주변에도 작은 폐곡선 생성.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000265": {
+      "systematic_mismatch": false,
+      "observation": "가시적인 세립 경계와 부분적으로 대응하나 거친 윤곽·병합이 섞임. 모든 cell의 일대일 복원은 확인되지 않음.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000270": {
+      "systematic_mismatch": false,
+      "observation": "어두운 phase 윤곽은 대체로 따라가며 밝은 영역의 가는 경계는 덜 명확하게 복원됨. 부분적인 경계 대응.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000331": {
+      "systematic_mismatch": false,
+      "observation": "큰 명암 영역과 길어진 방향은 대응하지만 잡음 속 세부 폐곡선은 시각적으로 검증하기 어려움.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000390": {
+      "systematic_mismatch": false,
+      "observation": "사선 방향의 넓은 명암 구조는 보이지만 잡음 속 cell 경계를 확정하기 어려움. 세밀한 분할의 실제 입계 대응은 미확인.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000412": {
+      "systematic_mismatch": false,
+      "observation": "세로 명암 띠와 점은 보이나 전체 폐쇄 입계망은 불명확. 큰 병합 cell과 작은 cell이 혼재하며 실제 grain 판정 불가.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000424": {
+      "systematic_mismatch": false,
+      "observation": "방향성 명암 조각에 일부 대응하지만 조밀한 굴곡 선 전체에 대응하는 명확한 입계는 확인하기 어려움.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000448": {
+      "systematic_mismatch": false,
+      "observation": "원영상의 낮은 대비·잡음에 비해 매우 조밀한 cell망이 출력됨. 실제 grain 수와 경계라고 확인할 근거 부족.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000457": {
+      "systematic_mismatch": false,
+      "observation": "가시적인 polygon 경계 다수가 비교적 잘 대응함. 일부 희미한 내부선·작은 영역은 완전 복원이 확인되지 않음.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000467": {
+      "systematic_mismatch": false,
+      "observation": "대각선 방향의 밝고 어두운 영역은 대응하나 세부 cell 폐곡선은 잡음과 구분이 어려움.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000489": {
+      "systematic_mismatch": false,
+      "observation": "수평 방향의 넓은 구조는 일부 대응. 약한 대비 속 세부 cell의 경계 대응은 확정 불가.",
+      "not_groundtruth_annotation": true
+    },
+    "TRAIN_000498": {
+      "systematic_mismatch": false,
+      "observation": "길게 누운 polygon 경계 다수는 대응하나 일부 가는 내부 경계가 합쳐짐. 일관된 전체 grain 복원의 증거로는 부족.",
+      "not_groundtruth_annotation": true
+    }
+  },
+  "overall": "명확한 영상에서는 일부 경계가 대응하지만,104·221·257에서는 가시적인 가는 내부선 누락과 병합이 반복적으로 보입니다. 잡음·낮은 대비 영상은 출력된 모든 폐곡선의 실제 입계 대응을 확인할 수 없습니다. 이를 모두 잡음 오류 또는 정확한 grain이라고 단정하지 않으며, 전역적인 실제 cell 복원이 확인됐다고 볼 근거가 부족합니다.",
+  "limitations": "Qualitative visual review, not pixel-level grain truth; uncertain images are not counted as demonstrated systematic mismatches."
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "Keep best021; all six fixed candidate arms failed the development advancement gate.",
+  "matched_control": "Both adaptation arms begin at the same 100-epoch head and run the same 12 epochs/240 updates, sample orders, head LR, dropout seed. Compute time is not matched because last-stage backpropagation costs more.",
+  "result": "Last-stage adaptation lowers training RMSE but worsens overall standalone and fixed-10-percent blend OOF for both architectures relative to the matched head-only control.",
+  "limitations": [
+    "Only this fixed 100+12 epoch training protocol was tested; no claim of full convergence or architecture ceiling.",
+    "Long-reused development400 and conditional bootstrap are not an independent validation set or selection-adjusted evidence.",
+    "Native full256 and official normalization were used; official enum default resize/crop were intentionally not used.",
+    "Swin saved-checkpoint CPU/MPS reload passes, but exact full training replay fails. Same-label same-seed repetition also differs, consistent with numerical execution nondeterminism; the responsible kernel/root cause was not proved."
+  ],
+  "strict_failure_not_waived": true,
+  "no_extra_tuning": true,
+  "no_resplit_full500_holdout_test_newCSV_upload": true,
+  "prior_ResNet_branch_stays_closed": true,
+  "source": "summary.json",
+  "repro_diagnostic": "swin-repro-diagnostic.json",
+  "cost": 0
+}

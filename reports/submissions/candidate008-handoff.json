@@ -1,0 +1,116 @@
+{
+  "candidate": "008",
+  "exploratory": true,
+  "submission_path": "artifacts/submission-candidate-008.csv",
+  "submission_sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+  "bytes": 31698,
+  "rows": 1000,
+  "columns": [
+    "ID",
+    "hardness"
+  ],
+  "exact_sample_order": true,
+  "first_id": "TEST_000001",
+  "last_id": "TEST_001000",
+  "duplicate_ids": 0,
+  "missing_or_extra_ids": 0,
+  "nan_inf": 0,
+  "prediction_range": [
+    165.77633365182226,
+    231.4138687361086
+  ],
+  "six_head_reload_max_error": 0.0,
+  "all1000_exact_recipe_reload_error": 0.0,
+  "full1000_all_components_reload_error": 5.7220458984375e-06,
+  "raw10_ensemble_error": 4.0232001424556074e-05,
+  "reproduced_csv_byte_exact": true,
+  "best007_preserved": true,
+  "best007_sha256": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+  "development_results": {
+    "original": {
+      "007_rmse": 13.241596955038409,
+      "mixed50_rmse": 13.209632611789585,
+      "comparison": {
+        "gain": 0.03196434324882347,
+        "fold_gains": [
+          0.06338750973129237,
+          0.12876518338856435,
+          0.07945428124464726,
+          -0.06576973362770921,
+          -0.049417840156088744
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.046222488449716555,
+        "conditional_ci95": [
+          -0.059124924985042335,
+          0.12356775808613459
+        ]
+      }
+    },
+    "20261031": {
+      "007_rmse": 13.192251472226435,
+      "mixed50_rmse": 13.180839919990602,
+      "comparison": {
+        "gain": 0.0114115522358329,
+        "fold_gains": [
+          0.13636440655606386,
+          -0.09398886240837534,
+          -0.009874366263705525,
+          0.0877066941138871,
+          -0.050696462064550474
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.04580570047070066,
+        "conditional_ci95": [
+          -0.07710197379051453,
+          0.09832545024613223
+        ]
+      }
+    },
+    "20261101": {
+      "007_rmse": 13.455677846832414,
+      "mixed50_rmse": 13.393004886763789,
+      "comparison": {
+        "gain": 0.06267296006862466,
+        "fold_gains": [
+          -0.051283537095718756,
+          0.21440367558310136,
+          -0.08843293827638377,
+          0.23704066306260962,
+          -0.008129917685312904
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.04212111322684699,
+        "conditional_ci95": [
+          -0.019231296457453383,
+          0.1438363581420925
+        ]
+      }
+    }
+  },
+  "test_fit": false,
+  "clipping": false,
+  "holdout_scored": false,
+  "uploaded": false,
+  "cost": 0,
+  "limitations": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Gains are small and fold-wise consistency weak. All conditional95% bootstrap intervals include zero; Public/private improvement unknown.",
+  "completed_at_utc": "2026-10-02T04:11:31.344479+00:00",
+  "verification_report": "reports/candidate008-verification.json",
+  "model_directory": "artifacts/final-model-065",
+  "decision": "artifacts/final-model-065/decision.json",
+  "fixed_formula": "0.5*candidate007 + 0.5*(0.75*candidate003 + 0.25*B_MLP_mean3)",
+  "posthoc_gate_change": {
+    "source_thread_id": "01a0f244-6000-7496-a632-e5f79ee2c02a",
+    "instruction": "Parent explicitly authorized exploratory008 from the fixed50:50 mixture, full500 retraining/test1000 inference/verification. No further ratio/model search. Preserve007.",
+    "posthoc_change": true,
+    "prior_rule": "064 agent-chosen per-partition >=3/5 improving folds; observed3/5,2/5,2/5.",
+    "replacement": "User explicitly waived fold-majority condition AFTER observing064 results; all3 pooledRMSE gains and deterministic reproduction support making a small-gain exploratory artifact. This is a posthoc operational decision, not preregistered statistical confirmation.",
+    "previous_records_unchanged": true,
+    "no_significance_claim": true
+  },
+  "fit_seconds": 72.26981633302057,
+  "predict_seconds": 130.75957858399488,
+  "verification_seconds": 14.908841709024273,
+  "running_work": [],
+  "blockers": []
+}

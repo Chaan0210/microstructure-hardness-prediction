@@ -1,0 +1,59 @@
+{
+  "status": "plan_and_posthoc_diagnostic_definition_only_no_domain_training",
+  "186_protocol_unchanged": true,
+  "actual_185_186_input": {
+    "source": "256x256grayscale, entirefield",
+    "operation": "PILbicubic resize224x224 thenRGBreplicate+fixedImageNetmean/std;NOcentercrop;186reusesexact185caches",
+    "retained_field_of_view_fraction": 1.0,
+    "linear_sample_ratio": 0.875,
+    "pixel_count_ratio": 0.765625,
+    "output_pixel_pitch_in_original_pixels": 1.1428571428571428,
+    "information_limit": "Noouterborderisexcised. Resamplingreduceslinear samples12.5% andpixelcount23.4375%; mixesneighborintensity andmayweakenone/fewpixelboundaries,poreedges,localnoise/contrast. Specificlostgrains/poresorlabelimpactNOTmeasured. Physicalmicronpixelscaleunknown.",
+    "CNN_spatial_map": "Bothstride32finalmap7x7at224 versus8x8atnative256; globalmeanpoollosesspatiallocationineitherpolicy."
+  },
+  "official_transform_not_used": {
+    "ResNet50V2": "resize232bilinear then224centercrop; crop retains224/232 peraxisafterresize",
+    "EfficientNetB0V1": "resize256bicubic then224centercrop; original256loses16pxeachside",
+    "not_claimed": "185/186didNOTapplytheseofficialcrops; donotattributeerrors toremovedborders."
+  },
+  "first_followup_axis": {
+    "axis": "inputresolution224wholeimage versusnative256wholeimage",
+    "reason": "Concreteknownresamplingand7x7versus8x8feature-mapdifference; preservesmoreoriginalsamplingwithoutenlargingtrainablestage. Strongerfirstcontrolthanunfreezingmoreparameterswhen185trainRMSEalready~.5..1.6. Stillhypothesis,notprovenerrorcause.",
+    "scope": "Onlyafter186review, onebackbone chosenwithwholeOOF+021complementarity+compute, selectionisposthocfromreused400anddisclosed. Noresults-basedfailure33-onlychoice. Noexecutionin186.",
+    "paired_controls": "Keepperoutertrain186internallyselectedoptimizer/LR,12epochs,WD.01shareddecay,cosine,headGELU/dropout,width,batch,seed,noD4,laststage/BNfixed. Refittrain-onlyfeaturescalers+100epochheadon256. The224chosenrecipefavorsthe224selectioncontext; discloseconditionalcomparison. Do nottune256onouterlabels.",
+    "image_policy": "256nativeRGBreplication+sameImageNetnormalization;nocrop,noresizeup,nointensityjitter. 256preservesinputsamplingbutCNNstride/poolingstilllossy.",
+    "evaluation": "Whole400OOFstandaloneandfixed10%021blend, traincurves/gradient, samefolds; sparseandpersistent33descriptiveonly. Fixedfinalepoch,noouterearlystop."
+  },
+  "subsequent_axis_only_if_evidence_supports": {
+    "axis": "laststagevs last2stages withallBNaffine/runningstatsstillfrozen",
+    "condition": "Afterresolutioncontrol, consideronlyiftraincurvesacrossoptimizerLRs showpersistentfitbottleneck withhealthygradients orothermatchedrepresentationevidence. Lowtrainerror+highvalidation alone favorsgeneralization/regularizationanalysis,notproofcapacityshortage.",
+    "not_concurrent": "Do notchangeunfreezeextentwithresolution,WD,scheduler,D4oractivation. Nofullbackboneornewweightdownload.",
+    "last2_definition_to_lock_before_execution": "ResNetlayer3+layer4; B0finaltwoMBConvstagesplusfinal1x1; BNfrozen,earlierprefixfrozen. Needfresh6GBsmokeandfixedcompute."
+  },
+  "D4_evidence": {
+    "170": "Existing129 removingD4allowedtrainmemorizationbutworsenedvalidation; transformconstraint/inputvariety/regularizationconfounded.",
+    "172": "Fold0groupCNN madeviewpredictionsnearlyinvariant(maxdelta4.58e-5)buttrainRMSE12.00vslegacy8.60; fixedblend13.0259vsreference01812.8055. Onefoldarchitecturecontrol, notuniversalD4rejection.",
+    "implication": "Neitherphysicalrotationinvariance norwronglabelsproven. Do notforcegroupinvarianceor8viewTTAfromtheory. LaterstandaloneD4augmentationcontrolrequirespairedfullimageviewsbeforeencoder,notrotatingcachedlatentmaps. Noaugmentationchangein186orinitialresolutionpair."
+  },
+  "diagnostic_groups": {
+    "all400": "Primarypopulation, allOOFmetrics",
+    "sparse": "Peroutertrain GaussianlabelKDE bandwidth.4*trainstd; trainLOOdensity20thpercentilethreshold; classifyoutertargetdensityafterprediction. Evaluation-onlylabeldependentmask,neverfitweights/gating/selection.",
+    "persistent_large33": "Exact166persistent_large400mask (33IDs) frompriorresidualsacross3splits; POSTHOC explanatoryset,notindependenttestorcandidatecriterion. Reportalongsideall400andcomplement367, notalone.",
+    "metrics": "n,RMSE,MAE,bias(y-p) for021/selectedCNN/fixed10%blend; no targetreweighting or33selection."
+  },
+  "diagnostic_interpretation": {
+    "undertraining": "Persistentlyhightrainingloss withcontinuedsubstantialdescentandhealthygradients mayindicateinsufficientoptimization; lookatLRandclipfraction. Finitegradientsalone donotproveadequateconvergence.",
+    "overfitting": "Verylowtrainerrorwithmuchhigherinner/outererror supportsgeneralizationgap. ReusedtrainfeaturesandfixedBNdomainshiftcanalsocontribute; notexclusivecausalproof.",
+    "representation_limit": "Failureofafewoptimizer/LR/endpoints doesnotestablisharchitectureceiling. Needmatchedinput/unfreezecontrols; correlationand33commonfailuresarehypotheses."
+  },
+  "source_sha256": {
+    "reports/failure-review-166-167-summary.json": "240070ad69af0b321e18ee6121458a85b8ba77237714eb0a5722e7ca00ecea97",
+    "artifacts/failure-review-166/analysis.npz": "aa23eb8c7fd5d3eb00dc5510c0892e650a011f2dc52b76e0a53870cfea533c8c",
+    "reports/cnn-memorization-170-summary.json": "8101b0a34c6ddeb3a5f45c43bdc1c2247634d0d0204ed247324ed3b4f8007b19",
+    "reports/d4-cnn-172-summary.json": "0efd68e44e7e93dc0ea33ce8338da6f041049f35c553f8eb06b9dd613cbc1066",
+    "label_density_169.py": "6bdf9b5ae9f3955b7ef84b4347c36c58cef7dfb1466a8357aad708b643fd35ee",
+    "experiments/pretrained-cnn-185/features.py": "5c433f7c9e635010e7a704d033003832f41e41c31bd1b316065ac39c00820092",
+    "experiments/pretrained-cnn-185/common.py": "197f56d1fcab5b8def691578f7d75c05863f54e61b02ab70368b6958b74125d7",
+    "experiments/pretrained-cnn-185/summary.json": "c63e8a4492941a2a53084f8644e3913727ca4e6e8512b6a729dd60762bd0df75"
+  }
+}

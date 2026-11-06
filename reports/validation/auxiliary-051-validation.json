@@ -1,0 +1,277 @@
+{
+  "valid": true,
+  "n_models": 30,
+  "reload_prediction_max_error": 0.0,
+  "full100epoch_replay": [
+    {
+      "arm": "regression_only",
+      "parameter_max_error": 0.0
+    },
+    {
+      "arm": "auxiliary",
+      "parameter_max_error": 0.0
+    }
+  ],
+  "all_foldtrain_scaler_target_bin_fit_verified": true,
+  "paired_initialization_batch_order_verified": true,
+  "protected_best006_unchanged": true,
+  "results": {
+    "original": {
+      "scores": {
+        "regression_only": 14.176614197244191,
+        "auxiliary": 13.988469985515717,
+        "regression_only_blend": 13.269410644269877,
+        "auxiliary_blend": 13.249001897625838,
+        "reference003": 13.705696031698212,
+        "reference006": 13.423229237711903
+      },
+      "auxiliary_comparisons": {
+        "reference006": {
+          "gain": 0.17422734008606433,
+          "fold_gains": [
+            0.012375053806989555,
+            0.2744997625679453,
+            0.0564963561287648,
+            0.18856798779621187,
+            0.3481522888154327
+          ],
+          "positive_folds": 5,
+          "conditional_bootstrap_ci95": [
+            0.02647866325471293,
+            0.3237253928465384
+          ],
+          "bootstrap_sd": 0.07568290984269936
+        },
+        "regression_only_blend": {
+          "gain": 0.0204087466440388,
+          "fold_gains": [
+            0.02497519278948168,
+            0.10323194742677444,
+            0.03181957286839854,
+            -0.10333229883200445,
+            0.04123425146461379
+          ],
+          "positive_folds": 4,
+          "conditional_bootstrap_ci95": [
+            -0.036477346560323864,
+            0.07745115349879256
+          ],
+          "bootstrap_sd": 0.02904507360937572
+        }
+      },
+      "regression_control_vs006": {
+        "gain": 0.15381859344202553,
+        "fold_gains": [
+          -0.012600138982492126,
+          0.17126781514117084,
+          0.024676783260366264,
+          0.2919002866282163,
+          0.3069180373508189
+        ],
+        "positive_folds": 4,
+        "conditional_ci95": [
+          0.00929407584843296,
+          0.2947366951329248
+        ]
+      },
+      "residual_correlation_to003": {
+        "ridge006_component": 0.8744189551065172,
+        "regression_only": 0.7939898477131331,
+        "auxiliary": 0.8018450876713961
+      },
+      "endpoint_diagnostics": {
+        "regression_only": {
+          "mean_train_rmse": 0.7199118359516821,
+          "mean_final_validation_class_accuracy": 0.125,
+          "mean_final_train_class_accuracy": 0.15124999731779099,
+          "mean_validation_rmse_change_epoch80_to100": -0.07191211238877873
+        },
+        "auxiliary": {
+          "mean_train_rmse": 1.0806518288797764,
+          "mean_final_validation_class_accuracy": 0.26749999523162843,
+          "mean_final_train_class_accuracy": 1.0,
+          "mean_validation_rmse_change_epoch80_to100": -0.05575192356249523
+        }
+      },
+      "oof_sha256": "84562a3d96e061c0cb16dc5c0703fcd936584b3343a5fafe057ac9fa5fddf70e",
+      "report_sha256": "9edb180fbe2019983a14cb5b933a2348fc7c6057524b93ab91f39f45f736ddd5",
+      "seconds": 7.056678166962229
+    },
+    "20261031": {
+      "scores": {
+        "regression_only": 13.995762333405986,
+        "auxiliary": 14.18580888012671,
+        "regression_only_blend": 13.172286501144717,
+        "auxiliary_blend": 13.221571254244342,
+        "reference003": 13.63181073293285,
+        "reference006": 13.439650797694618
+      },
+      "auxiliary_comparisons": {
+        "reference006": {
+          "gain": 0.21807954345027625,
+          "fold_gains": [
+            -0.09348181169845127,
+            0.5798285317548455,
+            0.42583073484975564,
+            -0.06872207442664191,
+            0.1774773830850762
+          ],
+          "positive_folds": 3,
+          "conditional_bootstrap_ci95": [
+            0.043915733489020475,
+            0.39792912171390327
+          ],
+          "bootstrap_sd": 0.0897719217199767
+        },
+        "regression_only_blend": {
+          "gain": -0.049284753099625433,
+          "fold_gains": [
+            -0.13344307578359604,
+            -0.04375315611946462,
+            -0.04328134143258566,
+            0.02951993748843762,
+            -0.0465501979296139
+          ],
+          "positive_folds": 1,
+          "conditional_bootstrap_ci95": [
+            -0.10906705118691855,
+            0.008571257768888582
+          ],
+          "bootstrap_sd": 0.029971543561296377
+        }
+      },
+      "regression_control_vs006": {
+        "gain": 0.2673642965499017,
+        "fold_gains": [
+          0.039961264085144776,
+          0.6235816878743101,
+          0.4691120762823413,
+          -0.09824201191507953,
+          0.2240275810146901
+        ],
+        "positive_folds": 4,
+        "conditional_ci95": [
+          0.1024393366177843,
+          0.44741585981351056
+        ]
+      },
+      "residual_correlation_to003": {
+        "ridge006_component": 0.9050272936587167,
+        "regression_only": 0.7933944891468083,
+        "auxiliary": 0.7958195211513858
+      },
+      "endpoint_diagnostics": {
+        "regression_only": {
+          "mean_train_rmse": 0.7009831719404269,
+          "mean_final_validation_class_accuracy": 0.13250000029802322,
+          "mean_final_train_class_accuracy": 0.1356250002980232,
+          "mean_validation_rmse_change_epoch80_to100": -0.023986284196462607
+        },
+        "auxiliary": {
+          "mean_train_rmse": 1.0349743356962993,
+          "mean_final_validation_class_accuracy": 0.29000000059604647,
+          "mean_final_train_class_accuracy": 1.0,
+          "mean_validation_rmse_change_epoch80_to100": -0.04933006431852249
+        }
+      },
+      "oof_sha256": "78e1bbccf2a73cd6441e80f6afb142258b243ceba5352aeda3f697700e7b7f4f",
+      "report_sha256": "e7a8c9b63329d76273ace6eba4e243474d9c4b3e6f68b1c4f6c069c38792e3a8",
+      "seconds": 7.265799542015884
+    },
+    "20261101": {
+      "scores": {
+        "regression_only": 14.618191036571618,
+        "auxiliary": 14.626822750952888,
+        "regression_only_blend": 13.440400978398387,
+        "auxiliary_blend": 13.442977412815159,
+        "reference003": 13.729980391208457,
+        "reference006": 13.610797519662416
+      },
+      "auxiliary_comparisons": {
+        "reference006": {
+          "gain": 0.16782010684725712,
+          "fold_gains": [
+            -0.027128656990912603,
+            0.11689436119722707,
+            0.4572174406181375,
+            0.0579337237652684,
+            0.2505722477494281
+          ],
+          "positive_folds": 4,
+          "conditional_bootstrap_ci95": [
+            0.02353953644344671,
+            0.313116802693729
+          ],
+          "bootstrap_sd": 0.07367041807436378
+        },
+        "regression_only_blend": {
+          "gain": -0.002576434416772244,
+          "fold_gains": [
+            -0.20485456441515915,
+            0.05502233449888472,
+            0.06680845554184955,
+            0.05942041435817913,
+            0.013535702762739632
+          ],
+          "positive_folds": 4,
+          "conditional_bootstrap_ci95": [
+            -0.06565620198296358,
+            0.06306682926029422
+          ],
+          "bootstrap_sd": 0.03250835352868124
+        }
+      },
+      "regression_control_vs006": {
+        "gain": 0.17039654126402937,
+        "fold_gains": [
+          0.17772590742424654,
+          0.06187202669834235,
+          0.39040898507628796,
+          -0.0014866905929107332,
+          0.23703654498668847
+        ],
+        "positive_folds": 4,
+        "conditional_ci95": [
+          0.030151668193486313,
+          0.31351006536549286
+        ]
+      },
+      "residual_correlation_to003": {
+        "ridge006_component": 0.8907730897338709,
+        "regression_only": 0.8138361886813705,
+        "auxiliary": 0.814105195254319
+      },
+      "endpoint_diagnostics": {
+        "regression_only": {
+          "mean_train_rmse": 0.6719772805885876,
+          "mean_final_validation_class_accuracy": 0.11500000208616257,
+          "mean_final_train_class_accuracy": 0.14062499925494193,
+          "mean_validation_rmse_change_epoch80_to100": -0.02947765842136495
+        },
+        "auxiliary": {
+          "mean_train_rmse": 1.0760674165623993,
+          "mean_final_validation_class_accuracy": 0.2549999952316284,
+          "mean_final_train_class_accuracy": 1.0,
+          "mean_validation_rmse_change_epoch80_to100": 0.0019319580239477371
+        }
+      },
+      "oof_sha256": "d4d43fef387c4df794b4d969e2789a16500ee7999131ac654507d77f7e2249d5",
+      "report_sha256": "476da9e11838b32cbbd4cd9025c07029fdd8c16b99ae43d3f0507d1c20960fb5",
+      "seconds": 7.024288290995173
+    }
+  },
+  "interpretation": {
+    "auxiliary_specific_effect_consistent": false,
+    "regression_control_improves006_on_all_partitions": true,
+    "primary_auxiliary_improves006_on_all_partitions": true,
+    "candidate_prepared": false,
+    "decision": "Auxiliary-specific benefit not confirmed. MLP regression path is a promising fixed-control finding; no retrospective winner promotion or full500/test fitting in this study."
+  },
+  "caveats": [
+    "One seed and reused400 examples/repartitions; conditional bootstrap intervals ignore prior model-selection bias and shared training fits.",
+    "Added CE affects global gradient clipping as well as shared representation gradients; this compares the whole fixed loss-training recipe.",
+    "Foldtrain equal-frequency bins are not UEP. Frozen DINOv2 single-target head is not the original DINOv3Large multitarget solution.",
+    "Only primary-source snippet was directly readable; seven-bin/weight/public-score details were supplied by parent. No external code/data/weights downloaded."
+  ],
+  "seconds": 2.268113083031494
+}

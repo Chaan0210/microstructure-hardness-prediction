@@ -1,0 +1,96 @@
+{
+  "split": "20261031",
+  "scores": {
+    "reference003": {
+      "rmse": 13.63181073293285,
+      "fold_rmse": [
+        13.807014528773689,
+        15.520422411997691,
+        13.962889095224837,
+        11.915062644080418,
+        12.67608644456163
+      ]
+    },
+    "reference007": {
+      "rmse": 13.192251472226435,
+      "fold_rmse": [
+        13.535395460149635,
+        14.411795240026315,
+        13.543037468664924,
+        11.898101707275336,
+        12.421434462850408
+      ]
+    },
+    "Smean": {
+      "rmse": 14.060492400313716,
+      "fold_rmse": [
+        14.51004611492426,
+        13.538025327016111,
+        14.916757653779445,
+        13.768248788919792,
+        13.512709982422537
+      ]
+    },
+    "Bmean": {
+      "rmse": 13.967093172617764,
+      "fold_rmse": [
+        13.502110276748768,
+        13.956975680280312,
+        14.804788899095918,
+        13.138042313219065,
+        14.3702601307972
+      ]
+    },
+    "Bprimary": {
+      "rmse": 13.222714692057783,
+      "fold_rmse": [
+        13.3006668671432,
+        14.652225253610592,
+        13.619951171027273,
+        11.786383640286529,
+        12.577104830896415
+      ]
+    },
+    "mixed50": {
+      "rmse": 13.180839919990602,
+      "fold_rmse": [
+        13.399031053593571,
+        14.50578410243469,
+        13.55291183492863,
+        11.810395013161449,
+        12.472130924914959
+      ]
+    }
+  },
+  "comparison": {
+    "gain": 0.0114115522358329,
+    "fold_gains": [
+      0.13636440655606386,
+      -0.09398886240837534,
+      -0.009874366263705525,
+      0.0877066941138871,
+      -0.050696462064550474
+    ],
+    "positive_folds": 2,
+    "bootstrap_sd": 0.04580570047070066,
+    "conditional_ci95": [
+      -0.07710197379051453,
+      0.09832545024613223
+    ]
+  },
+  "complementarity": {
+    "prediction_residual_correlation": 0.9919437006797595,
+    "standalone_head_residual_correlation": 0.8854923137422851,
+    "prediction_difference_RMS": 1.6772601117212678,
+    "Bprimary_lower_absolute_error_rows": 202,
+    "mean_component_MSE": 174.43784136701066,
+    "disagreement_MSE_reduction": 0.7033003705928099,
+    "mixture_MSE": 173.73454099641785,
+    "MSE_identity_error": 0.0,
+    "interpretation": "For fixed equal average, MSE(mix)=mean(MSE(007),MSE(Bprimary)) - mean((007-Bprimary)^2)/4. Identity explains observed complementarity, not independent validation."
+  },
+  "B_model_source": "artifacts/dinob-complement-064/20261031",
+  "predictions_sha256": "97b1f05dd273df0b76e61d8ca53ec8ec95458d724ac438c2803fac5d8c2f0a36",
+  "seconds": 10.75616758299293,
+  "new_candidate": null
+}

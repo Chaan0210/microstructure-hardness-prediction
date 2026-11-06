@@ -1,0 +1,38 @@
+{
+  "study": "140 projected joint-channel spatial graph energy",
+  "utc": "2026-10-04T11:38:40.005180+00:00",
+  "hypothesis": "Cross-channel co-change across neighboring frozenB tokens may complement015 physics features beyond unordered within-image covariance. Not evidence of true physical grain boundaries.",
+  "representation": "Existing float32 normalized finalB tokens36x36x768; fixed Gaussian QR768x32 seed20271201, no labels/pooled fit. Unordered control population covariance; primary half mean outerproduct of all horizontal/vertical nearest-neighbor differences,2520 edges, no wrap. Uppertriangle528 including offdiagonal. Add bank tophysics57 =>585; one new block normalized1/sqrt528.",
+  "duplicate_audit": {
+    "042": "S channelwise variograms lag1/4, no offdiagonal jointchannels",
+    "056": "Unordered covariance, no adjacency",
+    "070": "Coarse regional variance",
+    "092": "Learned attention, no explicit local jointdifference",
+    "047": "DINO-morphology productkernel, not this fixedspatialbank"
+  },
+  "nested": "Exactly015 affine frommiddleOOF and honestB anchors fromdeepA-only OOF; replace physics57 bank by physics57+newbank. Each arm separately select unchanged none/ridge1/ridge01/rbf1/rbf01 inside eachB3fold; train-onlyMinMaxclip,StandardScaler,blockweight,kernelcenter/residualRMS. No fitting on015globalOOF residuals; no secondstage residual stacking.",
+  "primary": "Run all3fixed partitions. Candidate onlyif adjacent pooleduntrimmedMSE strictlybelow BOTH unchanged015 and unordered control AND independentvalidation passes. Unordered is control only, no fallback. No foldwin/CI gate, no tuningseed/rank/lag/weights.",
+  "validation": "Feature explicit edge enumeration onfixtures and3 cachedimages; token-grid rotation/reflection invariance only, not entireDINO pipeline. Reload every residualfit; independent rawscaling/eigensolve; OLS; index/groupchecks; outer-target poison replay andinnerheldoutlabel exclusion. Exact unchanged015 reconstruction.",
+  "uncertainty": "10000 pairedIDcluster bootstrapseed20271202; threepartitionsreuse400IDs, conditionalonfixedfits andhistoricaladaptivework.",
+  "resource": "ExistingCPU2,noneuralfits,90honestblocks1440models; featurecache1.6GBread sequentially; no holdout/test/full500 beforepositivelockeddecision. Noinstall/cost/upload.",
+  "hashes": {
+    "spatial_joint_140.py": "d050b813cad2d9c7637bb1e20c5e263c6633565eba7963c4fdfcd4a380ac9e3e",
+    "quadratic_calibration_137.py": "31276925710555a6e2331af24a9814f47e83cee4af40a4a1652136bbc911d69b",
+    "cnn_seed_mean_133.py": "0253abea611ec28ddd90995bb896526d3432f01793a8d62b387a9745b3bd6b5b",
+    "component_ablation_121.py": "49979a38b2ebb96ec86d97d27e92d57e960be8a904e7ec9168b6e7cedbb4e858",
+    "nonlinear_residual_115.py": "63bd7f2bed66edba2916b017f3c8a8e0dfc80509302806808b06bf4d6b126fc9",
+    "validate_nonlinear_residual_115.py": "6fdfd3b17d927738851730cbf616c1fc47d3ece3d04ea5447667073e6c4b7b60",
+    "artifacts/patch-attention-092/cache.json": "bd57c6eed406a5a7bf5103cb6c49a09def1a81158c66dc79887cb35eebbb5aec",
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-014.csv": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "artifacts/submission-candidate-015.csv": "74c9f5533b8b72c68b90af9d0b411bdc79b9cd9ec240dc3a18d7efb3a11ab67f",
+    "artifacts/submission-candidate-016.csv": "ceabcb7f019b7234e638510899ae98d2aacee08892f59650fd6cb16ff301cce0",
+    "artifacts/cnn-seed-mean-133/original/report.json": "86ad4b90fa877f0aa4a8bdeaf62ceb64ca05e81bfcc160f5012671983eec35d8",
+    "artifacts/cnn-seed-mean-133/original/predictions.npz": "ab8a79d811dafaa36089a56df5dcfea7437af8df0de60155b89ccbe66894e631",
+    "artifacts/cnn-seed-mean-133/20261031/report.json": "a2f276b30c0f9ad8216a1330df2b64d2e4950a0f6932bd4760cdf084b600305a",
+    "artifacts/cnn-seed-mean-133/20261031/predictions.npz": "7e10cc5b9586ac55ece1af0998575f3925555df9a8a525d240f96e20eb74eacb",
+    "artifacts/cnn-seed-mean-133/20261101/report.json": "4f2222f09c1b95ecc5dcd30baeb44005a89a423503388e7bd17bff088e6fcef6",
+    "artifacts/cnn-seed-mean-133/20261101/predictions.npz": "39db8b23c24ad9c4a193b1d99f58d90d2c8aabb898181c06f79c313f592894ce"
+  },
+  "cost": 0
+}

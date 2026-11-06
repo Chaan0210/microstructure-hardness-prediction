@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "new_numerical_bug_found": false,
+  "reused_prior_verified_items": [
+    "ID/target/group alignment and fold-train statistics",
+    "full500 S/B six-head refit state reproduction",
+    "nested009 affine calibration and heldout-label perturbation",
+    "full500 new011 head exact refit",
+    "full1000 cached component/head reload plus CSV byte reproduction",
+    "raw10 test S/B feature and ensemble spot checks"
+  ],
+  "newly_closed_gaps": {
+    "input_route_equivalence": {
+      "dev_vs_production_input_exact_images": 12,
+      "independent_input_max_error": 0.0,
+      "inverse_affine_pixel_error": 5.960464477539063e-08,
+      "native_shape": [
+        256,
+        256
+      ],
+      "DINO_shape": [
+        3,
+        504,
+        504
+      ],
+      "resize": "PIL BICUBIC full frame, no crop",
+      "brightness_contrast": "Fixed ImageNet affine normalization preserves per-image intensity offsets/scales; no per-image standardization",
+      "production_train_test": "Both candidate006 and candidate008 call same path-only input_image helper; split only changes path. Previously raw10 test checks already passed; no new test decode needed."
+    },
+    "patch_and_position_semantics": {
+      "S": {
+        "patch_kernel_stride": [
+          14,
+          14
+        ],
+        "grid": [
+          36,
+          36
+        ],
+        "all504_pixels_covered": true,
+        "flatten_order": "row-major y,x,channels",
+        "patch_embedding_manual_error": 0.0,
+        "position_interpolation_manual_error": 0.0,
+        "pretrained_position_grid": [
+          37,
+          37
+        ],
+        "interpolation_offset": 0.1,
+        "interpolation_antialias": false,
+        "layers_zero_based": [
+          5,
+          8,
+          11
+        ],
+        "population_std_correction": 0,
+        "manual_full_descriptor_error": 0.0,
+        "pooling": "Position-aware tokens then global patch mean/std; pooling does not make orientation or translation invariant."
+      },
+      "B": {
+        "patch_kernel_stride": [
+          14,
+          14
+        ],
+        "grid": [
+          36,
+          36
+        ],
+        "all504_pixels_covered": true,
+        "flatten_order": "row-major y,x,channels",
+        "patch_embedding_manual_error": 0.0,
+        "position_interpolation_manual_error": 0.0,
+        "pretrained_position_grid": [
+          37,
+          37
+        ],
+        "interpolation_offset": 0.1,
+        "interpolation_antialias": false,
+        "layers_zero_based": [
+          5,
+          8,
+          11
+        ],
+        "population_std_correction": 0,
+        "manual_full_descriptor_error": 0.0,
+        "pooling": "Position-aware tokens then global patch mean/std; pooling does not make orientation or translation invariant."
+      }
+    },
+    "full500_vs_OOF_config": {
+      "equal": true,
+      "epochs": 12,
+      "OOF_train_rows": 320,
+      "full_train_rows": 500,
+      "effective_batch": 16,
+      "OOF_updates": 240,
+      "full_updates": 384,
+      "interpretation": "Same epoch-based schedule intentionally gives more full-data updates; not an accidental settings mismatch. Full500 seed20270215 and outerfold seed20270215+k are intentional."
+    }
+  },
+  "actual_recipe": {
+    "candidate003": ".5 baseline795 + .25 compact26 kernel + .25 single CNN128 identity prediction",
+    "candidate008": ".75 candidate003 + .125 S_MLP_mean3 + .125 B_MLP_mean3",
+    "candidate009": "Saved train-only affine transform of008",
+    "candidate011": ".9 candidate009 + .1 short frozenB head",
+    "TV31_in_best011": false,
+    "CNN_D4": "Training randomD4; inherited003 inference identity, not3seedD4 inference.",
+    "DINO_D4": "Identity images inbest011;046 D4 mean had alreadyfailed and willnotberepeated.",
+    "rotation_assumption": "Augmentation is an existing empirical assumption, not a verified label symmetry. Official reference distinguishes alignment fromabsoluteangle but gives no complete label equation. No wholeensembleD4invariance claim."
+  },
+  "documentation_issue": "README describes historical004 withTV31/multiseedD4; actualbest011 lineage is above. This is stale documentation, not a numeric inferencebug. Preserve historicalREADME and records; use this scopedcurrentlineage audit.",
+  "next_nonduplicate_hypothesis": "FrozenViTB patch-grid phase averaging: four fixed full504 views with offsets(0,0),(0,7),(7,0),(7,7), reflect padding only bottom/right, same6912 descriptor mean. Fit exactly same011 shorthead/foldtrainnormalizer; replaceonly011 freshhead10% branch. Unlike039 crop/scale or046 rotation, tests patch-grid origin/context sensitivity. It also modifies edgecontext/absoluteposition, so cannot isolatealiasing orassume label-preserving crops. Empirical developmentCV willtest utility.",
+  "unrepeated_gap": "Full1000 rawCPU DINO reextraction hasnotbeenperformed; priorraw10 plusallhashes andsamepreprocess path provide bounded coverage. No concretecache corruption evidence; do notspendtestaccess orrepeat all1000 merely tosearchforgain.",
+  "source_sha256": "af922c8c322d8b5f6d06a2b78d2bee6603a7ba4342e40f7029112bf3f27661eb",
+  "plan_sha256": "a5e15bbcf87d1eb9bc7c26611522ad92e7edcafe7823226225e07ce1befe541a",
+  "seconds": 3.3468154160073027,
+  "protected011_files_verified": 20,
+  "holdout_test_used": false,
+  "newtraining": false,
+  "cost": 0
+}

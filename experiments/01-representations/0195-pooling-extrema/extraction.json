@@ -1,0 +1,104 @@
+{
+  "all400_moment_cache_exact": true,
+  "all_baseline_CLS_mean_std_copied_exact": true,
+  "benchmark_first3_exact": true,
+  "final_mean_max_abs_legacy_difference": 1.2211593585220726e-06,
+  "final_std_max_abs_legacy_difference": 6.601829340979748e-07,
+  "CLS_verification_limit": "Hash-check062 source and092 token/provenance; verify062 benchmark first3 exact; baseline and allCLS slices exact copied from062. Recompute final mean/std from092 float64 tokens and compare legacy MPS features atol2e-5,rtol2e-5. Recomputed first/second moments must exactly equal092 float64 moment cache. CLS is inherited from hash-verified062; no independent CLS re-extraction from patch-only cache claimed.",
+  "feature_dimensions": {
+    "baseline": 6912,
+    "plus_max": 7680,
+    "plus_min": 7680
+  },
+  "raw_feature_dtype": "float32",
+  "Ridge_input_dtype": "float64",
+  "token_chunk_images": 1,
+  "extrema_diagnostics": {
+    "max": {
+      "raw_range": [
+        -7.400670051574707,
+        23.86472511291504
+      ],
+      "absolute_gap_quantiles": [
+        4.76837158203125e-07,
+        0.12580251693725586,
+        0.5405415058135985,
+        0.9240055227279672,
+        15.625699043273926
+      ],
+      "gap_over_population_std_quantiles": [
+        5.717732518185827e-07,
+        0.12629994778273002,
+        0.5441915153553877,
+        0.8978381984158466,
+        10.502966509897083
+      ],
+      "largest_relative_gap_images": [
+        {
+          "ID": "TRAIN_000071",
+          "max_channel_gap_over_std": 10.502966509897083
+        },
+        {
+          "ID": "TRAIN_000081",
+          "max_channel_gap_over_std": 9.960261277701642
+        },
+        {
+          "ID": "TRAIN_000426",
+          "max_channel_gap_over_std": 9.053716877623824
+        },
+        {
+          "ID": "TRAIN_000036",
+          "max_channel_gap_over_std": 8.94258689988492
+        },
+        {
+          "ID": "TRAIN_000382",
+          "max_channel_gap_over_std": 8.896582425344876
+        }
+      ]
+    },
+    "min": {
+      "raw_range": [
+        -19.353435516357422,
+        1.3839646577835083
+      ],
+      "absolute_gap_quantiles": [
+        1.1920928955078125e-07,
+        0.12544381618499756,
+        0.5427410602569578,
+        0.9398919105529799,
+        10.133983507752419
+      ],
+      "gap_over_population_std_quantiles": [
+        1.3792989412814322e-07,
+        0.12606331129422357,
+        0.5425832624081385,
+        0.8891857712121213,
+        10.318793845515692
+      ],
+      "largest_relative_gap_images": [
+        {
+          "ID": "TRAIN_000247",
+          "max_channel_gap_over_std": 10.318793845515692
+        },
+        {
+          "ID": "TRAIN_000062",
+          "max_channel_gap_over_std": 9.411574252598824
+        },
+        {
+          "ID": "TRAIN_000169",
+          "max_channel_gap_over_std": 9.133039061268466
+        },
+        {
+          "ID": "TRAIN_000036",
+          "max_channel_gap_over_std": 9.06158955299184
+        },
+        {
+          "ID": "TRAIN_000389",
+          "max_channel_gap_over_std": 8.871170086984943
+        }
+      ]
+    }
+  },
+  "features_SHA256": "21afa79083526c8902c2dc26acd9c3c91fedc2bec7054310e489a33811bd7658",
+  "no_label_based_feature_fit": true
+}

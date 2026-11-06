@@ -1,0 +1,392 @@
+{
+  "study": "126 013-to014 residual change and image-domain transfer audit",
+  "completed_utc": "2026-10-04T03:56:25.741244+00:00",
+  "status": "completed; no transferable adverse-image condition established; retain014",
+  "rationale_ko": "094는 전체 고오차군과 형태 대조에서 일반화 근거를 얻지 못했고097/099~111의 잡음·관측·구조 재시도도 실패했다. 새 표현 학습을 정당화할 근거가 없어 요청된 대안인 미확인 감사로 진행했다. 이번 대상은 일반 고오차가 아니라 baseline 제거와 후속 재학습으로 생긴013→014 오차 변화다.",
+  "audit_question": "Does baseline removal and downstream refitting from013 to014 have less favorable error changes under an image condition selected only from outer-training paired anchor errors? This tests transferable heterogeneity in the removal effect, not generic high-error imagery.",
+  "duplicate_audit": {
+    "068": "Descriptive correlations and fold-local feature quantile bins for fixed008, but feature/error associations inspected globally.",
+    "094": "Image-only controls of five outcome-selected anchors and descriptive fixed011/attention comparisons; not prospective train-only condition discovery.",
+    "071_072_097_098_101_102_110": "TV/NLM, stronger watershed, frame features, blindspot/noise assumptions and noise augmentation already failed. No repetition.",
+    "099_100_103_104_105_106_107_108_109_111": "Sliced distributions, frame censoring, patch phase, amplitude, persistence, three-point structure and representation audits do not test paired013-to014 error-change condition transfer. No parameter retests.",
+    "113_115_117_119": "Signed-error correction families, not this risk-transfer audit. No hardness prediction changed.",
+    "125": "Base blend weights; unrelated to condition-discovery audit."
+  },
+  "design": {
+    "features": [
+      "image_std",
+      "noise_MAD_proxy",
+      "noise_contrast_ratio",
+      "anisotropy1",
+      "autocorr16",
+      "tile_mean_std",
+      "dark_largest_fraction",
+      "spectral_low_fraction",
+      "denoised_grain_median_interior_area_weighted_diam",
+      "denoised_grain_range_interior_area_weighted_diam",
+      "denoised_grain_median_boundary_fraction",
+      "denoised_grain_median_interior_area_fraction"
+    ],
+    "training_only_condition_selection": "For each outer fold, assemble320 paired honest pre-physics base013/base014 anchor residuals from three B106/107 blocks. Each B anchor was fitted/calibrated exclusively on A213/214 with deeper142/143 fits. Fit one risk rule on320 training rows: each of12 columns has low25% and high25% tail using train-only linear quantile; eligible tail count15%-40%; compute delta=(y-anchor014)^2-(y-anchor013)^2; select maximum train tail-vs-rest mean delta contrast, deterministic fixed-order ties. Apply unchanged to outer80. No inner tuning of risk learner or new residual correction.",
+    "anchor_stage_limit": "These are paired honest errors of smaller pre-physics013/014 anchors, not cross-fitted complete013/014 residual errors. Final014-minus013 outer loss changes are the primary evaluation; changes in the pre-physics bases are a stage diagnostic. Training-size and model-stage mismatch are explicit. Pooling320 anchor errors is safe for this fixed outer risk procedure, not permission to cross-validate models on pooled residual labels.",
+    "primary": "Mean(delta014-minus013 | selected condition) minus mean(delta | other), pooled over3x400 pairs with only400 unique IDs; report actual013/014 RMSE and signed residual changes in each group. A positive contrast need not mean harm: both groups may improve. It is a prospective association audit, not improvement in prediction RMSE, causal evidence, or independent research validation.",
+    "uncertainty": "10000 paired ID cluster bootstrap draws seed20271105, all three predictions and risk flags travel together. Conditional on fitted rules/models; excludes adaptive research and refitting. No iid1200 inference or permutation p-value."
+  },
+  "pooled_model_scores_unchanged": {
+    "RMSE013": 13.082021904976905,
+    "RMSE014": 12.895301458531566,
+    "mean_MSE_change014_minus013": -4.850497415889198,
+    "unique_IDs": 400,
+    "prediction_pairs": 1200,
+    "condition_unique_IDs_ever": 200,
+    "condition_unique_IDs_all3": 19
+  },
+  "results": {
+    "study": "126 train-only domain013-to014 residual-change audit",
+    "status": "audit_executed",
+    "per_partition": [
+      {
+        "split": "original",
+        "final": {
+          "condition": {
+            "n": 105,
+            "RMSE013": 12.023563214097022,
+            "RMSE014": 11.832984187579672,
+            "mean_MSE_change014_minus013": -4.546557579876561,
+            "mean_residual013": 0.8754716596619516,
+            "mean_residual014": 1.0906768632939814
+          },
+          "other": {
+            "n": 295,
+            "RMSE013": 13.390481014844525,
+            "RMSE014": 13.349642343585057,
+            "mean_MSE_change014_minus013": -1.0920311072725504,
+            "mean_residual013": 0.09073340274494898,
+            "mean_residual014": 0.039158426540315094
+          },
+          "condition_minus_other_MSE_change": -3.4545264726040106
+        },
+        "base_before_residual": {
+          "condition": {
+            "n": 105,
+            "RMSE013": 12.089157217554904,
+            "RMSE014": 11.869181803276739,
+            "mean_MSE_change014_minus013": -5.270245551524171,
+            "mean_residual013": 0.5717106372720756,
+            "mean_residual014": 0.8005582993198316
+          },
+          "other": {
+            "n": 295,
+            "RMSE013": 13.380637705785158,
+            "RMSE014": 13.339584893338094,
+            "mean_MSE_change014_minus013": -1.0969402869056475,
+            "mean_residual013": 0.15661702498382413,
+            "mean_residual014": 0.15143212561875208
+          },
+          "condition_minus_other_MSE_change": -4.173305264618524
+        },
+        "selected_conditions": [
+          "denoised_grain_range_interior_area_weighted_diam:low",
+          "noise_contrast_ratio:low",
+          "denoised_grain_median_boundary_fraction:high",
+          "image_std:high",
+          "denoised_grain_median_boundary_fraction:low"
+        ]
+      },
+      {
+        "split": "20261031",
+        "final": {
+          "condition": {
+            "n": 97,
+            "RMSE013": 9.968309757753008,
+            "RMSE014": 9.61755457158898,
+            "mean_MSE_change014_minus013": -6.869843489021718,
+            "mean_residual013": 0.47986693501299404,
+            "mean_residual014": 0.5851807703451415
+          },
+          "other": {
+            "n": 303,
+            "RMSE013": 13.7892387426435,
+            "RMSE014": 13.499992280623738,
+            "mean_MSE_change014_minus013": -7.893313524720009,
+            "mean_residual013": -0.010836217458566362,
+            "mean_residual014": -0.08095101697878844
+          },
+          "condition_minus_other_MSE_change": 1.023470035698291
+        },
+        "base_before_residual": {
+          "condition": {
+            "n": 97,
+            "RMSE013": 9.911349745265905,
+            "RMSE014": 9.590274044486405,
+            "mean_MSE_change014_minus013": -6.261497524632924,
+            "mean_residual013": 0.4377761925690363,
+            "mean_residual014": 0.6093368730992774
+          },
+          "other": {
+            "n": 303,
+            "RMSE013": 13.862733753518677,
+            "RMSE014": 13.630136647823772,
+            "mean_MSE_change014_minus013": -6.394762082597391,
+            "mean_residual013": 0.17234463301069566,
+            "mean_residual014": 0.10047808849796637
+          },
+          "condition_minus_other_MSE_change": 0.13326455796446712
+        },
+        "selected_conditions": [
+          "anisotropy1:high",
+          "noise_contrast_ratio:low",
+          "dark_largest_fraction:low",
+          "denoised_grain_range_interior_area_weighted_diam:low",
+          "dark_largest_fraction:low"
+        ]
+      },
+      {
+        "split": "20261101",
+        "final": {
+          "condition": {
+            "n": 95,
+            "RMSE013": 11.038918780777484,
+            "RMSE014": 10.78975138859191,
+            "mean_MSE_change014_minus013": -5.438992820980842,
+            "mean_residual013": -0.9328276722395497,
+            "mean_residual014": -0.4897071959861361
+          },
+          "other": {
+            "n": 305,
+            "RMSE013": 13.845077953494092,
+            "RMSE014": 13.672753801447481,
+            "mean_MSE_change014_minus013": -4.741987023331631,
+            "mean_residual013": 0.23113912925112598,
+            "mean_residual014": 0.14627751515851284
+          },
+          "condition_minus_other_MSE_change": -0.6970057976492114
+        },
+        "base_before_residual": {
+          "condition": {
+            "n": 95,
+            "RMSE013": 11.110551173443884,
+            "RMSE014": 10.864749360725884,
+            "mean_MSE_change014_minus013": -5.401568706321762,
+            "mean_residual013": -1.3225634112093343,
+            "mean_residual014": -0.8841214007169089
+          },
+          "other": {
+            "n": 305,
+            "RMSE013": 13.877118041019626,
+            "RMSE014": 13.736089291184973,
+            "mean_MSE_change014_minus013": -3.8942561089859655,
+            "mean_residual013": 0.3165094920448343,
+            "mean_residual014": 0.23039489325113408
+          },
+          "condition_minus_other_MSE_change": -1.5073125973357966
+        },
+        "selected_conditions": [
+          "denoised_grain_median_interior_area_fraction:high",
+          "noise_contrast_ratio:low",
+          "noise_contrast_ratio:low",
+          "denoised_grain_median_boundary_fraction:high",
+          "noise_contrast_ratio:low"
+        ]
+      }
+    ],
+    "pooled_final": {
+      "condition": {
+        "n": 297,
+        "RMSE013": 11.069803025226875,
+        "RMSE014": 10.814330249264914,
+        "mean_MSE_change014_minus013": -5.590800277155979,
+        "mean_residual013": 0.16785517878117215,
+        "mean_residual014": 0.42007212710661224
+      },
+      "other": {
+        "n": 903,
+        "RMSE013": 13.679313077287773,
+        "RMSE014": 13.509870360853338,
+        "mean_MSE_change014_minus013": -4.607009099392815,
+        "mean_residual013": 0.10407576339026328,
+        "mean_residual014": 0.03503678827039476
+      },
+      "condition_minus_other_MSE_change": -0.9837911777631634
+    },
+    "pooled_base_before_residual": {
+      "condition": {
+        "n": 297,
+        "RMSE013": 11.101233688091442,
+        "RMSE014": 10.844417729701743,
+        "mean_MSE_change014_minus013": -5.635993501346797,
+        "mean_residual013": -0.07794483660647236,
+        "mean_residual014": 0.19923489916197262
+      },
+      "other": {
+        "n": 903,
+        "RMSE013": 13.712018645115307,
+        "RMSE014": 13.572030459583265,
+        "mean_MSE_change014_minus013": -3.8194445281338814,
+        "mean_residual013": 0.21590015641876337,
+        "mean_residual014": 0.1610052938139663
+      },
+      "condition_minus_other_MSE_change": -1.8165489732129156
+    },
+    "conditional_ID_cluster95_change_contrast_CI": [
+      -8.274315450498307,
+      6.294487541471497
+    ],
+    "conditional_ID_cluster95_condition_mean_MSE_change_CI": [
+      -11.035198833728161,
+      -0.177126255487519
+    ],
+    "conditional_ID_cluster95_other_mean_MSE_change_CI": [
+      -10.604519773278911,
+      1.4110584704349627
+    ],
+    "selected_condition_counts": {
+      "anisotropy1:high": 1,
+      "dark_largest_fraction:low": 2,
+      "denoised_grain_median_boundary_fraction:high": 2,
+      "denoised_grain_median_boundary_fraction:low": 1,
+      "denoised_grain_median_interior_area_fraction:high": 1,
+      "denoised_grain_range_interior_area_weighted_diam:low": 2,
+      "image_std:high": 1,
+      "noise_contrast_ratio:low": 5
+    },
+    "train_selected_mean_MSE_change_contrast": 12.93708947188305,
+    "split_stability": [
+      {
+        "partitions": [
+          "original",
+          "20261031"
+        ],
+        "squared_error_change_Spearman": 0.5934614591341195,
+        "top40_adverse_change_overlap": 19,
+        "risk_flag_agreement": 0.685,
+        "risk_flag_Jaccard": 0.23170731707317074
+      },
+      {
+        "partitions": [
+          "original",
+          "20261101"
+        ],
+        "squared_error_change_Spearman": 0.5841977762361014,
+        "top40_adverse_change_overlap": 19,
+        "risk_flag_agreement": 0.715,
+        "risk_flag_Jaccard": 0.27388535031847133
+      },
+      {
+        "partitions": [
+          "20261031",
+          "20261101"
+        ],
+        "squared_error_change_Spearman": 0.59128400802505,
+        "top40_adverse_change_overlap": 13,
+        "risk_flag_agreement": 0.695,
+        "risk_flag_Jaccard": 0.2229299363057325
+      }
+    ],
+    "rule_fit_count": 15,
+    "predictions_sha256": "e0c04cdfaf73dfb50a0eba1fe27fe9cdfe98b189e8333fcae9740498364d9efa",
+    "rules_sha256": {
+      "original": "c1cbe7dcbde9cefb54905294bf0579448fe5ec386d38ad1f8aa741998664fb1d",
+      "20261031": "fa503bcb5f5b27adbd174b5ceb356c43d8bda297891d838799224dd56f5abdd8",
+      "20261101": "cf395fef660724d3af39e29d506359d795fd978a0e4f2b628b2aed5c00c5da20"
+    },
+    "plan_sha256": "8e6109eb97f600646b84b766f0da359a23b9225f64c555f5d61d84d90e36043a",
+    "source_sha256": "db36d60e6eb099b7802dcf3357736d6bdbf8d0c3e7268958115b3de3218928bf",
+    "seconds": 1.8757985419942997,
+    "limits": "These are paired honest errors of smaller pre-physics013/014 anchors, not cross-fitted complete013/014 residual errors. Final014-minus013 outer loss changes are the primary evaluation; changes in the pre-physics bases are a stage diagnostic. Training-size and model-stage mismatch are explicit. Pooling320 anchor errors is safe for this fixed outer risk procedure, not permission to cross-validate models on pooled residual labels. Same400 historically reused; conditional bootstrap does not validate causal image domains. No fitted prediction correction or claim of lower RMSE."
+  },
+  "validation": {
+    "passed": true,
+    "rule_fits_independently_recomputed": 15,
+    "rule_scoring_max_error": 1.4654943925052066e-14,
+    "paired_squared_loss_identity_max_error": 2.5579538487363607e-13,
+    "outer_label_and_feature_intervention": [
+      {
+        "split": "original",
+        "all5_outer_label_and_feature_poisoning_passed": true,
+        "independent_rules": 5
+      },
+      {
+        "split": "20261031",
+        "all5_outer_label_and_feature_poisoning_passed": true,
+        "independent_rules": 5
+      },
+      {
+        "split": "20261101",
+        "all5_outer_label_and_feature_poisoning_passed": true,
+        "independent_rules": 5
+      }
+    ],
+    "all014_and013_base_anchor_scopes_and_formulae_rechecked": true,
+    "upstream_training_replay_certificate": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+    "all400_raw_image_metrics_reextracted_max_error": 0.0,
+    "morphology_replay6_labelblind_IDs": [
+      "TRAIN_000430",
+      "TRAIN_000250",
+      "TRAIN_000374",
+      "TRAIN_000491",
+      "TRAIN_000120",
+      "TRAIN_000116"
+    ],
+    "morphology_replay_max_error": 0.0,
+    "ID_cluster_bootstrap_independently_reproduced": true,
+    "synthetic_rule_selection_and_tie_fixture_passed": true,
+    "report_sha256": "58208b0bbe41d54cc3a36b7457bc1bec7905195fa88c7f551cda98d34b84f782",
+    "source_sha256": "8ea0007c1c29317910bb5b5d892c577381c78d7e587eddf8aebed24b7bd55522",
+    "seconds": 9.647869750042446,
+    "scope": "No upstream retraining; existing training intervention certificate reused. No holdout/test decoding, model correction, upload or cost."
+  },
+  "interpretation_ko": [
+    "학습에서 선택된 조건의 평균 MSE 변화 대비는+12.9371이었지만 외부 최종014/013의 pooled 대비는-0.9838로 방향이 이어지지 않았다. 훈련 선택의 낙관성과 앵커 학습량·단계 차이가 섞여 있으므로 한 원인으로 단정하지 않는다.",
+    "선택 조건군과 나머지 모두014에서 개선됐고, 조건군-vs-나머지 차이의 이미지 묶음95% 구간[-8.2743,6.2945]은0을 포함한다. 선택 조건을 기반으로013을 복원하거나 별도 보정을 추가할 근거가 없다.",
+    "선택된 조건은15fold에서8종류였다. noise_contrast_ratio 낮음이5회였지만 전체400 결과를 보고 이를 새로운 고정 게이트로 고르면 추가 적응적 탐색이다. 이를 선택하거나 후속 점수를 계산하지 않았다.",
+    "이미지별014-013 제곱오차 변화의 재분할 간 Spearman은0.584~0.593이며 불리한 변화 상위40개 교집합은13~19개다. 개별 변화 일부는 반복되지만 형태·잡음 조건으로 안정적으로 설명됐다는 뜻은 아니다.",
+    "조건군의 재분할 간 Jaccard는0.223~0.274다. 원본·재분할의1200쌍을 독립 이미지로 다루지 않았고400개 ID 단위로 묶어 불확실성을 계산했다."
+  ],
+  "decision": {
+    "keep": "014",
+    "new_regression_or_gate": false,
+    "new_candidate_CSV": false,
+    "full500_fit": false,
+    "test_inference": false,
+    "reason": "No supported nonduplicate image correction and no prospective adverse-condition transfer. Close this audit without posthoc threshold/feature/weight expansion.",
+    "next_trigger": "A distinct externally justified measurement/generator hypothesis or independent evidence would be needed before reopening these failed image-condition families. This is not a proof of a performance ceiling."
+  },
+  "limitations": [
+    "Same400 and known partitions have been used adaptively in earlier research. Nested current rule fitting does not erase historical model selection; all findings remain exploratory.",
+    "The train discovery target compares smaller pre-physics anchors; outer evaluation compares complete013/014 models including separately refitted residuals. Scope valid for outer evaluation, but not exact same-stage error transport.",
+    "Image noise, grain size, boundary and interior support are measurement proxies without true noise or segmentation labels. No causality or physical target invariance established.",
+    "Confidence intervals condition on fitted models/rules; no refitting or selection-adjusted uncertainty. Full400 top40 and feature-frequency summaries are descriptive only, never gates.",
+    "This single simple train-only rule family failing does not exclude more complex untested relationships; it does not justify automatic complexity or parameter expansion."
+  ],
+  "scope": {
+    "raw_development_images_replayed": 400,
+    "morphology_images_replayed_labelblind": 6,
+    "new_risk_rules": 15,
+    "new_hardness_models": 0,
+    "new_neural_fits": 0,
+    "holdout_or_test_decoded": false,
+    "new_packages": 0,
+    "cost": 0,
+    "uploaded": false
+  },
+  "preservation": {
+    "014_CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "013_CSV_SHA256": "e2ea0111d8c6a262c71dd32ad3918db1a1d2189f1647db7a2d6399af83b51286",
+    "011_CSV_SHA256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "previous_reports_verified": 200,
+    "packages_unchanged": 26,
+    "protected_014_and_all_nested_sources_inputs_verified": true
+  },
+  "execution_blockers": [],
+  "evidence_sha256": {
+    "artifacts/domain-risk-audit-126/plan.json": "8e6109eb97f600646b84b766f0da359a23b9225f64c555f5d61d84d90e36043a",
+    "artifacts/domain-risk-audit-126/report.json": "58208b0bbe41d54cc3a36b7457bc1bec7905195fa88c7f551cda98d34b84f782",
+    "artifacts/domain-risk-audit-126/predictions.npz": "e0c04cdfaf73dfb50a0eba1fe27fe9cdfe98b189e8333fcae9740498364d9efa",
+    "artifacts/domain-risk-audit-126/validation.json": "14efe27cb99daf132006f200e4ac8613f77924ed37cbc3b819499ee99765eaf1",
+    "artifacts/domain-risk-audit-126/rules-original.json": "c1cbe7dcbde9cefb54905294bf0579448fe5ec386d38ad1f8aa741998664fb1d",
+    "artifacts/domain-risk-audit-126/rules-20261031.json": "fa503bcb5f5b27adbd174b5ceb356c43d8bda297891d838799224dd56f5abdd8",
+    "artifacts/domain-risk-audit-126/rules-20261101.json": "cf395fef660724d3af39e29d506359d795fd978a0e4f2b628b2aed5c00c5da20"
+  },
+  "source_sha256": "4176e9855002297fed3c401c90835fcf5db06212ce82bdd293c87874806af4fc"
+}

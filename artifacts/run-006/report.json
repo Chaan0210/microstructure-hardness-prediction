@@ -1,0 +1,419 @@
+{
+  "seed": 20260930,
+  "repeated_seeds": [
+    20261001,
+    20261002
+  ],
+  "development_rows": 400,
+  "holdout_used": false,
+  "test_used": false,
+  "hypothesis": "Dark polygonal ridges approximate grain boundaries; watershed size/shape, compact dark spots, phase and tensor proxies may explain residual hardness.",
+  "official_generator_details": "Unavailable through public web tool; no exact formula assumed.",
+  "candidates": [
+    "grain_ridge100",
+    "augmented_ridge1000",
+    "baseline75_grain25",
+    "baseline75_augmented25"
+  ],
+  "advancement_rule": "Fixed-fold RMSE improves >=0.15 and both predeclared repeated 5-fold CVs improve >=0.10; otherwise retain run-005.",
+  "existing_model_sha256": "7667b2b36483ba1b93a8e2874d4de96d12f38492ea6815f9ce24c87d09bab83e",
+  "existing_csv_sha256": "778b927586c95d50b4ab94a7b7f74515a055de80f6bf6ba6a8652cb92e6a85f0",
+  "feature_names": [
+    "grain_s1_count",
+    "grain_s1_interior_count",
+    "grain_s1_boundary_fraction",
+    "grain_s1_all_diam_mean",
+    "grain_s1_all_diam_std",
+    "grain_s1_all_diam_q10",
+    "grain_s1_all_diam_q50",
+    "grain_s1_all_diam_q90",
+    "grain_s1_all_minor_mean",
+    "grain_s1_all_minor_std",
+    "grain_s1_all_minor_q10",
+    "grain_s1_all_minor_q50",
+    "grain_s1_all_minor_q90",
+    "grain_s1_all_aspect_mean",
+    "grain_s1_all_aspect_std",
+    "grain_s1_all_aspect_q10",
+    "grain_s1_all_aspect_q50",
+    "grain_s1_all_aspect_q90",
+    "grain_s1_all_area_weighted_diam",
+    "grain_s1_all_hall_petch",
+    "grain_s1_interior_diam_mean",
+    "grain_s1_interior_diam_std",
+    "grain_s1_interior_diam_q10",
+    "grain_s1_interior_diam_q50",
+    "grain_s1_interior_diam_q90",
+    "grain_s1_interior_minor_mean",
+    "grain_s1_interior_minor_std",
+    "grain_s1_interior_minor_q10",
+    "grain_s1_interior_minor_q50",
+    "grain_s1_interior_minor_q90",
+    "grain_s1_interior_aspect_mean",
+    "grain_s1_interior_aspect_std",
+    "grain_s1_interior_aspect_q10",
+    "grain_s1_interior_aspect_q50",
+    "grain_s1_interior_aspect_q90",
+    "grain_s1_interior_area_weighted_diam",
+    "grain_s1_interior_hall_petch",
+    "grain_s1_alignment",
+    "grain_s1_mean_intensity_mean",
+    "grain_s1_mean_intensity_std",
+    "grain_s1_mean_intensity_q10",
+    "grain_s1_mean_intensity_q50",
+    "grain_s1_mean_intensity_q90",
+    "grain_s1_within_std_mean",
+    "grain_s1_within_std_std",
+    "grain_s1_within_std_q10",
+    "grain_s1_within_std_q50",
+    "grain_s1_within_std_q90",
+    "grain_s2_count",
+    "grain_s2_interior_count",
+    "grain_s2_boundary_fraction",
+    "grain_s2_all_diam_mean",
+    "grain_s2_all_diam_std",
+    "grain_s2_all_diam_q10",
+    "grain_s2_all_diam_q50",
+    "grain_s2_all_diam_q90",
+    "grain_s2_all_minor_mean",
+    "grain_s2_all_minor_std",
+    "grain_s2_all_minor_q10",
+    "grain_s2_all_minor_q50",
+    "grain_s2_all_minor_q90",
+    "grain_s2_all_aspect_mean",
+    "grain_s2_all_aspect_std",
+    "grain_s2_all_aspect_q10",
+    "grain_s2_all_aspect_q50",
+    "grain_s2_all_aspect_q90",
+    "grain_s2_all_area_weighted_diam",
+    "grain_s2_all_hall_petch",
+    "grain_s2_interior_diam_mean",
+    "grain_s2_interior_diam_std",
+    "grain_s2_interior_diam_q10",
+    "grain_s2_interior_diam_q50",
+    "grain_s2_interior_diam_q90",
+    "grain_s2_interior_minor_mean",
+    "grain_s2_interior_minor_std",
+    "grain_s2_interior_minor_q10",
+    "grain_s2_interior_minor_q50",
+    "grain_s2_interior_minor_q90",
+    "grain_s2_interior_aspect_mean",
+    "grain_s2_interior_aspect_std",
+    "grain_s2_interior_aspect_q10",
+    "grain_s2_interior_aspect_q50",
+    "grain_s2_interior_aspect_q90",
+    "grain_s2_interior_area_weighted_diam",
+    "grain_s2_interior_hall_petch",
+    "grain_s2_alignment",
+    "grain_s2_mean_intensity_mean",
+    "grain_s2_mean_intensity_std",
+    "grain_s2_mean_intensity_q10",
+    "grain_s2_mean_intensity_q50",
+    "grain_s2_mean_intensity_q90",
+    "grain_s2_within_std_mean",
+    "grain_s2_within_std_std",
+    "grain_s2_within_std_q10",
+    "grain_s2_within_std_q50",
+    "grain_s2_within_std_q90",
+    "scale_robustness_count",
+    "scale_robustness_diam",
+    "scale_robustness_boundary",
+    "phase_s1_0_fraction",
+    "phase_s1_0_interior",
+    "phase_s1_0_intensity",
+    "phase_s1_1_fraction",
+    "phase_s1_1_interior",
+    "phase_s1_1_intensity",
+    "phase_s1_2_fraction",
+    "phase_s1_2_interior",
+    "phase_s1_2_intensity",
+    "pore_s1_t0.15_count",
+    "pore_s1_t0.15_fraction",
+    "pore_s1_t0.15_diam_mean",
+    "pore_s1_t0.15_diam_std",
+    "pore_s1_t0.15_diam_q10",
+    "pore_s1_t0.15_diam_q50",
+    "pore_s1_t0.15_diam_q90",
+    "pore_s1_t0.3_count",
+    "pore_s1_t0.3_fraction",
+    "pore_s1_t0.3_diam_mean",
+    "pore_s1_t0.3_diam_std",
+    "pore_s1_t0.3_diam_q10",
+    "pore_s1_t0.3_diam_q50",
+    "pore_s1_t0.3_diam_q90",
+    "phase_s3_0_fraction",
+    "phase_s3_0_interior",
+    "phase_s3_0_intensity",
+    "phase_s3_1_fraction",
+    "phase_s3_1_interior",
+    "phase_s3_1_intensity",
+    "phase_s3_2_fraction",
+    "phase_s3_2_interior",
+    "phase_s3_2_intensity",
+    "pore_s3_t0.15_count",
+    "pore_s3_t0.15_fraction",
+    "pore_s3_t0.15_diam_mean",
+    "pore_s3_t0.15_diam_std",
+    "pore_s3_t0.15_diam_q10",
+    "pore_s3_t0.15_diam_q50",
+    "pore_s3_t0.15_diam_q90",
+    "pore_s3_t0.3_count",
+    "pore_s3_t0.3_fraction",
+    "pore_s3_t0.3_diam_mean",
+    "pore_s3_t0.3_diam_std",
+    "pore_s3_t0.3_diam_q10",
+    "pore_s3_t0.3_diam_q50",
+    "pore_s3_t0.3_diam_q90",
+    "tensor_s3_coherence_mean",
+    "tensor_s3_coherence_std",
+    "tensor_s3_coherence_q10",
+    "tensor_s3_coherence_q50",
+    "tensor_s3_coherence_q90",
+    "tensor_s3_weighted",
+    "tensor_s9_coherence_mean",
+    "tensor_s9_coherence_std",
+    "tensor_s9_coherence_q10",
+    "tensor_s9_coherence_q50",
+    "tensor_s9_coherence_q90",
+    "tensor_s9_weighted"
+  ],
+  "n_new_features": 157,
+  "feature_seconds": 40.68664899998112,
+  "fixed_cv": {
+    "baseline": {
+      "oof_rmse": 13.98273103376079,
+      "fold_rmse": [
+        13.586021526541336,
+        13.41146815780372,
+        14.935891918066302,
+        13.19606164073078,
+        14.69419839701824
+      ]
+    },
+    "grain_ridge100": {
+      "oof_rmse": 14.334262881422177,
+      "fold_rmse": [
+        14.57545150427612,
+        13.664376510543544,
+        15.49825092853062,
+        13.455942725394934,
+        14.385350649893098
+      ]
+    },
+    "augmented_ridge1000": {
+      "oof_rmse": 14.005825213867675,
+      "fold_rmse": [
+        13.697564327952128,
+        13.354939282109635,
+        14.877088849250272,
+        13.265234223970374,
+        14.749366637742591
+      ]
+    },
+    "baseline75_grain25": {
+      "oof_rmse": 13.871297052618559,
+      "fold_rmse": [
+        13.650556571626112,
+        13.288299709022736,
+        14.863553630319688,
+        13.047882765399748,
+        14.421349956121915
+      ]
+    },
+    "baseline75_augmented25": {
+      "oof_rmse": 13.926554859183558,
+      "fold_rmse": [
+        13.567179136802192,
+        13.337388890568276,
+        14.844683434889308,
+        13.140787535374729,
+        14.654195158690024
+      ]
+    }
+  },
+  "best_new": "baseline75_grain25",
+  "improvement": 0.11143398114223224,
+  "repeats": [
+    {
+      "seed": 20261001,
+      "baseline": {
+        "oof_rmse": 14.656745145660768,
+        "fold_rmse": [
+          14.041971040169711,
+          14.821702696076045,
+          13.673541039728471,
+          14.429785405893712,
+          16.188163527563514
+        ]
+      },
+      "candidate": {
+        "oof_rmse": 14.409841862471167,
+        "fold_rmse": [
+          13.743456832059874,
+          14.304205302194523,
+          13.552012426261639,
+          14.268540959221701,
+          16.046074771687064
+        ]
+      },
+      "improvement": 0.2469032831896012
+    },
+    {
+      "seed": 20261002,
+      "baseline": {
+        "oof_rmse": 14.490506083354234,
+        "fold_rmse": [
+          13.368064279161885,
+          15.900083040219673,
+          12.808986430451284,
+          13.811030607251498,
+          16.233956686249417
+        ]
+      },
+      "candidate": {
+        "oof_rmse": 14.239970420279624,
+        "fold_rmse": [
+          13.164013952207355,
+          15.524172663292893,
+          12.645447559413089,
+          13.570519815097438,
+          15.985188006674624
+        ]
+      },
+      "improvement": 0.2505356630746096
+    }
+  ],
+  "advance": false,
+  "selected_run": "run-005",
+  "paired_bootstrap_improvement_95": [
+    -0.020729940276999457,
+    0.25234524682518794
+  ],
+  "uncertainty_note": "Conditional on reused folds and chosen candidate; not an unbiased post-selection confidence interval. Repeats share the same 400 rows.",
+  "residual_correlations": [
+    {
+      "feature": "pore_s1_t0.15_diam_q10",
+      "residual_spearman": -0.12259614514892346
+    },
+    {
+      "feature": "grain_s2_within_std_q10",
+      "residual_spearman": 0.11529822061387882
+    },
+    {
+      "feature": "grain_s2_interior_minor_q90",
+      "residual_spearman": 0.11137909200290673
+    },
+    {
+      "feature": "grain_s2_interior_area_weighted_diam",
+      "residual_spearman": 0.10104833799867764
+    },
+    {
+      "feature": "pore_s3_t0.15_diam_q10",
+      "residual_spearman": -0.09928228868992518
+    },
+    {
+      "feature": "grain_s2_interior_diam_mean",
+      "residual_spearman": 0.09793506795700169
+    },
+    {
+      "feature": "grain_s2_interior_minor_mean",
+      "residual_spearman": 0.0974987526482219
+    },
+    {
+      "feature": "pore_s3_t0.15_diam_mean",
+      "residual_spearman": -0.09713929462059137
+    },
+    {
+      "feature": "grain_s2_interior_diam_std",
+      "residual_spearman": 0.09359903511852749
+    },
+    {
+      "feature": "phase_s1_1_fraction",
+      "residual_spearman": -0.08764876406453082
+    },
+    {
+      "feature": "grain_s2_interior_diam_q90",
+      "residual_spearman": 0.08705474791494124
+    },
+    {
+      "feature": "grain_s2_alignment",
+      "residual_spearman": 0.08685166782292388
+    },
+    {
+      "feature": "grain_s2_interior_diam_q10",
+      "residual_spearman": 0.08684213770593369
+    },
+    {
+      "feature": "grain_s2_interior_hall_petch",
+      "residual_spearman": -0.08674049589194383
+    },
+    {
+      "feature": "grain_s2_interior_diam_q50",
+      "residual_spearman": 0.0857022869523524
+    }
+  ],
+  "target_strata": [
+    {
+      "target_range": [
+        151.9798276392398,
+        181.99045412981755
+      ],
+      "n": 100,
+      "baseline_rmse": 16.584734262418745,
+      "candidate_rmse": 16.548939155473924
+    },
+    {
+      "target_range": [
+        181.99045412981755,
+        192.60157925382563
+      ],
+      "n": 100,
+      "baseline_rmse": 8.53537578410258,
+      "candidate_rmse": 8.397021855511634
+    },
+    {
+      "target_range": [
+        192.60157925382563,
+        204.43784987760367
+      ],
+      "n": 100,
+      "baseline_rmse": 8.576158996489049,
+      "candidate_rmse": 8.374920186789987
+    },
+    {
+      "target_range": [
+        204.43784987760367,
+        264.1213029015716
+      ],
+      "n": 100,
+      "baseline_rmse": 18.98974763355315,
+      "candidate_rmse": 18.845022587922696
+    }
+  ],
+  "elapsed_seconds": 61.64764541701879,
+  "source_sha256": {
+    "grain_features.py": "0b2dcc4d9a528718c418ee784ccb0dee836f8887fbe12989139aab4a0ed705e0",
+    "research_grains.py": "b23b66c7ffa20e4b48236c45c170ecef3ae2b0ccde1b345ee9585ab780b99392"
+  },
+  "qualitative_diagnostic": {
+    "image": "reports/grain-segmentation-qa.png",
+    "development_ids": [
+      "TRAIN_000001",
+      "TRAIN_000002",
+      "TRAIN_000003"
+    ],
+    "findings": [
+      "Some polygonal boundaries are captured, but blurred boundaries merge and long grains split.",
+      "TRAIN_000002 segments change from 260 to 141 with smoothing sigma 1 to 2; grain estimates are not ground truth.",
+      "Pore/phase descriptors are image proxies; no true physical segmentation or generator formula was provided."
+    ]
+  },
+  "engineering_tests": {
+    "passed": 10,
+    "seconds": 1.207,
+    "log": "reports/test-results-run-006.txt",
+    "warning": "scikit-image emits a NumPy 2.5 deprecation warning; tests pass."
+  },
+  "decision": "Retain submitted candidate002/run005. Directionally consistent small improvement, but fixed-fold gain 0.1114 misses predeclared 0.15 threshold and conditional interval crosses zero. No test inference or new submission file.",
+  "provenance_limit": "Official page retrieval failed in this session; hypotheses use prior official overview plus development training images only. No exact generator recovered."
+}

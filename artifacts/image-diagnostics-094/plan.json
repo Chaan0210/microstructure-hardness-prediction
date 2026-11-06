@@ -1,0 +1,59 @@
+{
+  "study": "094 image-only observable matching followed by descriptive outcome analysis",
+  "created_utc": "2026-10-02T10:25:38.105441+00:00",
+  "fixed_top5": [
+    "TRAIN_000438",
+    "TRAIN_000331",
+    "TRAIN_000227",
+    "TRAIN_000071",
+    "TRAIN_000168"
+  ],
+  "selection_bias": "Anchors were selected by original092 outcome; this entire investigation is posthoc. Controls and metrics use images only. Same400 and repeatedCV are not independent evidence.",
+  "metrics": "Reuse all20 diagnostics068, plus10 fixed image-local metrics. Relative dark proxy: Gaussian sigma1, below mean minus1SD,8-connected,remove components<4px. Not true pore/grain labels. Spectral bands fixed at wavelengths32px and8px;border16px;quadrants128px.",
+  "matching": {
+    "groups": {
+      "photometry": [
+        "image_mean",
+        "image_std",
+        "intensity_skew",
+        "intensity_kurtosis",
+        "dark_absolute_fraction",
+        "clipped_fraction"
+      ],
+      "noise": [
+        "noise_contrast_ratio",
+        "highpass1_std"
+      ],
+      "texture": [
+        "anisotropy1",
+        "autocorr4",
+        "autocorr16",
+        "spectral_low_fraction",
+        "spectral_mid_fraction"
+      ],
+      "spatial": [
+        "tile_mean_std",
+        "tile_contrast_std",
+        "border_center_absdiff",
+        "quadrant_mean_range"
+      ],
+      "dark_regions": [
+        "dark_component_density",
+        "dark_largest_fraction",
+        "dark_area_cv",
+        "dark_distance_p95",
+        "dark_boundary_density"
+      ]
+    },
+    "transform": "Per-metric midranks across development400,scaled to[0,1]. Descriptive matching only, not predictive normalization.",
+    "distance": "Equal mean squared percentile distance pergroup; equal5group mean then sqrt.",
+    "controls_per_anchor": 3,
+    "selection": "Global minimum sum squared distance assignment with3slots peranchor,all395nonanchors;15uniquecontrols. No y,prediction,error used.",
+    "tie_break": "Stable sorted ID order; scipy linear_sum_assignment deterministic."
+  },
+  "analysis": "Freeze control IDs/features and hashes before reading outcomes. Report all400 metric distributions,anchor percentiles, matched outcome signs/RMSE, full400/fixed395 metric-gain Spearman and fixedquartile summaries ineachpartition. No p-values,learnedgate,newlabel-defined subgroup or threshold search.",
+  "scope": "Only allowlisted400trainimages; noholdout/test, no training or submission. CPU2, existinglibraries,cost0.",
+  "protected011_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "source_sha256": "438a48421f01a7b10d0c2447c3a944669c6c3ef22c4b0fda1ef2841754206e1a",
+  "prior_metrics_source_sha256": "fcae16ecbcfaa214a6e544b79087ae2f3ef68abaf01454b69fa974693e51fdb1"
+}

@@ -1,0 +1,716 @@
+{
+  "study": "127 saved current base-model size and complementarity diagnostic",
+  "completed_utc": "2026-10-04T04:14:56.199375+00:00",
+  "status": "complete; interpretation required; no model selection",
+  "component_order": [
+    "compact26",
+    "CNN80",
+    "DINO_S_mean3",
+    "DINO_B_mean3"
+  ],
+  "fixed_raw_weights": [
+    0.3,
+    0.3,
+    0.2,
+    0.2
+  ],
+  "curve": [
+    {
+      "train_size": "142_143",
+      "bundles": 45,
+      "training_row_evaluations_overlapping": 6390,
+      "components": [
+        {
+          "name": "compact26",
+          "train_RMSE": 13.062660387808002,
+          "same_outer80_validation_RMSE": 14.734441753232407,
+          "validation_minus_train_RMSE": 1.6717813654244047,
+          "raw_mix_leaveout_RMSE": 14.034520874909031,
+          "raw_mix_leaveout_minus_full_MSE": 4.717192614121245
+        },
+        {
+          "name": "CNN80",
+          "train_RMSE": 9.579720022732854,
+          "same_outer80_validation_RMSE": 15.560772404415676,
+          "validation_minus_train_RMSE": 5.981052381682822,
+          "raw_mix_leaveout_RMSE": 14.033048301305882,
+          "raw_mix_leaveout_minus_full_MSE": 4.675861052647804
+        },
+        {
+          "name": "DINO_S_mean3",
+          "train_RMSE": 0.5439370311533224,
+          "same_outer80_validation_RMSE": 14.986204951950086,
+          "validation_minus_train_RMSE": 14.442267920796763,
+          "raw_mix_leaveout_RMSE": 13.990723907479495,
+          "raw_mix_leaveout_minus_full_MSE": 3.489771881182179
+        },
+        {
+          "name": "DINO_B_mean3",
+          "train_RMSE": 0.5370683788391657,
+          "same_outer80_validation_RMSE": 14.818418848629577,
+          "validation_minus_train_RMSE": 14.28135046979041,
+          "raw_mix_leaveout_RMSE": 13.993177664883543,
+          "raw_mix_leaveout_minus_full_MSE": 3.558437586859526
+        }
+      ],
+      "raw_fixed_mix_RMSE": 13.865445668067656,
+      "weighted_mean_individual_MSE": 226.6067986874816,
+      "weighted_disagreement_MSE_reduction": 34.35621511334549,
+      "error_mean": [
+        0.2508409340974014,
+        0.028697991100108025,
+        0.22929031299282132,
+        0.31674228656787967
+      ],
+      "error_second_moment": [
+        [
+          217.1037737793984,
+          185.63341930455235,
+          177.54996011201885,
+          178.97519094568702
+        ],
+        [
+          185.63341930455235,
+          242.13763782202446,
+          169.02151880144467,
+          168.897004766975
+        ],
+        [
+          177.54996011201885,
+          169.02151880144467,
+          224.58633886185336,
+          205.05906323303282
+        ],
+        [
+          178.97519094568702,
+          168.897004766975,
+          205.05906323303282,
+          219.5855371734204
+        ]
+      ],
+      "centered_error_covariance": [
+        [
+          217.0408526051789,
+          185.62622067365805,
+          177.49244471572774,
+          178.89573901465684
+        ],
+        [
+          185.62622067365805,
+          242.1368142473311,
+          169.01493863008284,
+          168.887914899654
+        ],
+        [
+          177.49244471572774,
+          169.01493863008284,
+          224.53376481422103,
+          204.9864372950081
+        ],
+        [
+          178.89573901465684,
+          168.887914899654,
+          204.9864372950081,
+          219.48521149732036
+        ]
+      ],
+      "error_correlation": [
+        [
+          1.0,
+          0.8097261539259687,
+          0.8040226783660008,
+          0.8196465615601692
+        ],
+        [
+          0.8097261539259687,
+          1.0,
+          0.7248595261324138,
+          0.7325976648311976
+        ],
+        [
+          0.8040226783660008,
+          0.7248595261324138,
+          1.0,
+          0.9233825571624038
+        ],
+        [
+          0.8196465615601691,
+          0.7325976648311977,
+          0.9233825571624038,
+          1.0
+        ]
+      ],
+      "kernel_choice_counts": {
+        "(1.0, 1.0)": 5,
+        "(4.0, 0.01)": 5,
+        "(4.0, 0.1)": 35
+      },
+      "CNN_last10_aug_train_RMSE_mean": 9.637536715647299,
+      "CNN_previous10_aug_train_RMSE_mean": 10.212301744093633
+    },
+    {
+      "train_size": "213_214",
+      "bundles": 45,
+      "training_row_evaluations_overlapping": 9600,
+      "components": [
+        {
+          "name": "compact26",
+          "train_RMSE": 13.023179334713976,
+          "same_outer80_validation_RMSE": 14.684379690409296,
+          "validation_minus_train_RMSE": 1.6612003556953194,
+          "raw_mix_leaveout_RMSE": 13.550008268719923,
+          "raw_mix_leaveout_minus_full_MSE": 1.389255396709018
+        },
+        {
+          "name": "CNN80",
+          "train_RMSE": 9.825175353083713,
+          "same_outer80_validation_RMSE": 14.985635009635402,
+          "validation_minus_train_RMSE": 5.160459656551689,
+          "raw_mix_leaveout_RMSE": 13.764950361560897,
+          "raw_mix_leaveout_minus_full_MSE": 7.260389770566206
+        },
+        {
+          "name": "DINO_S_mean3",
+          "train_RMSE": 0.5324260735873114,
+          "same_outer80_validation_RMSE": 14.625262802684125,
+          "validation_minus_train_RMSE": 14.092836729096813,
+          "raw_mix_leaveout_RMSE": 13.631141297932578,
+          "raw_mix_leaveout_minus_full_MSE": 3.5945443985337704
+        },
+        {
+          "name": "DINO_B_mean3",
+          "train_RMSE": 0.4926699149536275,
+          "same_outer80_validation_RMSE": 14.385191572886436,
+          "validation_minus_train_RMSE": 13.892521657932809,
+          "raw_mix_leaveout_RMSE": 13.644686993538402,
+          "raw_mix_leaveout_minus_full_MSE": 3.964014465966727
+        }
+      ],
+      "raw_fixed_mix_RMSE": 13.498646920549826,
+      "weighted_mean_individual_MSE": 216.22648878747833,
+      "weighted_disagreement_MSE_reduction": 34.01302010180903,
+      "error_mean": [
+        0.0031609672370250842,
+        -0.05682597028498312,
+        -0.06803965376406788,
+        -0.027249410999240335
+      ],
+      "error_second_moment": [
+        [
+          215.6310068921051,
+          175.46224329497556,
+          171.60194124869759,
+          172.21588768395986
+        ],
+        [
+          175.46224329497556,
+          224.56925664201026,
+          156.70163561778602,
+          156.43870730919224
+        ],
+        [
+          171.60194124869759,
+          156.70163561778602,
+          213.89831204757593,
+          191.7997325737287
+        ],
+        [
+          172.21588768395986,
+          156.43870730919224,
+          191.7997325737287,
+          206.93373658864283
+        ]
+      ],
+      "centered_error_covariance": [
+        [
+          215.6309969003907,
+          175.46242292000588,
+          171.6021563198137,
+          172.2159738184553
+        ],
+        [
+          175.46242292000588,
+          224.566027451111,
+          156.697769198443,
+          156.4371588349721
+        ],
+        [
+          171.6021563198137,
+          156.697769198443,
+          213.8936826530915,
+          191.7978785332387
+        ],
+        [
+          172.2159738184553,
+          156.4371588349721,
+          191.7978785332387,
+          206.9329940582431
+        ]
+      ],
+      "error_correlation": [
+        [
+          1.0,
+          0.7973637698508838,
+          0.7990393483889078,
+          0.8152728234807405
+        ],
+        [
+          0.7973637698508838,
+          0.9999999999999999,
+          0.7149765642730841,
+          0.7256931452810481
+        ],
+        [
+          0.7990393483889079,
+          0.7149765642730841,
+          0.9999999999999999,
+          0.9116538061078098
+        ],
+        [
+          0.8152728234807406,
+          0.7256931452810481,
+          0.9116538061078098,
+          1.0
+        ]
+      ],
+      "kernel_choice_counts": {
+        "(1.0, 1.0)": 5,
+        "(4.0, 0.01)": 8,
+        "(4.0, 0.1)": 31,
+        "(4.0, 1.0)": 1
+      },
+      "CNN_last10_aug_train_RMSE_mean": 10.01807358751416,
+      "CNN_previous10_aug_train_RMSE_mean": 10.541159015749995
+    },
+    {
+      "train_size": "320",
+      "bundles": 15,
+      "training_row_evaluations_overlapping": 4800,
+      "components": [
+        {
+          "name": "compact26",
+          "train_RMSE": 13.236388899119925,
+          "same_outer80_validation_RMSE": 14.402538164936749,
+          "validation_minus_train_RMSE": 1.1661492658168235,
+          "raw_mix_leaveout_RMSE": 13.052035858162089,
+          "raw_mix_leaveout_minus_full_MSE": 0.41229476565200684
+        },
+        {
+          "name": "CNN80",
+          "train_RMSE": 9.828550592267845,
+          "same_outer80_validation_RMSE": 14.621918687756002,
+          "validation_minus_train_RMSE": 4.793368095488157,
+          "raw_mix_leaveout_RMSE": 13.31526333400612,
+          "raw_mix_leaveout_minus_full_MSE": 7.352892376830766
+        },
+        {
+          "name": "DINO_S_mean3",
+          "train_RMSE": 0.5884688063300305,
+          "same_outer80_validation_RMSE": 14.261857086209597,
+          "validation_minus_train_RMSE": 13.673388279879566,
+          "raw_mix_leaveout_RMSE": 13.19206881603617,
+          "raw_mix_leaveout_minus_full_MSE": 4.08733436993694
+        },
+        {
+          "name": "DINO_B_mean3",
+          "train_RMSE": 0.4843479870696573,
+          "same_outer80_validation_RMSE": 13.870420175273866,
+          "validation_minus_train_RMSE": 13.386072188204208,
+          "raw_mix_leaveout_RMSE": 13.222862864745128,
+          "raw_mix_leaveout_minus_full_MSE": 4.900757062758743
+        }
+      ],
+      "raw_fixed_mix_RMSE": 13.036232019916529,
+      "weighted_mean_individual_MSE": 205.52790818836456,
+      "weighted_disagreement_MSE_reduction": 35.58456291126768,
+      "error_mean": [
+        -0.01350849846851214,
+        -0.41768196292007426,
+        -0.01681870926190204,
+        0.06612110683983351
+      ],
+      "error_second_moment": [
+        [
+          207.43310559245955,
+          163.63950258797948,
+          159.32808314361978,
+          160.21351424798235
+        ],
+        [
+          163.63950258797948,
+          213.8005061113482,
+          143.98914415996342,
+          142.4361292634923
+        ],
+        [
+          159.32808314361978,
+          143.98914415996342,
+          203.40056754746703,
+          175.37025405833154
+        ],
+        [
+          160.21351424798235,
+          142.4361292634923,
+          175.37025405833154,
+          192.38855583864435
+        ]
+      ],
+      "centered_error_covariance": [
+        [
+          207.43292311292953,
+          163.6338603318228,
+          159.32785594811196,
+          160.21440744485292
+        ],
+        [
+          163.6338603318228,
+          213.62604788919882,
+          143.98211928846482,
+          142.46374685718752
+        ],
+        [
+          159.32785594811196,
+          143.98211928846482,
+          203.40028467848512,
+          175.37136613000325
+        ],
+        [
+          160.21440744485292,
+          142.46374685718752,
+          175.37136613000325,
+          192.3841838378751
+        ]
+      ],
+      "error_correlation": [
+        [
+          1.0,
+          0.7773332223111888,
+          0.7756701699167485,
+          0.8020067833710652
+        ],
+        [
+          0.777333222311189,
+          1.0,
+          0.6907258037838755,
+          0.7027366057368293
+        ],
+        [
+          0.7756701699167485,
+          0.6907258037838755,
+          0.9999999999999999,
+          0.8865397731521127
+        ],
+        [
+          0.8020067833710652,
+          0.7027366057368293,
+          0.8865397731521126,
+          1.0
+        ]
+      ],
+      "kernel_choice_counts": {
+        "(4.0, 0.01)": 3,
+        "(4.0, 0.1)": 12
+      },
+      "CNN_last10_aug_train_RMSE_mean": 10.078893582341287,
+      "CNN_previous10_aug_train_RMSE_mean": 10.64165846263281
+    }
+  ],
+  "size_changes": [
+    {
+      "from": "142_143",
+      "to": "213_214",
+      "components": [
+        {
+          "name": "compact26",
+          "validation_RMSE_change_more_minus_less": -0.050062062823110764,
+          "conditional_ID_cluster95_CI": [
+            -0.1815855277943521,
+            0.08617091407082081
+          ],
+          "per_partition_RMSE_changes": [
+            -0.07573654374386507,
+            -0.14440944455941462,
+            0.07005682633868027
+          ]
+        },
+        {
+          "name": "CNN80",
+          "validation_RMSE_change_more_minus_less": -0.575137394780274,
+          "conditional_ID_cluster95_CI": [
+            -0.8232187172403865,
+            -0.3150821813794785
+          ],
+          "per_partition_RMSE_changes": [
+            -0.3095346139637769,
+            -0.978706641846534,
+            -0.444530664623203
+          ]
+        },
+        {
+          "name": "DINO_S_mean3",
+          "validation_RMSE_change_more_minus_less": -0.360942149265961,
+          "conditional_ID_cluster95_CI": [
+            -0.5807027660277398,
+            -0.13742549781811705
+          ],
+          "per_partition_RMSE_changes": [
+            -0.5158567157886917,
+            -0.2216673050507243,
+            -0.3464202050215164
+          ]
+        },
+        {
+          "name": "DINO_B_mean3",
+          "validation_RMSE_change_more_minus_less": -0.4332272757431408,
+          "conditional_ID_cluster95_CI": [
+            -0.6277718418450573,
+            -0.22776617219243023
+          ],
+          "per_partition_RMSE_changes": [
+            -0.47396867732659587,
+            -0.3310203155817746,
+            -0.49294292422572816
+          ]
+        }
+      ],
+      "raw_mix_RMSE_change": -0.36679874751783004,
+      "raw_mix_conditional_ID_cluster95_CI": [
+        -0.48549418448935244,
+        -0.2443728370214954
+      ]
+    },
+    {
+      "from": "213_214",
+      "to": "320",
+      "components": [
+        {
+          "name": "compact26",
+          "validation_RMSE_change_more_minus_less": -0.28184152547254726,
+          "conditional_ID_cluster95_CI": [
+            -0.40147487365237666,
+            -0.16363690488115284
+          ],
+          "per_partition_RMSE_changes": [
+            -0.1563865129667139,
+            -0.28465158812955593,
+            -0.4046302847243517
+          ]
+        },
+        {
+          "name": "CNN80",
+          "validation_RMSE_change_more_minus_less": -0.36371632187939973,
+          "conditional_ID_cluster95_CI": [
+            -0.6947245081659169,
+            -0.033127901074768276
+          ],
+          "per_partition_RMSE_changes": [
+            -0.24136305558233317,
+            -0.34565751357832575,
+            -0.5067655133240567
+          ]
+        },
+        {
+          "name": "DINO_S_mean3",
+          "validation_RMSE_change_more_minus_less": -0.3634057164745279,
+          "conditional_ID_cluster95_CI": [
+            -0.6616460590002451,
+            -0.06659906550257409
+          ],
+          "per_partition_RMSE_changes": [
+            -0.28250216316888555,
+            -0.4506562346990748,
+            -0.3569938673420783
+          ]
+        },
+        {
+          "name": "DINO_B_mean3",
+          "validation_RMSE_change_more_minus_less": -0.5147713976125701,
+          "conditional_ID_cluster95_CI": [
+            -0.7222972115534009,
+            -0.3087028698892531
+          ],
+          "per_partition_RMSE_changes": [
+            -0.6793136020634627,
+            -0.31078878942261845,
+            -0.5557363757216613
+          ]
+        }
+      ],
+      "raw_mix_RMSE_change": -0.4624149006332967,
+      "raw_mix_conditional_ID_cluster95_CI": [
+        -0.6291115355413476,
+        -0.2996593632292498
+      ]
+    },
+    {
+      "from": "142_143",
+      "to": "320",
+      "components": [
+        {
+          "name": "compact26",
+          "validation_RMSE_change_more_minus_less": -0.331903588295658,
+          "conditional_ID_cluster95_CI": [
+            -0.5177248055573921,
+            -0.13902275380172724
+          ],
+          "per_partition_RMSE_changes": [
+            -0.23212305671057898,
+            -0.42906103268897056,
+            -0.33457345838567143
+          ]
+        },
+        {
+          "name": "CNN80",
+          "validation_RMSE_change_more_minus_less": -0.9388537166596738,
+          "conditional_ID_cluster95_CI": [
+            -1.3230652076909428,
+            -0.55200182233535
+          ],
+          "per_partition_RMSE_changes": [
+            -0.5508976695461101,
+            -1.3243641554248597,
+            -0.9512961779472597
+          ]
+        },
+        {
+          "name": "DINO_S_mean3",
+          "validation_RMSE_change_more_minus_less": -0.7243478657404889,
+          "conditional_ID_cluster95_CI": [
+            -1.1841691619024801,
+            -0.2580150442459541
+          ],
+          "per_partition_RMSE_changes": [
+            -0.7983588789575773,
+            -0.6723235397497991,
+            -0.7034140723635947
+          ]
+        },
+        {
+          "name": "DINO_B_mean3",
+          "validation_RMSE_change_more_minus_less": -0.9479986733557109,
+          "conditional_ID_cluster95_CI": [
+            -1.2842403450835986,
+            -0.6095067003646597
+          ],
+          "per_partition_RMSE_changes": [
+            -1.1532822793900586,
+            -0.641809105004393,
+            -1.0486792999473895
+          ]
+        }
+      ],
+      "raw_mix_RMSE_change": -0.8292136481511267,
+      "raw_mix_conditional_ID_cluster95_CI": [
+        -1.0465517832455447,
+        -0.6033215271254488
+      ]
+    }
+  ],
+  "observations": {
+    "unique_images": 400,
+    "partitions": 3,
+    "nested_paths_per_outer": 3,
+    "same_outer80_at_all_sizes": true,
+    "mean_individual_submodel_MSE_not_subset_ensemble": true,
+    "largest_size_duplicated_path_axis_not_extra_models": true
+  },
+  "validation": {
+    "passed": true,
+    "bundles_verified": 105,
+    "kernel_independent_solves": 105,
+    "kernel_max_error": 3.129230208287481e-11,
+    "all630_heads_independent_functional_predictions_max_error": 4.3767822148765845e-06,
+    "CNN_fresh_reload_different_batch_bundles": 9,
+    "CNN_max_error": 1.52587890625e-05,
+    "078_middle_DINOmean_reproduction_max_error": 5.684341886080802e-14,
+    "subset_and_outer_group_exclusion_verified": true,
+    "foldtrain_scalers_targets_verified_in_main_replay": true,
+    "MSE_diversity_covariance_identities_verified": true,
+    "partitions": [
+      {
+        "split": "original",
+        "bundles": 35,
+        "all_finite": true,
+        "078_middle_DINOmean_max_error": 5.684341886080802e-14
+      },
+      {
+        "split": "20261031",
+        "bundles": 35,
+        "all_finite": true,
+        "078_middle_DINOmean_max_error": 5.684341886080802e-14
+      },
+      {
+        "split": "20261101",
+        "bundles": 35,
+        "all_finite": true,
+        "078_middle_DINOmean_max_error": 5.684341886080802e-14
+      }
+    ],
+    "upstream_training_leakage_certificates_reused": {
+      "reports/nested-calibration-074-validation.json": "024454780fbb26efa882fb3fba8bea5eb9a8182d4d934dd98010243bf7605f69",
+      "artifacts/nested-fusion-112/validation-replay.json": "e8168993df0c8dab46a0f58436c8319528ea52e39478c7d12fa01b05ba1c99d8",
+      "reports/dinob-complement-064-validation.json": "1bf3a72f165e5bf20e1e92d9633d2bf72dd92cee8d713d6de0abed0a38ae7a0f"
+    },
+    "report_sha256": {
+      "original": "c48894db7e5164eea08aac8c77c0afef27c88f69ebe7d6793ab51eb66a7d7dc7",
+      "20261031": "05497900d32de52f18b31a9d09e9084906329c74b106a90f071bece9cad36adc",
+      "20261101": "05fab3b71eff868675dc962756666fc4df69660435fdc3ef82e179e6f14844fe"
+    },
+    "source_sha256": "9b346d3e10aee55bacb512a1018b6a881be8cc50ae3f35d702786b3a280741ce",
+    "seconds": 8.345352541073225,
+    "new_training": false,
+    "holdout_test_access": false
+  },
+  "bootstrap_independent_count_fixture_max_error": 1.9539925233402755e-14,
+  "old_failures_preserved": {
+    "initial_batch_arithmetic_assertion": "reports/base-learning-curve-127-original.log",
+    "legacy_CNN_metadata_assertion": "reports/base-learning-curve-v2-127-original.log",
+    "numeric_explanation": "Original first cache test used1e-8 for float32head predictions despite changed GEMM batch dimensions. Observed Smean6.735e-7, CNN1.526e-5, KRR4.832e-13; matched original S seed batch reproduced exactly0. Preserve original sources/plan/log. V2 allows1e-4 S/B and1e-3CNN for batch-size differences, keeps1e-8KRR, adds exact original-batch head cache checks. No model/training/scoring change.",
+    "metadata_compatibility": {
+      "reason": "Legacy037 tiny128 checkpoints omit average_last_epochs key; their hashed cnn_structure_experiment trainer fixes80epochs and averages epoch75..79 states, exactly5. Retain strict80epoch and architecture check and validate originalCNN80reference predictions. No state/model/settings changed.",
+      "preserved_sha256": {
+        "resume_base_learning_curve_127.py": "42303ad4feafe58d509944c867b8bd95ba1f316d95466ae3523fdb19f5c1e7e1",
+        "base_learning_curve_v2_127.py": "47093cdcfe00a00293fefef6e1716de7ea8f6206d8955b3df09d828cf69a7d9c",
+        "validate_base_learning_curve_v2_127.py": "9b346d3e10aee55bacb512a1018b6a881be8cc50ae3f35d702786b3a280741ce",
+        "cnn_structure_experiment.py": "11906ac8964fd99db073ed5b1f206980ed51da3e86e07d6f58259f21f4d4a720",
+        "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5",
+        "reports/base-learning-curve-v2-127-original.log": "26e14340a892c7623b02852692e7695af77528e694cf7affeaa72ed22f0246d5"
+      },
+      "reused_completed_bundles": 6,
+      "failed_v2_run_preserved": true,
+      "source_training_proof": "cnn_structure_experiment.py:22,95-103 and dino_regression_037.py:70",
+      "training_config_change": false
+    }
+  },
+  "interpretation_limits": [
+    "Same400previouslyused for many model/hypothesis choices. New analysis descriptive/exploratory,not independentconfirmation. Results may set research priority but do not select a new deployablemodel. No extrapolated500/private score or performanceceiling.",
+    "Same existing family procedure acrosssizes: CNN12880epochs,last5weightaverage; S/B frozenfeatures same3seed100epochMLPs; compact26 same9candidate nestedtrain-onlyKRRgrid. No new model choice. Seeds/subsetmembership/stepcounts differ; fixedepochs is not fixedupdates. This descriptive data-size curve cannot isolate causal sample-size or optimization effects.",
+    "Fixed rawmix [.3,.3,.2,.2] only. Per-size error-covariance matrix, weighted individual MSE minus weighted disagreement identity, leave-one-branch-out normalizedremainingweights MSE delta. No weight fitting. These are raw4way diagnostics excluding014 affine,shortB,residual; not actual removal proposals or new candidate scores.",
+    "KRRalpha uses summedloss and selectedalpha/n changes withtrainingn; not isolatedeffective-regularization control. CNNsameepochs has moreoptimizersteps atlargern. Seed offsets differ. No causal attribution amongdata,regularization,optimization.",
+    "TrainingMSE and augmented-online trainingcurves are different measurements, not directly interchangeable. Curves cannot establish the benefit of training past80epochs.",
+    "Raw4way contributions omit train-onlyaffine,shortB andphysics residual; use121/122 forwholepipeline removal evidence. Do not selectnewweights or dropbranches fromthis table."
+  ],
+  "scope": {
+    "new_fits": 0,
+    "leaf_models_replayed": 840,
+    "new_backbone_extraction": 0,
+    "new_images_decoded": 0,
+    "holdout_test_decoded": false,
+    "new_packages": 0,
+    "cost": 0,
+    "new_candidate": false,
+    "uploaded": false
+  },
+  "evidence_sha256": {
+    "artifacts/base-learning-curve-127/numeric-replay-v2/original/report.json": "c48894db7e5164eea08aac8c77c0afef27c88f69ebe7d6793ab51eb66a7d7dc7",
+    "artifacts/base-learning-curve-127/numeric-replay-v2/original/predictions.npz": "a693f225704fae0918c4337ad8d204beb31dd987965e3912266345d486217265",
+    "artifacts/base-learning-curve-127/numeric-replay-v2/20261031/report.json": "05497900d32de52f18b31a9d09e9084906329c74b106a90f071bece9cad36adc",
+    "artifacts/base-learning-curve-127/numeric-replay-v2/20261031/predictions.npz": "03d75ad051226f2101b6181f4aa706d9ea88b6ec553574c7d763de8ac0050077",
+    "artifacts/base-learning-curve-127/numeric-replay-v2/20261101/report.json": "05fab3b71eff868675dc962756666fc4df69660435fdc3ef82e179e6f14844fe",
+    "artifacts/base-learning-curve-127/numeric-replay-v2/20261101/predictions.npz": "a992456e480ffb763cd3958fbdf1f86847e50a792dab8ab94b7833181bb1d937",
+    "artifacts/base-learning-curve-127/numeric-replay-v2/plan.json": "e7fb038f495869084f8a7dec5ec390c4c3d8459b913e88bf751963357b809e3b",
+    "artifacts/base-learning-curve-127/numeric-replay-v2/validation.json": "a4e801bd7724b60803ed263ccc19fd8c349c7d2d32bd1359d95090a27887185e",
+    "artifacts/base-learning-curve-127/numeric-replay-v2/metadata-compatibility.json": "b4c511a7fe7697f099e4b0085b7bf038c98f0c5374c2ec7bacc26347d4ce66e2"
+  },
+  "source_sha256": "5de0103747661aa9b43493885fadc01f60d7c127f244ccc303fe145da729e35d"
+}

@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "fixtures": {
+    "passed": true,
+    "tests": [
+      "zeros_brute",
+      "ones_brute",
+      "single_row_brute",
+      "clipped_edge_runs_brute",
+      "alternating_columns_brute",
+      "random_brute",
+      "analytic_single_row_including_sub_diagonal_lag_interpolation",
+      "edge_truncated_runs_counted_without_wrap",
+      "whole_segment_not_just_two_endpoints",
+      "sqrt2_physical_lag_interpolation",
+      "uniform_quantile_ties_finite_exact",
+      "D4_summary_invariance",
+      "mixed_segments_not_counted_in_either_phase"
+    ],
+    "count": 13,
+    "brute_max_error": 0.0,
+    "D4_max_error": 5.551115123125783e-17,
+    "seconds": 0.44322779204230756,
+    "no_synthetic_training": true
+  },
+  "development_rows": 400,
+  "features": 120,
+  "raw_feature_replay_rows": 3,
+  "model_reload_max_absolute_errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "chosen_alpha_by_fold": [
+    1200.0,
+    1200.0,
+    1200.0,
+    120.0,
+    1200.0
+  ],
+  "fold_train_preprocessing_verified": true,
+  "inner_group_splits_verified": true,
+  "metrics_and_bootstrap_recomputed": true,
+  "protected_artifacts_verified": 18,
+  "selection": {
+    "advance": false,
+    "gain": -0.16180746530555368,
+    "bootstrap_sd": 0.07062675835156403,
+    "positive_folds": 0,
+    "primary": "primary007",
+    "diagnostic_ineligible": true
+  },
+  "scores": {
+    "lineal": {
+      "rmse": 17.97782531840424,
+      "fold_rmse": [
+        15.351514474801377,
+        14.337089825247503,
+        16.65656780734942,
+        25.823375340649466,
+        15.182289335378226
+      ]
+    },
+    "primary007": {
+      "rmse": 13.403404420343962,
+      "fold_rmse": [
+        13.308132625013243,
+        12.747471774101758,
+        14.384945722011375,
+        12.925606591646588,
+        13.5887398419716
+      ]
+    },
+    "diagnostic006": {
+      "rmse": 13.583478606603851,
+      "fold_rmse": [
+        13.378657811291804,
+        12.846288158289685,
+        14.379806289271206,
+        13.303216566198277,
+        13.956520020360859
+      ]
+    },
+    "reference007": {
+      "rmse": 13.241596955038409,
+      "fold_rmse": [
+        13.200972349680994,
+        12.726138894776982,
+        14.308109808709345,
+        12.375441992213231,
+        13.513163828337742
+      ]
+    },
+    "reference006": {
+      "rmse": 13.423229237711903,
+      "fold_rmse": [
+        13.27228080612199,
+        12.810539698947405,
+        14.308546492337854,
+        12.743714480419301,
+        13.910977290762657
+      ]
+    }
+  },
+  "seconds": 0.6844806669978425,
+  "scope": "No refit; no holdout/test image or label access; no candidate CSV or upload. Repeat partitions skipped per failed preregistered screen. Historical repeated-development selection bias remains.",
+  "independent_review": "audit_pipeline source review: serialization issue found; no other blocking issue found"
+}

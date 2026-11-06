@@ -1,0 +1,282 @@
+{
+  "passed": true,
+  "fixtures": {
+    "passed": true,
+    "count": 14,
+    "tests": [
+      "empty_all_excursions_floodfill",
+      "full_all_excursions_floodfill",
+      "ring_all_excursions_floodfill",
+      "open_ring_all_excursions_floodfill",
+      "edge_background_all_excursions_floodfill",
+      "diagonal_all_excursions_floodfill",
+      "random_all_excursions_floodfill",
+      "holes_exclude_boundary_background",
+      "four_eight_connectivity_duality",
+      "signed_EDT_in_image_opposite_pixels",
+      "uniform_phase_infinite_distance_finite_curves",
+      "curves_distinguish_equal_zero_distance_counts",
+      "D4_invariance",
+      "quantile_ties_and_feature_layout"
+    ],
+    "seconds": 0.7693570830160752,
+    "no_synthetic_training": true
+  },
+  "development_rows": 400,
+  "features": 132,
+  "raw_replay_rows": 3,
+  "protected_artifacts_verified": 18,
+  "results": {
+    "original": {
+      "scores": {
+        "reference007": {
+          "rmse": 13.241596955038409,
+          "fold_rmse": [
+            13.200972349680994,
+            12.726138894776982,
+            14.308109808709345,
+            12.375441992213231,
+            13.513163828337742
+          ]
+        },
+        "betti132": {
+          "rmse": 15.67868113938592,
+          "fold_rmse": [
+            15.46658413798511,
+            14.39115128788408,
+            17.64676543534391,
+            15.726140198673884,
+            14.968798722213604
+          ]
+        },
+        "betti132_blend": {
+          "rmse": 13.36752762315509,
+          "fold_rmse": [
+            13.314850861627376,
+            12.760099312089983,
+            14.523751418362073,
+            12.59659461708685,
+            13.554889695150516
+          ]
+        },
+        "counts12": {
+          "rmse": 15.539302481543755,
+          "fold_rmse": [
+            15.620448034374057,
+            14.254522762601013,
+            17.298233423396386,
+            14.990532137663417,
+            15.369282961148224
+          ]
+        },
+        "counts12_blend": {
+          "rmse": 13.322253455381668,
+          "fold_rmse": [
+            13.306898965676892,
+            12.683238618849586,
+            14.492411842061259,
+            12.488472110912923,
+            13.545558203218004
+          ]
+        }
+      },
+      "comparison": {
+        "gain": -0.12593066811668052,
+        "fold_gains": [
+          -0.11387851194638188,
+          -0.03396041731300059,
+          -0.21564160965272805,
+          -0.22115262487361953,
+          -0.041725866812774015
+        ],
+        "positive_folds": 0,
+        "bootstrap_sd": 0.032637835065246354,
+        "conditional_ci95": [
+          -0.19015606605307753,
+          -0.0636359640870277
+        ],
+        "residual_correlation": 0.9153969629509441
+      },
+      "reload_max_error": 0.0,
+      "models_verified": 10,
+      "predictions_sha256": "580e34c1d97d1b8c6797a13d23ad6eaf6b4e5b8c635b053d87b7869c3cc8331b",
+      "extrapolation": [
+        {
+          "arm": "betti132",
+          "fold": 0,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.0023674242424242425,
+          "prediction_range": [
+            182.11516346169,
+            218.8752160369735
+          ],
+          "chosen_alpha": 1200.0
+        },
+        {
+          "arm": "betti132",
+          "fold": 1,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.004166666666666667,
+          "prediction_range": [
+            183.18333453921463,
+            214.62466097692246
+          ],
+          "chosen_alpha": 1200.0
+        },
+        {
+          "arm": "betti132",
+          "fold": 2,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.004545454545454545,
+          "prediction_range": [
+            173.86582559544016,
+            231.44888996180774
+          ],
+          "chosen_alpha": 120.0
+        },
+        {
+          "arm": "betti132",
+          "fold": 3,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.003693181818181818,
+          "prediction_range": [
+            180.8801644138809,
+            235.42604386931654
+          ],
+          "chosen_alpha": 1200.0
+        },
+        {
+          "arm": "betti132",
+          "fold": 4,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.004356060606060606,
+          "prediction_range": [
+            181.55552408215095,
+            217.6828736852733
+          ],
+          "chosen_alpha": 1200.0
+        },
+        {
+          "arm": "counts12",
+          "fold": 0,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.0020833333333333333,
+          "prediction_range": [
+            181.47198692245516,
+            215.51541021324275
+          ],
+          "chosen_alpha": 12.0
+        },
+        {
+          "arm": "counts12",
+          "fold": 1,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.011458333333333333,
+          "prediction_range": [
+            178.30962582187203,
+            215.18888867421688
+          ],
+          "chosen_alpha": 12.0
+        },
+        {
+          "arm": "counts12",
+          "fold": 2,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.00625,
+          "prediction_range": [
+            174.5450021591919,
+            223.12359727319512
+          ],
+          "chosen_alpha": 12.0
+        },
+        {
+          "arm": "counts12",
+          "fold": 3,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.005208333333333333,
+          "prediction_range": [
+            177.74673885193448,
+            217.84431312339132
+          ],
+          "chosen_alpha": 12.0
+        },
+        {
+          "arm": "counts12",
+          "fold": 4,
+          "label_range_exceedances": 0,
+          "feature_cells_outside_train_range_fraction": 0.007291666666666667,
+          "prediction_range": [
+            174.9445487806632,
+            213.81629707991536
+          ],
+          "chosen_alpha": 12.0
+        }
+      ]
+    }
+  },
+  "diagnostics": {
+    "constant_columns": 10,
+    "unique_column_vectors": 106,
+    "duplicate_columns": 26,
+    "d0_d1_exactly_duplicate": true,
+    "zero_count_reconstruction_r2_median": 0.42863134395227104,
+    "zero_count_reconstruction_r2_quartiles": [
+      -8.484033600314058,
+      0.2113620781824624,
+      0.42863134395227104,
+      0.7305422841253439,
+      0.9811925628091889
+    ],
+    "reconstruction_fold_constant_train_varying_validation_columns": 8,
+    "reconstruction_limit": "Descriptive OOF standardized-error R2 vs outertrain-mean null, not independent validation or feature selection. Some columns nearly constant.",
+    "highfrequency_abs_correlation_median": 0.4659091999563605,
+    "highfrequency_top_correlations": [
+      {
+        "feature": "betti_q20_d0_c1_b0",
+        "correlation": 0.903215948074662
+      },
+      {
+        "feature": "betti_q20_d1_c1_b0",
+        "correlation": 0.903215948074662
+      },
+      {
+        "feature": "betti_q20_d1_c2_b0",
+        "correlation": 0.8957662051308811
+      },
+      {
+        "feature": "betti_q20_d0_c2_b0",
+        "correlation": 0.8957662051308811
+      },
+      {
+        "feature": "betti_q20_d-1_c2_b1",
+        "correlation": 0.8952944562944527
+      }
+    ],
+    "highfrequency_limit": "Image high-frequency RMS mixes noise, sharp boundaries and contrast; correlation cannot distinguish cause. Not fed to regressor.",
+    "granulometry_distinction": "Existing grayscale opening/closing intensity statistics differ from components and holes through signed-distance excursions; thin/thick neck fixture has identical zero-level Betti counts but different eroded connectivity. Does not prove empirical information independent of every prior descriptor."
+  },
+  "selection": {
+    "advance": false,
+    "primary": "betti132_blend",
+    "comparison": {
+      "gain": -0.12593066811668052,
+      "fold_gains": [
+        -0.11387851194638188,
+        -0.03396041731300059,
+        -0.21564160965272805,
+        -0.22115262487361953,
+        -0.041725866812774015
+      ],
+      "positive_folds": 0,
+      "bootstrap_sd": 0.032637835065246354,
+      "conditional_ci95": [
+        -0.19015606605307753,
+        -0.0636359640870277
+      ],
+      "residual_correlation": 0.9153969629509441
+    },
+    "diagnostic_ineligible": true
+  },
+  "validation_seconds": 1.0978492089780048,
+  "scope": "No holdout/test images or labels; no candidateCSV,upload,install,cost. Model selection only preregistered original screen; repeated-development bias remains."
+}

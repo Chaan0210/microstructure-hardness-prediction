@@ -1,0 +1,371 @@
+{
+  "study": "087 diagnosis and088 fixed three-seed follow-up",
+  "decision": "Rejected: the single predeclared seed bundle failed the all-partition011 improvement gate. No replacement seeds, reduced subset, weights, epochs, joint training or alternate experiment. No new candidate CSV/full500/test inference. Best011 preserved.",
+  "results": {
+    "original": {
+      "reference011_RMSE": 13.0539977718711,
+      "fixed3seed_blend_RMSE": 13.070165970184748,
+      "comparison": {
+        "gain": -0.016168198313648574,
+        "fold_gains": [
+          0.016199266945074342,
+          -0.022498163529760973,
+          -0.012066767139055301,
+          -0.0010607644854516707,
+          -0.0597214750791224
+        ],
+        "positive_folds": 1,
+        "bootstrap_sd": 0.011443138414268505,
+        "conditional_ci95": [
+          -0.038695434842676193,
+          0.006387258910144984
+        ]
+      },
+      "advance": false,
+      "individual_head_RMSE_diagnostic_only": [
+        13.957820652670737,
+        14.229392100184567,
+        14.1354991173015
+      ],
+      "head_mean3_RMSE": 13.916057629084815,
+      "seed_averaging_MSE_identity": {
+        "mean_individual_MSE": 199.0362307360494,
+        "mean3_MSE": 193.65665993600967,
+        "reduction_equal_seed_variance": 5.379570800039735
+      }
+    },
+    "20261031": {
+      "reference011_RMSE": 13.015176056591201,
+      "fixed3seed_blend_RMSE": 13.019967421393373,
+      "comparison": {
+        "gain": -0.004791364802171572,
+        "fold_gains": [
+          0.005121045309772754,
+          -0.033198641339163615,
+          -0.012342898135010216,
+          0.00025678682416341303,
+          0.020390842275160637
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.0117500772284804,
+        "conditional_ci95": [
+          -0.02784697886647911,
+          0.018727100549231775
+        ]
+      },
+      "advance": false,
+      "individual_head_RMSE_diagnostic_only": [
+        13.771791193005598,
+        13.817368970832947,
+        13.963515186633053
+      ],
+      "head_mean3_RMSE": 13.664643345560819,
+      "seed_averaging_MSE_identity": {
+        "mean_individual_MSE": 191.85389143573852,
+        "mean3_MSE": 186.72247776137957,
+        "reduction_equal_seed_variance": 5.131413674358909
+      }
+    },
+    "20261101": {
+      "reference011_RMSE": 13.272377948565081,
+      "fixed3seed_blend_RMSE": 13.266164974505687,
+      "comparison": {
+        "gain": 0.006212974059394583,
+        "fold_gains": [
+          0.013427726718740374,
+          -0.03851940487647454,
+          -0.013854073835533498,
+          0.03776386965726708,
+          0.029585647031270312
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.013030703535070024,
+        "conditional_ci95": [
+          -0.020493717577180347,
+          0.0302062326162139
+        ]
+      },
+      "advance": true,
+      "individual_head_RMSE_diagnostic_only": [
+        14.369641875486145,
+        14.035877349921817,
+        14.335645469929894
+      ],
+      "head_mean3_RMSE": 14.042156488628533,
+      "seed_averaging_MSE_identity": {
+        "mean_individual_MSE": 203.00106388376494,
+        "mean3_MSE": 197.18215885113244,
+        "reduction_equal_seed_variance": 5.818905032632439
+      }
+    }
+  },
+  "diagnostic_conclusions": {
+    "representation": "Ruled out as the changed input: same frozen B features.084 joint update control worsened, so backbone adaptation is unsupported.",
+    "input_normalization": "Ruled out: scalers and target statistics are exactly equal on every matched outer training fold.",
+    "regularization_and_training_length": "Old near-interpolating64wide/dropout.25/wd.01/100epoch versus32wide/dropout.5/wd.1/12epoch changes form a confounded recipe bundle. Stored fits cannot identify width,dropout,weightdecay,epochs individually; batch and CPU/MPS/random-stream differences also remain. Higher new train error supports less interpolation, not a causal allocation among these settings.",
+    "seed": "Existing old3seed dispersion establishes optimization randomness and ensemble variance reduction for the old recipe. New recipe has onlyone seed, so its seed variance and mean3 usefulness remain untested. A paired change of seed only is the next controlled test; do not assume the old result transfers."
+  },
+  "diagnostic_results": {
+    "original": {
+      "feature_and_scaler_control": "Identical frozen B6912 data, same train/validation IDs, exact scaler mean/scale/variance and target mean/std across old3 and new heads. No representation/input-normalization change.",
+      "old_B_mean3": {
+        "rmse": 13.615777507504738,
+        "bias_prediction_minus_target": 0.2698494940412821,
+        "prediction_std": 12.538367713430835,
+        "residual_correlation_with009": 0.882512242031986
+      },
+      "new_B_single": {
+        "rmse": 13.957820652670737,
+        "bias_prediction_minus_target": 0.2178712071278165,
+        "prediction_std": 12.088152985260074,
+        "residual_correlation_with009": 0.8920102934392421
+      },
+      "old_B_seed_metrics": [
+        {
+          "rmse": 13.616681652871424,
+          "bias_prediction_minus_target": 0.1425115772321834,
+          "prediction_std": 12.52181433925772,
+          "residual_correlation_with009": 0.8791745173825737
+        },
+        {
+          "rmse": 13.657523011354952,
+          "bias_prediction_minus_target": 0.40457524716755605,
+          "prediction_std": 12.630122742276967,
+          "residual_correlation_with009": 0.8774469931004408
+        },
+        {
+          "rmse": 13.744791715926443,
+          "bias_prediction_minus_target": 0.26246165772410907,
+          "prediction_std": 12.648114536165998,
+          "residual_correlation_with009": 0.8799055539143974
+        }
+      ],
+      "old_B_mean3_train_RMSE": 0.5059661954706801,
+      "new_B_single_train_RMSE": 5.557531433630174,
+      "new_old_prediction_difference_RMS": 3.763404961766016,
+      "new_old_residual_correlation": 0.9630424166239764,
+      "new_complement_MSE_identity": {
+        "observed_MSE_gain": 1.3383060893530967,
+        "error_alignment_term": 1.7434022487784888,
+        "disagreement_penalty": 0.4050961594253786
+      },
+      "old_seed_averaging_identity": {
+        "mean_individual_seed_MSE": 186.9537511185118,
+        "mean3_MSE": 185.38939713387197,
+        "MSE_reduction_equal_between_seed_variance": 1.564353984639856
+      },
+      "primary011_RMSE": 13.0539977718711,
+      "reference009_RMSE": 13.105157912721568
+    },
+    "20261031": {
+      "feature_and_scaler_control": "Identical frozen B6912 data, same train/validation IDs, exact scaler mean/scale/variance and target mean/std across old3 and new heads. No representation/input-normalization change.",
+      "old_B_mean3": {
+        "rmse": 13.967093172617764,
+        "bias_prediction_minus_target": -0.016023053035739778,
+        "prediction_std": 13.099749812115375,
+        "residual_correlation_with009": 0.8808009812515292
+      },
+      "new_B_single": {
+        "rmse": 13.771791193005598,
+        "bias_prediction_minus_target": 0.0519613223545204,
+        "prediction_std": 12.153221251952573,
+        "residual_correlation_with009": 0.8904922183145816
+      },
+      "old_B_seed_metrics": [
+        {
+          "rmse": 14.034988370940743,
+          "bias_prediction_minus_target": -0.08949458571417843,
+          "prediction_std": 13.216137516144903,
+          "residual_correlation_with009": 0.8795777203784723
+        },
+        {
+          "rmse": 13.979562209461532,
+          "bias_prediction_minus_target": 0.1536983837245024,
+          "prediction_std": 13.234150730004083,
+          "residual_correlation_with009": 0.8755700575653302
+        },
+        {
+          "rmse": 14.05086283312339,
+          "bias_prediction_minus_target": -0.11227295711754103,
+          "prediction_std": 13.021311799193743,
+          "residual_correlation_with009": 0.8770350261929218
+        }
+      ],
+      "old_B_mean3_train_RMSE": 0.4717761976092711,
+      "new_B_single_train_RMSE": 5.620376733922213,
+      "new_old_prediction_difference_RMS": 3.6817016127540643,
+      "new_old_residual_correlation": 0.9648762683405758,
+      "new_complement_MSE_identity": {
+        "observed_MSE_gain": 1.7513270966964,
+        "error_alignment_term": 2.151653416140257,
+        "disagreement_penalty": 0.40032631944387775
+      },
+      "old_seed_averaging_identity": {
+        "mean_individual_seed_MSE": 196.61193483196504,
+        "mean3_MSE": 195.07969169258575,
+        "MSE_reduction_equal_between_seed_variance": 1.5322431393793527
+      },
+      "primary011_RMSE": 13.015176056591201,
+      "reference009_RMSE": 13.082283244172682
+    },
+    "20261101": {
+      "feature_and_scaler_control": "Identical frozen B6912 data, same train/validation IDs, exact scaler mean/scale/variance and target mean/std across old3 and new heads. No representation/input-normalization change.",
+      "old_B_mean3": {
+        "rmse": 14.02485574576349,
+        "bias_prediction_minus_target": -0.05546312048604179,
+        "prediction_std": 12.398330939804373,
+        "residual_correlation_with009": 0.895925074128115
+      },
+      "new_B_single": {
+        "rmse": 14.369641875486145,
+        "bias_prediction_minus_target": -0.1713440886182336,
+        "prediction_std": 11.385446086149301,
+        "residual_correlation_with009": 0.8922603092766865
+      },
+      "old_B_seed_metrics": [
+        {
+          "rmse": 14.16253707852508,
+          "bias_prediction_minus_target": -0.2649894082528318,
+          "prediction_std": 12.46369643977445,
+          "residual_correlation_with009": 0.8940701741346997
+        },
+        {
+          "rmse": 13.954225777514665,
+          "bias_prediction_minus_target": 0.06021499415966908,
+          "prediction_std": 12.555862505574325,
+          "residual_correlation_with009": 0.8889380337043531
+        },
+        {
+          "rmse": 14.133879756701425,
+          "bias_prediction_minus_target": 0.0383850526350362,
+          "prediction_std": 12.372187452704049,
+          "residual_correlation_with009": 0.8936682582321097
+        }
+      ],
+      "old_B_mean3_train_RMSE": 0.4745569998910041,
+      "new_B_single_train_RMSE": 5.62180661529333,
+      "new_old_prediction_difference_RMS": 3.9602266461583944,
+      "new_old_residual_correlation": 0.9614132429822586,
+      "new_complement_MSE_identity": {
+        "observed_MSE_gain": 0.8698101582599804,
+        "error_alignment_term": 1.2937977431990362,
+        "disagreement_penalty": 0.42398758493898714
+      },
+      "old_seed_averaging_identity": {
+        "mean_individual_seed_MSE": 198.35481017578223,
+        "mean3_MSE": 196.69657868947522,
+        "MSE_reduction_equal_between_seed_variance": 1.6582314863070713
+      },
+      "primary011_RMSE": 13.272377948565081,
+      "reference009_RMSE": 13.305105282101927
+    }
+  },
+  "seed_only_test": {
+    "seeds": [
+      20270215,
+      20270222,
+      20270308
+    ],
+    "settings_unchanged": true,
+    "all_seeds_equally_retained": true,
+    "Public_used_for_tuning": false,
+    "new_development_models": 30,
+    "existing_models_reused": 15
+  },
+  "validation": {
+    "passed": true,
+    "eligible_for_candidate": false,
+    "models_verified": 45,
+    "max_MPS_reload_error": 0.0,
+    "max_CPU_MPS_error": 3.4263589043348475e-05,
+    "replay": [
+      {
+        "split": "original",
+        "seed": 20270215,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "original",
+        "seed": 20270222,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261031",
+        "seed": 20270222,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      },
+      {
+        "split": "20261101",
+        "seed": 20270222,
+        "outer_validation_labels_changed_only_in_memory": true,
+        "full12epoch_state_exact": true,
+        "prediction_error": 0.0
+      }
+    ],
+    "original_base_seed_replay_exact": true,
+    "foldtrain_only_scalers_targets_verified": true,
+    "only_seed_changed": true,
+    "no_seed_selection": true,
+    "seeds": [
+      20270215,
+      20270222,
+      20270308
+    ],
+    "config": {
+      "hidden": 32,
+      "dropout": 0.5,
+      "epochs": 12,
+      "microbatch": 2,
+      "effective_batch": 16,
+      "head_lr": 0.0003,
+      "head_min_lr": 1e-05,
+      "head_weight_decay": 0.1,
+      "block_lr": 1e-06,
+      "block_min_lr": 1e-07,
+      "block_weight_decay": 0.0,
+      "clip_head": 1.0,
+      "clip_block": 1.0,
+      "seed": 20270215,
+      "prediction_anchor": 0.0,
+      "blend_new": 0.1
+    },
+    "protected011_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "protected011_files": 20,
+    "selection_bias": "011 recipe was discovered from084 control after seeing original data and all400 rows have been reused. Diagnosis is descriptive, not independent validation or a causal factorial experiment. New seed experiment isolates algorithmic randomness only. The new seeds are fixed before seeing any of their development outcomes. Same400 historical reuse remains; no Public score informs seeds or weights.",
+    "holdout_test_selection_access": false,
+    "cost": 0,
+    "seconds": 37.2807735420065,
+    "source_sha256": "22daf430f1a259f029595555e106504ee01f468be8288ef4dd6317934b152606"
+  },
+  "interpretation": "Averaging reduces MSE relative to the mean individual-seed MSE by an exact diversity identity. That does not guarantee improvement over the existing selected single seed or preserve complementarity with009. This test measures seed robustness of one fixed recipe; it does not identify separate effects of dropout,width,weight decay and training length, or prove a performance ceiling.",
+  "selection_bias": "011 recipe was discovered from084 control after seeing original data and all400 rows have been reused. Diagnosis is descriptive, not independent validation or a causal factorial experiment. New seed experiment isolates algorithmic randomness only. The new seeds are fixed before seeing any of their development outcomes. Same400 historical reuse remains; no Public score informs seeds or weights.",
+  "best011": {
+    "public_rmse_parent_reported": 11.7352685854,
+    "submission_id": "2de40845-348f-4d1f-b1b3-23c4c4b3f7a1",
+    "CSV": "artifacts/submission-candidate-011.csv",
+    "sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "protected_files": 20,
+    "remaining_submission_reported_by_parent": 1
+  },
+  "scope": {
+    "cost": 0,
+    "new_install_or_download": false,
+    "holdout_test_selection_access": false,
+    "new_candidate_created": false,
+    "uploaded": false,
+    "010_unsubmitted": true
+  },
+  "evidence_sha256": {
+    "artifacts/frozen-head-diagnostics-087/report.json": "87b11a1f039319898ea4e9afe161a30d32a919b3bdcc77937c6f920bafe294bd",
+    "artifacts/frozen-seed-088/plan.json": "0684821b8f3a40dc947c773d361f6cced7860306205c75fcc72b3b03cde3eaec",
+    "reports/frozen-seed-088-validation.json": "9a097f555a0aa21dafe349d8880e8633529e3d7a740c4c962f44056c830342ee",
+    "reports/candidate011-public-submission.json": "9220b3d414da739824cda4a76f7867603b14333b2cef5b0de82a5ec802473b71"
+  },
+  "source_sha256": "4e4164aa5e303e2c4291fb2d6e40c0358c293ee7141af0cfedb4459e6714451e"
+}

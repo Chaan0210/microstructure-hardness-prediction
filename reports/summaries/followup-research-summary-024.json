@@ -1,0 +1,692 @@
+{
+  "original_submission003": {
+    "candidate": "artifacts/submission-candidate-003.csv",
+    "sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "public_rmse": 12.4479505141,
+    "public_rank": 23,
+    "public_participants": 37,
+    "submitted_at": "2026-10-01T01:51:00+09:00",
+    "submission_id": "09432cbd-74ba-4f0e-afae-41a84311a5d1",
+    "daily_used": 2,
+    "daily_limit": 5,
+    "remaining_at_confirmation": 3,
+    "source": "Parent delegation: submission verified by separate browser worker; not reverified in this runtime",
+    "url": "https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai?section=submissions",
+    "model_selection_use": false
+  },
+  "selected_recipe": {
+    "panel": "run-022",
+    "cnn_seeds": [
+      20261003,
+      20261023,
+      20261043
+    ],
+    "cnn_aggregation": "mean3_d4",
+    "weights": {
+      "baseline": 0.5,
+      "kernel": 0.25,
+      "cnn": 0.25
+    },
+    "original_development_oof_rmse": 13.53511407926948,
+    "comparison_candidate003_original_oof_rmse": 13.705696031698212,
+    "repartition_results": [
+      {
+        "seed": 20261031,
+        "candidate003": 13.63181073293285,
+        "candidate004": 13.562334543413382,
+        "paired_vs_candidate003": {
+          "improvement_rmse": 0.06947618951946843,
+          "fold_improvement_rmse": [
+            0.14342467756315536,
+            0.29828538979674235,
+            -0.023435277543834232,
+            0.12230682733201625,
+            -0.23093059962014628
+          ],
+          "better_folds": 3,
+          "conditional_paired_improvement_95": [
+            -0.058081325870632215,
+            0.19416372260842632
+          ]
+        },
+        "paired_vs_compact3D4": {
+          "improvement_rmse": 0.052060116495106,
+          "fold_improvement_rmse": [
+            -0.03761194967515458,
+            0.11181513753699868,
+            0.10488403279816438,
+            0.08010697301916636,
+            -0.006074364877422411
+          ],
+          "better_folds": 3,
+          "conditional_paired_improvement_95": [
+            -0.03734831534581025,
+            0.13966539406858428
+          ]
+        }
+      },
+      {
+        "seed": 20261101,
+        "candidate003": 13.729980391208457,
+        "candidate004": 13.677678757385682,
+        "paired_vs_candidate003": {
+          "improvement_rmse": 0.05230163382277553,
+          "fold_improvement_rmse": [
+            0.1699432587144134,
+            0.1071697860220251,
+            -0.15725549363681957,
+            0.10069330812921073,
+            0.042213064871175376
+          ],
+          "better_folds": 4,
+          "conditional_paired_improvement_95": [
+            -0.07449080348819197,
+            0.1695298512903021
+          ]
+        },
+        "paired_vs_compact3D4": {
+          "improvement_rmse": 0.06746333181391329,
+          "fold_improvement_rmse": [
+            0.1167711650304124,
+            -0.06599024554853727,
+            0.01212714642553614,
+            0.14246505400655884,
+            0.12642874995025544
+          ],
+          "better_folds": 4,
+          "conditional_paired_improvement_95": [
+            -0.02619637357194149,
+            0.15996726972186592
+          ]
+        }
+      }
+    ],
+    "rationale": "Denoised57 panel fixed-weight recipe improves both new partitions slightly. Native texture extension and ET/HGB did not help. Stronger prominence improves segmentation stability but not combined OOF, so keep already-confirmed weak version. No more sweep.",
+    "important_limit": "CNN seed/D4 alone had no reproducible gain (+.0174/-.0152) on fresh partitions. Overall candidate gain is small and conditional paired intervals include zero. Same400 rows and repeated model selection: no independent validation or prize guarantee. No posthoc weights/scale/negative clipping.",
+    "strong_prominence_control": {
+      "run-022": {
+        "median_count": 515.0,
+        "median_setting_range": 420.0,
+        "noise_range_spearman": 0.7884195968340258,
+        "count_at_most_one": 0,
+        "original_cv_rmse": 13.53511407926948
+      },
+      "run-025": {
+        "median_count": 90.0,
+        "median_setting_range": 256.0,
+        "noise_range_spearman": 0.24862052514399346,
+        "count_at_most_one": 0,
+        "original_cv_rmse": 13.542219468075258
+      }
+    },
+    "fulltrain_fit_scope": "After this decision and development-only kernel choice, train500 may be used for final fit. No new holdout score; test inference only after frozen models.",
+    "public_score_used_for_selection": false,
+    "reference_reports": {
+      "artifacts/frozen-validation-021/report.json": "bcdf8bf2f5bb6573813a94aff40eb3ff5484a38cd4917322f3e433cabd7deba8",
+      "artifacts/denoised-confirmation-023/report.json": "b9722d6f41faf256a942bc4b44612abeb22d6f1eee56c64302bf508b79cb416c",
+      "artifacts/run-022/report.json": "87e7ff556b67334561a94577eadf788f4721821c5d815b382e49e793223d0df6",
+      "artifacts/run-025/report.json": "6817fd5f9a2525f750803cecf8c388d8ea9c4fa0f111b853675f8194629b7a5d"
+    }
+  },
+  "experiments": {
+    "run-018": {
+      "seconds": 138.65942391596036,
+      "scores": {
+        "candidate003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.68045368639936,
+            12.99100474125055,
+            14.032386512109257
+          ]
+        },
+        "cnn_seed20261003": {
+          "rmse": 15.032317843077909,
+          "fold_rmse": [
+            15.249590276858356,
+            14.37046186697119,
+            15.484683471683876,
+            15.05074615048783,
+            14.983068407032066
+          ]
+        },
+        "cnn_seed20261023": {
+          "rmse": 14.931024236899864,
+          "fold_rmse": [
+            14.077140146940424,
+            15.127985270768612,
+            15.632606922321695,
+            15.07036703071022,
+            14.702423239627008
+          ]
+        },
+        "cnn_seed20261043": {
+          "rmse": 14.226369371296006,
+          "fold_rmse": [
+            14.6489421694539,
+            14.257644996607299,
+            15.06296489772582,
+            14.624834484155572,
+            12.381328067311415
+          ]
+        },
+        "cnn_mean3": {
+          "rmse": 14.316237784821688,
+          "fold_rmse": [
+            14.206548877745554,
+            14.376195666677715,
+            15.188075993826443,
+            14.254254040255207,
+            13.505957132207461
+          ]
+        },
+        "candidate_mean3": {
+          "rmse": 13.612513534356744,
+          "fold_rmse": [
+            13.365736226788192,
+            13.255420571814042,
+            14.644045313961907,
+            12.908597164449635,
+            13.822937469440845
+          ]
+        }
+      }
+    },
+    "run-019": {
+      "seconds": 6.480572499975096,
+      "scores": {
+        "candidate003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.53939448345915,
+            13.218378105383424,
+            14.68045368639936,
+            12.991004741250551,
+            14.032386512109257
+          ]
+        },
+        "candidate_multiseed": {
+          "rmse": 13.612513534356744,
+          "fold_rmse": [
+            13.365736226788192,
+            13.255420571814042,
+            14.644045313961907,
+            12.908597164449635,
+            13.822937469440845
+          ]
+        },
+        "native_kernel": {
+          "rmse": 16.428230369142074,
+          "fold_rmse": [
+            16.645521967724157,
+            16.298123427459583,
+            16.599705425320117,
+            15.52320686503354,
+            17.035591122449745
+          ]
+        },
+        "combined_kernel": {
+          "rmse": 14.448764126778647,
+          "fold_rmse": [
+            14.358737627566914,
+            13.771847178896792,
+            15.351354313465649,
+            13.934940600746415,
+            14.769907046977064
+          ]
+        },
+        "combined_et": {
+          "rmse": 14.914402863026568,
+          "fold_rmse": [
+            14.900902296329985,
+            14.58000520533099,
+            15.723094103354756,
+            14.570505275343585,
+            14.767136168169507
+          ]
+        },
+        "combined_hgb": {
+          "rmse": 15.032402441087775,
+          "fold_rmse": [
+            15.296334679434977,
+            14.636708397715982,
+            15.467223479719578,
+            14.292695965840066,
+            15.431732510172807
+          ]
+        },
+        "native_kernel_blend": {
+          "rmse": 14.028223009491127,
+          "fold_rmse": [
+            13.978260057060012,
+            13.594521890910984,
+            14.72459858783681,
+            13.193647898404684,
+            14.589937488379451
+          ]
+        },
+        "native_kernel_multiseed_blend": {
+          "rmse": 13.931835124132274,
+          "fold_rmse": [
+            13.802113825318418,
+            13.630314808000183,
+            14.697621563996517,
+            13.120081294106027,
+            14.354083356849628
+          ]
+        },
+        "combined_kernel_blend": {
+          "rmse": 13.7392910131262,
+          "fold_rmse": [
+            13.596628153864824,
+            13.253205419181226,
+            14.66583123271927,
+            12.959627160404679,
+            14.15225405354444
+          ]
+        },
+        "combined_kernel_multiseed_blend": {
+          "rmse": 13.64627096773981,
+          "fold_rmse": [
+            13.419290602170125,
+            13.289463752033921,
+            14.631281100884324,
+            12.893640769656724,
+            13.931833712499163
+          ]
+        },
+        "combined_et_blend": {
+          "rmse": 13.870504650903039,
+          "fold_rmse": [
+            13.737525950555732,
+            13.489135832982678,
+            14.78352293528588,
+            13.101893853645409,
+            14.179771460092358
+          ]
+        },
+        "combined_et_multiseed_blend": {
+          "rmse": 13.779680636940697,
+          "fold_rmse": [
+            13.569255106555518,
+            13.52709200162112,
+            14.75152656481129,
+            13.03863280191411,
+            13.952691811181207
+          ]
+        },
+        "combined_hgb_blend": {
+          "rmse": 13.789864204736189,
+          "fold_rmse": [
+            13.672255756451984,
+            13.372300839128128,
+            14.693249720346577,
+            12.992636160745485,
+            14.154595895798828
+          ]
+        },
+        "combined_hgb_multiseed_blend": {
+          "rmse": 13.697271934068104,
+          "fold_rmse": [
+            13.520274020294938,
+            13.413294689694702,
+            14.655590413265186,
+            12.912021037126634,
+            13.923196132282394
+          ]
+        }
+      }
+    },
+    "run-020": {
+      "seconds": 3.1676338330144063,
+      "scores": {
+        "candidate003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.68045368639936,
+            12.99100474125055,
+            14.032386512109257
+          ]
+        },
+        "candidate_mean3": {
+          "rmse": 13.612513534356744,
+          "fold_rmse": [
+            13.365736226788192,
+            13.255420571814042,
+            14.644045313961907,
+            12.908597164449635,
+            13.822937469440845
+          ]
+        },
+        "cnn_mean3_d4": {
+          "rmse": 14.101785259882034,
+          "fold_rmse": [
+            14.223125368759087,
+            13.674634096841046,
+            15.078468947533786,
+            13.865383109726478,
+            13.61615768342803
+          ]
+        },
+        "candidate_mean3_d4": {
+          "rmse": 13.585046659194468,
+          "fold_rmse": [
+            13.406445525957952,
+            13.08771271819215,
+            14.647217843522316,
+            12.847026255517576,
+            13.862156530009706
+          ]
+        }
+      }
+    },
+    "run-022": {
+      "seconds": 101.35548604198266,
+      "scores": {
+        "candidate003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.53939448345915,
+            13.218378105383424,
+            14.68045368639936,
+            12.991004741250551,
+            14.032386512109257
+          ]
+        },
+        "candidate_multiseed_d4": {
+          "rmse": 13.585046659194468,
+          "fold_rmse": [
+            13.406445525957952,
+            13.08771271819215,
+            14.647217843522316,
+            12.847026255517576,
+            13.862156530009706
+          ]
+        },
+        "denoised_kernel": {
+          "rmse": 14.706803209223285,
+          "fold_rmse": [
+            14.734608771429283,
+            13.56160626203225,
+            16.691455867921327,
+            13.533453668486157,
+            14.78733836539902
+          ]
+        },
+        "combined_kernel": {
+          "rmse": 14.13237462297155,
+          "fold_rmse": [
+            13.878807760948273,
+            12.917385915123866,
+            15.920152707524373,
+            13.499576215620271,
+            14.263592760669267
+          ]
+        },
+        "combined_et": {
+          "rmse": 14.433986339329962,
+          "fold_rmse": [
+            14.34952724853359,
+            13.721618709322065,
+            15.369984943287934,
+            13.72342739824169,
+            14.931147285044311
+          ]
+        },
+        "combined_hgb": {
+          "rmse": 14.845530336806837,
+          "fold_rmse": [
+            15.362743743605511,
+            13.92414286563386,
+            16.058756135031825,
+            13.359017001300707,
+            15.352726832244644
+          ]
+        },
+        "denoised_kernel_blend": {
+          "rmse": 13.725131583923057,
+          "fold_rmse": [
+            13.608107779520468,
+            13.127564016619113,
+            14.764252221228984,
+            12.847535140142677,
+            14.189444943381917
+          ]
+        },
+        "denoised_kernel_multiseed_blend": {
+          "rmse": 13.605211063090866,
+          "fold_rmse": [
+            13.485579894510197,
+            13.004058493718,
+            14.737645435024003,
+            12.72588182936445,
+            13.978418245765914
+          ]
+        },
+        "combined_kernel_blend": {
+          "rmse": 13.660772906275538,
+          "fold_rmse": [
+            13.504814258801893,
+            13.075762982986085,
+            14.72443059115913,
+            12.783829645173752,
+            14.124193414192007
+          ]
+        },
+        "combined_kernel_multiseed_blend": {
+          "rmse": 13.53511407926948,
+          "fold_rmse": [
+            13.369908278619624,
+            12.948274357871282,
+            14.68289834236931,
+            12.645929789562965,
+            13.931161670653262
+          ]
+        },
+        "combined_et_blend": {
+          "rmse": 13.799291029364216,
+          "fold_rmse": [
+            13.675565803991473,
+            13.259741575377445,
+            14.697011951514378,
+            13.019211674213446,
+            14.27439262944074
+          ]
+        },
+        "combined_et_multiseed_blend": {
+          "rmse": 13.677105232078473,
+          "fold_rmse": [
+            13.548363460450167,
+            13.136118724061124,
+            14.671005983188218,
+            12.877394095803155,
+            14.076028374519597
+          ]
+        },
+        "combined_hgb_blend": {
+          "rmse": 13.766529124193974,
+          "fold_rmse": [
+            13.771962242412238,
+            13.140945420545364,
+            14.853755108761058,
+            12.79815332845717,
+            14.170690196122399
+          ]
+        },
+        "combined_hgb_multiseed_blend": {
+          "rmse": 13.6456499031532,
+          "fold_rmse": [
+            13.648072240180154,
+            13.020436309309655,
+            14.827457635038,
+            12.647761430633507,
+            13.978476301589252
+          ]
+        }
+      }
+    },
+    "run-025": {
+      "seconds": 63.29867574997479,
+      "scores": {
+        "candidate003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.53939448345915,
+            13.218378105383424,
+            14.68045368639936,
+            12.991004741250551,
+            14.032386512109257
+          ]
+        },
+        "candidate_multiseed_d4": {
+          "rmse": 13.585046659194468,
+          "fold_rmse": [
+            13.406445525957952,
+            13.08771271819215,
+            14.647217843522316,
+            12.847026255517576,
+            13.862156530009706
+          ]
+        },
+        "denoised_kernel": {
+          "rmse": 14.89780258718931,
+          "fold_rmse": [
+            15.096537880983513,
+            14.042708320565692,
+            15.789141333605912,
+            14.72863695960589,
+            14.778016305492974
+          ]
+        },
+        "combined_kernel": {
+          "rmse": 14.014803558310431,
+          "fold_rmse": [
+            14.006321722685039,
+            13.27760347126301,
+            15.068756755686348,
+            13.450179755626534,
+            14.199543166242726
+          ]
+        },
+        "combined_et": {
+          "rmse": 14.574858304028275,
+          "fold_rmse": [
+            15.19085391451886,
+            14.054963600295613,
+            15.413488017911776,
+            13.406852525615319,
+            14.714248908208491
+          ]
+        },
+        "combined_hgb": {
+          "rmse": 14.871236587012094,
+          "fold_rmse": [
+            15.485780599206432,
+            13.952933465344513,
+            16.08642491128056,
+            13.492925776941235,
+            15.180333416332902
+          ]
+        },
+        "denoised_kernel_blend": {
+          "rmse": 13.834320451511735,
+          "fold_rmse": [
+            13.675389235567533,
+            13.268810955855287,
+            14.767398494243439,
+            13.170557213326711,
+            14.224094391270818
+          ]
+        },
+        "denoised_kernel_multiseed_blend": {
+          "rmse": 13.715681149376131,
+          "fold_rmse": [
+            13.572835658222733,
+            13.144794293098673,
+            14.732862995551649,
+            13.046370577970464,
+            14.011674590866296
+          ]
+        },
+        "combined_kernel_blend": {
+          "rmse": 13.661960946868533,
+          "fold_rmse": [
+            13.495310272388704,
+            13.134564061106245,
+            14.65861284215393,
+            12.863794955763652,
+            14.08025429547955
+          ]
+        },
+        "combined_kernel_multiseed_blend": {
+          "rmse": 13.542219468075258,
+          "fold_rmse": [
+            13.37399436463707,
+            13.008210134540253,
+            14.619071865609717,
+            12.736565996822202,
+            13.890425077535006
+          ]
+        },
+        "combined_et_blend": {
+          "rmse": 13.82877505478818,
+          "fold_rmse": [
+            13.842151408801584,
+            13.353888819776348,
+            14.750389837765745,
+            12.92304997721459,
+            14.20085822282846
+          ]
+        },
+        "combined_et_multiseed_blend": {
+          "rmse": 13.711004115809036,
+          "fold_rmse": [
+            13.725990063369805,
+            13.227020670670994,
+            14.72364242767892,
+            12.780465090486949,
+            14.016966719275423
+          ]
+        },
+        "combined_hgb_blend": {
+          "rmse": 13.746815493777573,
+          "fold_rmse": [
+            13.660592008312504,
+            13.171401155769525,
+            14.864746303803416,
+            12.76932070379455,
+            14.16901071928608
+          ]
+        },
+        "combined_hgb_multiseed_blend": {
+          "rmse": 13.628900491576621,
+          "fold_rmse": [
+            13.547078875537652,
+            13.05244932581736,
+            14.818667089324029,
+            12.62580061485566,
+            13.99432485377963
+          ]
+        }
+      }
+    }
+  },
+  "frozen_confirmation_seconds": 463.2430319589912,
+  "denoised_confirmation_seconds": 1.011208749958314,
+  "engineering_tests": {
+    "passed": 18,
+    "seconds": 2.798,
+    "new_test_failure_fixed": "Initial new grid test referenced an incorrect feature name; corrected test to fixed schema, then all18 passed. Model feature implementation was unaffected."
+  },
+  "science_limit": "Two new partitions have small gains with conditional intervals crossing zero. Same development400 reused for feature/model exploration. No independent heldout claim, public fitting, test training, or technical performance ceiling claim.",
+  "scope_limit": "Research sweep stopped after prespecified seed/D4, native features, denoised panel, and one3x prominence control. Final fit/prediction only now.",
+  "official_reference_review": "reports/official-reference-review-018.json",
+  "residual_analysis": "reports/denoised-error-analysis-024.json",
+  "paid_services": false,
+  "new_packages_installed": false,
+  "new_uploads_in_this_worker": 0
+}

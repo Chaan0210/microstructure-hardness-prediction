@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "021 · 코드로 확인한 추론 구조",
+    "output": "docs/records/diagrams/verified-021-20261007/archify-021.html",
+    "quality_profile": "showcase",
+    "visual_preset": "editorial",
+    "locale": "en",
+    "repository": {
+      "url": "ssh://git@localhostdocs/records/diagrams/verified-021-20261007/code-evidence",
+      "revision": "650c10985d3b7d0a5da2a7c36947e268588b7a2b",
+      "link_mode": "local-only"
+    }
+  },
+  "components": [
+    {
+      "id": "leaves",
+      "type": "backend",
+      "icon": "none",
+      "label": "기본 모델 네 가지",
+      "sublabel": "KRR .3 / CNN .3 / S .2 / B .2",
+      "pos": [
+        40,
+        60
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "experiments/reproduction-018-176/infer.py",
+          "line": 42,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "id": "affine",
+      "type": "backend",
+      "icon": "none",
+      "label": "Affine 보정",
+      "sublabel": "1.1103548755 × raw − 21.30912793",
+      "pos": [
+        400,
+        60
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "experiments/reproduction-018-176/infer.py",
+          "line": 44,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "id": "blend",
+      "type": "backend",
+      "icon": "none",
+      "label": "short-B 결합",
+      "sublabel": "0.9 × cal + 0.1 × short-B",
+      "pos": [
+        760,
+        60
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "experiments/reproduction-018-176/infer.py",
+          "line": 44,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "id": "short",
+      "type": "backend",
+      "icon": "none",
+      "label": "short-B 단일 head",
+      "sublabel": "6912 → 32 → 1 / seed 20270215",
+      "pos": [
+        760,
+        260
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "experiments/reproduction-018-176/feature_helpers.py",
+          "line": 9,
+          "end_line": 17
+        }
+      ]
+    },
+    {
+      "id": "residual",
+      "type": "backend",
+      "icon": "none",
+      "label": "저장된 잔차 보정",
+      "sublabel": "585D / 5 candidates × 3 blocks",
+      "pos": [
+        400,
+        460
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "experiments/reproduction-018-176/infer.py",
+          "line": 45,
+          "end_line": 47
+        }
+      ]
+    },
+    {
+      "id": "candidate018",
+      "type": "backend",
+      "icon": "none",
+      "label": "후보 018",
+      "sublabel": "base + mean3(correction)",
+      "pos": [
+        760,
+        460
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "experiments/reproduction-018-176/infer.py",
+          "line": 44,
+          "end_line": 47
+        }
+      ]
+    },
+    {
+      "id": "large",
+      "type": "backend",
+      "icon": "none",
+      "label": "Frozen DINOv2-L",
+      "sublabel": "9216 → 64 → 1 / mean3",
+      "pos": [
+        400,
+        680
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "experiments/candidate021-178/runtime.py",
+          "line": 50,
+          "end_line": 66
+        },
+        {
+          "path": "experiments/candidate021-178/train.py",
+          "line": 12,
+          "end_line": 16
+        }
+      ]
+    },
+    {
+      "id": "candidate021",
+      "type": "backend",
+      "icon": "none",
+      "label": "최고 확인 후보 021",
+      "sublabel": "0.9 × 018 + 0.1 × L",
+      "pos": [
+        760,
+        680
+      ],
+      "size": [
+        250,
+        76
+      ],
+      "sources": [
+        {
+          "path": "experiments/candidate021-178/infer.py",
+          "line": 22,
+          "end_line": 36
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "leaves-affine",
+      "from": "leaves",
+      "to": "affine",
+      "label": "raw"
+    },
+    {
+      "id": "affine-blend",
+      "from": "affine",
+      "to": "blend",
+      "label": "cal"
+    },
+    {
+      "id": "short-blend",
+      "from": "short",
+      "to": "blend",
+      "label": "0.1"
+    },
+    {
+      "id": "blend-candidate018",
+      "from": "blend",
+      "to": "candidate018",
+      "label": "base",
+      "fromSide": "right",
+      "toSide": "right",
+      "via": [
+        [
+          1080,
+          98
+        ],
+        [
+          1080,
+          498
+        ]
+      ]
+    },
+    {
+      "id": "residual-candidate018",
+      "from": "residual",
+      "to": "candidate018",
+      "label": "mean3"
+    },
+    {
+      "id": "candidate018-candidate021",
+      "from": "candidate018",
+      "to": "candidate021",
+      "label": "0.9"
+    },
+    {
+      "id": "large-candidate021",
+      "from": "large",
+      "to": "candidate021",
+      "label": "0.1"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "slate",
+      "title": "입력과 기본 모델",
+      "items": [
+        "회색조 256×256. KRR compact26 → MinMax clip → StandardScaler → block weights → RBF (bandwidth 4, alpha .1).",
+        "CNN: BOX 128×128 /255 → train μσ. Conv 1→16→32→64→96, stride2, GN4 + SiLU. Feature mean/std + input mean/std =194 →64→1.",
+        "S/B: 전체 영상 bicubic504, RGB 복제, ImageNet norm. Frozen patch14, 1296 patches. Layers [5,8,11], CLS + patch mean + population std →3456/6912.",
+        "S/B/L readout: StandardScaler →64 GELU Dropout .25 →1 → target 역표준화. 각 3개 scalar 예측의 동일평균."
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "보정 순서와 잔차",
+      "items": [
+        "raw = .3 KRR + .3 mean3 CNN + .2 mean3 S + .2 mean3 B. Calibrator는 raw 다음에 적용한다.",
+        "cal = 194.16551625321193 + 1.110354875458264 × (raw − 194.05925884008164).",
+        "short-B = B6912 → 독립 scaler →32 GELU Dropout .5 →1; 단일 seed 20270215.",
+        "잔차 입력585 = physics57 (compact26 + denoised31) + B spatial528. Final B patch → QR768×32 →36×36×32 → 인접차분 Gram upper triangle528.",
+        "none / ridge1 / ridge.1 / rbf1 / rbf.1 저장 예측에 block별 저장 가중합; train n167/167/166 세 block 보정을 동일평균. 잔차 뒤 재보정 없음."
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "학습과 추론 구분",
+      "items": [
+        "학습에만: group nested OOF affine, honest residual, 512 group-bootstrap winner frequency. 추론은 저장 scaler·모델·계수만 적용.",
+        "CNN seeds 20261003/20261023/20261043; 마지막 5epoch 가중치 평균. D4는 학습 증강이며 추론 TTA가 아니다.",
+        "S/B/L seeds 20261128/20261205/20261219. L layers [11,17,23], d1024, 24 blocks, 9216D. Frozen encoders; cls7 checkpoint tensor는 aux0으로 비활성.",
+        "021 canonical: 기존 018 CSV + MPS frozen L features에 CPU readout 평균. 출력 hardness clipping 없음."
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "근거와 확인 범위",
+      "items": [
+        "각 노드를 클릭하면 코드 근거 행과 인접 경로를 확인할 수 있다. 원본 폴더는 Git 저장소가 아니므로 읽은 소스의 별도 로컬 snapshot commit으로 근거를 고정했다. localhost SSH 주소는 스냅샷 식별자일 뿐이며 서버 접속이나 공개 저장소를 뜻하지 않는다.",
+        "Public RMSE 11.4878517800은 저장된 제출 기록에서 확인했다. 이번 작업은 학습·test 추론·브라우저 점수 재검증을 실행하지 않았다.",
+        "영문 Viewer UI 유지. 다이어그램 설명은 한국어. 파일은 외부 서버 없이 열리는 독립형 HTML이다."
+      ]
+    }
+  ]
+}

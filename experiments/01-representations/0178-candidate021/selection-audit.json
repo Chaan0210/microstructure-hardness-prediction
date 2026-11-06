@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "fixed_at_UTC": "2026-10-05T23:13:33.167072+00:00",
+  "original_plan_sha256": "567ac57bf50002649cf978246de29d1504b83071a0616945935e48735fee3aa4",
+  "frozen_recipe": {
+    "018": 0.9,
+    "L_MLP": 0.1,
+    "hidden": 64,
+    "dropout": 0.25,
+    "epochs": 100,
+    "seeds": [
+      20261128,
+      20261205,
+      20261219
+    ],
+    "aux_weight": 0.0
+  },
+  "source_file_mtime_UTC": {
+    "plan.json": "2026-10-05T23:13:33.198825+00:00",
+    "provenance.json": "2026-10-05T23:13:55.209556+00:00",
+    "benchmark.json": "2026-10-05T23:15:28.733560+00:00",
+    "extraction.json": "2026-10-05T23:19:03.688190+00:00",
+    "readout-code-lock.json": "2026-10-05T23:19:52.031204+00:00",
+    "original/report.json": "2026-10-05T23:20:34.915726+00:00",
+    "20261031/report.json": "2026-10-05T23:22:25.044125+00:00",
+    "20261101/report.json": "2026-10-05T23:22:59.215249+00:00"
+  },
+  "mtime_is_local_evidence_not_trusted_timestamp_service": true,
+  "history": "Plan fixed beforedownload/featureextraction. Readoutcodehash fixed beforefirstfit. Two prespecified readouts:matchedB/L3seedMLP andfinalCLS PCA/SVR9candidateinnergrid. Original5fold rejectedSVR blend and retainedMLP. MLP thenconfirmedunchangedontwoexistingpartitions. No alternativeblendweight/layer/seed/epoch run in177.",
+  "original_model_choice_used": [
+    "original4005foldRMSE versus018",
+    "sameweightBcontrolRMSE"
+  ],
+  "confirmation_used": [
+    "same400 repartition20261031",
+    "same400 repartition20261101"
+  ],
+  "observed_RMSE": {
+    "original": {
+      "reference018": 12.811945280526919,
+      "B_MLP": 13.615777507504738,
+      "blend_B_MLP": 12.797114144449424,
+      "L_MLP": 13.897309666752351,
+      "blend_L_MLP": 12.786200775750695,
+      "B_SVR": 16.305621378409068,
+      "blend_B_SVR": 12.990629150981889,
+      "L_SVR": 15.981178807497134,
+      "blend_L_SVR": 12.912427040131584
+    },
+    "20261031": {
+      "reference018": 12.645872618239814,
+      "B_MLP": 13.967093172617764,
+      "blend_B_MLP": 12.67774011374635,
+      "L_MLP": 14.072964146377657,
+      "blend_L_MLP": 12.621902419708583
+    },
+    "20261101": {
+      "reference018": 13.048624416802191,
+      "B_MLP": 14.02485574576349,
+      "blend_B_MLP": 13.052589976080085,
+      "L_MLP": 14.330638886351583,
+      "blend_L_MLP": 13.032449212752852
+    }
+  },
+  "judgment": "No within177 evidence ofposthocweight tuning; bounded2readoutselection is explicit. However it remains adaptive modelselection on repeatedlyused400rows, not independentunbiasedvalidation. Small pooledgain.0219165 andconditionalCIincludes0. No Public/holdout/test result selectedthisrecipe.",
+  "no_more_tuning": true,
+  "technical_validation_gap": null
+}

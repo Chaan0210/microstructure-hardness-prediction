@@ -1,0 +1,42 @@
+{
+  "hypothesis": "Frozen natural-image patch representation may not align with synthetic hardness. Weak last-block adaptation changes representation using only outer-train labels while holding original Ridge head fixed, isolating representation adaptation.",
+  "resolution": 504,
+  "backbone": "Pinned original DINOv2 ViT-S/14; blocks0..10, patch/pos embeddings, final norm and regression head frozen; only block11 parameters trained. All modules stay eval, gradients enabled only block11.",
+  "pooling": "Unchanged normalized CLS+patch mean+population std1152",
+  "preprocessing": "Same full grayscale RGB bicubic504 and official ImageNet normalization. No augmentation. Fold-only fixed StandardScaler and targetmean/std from matched039 Ridge.",
+  "initial_head": "Samefold039 selected Ridge,lambda(.1,1,10) inside inner3fold; frozen throughout adaptation. Initial predictions must reproduce005 DINO component.",
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 1e-06,
+    "weight_decay": 0,
+    "batch_size": 4,
+    "epochs": 8,
+    "gradient_clip_norm": 1,
+    "anchor_prediction_penalty": 0.1,
+    "seed": "20261127+outerfold",
+    "schedule": "constant;fixed8epochs,no early stopping"
+  },
+  "loss": "MSE on fold-standardized training target plus0.1 MSE to initial frozenRidge training prediction. No outer labels or validation curves used for schedule.",
+  "prefix_cache": "Deterministic frozen eval blocks0..10; development400 memmapfloat32 tokens400x1297x384 ~797MB; no fit/normalization across rows.",
+  "ensemble": "Fixed .75samefold003+.25adaptedDINO, compare samefold005 and unchanged frozenDINO.",
+  "screen": "Original5fold only first. Advance same single setting to both existing repartitions if pooled blendRMSE improves005,atleast3/5folds improve,and gain exceeds paired-bootstrap standard deviation. This is a compute gate,not statistical significance.",
+  "limits": "Historical development400 and reused folds create repeated-selection optimism. No holdout/test/public tuning.",
+  "sources": {
+    "dino_lastblock_043.py": "43fafb62f65a935c60976436d11de19ea90ef0f812221d5024929bafaca98e23",
+    "dino_spatial_039.py": "6a5a2546cf3266dd67fcaccae2dfe978bc431349cec2d5ab784b9a065e79c692",
+    "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353",
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5"
+  },
+  "protected": {
+    "artifacts/submission-candidate-005.manifest.json": "9cef5f5031d4a2881b0d72bd078569bf77b16d5c8438be87e0b8b40537c47717",
+    "artifacts/submission-candidate-005.csv": "473ef271d35b2c18185690471e2ffbada07a01cf31d07be4c2d489bd76e67ff4",
+    "artifacts/submission-candidate-005.components.csv": "76708a9b7717480834394a114d362e208b30f0ec407218d8705d6683c7e6edee",
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/dino-spatial-039/candidate-design.json": "1675f7a1e9ddae89388136220e9b3c626e90b1ccdf6169f5585cd14d7f1de072",
+    "artifacts/final-model-041/report.json": "39347ff815fdb22357e237adbd5f4a97674bfd85cc5cf7962978f261b892695e",
+    "artifacts/final-model-041/train_features.npz": "81d47f46cca3143d71e8488048b3f3e919bfcfbc064e0436d74d047e24d2d0bd",
+    "artifacts/final-model-041/test_features.npz": "6c20185c58f124ee98dfea562f10d675bad9908899739943eeb0f7a66acbded7",
+    "artifacts/final-model-041/decision.json": "a92a43fb0fbc51a5ae6b9e25abcca3edc4ecac8e3853bafa61be2eb48c631f0e",
+    "artifacts/final-model-041/dino-regressor.joblib": "81eb64ac92d7bdb244e132860ea7470dbc0711e7d9ccaf353cc47990af32bad7"
+  }
+}

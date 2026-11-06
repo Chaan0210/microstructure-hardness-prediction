@@ -1,0 +1,218 @@
+{
+  "study": 175,
+  "status": "completed_fresh_development_reproduction",
+  "UTC": "2026-10-05T18:30:55.007924+00:00",
+  "scope": "Original5fold dev400 only. No500/root400 production fit, rawholdout/test access, CSV, upload, install, download or cost.",
+  "RMSE": {
+    "fresh175": 12.811945280526919,
+    "stored018": 12.811945280526919
+  },
+  "final_prediction_max_abs_error": 0.0,
+  "final_prediction_exact": true,
+  "component_predictions_all_exact": true,
+  "neural_states": {
+    "compared": 605,
+    "tensor_exact": 605,
+    "MPS_nondeterminism_observed": false,
+    "interpretation": "Same-environment reproduction only; exactness is measured, not guaranteed on other hardware/library versions."
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "fresh_RMSE": 12.805516135869311,
+      "stored018_RMSE": 12.805516135869311,
+      "final_prediction_max_error": 0.0,
+      "all_neural_states_exact": true,
+      "train_seconds": 327.10167075000027,
+      "independent_validation_seconds": 6.564098458000444
+    },
+    {
+      "fold": 1,
+      "fresh_RMSE": 12.262774212459604,
+      "stored018_RMSE": 12.262774212459604,
+      "final_prediction_max_error": 0.0,
+      "all_neural_states_exact": true,
+      "train_seconds": 326.5782546669998,
+      "independent_validation_seconds": 9.496431375000611
+    },
+    {
+      "fold": 2,
+      "fresh_RMSE": 13.808573167119736,
+      "stored018_RMSE": 13.808573167119736,
+      "final_prediction_max_error": 0.0,
+      "all_neural_states_exact": true,
+      "train_seconds": 328.38391570899876,
+      "independent_validation_seconds": 7.885620791999827
+    },
+    {
+      "fold": 3,
+      "fresh_RMSE": 12.166967188386574,
+      "stored018_RMSE": 12.166967188386574,
+      "final_prediction_max_error": 0.0,
+      "all_neural_states_exact": true,
+      "train_seconds": 327.8330867500008,
+      "independent_validation_seconds": 6.722612292000122
+    },
+    {
+      "fold": 4,
+      "fresh_RMSE": 12.94839955320084,
+      "stored018_RMSE": 12.94839955320084,
+      "final_prediction_max_error": 0.0,
+      "all_neural_states_exact": true,
+      "train_seconds": 327.967731875,
+      "independent_validation_seconds": 6.567444541000441
+    }
+  ],
+  "main_fresh_fit_counts": {
+    "CNN": 195,
+    "long_MLP": 390,
+    "short_B": 20,
+    "KRR_final": 65,
+    "KRR_inner": 1755,
+    "affines": 20,
+    "residual_objects": 300
+  },
+  "extra_replay_fit_counts": {
+    "CNN": 3,
+    "long_MLP": 6,
+    "short_B": 1,
+    "KRR_final": 1,
+    "KRR_inner": 27
+  },
+  "feature_regeneration": {
+    "seconds": 213.35157762499875,
+    "times": {
+      "morphology": 138.05170758399981,
+      "S": 20.462135791000037,
+      "B": 50.834639999999126
+    },
+    "comparisons": {
+      "K": {
+        "max_abs": 0.0,
+        "exact": true,
+        "reference_sha256": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286"
+      },
+      "X57": {
+        "max_abs": 0.0,
+        "exact": true,
+        "reference_sha256": "3b347d826c0dfa2f95a05d1163c2ab0656473ab2fc41ebcd65089667c81b1c27"
+      },
+      "images": {
+        "max_abs": 0.0,
+        "exact": true,
+        "reference_sha256": "3847b24ee1708faf0cab928698a7892f8cc0f1c38394c1e2f29f76abd71f80b7"
+      },
+      "S": {
+        "max_abs": 0.0,
+        "exact": true,
+        "reference_sha256": "6d26b7d78eaf1d094e829984d5665a38dc11b71c918f108384861259b35c4159"
+      },
+      "B": {
+        "max_abs": 0.0,
+        "exact": true,
+        "reference_sha256": "3ce775f1398f91d4c55a795c89f0ad06ed37c7eba4e8380c9e080475e83998d3"
+      },
+      "spatial": {
+        "max_abs": 0.0,
+        "exact": true,
+        "reference_sha256": "e4bbdc20e08a924d00e60c391443f26d5a298287b66bf20b8866d8c3f648f867"
+      }
+    },
+    "peak_RSS_bytes": 1326825472,
+    "all_features_freshly_extracted": true,
+    "fitted_regressors_loaded": 0
+  },
+  "reused_inputs": [
+    "Official frozen local DINO-S/B pretrained weights",
+    "Development-only ID/target/group/original-fold metadata",
+    "175 freshly regenerated featurecache reused acrossitsownfoldfits"
+  ],
+  "historical_fitted_regression_calibration_models_reused_for_training": 0,
+  "historical_model_OOF_reads": "Only comparisonprocess aftereachfreshfoldfrozen. Trainingauditguard blocksoldprojectfiles.",
+  "validation": {
+    "independent_KRR_fits": 1820,
+    "residual_objects": 300,
+    "affines": 20,
+    "neural_models_reloaded": 605,
+    "max_errors": {
+      "kernel": 1.84456894203322e-11,
+      "CPU_head": 0,
+      "MPS_reload": 0,
+      "CPU_MPS": 3.964255549249174e-05,
+      "residual": 3.419486915845482e-13,
+      "affine": 1.7053025658242404e-13
+    },
+    "outer_label_poison_replay": "Representative outer320node with80labels changed: all10neuralstates andpredictions exact. Not whole13node poison rerun.",
+    "completed_node_resume_verified": true,
+    "source_guard_verified": true,
+    "tolerances": {
+      "classical_independent_abs": 1e-08,
+      "CPU_head_predictions_abs": 1e-08,
+      "same_device_reload_abs": 1e-08,
+      "CPU_MPS_reload_abs": 0.001,
+      "fresh_MPS_same_seed_prediction_abs": 0.001,
+      "fresh_pipeline_abs": 0.001,
+      "basis": "Prior133 seedCNN fresh replay was stateexact; historical neural CPU/MPS replay errors ~1e-5 to1e-4.1e-3 is conservative diagnostic ceiling, not permission to dismiss larger drift. Report tensor equality and numeric error separately; investigate any changed seed/order/stats or threshold exceedance. Do not tune tolerances from observed OOF scores. Exact equality remains expected sameenvironment.",
+      "non_determinism_rule": "Do not label mismatch nondeterminism without same-input same-seed replay and stage-local comparison. No automatic tolerance widening."
+    }
+  },
+  "resources": {
+    "actual_first_training_start_UTC": "2026-10-05T17:59:54.874712+00:00",
+    "main_OOF_completion_UTC": "2026-10-05T18:28:27.640122+00:00",
+    "training_start_timestamp_basis": "Creation of firstfreshnode directory immediatelybeforefirstKRRfit",
+    "main_training_seconds_sum": 1637.8646597509996,
+    "main_training_minutes": 27.297744329183327,
+    "fresh_feature_seconds": 213.35157762499875,
+    "max_process_RSS_bytes_including_feature_stage": 1326825472,
+    "max_sampled_MPS_driver_training_bytes": 138919936,
+    "sampling_note": "Trainingmemory sampled1second; not continuouspeak proof. Feature RSS isprocesshighwater. MPS/RSS unifiedallocationsoverlap.",
+    "original15_25min_estimate_correction": "That estimate wasone400rowroot; actualfivefoldOOFrequires5fresh320hierarchies. Implementation/audits/replayexcludedfrommaintrainingtime."
+  },
+  "remaining_limits": [
+    "Portable500rawtrainingentrypointnotimplemented; trainerisproject-local andlockedtooriginal400foldrecipe.",
+    "Full500productiontrainedfromscratch andtestCSVreproduction awaitnexttask.",
+    "Completed175nodesresume withhashchecks; incomplete-node crash recovery ismanualandnotverifiedasautomatic.",
+    "Noindependentperformanceevidence ornewcandidate; thisreproducesalreadyselected018.",
+    "Nootherenvironment/hardwarebitwisedeterminismclaim."
+  ],
+  "protected_hashes": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a"
+  },
+  "standalone_code_directory": "experiments/reproduction-018-175",
+  "evidence": {
+    "experiments/reproduction-018-175/run/environment.json": "d41803eace5daf2681331e5a6f39ee2bbf173f34f13143491f3132dfefd93db3",
+    "experiments/reproduction-018-175/run/plan.json": "d576415c959f34e01af6daf9230c47608ed3d79bf956f8bc522f8464b4b83090",
+    "experiments/reproduction-018-175/run/feature-plan.json": "3d81b017d182f7c784e3805b96d826aa04a5b8cd1931dedf01bf3e56c12a57db",
+    "experiments/reproduction-018-175/run/feature-validation.json": "826a3ebb57d7e358d00f94e5b488fc07f2e33c7302feac59e8e533bf6c11f6ed",
+    "experiments/reproduction-018-175/run/validation-plan.json": "437ff66efb18f04278014ca33bbcbc40ed0df5b42afc7acce69706398ac06b3b",
+    "experiments/reproduction-018-175/run/original/report.json": "98901b7a1fa27ef645d5a3fb339f00de5a0e67a62ae35e6f96abaf2c0ff76204",
+    "experiments/reproduction-018-175/run/original/predictions.npz": "ef419e8890b88a78e98ddea393c4387d2af01082f57a6640eb0283b995abe5ae",
+    "experiments/reproduction-018-175/run/comparison-oof.npz": "f05fefd5ef7f45f7907cc7fc988e7303662484bd330d2274a8a11f0d5e4401fa",
+    "experiments/reproduction-018-175/run/replay-validation.json": "91694f5cb78d0f6698269b692167a978e11ee342321ffe6156edcbcb0a908eae",
+    "experiments/reproduction-018-175/run/source-guard-validation.json": "cc5bfafb7e9a8979c182028eeb89f86be2474966aec8cd1fdcc7016ce0d137a8",
+    "experiments/reproduction-018-175/run/resume-validation.json": "c7edc13326c54fd36deb6f261fb8c34f8056c4ba519812ee7a9aff096bd5c6b3",
+    "experiments/reproduction-018-175/run/validation-fold-0.json": "baf8fdcde6d9fcaa81ea65f43bf7fb628e4fb49c93f64005aa82469d3370ee8f",
+    "experiments/reproduction-018-175/run/validation-fold-1.json": "8fa508e0a9b7fc769d5810a196b778e85c7dc32cc49400ac5e964940a74d0fbc",
+    "experiments/reproduction-018-175/run/validation-fold-2.json": "4ac5b47206ae13a651017591177a409443e6aa8403290fa5e8c6406c7e05b908",
+    "experiments/reproduction-018-175/run/validation-fold-3.json": "a2db1136a5604317f3e40c5090d051b121d6c9e131c3c6a5aa65e55022531bc9",
+    "experiments/reproduction-018-175/run/validation-fold-4.json": "2661aaa8dc0196e80a1fff5f1e8306628832d0d2ba089774b8be50a1038679fd",
+    "experiments/reproduction-018-175/run/comparison-fold-0.json": "e3d1622fcc5ebe0085e31e9d7ae8503cff4fe2a7cca80b287ecaba02ec91a801",
+    "experiments/reproduction-018-175/run/comparison-fold-1.json": "366c8d46eaaad7abf97e158982beeff3afb79867b053ef13e71c5da997556ddc",
+    "experiments/reproduction-018-175/run/comparison-fold-2.json": "9a2746cd02ac70e0d2760928291719eed5a66eb3decf61eac6fbd5366a490ed5",
+    "experiments/reproduction-018-175/run/comparison-fold-3.json": "14c5fe74493eb9b63f6251046f2633e04d8362dfac67cf4dd27987fa55b8f570",
+    "experiments/reproduction-018-175/run/comparison-fold-4.json": "7f2bbb8e3edc5a549c7d31d924d2b3c74a8a9878dbdef688074a31be8eb30e9a"
+  },
+  "finalizer_sha256": "7c04d5668d2584a9e15098eeb3418401d9fbe14b3affa324970176de29aeba0c",
+  "cost": 0,
+  "uploaded": false,
+  "next500_plan": {
+    "path": "reports/retraining-018-full500-next-plan-175.json",
+    "sha256": "9f85d80229b53ed7952ff7398850f7b7879bf0a694d2e1f795da9437abda728c"
+  }
+}

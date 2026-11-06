@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-17T09:58:03.427892+00:00",
+  "outer_hardness_scores_read": false,
+  "source_sha256": {
+    "verify_encoder.py": "fae300233f3329a113977071c6c3a05bdaa5e95bdab6a9abaacee98b2cdb9bed",
+    "pre_score_check.py": "54b681377f947fa251db61c06b16fd274c160a7a9ce70eca004dcc12292a25e6",
+    "replay_training.py": "78780c6cbe90088fb85e10fe0f272e2c7ff545c1e868b3c5a3b1ec7ee452481e",
+    "verify_final.py": "52e7da49dc02b6a6185384a09c082e848b471e6176c3145bb7c0b848adb0ff13"
+  },
+  "tolerances": {
+    "MPS_feature_latent": 1e-05,
+    "MPS_signature": 1e-08,
+    "independent_float64_PCA": 0.0005,
+    "independent_beta": 1e-12,
+    "independent_RMSE": 1e-12,
+    "actual_Tab_replay_HV": 1e-05,
+    "query_subset_HV": 0.0001,
+    "CPU_vs_MPS_HV": 0.001
+  },
+  "full_training_replay": "Measure exactness and differences; do not assume all accelerator training is bit deterministic."
+}

@@ -1,0 +1,53 @@
+{
+  "decision": "reject_current_full_Ridge_hypothesis_keep_best021",
+  "result": "At matched effective df32, full-feature Ridge worsens standalone OOF in4/5folds and overall fixed10% blend. Both blends worsen best021. Stop without dimension/df/weight rescue or expansion.",
+  "training_RMSE": {
+    "pca128_ridge": 13.693355633662588,
+    "full_ridge": 13.850235646178355
+  },
+  "standalone": {
+    "RMSE_PCA128": 15.37971603539523,
+    "RMSE_full": 15.51706221297084,
+    "gain_PCA128_minus_full": -0.13734617757561018,
+    "fold_gains": [
+      -0.10593777027080264,
+      -0.27403732318279594,
+      -0.16467099771819527,
+      0.012335248112711028,
+      -0.16832919671406188
+    ],
+    "positive_folds": 1,
+    "conditional_groupbootstrap_CI95": [
+      -0.22065354694924774,
+      -0.050640933734766844
+    ]
+  },
+  "blend": {
+    "RMSE_PCA128": 12.887708266472885,
+    "RMSE_full": 12.889531130337462,
+    "gain_PCA128_minus_full": -0.0018228638645769735,
+    "fold_gains": [
+      0.0010673197796151612,
+      -0.009793521351088685,
+      0.0002844616210229134,
+      0.007160588479628416,
+      -0.00794136648039867
+    ],
+    "positive_folds": 3,
+    "conditional_groupbootstrap_CI95": [
+      -0.010531458693807404,
+      0.007170083595618818
+    ]
+  },
+  "limits": [
+    "Both arms are Ridge readouts; results do not identify the effect of removing PCA from the nonlinear191 MLP.",
+    "Full Ridge preserves nonzero directions but shrinks leading and remaining components differently at the same effective df; this is a matched-complexity soft-versus-hard truncation pipeline comparison.",
+    "Equal effective degrees of freedom does not guarantee equal estimator variance or equal bias.",
+    "No post-PCA scaling/whitening in either arm, unlike191 post-PCA MLP scaling; pre-PCA bank scalers and PCA128 subspace match191.",
+    "Reused development400; conditional bootstrap not independent validation or corrected for historical model selection."
+  ],
+  "initial_audit_failure_preserved": "validation-assertion-repair.json",
+  "original_sources_and_results_unchanged": true,
+  "README_unchanged": true,
+  "cost": 0
+}

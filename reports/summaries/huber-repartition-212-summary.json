@@ -1,0 +1,841 @@
+{
+  "study": 212,
+  "status": "고정 손실 정책의 두 재분할 안정성 대조 완료",
+  "loss_policy": {
+    "delta": 1.0,
+    "multiplier": 2.0,
+    "candidate": "2*torch.nn.functional.huber_loss(prediction, standardized_target, delta=1.0, reduction=mean)",
+    "control": "torch.nn.functional.mse_loss(prediction, standardized_target, reduction=mean)",
+    "piecewise": "r^2 for abs(r)<=1; otherwise 2*abs(r)-1",
+    "gradient": "2*r inside abs(r)<=1; 2*sign(r) outside; mean reduction divides both by batch size",
+    "fairness_definition": "같은 잔차의 중앙 구간에서 MSE와 손실값·출력 기울기·곡률이 일치한다. 전체 gradient norm이나 AdamW update 크기가 같다는 뜻이 아니다. 꼬리 제한 및 clipping 빈도 차이는 처치의 일부이며 LR/clip/decay를 보정하지 않는다.",
+    "threshold_rationale": "전이값 1은 fold train 타깃 표준편차 1개라는 고정 단위다. 잔차 분산 추정이나 정규오차 효율 최적값을 주장하지 않는다. 결과·라벨 오류 가정 없이 중앙 제곱 오차와 유한 꼬리 기울기를 구분한다.",
+    "selection": "전이값과 배율 각각 한 값. validation 기반 보정·탐색 없음.",
+    "diagnostics": [
+      "공통 unweighted MSE",
+      "원단위 train/validation RMSE",
+      "unclipped parameter gradient norm",
+      "clip 5 비율",
+      "abs(standardized residual)>1 비율"
+    ]
+  },
+  "individual_partitions": {
+    "original": {
+      "standalone": {
+        "baseline_RMSE": 15.032317843077909,
+        "candidate_RMSE": 14.592981343199096,
+        "gain": 0.43933649987881296,
+        "conditional_CI95": [
+          -0.02846487251795955,
+          0.91677690319365
+        ],
+        "top5_removed_gain": 0.1303984985694111,
+        "top5_removed_IDs": [
+          "TRAIN_000298",
+          "TRAIN_000382",
+          "TRAIN_000087",
+          "TRAIN_000224",
+          "TRAIN_000406"
+        ],
+        "positive_ID_count": 216,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 15.249590276858356,
+            "candidate_RMSE": 14.474192583751215,
+            "gain": 0.7753976931071414
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 14.37046186697119,
+            "candidate_RMSE": 14.758377316856276,
+            "gain": -0.3879154498850852
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 15.484683471683876,
+            "candidate_RMSE": 15.53766444751928,
+            "gain": -0.0529809758354034
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 15.05074615048783,
+            "candidate_RMSE": 14.434503174643377,
+            "gain": 0.6162429758444539
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 14.983068407032066,
+            "candidate_RMSE": 13.699988031165342,
+            "gain": 1.2830803758667244
+          }
+        ],
+        "positive_folds": 3,
+        "original211_top5_excluded_gain": 0.1303984985694111,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000298",
+          "TRAIN_000382",
+          "TRAIN_000087",
+          "TRAIN_000224",
+          "TRAIN_000406"
+        ],
+        "prediction_delta_RMS": 4.312269809119834
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 12.786200775750695,
+        "candidate_RMSE": 12.758757466235842,
+        "gain": 0.027443309514852743,
+        "conditional_CI95": [
+          -0.013115775508966542,
+          0.06953825617756236
+        ],
+        "top5_removed_gain": 0.000476407528763545,
+        "top5_removed_IDs": [
+          "TRAIN_000467",
+          "TRAIN_000224",
+          "TRAIN_000087",
+          "TRAIN_000209",
+          "TRAIN_000406"
+        ],
+        "positive_ID_count": 207,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 12.824291360960531,
+            "candidate_RMSE": 12.764775233925418,
+            "gain": 0.05951612703511344
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 12.180402220733276,
+            "candidate_RMSE": 12.205710703012667,
+            "gain": -0.025308482279390532
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 13.763278947548145,
+            "candidate_RMSE": 13.777561325176737,
+            "gain": -0.014282377628592968
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 12.12245059832636,
+            "candidate_RMSE": 12.110067858094917,
+            "gain": 0.012382740231442924
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 12.970287133386918,
+            "candidate_RMSE": 12.866066231611015,
+            "gain": 0.10422090177590349
+          }
+        ],
+        "positive_folds": 3,
+        "original211_top5_excluded_gain": 0.0004764075287670977,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000467",
+          "TRAIN_000224",
+          "TRAIN_000087",
+          "TRAIN_000209",
+          "TRAIN_000406"
+        ],
+        "prediction_delta_RMS": 0.3810942824299763
+      }
+    },
+    "20261031": {
+      "standalone": {
+        "baseline_RMSE": 14.270187155168609,
+        "candidate_RMSE": 14.586564770097263,
+        "gain": -0.3163776149286548,
+        "conditional_CI95": [
+          -0.7469356912508,
+          0.12188366470343909
+        ],
+        "top5_removed_gain": -0.4932718034171,
+        "top5_removed_IDs": [
+          "TRAIN_000379",
+          "TRAIN_000371",
+          "TRAIN_000108",
+          "TRAIN_000479",
+          "TRAIN_000219"
+        ],
+        "positive_ID_count": 186,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 14.245315476013838,
+            "candidate_RMSE": 14.56538008726659,
+            "gain": -0.3200646112527519
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 15.118378999212617,
+            "candidate_RMSE": 15.820620458581464,
+            "gain": -0.7022414593688477
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 15.472396192586379,
+            "candidate_RMSE": 15.336595267107262,
+            "gain": 0.13580092547911704
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 13.356211557821752,
+            "candidate_RMSE": 13.85807856686293,
+            "gain": -0.5018670090411792
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 12.996668016266721,
+            "candidate_RMSE": 13.196193929606444,
+            "gain": -0.19952591333972336
+          }
+        ],
+        "positive_folds": 1,
+        "original211_top5_excluded_gain": -0.2833938919422252,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000298",
+          "TRAIN_000382",
+          "TRAIN_000087",
+          "TRAIN_000224",
+          "TRAIN_000406"
+        ],
+        "prediction_delta_RMS": 4.856150611391998
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 12.621902419708583,
+        "candidate_RMSE": 12.663155130774568,
+        "gain": -0.041252711065984826,
+        "conditional_CI95": [
+          -0.08174011480367649,
+          -0.0007955967355484166
+        ],
+        "top5_removed_gain": -0.06024224029745362,
+        "top5_removed_IDs": [
+          "TRAIN_000382",
+          "TRAIN_000322",
+          "TRAIN_000458",
+          "TRAIN_000219",
+          "TRAIN_000479"
+        ],
+        "positive_ID_count": 180,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 12.645907133977154,
+            "candidate_RMSE": 12.695694302187011,
+            "gain": -0.04978716820985696
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 12.72156114069235,
+            "candidate_RMSE": 12.783517756472692,
+            "gain": -0.061956615780342617
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 13.579801387155028,
+            "candidate_RMSE": 13.621736110857867,
+            "gain": -0.04193472370283935
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 11.711438975376169,
+            "candidate_RMSE": 11.745745588080574,
+            "gain": -0.03430661270440538
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 12.378861408754098,
+            "candidate_RMSE": 12.396139527768776,
+            "gain": -0.01727811901467824
+          }
+        ],
+        "positive_folds": 0,
+        "original211_top5_excluded_gain": -0.03700330939850005,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000467",
+          "TRAIN_000224",
+          "TRAIN_000087",
+          "TRAIN_000209",
+          "TRAIN_000406"
+        ],
+        "prediction_delta_RMS": 0.45193220587428934
+      }
+    },
+    "20261101": {
+      "standalone": {
+        "baseline_RMSE": 14.553099889755208,
+        "candidate_RMSE": 14.591697091702706,
+        "gain": -0.03859720194749805,
+        "conditional_CI95": [
+          -0.48837060618101696,
+          0.41487570043591604
+        ],
+        "top5_removed_gain": -0.22813906892678482,
+        "top5_removed_IDs": [
+          "TRAIN_000227",
+          "TRAIN_000063",
+          "TRAIN_000438",
+          "TRAIN_000465",
+          "TRAIN_000373"
+        ],
+        "positive_ID_count": 209,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 14.899599731811216,
+            "candidate_RMSE": 15.178979182242646,
+            "gain": -0.27937945043142953
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 14.64348908264391,
+            "candidate_RMSE": 14.810866679774541,
+            "gain": -0.16737759713063127
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 14.649865843692425,
+            "candidate_RMSE": 14.878881764875857,
+            "gain": -0.22901592118343217
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 14.594641146401987,
+            "candidate_RMSE": 14.039566494084477,
+            "gain": 0.5550746523175096
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 13.961075098065656,
+            "candidate_RMSE": 14.011937387243771,
+            "gain": -0.05086228917811475
+          }
+        ],
+        "positive_folds": 1,
+        "original211_top5_excluded_gain": 0.046633986419347906,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000298",
+          "TRAIN_000382",
+          "TRAIN_000087",
+          "TRAIN_000224",
+          "TRAIN_000406"
+        ],
+        "prediction_delta_RMS": 4.658392063721769
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 13.032449212752852,
+        "candidate_RMSE": 13.04056687488393,
+        "gain": -0.008117662131079229,
+        "conditional_CI95": [
+          -0.052166316959009286,
+          0.035116981417051565
+        ],
+        "top5_removed_gain": -0.030300430647089982,
+        "top5_removed_IDs": [
+          "TRAIN_000036",
+          "TRAIN_000224",
+          "TRAIN_000271",
+          "TRAIN_000373",
+          "TRAIN_000078"
+        ],
+        "positive_ID_count": 201,
+        "ID_count": 400,
+        "partition_repetitions": 1,
+        "fold_results": [
+          {
+            "fold": 0,
+            "baseline_RMSE": 13.19322289145329,
+            "candidate_RMSE": 13.292292036289357,
+            "gain": -0.09906914483606677
+          },
+          {
+            "fold": 1,
+            "baseline_RMSE": 12.775354173769069,
+            "candidate_RMSE": 12.752863700919775,
+            "gain": 0.022490472849293397
+          },
+          {
+            "fold": 2,
+            "baseline_RMSE": 12.750017685469336,
+            "candidate_RMSE": 12.78474453790819,
+            "gain": -0.03472685243885465
+          },
+          {
+            "fold": 3,
+            "baseline_RMSE": 13.821111609654196,
+            "candidate_RMSE": 13.742019807681128,
+            "gain": 0.07909180197306753
+          },
+          {
+            "fold": 4,
+            "baseline_RMSE": 12.584386388688468,
+            "candidate_RMSE": 12.596370931545628,
+            "gain": -0.011984542857160108
+          }
+        ],
+        "positive_folds": 2,
+        "original211_top5_excluded_gain": 0.00463325401950776,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000467",
+          "TRAIN_000224",
+          "TRAIN_000087",
+          "TRAIN_000209",
+          "TRAIN_000406"
+        ],
+        "prediction_delta_RMS": 0.42193706659735786
+      }
+    }
+  },
+  "ID_cluster_aggregates": {
+    "two_repartitions": {
+      "standalone": {
+        "baseline_RMSE": 14.412337732733233,
+        "candidate_RMSE": 14.589131156587905,
+        "gain": -0.17679342385467223,
+        "conditional_CI95": [
+          -0.5116316415556234,
+          0.1590935726585631
+        ],
+        "top5_removed_gain": -0.31530552400544565,
+        "top5_removed_IDs": [
+          "TRAIN_000479",
+          "TRAIN_000373",
+          "TRAIN_000105",
+          "TRAIN_000273",
+          "TRAIN_000219"
+        ],
+        "positive_ID_count": 188,
+        "ID_count": 400,
+        "partition_repetitions": 2,
+        "original211_top5_excluded_gain": -0.11807536465627244,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000298",
+          "TRAIN_000382",
+          "TRAIN_000087",
+          "TRAIN_000224",
+          "TRAIN_000406"
+        ]
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 12.828818206982822,
+        "candidate_RMSE": 12.853246326986469,
+        "gain": -0.02442812000364647,
+        "conditional_CI95": [
+          -0.05614018250272599,
+          0.007129850590827156
+        ],
+        "top5_removed_gain": -0.038777189785225374,
+        "top5_removed_IDs": [
+          "TRAIN_000078",
+          "TRAIN_000105",
+          "TRAIN_000479",
+          "TRAIN_000373",
+          "TRAIN_000219"
+        ],
+        "positive_ID_count": 207,
+        "ID_count": 400,
+        "partition_repetitions": 2,
+        "original211_top5_excluded_gain": -0.01585681663368632,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000467",
+          "TRAIN_000224",
+          "TRAIN_000087",
+          "TRAIN_000209",
+          "TRAIN_000406"
+        ]
+      }
+    },
+    "all_three_partitions": {
+      "standalone": {
+        "baseline_RMSE": 14.621918907129922,
+        "candidate_RMSE": 14.590414665014434,
+        "gain": 0.03150424211548852,
+        "conditional_CI95": [
+          -0.2230013379213318,
+          0.29417748039629327
+        ],
+        "top5_removed_gain": -0.08834885652358082,
+        "top5_removed_IDs": [
+          "TRAIN_000382",
+          "TRAIN_000479",
+          "TRAIN_000273",
+          "TRAIN_000052",
+          "TRAIN_000224"
+        ],
+        "positive_ID_count": 208,
+        "ID_count": 400,
+        "partition_repetitions": 3,
+        "original211_top5_excluded_gain": -0.03460410474545661,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000298",
+          "TRAIN_000382",
+          "TRAIN_000087",
+          "TRAIN_000224",
+          "TRAIN_000406"
+        ]
+      },
+      "fixed_ensemble": {
+        "baseline_RMSE": 12.81462814460406,
+        "candidate_RMSE": 12.821827409624719,
+        "gain": -0.007199265020659595,
+        "conditional_CI95": [
+          -0.031638585935290384,
+          0.01708439443237809
+        ],
+        "top5_removed_gain": -0.018868995206887007,
+        "top5_removed_IDs": [
+          "TRAIN_000036",
+          "TRAIN_000052",
+          "TRAIN_000224",
+          "TRAIN_000078",
+          "TRAIN_000479"
+        ],
+        "positive_ID_count": 207,
+        "ID_count": 400,
+        "partition_repetitions": 3,
+        "original211_top5_excluded_gain": -0.010424753037797885,
+        "original211_top5_excluded_IDs": [
+          "TRAIN_000467",
+          "TRAIN_000224",
+          "TRAIN_000087",
+          "TRAIN_000209",
+          "TRAIN_000406"
+        ]
+      }
+    }
+  },
+  "train_validation": {
+    "original": {
+      "control": {
+        "pooled_train_RMSE_over1600_repeated_train_observations": 9.885685012399287,
+        "OOF_RMSE": 15.032317843077909,
+        "OOF_minus_train_gap": 5.146632830678621
+      },
+      "huber": {
+        "pooled_train_RMSE_over1600_repeated_train_observations": 10.016757409902834,
+        "OOF_RMSE": 14.592981343199096,
+        "OOF_minus_train_gap": 4.576223933296262
+      }
+    },
+    "20261031": {
+      "control": {
+        "pooled_train_RMSE_over1600_repeated_train_observations": 9.759669217671926,
+        "OOF_RMSE": 14.270187155168609,
+        "OOF_minus_train_gap": 4.510517937496683
+      },
+      "huber": {
+        "pooled_train_RMSE_over1600_repeated_train_observations": 10.690282439211828,
+        "OOF_RMSE": 14.586564770097263,
+        "OOF_minus_train_gap": 3.8962823308854357
+      }
+    },
+    "20261101": {
+      "control": {
+        "pooled_train_RMSE_over1600_repeated_train_observations": 9.839883436161962,
+        "OOF_RMSE": 14.553099889755208,
+        "OOF_minus_train_gap": 4.713216453593246
+      },
+      "huber": {
+        "pooled_train_RMSE_over1600_repeated_train_observations": 10.005379729347457,
+        "OOF_RMSE": 14.591697091702706,
+        "OOF_minus_train_gap": 4.586317362355249
+      }
+    }
+  },
+  "fold_train_validation": [
+    {
+      "split": "20261031",
+      "fold": 0,
+      "arm": "control",
+      "train_RMSE": 10.27663525104877,
+      "OOF_RMSE": 14.245315476013838
+    },
+    {
+      "split": "20261031",
+      "fold": 1,
+      "arm": "control",
+      "train_RMSE": 11.422399876674197,
+      "OOF_RMSE": 15.118378999212617
+    },
+    {
+      "split": "20261031",
+      "fold": 2,
+      "arm": "control",
+      "train_RMSE": 8.051356431694968,
+      "OOF_RMSE": 15.472396192586379
+    },
+    {
+      "split": "20261031",
+      "fold": 3,
+      "arm": "control",
+      "train_RMSE": 8.451829492055245,
+      "OOF_RMSE": 13.356211557821752
+    },
+    {
+      "split": "20261031",
+      "fold": 4,
+      "arm": "control",
+      "train_RMSE": 10.193993477197688,
+      "OOF_RMSE": 12.996668016266721
+    },
+    {
+      "split": "20261031",
+      "fold": 0,
+      "arm": "huber",
+      "train_RMSE": 11.690231194855174,
+      "OOF_RMSE": 14.56538008726659
+    },
+    {
+      "split": "20261031",
+      "fold": 1,
+      "arm": "huber",
+      "train_RMSE": 12.299103225557023,
+      "OOF_RMSE": 15.820620458581464
+    },
+    {
+      "split": "20261031",
+      "fold": 2,
+      "arm": "huber",
+      "train_RMSE": 8.202824706562911,
+      "OOF_RMSE": 15.336595267107262
+    },
+    {
+      "split": "20261031",
+      "fold": 3,
+      "arm": "huber",
+      "train_RMSE": 10.310994655919567,
+      "OOF_RMSE": 13.85807856686293
+    },
+    {
+      "split": "20261031",
+      "fold": 4,
+      "arm": "huber",
+      "train_RMSE": 10.482285230212495,
+      "OOF_RMSE": 13.196193929606444
+    },
+    {
+      "split": "20261101",
+      "fold": 0,
+      "arm": "control",
+      "train_RMSE": 10.286915349925053,
+      "OOF_RMSE": 14.899599731811216
+    },
+    {
+      "split": "20261101",
+      "fold": 1,
+      "arm": "control",
+      "train_RMSE": 9.638918105854044,
+      "OOF_RMSE": 14.64348908264391
+    },
+    {
+      "split": "20261101",
+      "fold": 2,
+      "arm": "control",
+      "train_RMSE": 8.514116332135128,
+      "OOF_RMSE": 14.649865843692425
+    },
+    {
+      "split": "20261101",
+      "fold": 3,
+      "arm": "control",
+      "train_RMSE": 10.03155791951143,
+      "OOF_RMSE": 14.594641146401987
+    },
+    {
+      "split": "20261101",
+      "fold": 4,
+      "arm": "control",
+      "train_RMSE": 10.595509865445155,
+      "OOF_RMSE": 13.961075098065656
+    },
+    {
+      "split": "20261101",
+      "fold": 0,
+      "arm": "huber",
+      "train_RMSE": 11.804226272910537,
+      "OOF_RMSE": 15.178979182242646
+    },
+    {
+      "split": "20261101",
+      "fold": 1,
+      "arm": "huber",
+      "train_RMSE": 10.323954184504293,
+      "OOF_RMSE": 14.810866679774541
+    },
+    {
+      "split": "20261101",
+      "fold": 2,
+      "arm": "huber",
+      "train_RMSE": 8.7328076012136,
+      "OOF_RMSE": 14.878881764875857
+    },
+    {
+      "split": "20261101",
+      "fold": 3,
+      "arm": "huber",
+      "train_RMSE": 7.937051968537576,
+      "OOF_RMSE": 14.039566494084477
+    },
+    {
+      "split": "20261101",
+      "fold": 4,
+      "arm": "huber",
+      "train_RMSE": 10.740372767520203,
+      "OOF_RMSE": 14.011937387243771
+    }
+  ],
+  "optimization_diagnostics": {
+    "original": {
+      "control": {
+        "updates": 4000,
+        "mean_optimized_loss": 0.5390655418317765,
+        "mean_unclipped_gradient_norm": 2.6965448468476536,
+        "max_unclipped_gradient_norm": 13.818081855773926,
+        "clip5_fraction": 0.08825,
+        "mean_unweighted_MSE": 0.5390655418317765,
+        "mean_scaled_Huber": 0.4824902461338788,
+        "mean_tail_fraction_abs_r_gt1": 0.150453125
+      },
+      "huber": {
+        "updates": 4000,
+        "mean_optimized_loss": 0.48625424152985214,
+        "mean_unclipped_gradient_norm": 2.142381538018584,
+        "max_unclipped_gradient_norm": 8.794997215270996,
+        "clip5_fraction": 0.0325,
+        "mean_unweighted_MSE": 0.555943283971399,
+        "mean_scaled_Huber": 0.48625424152985214,
+        "mean_tail_fraction_abs_r_gt1": 0.14925
+      }
+    },
+    "20261031": {
+      "control": {
+        "updates": 4000,
+        "mean_optimized_loss": 0.5389352418538182,
+        "mean_unclipped_gradient_norm": 2.7679907559528947,
+        "clip5_fraction": 0.09625,
+        "mean_unweighted_MSE": 0.5389352418538182,
+        "mean_scaled_Huber": 0.4827532183956355,
+        "mean_tail_fraction_abs_r_gt1": 0.151828125
+      },
+      "huber": {
+        "updates": 4000,
+        "mean_optimized_loss": 0.5100804470404983,
+        "mean_unclipped_gradient_norm": 2.03283131345734,
+        "clip5_fraction": 0.02625,
+        "mean_unweighted_MSE": 0.5864920496158302,
+        "mean_scaled_Huber": 0.5100804470404983,
+        "mean_tail_fraction_abs_r_gt1": 0.15990625
+      }
+    },
+    "20261101": {
+      "control": {
+        "updates": 4000,
+        "mean_optimized_loss": 0.5494793553501368,
+        "mean_unclipped_gradient_norm": 2.769261342275888,
+        "clip5_fraction": 0.095,
+        "mean_unweighted_MSE": 0.5494793553501368,
+        "mean_scaled_Huber": 0.49071423687040805,
+        "mean_tail_fraction_abs_r_gt1": 0.152953125
+      },
+      "huber": {
+        "updates": 4000,
+        "mean_optimized_loss": 0.4892426917012781,
+        "mean_unclipped_gradient_norm": 2.0747281713970005,
+        "clip5_fraction": 0.02,
+        "mean_unweighted_MSE": 0.5572151451762766,
+        "mean_scaled_Huber": 0.4892426917012781,
+        "mean_tail_fraction_abs_r_gt1": 0.1513515625
+      }
+    }
+  },
+  "stability_criteria": {
+    "20261031": {
+      "gain_at_least_0_02": false,
+      "at_least3_positive_folds": false,
+      "CI_lower_positive": false,
+      "top5_removed_positive": false
+    },
+    "20261101": {
+      "gain_at_least_0_02": false,
+      "at_least3_positive_folds": false,
+      "CI_lower_positive": false,
+      "top5_removed_positive": false
+    },
+    "two_repartitions": {
+      "gain_positive": false,
+      "CI_lower_positive": false,
+      "top5_removed_positive": false
+    },
+    "all_three_partitions": {
+      "gain_positive": true,
+      "CI_lower_positive": false,
+      "top5_removed_positive": false
+    }
+  },
+  "stability_criteria_passed": false,
+  "decision": "사전 분할 안정성 기준을 충족하지 못했다. 원본 211의 CI 기준 미달 판단과 best021을 유지하고 보고 후 정지한다.",
+  "original211_decision": "사전 기준 미달. delta 1·배율 2의 Huber 손실 분기를 종료하고 best021 유지.",
+  "original211_criteria": {
+    "technical_validation": true,
+    "gain_at_least_0_02": true,
+    "at_least3_folds": true,
+    "conditional_CI_lower_positive": false,
+    "top5_removed_positive": true
+  },
+  "original211_point_estimates_CIs_top5_exact": true,
+  "original211_retrained": false,
+  "best021_replaced": false,
+  "main_gradient_fits": 20,
+  "verification_gradient_fits": 4,
+  "new_gradient_updates": 19200,
+  "loss_policy_count": 1,
+  "fixed_ensemble_meaning": {
+    "formula": "Q = P021 + 0.081 * 기존 split/fold calibrator slope * (새 첫 seed CNN - 기존 첫 seed CNN)",
+    "meaning": "기존 CNN 3seed 중 첫 seed 출력 치환이다. 새 CNN을 추가한 blend가 아니다. 나머지 두 seed와 calibration·잔차는 고정하며 전체 nested 재학습이 아니다.",
+    "null": "Q_uniform = P021 exact, 기존 121/133/140/144/177 계보 재구성 확인"
+  },
+  "statistics": {
+    "draws": 10000,
+    "seed": 202610211,
+    "draws_source": "211과 동일 seed·ID 순서·10,000회 draw를 그대로 사용하여 원본 211 CI도 exact 보존한다.",
+    "unit": "같은 400개 ID를 cluster로 재표집. 각 ID의 세 분할 관측을 항상 함께 포함한다. 1,200개 독립 표본으로 취급하지 않는다.",
+    "aggregate": "ID별 분할 squared error 평균 후 전체 ID 평균의 제곱근. 예측 평균 앙상블이 아니다.",
+    "reports": [
+      "원본 211 및 두 재분할 각각의 단독/고정 첫 seed 치환 RMSE·CI·fold·상위 5개 제외",
+      "두 재분할 pooled와 세 분할 pooled의 400 ID cluster CI·상위 5개 ID 제외",
+      "원본 211에서 이득이 가장 큰 5개 ID를 고정 제외한 각 분할 및 pooled 감도"
+    ],
+    "top5": "각 비교에서 ID별 평균 squared error 이득이 가장 큰 5개 ID를 전체 반복 관측과 함께 제거; stable tie order"
+  },
+  "gain_definition": "MSE 대조 RMSE - 고정 Huber RMSE. 양수가 개선.",
+  "limitations": [
+    "같은 개발 400개 ID의 반복측정이며 독립 holdout 또는 1,200개 독립 표본이 아니다.",
+    "조건부 CI는 재학습·seed 변동·누적 선택 편향을 보정하지 않는다.",
+    "211 결과를 본 뒤 의뢰된 고정 정책의 안정성 확인이다. 새로운 독립 검증이나 원본 CI 실패의 소급 취소가 아니다.",
+    "고정 첫 seed 치환은 추가 결합이나 전체 후단 재학습 효과가 아니다."
+  ],
+  "plan_SHA256": "3212791061415eed800c159d5510fee1b216fbf206166950ae59bdeadc8f9156",
+  "validation_SHA256": "774a5f41425bea45405905f62204ccb2ce28fdd6572119765303e34dc40b922b",
+  "bootstrap_SHA256": "fd61108d36d5ad3fef161f3ab4901cc84b4f88ac77384d909154948c85409800",
+  "cost": 0,
+  "install_download_holdout_test_full500_CSV_submission": false,
+  "report": "experiments/huber-repartition-212/REPORT.md",
+  "protected_file_count": 1181,
+  "best021_SHA256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+  "peak_RSS_plus_MPS_bytes": 756596736,
+  "swap_growth_bytes": 0,
+  "monitored_seconds": 384.09150745799707
+}

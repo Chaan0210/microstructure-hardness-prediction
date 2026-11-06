@@ -1,0 +1,41 @@
+{
+  "study": 199,
+  "UTC": "2026-10-06T13:03:10.435866+00:00",
+  "scope": "Record actual022 public result; cache-only scientific failure diagnosis; no training, inference, sweep, nextsubmission, rawdata or additional holdout labels",
+  "input_SHA256": {
+    "experiments/matched-replacement-194/replacement-OOF.npz": "dde94e4de624c86eb15b24b5fd342ab041e3f8758cb9c9d9ca21dbeefa9aeba6",
+    "experiments/matched-replacement-194/legacy-precision.npz": "6b9d2f5a7bc869ecbb6de1840261d21a88886fe08fc4e99a71ba3023410dc87a",
+    "experiments/matched-replacement-194/summary.json": "a45b4e5385657d06ef2afecf7014b8241d1c8e9bd6e62c0c8511d627bee47f7b",
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/run-012/report.json": "201196e863b7ee017f179fba30dcf59637455dd619aaa92f96fcd234e57f7697",
+    "experiments/candidate022-198/detach/predictions.npz": "28a075089aad70f0fde57f42834a28c51821feb42229bc323eefd6f28b7c3066",
+    "experiments/candidate022-198/true/predictions.npz": "1b91ff5e00e01410e2883de74fea53cb50b9cc8fda8f43fe430d3110ed2fb733",
+    "experiments/candidate022-198/inference/predictions.npz": "e8270877312a7fae3325423727fb7aaf0008501fc2ff4424cef88073bbf6ac0e",
+    "experiments/candidate022-198/training-validation.json": "77403f38fa9ed25c08d376aabd6e64182fbe765908010e8367a55461f34774ab",
+    "experiments/candidate022-198/inference-validation.json": "ad31b3f235a9d523f7c784b3c1249f39ec16cb992887d67628629e6a13f1997d",
+    "experiments/candidate022-198/completion.json": "2829ef8e34651f507d63ba2fe6a7bbaf68a174d4bc6f0706d25fe5225c1b4217",
+    "artifacts/submission-candidate-021.csv": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+    "artifacts/submission-candidate-022.csv": "5b562a321f0d6bdde7aea764585a0c31ce70c09432a5f54f9ec9f43ecfc66421"
+  },
+  "primary_comparison": "194true replacement vsbest021 on fixed400 originalOOF; permuted reference descriptive only",
+  "label_strata": "400development yquartiles .25/.5/.75, npquantilelinear, rightside; diagnostic only and never prediction rule",
+  "morphology_axes": [
+    "inverse_sqrt_grain_diameter",
+    "pore_fraction30",
+    "grain_alignment"
+  ],
+  "morphology_strata": "Each named existing rawdevelopment descriptor quartiles; keep ties together, report duplicate edges/empty bins; descriptors are image-derived proxies, not measured physical groundtruth",
+  "concentration": "Row squared-error benefit ranking; top1/5/10/20 removed; share of net and grosspositive gain; fold gains and leave-onefoldout; no rows dropped from anymodel",
+  "bias_variance": "Prediction mean/std; residualmeanbias; exact MSE=bias²+centeredresidualvariance; fixedincrement decomposition -2E[e_old*delta]-E[delta²]",
+  "full500_comparison": "Read saved predictions only, no500y. Compare delta magnitude all500 and IDmatcheddev400; correlation/sign agreement rawCNN andweighted shifts versusOOF. Training-in-sample shifts do not assessgeneralization",
+  "test_comparison": "Only alreadyvalidated saved predictions; unsupervised old/new/shift moments and quantiles; no thresholds or fittedmodels derived fromtest",
+  "public_result_usage": "Outcome record only. Do not compute PublicSSE, invert labels/correlation/loss, optimize coefficients, or fit any mapping from aggregate scores. Analysis script does not consume Publicscore file.",
+  "remaining_plan_review": "Check current register; do not treat old021draft as live if superseded. Propose maximum2 nextcontrols, noexecution.",
+  "resources": {
+    "CPU_threads": 2,
+    "MPS": false,
+    "memory_limit": 6000000000,
+    "cost": 0
+  },
+  "new_train_or_inference": false
+}

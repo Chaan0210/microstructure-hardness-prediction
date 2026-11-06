@@ -1,0 +1,80 @@
+[
+  {
+    "name": "head",
+    "parameter_count": 49281,
+    "tensor_count": 4,
+    "parameters": [
+      "head.0.weight",
+      "head.0.bias",
+      "head.3.weight",
+      "head.3.bias"
+    ],
+    "initial_lr": 0.0001,
+    "decay_reference_initial_lr": 0.0001
+  },
+  {
+    "name": "block0",
+    "parameter_count": 4763136,
+    "tensor_count": 9,
+    "parameters": [
+      "tail.0.0.layer_scale",
+      "tail.0.0.block.0.weight",
+      "tail.0.0.block.0.bias",
+      "tail.0.0.block.2.weight",
+      "tail.0.0.block.2.bias",
+      "tail.0.0.block.3.weight",
+      "tail.0.0.block.3.bias",
+      "tail.0.0.block.5.weight",
+      "tail.0.0.block.5.bias"
+    ],
+    "initial_lr": 1e-05,
+    "decay_reference_initial_lr": 1e-05
+  },
+  {
+    "name": "block1",
+    "parameter_count": 4763136,
+    "tensor_count": 9,
+    "parameters": [
+      "tail.0.1.layer_scale",
+      "tail.0.1.block.0.weight",
+      "tail.0.1.block.0.bias",
+      "tail.0.1.block.2.weight",
+      "tail.0.1.block.2.bias",
+      "tail.0.1.block.3.weight",
+      "tail.0.1.block.3.bias",
+      "tail.0.1.block.5.weight",
+      "tail.0.1.block.5.bias"
+    ],
+    "initial_lr": 1e-05,
+    "decay_reference_initial_lr": 1e-05
+  },
+  {
+    "name": "block2",
+    "parameter_count": 4763136,
+    "tensor_count": 9,
+    "parameters": [
+      "tail.0.2.layer_scale",
+      "tail.0.2.block.0.weight",
+      "tail.0.2.block.0.bias",
+      "tail.0.2.block.2.weight",
+      "tail.0.2.block.2.bias",
+      "tail.0.2.block.3.weight",
+      "tail.0.2.block.3.bias",
+      "tail.0.2.block.5.weight",
+      "tail.0.2.block.5.bias"
+    ],
+    "initial_lr": 1e-05,
+    "decay_reference_initial_lr": 1e-05
+  },
+  {
+    "name": "terminal_norm",
+    "parameter_count": 1536,
+    "tensor_count": 2,
+    "parameters": [
+      "tail.2.weight",
+      "tail.2.bias"
+    ],
+    "initial_lr": 1e-05,
+    "decay_reference_initial_lr": 1e-05
+  }
+]

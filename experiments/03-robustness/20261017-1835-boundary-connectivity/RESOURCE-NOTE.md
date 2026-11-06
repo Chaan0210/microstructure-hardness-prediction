@@ -1,0 +1,5 @@
+# Prospective batch-size resource check
+
+Batch16 projected7085.8 seconds for the matrix/features/readouts, exceeding the6000-second probe gate. Numerical/gradient/memory checks passed. The failed record and exact source are preserved as resource-probe.json and encoder_probe_batch16.py. Before any main model or hardness score, use the PLAN-authorized batch-size determination to test32. Epochs40, widths, objectives, allthree trained arms, seeds and downstream comparisons remain fixed. The120-minute compute and180-minute active-work caps are unchanged. If batch32 fails, do not extend the budget or reduce the experiment.
+
+The first target preflight's data/reliability calculations passed, but its optional matplotlib panel failed because matplotlib is not installed in the root environment. No installation was performed. targets_preflight_attempt1.py preserves that source and target-preflight.log the failure. The panel now uses the already-installed PIL; target functions are unchanged. The original target-preflight.json is retained and subsequent prepare uses the repaired source. This is a display dependency repair, not a target/threshold change.

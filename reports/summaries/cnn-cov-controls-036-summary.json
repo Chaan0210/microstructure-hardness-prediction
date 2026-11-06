@@ -1,0 +1,87 @@
+{
+  "study": "cnn-cov-controls-036",
+  "status": "completed_no_promotion",
+  "selected_screening_arm": "small_trace",
+  "decision": "Preserve best003. OriginalCV improvement did not replicate on either predefined repartition. No fallback testing of runner-up after confirmation failure.",
+  "new_candidate": null,
+  "new_submission": false,
+  "training_seconds": 322.0135720000253,
+  "arms": {
+    "small_trace": "rank6/head32,trace normalization,86881parameters",
+    "small_regularized": "same capacity and initialization,0.5diagonal shrinkage and channel-normalized covariance with relative0.1variance+absolute1e-4floor"
+  },
+  "fixed_comparison": "Same128px,seed20261003+fold,80epochs,batch32,AdamW.002/wd.01,cosine.0001,last5weightaverage; unchanged035trainer. Baseline/KRR/newCNN refit within all outer training folds. Ensemble50:25:25 unchanged.",
+  "results": {
+    "original": {
+      "baseline": 13.98273103376079,
+      "compact_kernel": 14.482935938822393,
+      "small_trace": 14.137744748310938,
+      "small_regularized": 14.61965717140252,
+      "small_trace_blend": 13.354656849375033,
+      "small_regularized_blend": 13.54906488913144,
+      "reference003": 13.705696031698212,
+      "reference_cov035": 13.567773890275364
+    },
+    "20261031": {
+      "baseline": 14.272716700602603,
+      "compact_kernel": 14.381024891086929,
+      "small_trace": 14.857710497494182,
+      "small_trace_blend": 13.728295397511216,
+      "reference003": 13.63181073293285,
+      "reference_cov035": 13.599941528289083
+    },
+    "20261101": {
+      "baseline": 14.314007659085357,
+      "compact_kernel": 14.343291339552492,
+      "small_trace": 15.05100457624939,
+      "small_trace_blend": 13.804532390195169,
+      "reference003": 13.729980391208457,
+      "reference_cov035": 13.829958469549123
+    }
+  },
+  "fold_improvement_counts": {
+    "original": 5,
+    "20261031": 2,
+    "20261101": 2
+  },
+  "diagnosis": [
+    "OriginalCV capacity reduction gave lower train and validation errors, not a demonstrated reduction in overfitting as causal mechanism.",
+    "Selected arm has train/validation meanRMSE6.62/14.12 original,8.53/14.83 and8.87/15.04 on repartitions; substantial generalization gaps remain.",
+    "Validation epoch60to80 change is-0.195 original,+0.191/+0.407 on repartitions. Curves diagnose instability; no retroactive epoch selection was performed.",
+    "Covariance complementarity alone did not produce a robust fixed-blend gain.",
+    "Regularized runner-up was only screened. No claim that it fails on untested repartitions."
+  ],
+  "independent_review": "Read-only source audit found no blocking gradient,normalization or outerfoldleakage bug. Reporting annotation clarified:035 predictions are used for fixed comparison/screening but not training. Actual003 control identity checked,maximumdifference5.68e-14.",
+  "resource_assessment": {
+    "mandatory_new_install_or_paid_compute": false,
+    "new_install_requested": false,
+    "evidence": "MPS current runs finish in minutes with <1GBbenchmarkprocessRSS. Compute and package availability are not observed execution blockers. No evidence that adding a package or GPU would resolve split sensitivity.",
+    "main_remaining_uncertainty": "Inferred from repeated confirmation reversals:generalization/model-selection uncertainty and whether the available representations recover label-generating factors. These runs do not quantify an irreducible noise floor.",
+    "useful_information": "More precise officially permitted generator/label construction,noise and train/test generation-distribution information could distinguish measurement error from label noise; not required to run present models and improvement is not guaranteed.",
+    "approval_boundaries": "No outside training data. Contacting organizers, installing any new package or reopening protectedholdout require separate authorization. No such action was performed.",
+    "current_tool_blocker": null
+  },
+  "limits": [
+    "Historical reuse of development400 creates repeated-selection bias. The repartitions are not independent unseen data.",
+    "Screening chooses one of two arms and adds selection optimism. Conditional bootstrap intervals omit model fitting and selection uncertainty.",
+    "The two new arms have identical initialization; comparisons against035 differ in capacity and initialization consumption.",
+    "No holdout/test use or external data/weights. No public score used in model selection."
+  ],
+  "verification": {
+    "checkpoints": 20,
+    "partitions": [
+      "original",
+      "20261031",
+      "20261101"
+    ],
+    "rows_per_partition": 400,
+    "oof_ids_finite_rmse_blend_checks": true,
+    "fold_only_preprocessing_and_disjoint_ids": true,
+    "source_and_checkpoint_hashes": true,
+    "fixed_screening_gate_reproduced": true,
+    "mps_reload_max_abs_diff": 0.0,
+    "reference003_vs_actual003_max_abs_diff": 5.684341886080802e-14,
+    "best003_sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693"
+  },
+  "external_attribution": "Original project code using existing projectTinyCNN and installedPyTorch; no downloaded code/weights/data."
+}

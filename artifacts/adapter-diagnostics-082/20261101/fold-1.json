@@ -1,0 +1,173 @@
+{
+  "fold": 1,
+  "metrics": {
+    "train": {
+      "n": 320,
+      "B_prediction_change_RMS": 0.1464578748684126,
+      "B_prediction_change_abs_max": 0.5402631598514063,
+      "fixed009_contribution_change_RMS": 0.020489263556837032,
+      "normalized_last_descriptor_relative_L2_median": 0.005174783890602427,
+      "normalized_last_descriptor_relative_L2_max": 0.007186095046526186,
+      "normalized_last_descriptor_cosine_median": 0.9999866514909906,
+      "branches": {
+        "qkv": {
+          "original_output_RMS": 1.0594315823556963,
+          "adapter_output_RMS": 0.0025747474781704373,
+          "adapter_to_original_L2_ratio": 0.002430310291907066
+        },
+        "proj": {
+          "original_output_RMS": 0.20497152388341155,
+          "adapter_output_RMS": 0.0005009505368746065,
+          "adapter_to_original_L2_ratio": 0.0024440006464485704
+        }
+      }
+    },
+    "validation": {
+      "n": 80,
+      "B_prediction_change_RMS": 0.11066067117399257,
+      "B_prediction_change_abs_max": 0.41915101446906533,
+      "fixed009_contribution_change_RMS": 0.015481281966555597,
+      "normalized_last_descriptor_relative_L2_median": 0.005189348017407882,
+      "normalized_last_descriptor_relative_L2_max": 0.006599421077388857,
+      "normalized_last_descriptor_cosine_median": 0.9999866365351773,
+      "branches": {
+        "qkv": {
+          "original_output_RMS": 1.0558931586940437,
+          "adapter_output_RMS": 0.002562349156387257,
+          "adapter_to_original_L2_ratio": 0.0024267125279573147
+        },
+        "proj": {
+          "original_output_RMS": 0.2042804343613035,
+          "adapter_output_RMS": 0.0005004467206049555,
+          "adapter_to_original_L2_ratio": 0.002449802508838577
+        }
+      }
+    }
+  },
+  "gradients_initial": {
+    "rows": 16,
+    "ids": [
+      "TRAIN_000001",
+      "TRAIN_000002",
+      "TRAIN_000003",
+      "TRAIN_000005",
+      "TRAIN_000007",
+      "TRAIN_000008",
+      "TRAIN_000010",
+      "TRAIN_000011",
+      "TRAIN_000013",
+      "TRAIN_000014",
+      "TRAIN_000015",
+      "TRAIN_000018",
+      "TRAIN_000019",
+      "TRAIN_000020",
+      "TRAIN_000023",
+      "TRAIN_000025"
+    ],
+    "regression_loss": 0.0002803662955557229,
+    "anchor_loss": 4.846318658879856e-14,
+    "regression_grad_L2": 0.006916670594364405,
+    "anchor_grad_L2": 1.4260038483371318e-07,
+    "combined_grad_L2": 0.006916763726621866,
+    "regression_anchor_gradient_cosine": 0.6532005071640015,
+    "would_clip_at1": false,
+    "per_parameter": {
+      "block.attn.qkv.down.weight": {
+        "regression_grad_L2": 0.0,
+        "anchor_grad_L2": 0.0,
+        "total_grad_L2": 0.0
+      },
+      "block.attn.qkv.up.weight": {
+        "regression_grad_L2": 0.004734768997877836,
+        "anchor_grad_L2": 9.479890650254674e-08,
+        "total_grad_L2": 0.0047348239459097385
+      },
+      "block.attn.proj.down.weight": {
+        "regression_grad_L2": 0.0,
+        "anchor_grad_L2": 0.0,
+        "total_grad_L2": 0.0
+      },
+      "block.attn.proj.up.weight": {
+        "regression_grad_L2": 0.005042052362114191,
+        "anchor_grad_L2": 1.0652716042613974e-07,
+        "total_grad_L2": 0.0050421287305653095
+      }
+    },
+    "frozen_parameters_have_no_grad": true
+  },
+  "gradients_final": {
+    "rows": 16,
+    "ids": [
+      "TRAIN_000001",
+      "TRAIN_000002",
+      "TRAIN_000003",
+      "TRAIN_000005",
+      "TRAIN_000007",
+      "TRAIN_000008",
+      "TRAIN_000010",
+      "TRAIN_000011",
+      "TRAIN_000013",
+      "TRAIN_000014",
+      "TRAIN_000015",
+      "TRAIN_000018",
+      "TRAIN_000019",
+      "TRAIN_000020",
+      "TRAIN_000023",
+      "TRAIN_000025"
+    ],
+    "regression_loss": 0.00015501241523452336,
+    "anchor_loss": 5.822283821999008e-05,
+    "regression_grad_L2": 0.0044146450236439705,
+    "anchor_grad_L2": 0.00551115395501256,
+    "combined_grad_L2": 0.002197938971221447,
+    "regression_anchor_gradient_cosine": -0.9254288077354431,
+    "would_clip_at1": false,
+    "per_parameter": {
+      "block.attn.qkv.down.weight": {
+        "regression_grad_L2": 0.0010495646856725216,
+        "anchor_grad_L2": 0.001254407805390656,
+        "total_grad_L2": 0.00037296934169717133
+      },
+      "block.attn.qkv.up.weight": {
+        "regression_grad_L2": 0.002859859261661768,
+        "anchor_grad_L2": 0.0035780861508101225,
+        "total_grad_L2": 0.0015497589483857155
+      },
+      "block.attn.proj.down.weight": {
+        "regression_grad_L2": 0.0010244018631055951,
+        "anchor_grad_L2": 0.0013058006297796965,
+        "total_grad_L2": 0.00037162154330872
+      },
+      "block.attn.proj.up.weight": {
+        "regression_grad_L2": 0.0030264349188655615,
+        "anchor_grad_L2": 0.003780405269935727,
+        "total_grad_L2": 0.0014669607626274228
+      }
+    },
+    "frozen_parameters_have_no_grad": true
+  },
+  "exact_endpoint_train_objective": {
+    "initial_regression": 0.000375407099201571,
+    "final_regression": 0.0002149341388506986,
+    "final_anchor": 6.389518628683243e-05,
+    "final_total": 0.000278829325137531,
+    "freely_adjustable_prediction_lower_bound": 0.000250271399467714,
+    "fraction_of_available_objective_reduction_achieved": 0.7717843450705513,
+    "B_train_RMSE_before": 0.502047601070277,
+    "B_train_RMSE_after": 0.3798799362955014,
+    "unconstrained_anchor_optimum_RMSE": 0.3346984007135181,
+    "max_initial_standardized_residual": 0.11001392686600991
+  },
+  "online_epoch_objectives": [
+    0.0003489928927535857,
+    0.00032323907541638165,
+    0.0003090128435474071,
+    0.0003026334143527265,
+    0.000298277050580964,
+    0.0002911935355598416,
+    0.0002871029716857265,
+    0.00028120972229999096
+  ],
+  "checkpoint_sha256": "aa0db19b16568f026bfd8f5bbc14b0e3179579fe66e7bfe1e85e49a4be7ec641",
+  "measurement_state_unchanged": true
+}

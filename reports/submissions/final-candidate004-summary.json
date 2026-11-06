@@ -1,0 +1,166 @@
+{
+  "status": "candidate004_ready_not_uploaded",
+  "candidate": "artifacts/submission-candidate-004.csv",
+  "sha256": "00f344073ebbc2561e1fc72cdedb1d13ee710b7dcca2ed755870f2baa060c7d7",
+  "model": "artifacts/final-model-024",
+  "original_development_oof_rmse": 13.53511407926948,
+  "repartition_results": [
+    {
+      "seed": 20261031,
+      "candidate003": 13.63181073293285,
+      "candidate004": 13.562334543413382,
+      "paired_vs_candidate003": {
+        "improvement_rmse": 0.06947618951946843,
+        "fold_improvement_rmse": [
+          0.14342467756315536,
+          0.29828538979674235,
+          -0.023435277543834232,
+          0.12230682733201625,
+          -0.23093059962014628
+        ],
+        "better_folds": 3,
+        "conditional_paired_improvement_95": [
+          -0.058081325870632215,
+          0.19416372260842632
+        ]
+      },
+      "paired_vs_compact3D4": {
+        "improvement_rmse": 0.052060116495106,
+        "fold_improvement_rmse": [
+          -0.03761194967515458,
+          0.11181513753699868,
+          0.10488403279816438,
+          0.08010697301916636,
+          -0.006074364877422411
+        ],
+        "better_folds": 3,
+        "conditional_paired_improvement_95": [
+          -0.03734831534581025,
+          0.13966539406858428
+        ]
+      }
+    },
+    {
+      "seed": 20261101,
+      "candidate003": 13.729980391208457,
+      "candidate004": 13.677678757385682,
+      "paired_vs_candidate003": {
+        "improvement_rmse": 0.05230163382277553,
+        "fold_improvement_rmse": [
+          0.1699432587144134,
+          0.1071697860220251,
+          -0.15725549363681957,
+          0.10069330812921073,
+          0.042213064871175376
+        ],
+        "better_folds": 4,
+        "conditional_paired_improvement_95": [
+          -0.07449080348819197,
+          0.1695298512903021
+        ]
+      },
+      "paired_vs_compact3D4": {
+        "improvement_rmse": 0.06746333181391329,
+        "fold_improvement_rmse": [
+          0.1167711650304124,
+          -0.06599024554853727,
+          0.01212714642553614,
+          0.14246505400655884,
+          0.12642874995025544
+        ],
+        "better_folds": 4,
+        "conditional_paired_improvement_95": [
+          -0.02619637357194149,
+          0.15996726972186592
+        ]
+      }
+    }
+  ],
+  "scope": "Repeated development400, not independent validation. No further holdout selection/evaluation. Train500 used only after decision; test only frozen inference.",
+  "selection_limits": "CNN seed/D4 alone had no reproducible gain (+.0174/-.0152) on fresh partitions. Overall candidate gain is small and conditional paired intervals include zero. Same400 rows and repeated model selection: no independent validation or prize guarantee. No posthoc weights/scale/negative clipping.",
+  "validation": {
+    "valid": true,
+    "rows": 1000,
+    "columns": [
+      "ID",
+      "hardness"
+    ],
+    "ids_unique": true,
+    "sample_order_exact": true,
+    "all_predictions_finite": true,
+    "negative_prediction_count": 0,
+    "all_predictions_nonnegative": true,
+    "prediction_min": 165.8603135094425,
+    "prediction_max": 236.68142917586087,
+    "prediction_mean": 193.79350784640772,
+    "prediction_std": 10.373630714077336,
+    "sha256": "00f344073ebbc2561e1fc72cdedb1d13ee710b7dcca2ed755870f2baa060c7d7",
+    "file_bytes": 31688,
+    "uploaded": false
+  },
+  "reload": {
+    "valid": true,
+    "sha256": "00f344073ebbc2561e1fc72cdedb1d13ee710b7dcca2ed755870f2baa060c7d7",
+    "rows": 1000,
+    "seed_view_average_max_diff": 0.0,
+    "weighted_formula_max_diff": 0.0,
+    "baseline_vs003_max_diff": 5.684341886080802e-14,
+    "first_cnn_identity_vs003_max_diff": 0.0,
+    "reloaded_kernel10_max_diff": 2.3874235921539366e-12,
+    "cpu_vs_mps_3seed_8view_10image_max_diff": 1.52587890625e-05,
+    "reload_sample_ids": [
+      "TEST_000001",
+      "TEST_000112",
+      "TEST_000223",
+      "TEST_000334",
+      "TEST_000445",
+      "TEST_000556",
+      "TEST_000667",
+      "TEST_000778",
+      "TEST_000889",
+      "TEST_001000"
+    ],
+    "old_candidate003_preserved": true,
+    "test_use": "Post-freeze inference integrity only",
+    "uploaded": false
+  },
+  "train_seconds": 227.58448291698005,
+  "prediction_seconds": 370.5342034159694,
+  "engineering_tests": {
+    "passed": 18,
+    "seconds": 2.798,
+    "log": "reports/test-results-research-023.txt"
+  },
+  "previous003": {
+    "candidate": "artifacts/submission-candidate-003.csv",
+    "sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "public_rmse": 12.4479505141,
+    "public_rank": 23,
+    "public_participants": 37,
+    "submitted_at": "2026-10-01T01:51:00+09:00",
+    "submission_id": "09432cbd-74ba-4f0e-afae-41a84311a5d1",
+    "daily_used": 2,
+    "daily_limit": 5,
+    "remaining_at_confirmation": 3,
+    "source": "Parent delegation: submission verified by separate browser worker; not reverified in this runtime",
+    "url": "https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai?section=submissions",
+    "model_selection_use": false
+  },
+  "original_best_and_003_preserved": true,
+  "running_work": [],
+  "new_uploads_in_this_worker": 0,
+  "handoff": "Parent submission-only worker should check history and candidate hash before uploading once. This worker performed no upload.",
+  "new_packages_installed": false,
+  "paid_service_used": false,
+  "personal_mac_browser_used_this_phase": false,
+  "official_reference_review": "reports/official-reference-review-018.json",
+  "research_report": "reports/followup-research-summary-024.json",
+  "model_sha256": {
+    "baseline.joblib": "7667b2b36483ba1b93a8e2874d4de96d12f38492ea6815f9ce24c87d09bab83e",
+    "kernel.joblib": "2ea989b7313ff5e251c59ffc83704abf60b5b351999bad381e773fc4323775a3",
+    "cnn-seed20261003.pt": "7fa2cea78e1365cf280efe6695e758cff8c3da857ffb387d21787195cb472fb0",
+    "cnn-seed20261023.pt": "ca8568c3fa7b11b49b202dc2a235e994cfef094d7ec009753bd9b19096b8ec92",
+    "cnn-seed20261043.pt": "aa9d71ca21a440f0823d3208faf7c29dbb0ed21076cd743115b77b4f88b5731f"
+  },
+  "reproducibility": "Use same project preserved artifacts and README commands; source zip excludes original data and model weights. MPS retraining not guaranteed bitwise identical; saved models verified on CPU."
+}

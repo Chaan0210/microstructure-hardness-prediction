@@ -1,0 +1,25 @@
+{
+  "purpose": "Post-hoc bounded diagnostic, no training or promotion by arbitrary 0.15 threshold",
+  "recipes": {
+    "equal_three": {
+      "baseline": 0.3333333333333333,
+      "grain": 0.3333333333333333,
+      "cnn": 0.3333333333333333
+    },
+    "base50_grain25_cnn25": {
+      "baseline": 0.5,
+      "grain": 0.25,
+      "cnn": 0.25
+    },
+    "base75_grain125_cnn125": {
+      "baseline": 0.75,
+      "grain": 0.125,
+      "cnn": 0.125
+    }
+  },
+  "weights_chosen_before_evaluation": true,
+  "caveat": "Recipes fixed now but components previously selected on these same OOF rows. Not a prospectively independent experiment. No optimized weights.",
+  "data_scope": "Existing development OOF, metadata, logs, source and saved CNN checkpoints only. No train/holdout/test image reads.",
+  "seed_bootstrap": 20261004,
+  "bootstrap_replicates": 5000
+}

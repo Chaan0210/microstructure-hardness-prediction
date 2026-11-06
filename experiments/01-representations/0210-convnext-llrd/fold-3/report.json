@@ -1,0 +1,69 @@
+{
+  "all_optimizer_parameter_step_counters": 240,
+  "legacy_tail_lr_column": "uniform reference LR; actual five group LRs are in rng-and-groups.npz",
+  "ratio": 0.8,
+  "fold": 3,
+  "RNG_reference_exact_all240": true,
+  "group_LR_mean_and_schedule_exact_all240": true,
+  "effective_decay_fixed_all240": true,
+  "optimizer_has_no_RNG_side_effect_all240": true,
+  "recipe": {
+    "name": "fixed_adamw_low",
+    "optimizer": "AdamW",
+    "head_lr": 0.0001,
+    "tail_lr": 1e-05
+  },
+  "tail_trainable": true,
+  "tail_trainable_parameters": 14290944,
+  "seconds": 45.65856170799816,
+  "updates": 240,
+  "train_n": 320,
+  "prediction_n": 80,
+  "initial_train_RMSE": 6.165653648163958,
+  "final_train_RMSE": 3.8579989305975535,
+  "curve": [
+    {
+      "epoch": 0,
+      "train_RMSE": 6.165653648163958
+    },
+    {
+      "epoch": 3,
+      "train_RMSE": 5.3733224592120195,
+      "train_augmented_mean_loss": 0.07048506592400372
+    },
+    {
+      "epoch": 6,
+      "train_RMSE": 4.543537467644426,
+      "train_augmented_mean_loss": 0.059491967572830616
+    },
+    {
+      "epoch": 9,
+      "train_RMSE": 4.146913783322339,
+      "train_augmented_mean_loss": 0.047193735372275114
+    },
+    {
+      "epoch": 12,
+      "train_RMSE": 3.8579989305975535,
+      "train_augmented_mean_loss": 0.037188944313675164
+    }
+  ],
+  "gradient_norm_min": 1.006422996520996,
+  "gradient_norm_max": 7.3942084312438965,
+  "gradient_clip_fraction": 1.0,
+  "head_lr_first_last": [
+    0.0001,
+    1.1533337816991932e-05
+  ],
+  "tail_lr_first_last": [
+    1e-05,
+    1.1533337816991932e-06
+  ],
+  "same_model_reload_exact": true,
+  "BN_eval_affine_stats_unchanged": true,
+  "nontrainable_gradients_none": true,
+  "head_initial": "1729b3a87a62bdcfd52175691c28c4b953ca41b36e208c28086f4974b965c978",
+  "order_sha256": "be271553d98020f51bdf7162d1daa8af79d8eb7c1760de39b5acd48778fb4ddd",
+  "model_sha256": "2542500556482786204117406d683cc3a2407303339fb8ab5bffd0b70c6c01d0",
+  "updates_sha256": "e56fc1457262e4fb2a87e4bf59697a7a255e5fc9de0d1eb00605f57f4db25f2a",
+  "predictions_sha256": "b0d5be42b219bcf16a0f600396b2b137ff1baa639e63a61b2ac37cc0c1d0ec6b"
+}

@@ -1,0 +1,283 @@
+{
+  "study": "094 final image diagnosis",
+  "created_utc": "2026-10-02T10:33:33.844551+00:00",
+  "conclusion_ko": "고정5장의 반복 이득은 사실이지만, 이미지로 정의되는 일반화 가능한 누락 구조는 확인되지 않았다. 저주파가 강하다는 공통점은 있으나 이미지 유사 대조15장과 같은 저주파 구간의 나머지95장은 모두 세 분할에서 악화됐다. 현재 근거는 새로운 통제학습이나 제출을 지지하지 않는다. 단순 우연으로 확정하거나 영상에서 경도를 더 예측할 수 없다고 단정하지 않는다.",
+  "image_only_design": {
+    "metrics": 30,
+    "matching_metrics": 22,
+    "equally_weighted_groups": 5,
+    "unique_controls": 15,
+    "controls_actual_nearest_ranks": [
+      1,
+      2,
+      3
+    ],
+    "selection_frozen_before_reading_outcome_arrays": true,
+    "diagnostic_population_ranks_not_predictive_scaler": true,
+    "source_design_frozen": true
+  },
+  "visual_review": [
+    {
+      "anchor": "TRAIN_000438",
+      "observation_ko": "상대적으로 낮은 잡음, 길쭉한 다각형과 크기 불균일성이 보인다. 대조군에도 유사한 경계·길쭉한 형태·어두운 점이 있다."
+    },
+    {
+      "anchor": "TRAIN_000331",
+      "observation_ko": "강한 미세 잡음 속 길쭉한 넓은 영역이 보인다. 대조군에서도 비슷한 잡음과 방향성 구조가 나타난다."
+    },
+    {
+      "anchor": "TRAIN_000227",
+      "observation_ko": "큰 명암 영역과 길쭉한 구조가 보인다. 상대 어두운 영역의 최대 연결 면적은 전체400 중99.6백분위지만 이는 실제 상·기공 정답이 아니다."
+    },
+    {
+      "anchor": "TRAIN_000071",
+      "observation_ko": "잡음이 낮고 경계가 선명하며 여러 크기의 길쭉한 영역이 보인다. 높은 잡음은5장의 공통 특성이 아니다."
+    },
+    {
+      "anchor": "TRAIN_000168",
+      "observation_ko": "강한 잡음, 큰 명암 패턴과 어두운 점들이 보인다. 대조군에도 같은 관측 양상이 나타난다."
+    }
+  ],
+  "common_observable": {
+    "metric": "spectral_low_fraction",
+    "definition": "Gaussian sigma1 smoothed, centered native256image,Hann window; fraction of nonzero FFTpower at frequency<1/32 cycles/pixel. Large-scale image intensity pattern,not physicalgrain size.",
+    "fixed5_percentiles": {
+      "TRAIN_000438": 85.375,
+      "TRAIN_000331": 77.875,
+      "TRAIN_000227": 83.375,
+      "TRAIN_000071": 89.125,
+      "TRAIN_000168": 87.875
+    },
+    "image_only_top_quartile_n": 100,
+    "same_quartile_without_fixed5_n": 95,
+    "posthoc_emphasis": true,
+    "negative_transfer_to_other95_all3": true
+  },
+  "group_results": {
+    "original": {
+      "anchors": {
+        "n": 5,
+        "RMSE011": 32.91583024009374,
+        "RMSEattentionblend": 31.603325264560596,
+        "RMSE_gain": 1.3125049755331446,
+        "mean_squared_error_gain": 84.68171261705558,
+        "improved": 5,
+        "mean_prediction_change": 1.340407801954251,
+        "mean_target_minus011": 32.518550735166926
+      },
+      "matched15": {
+        "n": 15,
+        "RMSE011": 15.671838821942066,
+        "RMSEattentionblend": 15.693137596265325,
+        "RMSE_gain": -0.02129877432325955,
+        "mean_squared_error_gain": -0.6680355543857346,
+        "improved": 7,
+        "mean_prediction_change": 0.2821557994262719,
+        "mean_target_minus011": -2.0347018941810253
+      },
+      "spectral_low_top_quartile_without_anchors": {
+        "quartile": 4,
+        "n": 95,
+        "RMSE011": 15.32087847555765,
+        "RMSEattentionblend": 15.36544038485373,
+        "RMSE_gain": -0.04456190929608006,
+        "mean_squared_error_gain": -1.3674409576882496,
+        "improved": 45,
+        "mean_prediction_change": -0.13414534291678198,
+        "mean_target_minus011": -0.051125160683272955
+      },
+      "max_abs_metric_gain_spearman_fixed395": 0.06939672377569955
+    },
+    "20261031": {
+      "anchors": {
+        "n": 5,
+        "RMSE011": 32.21799231099727,
+        "RMSEattentionblend": 30.909512175992624,
+        "RMSE_gain": 1.3084801350046433,
+        "mean_squared_error_gain": 82.60108559364296,
+        "improved": 5,
+        "mean_prediction_change": 1.2965027291252909,
+        "mean_target_minus011": 31.81960803580403
+      },
+      "matched15": {
+        "n": 15,
+        "RMSE011": 14.989367085676866,
+        "RMSEattentionblend": 15.086488813225335,
+        "RMSE_gain": -0.09712172754846904,
+        "mean_squared_error_gain": -2.9210190824002846,
+        "improved": 9,
+        "mean_prediction_change": 0.22218631268582384,
+        "mean_target_minus011": -1.757430404847192
+      },
+      "spectral_low_top_quartile_without_anchors": {
+        "quartile": 4,
+        "n": 95,
+        "RMSE011": 15.175123108470741,
+        "RMSEattentionblend": 15.29206196168758,
+        "RMSE_gain": -0.11693885321683872,
+        "mean_squared_error_gain": -3.5627976828495633,
+        "improved": 41,
+        "mean_prediction_change": -0.20375684589025425,
+        "mean_target_minus011": -0.4447349509422646
+      },
+      "max_abs_metric_gain_spearman_fixed395": 0.12158641823458585
+    },
+    "20261101": {
+      "anchors": {
+        "n": 5,
+        "RMSE011": 33.92083905727145,
+        "RMSEattentionblend": 32.68655345559912,
+        "RMSE_gain": 1.2342856016723331,
+        "mean_squared_error_gain": 82.21254554357367,
+        "improved": 5,
+        "mean_prediction_change": 1.2503984979773406,
+        "mean_target_minus011": 33.75908787815125
+      },
+      "matched15": {
+        "n": 15,
+        "RMSE011": 15.399936897262984,
+        "RMSEattentionblend": 15.432934957680391,
+        "RMSE_gain": -0.03299806041740716,
+        "mean_squared_error_gain": -1.0174249683115553,
+        "improved": 6,
+        "mean_prediction_change": 0.1022875726380524,
+        "mean_target_minus011": -0.9798782085676332
+      },
+      "spectral_low_top_quartile_without_anchors": {
+        "quartile": 4,
+        "n": 95,
+        "RMSE011": 15.417872423298288,
+        "RMSEattentionblend": 15.534292211361471,
+        "RMSE_gain": -0.1164197880631832,
+        "mean_squared_error_gain": -3.603444446863843,
+        "improved": 46,
+        "mean_prediction_change": -0.1588204942654673,
+        "mean_target_minus011": -0.07489589303286445
+      },
+      "max_abs_metric_gain_spearman_fixed395": 0.08550432068619333
+    }
+  },
+  "geometric_dispersion": {
+    "anchor_mean_image_distance": 0.37288605572294375,
+    "percentile_among5000_random5sets": 34.760000000000005,
+    "interpretation": "Under theseimageproxies anchors are not an exceptionallytighttype; not a hypothesis-test pvalue and not proof that no hiddenimagefactor exists."
+  },
+  "selection_arithmetic": {
+    "identity": "squared_error_gain = 2*(y-p011)*(pnew-p011) - (pnew-p011)^2",
+    "original5_residual_range": [
+      26.197425172821966,
+      41.306732069660626
+    ],
+    "original5_prediction_change_range": [
+      1.0458763816159546,
+      1.6329792062249737
+    ],
+    "interpretation_ko": "원본5장은 모두011의 큰 과소예측 사례다. 약1~1.6의 작은 상향 변화도 큰 제곱오차 이득을 만든다. 큰 이득으로 뽑은5장에서 이 현상이 보이는 것은 선택 방식과 연결되며, 특정 구조의 인과적 효과를 증명하지 않는다."
+  },
+  "overlap_review": [
+    {
+      "direction": "Coarse spatial scale / frequency",
+      "existing": "src/microstructure/features.py already has radial FFTpower andautocorrelation. native_texture_features.py adds frequencydirection andlocalheterogeneity;024extension failed.070coarseregionalvariance failed.",
+      "difference": "094Hann+smoothed cutoff ratio is not mathematically identical, but no evidence justifies treatinganotherbandthreshold as a newphysicalhypothesis."
+    },
+    {
+      "direction": "Noise / blur / weak boundaries",
+      "existing": "068noise audit,071TV and072fixedraw/TV mixture,049inverseformation failed to establish consistentgain/validlatent recovery.",
+      "difference": "5anchors include bothlownoise andhighnoise; matchednoise/structurecontrols do notbenefit consistently."
+    },
+    {
+      "direction": "Rare dark regions / connectivity",
+      "existing": "030-032porecurvature,054lineal,055Betti investigatedrelatedproxies;092-093learnedlocalpooling lacks broad011gain.",
+      "difference": "No groundtruthsegmentation/latentphase makes relative darkcomponents physicalpores. Largestcomponentoutlier227 alone does notsupport newthreshold orIDrule."
+    }
+  ],
+  "decision": {
+    "new_controlled_training": false,
+    "reason": "No distinct supportedhypothesis beyond existingfailedfamilies; image-matched controls andsamecoarsepattern neighborhood contradict generalizingtheanchor benefit. Additional search would be another adaptivechoice onthe same400.",
+    "ID_rules": false,
+    "label_or_OOF_gate": false,
+    "candidate_created": false,
+    "best011_kept": true,
+    "submission_remaining_consumed": 0
+  },
+  "realistic_next_steps": [
+    {
+      "priority": 1,
+      "action_ko": "현재는 검증된best011을 유지하고 잔여 제출을 보존한다. 새 점수 개선을 주장할 후보는 없다.",
+      "execution": "Completed preservation hashes; no upload or retraining."
+    },
+    {
+      "priority": 2,
+      "action_ko": "공식 생성기·경도 산식·잠재변수·잡음 과정·픽셀의 물리 척도·생성 집단 정보는 추가 분석에 필요한 자료다. 정보가 생기면 방향·스케일·기공 추정의 의미부터 확인하고 한 물리 가설만 고정한다.",
+      "blocker": "Currentproject materials provide qualitativephysics,not thoseverifieddefinitions. No outreach or externaldata ingestion performed.",
+      "free_resources": "ExistingNumPy/SciPy analyticfixtures, CPU2; rawimage pass measured<5s for094. No download/install needed."
+    },
+    {
+      "priority": 3,
+      "action_ko": "규정상 허용되고 별도 승인된 독립 라벨 자료 또는 실제 생성집단 ID가 제공되면, 기존holdout은 계속 봉인한 채 집단 단위 검증으로 후보 하나만 비교한다. 반복CV나추가bootstrap으로 독립성을 대신하지 않는다.",
+      "blocker": "No newindependentlabels orverifiedgeneratorgroups available. Existing400 cannotcreateindependence byresplitting.",
+      "free_resources": "Existinguv/sklearn/torch onCPU2/MPS; compute budget setonlyafter fixedhypothesis. No paidcompute."
+    },
+    {
+      "priority": 4,
+      "action_ko": "공식 잠재값/분할 정답이 제공될 경우에만 직접 감독된 구조 복원 또는 물리식 기반 특징을 검토한다. 이전049의 추정값을 정답으로 삼거나 현재5장에 맞춰 규칙을 만들지 않는다.",
+      "blocker": "Missinggroundtruth,not machinecapacity. No justifiedimmediate trainingexperiment."
+    }
+  ],
+  "limits": [
+    "Anchorsselectedbyoriginaloutcome and whole094isposthoc; matchingfixedbeforeoutcomecomparison doesnoteraseanchorselectionbias.",
+    "Controls match22proxies,not allpossibleimage/latentfactors; observednegativecomparisons cannotprove labelnoise orpurechance.",
+    "Same400 observations inall3CVpartitions,not1200 independentcases; no significance orcausalclaim.",
+    "30metrics andquartileviews aredescriptive; no fitteddecisionrule,learnedgate orselectedthreshold.",
+    "No segmentationtruth,physicalscale orforwardlabeldefinition; darkregion andfrequency metrics areimageobservables only."
+  ],
+  "validation": {
+    "passed": true,
+    "development_rows": 400,
+    "prior20_metrics_exact": true,
+    "new10_metrics_raw_replay_rows": 400,
+    "matching_independent_cdist_max_error": 0.0,
+    "all15controls_are_unique_and_actual_nearest3": true,
+    "display20_panels_native_pixels_exact": true,
+    "all400_image_hashes_match_prior068": true,
+    "outcome_sources_match_verified092_093": {
+      "original": true,
+      "20261031": true,
+      "20261101": true
+    },
+    "analytical_fixture_spectral_fractions": {
+      "64px_low": 0.9999886863101984,
+      "16px_mid": 0.9999993520617093,
+      "flat_finite": true
+    },
+    "protected011_artifacts_unchanged": 20,
+    "no_training": true,
+    "limits": "New10 replay uses same implementation; distance/arithmetic checked by separate formulations. Fixtures validate frequency meaning, not grain/pore or hardness truth. No holdout/test image or label reading. Protected test prediction artifact hashed only, never parsed.",
+    "seconds": 2.626580042007845,
+    "source_sha256": "aa9256965b1129826e4cfe32bc9f95cea9f5ab3c8cb4d8f684d6951017310577"
+  },
+  "scope": {
+    "cost": 0,
+    "downloads_installs": false,
+    "development_images_only": 400,
+    "holdout_test_images_labels_read": false,
+    "full500_fit": false,
+    "test_inference": false,
+    "uploaded": false
+  },
+  "evidence_sha256": {
+    "reports/image-diagnostics-094.json": "a0416d95dc5afbef5539be3b365eeaab6c9b7eaec02350d3c5ad19aefc2d9c70",
+    "reports/image-diagnostics-094-validation.json": "f0ea58a4100a227c1dcb70b04987e3993a58e32d7615987f5a64a88c5060a832",
+    "artifacts/image-diagnostics-094/matching-locked.json": "da7f37cef1cff22d86bf4eaecc25ac3100f8b1bf08073a196cea62ec5407d573",
+    "artifacts/image-diagnostics-094/matched-images.png": "4d01810c4323c9e06a7e5cba01279a42879053c5668bd338509c181d7fdb011a",
+    "artifacts/image-diagnostics-094/matched-outcomes.csv": "876c9b4ef025993df132bb48fb84afd1a45afe7f3ce8d2419f616c4101b7ab79",
+    "artifacts/image-diagnostics-094/all-metric-quartiles-excluding-fixed5.json": "14cbcbd33e0f2b230d522f7e5c618a906b6e35f7204f24dc4f0ceddd0c0987f6",
+    "reports/research-synthesis-091.json": "234389fd781652c22dfbbceae5e37e7594805d4b2573a8e91660c37cb37d0ed2",
+    "reports/diagnostic-research-068-072-summary.json": "d88b3eceef22ef438601800e20744863485645c3581f975d76b3e570aa192158",
+    "reports/followup-research-summary-024.json": "dcb6d035730c771fac351269593b6feec95c70faa0b5aeb1f29af885fc80e48e",
+    "src/microstructure/features.py": "24732babe8c725149a0e1a9b84a1e9c0328a8e4d3d42be64a9d89ad85f10cb83",
+    "native_texture_features.py": "e5c061688ad86f00c7532b1c3f3a349ee113abf92f5f387b32f4001a6054988a"
+  },
+  "best011_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "source_sha256": "f7d8c8d61e75eb849641980fbe0371d51bca3fa3ae036dd9a2b92053e8826107"
+}

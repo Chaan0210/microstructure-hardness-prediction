@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "batch": 1,
+  "dtype": "float32",
+  "IDs": [
+    "TRAIN_000001",
+    "TRAIN_000002",
+    "TRAIN_000003"
+  ],
+  "models": {
+    "resnet50": {
+      "finite": true,
+      "CPU_MPS_maxabs": 1.0013580322265625e-05,
+      "CPU_MPS_relative_L2": 1.1574875316000544e-06,
+      "seconds": {
+        "cpu": [
+          0.03321295799833024,
+          0.029236750000563916,
+          0.028016333999403287
+        ],
+        "mps": [
+          1.7931907499951194,
+          0.02302708299976075,
+          0.02462987499893643
+        ]
+      },
+      "weights_unchanged": true,
+      "projected400_MPS_seconds": 9.851949999574572
+    },
+    "efficientnet_b0": {
+      "finite": true,
+      "CPU_MPS_maxabs": 5.4836273193359375e-06,
+      "CPU_MPS_relative_L2": 1.2971825071872445e-06,
+      "seconds": {
+        "cpu": [
+          0.10136254199460382,
+          0.10274895899783587,
+          0.10561362499720417
+        ],
+        "mps": [
+          1.4347607909949147,
+          0.02695724999648519,
+          0.02755425000214018
+        ]
+      },
+      "weights_unchanged": true,
+      "projected400_MPS_seconds": 11.021700000856072
+    }
+  },
+  "peak_conservative_RSS_plus_MPS": 834600960,
+  "swap_growth": 0,
+  "network_attempts": 0
+}

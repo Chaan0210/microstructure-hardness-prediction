@@ -1,0 +1,169 @@
+{
+  "passed": true,
+  "eligible_for_candidate": false,
+  "results": {
+    "original": {
+      "scores": {
+        "reference011": 13.0539977718711,
+        "primary": 13.070165970184748,
+        "head_mean3": 13.916057629084815
+      },
+      "comparison": {
+        "gain": -0.016168198313648574,
+        "fold_gains": [
+          0.016199266945074342,
+          -0.022498163529760973,
+          -0.012066767139055301,
+          -0.0010607644854516707,
+          -0.0597214750791224
+        ],
+        "positive_folds": 1,
+        "bootstrap_sd": 0.011443138414268505,
+        "conditional_ci95": [
+          -0.038695434842676193,
+          0.006387258910144984
+        ]
+      },
+      "advance": false,
+      "report_sha256": "4991e1476ed9474b475882e16f79bb3645a2bd29e4a337483212082035e6cc22",
+      "predictions_sha256": "6074a9b73bda71481a89998b1d798cb6580f0a005a4a8b77d56084f8a9eeb9ee",
+      "seed_prediction_variance_mean": 5.379570800039735,
+      "individual_head_scores_diagnostic_only": [
+        13.957820652670737,
+        14.229392100184567,
+        14.1354991173015
+      ]
+    },
+    "20261031": {
+      "scores": {
+        "reference011": 13.015176056591201,
+        "primary": 13.019967421393373,
+        "head_mean3": 13.664643345560819
+      },
+      "comparison": {
+        "gain": -0.004791364802171572,
+        "fold_gains": [
+          0.005121045309772754,
+          -0.033198641339163615,
+          -0.012342898135010216,
+          0.00025678682416341303,
+          0.020390842275160637
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.0117500772284804,
+        "conditional_ci95": [
+          -0.02784697886647911,
+          0.018727100549231775
+        ]
+      },
+      "advance": false,
+      "report_sha256": "f82b6aff9b2293a98f305b38d402fec6b25318b14af1ceb84b29d572cee7f7af",
+      "predictions_sha256": "af2de8fb0cd98707d8d462d4069c3e4dd7e5634f47f61d1e620c20817721abab",
+      "seed_prediction_variance_mean": 5.131413674358909,
+      "individual_head_scores_diagnostic_only": [
+        13.771791193005598,
+        13.817368970832947,
+        13.963515186633053
+      ]
+    },
+    "20261101": {
+      "scores": {
+        "reference011": 13.272377948565081,
+        "primary": 13.266164974505687,
+        "head_mean3": 14.042156488628533
+      },
+      "comparison": {
+        "gain": 0.006212974059394583,
+        "fold_gains": [
+          0.013427726718740374,
+          -0.03851940487647454,
+          -0.013854073835533498,
+          0.03776386965726708,
+          0.029585647031270312
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.013030703535070024,
+        "conditional_ci95": [
+          -0.020493717577180347,
+          0.0302062326162139
+        ]
+      },
+      "advance": true,
+      "report_sha256": "0a82f7e555e71969585bd630c984b1f4970d95160292b3ddc0a4022cc933cc31",
+      "predictions_sha256": "33579862cb655e07d6c836cc10936cd8ecc408eb8166859a92b30f1e1b603d72",
+      "seed_prediction_variance_mean": 5.818905032632439,
+      "individual_head_scores_diagnostic_only": [
+        14.369641875486145,
+        14.035877349921817,
+        14.335645469929894
+      ]
+    }
+  },
+  "models_verified": 45,
+  "max_MPS_reload_error": 0.0,
+  "max_CPU_MPS_error": 3.4263589043348475e-05,
+  "replay": [
+    {
+      "split": "original",
+      "seed": 20270215,
+      "outer_validation_labels_changed_only_in_memory": true,
+      "full12epoch_state_exact": true,
+      "prediction_error": 0.0
+    },
+    {
+      "split": "original",
+      "seed": 20270222,
+      "outer_validation_labels_changed_only_in_memory": true,
+      "full12epoch_state_exact": true,
+      "prediction_error": 0.0
+    },
+    {
+      "split": "20261031",
+      "seed": 20270222,
+      "outer_validation_labels_changed_only_in_memory": true,
+      "full12epoch_state_exact": true,
+      "prediction_error": 0.0
+    },
+    {
+      "split": "20261101",
+      "seed": 20270222,
+      "outer_validation_labels_changed_only_in_memory": true,
+      "full12epoch_state_exact": true,
+      "prediction_error": 0.0
+    }
+  ],
+  "original_base_seed_replay_exact": true,
+  "foldtrain_only_scalers_targets_verified": true,
+  "only_seed_changed": true,
+  "no_seed_selection": true,
+  "seeds": [
+    20270215,
+    20270222,
+    20270308
+  ],
+  "config": {
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "protected011_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "protected011_files": 20,
+  "selection_bias": "011 recipe was discovered from084 control after seeing original data and all400 rows have been reused. Diagnosis is descriptive, not independent validation or a causal factorial experiment. New seed experiment isolates algorithmic randomness only. The new seeds are fixed before seeing any of their development outcomes. Same400 historical reuse remains; no Public score informs seeds or weights.",
+  "holdout_test_selection_access": false,
+  "cost": 0,
+  "seconds": 37.2807735420065,
+  "source_sha256": "22daf430f1a259f029595555e106504ee01f468be8288ef4dd6317934b152606"
+}

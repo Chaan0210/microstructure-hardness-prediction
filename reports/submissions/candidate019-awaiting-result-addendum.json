@@ -1,0 +1,104 @@
+{
+  "UTC": "2026-10-04T12:36:13.837096+00:00",
+  "status": "Parent is coordinating candidate019 final daily submission. Await result; no upload or score assumed. Last confirmed Public best is018 at11.5230652779.",
+  "scope_this_turn": "Read existing JSON reports and source/CSV hashes only; write this addendum. No model fit, inference, new experiment, retuning, raw image reading or heldout evaluation.",
+  "preserved_CSV_SHA256": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c"
+  },
+  "D4_scope": {
+    "branch": "Only CNN branch uses uniform mean of the same3 seeds x all8 D4 views. No selected seed/view subset or fitted view weights. DINO and residual features remain unchanged.",
+    "development": "All15 outer ensembles (45 checkpoints),45 middle nodes and135 deep nodes. Each middle/deep node uses3 existing checkpoints with exact train IDs and train-local normalization. Refit every outer affine from D4 middle OOF, every anchor affine from D4 deep OOF, and all residual candidate fits/bootstrap weights from resulting honest residuals.",
+    "validation": "180 nested node caches verified;900 residual model objects independently checked; outer-label poison replay exact on one full fold per partition.45 outer checkpoints reloaded; cached D4 means match exactly. Upstream training exclusion certificates retained.",
+    "full500": "All500 CNN3 checkpoints use D4 inference.3 middle and9 deep D4 nodes recomputed from36 existing checkpoints;4 affines and60 residual model objects refit. No new neural training.60 residual models and12 nested nodes validated before test inference.",
+    "final": "1000 test IDs/order/finite/no duplicates, exact MPS reload and CSV byte reproduction passed. CPU/MPS maximum prediction difference3.984101795140305e-6.",
+    "does_not_claim": "Whole ensemble rotation invariance, DINO image equivariance, or physical orientation invariance."
+  },
+  "difference_from_prior_D4": {
+    "prior_020_021": "Already evaluated the same3-seed eight-view CNN mean within an older baseline795/compactKRR/CNN mixture. D4 itself is not new.",
+    "prior_candidate004": "Older combined recipe also used D4 CNN and an expanded physics kernel; not the current018 nested DINO/affine/bootstrap-residual system.",
+    "distinct_151_to_019": "Tests D4 CNN consistently at every prediction level of current018, including previously missing middle/deep caches, then refits dependent affines and residuals. Existing outer CNN fits/predictions reused and audited, avoiding duplicated neural training.",
+    "reproduction_records": "cnn_view_mean_151.py and artifacts/cnn-view-mean-151/plan.json for development; candidate019_pipeline.py and artifacts/final-model-152/decision.json for full500/test. Existing136 standalone ZIP covers011/014/015 only."
+  },
+  "failed_studies": {
+    "148": {
+      "hypothesis": "Directional channel energy H-V may complement existing H+V token adjacency energy. Add one bounded scalar ||H-V||_F^2 / trace(H+V)^2 to018.",
+      "pooled_RMSE": {
+        "reference018": 12.836544645642636,
+        "primary": 12.846826463654146
+      },
+      "candidate_minus018": 0.010281818011510069,
+      "RMSE_by_partition": {
+        "original": {
+          "reference018": 12.811945280526919,
+          "primary": 12.817325501615302
+        },
+        "20261031": {
+          "reference018": 12.645872618239814,
+          "primary": 12.643756767558614
+        },
+        "20261101": {
+          "reference018": 13.048624416802191,
+          "primary": 13.075719190552816
+        }
+      },
+      "stop_reason": "Pooled MSE worsened; two of three partitions worsened. Independent validation passed, so this was a negative experiment rather than an implementation failure.",
+      "closed_variants": "No signed direction, lag, scale, projection or mixture retuning. No full500/test/CSV for148."
+    },
+    "149": {
+      "hypothesis": "Colocated grayscale patch brightness and DINO token crossmoments may add information absent from marginal/global features. Append32 fixed features; compare against fixed shuffled-location control.",
+      "pooled_RMSE": {
+        "reference018": 12.836544645642636,
+        "permuted": 12.853727961965232,
+        "aligned": 12.859204774030024
+      },
+      "aligned_minus018": 0.022660128387387957,
+      "RMSE_by_partition": {
+        "original": {
+          "reference018": 12.811945280526919,
+          "permuted": 12.823343253701315,
+          "aligned": 12.81452126667218
+        },
+        "20261031": {
+          "reference018": 12.645872618239814,
+          "permuted": 12.662484305414072,
+          "aligned": 12.667261685918268
+        },
+        "20261101": {
+          "reference018": 13.048624416802191,
+          "permuted": 13.0720437030143,
+          "aligned": 13.092210216299739
+        }
+      },
+      "stop_reason": "Aligned bank worsened all three partitions versus018 and had worse pooled RMSE than shuffled control; failed prespecified requirement to beat both. Independent validation passed.",
+      "closed_variants": "No alternate brightness channel, pooling, permutation, model weight or fallback control selection. No full500/test/CSV for149."
+    }
+  },
+  "next_priority": "Await parent019 result. No additional validated candidate is available from this batch; no new training or tuning scheduled. Do not reopen failed148/149 or tune a blend to Public scores.",
+  "source_SHA256": {
+    "artifacts/cnn-view-mean-151/validation-original.json": "4f94fb7909f108205d7d6f33a1dd577816e2604425b15d669e74d080a4d5f706",
+    "artifacts/cnn-view-mean-151/validation-20261031.json": "489b66213b08e32493f949163956af2775b2e422cf1225badc4729645da6b3d7",
+    "artifacts/cnn-view-mean-151/validation-20261101.json": "174634424f630ffb9ad0442272490a95975d58cc56ca1be9f4f9a9bea6926527",
+    "reports/directional-energy-148-summary.json": "53a6121df39ebfc5a971ff000c897076a02e804941f754f32a425ccad15b2ca2",
+    "reports/colocated-intensity-149-summary.json": "8c84299ec927863edf1243e6b904e9c8e8a9b52f677e38241778a744f0b4a2d3",
+    "artifacts/directional-energy-148/plan.json": "02f9ecafa0613ef985ef073606b244fe2ae89f0a3360e6fa5caef46b3512b32e",
+    "artifacts/colocated-intensity-149/plan.json": "34bb5edbb5fc11c29c1147a17560fdf6e5beb4776d57b4143556117719b35cf1",
+    "artifacts/cnn-view-mean-151/plan.json": "4ab8e0f3d0eaa8c15fcbe1944d75943238a9a268d84075c203c026d688bd38e2",
+    "artifacts/cnn-view-mean-151/outer-reload-audit.json": "d46e661ddf3071fa919df649ac9d16ae62b37d3917cee986384b56f6746ae200",
+    "artifacts/cnn-view-mean-151/extra-validation.json": "f64b6c5d5309496ab59dd2cd9e8951bb9a9c927fbbf391a51f2e90cae2e095ab",
+    "reports/cnn-view-mean-151-summary.json": "53d5132ecc0fa5da0ea84a5763f0f59a33041c0e1c853bea6e67ed869df2f35b",
+    "artifacts/final-model-152/decision.json": "0c4356e00a323ab81d93786b805e9f770587f813bf5358fc8b426964d38290ba",
+    "artifacts/final-model-152/fit.json": "5c7276be5e32541dd577adb15185e14df09ccb32015e00e77609a2e659c7370f",
+    "artifacts/final-model-152/training-validation.json": "7f29d36ec6cbcd5b4e3e8a2a1b0c06ddfa6e0796f6972a95ace03efa24a62971",
+    "reports/candidate019-summary.json": "2e210ea55e8fd9a8a62f919359082666950c776eef9034738f598de7814a529e",
+    "reports/candidate019-verification.json": "036f53cafb0f1484888c3050c97360c9570e790ec4bcc1cdf0442fa3c074f043",
+    "reports/candidate019-preservation.json": "9da8662d7e41b51d65ad768aa54b0023454714d92ead927f402eee3782a501a7",
+    "cnn_view_mean_151.py": "a49677cb6881a678ac05be428bf1bb22fb2c1f4900f65388e0ac2296d5dfb00d",
+    "candidate019_pipeline.py": "34b150bd3a564b98dae2ded517ac2f974c0ed1061cf4527c93489ff6e4408c04",
+    "cnn_d4_ablation.py": "4cc008e30764f86a9a5e3ccbecc21f51254a191bceb42da9f923627562ec56ea",
+    "frozen_multiseed.py": "f43be55edf91c1b0376d0bd8994fdcfa4cd1c8244bd32732bde51eb63c00c2b5",
+    "candidate004_pipeline.py": "e8e631a39123548f05c30313b34daf0ffd4b3a428a3f4ca5a08bff05fd8f5f68"
+  },
+  "remaining_technical_blockers": [],
+  "cost": 0
+}

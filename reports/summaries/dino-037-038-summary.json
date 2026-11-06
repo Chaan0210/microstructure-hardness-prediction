@@ -1,0 +1,104 @@
+{
+  "status": "completed_no_promotion",
+  "decision": "Preserve best003; originalfrozenDINO fixedblend improvements0.0122/0.0168/0.0204are small relative to fold variability,allconditionalCIs include0,reuseddevelopment and3armselection optimism; bounded strongerRidge diagnostic didnotimprove. No newsubmissioncandidate.",
+  "installed_model": "OriginalDINOv2dinov2_vits14nonregister",
+  "source_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+  "weight_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "license": "Apache-2.0 per pinnedofficialREADMEandMODEL_CARD;Cell-DINO/X-ray not used",
+  "install_scope": "Vendored officialsource+weights insideproject;existinguv.venvPyTorch/numpy/Pillow sufficient,noadditionalpackages;nocharge/API/cloud execution",
+  "smoke": {
+    "cpu": {
+      "median_batch4_seconds": 0.08990858303150162,
+      "rss_peak_bytes": 521895936
+    },
+    "mps": {
+      "median_batch4_seconds": 0.0355711670126766,
+      "rss_peak_bytes": 652394496,
+      "driver_bytes": 153780224
+    }
+  },
+  "extraction_seconds": 4.336842250020709,
+  "cv_seconds": 239.46290574991144,
+  "bounded_regularization_diagnostic_seconds": 0.5023438329808414,
+  "regression_models_reloaded": 40,
+  "results037": {
+    "original": {
+      "fresh003": 13.705696031698212,
+      "cls_ridge": 15.959168572692887,
+      "all_ridge": 14.989437969740626,
+      "all_pca64_rbf": 15.352353187635432,
+      "cls_ridge_blend": 13.888780910811871,
+      "all_ridge_blend": 13.69345515435703,
+      "all_pca64_rbf_blend": 13.76741391679016
+    },
+    "20261031": {
+      "fresh003": 13.63181073293285,
+      "all_ridge": 14.792149162976877,
+      "all_ridge_blend": 13.615037351778938
+    },
+    "20261101": {
+      "fresh003": 13.729980391208457,
+      "all_ridge": 15.009358927239427,
+      "all_ridge_blend": 13.709604205431127
+    }
+  },
+  "results038": {
+    "original": {
+      "blend": 13.69345515435703,
+      "gain": 0.012240877341181289,
+      "fold_gains": [
+        -0.2925394633478948,
+        0.028220837262693976,
+        0.07717597862355241,
+        0.11302364494751771,
+        0.1344439331451195
+      ],
+      "conditional_ci95": [
+        -0.18224115529725057,
+        0.19673989796591354
+      ]
+    },
+    "20261031": {
+      "blend": 13.615037351778938,
+      "gain": 0.01677338115391258,
+      "fold_gains": [
+        0.10659187042774754,
+        0.23068763157014693,
+        -0.007787917762064112,
+        -0.09768638592490575,
+        -0.20345874614478987
+      ],
+      "conditional_ci95": [
+        -0.15754663406984415,
+        0.19185878909761053
+      ]
+    },
+    "20261101": {
+      "blend": 13.742538867710245,
+      "gain": -0.012558476501787652,
+      "fold_gains": [
+        0.3457024135836253,
+        0.0199322414221772,
+        -0.07750902765541312,
+        -0.32387066719755353,
+        -0.01617587056728631
+      ],
+      "conditional_ci95": [
+        -0.19842985136402974,
+        0.1749435508201889
+      ]
+    }
+  },
+  "notes": [
+    "Three037arms selectedonebyoriginalCV; samefixedrecipe confirmedonbothrepartitions.",
+    "All003components freshly refit per037outerfold;038reused these verifiedunchangedfoldpredictions.",
+    "No backbonelearning, no holdout/test access, no testadaptation.",
+    "038was separatelydeclared after all15alphas hit037upperboundary;14still1000,1chose3000. Nofurthergridexpansion.",
+    "Only final-layerfrozen descriptors at252were evaluated; this doesnot establisha DINOv2performanceceiling."
+  ],
+  "protected_candidate003_sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+  "new_candidate": null,
+  "uploaded": false,
+  "running_work": [],
+  "remaining_blockers": []
+}

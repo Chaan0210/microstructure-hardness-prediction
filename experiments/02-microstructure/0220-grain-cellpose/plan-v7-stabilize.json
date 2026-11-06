@@ -1,0 +1,8 @@
+{
+  "study": "220-v7 TabPFN stabilization (written before running)",
+  "closed_branches": {"v5_E_dinoL_pca32": "+0.052 pooled, all3 better, below 0.10 bar", "v6_P_phase": "+0.044 pooled, all3 better, below 0.05 bar — second-phase branch closed"},
+  "arm": "S: TabPFN v2 on 64 v3 features, n_estimators=32, prediction averaged over random_state in {0,1,2} (per fold seeds offset by fold), otherwise identical to arm C.",
+  "rationale": "pure variance reduction, no new information or feature selection",
+  "adoption_rule": "not worse than arm C blend in any of the three partitions (gain >= 0 in all three)",
+  "blend": "fixed 0.5 with best021; fallback best021 if n_obj<20"
+}

@@ -1,0 +1,31 @@
+{
+  "source_sha256": "1b0374672595d13639ed1caf397c54dbb73c59bea79137250a6a4cfae3fee186",
+  "proceed_to_development_cv": true,
+  "images_actually_viewed": "qa-originals.png plus all four v1 and all four v2 network sheets, 16 fixed label-free development IDs",
+  "parent_review": "Parent independently inspected v2 noise2 sheet and agrees one fixed-panel CV is appropriate, no additional parameter modifications.",
+  "interpretation": "This is a partial boundary-visibility/network-completeness feature hypothesis, not reliable true-grain reconstruction on all images.",
+  "findings": [
+    "Clear boundaries TRAIN_000027, TRAIN_000083, TRAIN_000463 are substantially followed and produce multiple enclosed interiors.",
+    "TRAIN_000028 and TRAIN_000346 show partial alignment with real boundaries but some grains merge.",
+    "Dark-phase-rich TRAIN_000202/TRAIN_000284 and blurry/noisy examples do not close; many large edge-connected components remain.",
+    "Closed_count0 and diameter0 are unavailable measurements, never evidence of physically tiny grains; support and largest-basin features explicitly encode failure.",
+    "V1 simple blackhat was dominated by dark phase blobs; single label-free v2 refinement requires opposite 3px sides brighter to isolate narrow dark valleys. No labels/OOF errors informed this revision.",
+    "V2 reduces broad blob detections but does not solve high-noise/low-contrast network closure. No further adjustment before or after CV."
+  ],
+  "schema": {
+    "new_features": 22,
+    "combined_features": 48,
+    "same_fourier_glcm_fft_blocks_added": false
+  },
+  "implementation_review": [
+    "Image reads strictly checked against development_folds allowlist; only dev-only caches and OOF are used.",
+    "Frame membership uses direct bbox checks, not regionprops equality.",
+    "PARAMETERS match hardcoded TV1noise,80iterations,blackhat9,hysteresis.5/1,closingdisk1,networkmin24,basinmin16,valleyoffset3,8directions,sigma.6.",
+    "D4 canonicalization,32 synthetic D4 comparisons,constant/finite/schema/input checks passed.",
+    "A single worker and threadpool limit1 are used. No GPU call or new model/CNN training.",
+    "Kernel selection delegates unchanged fv.kernel_fold; old kernel refit must match old OOF before new result is accepted.",
+    "Existing source hashes checked before/after CV; no old model/source/CSV writes."
+  ],
+  "qa_source_sha256": "1b0374672595d13639ed1caf397c54dbb73c59bea79137250a6a4cfae3fee186",
+  "label_dependent_selection": false
+}

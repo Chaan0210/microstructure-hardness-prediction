@@ -1,0 +1,19 @@
+{
+  "status": "frozen_development_candidate_design_only",
+  "study": "dino-spatial-039",
+  "model": "officialdinov2_vits14originalnonregister,frozen",
+  "commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+  "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "preprocessing": "grayscaleRGBreplication,fullimagebicubic504,no crop/rotation/reflection,officialImageNetmean/std",
+  "descriptor": "finalnormalizedCLS384+1296patchmean384+patchpopulationstd384=1152",
+  "regressor": "Fold-trainedStandardScaler;targetmean/std;Ridgealpha=lambda*1152",
+  "inner_selection": "GroupKFold3lambda(.1,1,10),minpooledinnerRMSE;neverfitwithvalidationdata",
+  "ensemble": "0.75candidate003+0.25DINO,weightsunchanged",
+  "reference_candidate003_sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+  "evidence": "reports/dino-039-validation.json",
+  "uncertainty": "Smallbutconsistent3partitionRMSEgain;allconditionalCIsinclude0. Historicaldevelopmentandmultiplemodelselectionoptimism remain. Not an established leaderboard improvement.",
+  "full500_model_fitted": false,
+  "test_features_or_predictions_created": false,
+  "submission_csv_created": false,
+  "next_scope_if_advanced": "Freeze this recipe,fitregressoronpermittedfulltrainingdata using train-onlyinnerselection,combineunchanged003 model,thenprediction/format/extrapolation/reloadchecks. Current task limited todevelopment400; these steps were not executed."
+}

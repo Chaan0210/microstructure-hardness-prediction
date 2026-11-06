@@ -1,0 +1,20 @@
+{
+  "reason": "CPUfullnestedouterlabelinterventionpassedbitexact. PreviousamendmentthenincorrectlyrequiredCPUtrainingtomatchMPS. DropoutRNGisdevice-dependent;seedresetdoesnotguaranteecrossdevicemasks. Preservebothfailedlogs/sources. CPUusedonlywithinbackendcounterfactual;actualMPSunchangedrepeatretained.",
+  "source_sha256": "f5ff093f106a4714d567820868124301425feecfa1fbf12af185edf728385e62",
+  "previous_amendment_source_sha256": "0b6117c74bdaf5ed720f8705593ad283f8e94c0065c154d00b63e0451813e420",
+  "previous_failed_log_sha256": "4d28117940d26ae1308af2192597aace521c596fd342d6f79cfdb740bb4487ea",
+  "CPU_replay": {
+    "models": 8,
+    "state_max_error": 0.0,
+    "prediction_max_error": 0.0,
+    "bit_exact_models": 8,
+    "initialization_batches_updates_paircounts_stats_exact": true,
+    "chosen_weight_equal": true,
+    "inner_MSE_max_error": 0.0
+  },
+  "MPS_tolerances_from_first_amendment": {
+    "state": 1e-06,
+    "prediction": 0.001
+  },
+  "scope": "Sameweights,data,objectives,budget,candidatecriterion. Verificationonly;nooutcomechanges."
+}

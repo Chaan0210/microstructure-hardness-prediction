@@ -1,0 +1,61 @@
+{
+ "candidate": "035",
+ "date": "2026-10-10",
+ "change": "grain = equal mean of TabPFN-3.5 (seeds 0/100/200) fits on 4 feature variants: feat-u1phdrop + 10 multi-task U-Net size/elongation/phase cols from m1 / m2 / mean(m1,m2,h1) / mean(m1,m2,h1,m3). Fixed W=0.75.",
+ "why": "the 4 variants have nearly identical U-Net cols (r>0.99) but single-variant dev scores scatter by 0.1-0.2 per partition (evaluation/model noise). Picking the dev-best variant (034, avg3: pooled 10.191) carries selection bias; the mean over variants is the robust choice.",
+ "dev_single_v35_w075_pooled": {
+  "u1phdrop": 10.3867,
+  "u1dm1sz": 10.3447,
+  "u1dm2sz": 10.2799,
+  "u1dmavg": 10.1911,
+  "u1dmavg4": "grain 10.430/10.293/10.272",
+  "u1dmavg4p": "grain 10.539/10.416/10.365 (phase cols also averaged; not used)"
+ },
+ "dev_fixed_w075": {
+  "cfg033": {
+   "original": 10.3795,
+   "p20261031": 10.3322,
+   "p20261101": 10.3723,
+   "pooled": 10.3613
+  },
+  "cfg035": {
+   "original": 10.3195,
+   "p20261031": 10.229,
+   "p20261101": 10.2966,
+   "pooled": 10.2818
+  }
+ },
+ "harness_v2n8": {
+  "u1phdrop": 10.426,
+  "u1dmavg": 10.3057,
+  "u1dm2sz": 10.2884
+ },
+ "inputs": {
+  "u1dm1sz": {
+   "train": "acf8c61e2392046e6b5fc148db5137e0cc60c003a9c7dceab58d581d7b7a02e9",
+   "test": "d06ecb15c593951eec9d62b0103001f1a4bfb19bed39b058067a1b814d8f2a51"
+  },
+  "u1dm2sz": {
+   "train": "4e18228917fba772747a24230378cda06275fa09bdb4f2bdab36fdee7156e55e",
+   "test": "fef5d098ac7887f16d9875ebafbfdf418e9bd30e85a1fbc557bea525d5bfcf4b"
+  },
+  "u1dmavg": {
+   "train": "51970206d43f0f989a9981123c03dcd9958e187fa592e9c2ee6e869cb6502c4e",
+   "test": "0bd1a5798cafd6ce2a974e5c363f97d5a782ed3aa270c927287f90ddae6e2674"
+  },
+  "u1dmavg4": {
+   "train": "89c7a9f2386a4c775c752aec0c5a54c68280f5b174ac9a3b3ed5183eaa97a203",
+   "test": "9f6d62a7f943c6a082df0956d127f229fddec90a5270263ef13c928f28928f1c"
+  }
+ },
+ "unet_weights": {
+  "unet-u1": "34d154ca47fe4f003210ebd790422076d2ad815271956afe20a3a49df72f0d24",
+  "unet2-m1": "c9965a8608c7f7ad5e245d58dcee2096790b4bd8235a9c063d96e392b4e597bc",
+  "unet2-m2": "d696e1f6bf34a3e3a5a5fe6718c5a1b2afa61dc26df12d8d25cb550e42b2a5fd",
+  "unet2-h1": "f49ba049dd4d3c56cd707327a1c592c2ad16b051ddcb5ff1874f4f1b05ae031e",
+  "unet2-m3": "866ebaca672f562f123bd8089ab2e1e9d812ca9ad19728306c33f8f72c0167d0"
+ },
+ "weight_rule": "fixed W=0.75",
+ "adopt": true,
+ "note": "034 (avg3 only) was built but not submitted in favour of this ensemble."
+}

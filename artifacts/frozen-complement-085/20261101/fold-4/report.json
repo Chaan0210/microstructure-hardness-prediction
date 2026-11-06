@@ -1,0 +1,139 @@
+{
+  "arm": "frozen",
+  "fold": 4,
+  "config": {
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "initial_state_sha256": "8dfdeffa519f22ca804416c2a9bef1f153a6e9159c4b5f0c74080f6ac28d1ed1",
+  "initial_head_sha256": "ff97681927103b665441f1f42e6f24802277cea73f6362a41ac7b140b4203f3b",
+  "fixed_state_sha256": "44a028e0be516c2f28e5b0928782dcb2eedbc4dc4339395e027c3f530fdd7572",
+  "final_state_sha256": "ea1483bf9ce3872e3bbb7f97181b5d0ce12806b60327e10894e499581e044d83",
+  "batch_order_sha256": "80d2bedb25c409aa5e13b83d76a2cf17dd482bf9ec366d2a680c857364b911ff",
+  "dropout_seeds_sha256": "0e24f8af3df9ed931fd80b0412128d55518087ce3f9f0dd2f35e0ba478632ad0",
+  "curve": [
+    {
+      "epoch": 1,
+      "online_train_loss": 0.49693903621300706,
+      "train_RMSE": 13.312069818308466,
+      "head_lr": 0.0003,
+      "block_lr": 0.0,
+      "seconds": 0.552090292039793
+    },
+    {
+      "epoch": 2,
+      "online_train_loss": 0.4028084086930903,
+      "train_RMSE": 11.65950210693231,
+      "head_lr": 0.00029505924481191485,
+      "block_lr": 0.0,
+      "seconds": 0.9998182920389809
+    },
+    {
+      "epoch": 3,
+      "online_train_loss": 0.33961115568163225,
+      "train_RMSE": 10.627109782535104,
+      "head_lr": 0.0002805736835487436,
+      "block_lr": 0.0,
+      "seconds": 1.4461385000031441
+    },
+    {
+      "epoch": 4,
+      "online_train_loss": 0.3253158587614962,
+      "train_RMSE": 10.162118248811256,
+      "head_lr": 0.00025753048327204934,
+      "block_lr": 0.0,
+      "seconds": 1.890624709019903
+    },
+    {
+      "epoch": 5,
+      "online_train_loss": 0.27034204067458634,
+      "train_RMSE": 10.415055063123683,
+      "head_lr": 0.00022749999999999997,
+      "block_lr": 0.0,
+      "seconds": 2.3402037920313887
+    },
+    {
+      "epoch": 6,
+      "online_train_loss": 0.25762650851975194,
+      "train_RMSE": 9.129609760048554,
+      "head_lr": 0.00019252876153986548,
+      "block_lr": 0.0,
+      "seconds": 2.7874530420522206
+    },
+    {
+      "epoch": 7,
+      "online_train_loss": 0.22133458677853923,
+      "train_RMSE": 8.17995174705184,
+      "head_lr": 0.00015499999999999997,
+      "block_lr": 0.0,
+      "seconds": 3.2351778340525925
+    },
+    {
+      "epoch": 8,
+      "online_train_loss": 0.16655377230454177,
+      "train_RMSE": 7.079832962766363,
+      "head_lr": 0.00011747123846013449,
+      "block_lr": 0.0,
+      "seconds": 3.719141125038732
+    },
+    {
+      "epoch": 9,
+      "online_train_loss": 0.1484200224524102,
+      "train_RMSE": 6.480398740599943,
+      "head_lr": 8.250000000000001e-05,
+      "block_lr": 0.0,
+      "seconds": 4.169933875033166
+    },
+    {
+      "epoch": 10,
+      "online_train_loss": 0.13837090217857623,
+      "train_RMSE": 5.889613936967618,
+      "head_lr": 5.246951672795061e-05,
+      "block_lr": 0.0,
+      "seconds": 4.612586709030438
+    },
+    {
+      "epoch": 11,
+      "online_train_loss": 0.11224714214245068,
+      "train_RMSE": 5.7867579728821505,
+      "head_lr": 2.9426316451256386e-05,
+      "block_lr": 0.0,
+      "seconds": 5.0620034169987775
+    },
+    {
+      "epoch": 12,
+      "online_train_loss": 0.10568419729352171,
+      "train_RMSE": 5.723934417846922,
+      "head_lr": 1.494075518808511e-05,
+      "block_lr": 0.0,
+      "seconds": 5.51119704201119
+    }
+  ],
+  "first_update_gradients": {
+    "head": 8.35532283782959,
+    "block": 0.0,
+    "train_loss_standardized": 0.45799452252686024
+  },
+  "max_head_grad_before_clip": 14.0849609375,
+  "max_block_grad_before_clip": 0.0,
+  "lastblock_delta_L2": 0.0,
+  "checkpoint_sha256": "59f1c9a6cd4a5c23e1c2823d6ee2519b5f5a94bc454dad04612e62cf2e9041c2",
+  "predictions_sha256": "bef1e5f0ea67873264db8b5192d74e3ec6bbb10cf9ef9a472568264173a1ee78",
+  "seconds": 5.619517834042199,
+  "rss_peak_bytes": 1412710400,
+  "mps_driver_bytes": 50724864
+}

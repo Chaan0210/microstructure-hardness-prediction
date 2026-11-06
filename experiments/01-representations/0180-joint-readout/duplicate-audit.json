@@ -1,0 +1,16 @@
+{
+  "conclusion": "One bounded matched SB vs SBL low-dimensional nonlinear joint readout is not a duplicate in reviewed source/plans/summaries. Prior failures are substantive negative evidence, not erased.",
+  "reviewed": {
+    "037": "S finalCLS/mean/std1152 ->PCA64 RBF, blend13.76741 vs00313.70570; no crossbackbone jointMLP.",
+    "060": "S3456 ->trainStandardScaler/PCA64 ->projectback3456 ->samehidden64MLP; primary13.4295656261 vs00713.2415969550; 1/5fold better. No B/L, no direct64-input capacity control.",
+    "064": "Separate S/B3seed heads with fixed prediction averaging, not jointfeature head; head residual correlations.879/.885/.895.",
+    "066": "SameB252+504 raw13824 concat with64hiddenMLP doubled firstlayercapacity;13.2514661178 vs00813.2096326118. Not lowdim matchedcrossbackbone.",
+    "084": "Freshhead plus lastBblock finetuning; joint means backbone+head optimization, not frozen S/Bfeature fusion.",
+    "047_048": "DINO+physical productkernels andsupervisedPLS, not frozen S/B/L PCAjointhead.",
+    "162_163": "B PCA64 +physical26 TabICL; combinedblendworse018. Different learnedreadout and no S/L.",
+    "177": "Separate B/L fullglobalMLP andfinalCLS/PCA/SVR. FixedL10%blend improvedall3developmentpartitions; SVR failed. Nojointbackbonehead.",
+    "179": "L replacesB spatial528 in residualsystem;failed021originalgate. Nojointglobalreadout."
+  },
+  "new_information_hypothesis": "Low-dimensional combined frozen S/B/L coordinates may allow one small nonlinear head to use crossbackbone feature dependencies before scalar prediction. 177development complementarity supports a boundedtest but does not establish interaction or guarantee gain. Public021 outcome is logged only, not used tochoose mixtureweight/architecture.",
+  "limitations": "SB vs SBL contrast tests information utility at equal readout capacity; it cannot byitself prove that an observed gain is specifically caused by nonlinear interactions. PCA64 can discard target signal;060 negative evidence applies."
+}

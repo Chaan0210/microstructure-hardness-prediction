@@ -1,0 +1,6 @@
+run,selected,development_oof_rmse,holdout_rmse,elapsed_seconds,validation_note
+run-001,blend_et_ridge,14.045310176003284,13.237405167209692,110.38407283299603,Single untouched grouped holdout after development-CV selection. Do not tune further on this holdout.
+run-002,blend_et_ridge,14.045310176003284,13.23740516720969,25.32776045805076,"Development OOF used for limited adaptive model selection. Holdout is a repeated diagnostic, not a fresh independent evaluation. Source-family grouping remains unverified."
+run-003,ridge_1000,14.23245736959509,,222.63570283300942,Holdout deferred. Model selection uses development CV only. Prior run-001 holdout has been viewed.
+run-004,blend_morph_0.25,13.982113204652585,,5.989916082995478,Chosen using development CV only. Holdout not evaluated in stages 003 or 004. Adaptive CV selection can be optimistic.
+run-005,stable_hybrid,13.98273103376079,,3.5753869590116665,Input min/max learned inside each train fold. All selection uses development CV. No new holdout evaluation.

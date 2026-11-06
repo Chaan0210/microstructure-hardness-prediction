@@ -1,0 +1,120 @@
+{
+  "passed": true,
+  "feature_verification": {
+    "rows_reextracted": 400,
+    "max_error": 0.0,
+    "patch_grid": [
+      36,
+      36
+    ],
+    "weights_unchanged": true,
+    "seconds": 62.392178416019306
+  },
+  "results": {
+    "original": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.209632611789585,
+          "fold_rmse": [
+            13.137584839949701,
+            12.597373711388418,
+            14.228655527464698,
+            12.44121172584094,
+            13.56258166849383
+          ]
+        },
+        "reference003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.680453686399362,
+            12.991004741250547,
+            14.032386512109253
+          ]
+        },
+        "Smean": {
+          "rmse": 14.049242890525278,
+          "fold_rmse": [
+            14.446117130508892,
+            13.952434285579072,
+            14.94415012517497,
+            13.1480280957738,
+            13.687481162436942
+          ]
+        },
+        "B504mean": {
+          "rmse": 13.615777507504738,
+          "fold_rmse": [
+            13.650648366415224,
+            12.80647915614849,
+            14.045068523498623,
+            13.407892313668881,
+            14.126760079518114
+          ]
+        },
+        "Bdenoised": {
+          "rmse": 13.667601869587052,
+          "fold_rmse": [
+            14.247893794510993,
+            11.839086651393682,
+            14.837183875618,
+            12.943928088113429,
+            14.253524276461377
+          ]
+        },
+        "primary": {
+          "rmse": 13.216556730931284,
+          "fold_rmse": [
+            13.191145709385554,
+            12.531042122066916,
+            14.29578777868978,
+            12.408595225855615,
+            13.56505560718076
+          ]
+        }
+      },
+      "comparison": {
+        "gain": -0.006924119141698881,
+        "fold_gains": [
+          -0.053560869435852254,
+          0.06633158932150174,
+          -0.06713225122508248,
+          0.03261649998532512,
+          -0.0024739386869292446
+        ],
+        "positive_folds": 2,
+        "bootstrap_sd": 0.035342025455523285,
+        "conditional_ci95": [
+          -0.07804736933920893,
+          0.06117847363856242
+        ]
+      },
+      "max_reload_error": 0.0,
+      "train_rmse": 0.4855617076638992,
+      "head_residual_correlation": 0.9346722675491517,
+      "report_sha256": "539703de975781b18d22995524bb0c6e004bad7518f767c88926ae318af93920",
+      "predictions_sha256": "70c48a62a15a07a13ba4a3677172dba2a2d139f8a3847f628f13f16c1e6cb68d"
+    }
+  },
+  "models_verified": 15,
+  "full_replays": [
+    {
+      "split": "original",
+      "seed": 20261128,
+      "full100epoch_state_exact": true,
+      "prediction_error": 0.0
+    }
+  ],
+  "eligible_for_candidate": false,
+  "gate": "All3 pooledOOF strictly improve008, exact reload/replay; no foldcount/bootstrap hard gate.",
+  "protected_files_verified": 39,
+  "best008_sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+  "validation_source_sha256": "1c4c5d2ef441d55d7aa07db9e65493fde8b62bd7175272103fc3a94e21b48452",
+  "seconds": 66.0499882089789,
+  "holdout_test_access": false,
+  "candidate_created": false,
+  "cost": 0,
+  "new_packages": 0,
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

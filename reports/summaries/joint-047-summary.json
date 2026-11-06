@@ -1,0 +1,99 @@
+{
+  "study": "joint-047",
+  "completed_at_utc": "2026-10-01T15:26:10.176091+00:00",
+  "decision": "Originalgatefailed;no confirmation or fallback. Jointinteractionnotselectedinanyfold;additivejointworse006.",
+  "validation": {
+    "results": {
+      "original": {
+        "scores": {
+          "control_dino": 13.895902699199368,
+          "joint": 14.013022472256248,
+          "old_kernel": 14.482935938822393,
+          "control006": 13.423229237711903,
+          "primary": 13.587488845896774,
+          "diagnostic_dino_replace": 13.607275458403885,
+          "reference003": 13.705696031698212
+        },
+        "comparison": {
+          "gain": -0.16425960818487084,
+          "fold_gains": [
+            -0.48708532241501246,
+            0.08449074116696842,
+            -0.2217345246386273,
+            -0.10061163246959204,
+            -0.07905514756084386
+          ],
+          "bootstrap_sd": 0.07479377655243694,
+          "conditional_ci95": [
+            -0.31011230266479306,
+            -0.012812656896880764
+          ]
+        },
+        "selected_models": [
+          {
+            "kind": "additive",
+            "alpha": 1.0,
+            "rmse": 13.92416647095175
+          },
+          {
+            "kind": "additive",
+            "alpha": 1.0,
+            "rmse": 14.96301339693667
+          },
+          {
+            "kind": "additive",
+            "alpha": 1.0,
+            "rmse": 14.387566142548721
+          },
+          {
+            "kind": "additive",
+            "alpha": 1.0,
+            "rmse": 14.166538899188913
+          },
+          {
+            "kind": "additive",
+            "alpha": 1.0,
+            "rmse": 14.26116912658883
+          }
+        ],
+        "mean_train_rmse": 10.644789391896756,
+        "fold_training_target_range_diagnostic": {
+          "low20": {
+            "rows": 81,
+            "006_rmse": 16.996149985014338,
+            "joint_blend_rmse": 17.36135317983353
+          },
+          "middle60": {
+            "rows": 236,
+            "006_rmse": 8.520447145601374,
+            "joint_blend_rmse": 8.74095189469598
+          },
+          "high20": {
+            "rows": 83,
+            "006_rmse": 19.494114771927965,
+            "joint_blend_rmse": 19.450833068518413
+          }
+        },
+        "seconds": 1.308280375029426,
+        "rss_peak_bytes": 429096960,
+        "oof_sha256": "354304707ab468960c5b686f1c016d26c0af15b0db3298f4a456367d8c24d2aa"
+      }
+    },
+    "models_reloaded": 10,
+    "reload_prediction_max_error": 0.0,
+    "query_batch_independence_error": 5.684341886080802e-14,
+    "minimum_train_kernel_eigenvalue": -7.579850954118816e-15,
+    "mean_train_kernel_diagonal": 1,
+    "samefold_reference003_and006_reproduced": true,
+    "train_only_bounds_scalers_bandwidth_centers_target_and_inner_groups_verified": true,
+    "best006_protected": true,
+    "screen_advanced": false,
+    "scope": "Development400 only; no test/holdoutmodelselection, no costs/packages/newcandidate/upload.",
+    "limits": "Historically reused400 and folds; current nested selection does not remove historical selection bias. Negative result applies to this fixed jointfamily,not a performance ceiling."
+  },
+  "best006_sha256": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+  "new_candidate": null,
+  "uploaded": false,
+  "cost": 0,
+  "running_work": []
+}

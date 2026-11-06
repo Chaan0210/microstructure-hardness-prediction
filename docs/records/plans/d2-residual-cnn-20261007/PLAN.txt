@@ -1,0 +1,38 @@
+D2 잔차 직접학습 CNN — 구현 가능성 검토(학습 미실행)
+
+결론
+204와 동등한 실험은 아니다. 204는 원래 hardness를 학습하는 CNN의 seed3→6 확대와 동일 후단 재적합이었다. 잔차를 학습한 것은 기존 linear/RBF 보정기다. 다만 현재 캐시만으로 best021에 직접 더할 수 있는 정합한 잔차 CNN을 몇 개 학습하는 계획은 성립하지 않는다.
+
+anchor 문제
+현재021은 .9*[.9*affine(.3KRR+.3CNNmean3+.2Smean3+.2Bmean3)+.1shortB+기존잔차보정]+.1Lmean3이다.
+204의 중간anchor는 .9*affine_A(raw_A)+.1shortB_A까지만 있다. 기존잔차보정_A와 L_A가 없다. yB−이anchor(B)를학습하고최종021에더하면대상이달라진다.
+이미500장으로학습된최고021은개발400의라벨을본모델이므로그가중치를outerV 검증/정직한잔차target에사용할수없다. 완전한021-family를A에서새로학습하면학습알고리즘은가깝지만가중치/표본크기는021_T/기존021500과다르다. 단순pooledOOF잔차CV도innerV라벨을이미본다른anchor가섞일수있다.
+
+엄격하게일치시키는최소대안
+원본5fold각T320/V80에서사전에고정한j0분할A213/B107만쓴다. 모든fit을A안에서수행하는완전한G_A를만들고 rB=yB−G_A(B)를CNN_B에학습한다. 평가도동일가중치G_A(V)+CNN_B(V)다. 대조는G_A(V)단독및같은B잔차를고정순열한CNN이다. 기존P021_T는별도경쟁력기준이다.
+이경로는anchor정합성을지키지만새로운paired모델이며기존021을그대로보정하는것이아니다. 향후배포도동일A/B할당과G_A/CNN_B패키지를유지해야한다. existing021500으로anchor를바꿔끼울수없다. '기존best021 배포anchor를변경하지않는다'가필수조건이면현재데이터/정직한crossfit제약에서정확일치계획은없다.
+
+누수없는안쪽그래프
+A안의C142/D71에더해C안의E94/95/F47/48에서base모델을fit한다. E→F 예측으로C의보정을만들어D의잔차를구성하고, 그잔차를사용해G_A의기존018 보정분기를완성한다. rootL_A도A에만fit한다. 모든경로에서B와V가anchor fit·통계·selector에서제외되어야한다. 잔차CNN은고정80epoch/seed로B만사용하고outerV는끝까지평가전용이다. 추가inner튜닝은없다.
+각fold의rB는서로다른G_A기준인별도함수다. fold별패키지를따로학습하며이를합쳐하나의공통잔차target으로간주하지않는다. 미래333장anchor와현CV213장의학습크기차이는여전히남으며재분할로완전히제거할수없다.
+
+확인한재사용범위
+캐시·모델·소스290개해시/정보집합확인. 선택한원본j0의20개root/middle base노드(KRR,3CNN,3S,3B)를재사용할수있다. rootshortB5개도있다. 해당캐시는B/D예측만담고있어outerV에는저장모델의새forward가필요하다(이번검토에서는미실행).
+204캐시의학습크기는142/143/213/214이며새로필요한94/95행E노드45개는동일학습집합이없다. 완전한G_A용deeper모델,shortB_C,L_A,잔차보정기가추가로필요하다. 기존Lhead는T320fit이므로A213anchor로재사용할수없다.
+400행이미지128/S3456/B6912/L9216/형태26·57/공간528캐시가있어새원시이미지·외부데이터·encoder다운로드가필요없다. 형상/ID/해시확인은feature-cache-availability.json에있다.
+
+필요모델수(원본5fold만)
+새하위base CNN135 + 잔차CNN5 + 순열대조CNN5 = 본CNN145.
+검증CNN34 = 첫anchor 전체새CNN의B/V교란27 + 두잔차CNN의V교란2 + 대표E3seed clean replay3 + 잔차2clean replay. 합계179CNN이며버리는8update probe는별도다.
+추가본학습: S/B head270, Lhead15, shortB15; KRR45final+1215inner; 비영잔차고전모델240; affine20. 첫anchor label-poison검증으로head60,KRR252,비영잔차48,affine4가추가된다. 기존보호모델은덮어쓰지않는다.
+신규CNN은이번검토에서0개,추론0회,고전모델fit0회다. 계획은아직generalizedanchor trainer로구현되지않았으며cache membership와수학적정보흐름을검토한단계다.
+
+고정가설과자원
+CNN은기존TinyCNN91905params/BOX128/D4/MSE/80epochs/batch32/AdamW.002/cosine/last5평균을고정한다. 잔차mean/std와픽셀정규화는B에서만fit하며순열군과seed·order를맞춘다. 가중치λ·epoch·seed 탐색은없다. 원본5fold를모두평가한뒤보고하고재분할은자동시작하지않는다.
+204실측deep CNN은update당median.017386초였다. 본35600+검증8480=44080updates 단순외삽은약766초다. CPUhead·저장모델추론·검증I/O를더한전체15–25분은추정이며이번벤치마크수치가아니다. 과거RSS+MPS약0.895GB,향후6GB상한/CPU2/MPS동시1작업·swap증가중단을제안한다. 새94/95행노드에서8update실측후판단해야한다. 유료GPU/API/패키지/외부전송은없다.
+
+주의할배포구현차이
+176의historicalfull500 root KRR은400개기존development ID로설정선택후500에refit한다. 일반subnode는전체U에서선택한다. pairedanchor는CV213/미래333이므로allU정책이일관되게적용된다. 따라서'완전히같은기존500배포학습절차'라고부르지않고021-family paired새정책으로구분한다.
+
+근거의강도와다음판단
+오차집중은보였지만label-blind이웃의signed잔차상관은약−.10이고218도실패했다. rawimage잔차CNN이예측가능한신호를학습한다는증거는아직없다. 이가설은204와다르지만179CNN을정당화할확실한성능근거는약하다. 새 paired-anchor 정책과 계산 규모는 추가 검토 항목이었다. 현재단계에서는학습·probe·후보생성·제출을시작하지않았다.

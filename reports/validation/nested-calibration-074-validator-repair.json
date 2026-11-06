@@ -1,0 +1,11 @@
+{
+  "original_validator": "validate_nested_calibration_074.py",
+  "original_sha256": "1a4a8049cf7a54caf57219361bedab9382b4a388dd44922608ef6b1c03295a06",
+  "corrected_validator": "validate_nested_calibration_074_v2.py",
+  "corrected_sha256": "58aad31e577ee8024e00f2214749d8ba5c622f123198ef4b14b77da0f04b334a",
+  "failure_log": "reports/nested-calibration-074-validation.log",
+  "failure_log_sha256": "8b160df8883af7c12e6970e19183b4b74e274f57997c9b9106979dead2429424",
+  "observed_baseline_reload_max_error": 5.684341886080802e-14,
+  "change": "Use absolute tolerance1e-10 for independently reloaded parallel ExtraTrees/Ridge baseline predictions, matching existing independent-refit tolerance. Verify exact ensemble arithmetic using saved predictions after independently checking each component. No fitted model, study source, plan, coefficient or score changed.",
+  "final_candidate_verifier": "Same check repaired before any candidate009 plan was locked."
+}

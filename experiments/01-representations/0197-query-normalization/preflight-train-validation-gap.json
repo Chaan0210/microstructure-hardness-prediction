@@ -1,0 +1,51 @@
+{
+  "scope": "fold0devtrain320/validation80 diagnosticonly beforemain,noendpoint/configchoice",
+  "smoke8update": [
+    {
+      "stage": "8updates",
+      "version": "196",
+      "arm": "mean",
+      "train_RMSE": 16.90712362787723,
+      "validation_RMSE": 17.48736239689055,
+      "validation_minus_train_RMSE": 0.5802387690133202,
+      "selection_use": false
+    },
+    {
+      "stage": "8updates",
+      "version": "197",
+      "arm": "mean",
+      "train_RMSE": 16.90712362787723,
+      "validation_RMSE": 17.48736239689055,
+      "validation_minus_train_RMSE": 0.5802387690133202,
+      "selection_use": false
+    },
+    {
+      "stage": "8updates",
+      "version": "196",
+      "arm": "mha",
+      "train_RMSE": 16.975813674962918,
+      "validation_RMSE": 17.598333391323354,
+      "validation_minus_train_RMSE": 0.6225197163604363,
+      "selection_use": false
+    },
+    {
+      "stage": "8updates",
+      "version": "197",
+      "arm": "mha",
+      "train_RMSE": 16.877627508342936,
+      "validation_RMSE": 17.60441653671414,
+      "validation_minus_train_RMSE": 0.7267890283712042,
+      "selection_use": false
+    }
+  ],
+  "reproduced196_full400update": {
+    "mean": {
+      "train_RMSE": 6.887799592377301,
+      "validation_RMSE": 17.76656872735269
+    },
+    "mha": {
+      "train_RMSE": 6.823971793470832,
+      "validation_RMSE": 17.662370242772614
+    }
+  }
+}

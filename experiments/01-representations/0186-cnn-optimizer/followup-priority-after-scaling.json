@@ -1,0 +1,11 @@
+{
+  "status": "future_plan_only_current186unchanged",
+  "new_evidence": "Acompletedinnerfoldhasfrozenzscore22984andinitialheadRMSE456.77 beforeadaptation, drivenbysmalltrainfeaturevariance.",
+  "priority_update": "Beforearchitectureorresolutionconclusions, isolatefold-localfeature-scale stability. Native256versus224remainsthenextdomaininputaxisafterpreprocessingchecked; last2stageunfreezingstilldeferred.",
+  "proposed_single_rule": "Usehistorical109train-onlyRMSfloor:mu_j=trainmean,var_j=trainpopvar,s_RMS=sqrt(mean(var));scale_j=max(sqrt(var_j),s_RMS),allzero=>1. Fixedrule,noepsilon/featuredeletion/clippingsearch; appliedindependentlyinsideeveryinner/outertrain. Notimplementedorevaluatedin186.",
+  "control": "Originalscalercontrolretained. Sameoptimizer/LRselectionprocedureorafrozenpredeclaredrecipe,head,seed,epochs,full224input,BN,trainablestage. Do notsimultaneouslychangeimage256,WD,D4oractivation.",
+  "historical_limit": "109 repairednumericalamplification butdidnotimprovebest011; stabilityrepairdoesnotguaranteeCNNaccuracygain.",
+  "historical_source": "reports/persistence-repair-109-summary.json",
+  "historical_source_sha256": "fe55e5369cd6d3ad0e1d3ec13b7f96ab3c48bb6389d8c75c3ef083e0b8f0bc6b",
+  "reason_not_to_change186": "Keepongoingoptimizerstudyreviewable; reportitsselectionfragilityinstead ofretrospectivelyremovingtheoutlier."
+}

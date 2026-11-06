@@ -1,0 +1,66 @@
+{
+  "candidate_features.py": {
+    "source": "deliverables/reproduction-018-v155/candidate_features.py",
+    "sha256": "47c239d8836c2f6cc79c9fbde644702f2ca3c5a59f63fec339656b1178495a4e",
+    "copy": "byte_exact"
+  },
+  "grain_features.py": {
+    "source": "deliverables/reproduction-018-v155/grain_features.py",
+    "sha256": "0b2dcc4d9a528718c418ee784ccb0dee836f8887fbe12989139aab4a0ed705e0",
+    "copy": "byte_exact"
+  },
+  "latent_features.py": {
+    "source": "deliverables/reproduction-018-v155/latent_features.py",
+    "sha256": "9b003e8da3f1e488d88af97b9395a80ffb5bc82785adbad1b378f0d869a9978a",
+    "copy": "byte_exact"
+  },
+  "denoised_grain_features.py": {
+    "source": "deliverables/reproduction-018-v155/denoised_grain_features.py",
+    "sha256": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+    "copy": "byte_exact"
+  },
+  "compact_regression.py": {
+    "source": "deliverables/reproduction-018-v155/compact_regression.py",
+    "sha256": "6f7f2ca1cdc15944ea5a76620e5a0491159bc136dc1740087f9f6ca4d958c789",
+    "copy": "byte_exact"
+  },
+  "residual_linear.py": {
+    "source": "deliverables/reproduction-018-v155/residual_linear.py",
+    "sha256": "9412bf462e39ad7709fa08d078c37548e29801085601919cb0f9b68e107f423f",
+    "copy": "byte_exact"
+  },
+  "residual_models.py": {
+    "source": "deliverables/reproduction-018-v155/residual_models.py",
+    "sha256": "e584033bd552d4995a3ebcc923d79a462c94ce1a32b73cef0bd86d29a2e307dc",
+    "copy": "byte_exact"
+  },
+  "cnn_model.py": {
+    "source": "deliverables/reproduction-018-v155/cnn_model.py",
+    "sha256": "56bcc7ef3c2a02385e303f53d8d8efa03df0dd89936034cc35ada279709d63c7",
+    "copy": "byte_exact"
+  },
+  "mlp_head.py": {
+    "source": "dinob_mlp_head_063.py",
+    "sha256": "e841bc72082d27f68b2bdad2d81ccf3eb2b127661bef347506cff6eb6ab04431",
+    "copy": "byte_exact"
+  },
+  "base_train.py": {
+    "source": "frozen_validation.py",
+    "source_sha256": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "functions": [
+      "cnn_fold",
+      "kernel_fold"
+    ],
+    "edits": "Replace engine.TinyCNN and engine.sync with local class and torch.mps.synchronize only; no training logic changes."
+  },
+  "feature_helpers.py": {
+    "source": "deliverables/reproduction-018-v155/runtime.py",
+    "source_sha256": "1bcfe2132b31ee76050a0b0b495787eada8c37e59070d991ed3086da16ef655d",
+    "functions": [
+      "ShortHead",
+      "Short",
+      "spatial_descriptor",
+      "dino_input"
+    ]
+  }
+}

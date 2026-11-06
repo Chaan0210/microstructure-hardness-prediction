@@ -1,0 +1,99 @@
+{
+  "hypothesis": "Fixed57 features may be underfit by the old HGB capacity/regularization. Compare one relaxed HGB and one shallow exact-split GBR; no tail weights or prediction expansion.",
+  "split": "20261031",
+  "models": {
+    "hgb_old": {
+      "categorical_features": "from_dtype",
+      "early_stopping": false,
+      "interaction_cst": null,
+      "l2_regularization": 10,
+      "learning_rate": 0.05,
+      "loss": "squared_error",
+      "max_bins": 255,
+      "max_depth": null,
+      "max_features": 1.0,
+      "max_iter": 200,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20,
+      "monotonic_cst": null,
+      "n_iter_no_change": 10,
+      "quantile": null,
+      "random_state": 20261024,
+      "scoring": "loss",
+      "tol": 1e-07,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "hgb_relaxed": {
+      "categorical_features": "from_dtype",
+      "early_stopping": false,
+      "interaction_cst": null,
+      "l2_regularization": 1,
+      "learning_rate": 0.05,
+      "loss": "squared_error",
+      "max_bins": 255,
+      "max_depth": null,
+      "max_features": 1.0,
+      "max_iter": 200,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 5,
+      "monotonic_cst": null,
+      "n_iter_no_change": 10,
+      "quantile": null,
+      "random_state": 20261024,
+      "scoring": "loss",
+      "tol": 1e-07,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "gbr_shallow": {
+      "alpha": 0.9,
+      "ccp_alpha": 0.0,
+      "criterion": "deprecated",
+      "init": null,
+      "learning_rate": 0.03,
+      "loss": "squared_error",
+      "max_depth": 2,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 10,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "n_estimators": 300,
+      "n_iter_no_change": null,
+      "random_state": 20261024,
+      "subsample": 1.0,
+      "tol": 0.0001,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "selection": "Inner3 pooled RMSE alone selects among exactly3 profiles; no early stopping. Report all original controls, primary nested replacement and secondary fixed half-kernel half-tree feature blend.",
+  "primary_blend": {
+    "baseline": 0.5,
+    "original_single_cnn": 0.25,
+    "inner_selected_tree": 0.25
+  },
+  "secondary_blend": {
+    "baseline": 0.5,
+    "original_single_cnn": 0.25,
+    "compact26_kernel": 0.125,
+    "inner_selected_tree": 0.125
+  },
+  "inner_seed": 20261005,
+  "source_sha256": "f31962e33aa8609f8beed556a28987997a2f9dcd1c54ca445366fa9e6be9ca93",
+  "feature_sha256": "3b347d826c0dfa2f95a05d1163c2ab0656473ab2fc41ebcd65089667c81b1c27",
+  "parent_sha256": {
+    "artifacts/frozen-validation-021/seed-20261031/development_oof.csv": "e1ae1f11749581ed731cea96b5c7f47a6748777aefaf9b6e3f2d99f7962e8cf1",
+    "artifacts/frozen-validation-021/seed-20261031/split_manifest.json": "4b877f13daf3f5e6a593e82911e3b6e9cdfb8bef8503793962b7015e8cb2c04a"
+  },
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  },
+  "scope": "No holdout/test reads, no Public score selection. Cached development features image-local; target unweighted raw. Reused CV is not unseen validation."
+}

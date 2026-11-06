@@ -1,0 +1,14 @@
+{
+  "study": "220-v3 (written before running validate_v3.py)",
+  "baseline": "v2 blend = 0.5*best021 + 0.5*grain(v2 features, v2 masks) — the dev counterpart of submitted candidate 023 (oof-v2.npz).",
+  "arms": {
+    "A_v2feat_v3mask": "same 36 v2 features computed on masks-v3 (isolates the segmentation fix)",
+    "B_v3feat_v3mask": "64 v3 features (features_v3.py) on masks-v3"
+  },
+  "masks_v3": "v2 masks; images with coverage<0.95 re-segmented with cellprob -3 / flow 1.0 and replaced if coverage increases (label-free rule from lowcov-trial2).",
+  "protocol": "identical to v2: nested family selection {ridge, krr, hgb} by inner CV on the outer-training folds only; fixed blend w=0.5 with best021; fallback to best021 if n_obj<20; three partitions.",
+  "transform": "log1p(clip(x,0)) on all columns except signed-by-definition ['logA_skew'] (left raw); fixed by definition.",
+  "krr_grid_v3": "alpha [0.003,0.01,0.03,0.1,0.3,1], gamma [0.001,0.002,0.005,0.01,0.02,0.05] (v2 optimum hit the lower edge).",
+  "adoption_rule": "Adopt an arm over the v2 blend only if its blend RMSE is lower in all three partitions AND pooled gain vs v2 blend >= 0.10. Report paired pooled CI (descriptive; low power for ~0.1 effects). If both arms qualify, take the one with larger pooled gain.",
+  "multiplicity_note": "v2 and v3 are the 2nd/3rd looks at the same 400 dev images in this study; dev gains are optimistic."
+}

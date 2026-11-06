@@ -1,0 +1,26 @@
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[3]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import json,hashlib,shutil
+from pathlib import Path
+from datetime import datetime,timezone
+P=_RepoPath(__file__).resolve().parents[3];R=Path(__file__).resolve().parent
+
+def sha(p):
+ h=hashlib.sha256()
+ with p.open('rb') as f:
+  for v in iter(lambda:f.read(1048576),b''):h.update(v)
+ return h.hexdigest()
+def read(p):return json.loads(p.read_text())
+def write(p,z):
+ with p.open('x') as f:json.dump(z,f,indent=2,allow_nan=False)
+old=read(_repo_path(P, 'experiments/dinol-177/plan.json'));prior=read(_repo_path(P, 'experiments/joint-readout-180/plan.json'));protected={**prior['protected'],'reports/joint-readout-180-summary.json':sha(_repo_path(P, 'reports/joint-readout-180-summary.json'))}
+inputs=['artifacts/dino-multilayer-044/plan.json','reports/dino-044-summary.json','reports/dino-044-validation.json','experiments/dinol-177/plan.json','experiments/dinol-177/features.npz','experiments/dinol-177/extraction.json','experiments/dinol-177/provenance.json','reports/dinol-177-summary.json','reports/spatial-L-179-summary.json','reports/joint-readout-180-summary.json']
+for split in ['original','20261031','20261101']:inputs += [f'experiments/dinol-177/{split}/{n}' for n in ['report.json','predictions.npz','validation.json']]
+audit={'S044':'Block6 vs12 atsame1152dimensions, nestedRidgealpha=.1/1/10*p; midpoint standalone14.10134 vsfinal14.54343 butblend13.557262886866987 worsefinal13.522452231767831. Intermediate+finalmulti3 primarysucceeded. Midonlywasdiagnosticnotpromoted.','B':'062/063/064/066 allusedblocks6/9/12 combined; no equaldimensional midpoint-only vsfinal-only MLP found in reviewed source/plans/summaries.','L177':'Alreadyextracted12/18/24andtrainedjoint9216inputMLP. FinalCLS PCA/SVRwasdifferent1024-dimensionalreadout. No fixed L12-only vsL24-only3072inputMLP comparison.','not_new_information':'L12andL24descriptors arealreadyinside021. Thisexperimentisolates a readout withonlyL12 versussame-sizedL24, notnewrawimageinformation or proofthat021entirelylacks midlayertexture.','reason_for_bounded_test':'Differentbackbonedepth andsame nonlinearscalarreadout contrast hasnotrun; removinglayercompetition/inputcoordinates couldchange generalization. S044negativeevidence weakensprior; do not repeat S/B orlayer/rank/epoch sweeps.','closure':'If181fails, closeLrepresentationvariants179/180/181 andpreserve021. No alternateLlayer/readout rescue.'}
+write(_repo_path(R, 'duplicate-audit.json'),audit)
+plan={'study':181,'UTC':datetime.now(timezone.utc).isoformat(),'IDs':old['IDs'],'groups':old['groups'],'smoke_IDs':old['smoke_IDs'],'duplicate_audit_sha256':sha(_repo_path(R, 'duplicate-audit.json')),'layers_zero_based':{'MID':11,'LAST':23},'features':'Same504pxfullimagebicubic/grayRGB/ImageNetnorm,normalizedCLS1024+patchmean1024+populationstd1024 per layer.3072each. Freshonlydevelopment400; verifybitexact againstthealreadycached177layer12/24 slices. No newinformationclaim.','head':'Exactly177 existing64hidden/GELU/dropout.25/SmoothL1beta1/100epochs/batch64/AdamWlr.0003cosine.00001/wd.01/clip1/aux0. Same3seeds20261128,20261205,20261219+fold. Sameinit/dropout/sampleorders betweenMID/LAST. TrainlocalStandardScalerandtargetmean/std; noPCA/selection/earlystop. Legacyunusedclassifierhead isidenticalinboth, effectivepredictiveparametercount196737.','formula':'MIDblend=.9*fixed018+.1*MIDmean3; LASTblend=.9*same018+.1*LASTmean3.021=.9*018+.1*existingjointL12/18/24mean3. Replacetenpercentbranch only; no additionalblendwith021 orweighttuning.','gate':'Original5fold: MIDblend mustimprove021ANDLASTblend by>0.01RMSE each, and>=3/5folds improveeach, allvalidationpasses. Onlythenbothknownresplits unchanged. Proposeonlyif MIDbeatsbothreferences inall3partitions. OtherwisecloseLrepresentationvariants; no LASTfallbackpromotion.','diagnostics':'Standalone/trainRMSE, pairedresidualcorrelations, updateRMS/alignmentvs021,3000groupbootstrapseed202710181. Historicalfailure33diagnosticonly, notreselectedornotgate. Same400adaptivehistory.','failure33_IDs':prior['failure33']['IDs'],'validation':'Fresh400feature hashes and177sliceexact; CPU/MPS3smoke andmodelstateunchanged. Everyhead reloadandindependentGELUforward/CPU-MPS; allscaler/targettrainstatistics,pairedinit/orders. Botharms3seedswholefold0trainingreplays withouterlabel/featurepoison, exactmodelstates. Secondprocessall30headreload. No rawdata inreadout.','resources':old['resources'],'inputs':{n:sha(_repo_path(P, n)) for n in inputs},'protected':protected,'official_code':old['official_code'],'scope':'Development400only,noholdout/test/full500/newCSV/upload/install/download/payment. ExistinglocalofficialLweight only.','current_best':'021','Public_not_used_to_tune':True}
+write(_repo_path(R, 'plan.json'),plan)
+shutil.copyfile(_repo_path(P, 'experiments/spatial-L-179/runtime.py'),_repo_path(R, 'runtime.py'));shutil.copyfile(_repo_path(P, 'experiments/dinol-177/mlp_head.py'),_repo_path(R, 'mlp_head.py'))
+print(json.dumps({'plan_locked':True,'sha256':sha(_repo_path(R, 'plan.json')),'layers':[12,24]}))

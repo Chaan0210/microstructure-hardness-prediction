@@ -1,0 +1,85 @@
+"""Report only measured080 diagnostics; preserve all original artifacts."""
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[3]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import sys
+sys.dont_write_bytecode=True
+import json
+from pathlib import Path
+import study as s
+H=s.HERE
+
+
+def main():
+    read=lambda name:json.loads((H/name).read_text())
+    a=read('audit.json');v=read('version-chain.json');r=read('refit-replay.json');q=read('resplit-results.json');g=read('resplit-subgroups.json')
+    assert read('checks-complete.json')['completed'] and g['independent_aggregation_verified']
+    s.check_protected()
+    overall=g['summary']['all'];high=g['summary']['high'];low=g['summary']['low'];row=g['summary']['prediction_row_weighting_diagnostic']
+    decision=dict(confirmed=[
+        'Recorded Public0808.999772193 is worse than0768.9646534604 by0.0351187326;078 standalone Public is not recorded.',
+        'Actual080 CSV/IDs/mask/model lineage reconstruct exactly; missing ID assertions in the assembler caused no observed mismatch.',
+        'The deployed correction remains073-conditioned while added to078; this is a confirmed estimator change, not a demonstrated causal failure.',
+        'The prior100 non-dev images are exposed; there is no untouched internal holdout in the examined data.',
+        'Teacher targets/normalization/update counts and final coefficient aggregation change across training stages.',
+        'The fixed two-anchor CNN-refit contrast improves on both originalV sets; refitting is not intrinsically harmful in this pilot.',
+        'Resplit/calibration results depend on anchor, noise regime and aggregation; the overall resplit loss includes clean-row changes absent from actual080.'
+    ],suspected=[
+        'Historical selection and sparse-error concentration make the original OOF gain optimistic.',
+        'Calibration/model transport to full500 may be fragile; this experiment does not isolate teacher, optimizer or normalization causality.'
+    ],unidentified=[
+        'Pure Public CNN effect080 minus078, because078 Public is absent.',
+        'Which mechanism caused the recorded080 versus076 gap.',
+        'Performance on independent new data or the private leaderboard.'
+    ],independent_new_data_evidence=False,
+    actions=dict(original_files_preserved=True,new_submissions=0,uploads=0,public_inverse_parameters_used=False,
+                 external_data=False,installations=False,paid_services=False,git_changes=False,other_processes_modified=False),
+    stopping='The three locked minimal diagnostics are complete. Do not tune another correction or choose a Public-derived shrinkage.',
+    next_priority='One frozen, parameter-disjoint validation of the actual deployment procedure, including full refit and calibration aggregation, before new architectures or another submission. Existing images remain historically exposed; it must not be called independent new data.')
+    s.save(_repo_io('conclusion.json'),decision)
+    text=['# 080 원인 감사와 최소 대조 실험','',
+          '**확정된 것은080이076보다 나빴다는 사실이며, CNN 단독 Public 효과는 아직 미확인이다.** 기존 기록의080은8.999772193,076은8.9646534604로 차이는+0.0351187326이다.078은 미제출로 기록돼 있고 별도 Public 점수가 없다. 따라서080−076을080−078의 효과로 해석하지 않는다.','',
+          '계획은 [PLAN.md](PLAN.md)에 먼저 고정했고 세 실험만 수행했다. 새 결과는 이 폴더에만 저장했다. 기존 제출·모델·기록, 다른 세션과 프로세스, Git은 변경하지 않았다. CPU2스레드의 기존 환경만 사용했고 설치·유료 자원·외부 데이터·추가 제출·업로드·Public 역산 계수 적합은 없었다.','',
+          '| 실험 | 검증 방법 | 측정 결과 | 해석 |','|---|---|---|---|',
+          '| E1 조립·버전 |1000개 ID/순서·해시·수식·마스크·모델 계보 | 조립 최대 오차0, 변경318행, 변화 RMS1.008762 | 실제 조립 오류 근거 없음 |',
+          '| E2 재학습 전이 | 고정anchor0·1의 같은V80, 기존 계수 유지 | 같은T 기준 CNN 재학습 효과 +0.105573 / +0.096823 | 이 pilot에서 재학습은 오히려 도움;500 전이 원인은 미확정 |',
+          f'| E3 역할 재분할 | 고정A 모델 밖187개에서107/80 재분할5회×2anchor | 고유283 ID RMSE {overall["base_rmse"]:.6f}→{overall["aux_rmse"]:.6f} | 전체 개선 재현 실패, 단 실제080의 고잡음 지원 영역과 분리해 해석 |','',
+          '**E1 — 조립과 Public 비교.** `080 = 078 + (round4 addition − 073)`은 정확히 재현됐다. 원래 생성 코드가 입력CSV의ID를 직접 검사하지 않은 취약점은 있지만, 현재 파일들의ID/순서는 모두 같다.080 manifest의`uploaded=false`는 생성 당시 값으로, 이후 수동 제출 기록과 상태가 어긋나지만 예측 조립 오류는 아니다. 모델 두 개, 소스 코드, 계수 파일과 원래 추론 입력330개의 해시도 일치했다.','',
+          '078−076은 저잡음 행,080−078은 고잡음 행에만 있다. 두 변화 벡터의 원소별 곱은0이다. 그래도 Public 총 오차 차이는 두 미지 효과의 합이므로,078 점수 없이 CNN의 한계효과를 분리할 수 없다. 역산 배율이나 full-test 변화량으로 근사한 Public 잔차·SE를 새 적합이나 판단 기준으로 쓰지 않았다.','',
+          f'CNN의 입력 컨텍스트는T073임을 확인했다.078로 바꿀 경우 그 첫 컨텍스트 값의 고잡음 RMS 차이는 {v["context078_minus_context073_high_rms"]:.6f}, 훈련 표준편차 단위로는 {v["standardized_context_shift_high_rms"]:.6f}다. 이는 버전 차이를 확인한 것으로, 그 차이가 실패를 일으켰다는 증거는 아니다.','',
+          f'동일한 고정 OOF 보정을 기록된073에 더한 개선은 {a["oof"]["recorded073"]["gain"]:.6f},078에는 {a["oof"]["recorded078"]["gain"]:.6f}였다. 즉 기존 로컬 결과에는078 전환이 이득을 취소했다는 증거가 없다. 단078의 과거 OOF는 source-restricted 새078 재학습 결과가 아니다. 원래073의 실제 구성 요소·엄격한 증강 범위로 보정한 기준과 혼동하지 않는다.','',
+          '**E2 — 같은 쿼리의 재학습 대조.** A는213개, T는320개이며 A⊂T다. 같은V80에 대해 A기준+A-CNN, T기준+A-CNN, T기준+T-CNN을 평가했다. 원래B107에서 정한 계수를 그대로 썼으며 V 정답으로 재선택하지 않았다.','',
+          '| Anchor | A 기준 | A+A CNN | T 기준 | T+A CNN | T+T CNN | 같은T에서 CNN 재학습 이득 |','|---|---:|---:|---:|---:|---:|---:|']
+    for z in r['anchors']:
+        text.append(f'| {z["anchor"]} | {z["A_base_A_CNN"]["base_rmse"]:.6f} | {z["A_base_A_CNN"]["new_rmse"]:.6f} | {z["T_base_T_CNN"]["base_rmse"]:.6f} | {z["T_base_A_CNN"]["new_rmse"]:.6f} | {z["T_base_T_CNN"]["new_rmse"]:.6f} | {z["same_base_CNN_refit_effect"]["gain"]:+.6f} |')
+    text+=['',
+          '같은A 이미지에서142개 teacher와213/214개 또는333/334개 teacher 예측의 차이는 RMS3.9∼5.0이었다. 예를 들어anchor0 고잡음 잔차 평균은−0.8890→+1.6952→+0.4793으로 바뀌지만,anchor1은+0.0161→−0.6270→−0.5458이었다. 단순히 teacher가 커지면 잔차가 항상 줄어든다는 설명도 성립하지 않는다. 학습량과 학습 샘플 구성 차이가 혼재한다.','',
+          '픽셀 평균·표준편차 변화는 작았고, 원래 타깃 표준편차는17.68∼18.75 범위였다.40 epochs를 유지해도 업데이트는280→400→640회로 증가한다. 이들은 실제 절차 차이이지만 그 자체가 버그는 아니다.500개 모델을 학습 데이터에 재평가해 일반화를 주장하지 않았다. CV의fold별 계수를500개 모델에 쓰기 위해 평균하는 절차 자체에는 별도의 정직한 OOF 점수가 없다는 한계도 남는다.','',
+          '새 A-teacher 예측은 기존B8개와 최대 약6e−8 이내로 일치했다.021 재추론은 B/V를 합친 배치에서 약2e−6 차이가 있어 원래 배치로 다시 검증했다. 원래 배치 예측은 재현됐으며, 이런 미소 수치차를080 실패 원인으로 해석하지 않는다.','',
+          '**E3 — calibration 역할 변경에 대한 취약성.** 모델 파라미터 학습에서 제외된187개를 anchor별로107개 calibration/80개 evaluation으로5회 재분할했다(seed2026101608). 임계값12·계수 범위·수축 후보·내부LOO 규칙은 바꾸지 않았다. 이 대조는 A-only 모델을 고정했으며, 매번 새T320 모델로 재학습하는080 전체 프로토콜은 아니다.','',
+          '| 집계/구간 | 표본 수 | 기준 RMSE | CNN RMSE | 개선 | 조건부95% 구간 |','|---|---:|---:|---:|---:|---|']
+    for name,key in [('고유ID 전체','all'),('저잡음','low'),('고잡음','high')]:
+        z=g['summary'][key];ci=z['conditional_ID_bootstrap_gain_ci95']
+        text.append(f'| {name} | {z["n_unique_ids"]} | {z["base_rmse"]:.6f} | {z["aux_rmse"]:.6f} | {z["aux_gain"]:+.6f} | [{ci[0]:+.6f}, {ci[1]:+.6f}] |')
+    text += ['',f'전체의 영상 없는 대조 대비 추가 이득은+{overall["image_increment"]:.6f}이고 구간은[-0.103569,+0.151020]이다.10개 역할 분할 중4개 개선·4개 악화·2개 동일이었다. anchor별 고유ID 개선은+0.125690와−0.095748로 방향이 달랐다.',
+             f'800개 예측 행을 그대로 가중하면 개선은+{row["aux_gain"]:.6f}지만, 사전 고정한 고유ID 집계에서는{overall["aux_gain"]:+.6f}다. 둘은 다른 가중의 추정량이며,800을 독립 표본 수로 세지 않는다. 별도의ID별 리스트 집계로 계산을 재검증했다.','',
+             f'실제080은 저잡음을 바꾸지 않으므로, 위 저잡음 악화를080의 직접 실패 원인으로 삼을 수 없다. 고잡음에서는+{high["aux_gain"]:.6f}가 남지만 고유ID84개의 구간이 넓어0을 포함한다. 잡음별64회 방향 순열에서 관측치 이상 비율은 전체{overall["alignment_null"]["fraction_at_least_observed"]:.4f}, 고잡음{high["alignment_null"]["fraction_at_least_observed"]:.4f}였다. 고잡음의 조건부 정렬 신호 가능성을 버리지는 않지만, 이 순열은 조건부 인과 정보 검정이나 과거 모델 탐색 보정이 아니다.','',
+             '**이전 근거의 해석 한계.** 엄격한073 OOF 이득의 상위10개 비중은83.6540%, 기록된078 기준에서는80.8254%다. 상위 사례를 뺀 뒤의 잔여 이득은 같은 데이터에서의 기술통계이며 독립 검증이 아니다. 퍼짐 제거는 기준 예측에 대한 한 개 선형방향을 투영해 없앤 것이므로, 남은 이득이 새로운 데이터에 일반화되는 정보임을 증명하지 않는다. 특정 영상 없는 대조를 이겼다는 사실도 다른 표형 모델의 가능성이나 연구 선택 편향을 제거하지 않는다.','',
+             '기존100개 holdout은 round2/round3의500개 분할에서 모두 학습과 평가에 노출됐고 최종CNN500에도 전부 들어갔다. 과거 증강 경로에는 그중46개 원본의 라벨도 사용됐다. 이100개를 지금 독립 holdout으로 다시 사용할 수 없다. 이번187개 역시 A의파라미터 학습에서는 제외됐지만 과거 연구에서 관측된 이미지다.','',
+             '**확정 / 의심 / 미확인.** 조립·ID·버전 계보의 실제 오류는 찾지 못했다. 비교 기준078의 Public 부재와 독립 holdout 부재, 학습·집계 절차 차이는 확인됐다. 선택 편향과 calibration/학습표본 민감성은 유력한 위험이며 실제 대조에서 취약성이 관측됐다. 그러나 teacher 규모, 정규화, optimizer 단계, 계수 평균 중 어느 하나가 Public 결과의 원인이라고 확정하지 않는다.','',
+             '**현재 판단.** 기존 기준을 넘어선 독립적인 새 데이터 일반화 근거는 없다. 그렇다고 CNN에 유용한 정보가 전혀 없다는 결론도 내리지 않는다.080/081을 개선 모델로 승격하거나 Public 유래 배율로 구제할 근거는 부족하다. 새 계수·후보·제출을 만들지 않았다.','',
+             '다음 우선순위는 새 백본 탐색이 아니라, 실제 배포 절차(기준078,073 조건부 보정, full refit, 내부calibration 계수 집계)를 그대로 재현하는 단 한 번의 고정된 중첩 검증이다. 그 안에서 계수 평균과 예측 평균을 같은 학습 데이터·같은CNN으로 비교해야 한다. 현재500개가 역사적으로 노출됐다는 한계는 그 실험에서도 별도로 표기해야 하며, 이를 새로운 독립 데이터라고 부르면 안 된다.','',
+             '재현: [RUN.md](RUN.md). 수치·원본근거: [audit.json](audit.json), [version-chain.json](version-chain.json), [transport-profile.json](transport-profile.json), [refit-replay.json](refit-replay.json), [resplit-results.json](resplit-results.json), [resplit-subgroups.json](resplit-subgroups.json). 상태 구분은 [conclusion.json](conclusion.json)에 저장했다.']
+    (H/'REPORT.md').write_text('\n'.join(text)+'\n')
+    s.save(_repo_io('execution-notes.json'),dict(first_legacy_combined_batch_exact_assertion_failed=True,
+        repair='Use originalB107 andV80 inference batches; combined-batch numerical differences separately checked below the pre-registered1e-4 tolerance.',
+        model_or_statistical_rule_changed=False,first_wrapper_error_log='checks.log'))
+    s.check_protected()
+    files=list(H.glob('*.py'))+list(H.glob('*.md'))+list(H.glob('*.json'))+list(H.glob('*.npz'))
+    files=[p for p in files if p.name!='delivery-hashes.json']
+    s.save(_repo_io('delivery-hashes.json'),{str(p.relative_to(s.ROOT)):s.r.digest(p) for p in files})
+    print('REPORT COMPLETE; original source hashes verified',flush=True)
+
+
+if __name__=='__main__':main()

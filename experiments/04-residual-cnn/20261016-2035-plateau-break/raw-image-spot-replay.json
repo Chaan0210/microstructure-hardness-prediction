@@ -1,0 +1,117 @@
+{
+  "n_images": 6,
+  "views_per_image": 8,
+  "all_passed": true,
+  "source_sha256": {
+    "experiments/push-400/phase_unet4.py": "1e21aff60440568869e2793d865291dd81ca7372a5d83794d7abdaa697348150",
+    "experiments/push-400/unet4-z1.pt": "9f936ecbe435d85f8fc69232d1cc9abdbc126a7d29c13d0f615d597bcceb2541",
+    "experiments/push-400/unet4_feats.py": "a2ed934bb93e528d135580a1330d4c682aa745d277892d61c1e0f836663468c7",
+    "experiments/push-400/unet4maps-z1-train.npz": "8ccbdb17176019b1da832caad559afc3c8da8d18c9e020f0a2931fd7c40f75b5",
+    "data/train/TRAIN_000001.png": "56086ae040a22d144186be9f53f43330a6f20472a65a6326e741a16fdaea2a44",
+    "data/train/TRAIN_000002.png": "7e34b83fb8767c4864379c72005ed5e8edff30e39de13205b1840470e2f89e5e",
+    "data/train/TRAIN_000003.png": "2ea7df79e41191e64308d0d21c4531b716462fa267eec45330e115e072fe4d29",
+    "experiments/push-400/unet4maps-z1-test.npz": "f2ab6e201c0b2c3619de47df29fb1cbba6dd7e53b5b1cdc45831e82d7cf4ce19",
+    "data/test/TEST_000001.png": "d3ddb0330b01c81ecbb535505d59767a11c9371c4265b726fc9b539d61fc2211",
+    "data/test/TEST_000002.png": "63dbb2085f7a82cc3cdbf07a67b79adbd0debf085372411ab969f63028c5442f",
+    "data/test/TEST_000003.png": "00f5080adabcb79bf1352fd13099827c13cf6a0076d3fe6b2db37144c177bd04"
+  },
+  "records": [
+    {
+      "ID": "TRAIN_000001",
+      "split": "train",
+      "max_abs_by_channel": [
+        0.00024412572383880615,
+        0.0002439841628074646,
+        0.00022633373737335205,
+        0.00024399906396865845,
+        0.001952826976776123,
+        0.0004880577325820923,
+        0.00048814713954925537,
+        0.00024374574422836304
+      ],
+      "max_error": 0.001952826976776123,
+      "tolerance": "One float16 ULP at stored value plus 2e-5 for CPU/MPS float32 drift; no fitted tolerance."
+    },
+    {
+      "ID": "TRAIN_000002",
+      "split": "train",
+      "max_abs_by_channel": [
+        0.000244140625,
+        0.0002441108226776123,
+        0.0002238340675830841,
+        0.0002441704273223877,
+        0.0019526481628417969,
+        0.0004883706569671631,
+        0.0004861578345298767,
+        0.00024402141571044922
+      ],
+      "max_error": 0.0019526481628417969,
+      "tolerance": "One float16 ULP at stored value plus 2e-5 for CPU/MPS float32 drift; no fitted tolerance."
+    },
+    {
+      "ID": "TRAIN_000003",
+      "split": "train",
+      "max_abs_by_channel": [
+        0.00024413317441940308,
+        0.00024411827325820923,
+        0.0002066381275653839,
+        0.0002441480755805969,
+        0.001953125,
+        0.00048820674419403076,
+        0.0004474073648452759,
+        0.0002441480755805969
+      ],
+      "max_error": 0.001953125,
+      "tolerance": "One float16 ULP at stored value plus 2e-5 for CPU/MPS float32 drift; no fitted tolerance."
+    },
+    {
+      "ID": "TEST_000001",
+      "split": "test",
+      "max_abs_by_channel": [
+        0.00024406611919403076,
+        0.0002440810203552246,
+        0.00024256110191345215,
+        0.00024396926164627075,
+        0.001953125,
+        0.0004874765872955322,
+        0.00048692524433135986,
+        0.00024411827325820923
+      ],
+      "max_error": 0.001953125,
+      "tolerance": "One float16 ULP at stored value plus 2e-5 for CPU/MPS float32 drift; no fitted tolerance."
+    },
+    {
+      "ID": "TEST_000002",
+      "split": "test",
+      "max_abs_by_channel": [
+        0.0002441108226776123,
+        0.00024389475584030151,
+        0.00024261325597763062,
+        0.00024418532848358154,
+        0.0019531846046447754,
+        0.00047779083251953125,
+        0.0004882737994194031,
+        0.00024394690990447998
+      ],
+      "max_error": 0.0019531846046447754,
+      "tolerance": "One float16 ULP at stored value plus 2e-5 for CPU/MPS float32 drift; no fitted tolerance."
+    },
+    {
+      "ID": "TEST_000003",
+      "split": "test",
+      "max_abs_by_channel": [
+        0.0002441480755805969,
+        0.00024408847093582153,
+        0.00024303048849105835,
+        0.0002441778779029846,
+        0.0019532442092895508,
+        0.0004879608750343323,
+        0.0004883855581283569,
+        0.00024405121803283691
+      ],
+      "max_error": 0.0019532442092895508,
+      "tolerance": "One float16 ULP at stored value plus 2e-5 for CPU/MPS float32 drift; no fitted tolerance."
+    }
+  ],
+  "scope": "Saved z1 weights on six original image files. Not full raw1500 feature extraction or U-Net training reproduction."
+}

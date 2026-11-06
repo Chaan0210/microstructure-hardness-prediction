@@ -1,0 +1,45 @@
+D2 residual-direct CNN — implementation and CPU unit validation219
+
+Outcome: implementation stage completed; no main CNN/MLP/KRR training, MPS optimizer step, full500/holdout/test scoring, upload or installation. Best021 preserved. No new generalization score or candidate was generated.
+
+Deliverables
+- contracts.py: copied A-only/B-only label capabilities, feature-only store, group-disjoint split and recursive OOF coverage checks.
+- anchor.py: complete021-family anchor, not reduced204 middle anchor. Fits raw component root, internally honest affine, shortB, three classical residual blocks with inner selection/bootstrap, and L heads. Every supervised stage receives only permitted training labels.
+- backend.py: real cached/fresh KRR, threeCNN, S/B/L heads and shortB backend. New fitted nodes have separate ID-hashed artifacts; existing caches are read only. MAIN_TRAINING_ENABLED=False blocks fresh production learners. 6GB planned memory cap.
+- orchestrate.py: one frozen G_A builds both B residual targets and V predictions; true and permuted residual arms share exact true-B normalization, seed/order/D4 and schedule. No outer-V labels in its API. Main entry blocked.
+- bundle.py: anchor-file SHA bound into residual object; bundle validates protocol/split, file digests, training memberships and feature schema. Wrong anchor or full-data replacement fails. No pooled residual model attached to a different anchor.
+- evaluation.py: requires all five completed folds; separates paired-anchor effect, permutation mechanism control and outer-safe best021 relevance. No automatic promotion.
+- source-history/ and provenance.json: 11 original files preserved with identical hashes. Old scripts with import-time orchestration are not imported.
+
+Frozen main-study proposal (NOT EXECUTED)
+Original development400 same five folds; T320/V80, fixed j0 A213/B107. Internal C142/D71 and E94-95/F47-48. No split or cell selection by results.
+G_A = .9*(.9*affine(.3*KRR+.3*CNN3+.2*S3+.2*B3)+.1*shortB+mean3(classical residual))+.1*L3.
+Classical candidates none/ridge1/ridge01/rbf1/rbf01; train-block GroupKFold3 and512 bootstrap winner weights; exact seeds in protocol.json.
+New CNN counts145 main (135anchor,5true,5permutation),34 later verification; longMLP285,short15,KRR1260 including innerCV,240 nonzero classical residual fits. These are planned counts, not completed work.
+Residual TinyCNN91905 parameters,128BOX,D4,80epochs,batch32,AdamWlr.002/wd.01,cosine to.0001,clip5,last5state mean. True/permuted seed20264000+k; permutation20264050+k. Residual mean/std only trueB, std floor1e-6. No early stopping or fitted residual lambda.
+Point improvements over both same-anchor and permutation controls needed merely to propose repeats; competitive improvement must separately beat outer-safe021. Conditional10000 paired-ID bootstrap and fold deltas do not remove adaptive400-label selection bias. Repartition is not independent confirmation. No promotion from weak-anchor gains alone.
+
+Measured CPU checks
+Latest result: unit-20261007T211430.json; 1.852746s, RSS peak 493731840 bytes, torch and BLAS/OpenMP1 thread.
+- All5 outer graphs and45 new-deep memberships passed disjointness/coverage.
+- Synthetic fixture complete anchors: outsideA finite/NaN labels unchanged; B/V not contained in anchor label capability. OuterV poison did not change residual targets or fixture residual predictions.
+- Inner classical learners unchanged when their held-out residual labels are poisoned. Selector may legitimately read inner labels, but not outer labels.
+- Bundle reload exact; corrupted hash, mismatched split, swapped anchor, changed cache target version rejected.
+- Cached20 base nodes,2 real development rows each, CPU replay max error 3.05175777271e-06; CNN max 1.01725260606e-05; shortB max 2.79852695826e-05, under fixed2e-4 tolerance.
+- Existing204: all3 partitions/15 folds,225 saved full residual models and45 bootstrap blocks replayed. Final predictions exactly matched: max error0; no204 fits.
+- Actual TinyCNN CPU forward/backward on2 B images, finite gradients, unchanged weights. Zero optimizer steps. This checks tensor/gradient plumbing, not learning or MPS train determinism.
+- 4 small unit runs retained; latest synthetic nonzero classical fits152, no competition-data model fits. Repeats followed source fixes/retention improvements. No unit failures; an earlier metadata lookup expected a nonexistent first-seed path and was corrected to existing cnn.pt before tests.
+
+Limits / next gate
+Fresh neural training code is implemented but never executed here. Full optimizer schedule equivalence, MPS determinism, complete neural poison retraining and resource benchmark remain unmeasured. Cached CPU prediction replays are small samples, not proof of every future new fit. CPU predictor objects introduce tiny measured differences versus historic MPS cache; this implementation choice is fixed in implementation-contract.json.
+Future enabling requires parent instruction and a new source lock, then the already proposed discarded8-update probe and planned poison/replay verification. Earlier15–25minute main estimate is extrapolated, not current benchmark. Automatic resume after a partial fresh-node fit is not implemented; artifacts are protected against overwrite and retained for diagnosis.
+A-only anchors use213 samples versus incumbent320; improved correction of a weaker anchor need not improve best021. Future paired deployment would preserve A/B policy and complete bundle; it cannot reuse old500-trained021 as an honest400 anchor. This stage has no500 loader.
+
+Reproduce CPU checks only
+cd .
+.venv/bin/python -I -B experiments/residual-cnn-219/unit_checks.py
+This writes a fresh timestamped unit report and fixture bundle under219, and does not enable main training.
+
+Protected best021 CSV SHA256
+7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b
+All six protected artifacts checked, including three saved L heads; original source11 hashes unchanged. Current219 command sessions have completed; no219 training process was started. Other agents' processes were not inspected.

@@ -1,0 +1,189 @@
+{
+  "model": "resnet50",
+  "scores": {
+    "selected": {
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 16.084004689873392,
+        "blend10": 12.907363523076791
+      },
+      "blend_gain": -0.12116274732609611,
+      "fold_blend_gains": [
+        -0.20331163041971045,
+        -0.1128060391041057,
+        -0.13771290166643624,
+        -0.04186085212503343,
+        -0.10452487703984836
+      ],
+      "positive_folds": 0,
+      "conditional_group_bootstrap_CI95": [
+        -0.20435821929323472,
+        -0.04584009344933259
+      ],
+      "gain_after_removing_top5": -0.15159967183871892,
+      "residual_correlation_vs021": 0.8533079511839435,
+      "advance_gate": false,
+      "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+    },
+    "AdamW": {
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 15.583036328149179,
+        "blend10": 12.907992346403628
+      },
+      "blend_gain": -0.12179157065293289,
+      "fold_blend_gains": [
+        -0.20331163041971045,
+        -0.08802956151359353,
+        -0.13771290166643624,
+        -0.07017793195694644,
+        -0.10452487703984836
+      ],
+      "positive_folds": 0,
+      "conditional_group_bootstrap_CI95": [
+        -0.20300009234052843,
+        -0.04720402856841272
+      ],
+      "gain_after_removing_top5": -0.15361476248988204,
+      "residual_correlation_vs021": 0.8859194105248258,
+      "advance_gate": false,
+      "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+    },
+    "SGD": {
+      "RMSE": {
+        "best021": 12.786200775750695,
+        "standalone": 16.11479424716185,
+        "blend10": 12.88545917608172
+      },
+      "blend_gain": -0.09925840033102595,
+      "fold_blend_gains": [
+        -0.09507441721320298,
+        -0.1128060391041057,
+        -0.10086185352418298,
+        -0.04186085212503343,
+        -0.142967086936169
+      ],
+      "positive_folds": 0,
+      "conditional_group_bootstrap_CI95": [
+        -0.19104380877749222,
+        -0.01108415723462265
+      ],
+      "gain_after_removing_top5": -0.14196173557110825,
+      "residual_correlation_vs021": 0.8367748999560756,
+      "advance_gate": false,
+      "uncertainty_note": "Conditional reused400; notselectionadjusted orindependenttest."
+    }
+  },
+  "selections": [
+    {
+      "fold": 0,
+      "winner_index": 1,
+      "winner": {
+        "name": "adamw_high",
+        "optimizer": "AdamW",
+        "tail_lr": 0.0001,
+        "head_lr": 0.001
+      },
+      "family_winners": {
+        "AdamW": 1,
+        "SGD": 3
+      },
+      "inner_RMSE": [
+        21.705554376440272,
+        16.723080107301524,
+        22.277871410867043,
+        16.97291520385824
+      ],
+      "outer_label_poison_selection_exact": true
+    },
+    {
+      "fold": 1,
+      "winner_index": 2,
+      "winner": {
+        "name": "sgd_low",
+        "optimizer": "SGD",
+        "tail_lr": 0.001,
+        "head_lr": 0.01
+      },
+      "family_winners": {
+        "AdamW": 1,
+        "SGD": 2
+      },
+      "inner_RMSE": [
+        281.29848751411834,
+        119.03833555394243,
+        57.667700882807495,
+        96.21827704586148
+      ],
+      "outer_label_poison_selection_exact": true
+    },
+    {
+      "fold": 2,
+      "winner_index": 1,
+      "winner": {
+        "name": "adamw_high",
+        "optimizer": "AdamW",
+        "tail_lr": 0.0001,
+        "head_lr": 0.001
+      },
+      "family_winners": {
+        "AdamW": 1,
+        "SGD": 3
+      },
+      "inner_RMSE": [
+        23.80841826335923,
+        15.356509599551758,
+        27.225719955247325,
+        16.696972402528303
+      ],
+      "outer_label_poison_selection_exact": true
+    },
+    {
+      "fold": 3,
+      "winner_index": 3,
+      "winner": {
+        "name": "sgd_high",
+        "optimizer": "SGD",
+        "tail_lr": 0.01,
+        "head_lr": 0.1
+      },
+      "family_winners": {
+        "AdamW": 1,
+        "SGD": 3
+      },
+      "inner_RMSE": [
+        17.46236037934647,
+        16.3668075101109,
+        17.796566642878723,
+        16.242815931218516
+      ],
+      "outer_label_poison_selection_exact": true
+    },
+    {
+      "fold": 4,
+      "winner_index": 1,
+      "winner": {
+        "name": "adamw_high",
+        "optimizer": "AdamW",
+        "tail_lr": 0.0001,
+        "head_lr": 0.001
+      },
+      "family_winners": {
+        "AdamW": 1,
+        "SGD": 3
+      },
+      "inner_RMSE": [
+        19.17169987599794,
+        15.41288997409176,
+        20.63487174676689,
+        16.23828205474031
+      ],
+      "outer_label_poison_selection_exact": true
+    }
+  ],
+  "OOF_sha256": "486b5ce8daafc9ebe9bc99b3eb5f6ad70432ac8c7c1d0343c0731c980b137725",
+  "primary": "selected; optimizerfamilyOOFdiagnosticonly; neverchoosefamilyusingouterlabels",
+  "new_inner_fits": 60,
+  "new_outer_fits": 10,
+  "seconds": 3045.9543158330052
+}

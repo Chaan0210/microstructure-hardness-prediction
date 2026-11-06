@@ -1,0 +1,61 @@
+{
+  "public_scores": {
+    "076": 8.9646534604,
+    "078": 9.0298958718,
+    "080": 8.999772193
+  },
+  "new078_source": "Direct human report in this chat on 2026-10-16; no browser verification",
+  "public_contrasts": {
+    "low_partner_change_078_minus076": 0.06524241140000164,
+    "frozen_CNN_080_minus078": -0.030123678800000775
+  },
+  "disjoint_support": true,
+  "changed_high_rows": 318,
+  "formula": "076 + (080 - 078); no new coefficient, threshold, or public inverse fit",
+  "new_csv": "experiments/078-080-update-20261016/candidate-076-plus-frozen-cnn.csv",
+  "CSV_sha256": "0fa34cec1626b0887d3d7971197207c135a447a8f4805096b258e77b912f0e9f",
+  "uploaded": false,
+  "correction_rms": 1.0087622088160992,
+  "recorded076": {
+    "rmse": 9.50830251498062,
+    "folds": [
+      9.90013019414743,
+      9.17286973396732,
+      10.510108060698302,
+      8.198285083225178,
+      9.602641137267542
+    ]
+  },
+  "recorded076_plus_frozenCNN": {
+    "rmse": 9.268706364837051,
+    "folds": [
+      9.451552393318373,
+      9.161739061625152,
+      9.876186096003655,
+      8.156317459298963,
+      9.602641137267542
+    ]
+  },
+  "strict073": {
+    "rmse": 9.547245150526356,
+    "folds": [
+      9.895928727722485,
+      9.14214893141938,
+      10.533605325927159,
+      8.32434203178618,
+      9.69482572964911
+    ]
+  },
+  "strict073_plus_frozenCNN": {
+    "rmse": 9.319649642914404,
+    "folds": [
+      9.44786853347906,
+      9.127364356029652,
+      9.93831174490055,
+      8.303533052421361,
+      9.69482572964911
+    ]
+  },
+  "limitation": "076 is historical as-produced OOF, not a fresh strict-source076 refit. No new Public score or independent holdout.",
+  "old_failure_claim_corrected": "CNN marginal Public effect is favorable;078 low-noise partner change was unfavorable."
+}

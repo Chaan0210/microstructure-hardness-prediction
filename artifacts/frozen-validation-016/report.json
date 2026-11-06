@@ -1,0 +1,338 @@
+{
+  "feature_runs": [
+    "run-012",
+    "run-014"
+  ],
+  "outer_split_seeds": [
+    20261011,
+    20261012
+  ],
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "inner_seed_plus_fold": 20261005,
+  "kernel_bandwidths": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "kernel_alphas": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "cnn": {
+    "architecture": "TinyCNN",
+    "seed_plus_fold": 20261003,
+    "image_size": 128,
+    "epochs": 80,
+    "average_last_epochs": 5,
+    "batch_size": 32,
+    "optimizer": "AdamW",
+    "lr": 0.002,
+    "weight_decay": 0.01,
+    "schedule": "CosineAnnealingLR(T_max=80, eta_min=0.0001)",
+    "augmentation": "batch D4",
+    "endpoint": "fixed; no early stopping"
+  },
+  "baseline_component_weights": {
+    "base_et": 0.375,
+    "base_ridge": 0.375,
+    "morph_ridge": 0.25
+  },
+  "ensemble_weights": {
+    "baseline": 0.5,
+    "cnn": 0.25,
+    "nested_kernel": 0.25
+  },
+  "panel_selection": "Frozen CLI choices; report every panel, no winner selection",
+  "old_oof_prediction_reuse": false,
+  "n_development": 400,
+  "device": "mps",
+  "packages": {
+    "torch": "2.14.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "Pillow": "12.3.0",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "caveat": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "seeds": [
+    {
+      "seed": 20261011,
+      "scores": {
+        "baseline": {
+          "oof_rmse": 14.42219310127814,
+          "fold_rmse": [
+            15.268715337715502,
+            12.716173209742356,
+            12.537397148437048,
+            15.295517479619734,
+            15.938141606267203
+          ],
+          "improvement_vs_baseline": 0.0,
+          "fold_improvement_vs_baseline": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "conditional_paired_improvement_95": [
+            0.0,
+            0.0
+          ]
+        },
+        "cnn": {
+          "oof_rmse": 14.652967773795735,
+          "fold_rmse": [
+            15.08043985845322,
+            11.757676517824347,
+            15.487016550417241,
+            14.136916670766746,
+            16.37634284228804
+          ],
+          "improvement_vs_baseline": -0.23077467251759565,
+          "fold_improvement_vs_baseline": [
+            0.18827547926228227,
+            0.9584966919180093,
+            -2.9496194019801933,
+            1.158600808852988,
+            -0.43820123602083605
+          ],
+          "conditional_paired_improvement_95": [
+            -1.0885277042537946,
+            0.6553129026562265
+          ]
+        },
+        "kernel_run-012": {
+          "oof_rmse": 14.376503516035287,
+          "fold_rmse": [
+            15.71269787508801,
+            12.171457484986723,
+            12.645920106047694,
+            14.615815336485952,
+            16.274048716635974
+          ],
+          "improvement_vs_baseline": 0.045689585242852715,
+          "fold_improvement_vs_baseline": [
+            -0.4439825373725075,
+            0.5447157247556333,
+            -0.10852295761064568,
+            0.6797021431337829,
+            -0.33590711036877074
+          ],
+          "conditional_paired_improvement_95": [
+            -0.4936511878243661,
+            0.5829523872078963
+          ]
+        },
+        "kernel_run-014": {
+          "oof_rmse": 14.411621038629047,
+          "fold_rmse": [
+            15.726845687886962,
+            12.165500352570414,
+            12.545675591482457,
+            14.69680266980902,
+            16.42409954683218
+          ],
+          "improvement_vs_baseline": 0.010572062649092828,
+          "fold_improvement_vs_baseline": [
+            -0.4581303501714604,
+            0.5506728571719428,
+            -0.008278443045409034,
+            0.5987148098107138,
+            -0.4859579405649779
+          ],
+          "conditional_paired_improvement_95": [
+            -0.4962737551718052,
+            0.5160691296828376
+          ]
+        },
+        "ensemble_run-012": {
+          "oof_rmse": 13.77797082168966,
+          "fold_rmse": [
+            14.698379062692647,
+            11.663398707416004,
+            12.503710540818698,
+            14.086156472569932,
+            15.56671454994916
+          ],
+          "improvement_vs_baseline": 0.6442222795884796,
+          "fold_improvement_vs_baseline": [
+            0.5703362750228553,
+            1.0527745023263524,
+            0.03368660761834974,
+            1.209361007049802,
+            0.3714270563180442
+          ],
+          "conditional_paired_improvement_95": [
+            0.3711149181286445,
+            0.923276257517064
+          ]
+        },
+        "ensemble_run-014": {
+          "oof_rmse": 13.80652607433352,
+          "fold_rmse": [
+            14.709878378783841,
+            11.713254189916587,
+            12.506064646426356,
+            14.100373896480564,
+            15.630027786568402
+          ],
+          "improvement_vs_baseline": 0.6156670269446192,
+          "fold_improvement_vs_baseline": [
+            0.5588369589316606,
+            1.0029190198257698,
+            0.0313325020106916,
+            1.1951435831391706,
+            0.3081138196988018
+          ],
+          "conditional_paired_improvement_95": [
+            0.34286961320692094,
+            0.893208306629577
+          ]
+        }
+      }
+    },
+    {
+      "seed": 20261012,
+      "scores": {
+        "baseline": {
+          "oof_rmse": 14.303546790308314,
+          "fold_rmse": [
+            11.266575418477261,
+            16.77933067174689,
+            13.54501002819435,
+            15.428921457364199,
+            13.890884797565464
+          ],
+          "improvement_vs_baseline": 0.0,
+          "fold_improvement_vs_baseline": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "conditional_paired_improvement_95": [
+            0.0,
+            0.0
+          ]
+        },
+        "cnn": {
+          "oof_rmse": 14.982357856246319,
+          "fold_rmse": [
+            13.216292869288617,
+            17.408789505167533,
+            16.039082094835063,
+            14.46184740104825,
+            13.349970064574068
+          ],
+          "improvement_vs_baseline": -0.6788110659380049,
+          "fold_improvement_vs_baseline": [
+            -1.949717450811356,
+            -0.6294588334206423,
+            -2.4940720666407135,
+            0.9670740563159494,
+            0.5409147329913964
+          ],
+          "conditional_paired_improvement_95": [
+            -1.5077905014634845,
+            0.13241927424439873
+          ]
+        },
+        "kernel_run-012": {
+          "oof_rmse": 14.5229719096221,
+          "fold_rmse": [
+            11.682836682966121,
+            17.076462832439244,
+            13.762587237633097,
+            15.236195846804284,
+            14.315685043133202
+          ],
+          "improvement_vs_baseline": -0.2194251193137866,
+          "fold_improvement_vs_baseline": [
+            -0.4162612644888597,
+            -0.29713216069235315,
+            -0.2175772094387476,
+            0.19272561055991488,
+            -0.424800245567738
+          ],
+          "conditional_paired_improvement_95": [
+            -0.7841720705225035,
+            0.32639176957477734
+          ]
+        },
+        "kernel_run-014": {
+          "oof_rmse": 14.45188391878587,
+          "fold_rmse": [
+            11.492638504921402,
+            16.90622153273887,
+            13.850607996384927,
+            15.23705041351677,
+            14.225914048590644
+          ],
+          "improvement_vs_baseline": -0.14833712847755542,
+          "fold_improvement_vs_baseline": [
+            -0.22606308644414064,
+            -0.12689086099197766,
+            -0.30559796819057716,
+            0.1918710438474296,
+            -0.3350292510251798
+          ],
+          "conditional_paired_improvement_95": [
+            -0.6842700913506031,
+            0.36195779501692205
+          ]
+        },
+        "ensemble_run-012": {
+          "oof_rmse": 13.88947852123937,
+          "fold_rmse": [
+            10.971732597964824,
+            16.414654224121094,
+            13.482188017312806,
+            14.737207262781947,
+            13.259472343226273
+          ],
+          "improvement_vs_baseline": 0.41406826906894345,
+          "fold_improvement_vs_baseline": [
+            0.2948428205124376,
+            0.3646764476257971,
+            0.06282201088154338,
+            0.6917141945822518,
+            0.6314124543391912
+          ],
+          "conditional_paired_improvement_95": [
+            0.1606608849164913,
+            0.6606185824195042
+          ]
+        },
+        "ensemble_run-014": {
+          "oof_rmse": 13.893242174765026,
+          "fold_rmse": [
+            10.943714687452356,
+            16.38599897533028,
+            13.539128350192449,
+            14.739875933690985,
+            13.276787940984631
+          ],
+          "improvement_vs_baseline": 0.41030461554328745,
+          "fold_improvement_vs_baseline": [
+            0.322860731024905,
+            0.3933316964166096,
+            0.0058816780019004256,
+            0.6890455236732134,
+            0.6140968565808329
+          ],
+          "conditional_paired_improvement_95": [
+            0.1629835468699124,
+            0.6523268434167894
+          ]
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 173.2057209170307,
+  "aggregation": "No pooled 800-row CI: partitions share the same 400 labels"
+}

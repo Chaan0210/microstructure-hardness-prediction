@@ -1,0 +1,34 @@
+"""Independent fixed-model checks, full500 replay and full1000 raw-image reload inference."""
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[2]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import sys,json,csv,time,hashlib
+from pathlib import Path
+ROOT=_RepoPath(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+import candidate010_pipeline as e
+import numpy as np,torch
+fv=e.fv
+
+def main():
+ decision=e.check();torch.set_num_threads(2);start=time.perf_counter();d=e.load_training();tokens=e.get_cache(d);report=json.loads((e.OUT/'report.json').read_text());r=json.loads((e.OUT/'adapter/report.json').read_text());assert fv.sha(e.OUT/'adapter/report.json')==report['adapter_report_sha256'];assert fv.sha(e.OUT/'adapter/model.pt')==report['checkpoint_sha256']==r['checkpoint_sha256'];assert fv.sha(e.OUT/'adapter/training_predictions.npz')==r['training_predictions_sha256'];assert report['train_ids']==d['ids'] and report['n_train']==500 and report['train_csv_sha256']==fv.sha(_repo_path(ROOT, 'data/train.csv'));assert fv.sha(e.OUT/'train_prefix.npy')==report['prefix_sha256'];a=torch.load(_repo_io(e.OUT/'adapter/model.pt'),weights_only=True,map_location='cpu');assert a['train_ids']==d['ids'] and a['n_train']==500 and a['config']==e.CFG and a['target_mean']==float(d['y'].mean()) and a['target_std']==float(d['y'].std());assert a['head_sha256']==r['head_sha256']==d['head_sha256'];m=e.study.backbone.model();t=e.study.Tail(m,d['states'],e.CFG['seed']);assert e.study.h.state_hash(t.state_dict())==r['initial_state_sha256'];assert e.study.frozen_hash(t)==r['frozen_state_sha256'];trainable=[n for n,p in t.named_parameters() if p.requires_grad];assert set(trainable)=={'block.attn.qkv.down.weight','block.attn.qkv.up.weight','block.attn.proj.down.weight','block.attn.proj.up.weight'};assert sum(p.numel() for p in t.parameters() if p.requires_grad)==18432
+ for n,val in t.state_dict().items():
+  if n not in trainable:assert torch.equal(val,a['state'][n]),n
+ assert e.study.h.state_hash(a['state'])==r['final_state_sha256'];orders=np.random.default_rng(e.CFG['seed']).permuted(np.tile(np.arange(500),(8,1)),axis=1);assert hashlib.sha256(orders.tobytes()).hexdigest()==r['batch_order_sha256'];assert [c['epoch'] for c in r['curve']]==list(range(1,9));t=t.to('mps');t.load_state_dict(a['state']);trainp=e.study.predict(t,d,tokens,np.arange(500))*a['target_std']+a['target_mean']
+ with np.load(_repo_io(e.OUT/'adapter/training_predictions.npz'),allow_pickle=False) as z:assert z['ids'].tolist()==d['ids'];np.testing.assert_array_equal(z['adaptedB'],trainp);np.testing.assert_array_equal(z['frozenB'],d['frozenB'])
+ t=t.cpu()
+ with torch.no_grad():cpu=t(torch.tensor(np.array(tokens[:2],copy=True)),torch.tensor(d['B'][:2,:4608],dtype=torch.float32)).numpy().astype(float)*a['target_std']+a['target_mean']
+ cpuerr=float(abs(cpu-trainp[:2]).max());assert cpuerr<.003;del t,m;torch.mps.empty_cache()
+ # Full500 deterministic training replay; no validation/holdout labels are available here.
+ rr=e.train_adapter(d,tokens,e.OUT/'validation-replay');assert rr['final_state_sha256']==r['final_state_sha256'] and rr['initial_state_sha256']==r['initial_state_sha256'] and rr['batch_order_sha256']==r['batch_order_sha256'];assert rr['frozen_state_sha256']==r['frozen_state_sha256'];torch.mps.empty_cache()
+ manifest=json.loads(e.CSV.with_suffix('.manifest.json').read_text());assert fv.sha(e.CSV)==manifest['submission_sha256'];assert fv.sha(e.CSV.with_suffix('.components.csv'))==manifest['components_sha256'];assert fv.sha(e.OUT/'test_predictions.npz')==manifest['predictions_sha256'];assert fv.sha(e.OUT/'report.json')==manifest['model_report_sha256'];assert fv.sha(e.OUT/'adapter/model.pt')==manifest['checkpoint_sha256'];assert fv.sha(_repo_path(ROOT, 'data/sample_submission.csv'))==manifest['sample_submission_sha256'];ids,B,oldB,old9,man8=e.test_inputs();newB,hashes=e.infer_all(ids,B,d['states'],a);assert hashes==manifest['test_image_sha256']==man8['test_image_sha256'];calpath=_repo_path(ROOT, 'artifacts/final-model-075/calibrator.json');assert fv.sha(calpath)==report['unchanged009_calibrator_sha256']==manifest['unchanged009_calibrator_sha256'];c=json.loads(calpath.read_text());pred=old9+c['slope']*.125*(newB-oldB)
+ with np.load(_repo_io(e.OUT/'test_predictions.npz'),allow_pickle=False) as z:assert z['ids'].tolist()==ids;np.testing.assert_array_equal(z['adaptedB'],newB);np.testing.assert_array_equal(z['frozenB'],oldB);np.testing.assert_array_equal(z['candidate009'],old9);np.testing.assert_array_equal(z['primary'],pred)
+ with e.CSV.open(newline='') as f:reader=csv.DictReader(f);assert reader.fieldnames==['ID','hardness'];rows=list(reader)
+ assert [r['ID'] for r in rows]==ids and len(ids)==1000 and len(set(ids))==1000 and np.isfinite(pred).all();np.testing.assert_array_equal(pred,[float(r['hardness']) for r in rows])
+ with (_repo_path(ROOT, 'artifacts/submission-candidate-008.components.csv')).open(newline='') as f:parts=list(csv.DictReader(f))
+ assert [r['ID'] for r in parts]==ids;raw=np.array([.75*float(r['candidate003'])+.125*float(r['S_mean3']) for r in parts])+.125*newB;independent=c['target_center']+c['slope']*(raw-c['prediction_center']);formulaerr=float(abs(independent-pred).max());assert formulaerr<1e-10
+ with e.CSV.with_suffix('.reproduced.csv').open('x',newline='') as f:w=csv.writer(f);w.writerow(['ID','hardness']);w.writerows(zip(ids,pred))
+ assert fv.sha(e.CSV.with_suffix('.reproduced.csv'))==manifest['submission_sha256']
+ for ident,digest in report['training_image_sha256'].items():assert fv.sha(_repo_path(ROOT, 'data/train', f'{ident}.png'))==digest
+ e.check();result={'valid':True,'candidate':'010','rows':1000,'columns':['ID','hardness'],'exact_sample_order':True,'finite':True,'duplicates':0,'submission_sha256':fv.sha(e.CSV),'CSV_byte_exact_reproduction':True,'full1000_raw_image_reload_inference_exact':True,'full500_training_replay_state_exact':True,'all500_training_predictions_reload_exact':True,'only18432_adapter_parameters_changed':True,'all_original_B_weights_norm_and3MLP_heads_frozen':True,'CPU_MPS_sample_max_error':cpuerr,'independent_full_ensemble_formula_max_error':formulaerr,'unchanged009_calibrator_sha256':fv.sha(calpath),'all1500_image_hashes_verified':True,'best009_sha256':fv.sha(_repo_path(ROOT, 'artifacts/submission-candidate-009.csv')),'protected009_files_verified':len(decision['protected']),'prediction_range':[float(pred.min()),float(pred.max())],'difference_from009_RMS':manifest['difference_from009_RMS'],'test_fit':False,'holdout_scored':False,'uploaded':False,'cost':0,'seconds':time.perf_counter()-start,'source_sha256':fv.sha(Path(__file__))};fv.write(_repo_path(ROOT, 'reports/candidate010-verification.json'),result);print(json.dumps(result),flush=True)
+if __name__=='__main__':main()

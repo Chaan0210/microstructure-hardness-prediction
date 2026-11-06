@@ -1,0 +1,118 @@
+{
+  "status": "154 failed;018 preserved; no new candidate CSV",
+  "public019": {
+    "recorded_utc": "2026-10-04T12:40:31.273092+00:00",
+    "candidate": "019",
+    "source": "Parent-confirmed official result; no independent site lookup",
+    "public_rmse": 11.5451213945,
+    "best018_public_rmse": 11.5230652779,
+    "worse_than018": 0.0220561166,
+    "rank": 21,
+    "participants": 83,
+    "submitted_time_local": "21:35",
+    "submitted_timezone": "Asia/Seoul",
+    "submission_display_number": 15,
+    "submission_id": "26414720-c41b-48c3-94a4-4420cdae438e",
+    "daily_submissions_used": 5,
+    "daily_submissions_remaining": 0,
+    "submission_restriction": "No further submission before parent-reported local midnight; this task never uploads.",
+    "current_best": "018",
+    "CSV_SHA256": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "interpretation": "Small Public difference does not establish D4 failure mechanism or justify tuning to Public."
+  },
+  "diagnostic153": {
+    "inner_B_train": {
+      "nodes": 135,
+      "train_n_range": [
+        70,
+        72
+      ],
+      "physics": {
+        "coordinate_fraction": 0.027078498715925617,
+        "rows_any": 0.5084597295708407,
+        "lost_standardized_RMS": 0.14085970364270542,
+        "largest_lost_standardized": 3.8831606778753
+      },
+      "spatial": {
+        "coordinate_fraction": 0.027618268220120073,
+        "rows_any": 0.9910052910052911,
+        "lost_standardized_RMS": 0.1247092313053502,
+        "largest_lost_standardized": 4.163774082801664
+      }
+    },
+    "full_honest_B": {
+      "nodes": 45,
+      "train_n_range": [
+        106,
+        107
+      ],
+      "physics": {
+        "coordinate_fraction": 0.018703703703703705,
+        "rows_any": 0.38444444444444437,
+        "lost_standardized_RMS": 0.11504859688403721,
+        "largest_lost_standardized": 4.327751578362211
+      },
+      "spatial": {
+        "coordinate_fraction": 0.01853009259259259,
+        "rows_any": 0.9658333333333334,
+        "lost_standardized_RMS": 0.09869731471821361,
+        "largest_lost_standardized": 4.481437088804092
+      }
+    }
+  },
+  "154": {
+    "study": "154 spatial-only support preservation",
+    "advance": false,
+    "validation_passed": true,
+    "RMSE_by_partition": {
+      "original": {
+        "reference018": 12.811945280526919,
+        "primary": 12.811904965670683
+      },
+      "20261031": {
+        "reference018": 12.645872618239814,
+        "primary": 12.64630330080159
+      },
+      "20261101": {
+        "reference018": 13.048624416802191,
+        "primary": 13.0499553760214
+      }
+    },
+    "pooled_MSE": {
+      "reference018": 164.77687843957662,
+      "primary": 164.79174378046403
+    },
+    "pooled_RMSE": {
+      "reference018": 12.836544645642636,
+      "primary": 12.83712365681908
+    },
+    "conditional_gain_CI95": [
+      -0.0018850714376364764,
+      0.0007147081645457291
+    ],
+    "plan_sha256": "4d839c8b66428d246edb30f85814d899db8654fc958b2ebf2648869dddf06e28",
+    "same400_adaptive_history": true,
+    "current_best": "018",
+    "new_neural_fits": 0,
+    "test_or_holdout_read": false,
+    "cost": 0
+  },
+  "interpretation": "Spatial clipping exposes many rows but amplitude loss did not correlate with larger squared errors; fixed unclipping did not improve pooled development. No causal claim based on tiny Public019/016 degradation. Stop this transform without variants. Model complementarity remains, but no new global weights or size-based extrapolation chosen.",
+  "next_candidate": null,
+  "unexecuted_next_hypothesis": {
+    "path": "reports/next-hypothesis-after154.json",
+    "sha256": "8ef5e0ba4e141f9f2aa79e66e394d4961c9882fb88d7a8ba7e0ead6bce2dd79c",
+    "status": "Proposal only, no fitted candidate"
+  },
+  "new_test_candidate_fit": false,
+  "reproduction_package": {
+    "archive": "deliverables/reproduction-018-v155.zip",
+    "SHA256": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "scope": "Saved-model018 inference only; prior136 excludes018 and is preserved."
+  },
+  "remaining_limit": "Saved-model inference verified; consolidated fulltraining and exact retraining weights not reproduced.",
+  "technical_blockers": [],
+  "no_further_submission_before_parent_local_midnight": true,
+  "uploaded": false,
+  "cost": 0
+}

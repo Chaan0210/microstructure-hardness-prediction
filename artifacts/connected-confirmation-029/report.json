@@ -1,0 +1,627 @@
+{
+  "plan": {
+    "scope": "development400 only; two reused partitions, not unseen validation",
+    "hypothesis": "Frozen compact26 plus connected-boundary panel provides new stable morphology information",
+    "feature_count": 48,
+    "feature_sha256": "337d1893871dd77eb38eb5b3e615d5a78ec2b70af1422894e34fad30353bfd9a",
+    "feature_report_sha256": "094e2824a1e2472ccdad7ab8ca6a3cbfd51856f32b595545374d669773fbe8f8",
+    "source_sha256": {
+      "confirm_connected_029.py": "884a5a8819ec2bddcb93ae6604297d5552661b6afbf4d5a532d15e24dbead88e",
+      "connected_grain_features.py": "1b0374672595d13639ed1caf397c54dbb73c59bea79137250a6a4cfae3fee186",
+      "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+      "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3"
+    },
+    "split_seeds": [
+      20261031,
+      20261101
+    ],
+    "ensemble": {
+      "baseline": 0.5,
+      "cnn_seed20261003_identity": 0.25,
+      "connected_kernel": 0.25
+    },
+    "inner_selection": "same3fold9settingKRR; no outer selection of weights, rounds, or feature thresholds",
+    "protected": {
+      "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+      "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+    }
+  },
+  "seeds": [
+    {
+      "seed": 20261031,
+      "candidate003_rmse": 13.63181073293285,
+      "connected_kernel_rmse": 14.59715927692334,
+      "connected_candidate_rmse": 13.650553707133291,
+      "fold_improvements": [
+        0.005529496997935368,
+        -0.006864533495059888,
+        0.1569820817873424,
+        -0.034410797131965154,
+        -0.235825482055958
+      ],
+      "better_folds": 2,
+      "conditional_gain_ci95": [
+        -0.1148482642849237,
+        0.07943976122341384
+      ],
+      "kernel_inner_selection": [
+        {
+          "fold": 0,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.716520762172243
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.495208157182006
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.535179389618904
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.78924488317672
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 18.041475927725624
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.8832066486975
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.122477184451839
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 15.029139836447133
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.716520762172243
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.527557329241853
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.304457662829781
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.029186245731186
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.00465680006492
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.084971086506783
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 17.569861762100718
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.1339482003793
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.604931743460009
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.328831113734108
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.304457662829781
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.216252704012884
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.510412811611324
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.06842295429379
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.088643775444577
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.317954187381904
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 17.74707348433008
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.112135644615357
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.735010424608198
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.510412811611324
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.60259150493536
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.470326472316684
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 15.39249768644553
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.90087258984477
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.89936914021577
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 18.000969318394823
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 18.040344387430075
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 16.004189667135993
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.788595464357421
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 15.39249768644553
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.461643017601128
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 16.35018617349179
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.610437739562116
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 18.04327427242946
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.99160898511814
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.980575498358217
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 18.218412760406707
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.402062314808239
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.79325755163982
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.904534324559865
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.610437739562116
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.646747360062827
+            }
+          ]
+        }
+      ],
+      "parent_oof_sha256": "e1ae1f11749581ed731cea96b5c7f47a6748777aefaf9b6e3f2d99f7962e8cf1",
+      "parent_manifest_sha256": "4b877f13daf3f5e6a593e82911e3b6e9cdfb8bef8503793962b7015e8cb2c04a"
+    },
+    {
+      "seed": 20261101,
+      "candidate003_rmse": 13.729980391208457,
+      "connected_kernel_rmse": 14.308553117106149,
+      "connected_candidate_rmse": 13.685789013291958,
+      "fold_improvements": [
+        0.08553200310346476,
+        0.06854170084052313,
+        0.011971924627582453,
+        0.07842191653292652,
+        -0.0247252242340803
+      ],
+      "better_folds": 4,
+      "conditional_gain_ci95": [
+        -0.04155298134084116,
+        0.13247073666310155
+      ],
+      "kernel_inner_selection": [
+        {
+          "fold": 0,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.861192892735794
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.581255206095687
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.62292475930139
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.907323403959488
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 17.36391302691482
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.474762382586368
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.194177195545342
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.861192892735794
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.047916012462029
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.937546916421901
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 15.048293100605376
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 18.099065837227457
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 18.07255099957435
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 18.113932084205686
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 19.224170118655984
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 16.54017588874957
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.491074429920474
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 15.354167408265953
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.048293100605376
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.864915194296374
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.924981731255581
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.645474131274298
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.63675299984199
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.69023732984611
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 19.037672894939693
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 16.243382175583204
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.249377670425053
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 15.304278913464982
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.924981731255581
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.572385759479578
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.01,
+            "inner_rmse": 14.025599960714043
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.30623525202227
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.27551235040565
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.2589652434934
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 17.270236073292118
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.689949695011032
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.289924797991116
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.025599960714043
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.152968196379542
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.191361935809333
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "selected": {
+            "bandwidth": 4.0,
+            "alpha": 0.1,
+            "inner_rmse": 14.390000522246371
+          },
+          "inner_scores": [
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.01,
+              "inner_rmse": 17.69834764246594
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 0.1,
+              "inner_rmse": 17.669411159067263
+            },
+            {
+              "bandwidth": 0.25,
+              "alpha": 1.0,
+              "inner_rmse": 17.691077676955004
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.01,
+              "inner_rmse": 18.184398813266935
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 0.1,
+              "inner_rmse": 15.520796455810876
+            },
+            {
+              "bandwidth": 1.0,
+              "alpha": 1.0,
+              "inner_rmse": 14.79238376871003
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.01,
+              "inner_rmse": 14.409280702191605
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 0.1,
+              "inner_rmse": 14.390000522246371
+            },
+            {
+              "bandwidth": 4.0,
+              "alpha": 1.0,
+              "inner_rmse": 15.499763686626729
+            }
+          ]
+        }
+      ],
+      "parent_oof_sha256": "5fa1104eb044c56a204f53adfe03907e1720fb6cd94cafb66938a04327835a75",
+      "parent_manifest_sha256": "21251517eebc5fd4205429280d36c04f821122068a64af905e0d35361007116c"
+    }
+  ],
+  "elapsed_seconds": 0.8684385829837993,
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

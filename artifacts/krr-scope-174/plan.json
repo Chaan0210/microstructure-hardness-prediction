@@ -1,0 +1,59 @@
+{
+  "study": 174,
+  "created_UTC": "2026-10-05T17:38:44.350655+00:00",
+  "purpose_ko": "018의 CV와 최종학습에서 KRR 설정 선택 자료 비율이 다른 효과를 측정한다. 성능 향상 또는 새 제출 후보를 목적으로 하지 않는다.",
+  "arms": [
+    "all",
+    "subset80"
+  ],
+  "fixed_subset": "For each current KRR training set U, hash SALT+groupID with SHA256, select firstfloor(.8*n_uniquegroups), retainoriginalroworder. FixedglobalSALT; no labels/features/errors/stratification; no alternate subset/seed. Allgroups keptintact. Currently400uniquegroups.",
+  "subset_salt": "174-fixed-group-selection:",
+  "scope": "ApplytoEVERYouterT320,middleA213/214,deepC142/143 KRR node. Onlyselection usesS80%; finalKRR scaler/kernel/target stats/refit useALLU. all-arm usesU forbothselectionandrefit. No global400selectedhyperparameters fixedintoCV.",
+  "inner_selection": "Existing9settings bandwidth(.25,1,4) × alpha(.01,.1,1), sameorder/tie rule,3GroupKFold seed20261005+existingnodeoffset. Everyinner scaler/bounds/gamma/ymeanstd fit ONLY respectiveinnertrain. Same seed butsubsetmembership andinnerfoldsnecessarilychange.",
+  "downstream": "RetainCNNmean3/Smean3/Bmean3/shortB and585features. ReplaceKRR predictions atall13nodes perouterfold; refitouteraffine onmiddleOOF and3anchor-affines ondeepOOF; reconstruct .9affine+.1shortB anchors; refitall5residualkinds insideeachhonestBinner3fold,512bootstrapweights,all5fullBmodels. Preserve .3KRR/.3CNN/.2S/.2B andmean3residualblocks.",
+  "reuse": "Allunchangedneuralpredictions musthaveexacttrain/validationIDs andhashchecked caches; prior112/133 fullnestedtargetexclusioncertificates referenced. Nonewneuraltraining orbackboneextraction.",
+  "execution": "Runoriginal5fold pairedall/subset80 (65nodes perarm) asoneinitialstudy. ControlallmustreproduceeveryoldKRRprediction<1e-8 andcomplete018<1e-8. No validation-basedepochorparameteralteration.",
+  "expansion_gate": "Afteroriginalall5andindependentaudit, runBOTHexistingresplits unchanged onlyif RMSEgain(all-subset80)>.01 AND >=3/5foldgains>0 AND fullpredictionRMSdifference>.05. Otherwise stop original. Thresholds are resource/interpretation rules, not significance or promotion gates.",
+  "practical_negligibility": "RMSdifference<=.05 AND absoluteRMSEdifference<=.005. Also report rawdifferences andselectionchanges regardlessofgate. Clearharmdiagnostic=RMSEworsening>=.01 with>=4/5folds worse;anyfailureofexpansiongate stops,includingmixedsmall effects.",
+  "validation": "IndependentrawMinMax/standardization/blockweight/RBFlinearalgebra for all9x3innerfits andfullKRR eachnode; reconstructselection andIDs; allnewaffines andresidualmodels independent; completeouterV80labelpoison recomputeKRRselection/refits/downstream; anchorB labelpoison4KRRnodes+anchor; KRRselectionScomplementlabelpoison andresidualinnerH exclusion. Fullneuralretrainingnotclaimed.",
+  "resources": "Existingvenv CPU2; noMPSfits. Firstpairedfoldcap120s/4GBRSS,originalcap900s beforeaudits. Atmost3partitions basedonfrozengate. No packages/network/download/payment/rawimages/holdout/test/full500/newCSV/upload.",
+  "retraining_request": "Prepareonly isolated018fulltrainingreproductionplan, gapinventory andsource-backedtime/RAM estimates. DoNOTexecute fullretraining in174. Futurefirststage dev400only; any500stage includingformerholdoutrequiresseparateauthorization.",
+  "limitations": [
+    "Onefixed80%subset tests combinedselection-size/composition effect,notallpossible400/500splits.",
+    "Alllevels80% iscontrolleduniformanalogue; actualexistingproductionuses400/500 onlytop-levelKRR andallA/allC selectioninsidecalibration. This experimentdoesnotexactlyclonehistoricalproduction.",
+    "Same400adaptivehistory andoverlappingresplits; no independentperformanceclaim.",
+    "FrozenNNupstreamcertificates reused; changedKRRanddownstream freshlytested.",
+    "Moreorlessfitting data can changeeffective regularization andselectorvariability; no claimeffectsolelyfromsamplecount."
+  ],
+  "sources": {
+    "krr_scope_174.py": "eb3eaecfc1b018a2f2604f4b57c2461920f2a178ff01a2dbc46f3151ee6885f6",
+    "validate_krr_scope_174.py": "16f4ba2061ef719afe58c9f357e3ba9714744ec4708422520f4d502e66145def",
+    "quality_gate_165.py": "ca19757695bda8a75d45bbdaf0b905f8dc4f896448bd59c70866cf438539a9ee",
+    "validate_quality_gate_165.py": "2ab6d0a13e1642d15184b79b440c2ef0fb7b2a441bd45afb4345ac365f228500",
+    "bootstrap_selector_144.py": "d9f55f8e50cd7327efb8d45d433b8c16f3ede19265c436dffcd024e69b45abc3",
+    "cnn_seed_mean_133.py": "0253abea611ec28ddd90995bb896526d3432f01793a8d62b387a9745b3bd6b5b",
+    "component_ablation_121.py": "49979a38b2ebb96ec86d97d27e92d57e960be8a904e7ec9168b6e7cedbb4e858",
+    "nonlinear_residual_115.py": "63bd7f2bed66edba2916b017f3c8a8e0dfc80509302806808b06bf4d6b126fc9",
+    "validate_nonlinear_residual_115.py": "6fdfd3b17d927738851730cbf616c1fc47d3ece3d04ea5447667073e6c4b7b60",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "nested_calibration_074.py": "6f795743f2625ff1224f5f693fb906f43f13ff708439a37132761c28dbd275b7",
+    "reports/research-priority-173-review.json": "8efe898bbe660f3d9d6bfa21e25e394d9b64aebd03fccaf56961171eb9942ddf",
+    "reports/nested-selector-146-audit.json": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+    "reports/reproducibility-audit-135-summary.json": "dc2002440c8e164c1a6d7bfdff66ab5ed002db20ddff31ac5cfcb90b18ae2dd5",
+    "reports/reproduction-package-155-summary.json": "de955b82cd81e0d0004bb1a38b2db340b77f2fe146e33439386c95a02e31b723",
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/run-012/report.json": "201196e863b7ee017f179fba30dcf59637455dd619aaa92f96fcd234e57f7697",
+    "artifacts/spatial-joint-140/features.npz": "e4bbdc20e08a924d00e60c391443f26d5a298287b66bf20b8866d8c3f648f867",
+    "artifacts/spatial-joint-140/extraction.json": "8e35e8c7b0604c3cd48003d8d424be5267d78e8d1aff48bd59604a12c8fc5537"
+  },
+  "protected": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a"
+  }
+}

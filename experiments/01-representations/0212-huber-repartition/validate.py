@@ -1,0 +1,40 @@
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[3]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import common as c,engine as e
+from common import R,P,np,torch
+c.check();checks=[];poison=[]
+with c.Monitor('validation',900):
+ for split in c.SPLITS:
+  d=c.data(split);oof=c.load(R/split/'OOF.npz');assert c.sha(R/split/'OOF.npz')==c.read(R/'training-complete.json')['OOF_SHA256'][split]
+  for k in range(5):
+   T,V=c.indices(d,k);altered=dict(d);altered['y']=d['y'].copy();altered['y'][V]=np.nan;assert c.norm(altered,T)==c.norm(d,T)
+   for arm in ['control','huber']:
+    folder=R/split/f'fold-{k}-{arm}';sd=torch.load(_repo_io(folder/'model.pt'),map_location='cpu',weights_only=True);pr=c.load(folder/'predictions.npz');st=c.load(folder/'streams.npz');norm=c.norm(d,T);assert sd['normalization']==norm and sd['train_ids']==d['ids'][T].tolist() and sd['validation_ids']==d['ids'][V].tolist();np.testing.assert_array_equal(oof[arm][V],pr['validation_predictions']);np.testing.assert_array_equal(np.bincount(st['order'].ravel(),minlength=320),np.full(320,80));assert st['order'].shape==(800,32)
+    rng=np.random.default_rng(20261003+k);orders=[];rots=[];flips=[]
+    for epoch in range(80):
+     order=rng.permutation(320)
+     for first in range(0,320,32):orders.append(order[first:first+32]);rots.append(int(rng.integers(4)));flips.append(bool(rng.random()<.5))
+    np.testing.assert_array_equal(st['order'],orders);np.testing.assert_array_equal(st['rot'],rots);np.testing.assert_array_equal(st['flip'],flips);np.testing.assert_allclose(st['lr'],np.repeat(.0001+.5*(.002-.0001)*(1+np.cos(np.arange(80)*np.pi/80)),10),rtol=1e-12,atol=1e-15)
+    avg=None
+    for ep in range(76,81):
+     state=torch.load(_repo_io(folder/f'epoch-{ep}.pt'),map_location='cpu',weights_only=True)
+     if avg is None:avg={n:v/5 for n,v in state.items()}
+     else:
+      for n,v in state.items():avg[n]+=v/5
+    e.equal_tree(avg,sd['state_dict']);maxcpu=0.;maxmps=0.
+    for dev in ['cpu','mps']:
+     m=c.legacy.TinyCNN().to(dev);m.load_state_dict(sd['state_dict']);p,z=e.predict(m,d['images'],V,norm,dev);err=float(abs(p-pr['validation_predictions']).max());assert err<=(1e-10 if dev==c.device else .001)
+     if dev=='cpu':maxcpu=err
+     else:maxmps=err
+     del m
+    checks.append({'split':split,'fold':k,'arm':arm,'normalization_train_only_exact':True,'checkpoint_average_exact':True,'sample_order_D4_LR_replayed':True,'CPU_prediction_max_error':maxcpu,'MPS_prediction_max_error':maxmps});c.emit({'split':split,'reload_checked':folder.name,'CPU_max_error':maxcpu});torch.mps.empty_cache()
+  T,V=c.indices(d,0)
+  for arm,value in [('control',np.nan),('huber',1e30)]:
+   pd=dict(d);pd['y']=d['y'].copy();pd['y'][V]=value;folder=R/split/f'poison-fold0-{arm}';pred,r=e.fit(pd,0,arm,folder);old=c.read(R/split/f'fold-0-{arm}/fit.json');np.testing.assert_array_equal(pred,oof[arm][V]);assert r['averaged_state_SHA256']==old['averaged_state_SHA256'];a=c.load(folder/'streams.npz');b=c.load(R/split/f'fold-0-{arm}/streams.npz')
+   for key in a:np.testing.assert_array_equal(a[key],b[key])
+   e.equal_tree(torch.load(_repo_io(folder/'final-live-and-optimizer.pt'),map_location='cpu',weights_only=True),torch.load(_repo_io(R/split/f'fold-0-{arm}/final-live-and-optimizer.pt'),map_location='cpu',weights_only=True))
+   poison.append({'split':split,'arm':arm,'validation_targets':'NaN' if arm=='control' else '1e30','full80epoch_state_predictions_streams_optimizer_exact':True});c.emit({'split':split,'poison_replay_exact':arm})
+ c.write(R/'validation.json',{'passed':True,'checks':checks,'poison_replays':poison,'main_models':20,'verification_retrain_fits':4,'OOF_SHA256':c.read(R/'training-complete.json')['OOF_SHA256'],'raw_data_access':c.access,'max_CPU_prediction_error':max(r['CPU_prediction_max_error'] for r in checks),'max_MPS_prediction_error':max(r['MPS_prediction_max_error'] for r in checks),'performance_scores_computed':False})
+c.check()

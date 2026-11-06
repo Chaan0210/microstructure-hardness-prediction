@@ -1,0 +1,38 @@
+{
+  "n": 400,
+  "baseline_rmse": 9.492439956633985,
+  "existing_CNN_rmse": 9.256738746625928,
+  "source_restricted_reassembly_max_diff": 1.0857093002414331e-11,
+  "bands": {
+    "clean": {
+      "n": 205,
+      "rmse": 8.00820207895756,
+      "sse_share": 0.3647608335120867,
+      "bias": -0.15490176019071739
+    },
+    "middle": {
+      "n": 71,
+      "rmse": 8.141164893020074,
+      "sse_share": 0.13056168374401433,
+      "bias": 0.8866187313809192
+    },
+    "high": {
+      "n": 124,
+      "rmse": 12.11166851037971,
+      "sse_share": 0.5046774827438991,
+      "bias": 0.0771488038285158
+    }
+  },
+  "top10_baseline_sse_share": 0.16537729981981178,
+  "residual_correlations": {
+    "G021": 0.8641123882390206,
+    "GMM": 0.9351552849402401,
+    "grainset": 0.7729489450459993
+  },
+  "limitations": [
+    "All500 labels previously exposed; no untouched holdout.",
+    "Frozen U-Net/Cellpose and historical feature/ensemble choices are not fully nested.",
+    "Intervals condition on fitted OOF predictions; they omit repeated adaptive research and overlapping training-set dependence.",
+    "Production mean CNN coefficient has no separate honest OOF score; sensitivity uses original inner-fold coefficients."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "question": "193 train-only hardness-bin CE가CNNtrunk학습에도움을준원본효과가partition을바꾸어도재현되는가? Public022점수를구제하거나계수를맞추는질문이아니다.",
+  "judgment": "제한적 재현안정성 검증 가치는 있다. 단기 제출 후보를 만들 목적의 우선순위는 낮으며,200으로30fit착수근거가생긴것은아니다. 이번에는 실행하지 않는다.",
+  "051_evidence": [
+    {
+      "partition": "original",
+      "regression_only_RMSE": 14.176614197244191,
+      "auxiliary_RMSE": 13.988469985515717,
+      "regression_only_blend": 13.269410644269877,
+      "auxiliary_blend": 13.249001897625838,
+      "auxiliary_specific_blend_gain": 0.0204087466440388,
+      "conditional_CI95": [
+        -0.036477346560323864,
+        0.07745115349879256
+      ],
+      "positive_folds": 4
+    },
+    {
+      "partition": "20261031",
+      "regression_only_RMSE": 13.995762333405986,
+      "auxiliary_RMSE": 14.18580888012671,
+      "regression_only_blend": 13.172286501144717,
+      "auxiliary_blend": 13.221571254244342,
+      "auxiliary_specific_blend_gain": -0.049284753099625433,
+      "conditional_CI95": [
+        -0.10906705118691855,
+        0.008571257768888582
+      ],
+      "positive_folds": 1
+    },
+    {
+      "partition": "20261101",
+      "regression_only_RMSE": 14.618191036571618,
+      "auxiliary_RMSE": 14.626822750952888,
+      "regression_only_blend": 13.440400978398387,
+      "auxiliary_blend": 13.442977412815159,
+      "auxiliary_specific_blend_gain": -0.002576434416772244,
+      "conditional_CI95": [
+        -0.06565620198296358,
+        0.06306682926029422
+      ],
+      "positive_folds": 4
+    }
+  ],
+  "051_interpretation": "원본pairedgain+.02040875/4fold였으나두재분할−.04928475/−.00257643.기준006대비향상의상당부분은CE없는회귀MLP에서도발생.aux-specific benefit consistent=false였으며기존실패유지.",
+  "051_vs193_differences": {
+    "representation": "051 frozenDINO3456→sharedMLP64;193 raw128imageTinyCNNtrunk를학습",
+    "classification": "051train-only7quantiles;193train-only4quartiles",
+    "regression": "051standardizedSmoothL1 beta1;193standardizedMSE",
+    "gradient_control": "051같은optimizer와전체parametergradientclip로CE가전체clip에도영향.193 main/aux optimizer및clip분리,auxRNG격리,detach대조가회귀전용exact",
+    "controls": "051CE0vsCE.3;193true vsdetach andpermuted CE, countmatched butpermutedtaskdifficultyconfound remains"
+  },
+  "why051_does_not_refute193": "공유학습층/손실/구간수/대조/clip구조가다르므로051실패를CNN가설의직접반증으로쓰지않음.다만같은400의작은원본이득에대한신뢰를낮추는관련선행실패다.",
+  "193_existing_evidence": "단독true14.72499846 vsdetach15.03231815 개선이있으나fixed10%추가실패.194첫seed치환gain.02469621는CI0포함·표본/라벨상위구간집중.198Public악화와199delta전이약함은안정성확인필요성을보여주지만새recipe조정근거가아님.",
+  "what200_adds_and_does_not": "197cross기능의실제의존성과단독개선≠고정앙상블이득이라는사례를확인.별도CE가설의재현성확률이나최적CE계수에관한직접증거는아님.",
+  "if_later_authorized": {
+    "design": "기존20261031/20261101모두,400장만;true/detach/permuted;CE.3/80epoch/seed/last5/정규화/기존194치환식·downstream고정.원래대조·판정과전체결과를사전잠금.30fits안은그대로미실행.",
+    "purpose": "원본효과의일관성에반증기회를주고분기유지/종료근거를만든다.좋은partition만보고하거나라벨구간제외로수선하지않는다.",
+    "limits": "같은400재분할이므로새독립표본검증이나선택편향해결이아님.통과도새전체500/test/제출자동승인아님.",
+    "public_use": "Publicscore를loss/weight/threshold/label역산에사용하지않음"
+  },
+  "30fits_started": false,
+  "new_CE_recipe_proposed": false,
+  "recommendation_now": "200결론을보고하고정지.베스트021유지.추가제출을채우거나200균등조건을후보로선택하지않음.",
+  "source_SHA256": {
+    "051_summary": "0113f97127b86ae4ccddc08455caa7ea1358965f531c5967f608da80c0270077",
+    "051_head_source": "1024afa9838b07d138c9bdec5ea0a5946276da5b33d8ad794cbf5d3be16434b3",
+    "193_summary": "0556084a10badae2a725f56046543bb0779cf0e0c226bcb0dd8745f739dd7d34",
+    "193_engine": "fc890bc3005c48fa5010c1b8f5a058280d6e89563df8d351fcecb9cd8a49d88f",
+    "199_summary": "5f4af124424e0685dc7bdf3a0b468bd6cb4a32028ddbca05300337561aac7422"
+  }
+}

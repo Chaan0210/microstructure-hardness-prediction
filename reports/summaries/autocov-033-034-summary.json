@@ -1,0 +1,109 @@
+{
+  "status": "Completed after reconnection; hypothesis rejected for promotion",
+  "recovery": {
+    "first_command_succeeded": true,
+    "original_report_existed_on_reconnect": true,
+    "old_session53203": "Unknown process id after reconnect; original report+last log confirm completion",
+    "original_experiment_repeated": false,
+    "process_list_limitation": "pgrep unavailable: sysmond service not found. No conclusion about unrelated OS processes. Newly controlled confirmation session28471 exited0."
+  },
+  "feature_definition": "32 annular covariance radial/H2 shape descriptors at sigma1/2 and radii4,8,12,16,24,32,48,64; normalize by RMS on nonzero radius2 ring; two anchor amplitudes plus separate HHnoise and blur indicators. No noise variance subtraction.",
+  "novelty": "Baseline7 axial lags/raw variance and native28 broad spectrum summaries were already present; this tests a distinct higher-resolution summary of existing second-order image information, not a new image modality.",
+  "results": [
+    {
+      "split": "original",
+      "candidate003": 13.705696031698212,
+      "acf_candidate": 13.75547219309583,
+      "old_kernel": 14.482935938822393,
+      "acf_kernel": 14.46755012070213,
+      "gain_ci95": [
+        -0.12540893187050925,
+        0.026870719320537383
+      ]
+    },
+    {
+      "split": 20261031,
+      "candidate003": 13.63181073293285,
+      "acf_candidate": 13.691283825876509,
+      "acf_kernel": 14.421392433963705,
+      "better_folds": 1,
+      "gain_ci95": [
+        -0.12285462782580855,
+        0.009487694773228823
+      ]
+    },
+    {
+      "split": 20261101,
+      "candidate003": 13.729980391208457,
+      "acf_candidate": 13.778732994527086,
+      "acf_kernel": 14.357988892897238,
+      "better_folds": 1,
+      "gain_ci95": [
+        -0.11722413208014477,
+        0.017253827866255685
+      ]
+    }
+  ],
+  "compute_seconds": {
+    "original_feature_cv": 4.465739999955986,
+    "two_repartitions": 0.7767092910362408
+  },
+  "engineering_checks": {
+    "source_sha256": "9bb71fa2477cb6162f309a767102d7ae4b7d4fdc989204163fb99bf0d704c2e1",
+    "D4_checks_passed": 32,
+    "direct_covariance_checks": 40,
+    "direct_max_error": 3.469446951953614e-18,
+    "contrast_scaling_shape_invariance": true,
+    "synthetic_model_training_rows": 0,
+    "target_labels_read": false,
+    "proceed_to_cv": true,
+    "limits": "Unit fixtures verify numerical and invariance behavior, not physical grain truth. Gaussian filtering is a fixed measurement branch, not a mislabeled training augmentation."
+  },
+  "control_old_kernel_max_abs_difference": 0.0,
+  "verification": [
+    {
+      "run": "artifacts/run-033",
+      "oof_sha256": "3eb6cf60ba5a856846c99d4be6174248770a91875e4db343b204d3a28a23f36f",
+      "report_sha256": "d97a8734871aceca86f96a78ba00ba24af443a32e44e4772e07ede73aea15333",
+      "verified_rmse": 13.75547219309583,
+      "kernel_model_sha256": {}
+    },
+    {
+      "run": "artifacts/autocov-confirmation-034/seed-20261031",
+      "oof_sha256": "e2270c7dd3dfc7042e6388ed01f4a68862b132316733d0cce4c9de9cc0760ddf",
+      "report_sha256": "f49f24e9839a9df6bd0f941e057564de7b343fdc5b04d137054ceedb6282dd55",
+      "verified_rmse": 13.691283825876509,
+      "kernel_model_sha256": {
+        "kernel-fold3.joblib": "378c2b50f8f020085c272bb6254a7513b803a478bc5ce7b1766ff7ce319bae65",
+        "kernel-fold1.joblib": "d02b748dca56181707c02cb90ad19c6aef817a772d0162446b42839283e46f05",
+        "kernel-fold2.joblib": "a8fdb97ab0130ab162aa8d76fed6e78472ce3470b685de1d02afa0bb5f5be328",
+        "kernel-fold0.joblib": "041abdb6741d2aff3c10d090e6ad2580cfc0ba21911cb087abf89c95d52f1d34",
+        "kernel-fold4.joblib": "00dd982efca27adfc864b7edf26854c7dc6760137874bb0205137b53c30758a0"
+      }
+    },
+    {
+      "run": "artifacts/autocov-confirmation-034/seed-20261101",
+      "oof_sha256": "4fb070a474755a1eace969bd6b4d975cbd865791953ae91ac1af9310a3b8a553",
+      "report_sha256": "cdc9930e7b5864e31c65e799ca977c1f48621f48466a7b28a496076e79806e8e",
+      "verified_rmse": 13.778732994527086,
+      "kernel_model_sha256": {
+        "kernel-fold3.joblib": "4d2c9e699905f0803058943fc51d08c799f0b2965bdf9f12199a9103057e668d",
+        "kernel-fold1.joblib": "d28b9128c7a420a2cdcc9108ca6f2adc9050920816ac8e6d9cb738cba4bcba84",
+        "kernel-fold2.joblib": "12c9876faba449cbf9792aeb63793173ba8ec983432f7ed46e8b1f70b223152d",
+        "kernel-fold0.joblib": "319dc4aa4c4d1a15d05219d77005788ca5df8e462acb2f246638867b37f96278",
+        "kernel-fold4.joblib": "457d4ba99ec61fd256dd42e639c3b4fd9621b1352824e1bf93a5dbe813ef3fe0"
+      }
+    }
+  ],
+  "decision": "All3 fixed-ensemble evaluations worsen versus003. No new fulltrain fit, test inference, candidate file, upload or weight tuning. Preserve best003.",
+  "limits": [
+    "All400 rows and repartitions were historically inspected; nested CV controls only current kernel hyperparameters, not cumulative model/feature choices.",
+    "No empirical proof of an irreducible noise floor or of prize-level performance.",
+    "Covariance mixes blur/noise/phase contrast/geometry; separating nuisance indicators did not establish a useful predictor in this fixed panel."
+  ],
+  "holdout_test_access": false,
+  "paid_service_used": false,
+  "new_packages": [],
+  "best_preserved": "artifacts/submission-candidate-003.csv",
+  "running_work": []
+}

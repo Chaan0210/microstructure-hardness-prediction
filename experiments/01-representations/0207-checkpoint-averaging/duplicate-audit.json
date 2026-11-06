@@ -1,0 +1,184 @@
+{
+  "code_files_searched": 697,
+  "patterns": [
+    "\\bema\\b",
+    "exponential.?moving",
+    "ema_decay",
+    "\\bAveragedModel\\b",
+    "swa_utils",
+    "\\bpolyak\\b"
+  ],
+  "exact_EMA_hits": [],
+  "finding": "독립 EMA 학습 또는 동일 경로의 평균 정책 대조를 찾지 못했다. 명칭 검색은 수제 구현 부재의 단독 증명이 아니므로 관련 구현·계획을 함께 읽었다.",
+  "existing_comparisons": [
+    {
+      "study": "009/129/133/193/204/206",
+      "policy": "마지막 5 epoch state 각각 1/5의 합. EMA가 아님."
+    },
+    {
+      "study": "133",
+      "policy": "각 seed 내부 마지막5 state 평균 후 서로 다른3 seed의 예측 평균. checkpoint EMA와 별개."
+    },
+    {
+      "study": "128",
+      "policy": "학습 예산을 바꾸되 5개 정규화된 후반 시점에 동일 가중치. 평균 정책만의 대조가 아님."
+    },
+    {
+      "study": "131/132",
+      "policy": "마지막 checkpoint와 평균 checkpoint 외에도 2view·LR 계단·readout 등이 달라짐. 고립된 평균 정책 대조가 아님."
+    }
+  ],
+  "available_checkpoints": [
+    {
+      "fold": 0,
+      "epoch": 76,
+      "path": "experiments/contrast-augmentation-206/fold-0-control/epoch-76.pt",
+      "SHA256": "79b739f7c884ae168d9e41820b5855237970632ff668e0927c117ada5ece3e49"
+    },
+    {
+      "fold": 0,
+      "epoch": 77,
+      "path": "experiments/contrast-augmentation-206/fold-0-control/epoch-77.pt",
+      "SHA256": "fd226ebbb90f6f404b647dd2eec5ae01dc9ac2a1fcb637c0b8bd03211786b5fc"
+    },
+    {
+      "fold": 0,
+      "epoch": 78,
+      "path": "experiments/contrast-augmentation-206/fold-0-control/epoch-78.pt",
+      "SHA256": "4885dff47af19399eee9b4890f88c2b5bde0b90ab43c23530ccae31053f7cb7f"
+    },
+    {
+      "fold": 0,
+      "epoch": 79,
+      "path": "experiments/contrast-augmentation-206/fold-0-control/epoch-79.pt",
+      "SHA256": "b444d15f0ae5bd2273d578c39fa6f5182499bf5f4d8c2ae86818d59b25df1f4c"
+    },
+    {
+      "fold": 0,
+      "epoch": 80,
+      "path": "experiments/contrast-augmentation-206/fold-0-control/epoch-80.pt",
+      "SHA256": "8b54e30dc9e5503a0facd2156e9616ca6ea6ea2c44dd02b070413aea95ad2628"
+    },
+    {
+      "fold": 1,
+      "epoch": 76,
+      "path": "experiments/contrast-augmentation-206/fold-1-control/epoch-76.pt",
+      "SHA256": "bf4edda5843af941345468b41e89f6d8eabd2a79f9c7f39a1041795af8b03e73"
+    },
+    {
+      "fold": 1,
+      "epoch": 77,
+      "path": "experiments/contrast-augmentation-206/fold-1-control/epoch-77.pt",
+      "SHA256": "4df81470f9e87a38ec4327c1330c70efe10bf4f3682923e4c88fa7e5ec0bb3ea"
+    },
+    {
+      "fold": 1,
+      "epoch": 78,
+      "path": "experiments/contrast-augmentation-206/fold-1-control/epoch-78.pt",
+      "SHA256": "3d00696ff462ff977f2351281d3f28ffd1566ea7c0313560e6b72b4057531380"
+    },
+    {
+      "fold": 1,
+      "epoch": 79,
+      "path": "experiments/contrast-augmentation-206/fold-1-control/epoch-79.pt",
+      "SHA256": "4b1e99c0aca1cd396c04e911944e3533105b916636cff2a7e275f54e32c93926"
+    },
+    {
+      "fold": 1,
+      "epoch": 80,
+      "path": "experiments/contrast-augmentation-206/fold-1-control/epoch-80.pt",
+      "SHA256": "e4612b26cc2ca3708a310648dd105fc29be5963cd0663bfdac96e729db00ce77"
+    },
+    {
+      "fold": 2,
+      "epoch": 76,
+      "path": "experiments/contrast-augmentation-206/fold-2-control/epoch-76.pt",
+      "SHA256": "0f7da6137e0be1529b279035885a8e215111d8748b170ffe3bf40aa0097d9030"
+    },
+    {
+      "fold": 2,
+      "epoch": 77,
+      "path": "experiments/contrast-augmentation-206/fold-2-control/epoch-77.pt",
+      "SHA256": "d7fc3f008fb6fbec8e35a0035e608c26cded4874333e7a3f6be7696750be9029"
+    },
+    {
+      "fold": 2,
+      "epoch": 78,
+      "path": "experiments/contrast-augmentation-206/fold-2-control/epoch-78.pt",
+      "SHA256": "c97b3e0255dae3b9558647f52bd56cc0728f53ca2d34b63b10cd951d368e51d8"
+    },
+    {
+      "fold": 2,
+      "epoch": 79,
+      "path": "experiments/contrast-augmentation-206/fold-2-control/epoch-79.pt",
+      "SHA256": "49145e081a738624917daa5388174470b16711c46a44577a824effea58861067"
+    },
+    {
+      "fold": 2,
+      "epoch": 80,
+      "path": "experiments/contrast-augmentation-206/fold-2-control/epoch-80.pt",
+      "SHA256": "9c9f5d2b1c9c49064eea6bcf375b6883df090e08e3ceef48f31e02fa06902b6d"
+    },
+    {
+      "fold": 3,
+      "epoch": 76,
+      "path": "experiments/contrast-augmentation-206/fold-3-control/epoch-76.pt",
+      "SHA256": "8c361a7f253500f71d2ede0f6c470df9b851bec0e81b83dee9c1b03c6611b962"
+    },
+    {
+      "fold": 3,
+      "epoch": 77,
+      "path": "experiments/contrast-augmentation-206/fold-3-control/epoch-77.pt",
+      "SHA256": "57df6bad9bd5f4d11fbabcd58743170e8aa62d77e482ab3d9882e35d10c6e9e7"
+    },
+    {
+      "fold": 3,
+      "epoch": 78,
+      "path": "experiments/contrast-augmentation-206/fold-3-control/epoch-78.pt",
+      "SHA256": "fd06d453454dfbd8e77ad927337c0727de13721f156b396090a95c560b6cbfff"
+    },
+    {
+      "fold": 3,
+      "epoch": 79,
+      "path": "experiments/contrast-augmentation-206/fold-3-control/epoch-79.pt",
+      "SHA256": "b53b26485909987a6290a75bd165efd82f0b992d6e72ed65a856f9e3d026674a"
+    },
+    {
+      "fold": 3,
+      "epoch": 80,
+      "path": "experiments/contrast-augmentation-206/fold-3-control/epoch-80.pt",
+      "SHA256": "cc8e562d8b36a1f92f94b8b590b7645d0b3e153f7e128d2f061142fe918bbd1f"
+    },
+    {
+      "fold": 4,
+      "epoch": 76,
+      "path": "experiments/contrast-augmentation-206/fold-4-control/epoch-76.pt",
+      "SHA256": "db9fa1ef963ea2106c2ba828db581f75d90ef106ddec45019cf73ba6534005c1"
+    },
+    {
+      "fold": 4,
+      "epoch": 77,
+      "path": "experiments/contrast-augmentation-206/fold-4-control/epoch-77.pt",
+      "SHA256": "812ab7cb428e83628916df232c531cfd94f41f0c7dbe48310522475b3f57d2e5"
+    },
+    {
+      "fold": 4,
+      "epoch": 78,
+      "path": "experiments/contrast-augmentation-206/fold-4-control/epoch-78.pt",
+      "SHA256": "271d059b012b2bc38ae21d96051bfc3aa143fa78afb43a1381ebcd16cfe40b30"
+    },
+    {
+      "fold": 4,
+      "epoch": 79,
+      "path": "experiments/contrast-augmentation-206/fold-4-control/epoch-79.pt",
+      "SHA256": "d7fa2fc1b97602684c8b21503f4c6dc36e53659257ad4fae5706f41f7219124f"
+    },
+    {
+      "fold": 4,
+      "epoch": 80,
+      "path": "experiments/contrast-augmentation-206/fold-4-control/epoch-80.pt",
+      "SHA256": "7bcbc1c26520e4427e0771499de87edf78ac18ae0af86dbb38b45ce3cd24ff96"
+    }
+  ],
+  "unavailable": "현재 원래 경로의 epoch1–75 및 모든 optimizer update state가 저장되지 않아 전체 경로 EMA를 재구성할 수 없다."
+}

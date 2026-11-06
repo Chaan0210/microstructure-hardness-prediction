@@ -1,0 +1,1263 @@
+{
+  "audit": {
+    "official_source": {
+      "url": "https://cfiles.dacon.co.kr/competitions/daker_9monthly/%E1%84%86%E1%85%B5%E1%84%89%E1%85%A6%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9_%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC.pdf",
+      "status": "Parent supplied official cautions; direct web tool retrieval failed. Do not claim independently retrieved PDF contents."
+    },
+    "porosity": "No fixed negative coefficient/sign/monotonic rule in current tree,Ridge,kernel,CNN,DINO heads. Pore thresholds are feature definitions, not hardness effect signs.",
+    "heterogeneous_size": "grain_size_cv and intercepters are unconstrained covariates. No low-hardness rule for heterogeneous grain sizes.",
+    "orientation": "grain_alignment=abs(weightedcomplex exp(2i angle)); magnitude describes alignment strength not absoluteangle. CNN D4training imposes implicitabsoluteorientation invariance on its .1875 share; frozenS/B have noD4average/augmentation. Currentensemble doesnotenforceglobalD4invariance. GroupingD4duplicates is leakage control,not augmentation. No repeat offailed046D4 study.",
+    "scale": "diameters arepixels; inverse_sqrt_diameter isproxy transformedinput withlearnedfreecoefficient/nonlinearresponse,not calibrated physical Hall-Petch formula. No micron conversion or material coefficient.",
+    "target_range": "Current008 formula has no output clipping,ranktransform,sign or physical monotonic constraint. Train-only MinMaxScalerclip inlegacyRidge/kernel limits feature extrapolation only.",
+    "loss": "CNN/tree/Ridge/kernel use squared objectives orlinearRidge; frozenS/B MLP use standardizedSmoothL1(beta1),aux0. RMSE seeksconditionalmean whileSmoothL1can differ for asymmetric/noisyconditionals. 058alreadyfailed MSEreplacement,so do not repeat it. Ensemble averaging/regularization canalso cause underdispersion.",
+    "estimator_constraints": {
+      "base_et": {
+        "extratreesregressor__criterion": "squared_error",
+        "extratreesregressor__monotonic_cst": "None"
+      },
+      "base_ridge": {
+        "ridge__positive": "False"
+      },
+      "morph_ridge": {
+        "ridge__positive": "False"
+      }
+    }
+  },
+  "results": {
+    "original": {
+      "ensemble008": {
+        "n": 400,
+        "target_mean": 194.07675825940854,
+        "prediction_mean": 193.95804676185355,
+        "mean_residual": 0.11871149755497633,
+        "target_std": 18.034520585010153,
+        "prediction_std": 10.70719182574706,
+        "affine_slope_diagnostic_only": 1.157529780152807,
+        "residual_prediction_Pearson": 0.12769239980328687,
+        "residual_prediction_Spearman": 0.0817077606735042,
+        "residual_target_correlation_mechanically_coupled": 0.8082458381510608,
+        "rmse": 13.209632611789585
+      },
+      "components": {
+        "reference003": {
+          "n": 400,
+          "target_mean": 194.07675825940854,
+          "prediction_mean": 193.88520560624704,
+          "mean_residual": 0.19155265316149075,
+          "target_std": 18.034520585010153,
+          "prediction_std": 10.805492330422721,
+          "affine_slope_diagnostic_only": 1.0885409961735886,
+          "residual_prediction_Pearson": 0.06981203337811401,
+          "residual_prediction_Spearman": 0.023954774717341983,
+          "residual_target_correlation_mechanically_coupled": 0.8017241548824212,
+          "rmse": 13.705696031698212
+        },
+        "Smean": {
+          "n": 400,
+          "target_mean": 194.07675825940854,
+          "prediction_mean": 194.00653270389637,
+          "mean_residual": 0.07022555551214708,
+          "target_std": 18.034520585010153,
+          "prediction_std": 13.15659272688776,
+          "affine_slope_diagnostic_only": 0.8693548339107581,
+          "residual_prediction_Pearson": -0.12234586081960383,
+          "residual_prediction_Spearman": -0.1116663229145182,
+          "residual_target_correlation_mechanically_coupled": 0.6897556636402994,
+          "rmse": 14.049242890525278
+        },
+        "Bmean": {
+          "n": 400,
+          "target_mean": 194.07675825940854,
+          "prediction_mean": 194.3466077534498,
+          "mean_residual": -0.2698494940412821,
+          "target_std": 18.034520585010153,
+          "prediction_std": 12.538367713430835,
+          "affine_slope_diagnostic_only": 0.9450313673706878,
+          "residual_prediction_Pearson": -0.050628935896156635,
+          "residual_prediction_Spearman": -0.0631938949618435,
+          "residual_target_correlation_mechanically_coupled": 0.719636483309006,
+          "rmse": 13.615777507504738
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "moments": {
+            "n": 80,
+            "target_mean": 195.4579383447648,
+            "prediction_mean": 194.44766423303935,
+            "mean_residual": 1.0102741117254523,
+            "target_std": 17.894473300413196,
+            "prediction_std": 10.30881948599573,
+            "affine_slope_diagnostic_only": 1.19932357466967,
+            "residual_prediction_Pearson": 0.1568700333100273,
+            "residual_prediction_Spearman": 0.06050164088138772,
+            "residual_target_correlation_mechanically_coupled": 0.8223671660194503,
+            "rmse": 13.137584839949701
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.16784926543832,
+            190.60079970981784,
+            195.53402315731867,
+            203.91351163781286
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 9,
+              "bias": 0.2089842255499611
+            },
+            {
+              "bin": 1,
+              "n": 23,
+              "bias": 1.1539259128051405
+            },
+            {
+              "bin": 2,
+              "n": 12,
+              "bias": -5.807954868163574
+            },
+            {
+              "bin": 3,
+              "n": 24,
+              "bias": 2.72613721396433
+            },
+            {
+              "bin": 4,
+              "n": 12,
+              "bias": 4.722411683032274
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 5,
+              "bias": -17.207899840201332,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 7,
+              "bias": 25.47307213860601,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "moments": {
+            "n": 80,
+            "target_mean": 192.38941649103018,
+            "prediction_mean": 193.1971334759706,
+            "mean_residual": -0.8077169849404303,
+            "target_std": 17.60104903507314,
+            "prediction_std": 10.797819686087049,
+            "affine_slope_diagnostic_only": 1.1507921857051555,
+            "residual_prediction_Pearson": 0.12951779698254534,
+            "residual_prediction_Spearman": 0.04786685419596812,
+            "residual_target_correlation_mechanically_coupled": 0.7937005504418236,
+            "rmse": 12.597373711388418
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.70935279080297,
+            190.9012993331639,
+            195.97558681811546,
+            203.62955924114814
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 21,
+              "bias": -1.5480924647399756
+            },
+            {
+              "bin": 1,
+              "n": 17,
+              "bias": -2.6136468144008385
+            },
+            {
+              "bin": 2,
+              "n": 13,
+              "bias": -3.3361589142784305
+            },
+            {
+              "bin": 3,
+              "n": 15,
+              "bias": 2.5214653457441387
+            },
+            {
+              "bin": 4,
+              "n": 14,
+              "bias": 1.2766188934697738
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 7,
+              "bias": -20.398285347548875,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 6,
+              "bias": 21.185495905511754,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "moments": {
+            "n": 80,
+            "target_mean": 191.0958940231579,
+            "prediction_mean": 193.20430826939455,
+            "mean_residual": -2.1084142462366318,
+            "target_std": 18.00814214724716,
+            "prediction_std": 11.140185063594403,
+            "affine_slope_diagnostic_only": 1.0087839139781398,
+            "residual_prediction_Pearson": 0.006954049293418211,
+            "residual_prediction_Spearman": -0.0023909985935302394,
+            "residual_target_correlation_mechanically_coupled": 0.7857026249819795,
+            "rmse": 14.228655527464698
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.6704865250775,
+            190.4861653590127,
+            196.2140838578856,
+            202.7546720009253
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 20,
+              "bias": -0.03975623423942665
+            },
+            {
+              "bin": 1,
+              "n": 11,
+              "bias": -6.20365224619432
+            },
+            {
+              "bin": 2,
+              "n": 23,
+              "bias": -3.9604035692000052
+            },
+            {
+              "bin": 3,
+              "n": 7,
+              "bias": 4.193147764405231
+            },
+            {
+              "bin": 4,
+              "n": 19,
+              "bias": -1.9947680297495247
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 14,
+              "bias": -18.39938733643871,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 9,
+              "bias": 17.513338300071364,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "moments": {
+            "n": 80,
+            "target_mean": 195.58638671656283,
+            "prediction_mean": 194.81740694362261,
+            "mean_residual": 0.7689797729402337,
+            "target_std": 18.13838015113645,
+            "prediction_std": 10.81966105756116,
+            "affine_slope_diagnostic_only": 1.2466292979595215,
+            "residual_prediction_Pearson": 0.214895247700707,
+            "residual_prediction_Spearman": 0.20494608532583217,
+            "residual_target_correlation_mechanically_coupled": 0.8127802836366506,
+            "rmse": 12.44121172584094
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.33796541327484,
+            190.39774865538715,
+            195.5357257946398,
+            202.96566809277695
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 13,
+              "bias": -2.678313998124515
+            },
+            {
+              "bin": 1,
+              "n": 16,
+              "bias": -0.8469328279652419
+            },
+            {
+              "bin": 2,
+              "n": 15,
+              "bias": -2.4373028583061873
+            },
+            {
+              "bin": 3,
+              "n": 19,
+              "bias": 5.725593047440541
+            },
+            {
+              "bin": 4,
+              "n": 17,
+              "bias": 2.215333178323752
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 10,
+              "bias": -16.129546915440113,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 10,
+              "bias": 19.440250737821454,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "moments": {
+            "n": 80,
+            "target_mean": 195.85415572152687,
+            "prediction_mean": 194.1237208872406,
+            "mean_residual": 1.7304348342862579,
+            "target_std": 17.99550198342556,
+            "prediction_std": 10.345701633887424,
+            "affine_slope_diagnostic_only": 1.1674957764154215,
+            "residual_prediction_Pearson": 0.1288206409984729,
+            "residual_prediction_Spearman": 0.11134552273792779,
+            "residual_target_correlation_mechanically_coupled": 0.8215651056324204,
+            "rmse": 13.56258166849383
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.55472649112156,
+            190.43827006786086,
+            195.66067148626232,
+            202.96566809277695
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 17,
+              "bias": 0.6745473202192798
+            },
+            {
+              "bin": 1,
+              "n": 13,
+              "bias": 0.5185188136025304
+            },
+            {
+              "bin": 2,
+              "n": 16,
+              "bias": -2.1479303299060035
+            },
+            {
+              "bin": 3,
+              "n": 17,
+              "bias": 5.123068294256708
+            },
+            {
+              "bin": 4,
+              "n": 17,
+              "bias": 3.970674235204235
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 7,
+              "bias": -21.152325190353633,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 9,
+              "bias": 22.502484049396614,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        }
+      ],
+      "official_topic_proxy_associations": [
+        {
+          "feature": "inverse_sqrt_grain_diameter",
+          "residual_spearman": -0.04734179588622428,
+          "target_spearman": -0.33321414508840674
+        },
+        {
+          "feature": "grain_size_cv",
+          "residual_spearman": 0.07314233213957587,
+          "target_spearman": 0.3109594434965218
+        },
+        {
+          "feature": "pore_fraction15",
+          "residual_spearman": 0.02946556934579444,
+          "target_spearman": -0.13494037688739396
+        },
+        {
+          "feature": "pore_fraction30",
+          "residual_spearman": -0.019163564458615886,
+          "target_spearman": -0.1332447577465294
+        },
+        {
+          "feature": "pore_diameter",
+          "residual_spearman": -0.02376033600210001,
+          "target_spearman": -0.19716610728817052
+        },
+        {
+          "feature": "grain_alignment",
+          "residual_spearman": 0.04599009993812461,
+          "target_spearman": 0.20909661935387094
+        }
+      ],
+      "predictions_sha256": "dab3055c861db6e4813df92dd9326c4b04462b3309ed084fd2ba1b993c0f979d"
+    },
+    "20261031": {
+      "ensemble008": {
+        "n": 400,
+        "target_mean": 194.07675825940854,
+        "prediction_mean": 193.9537088374792,
+        "mean_residual": 0.12304942192932763,
+        "target_std": 18.034520585010153,
+        "prediction_std": 10.704399510301048,
+        "affine_slope_diagnostic_only": 1.1611931402966051,
+        "residual_prediction_Pearson": 0.13091358183690668,
+        "residual_prediction_Spearman": 0.08748223426396413,
+        "residual_target_correlation_mechanically_coupled": 0.8085391988964974,
+        "rmse": 13.180839919990602
+      },
+      "components": {
+        "reference003": {
+          "n": 400,
+          "target_mean": 194.07675825940854,
+          "prediction_mean": 193.88889733352764,
+          "mean_residual": 0.18786092588089745,
+          "target_std": 18.034520585010153,
+          "prediction_std": 10.616160263650157,
+          "affine_slope_diagnostic_only": 1.1186753475237898,
+          "residual_prediction_Pearson": 0.09243057924692373,
+          "residual_prediction_Spearman": 0.047852174076087974,
+          "residual_target_correlation_mechanically_coupled": 0.8102113933628545,
+          "rmse": 13.63181073293285
+        },
+        "Smean": {
+          "n": 400,
+          "target_mean": 194.07675825940854,
+          "prediction_mean": 194.23555149229503,
+          "mean_residual": -0.1587932328865012,
+          "target_std": 18.034520585010153,
+          "prediction_std": 13.659980003923348,
+          "affine_slope_diagnostic_only": 0.841841058880918,
+          "residual_prediction_Pearson": -0.15366359170077887,
+          "residual_prediction_Spearman": -0.17231620197626232,
+          "residual_target_correlation_mechanically_coupled": 0.6632033301741096,
+          "rmse": 14.060492400313716
+        },
+        "Bmean": {
+          "n": 400,
+          "target_mean": 194.07675825940854,
+          "prediction_mean": 194.06073520637278,
+          "mean_residual": 0.016023053035739778,
+          "target_std": 18.034520585010153,
+          "prediction_std": 13.099749812115375,
+          "affine_slope_diagnostic_only": 0.8792595704316784,
+          "residual_prediction_Pearson": -0.11324263687499603,
+          "residual_prediction_Spearman": -0.13714473215457595,
+          "residual_target_correlation_mechanically_coupled": 0.6922076864654098,
+          "rmse": 13.967093172617764
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "moments": {
+            "n": 80,
+            "target_mean": 194.51831191998707,
+            "prediction_mean": 193.0655145981479,
+            "mean_residual": 1.4527973218391868,
+            "target_std": 17.401745234148017,
+            "prediction_std": 10.234867426147698,
+            "affine_slope_diagnostic_only": 1.0985408970342578,
+            "residual_prediction_Pearson": 0.07571697730431863,
+            "residual_prediction_Spearman": 0.07939521800281295,
+            "residual_target_correlation_mechanically_coupled": 0.80997572742392,
+            "rmse": 13.399031053593571
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.59795931767175,
+            190.76542333647802,
+            195.94859992548265,
+            203.41993708298628
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 18,
+              "bias": 0.8444598110634681
+            },
+            {
+              "bin": 1,
+              "n": 15,
+              "bias": -1.279310258593811
+            },
+            {
+              "bin": 2,
+              "n": 17,
+              "bias": 2.1469957371281776
+            },
+            {
+              "bin": 3,
+              "n": 16,
+              "bias": 3.975387543037476
+            },
+            {
+              "bin": 4,
+              "n": 14,
+              "bias": 1.436288200508646
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 9,
+              "bias": -17.86490224530642,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 7,
+              "bias": 23.148413687889786,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "moments": {
+            "n": 80,
+            "target_mean": 196.05250416814775,
+            "prediction_mean": 194.64175190894963,
+            "mean_residual": 1.4107522591981063,
+            "target_std": 19.648256994455238,
+            "prediction_std": 10.836050205094784,
+            "affine_slope_diagnostic_only": 1.2563723239774052,
+            "residual_prediction_Pearson": 0.19242636964534418,
+            "residual_prediction_Spearman": 0.17444913267698078,
+            "residual_target_correlation_mechanically_coupled": 0.8408970803759092,
+            "rmse": 14.50578410243469
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.2629462783439,
+            190.67423601481033,
+            195.3605123826988,
+            203.23811016405614
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 14,
+              "bias": -0.47342929483074314
+            },
+            {
+              "bin": 1,
+              "n": 18,
+              "bias": -2.4859028066100186
+            },
+            {
+              "bin": 2,
+              "n": 9,
+              "bias": -5.046399225450857
+            },
+            {
+              "bin": 3,
+              "n": 22,
+              "bias": 5.843301440539369
+            },
+            {
+              "bin": 4,
+              "n": 17,
+              "bias": 4.770553101155932
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 9,
+              "bias": -20.448497467034326,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 11,
+              "bias": 21.105116299982583,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "moments": {
+            "n": 80,
+            "target_mean": 191.61279158639826,
+            "prediction_mean": 193.7037016288153,
+            "mean_residual": -2.0909100424170197,
+            "target_std": 18.44694264188208,
+            "prediction_std": 12.072570301551028,
+            "affine_slope_diagnostic_only": 1.0522591531482626,
+            "residual_prediction_Pearson": 0.04711513541216828,
+            "residual_prediction_Spearman": -0.13199718706047822,
+            "residual_target_correlation_mechanically_coupled": 0.7567352116858757,
+            "rmse": 13.55291183492863
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.80973119244433,
+            191.03933337043182,
+            195.90794928644092,
+            203.30644901647634
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 21,
+              "bias": -2.221501304026935
+            },
+            {
+              "bin": 1,
+              "n": 15,
+              "bias": -1.4275640849639142
+            },
+            {
+              "bin": 2,
+              "n": 14,
+              "bias": 0.5697230077672738
+            },
+            {
+              "bin": 3,
+              "n": 14,
+              "bias": -4.110091102166018
+            },
+            {
+              "bin": 4,
+              "n": 16,
+              "bias": -3.102666338297176
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 7,
+              "bias": -20.042496221865616,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 6,
+              "bias": 25.767299856796665,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "moments": {
+            "n": 80,
+            "target_mean": 192.19442821732704,
+            "prediction_mean": 192.9923058830715,
+            "mean_residual": -0.7978776657444367,
+            "target_std": 16.6786931417716,
+            "prediction_std": 10.622494084855099,
+            "affine_slope_diagnostic_only": 1.1173928471236825,
+            "residual_prediction_Pearson": 0.10582713392653428,
+            "residual_prediction_Spearman": 0.09374120956399437,
+            "residual_target_correlation_mechanically_coupled": 0.7738952315018754,
+            "rmse": 11.810395013161449
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.66042412293478,
+            191.13271256483216,
+            196.02153256456555,
+            203.58025551173844
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 19,
+              "bias": 0.8566524069229885
+            },
+            {
+              "bin": 1,
+              "n": 19,
+              "bias": -3.5916586620965707
+            },
+            {
+              "bin": 2,
+              "n": 13,
+              "bias": -7.418343777166327
+            },
+            {
+              "bin": 3,
+              "n": 16,
+              "bias": 3.39860827219694
+            },
+            {
+              "bin": 4,
+              "n": 13,
+              "bias": 2.322741718211872
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 10,
+              "bias": -17.167379894390507,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 9,
+              "bias": 15.245437738315145,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "moments": {
+            "n": 80,
+            "target_mean": 196.00575540518238,
+            "prediction_mean": 195.36527016841163,
+            "mean_residual": 0.6404852367708017,
+            "target_std": 17.36210114354407,
+            "prediction_std": 9.376695469233706,
+            "affine_slope_diagnostic_only": 1.3319762530729045,
+            "residual_prediction_Pearson": 0.24991342025237037,
+            "residual_prediction_Spearman": 0.2067510548523207,
+            "residual_target_correlation_mechanically_coupled": 0.8523758997825875,
+            "rmse": 12.472130924914959
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.0830992850422,
+            190.06294241933156,
+            195.80397557218214,
+            203.07779601870564
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 10,
+              "bias": 0.3167661359346937
+            },
+            {
+              "bin": 1,
+              "n": 13,
+              "bias": -7.218553669076643
+            },
+            {
+              "bin": 2,
+              "n": 25,
+              "bias": 0.8383597946243253
+            },
+            {
+              "bin": 3,
+              "n": 13,
+              "bias": 5.3989818538113745
+            },
+            {
+              "bin": 4,
+              "n": 19,
+              "bias": 2.671926121850398
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 6,
+              "bias": -17.201515466416456,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 7,
+              "bias": 25.359896544340668,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        }
+      ],
+      "official_topic_proxy_associations": [
+        {
+          "feature": "inverse_sqrt_grain_diameter",
+          "residual_spearman": -0.06862917893236832,
+          "target_spearman": -0.33321414508840674
+        },
+        {
+          "feature": "grain_size_cv",
+          "residual_spearman": 0.07271276695479345,
+          "target_spearman": 0.3109594434965218
+        },
+        {
+          "feature": "pore_fraction15",
+          "residual_spearman": 0.0340226979863151,
+          "target_spearman": -0.13494037688739396
+        },
+        {
+          "feature": "pore_fraction30",
+          "residual_spearman": -0.024032690466576027,
+          "target_spearman": -0.1332447577465294
+        },
+        {
+          "feature": "pore_diameter",
+          "residual_spearman": -0.009014868842930268,
+          "target_spearman": -0.19716610728817052
+        },
+        {
+          "feature": "grain_alignment",
+          "residual_spearman": 0.05185719910749442,
+          "target_spearman": 0.20909661935387094
+        }
+      ],
+      "predictions_sha256": "97b1f05dd273df0b76e61d8ca53ec8ec95458d724ac438c2803fac5d8c2f0a36"
+    },
+    "20261101": {
+      "ensemble008": {
+        "n": 400,
+        "target_mean": 194.07675825940854,
+        "prediction_mean": 194.09553273584004,
+        "mean_residual": -0.018774476431491962,
+        "target_std": 18.034520585010153,
+        "prediction_std": 10.514769319964714,
+        "affine_slope_diagnostic_only": 1.159692529216736,
+        "residual_prediction_Pearson": 0.12537378809648203,
+        "residual_prediction_Spearman": 0.07728554553465959,
+        "residual_target_correlation_mechanically_coupled": 0.81572826507212,
+        "rmse": 13.393004886763789
+      },
+      "components": {
+        "reference003": {
+          "n": 400,
+          "target_mean": 194.07675825940854,
+          "prediction_mean": 194.13420538225822,
+          "mean_residual": -0.05744712284967484,
+          "target_std": 18.034520585010153,
+          "prediction_std": 10.582400517542707,
+          "affine_slope_diagnostic_only": 1.1104932996302537,
+          "residual_prediction_Pearson": 0.08516360205818996,
+          "residual_prediction_Spearman": 0.03832617703860649,
+          "residual_target_correlation_mechanically_coupled": 0.8112827555897233,
+          "rmse": 13.729980391208457
+        },
+        "Smean": {
+          "n": 400,
+          "target_mean": 194.07675825940854,
+          "prediction_mean": 193.93773445424847,
+          "mean_residual": 0.13902380516006027,
+          "target_std": 18.034520585010153,
+          "prediction_std": 12.911813604601754,
+          "affine_slope_diagnostic_only": 0.8303250334971803,
+          "residual_prediction_Pearson": -0.1493760864261726,
+          "residual_prediction_Spearman": -0.15739110869442932,
+          "residual_target_correlation_mechanically_coupled": 0.7062953439567579,
+          "rmse": 14.667072997232468
+        },
+        "Bmean": {
+          "n": 400,
+          "target_mean": 194.07675825940854,
+          "prediction_mean": 194.0212951389225,
+          "mean_residual": 0.05546312048604179,
+          "target_std": 18.034520585010153,
+          "prediction_std": 12.398330939804373,
+          "affine_slope_diagnostic_only": 0.9181355468986985,
+          "residual_prediction_Pearson": -0.07237083482041999,
+          "residual_prediction_Spearman": -0.10189732435827722,
+          "residual_target_correlation_mechanically_coupled": 0.7279078173933867,
+          "rmse": 14.02485574576349
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "moments": {
+            "n": 80,
+            "target_mean": 193.46707840320306,
+            "prediction_mean": 192.90712295345512,
+            "mean_residual": 0.5599554497479285,
+            "target_std": 16.666004082271137,
+            "prediction_std": 10.165778376369039,
+            "affine_slope_diagnostic_only": 0.9392650598028457,
+            "residual_prediction_Pearson": -0.04515421162732652,
+            "residual_prediction_Spearman": -0.06865916549460853,
+            "residual_target_correlation_mechanically_coupled": 0.7929022898091515,
+            "rmse": 13.68500128247352
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.87120721335216,
+            190.8274430633332,
+            196.5659495815065,
+            203.25798444233297
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 16,
+              "bias": 0.9609798341334894
+            },
+            {
+              "bin": 1,
+              "n": 20,
+              "bias": -0.3078145192139516
+            },
+            {
+              "bin": 2,
+              "n": 16,
+              "bias": -0.4858907208387677
+            },
+            {
+              "bin": 3,
+              "n": 15,
+              "bias": 5.716630166627793
+            },
+            {
+              "bin": 4,
+              "n": 13,
+              "bias": -3.2613963036937785
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 6,
+              "bias": -18.31779332669235,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 8,
+              "bias": 25.912555007736415,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "moments": {
+            "n": 80,
+            "target_mean": 195.36853723413773,
+            "prediction_mean": 194.53533229881373,
+            "mean_residual": 0.8332049353240041,
+            "target_std": 16.772457336320358,
+            "prediction_std": 8.630763576897388,
+            "affine_slope_diagnostic_only": 1.2413835275240381,
+            "residual_prediction_Pearson": 0.15937922353904146,
+            "residual_prediction_Spearman": 0.11279887482419129,
+            "residual_target_correlation_mechanically_coupled": 0.8613559453665309,
+            "rmse": 13.098019664407973
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.30950565198768,
+            190.6234264470043,
+            196.14475921260743,
+            203.5564532012653
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 9,
+              "bias": -1.7811258880068377
+            },
+            {
+              "bin": 1,
+              "n": 20,
+              "bias": 1.092724553126247
+            },
+            {
+              "bin": 2,
+              "n": 18,
+              "bias": -5.093813674779996
+            },
+            {
+              "bin": 3,
+              "n": 22,
+              "bias": 4.954591787485813
+            },
+            {
+              "bin": 4,
+              "n": 11,
+              "bias": 3.956333052437179
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 9,
+              "bias": -22.65217113683726,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 5,
+              "bias": 29.751965489803222,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "moments": {
+            "n": 80,
+            "target_mean": 191.9377292940047,
+            "prediction_mean": 194.45028955971068,
+            "mean_residual": -2.5125602657059476,
+            "target_std": 17.880507900983993,
+            "prediction_std": 9.610634032712928,
+            "affine_slope_diagnostic_only": 1.3319398491273369,
+            "residual_prediction_Pearson": 0.24758184784916257,
+            "residual_prediction_Spearman": 0.2237693389592124,
+            "residual_target_correlation_mechanically_coupled": 0.8537040546288556,
+            "rmse": 13.127926748613318
+          },
+          "predicted_quintiles_train_quantiles": [
+            184.50093432048368,
+            190.6234264470043,
+            196.09461286056003,
+            202.95003091450923
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 12,
+              "bias": -3.5397646619974217
+            },
+            {
+              "bin": 1,
+              "n": 17,
+              "bias": -9.371675287580906
+            },
+            {
+              "bin": 2,
+              "n": 17,
+              "bias": -4.875909148843381
+            },
+            {
+              "bin": 3,
+              "n": 17,
+              "bias": 4.566589042876352
+            },
+            {
+              "bin": 4,
+              "n": 17,
+              "bias": 0.3558397869298915
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 12,
+              "bias": -19.60281229199018,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 5,
+              "bias": 22.291114405759128,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "moments": {
+            "n": 80,
+            "target_mean": 194.72587389615322,
+            "prediction_mean": 194.72584290448646,
+            "mean_residual": 3.099166675042397e-05,
+            "target_std": 20.072258296408275,
+            "prediction_std": 11.987634310525493,
+            "affine_slope_diagnostic_only": 1.2229567503299934,
+            "residual_prediction_Pearson": 0.19134235664031393,
+            "residual_prediction_Spearman": 0.1037037037037037,
+            "residual_target_correlation_mechanically_coupled": 0.8101741183086677,
+            "rmse": 13.968281968272564
+          },
+          "predicted_quintiles_train_quantiles": [
+            185.20692106134126,
+            190.68946223766233,
+            196.24302691061027,
+            202.86215519659314
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 20,
+              "bias": 0.41163236448542906
+            },
+            {
+              "bin": 1,
+              "n": 12,
+              "bias": -2.0371978424909067
+            },
+            {
+              "bin": 2,
+              "n": 17,
+              "bias": -6.4532852065556865
+            },
+            {
+              "bin": 3,
+              "n": 11,
+              "bias": 3.174231865695157
+            },
+            {
+              "bin": 4,
+              "n": 20,
+              "bias": 4.550275207116114
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 9,
+              "bias": -17.88892477355501,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 12,
+              "bias": 18.207866005608597,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "moments": {
+            "n": 80,
+            "target_mean": 194.8845724695439,
+            "prediction_mean": 193.8590759627341,
+            "mean_residual": 1.0254965068098045,
+            "target_std": 18.353494716334357,
+            "prediction_std": 11.692573706596324,
+            "affine_slope_diagnostic_only": 1.1119690103402133,
+            "residual_prediction_Pearson": 0.10055400799249804,
+            "residual_prediction_Spearman": 0.04259259259259259,
+            "residual_target_correlation_mechanically_coupled": 0.7734582973039715,
+            "rmse": 13.060251084559912
+          },
+          "predicted_quintiles_train_quantiles": [
+            185.4560599232063,
+            190.79838795864384,
+            196.03165738560767,
+            202.86605445877257
+          ],
+          "predicted_quintile_residuals": [
+            {
+              "bin": 0,
+              "n": 23,
+              "bias": 3.0635628836394186
+            },
+            {
+              "bin": 1,
+              "n": 12,
+              "bias": -4.805336191786199
+            },
+            {
+              "bin": 2,
+              "n": 10,
+              "bias": -4.311668619882402
+            },
+            {
+              "bin": 3,
+              "n": 15,
+              "bias": 3.838916477769243
+            },
+            {
+              "bin": 4,
+              "n": 20,
+              "bias": 2.738737377739875
+            }
+          ],
+          "true_target_tails_descriptive_only": [
+            {
+              "tail": "low",
+              "n": 6,
+              "bias": -15.809153123765705,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            },
+            {
+              "tail": "high",
+              "n": 10,
+              "bias": 20.57153136202579,
+              "warning": "Grouping by observed target mechanically induces residual association; not an actionable calibration input."
+            }
+          ]
+        }
+      ],
+      "official_topic_proxy_associations": [
+        {
+          "feature": "inverse_sqrt_grain_diameter",
+          "residual_spearman": -0.05731479571747322,
+          "target_spearman": -0.33321414508840674
+        },
+        {
+          "feature": "grain_size_cv",
+          "residual_spearman": 0.07289314308214426,
+          "target_spearman": 0.3109594434965218
+        },
+        {
+          "feature": "pore_fraction15",
+          "residual_spearman": 0.027319990418703657,
+          "target_spearman": -0.13494037688739396
+        },
+        {
+          "feature": "pore_fraction30",
+          "residual_spearman": -0.024367005181411036,
+          "target_spearman": -0.1332447577465294
+        },
+        {
+          "feature": "pore_diameter",
+          "residual_spearman": -0.010953818461365382,
+          "target_spearman": -0.19716610728817052
+        },
+        {
+          "feature": "grain_alignment",
+          "residual_spearman": 0.061590009937562105,
+          "target_spearman": 0.20909661935387094
+        }
+      ],
+      "predictions_sha256": "9ed17aaf9a88d21189e18d29a04040f19470a74624583ac2c993249ab6494038"
+    }
+  },
+  "decision": "A single nested affinecalibration experiment is supported bypositive residual-vs-prediction relation andslope~1.16 inall3partitions. Theseare reused400,notindependentconfirmation. No correction fitted/evaluated ontheentireOOF here.",
+  "leakage_warning": "Do not split existingglobalOOF residuals totraincalibrator: source predictors forcalibrationrows mayhavetrainedonoutervalidationlabels. Refitall008componentsinsideeachoutertrainingfold tocreateinnerOOFcalibrationpairs.",
+  "sources": {
+    "diagnose_bias_073.py": "4f5d28dc5e98ee43fbfd2dcb5367a127899afdf3e22cf5989a0cc900e4d75ab7",
+    "candidate008_pipeline.py": "57204586a6e7f96dee7b5a172ca6e4e163b479ec7d37e6f9988d48029448f2e5",
+    "candidate_pipeline.py": "7495e2b0c6ff14d163cc6bc539798b94f20605f4c02d3cb3305363422ecc1b28",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "grain_features.py": "0b2dcc4d9a528718c418ee784ccb0dee836f8887fbe12989139aab4a0ed705e0",
+    "candidate_features.py": "47c239d8836c2f6cc79c9fbde644702f2ca3c5a59f63fec339656b1178495a4e",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+    "dinob_mlp_head_063.py": "e841bc72082d27f68b2bdad2d81ccf3eb2b127661bef347506cff6eb6ab04431",
+    "src/microstructure_v2/features.py": "199c6d5a5ff4fd30191d98cf3db0613616c121100514cc5df24bf53b8d630ee9",
+    "stabilize.py": "25f3d4587c9679c0416438877d61e0bf1fe09ac770603064aed52ccae9b19667"
+  },
+  "diagnostics_sha256": "1f6c4b11c26c9504568d81e29f46e1e7e703b395ed3194eaac1dc9274f2f404a",
+  "scope": "Development400only,noholdout/test read, no newmodelhere.",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

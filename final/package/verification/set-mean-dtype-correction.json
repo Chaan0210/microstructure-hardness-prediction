@@ -1,0 +1,14 @@
+{
+  "issue": "The diagnostic direct076 component cache stored Set as mean after per-seed fallback, promoted to float64. Actual make_053.py uses raw float32 seed mean and float32*0.05.",
+  "preexisting_diagnostic_difference_HV": 1.5894572413799324e-06,
+  "source_evidence": [
+    "experiments/push-900/make_053.py",
+    "experiments/probabilistic-grains-900/set_model/finalize500.py",
+    "experiments/plateau-break-20261016-2035/cache-replay.json"
+  ],
+  "repair": "Use original set_mean_raw in cached construction check and preserve rawmean dtype for freshly replayed Set outputs.",
+  "coefficients_changed": false,
+  "training_changed": false,
+  "numerical_acceptance_tolerance_changed": false,
+  "original_artifacts_modified": false
+}

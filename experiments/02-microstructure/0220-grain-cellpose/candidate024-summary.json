@@ -1,0 +1,31 @@
+{
+ "candidate": "024",
+ "weight": 0.5,
+ "n_train": 500,
+ "test_failed_segmentations": 7,
+ "pred_stats": {
+  "mean": 193.7045754605419,
+  "std": 11.89480061154755,
+  "min": 161.62403306294613,
+  "max": 245.6411562216869
+ },
+ "corr_best021_vs_grain_test": 0.773327418527203,
+ "rms_change_vs_021": 4.30587353944275,
+ "rms_change_vs_023": 3.1036986242728095,
+ "csv": "artifacts/submission-candidate-024.csv",
+ "csv_sha256": "debda8277b786a57a8cecb4d0246988b0a87387fd621fea4580098ea617f6448",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "uploaded": false,
+ "formula": "0.5*best021 + 0.5*grain-v3 (fallback best021 if n_obj<20)",
+ "family": "krr",
+ "family_cv_rmse": {
+  "ridge": 12.900697654862622,
+  "krr": 12.36458073616423,
+  "hgb": 13.394690559138201
+ },
+ "model_params": {
+  "kernelridge__alpha": 0.1,
+  "kernelridge__gamma": 0.002
+ },
+ "dev_evidence": "validation-v3.json arm B: pooled 3-partition OOF 11.872 vs v2 blend 12.240 (gain 0.368, CI [0.100,0.651]); vs 021 12.815."
+}

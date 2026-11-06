@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "rows": 3,
+  "batch": 1,
+  "dtype": "float32",
+  "parameters": 304368640,
+  "devices": {
+    "cpu": {
+      "image_seconds": [
+        1.1582837919995654,
+        1.189526542002568,
+        1.1668181249988265
+      ],
+      "median_image_seconds": 1.1668181249988265,
+      "repeat_error": 0.0,
+      "resource": {
+        "RSS": 2264825856,
+        "peak_RSS": 2674049024,
+        "MPS_driver": 393216,
+        "conservative_RSS_plus_MPS": 2265219072,
+        "swap_bytes": 0,
+        "system_memory_free_percent": 73
+      }
+    },
+    "mps": {
+      "image_seconds": [
+        0.34741229099745397,
+        0.3570226250012638,
+        0.3570756659973995
+      ],
+      "median_image_seconds": 0.3570226250012638,
+      "repeat_error": 0.0,
+      "resource": {
+        "RSS": 1065795584,
+        "peak_RSS": 2674049024,
+        "MPS_driver": 2194309120,
+        "conservative_RSS_plus_MPS": 3260104704,
+        "swap_bytes": 0,
+        "system_memory_free_percent": 57
+      }
+    }
+  },
+  "CPU_MPS_max_abs": 8.440017700195312e-05,
+  "weights_unchanged": true,
+  "seconds": 15.020942374998413,
+  "projected400_MPS_seconds": 142.80905000050552,
+  "feature_sha256": "863590a1d199276137df52aafd44ca319f373fa91059acc4a9a366811cfcdb1b",
+  "no_labels_read": true,
+  "scope": "3 originalfold0-training images only"
+}

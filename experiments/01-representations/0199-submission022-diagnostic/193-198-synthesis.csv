@@ -1,0 +1,7 @@
+study,meaning,limit,status
+193,동일TinyCNN에서 true CE가 detach/고정순열보다 단독OOF를 개선:15.03231815→14.72499846. CEgradient가trunk에전달되고scalarhead에는직접전달되지않음을 검증.,고정10%추가12.79322535는best02112.78620078보다악화.단독개선과앙상블보완성은다름.원본400재사용·1seed/fold.순열대조는학습난도차이도포함.,추가방식 기준미달
+194,"기존첫CNN seed만고정치환하면12.76150457,원본400평균gain.02469621;detach는best021 exact.","조건부95CI[-.00809346,.05882551]로0포함.198탐색선택전부터기준미달.상위5가순SSE개선73.1%,상위10제외악화.",CI기준미달 유지
+195,"기존CLS/mean/std에max또는min만추가,train-only스케일/fullRidge EDF32대조.두추가군이기준보다모든fold악화.",이특징·Ridge·EDF의음성결과.모든극값통계/MLP/signedGeM무용성으로일반화불가.,max/min 확대종료;GeM정의미확인
+196,4query4head cross/self mixer의mean대MHA.거의uniform한attention과약한score경로를확인.고정10%결합12.84086447로best021미달.,parameter count equal != effective capacity equal;mean투영중복·tiedQKV제약.출력slotcosine과rawquerycosine구별.20epoch로MHA전체능력판정불가.,사전기준미달
+197,"crossQ투영직전affinefreeLN한변경으로단독16.44024945→15.82276548,5/5fold개선.5fold mean은196학습exact.","결합12.82464418은best021미달,상위5이득제외pairedgain음수.정규화는중심화·스케일·gradientgeometry동시변경;순수temperature효과아님.",사전기준미달·확대없음
+198,"선택된194식을전체500에서3회학습/검증해022생성.동일seed반복exact,1000test형식/CPU-MPS/독립계산검증통과.",Public11.5435627849로021보다.0557110049악화.기술재현성은일반화증명이아님.전체500치환효과와OOF효과의표본별방향은약하게연결됨.,실제제출악화·best021 유지

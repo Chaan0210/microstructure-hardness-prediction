@@ -1,0 +1,52 @@
+{
+  "design": {
+    "status": "frozen_development_candidate_design_only",
+    "study": "dino-spatial-039",
+    "model": "officialdinov2_vits14originalnonregister,frozen",
+    "commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+    "preprocessing": "grayscaleRGBreplication,fullimagebicubic504,no crop/rotation/reflection,officialImageNetmean/std",
+    "descriptor": "finalnormalizedCLS384+1296patchmean384+patchpopulationstd384=1152",
+    "regressor": "Fold-trainedStandardScaler;targetmean/std;Ridgealpha=lambda*1152",
+    "inner_selection": "GroupKFold3lambda(.1,1,10),minpooledinnerRMSE;neverfitwithvalidationdata",
+    "ensemble": "0.75candidate003+0.25DINO,weightsunchanged",
+    "reference_candidate003_sha256": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "evidence": "reports/dino-039-validation.json",
+    "uncertainty": "Smallbutconsistent3partitionRMSEgain;allconditionalCIsinclude0. Historicaldevelopmentandmultiplemodelselectionoptimism remain. Not an established leaderboard improvement.",
+    "full500_model_fitted": false,
+    "test_features_or_predictions_created": false,
+    "submission_csv_created": false,
+    "next_scope_if_advanced": "Freeze this recipe,fitregressoronpermittedfulltrainingdata using train-onlyinnerselection,combineunchanged003 model,thenprediction/format/extrapolation/reloadchecks. Current task limited todevelopment400; these steps were not executed."
+  },
+  "design_sha256": "1675f7a1e9ddae89388136220e9b3c626e90b1ccdf6169f5585cd14d7f1de072",
+  "source_sha256": {
+    "candidate005_pipeline.py": "8189ea9cdfaef4904d6af8dd3ea15819d4a87325737efb18bb5077187726c08f",
+    "dino_spatial_039.py": "6a5a2546cf3266dd67fcaccae2dfe978bc431349cec2d5ab784b9a065e79c692",
+    "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353",
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5",
+    "candidate_pipeline.py": "7495e2b0c6ff14d163cc6bc539798b94f20605f4c02d3cb3305363422ecc1b28",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64"
+  },
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/submission-candidate-003.components.csv": "fea51417718a17574fb50f9f36850e6d61d765cbd0025eb5cf8e2fa42fc6d5d8",
+    "artifacts/submission-candidate-003.manifest.json": "e4f8b14bf902296535329b9e657b98c9184d00b5aa4778a97ab8d40df0c60314",
+    "artifacts/dino-spatial-039/candidate-design.json": "1675f7a1e9ddae89388136220e9b3c626e90b1ccdf6169f5585cd14d7f1de072",
+    "artifacts/final-model-017/baseline.joblib": "7667b2b36483ba1b93a8e2874d4de96d12f38492ea6815f9ce24c87d09bab83e",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9",
+    "artifacts/final-model-017/training-curve.json": "5485044c48a4ef034f552753af9536c8851b83395d27d7c08b73f67b1d448c23",
+    "artifacts/final-model-017/kernel.joblib": "1dd0482997b5a5ac198dfea4952cc6d74c8694646238c65825eaf4786837eb4b",
+    "artifacts/final-model-017/decision.json": "fdb0efbbc7d2b81a53ed0828c752b19a0cf3b928129f3cb5e5e6d037ae034f7b",
+    "artifacts/final-model-017/cnn.pt": "7fa2cea78e1365cf280efe6695e758cff8c3da857ffb387d21787195cb472fb0"
+  },
+  "inner_seed": 20261120,
+  "inner_splits": 3,
+  "lambdas": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "fit_scope": "Alltrain500includingformerholdout; no separateholdoutscore,notestread",
+  "ensemble": "unchanged003(.75)+newDINO(.25);003isalreadyfitonall500andisnotaltered",
+  "source_version": "OriginalpinnedofficialDINOv2alreadyinstalled"
+}

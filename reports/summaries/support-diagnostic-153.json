@@ -1,0 +1,3610 @@
+{
+  "study": "153 residual/model and feature-support audit",
+  "utc": "2026-10-04T12:40:36.720763+00:00",
+  "scope": "Existing400 development only. No new candidate predictions, fit, threshold, blending, holdout or test.",
+  "partition_diagnostics": {
+    "original": {
+      "remaining018_RMSE": 12.811945280526919,
+      "residual_mean": 0.2885487950972239,
+      "component_order": [
+        "KRR",
+        "CNNmean3",
+        "Smean3",
+        "Bmean3"
+      ],
+      "component_error_correlation": [
+        [
+          1.0,
+          0.8015811283821729,
+          0.7610303853186964,
+          0.7910511627710655
+        ],
+        [
+          0.8015811283821729,
+          1.0,
+          0.7139842255123646,
+          0.741132522072024
+        ],
+        [
+          0.7610303853186963,
+          0.7139842255123645,
+          1.0,
+          0.8793905468158919
+        ],
+        [
+          0.7910511627710655,
+          0.741132522072024,
+          0.8793905468158918,
+          1.0
+        ]
+      ],
+      "remaining_residual_dot_component_disagreement": [
+        -5.747210997205194,
+        0.931012164023602,
+        3.2841315608368937,
+        3.9401666889355558
+      ],
+      "spatial_clip_fraction_mean": 0.01860479797979798,
+      "spatial_lost_standardized_RMS_per_row_mean": 0.06863155073191111,
+      "squared_error_correlation_with_lost_amplitude": -0.06180490901160292
+    },
+    "20261031": {
+      "remaining018_RMSE": 12.645872618239814,
+      "residual_mean": 0.10444097328676584,
+      "component_order": [
+        "KRR",
+        "CNNmean3",
+        "Smean3",
+        "Bmean3"
+      ],
+      "component_error_correlation": [
+        [
+          0.9999999999999999,
+          0.7957463401169176,
+          0.7725352715500593,
+          0.7956888610969476
+        ],
+        [
+          0.7957463401169176,
+          1.0,
+          0.6851939187413766,
+          0.7033616200820053
+        ],
+        [
+          0.7725352715500593,
+          0.6851939187413766,
+          1.0,
+          0.8854923137422852
+        ],
+        [
+          0.7956888610969475,
+          0.7033616200820053,
+          0.8854923137422852,
+          1.0
+        ]
+      ],
+      "remaining_residual_dot_component_disagreement": [
+        -5.812491066609758,
+        7.036521089599355,
+        0.2790715864587729,
+        -2.115116620943175
+      ],
+      "spatial_clip_fraction_mean": 0.018244949494949494,
+      "spatial_lost_standardized_RMS_per_row_mean": 0.06717347711741206,
+      "squared_error_correlation_with_lost_amplitude": -0.03890940175585297
+    },
+    "20261101": {
+      "remaining018_RMSE": 13.048624416802191,
+      "residual_mean": -0.0155099086112822,
+      "component_order": [
+        "KRR",
+        "CNNmean3",
+        "Smean3",
+        "Bmean3"
+      ],
+      "component_error_correlation": [
+        [
+          0.9999999999999999,
+          0.8132197943991161,
+          0.7935862122578611,
+          0.8194188338168762
+        ],
+        [
+          0.8132197943991161,
+          1.0,
+          0.727721736051342,
+          0.7383609537666543
+        ],
+        [
+          0.7935862122578612,
+          0.7277217360513422,
+          1.0,
+          0.8948024785104827
+        ],
+        [
+          0.8194188338168762,
+          0.7383609537666542,
+          0.8948024785104827,
+          1.0
+        ]
+      ],
+      "remaining_residual_dot_component_disagreement": [
+        -2.729422097567124,
+        4.696878754555602,
+        -3.9170074106910495,
+        0.9658224252083246
+      ],
+      "spatial_clip_fraction_mean": 0.018740530303030304,
+      "spatial_lost_standardized_RMS_per_row_mean": 0.0692325708733145,
+      "squared_error_correlation_with_lost_amplitude": -0.06697033306063284
+    }
+  },
+  "feature_support_summary": {
+    "inner_B_train": {
+      "nodes": 135,
+      "train_n_range": [
+        70,
+        72
+      ],
+      "physics": {
+        "coordinate_fraction": 0.027078498715925617,
+        "rows_any": 0.5084597295708407,
+        "lost_standardized_RMS": 0.14085970364270542,
+        "largest_lost_standardized": 3.8831606778753
+      },
+      "spatial": {
+        "coordinate_fraction": 0.027618268220120073,
+        "rows_any": 0.9910052910052911,
+        "lost_standardized_RMS": 0.1247092313053502,
+        "largest_lost_standardized": 4.163774082801664
+      }
+    },
+    "full_honest_B": {
+      "nodes": 45,
+      "train_n_range": [
+        106,
+        107
+      ],
+      "physics": {
+        "coordinate_fraction": 0.018703703703703705,
+        "rows_any": 0.38444444444444437,
+        "lost_standardized_RMS": 0.11504859688403721,
+        "largest_lost_standardized": 4.327751578362211
+      },
+      "spatial": {
+        "coordinate_fraction": 0.01853009259259259,
+        "rows_any": 0.9658333333333334,
+        "lost_standardized_RMS": 0.09869731471821361,
+        "largest_lost_standardized": 4.481437088804092
+      }
+    }
+  },
+  "records": [
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.015131578947368421,
+        "rows_any": 0.325,
+        "lost_standardized_RMS": 0.058443005543540226,
+        "largest_lost_standardized": 2.4656773782448083
+      },
+      "spatial": {
+        "coordinate_fraction": 0.013233901515151514,
+        "rows_any": 0.9625,
+        "lost_standardized_RMS": 0.06512712924965401,
+        "largest_lost_standardized": 3.4660560318944165
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.029239766081871343,
+        "rows_any": 0.5833333333333334,
+        "lost_standardized_RMS": 0.06631520489960538,
+        "largest_lost_standardized": 1.4927625643043034
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026462542087542087,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10372482698362234,
+        "largest_lost_standardized": 3.3340634040367076
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02729044834307992,
+        "rows_any": 0.4166666666666667,
+        "lost_standardized_RMS": 0.12345459502189712,
+        "largest_lost_standardized": 3.434733155256216
+      },
+      "spatial": {
+        "coordinate_fraction": 0.025620791245791245,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11384291085329397,
+        "largest_lost_standardized": 3.4117658060193294
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.016541353383458645,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.19944524037111178,
+        "largest_lost_standardized": 7.800479196055327
+      },
+      "spatial": {
+        "coordinate_fraction": 0.028300865800865802,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10759954964818447,
+        "largest_lost_standardized": 2.2208826955157566
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.017543859649122806,
+        "rows_any": 0.45,
+        "lost_standardized_RMS": 0.13790737921716603,
+        "largest_lost_standardized": 5.563626938131346
+      },
+      "spatial": {
+        "coordinate_fraction": 0.015861742424242424,
+        "rows_any": 0.95,
+        "lost_standardized_RMS": 0.06931236059716456,
+        "largest_lost_standardized": 2.6206069666209757
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.029239766081871343,
+        "rows_any": 0.4722222222222222,
+        "lost_standardized_RMS": 0.14181057320301296,
+        "largest_lost_standardized": 4.245320597765858
+      },
+      "spatial": {
+        "coordinate_fraction": 0.032407407407407406,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.18074873790891688,
+        "largest_lost_standardized": 6.647281750142499
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.018031189083820662,
+        "rows_any": 0.3333333333333333,
+        "lost_standardized_RMS": 0.1280884362447544,
+        "largest_lost_standardized": 5.303615653513378
+      },
+      "spatial": {
+        "coordinate_fraction": 0.029408670033670033,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11660860895800028,
+        "largest_lost_standardized": 3.433962739717952
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02205513784461153,
+        "rows_any": 0.6285714285714286,
+        "lost_standardized_RMS": 0.10381872434138421,
+        "largest_lost_standardized": 2.9156618199700484
+      },
+      "spatial": {
+        "coordinate_fraction": 0.022564935064935066,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11921403645933658,
+        "largest_lost_standardized": 5.966928708334779
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.009649122807017544,
+        "rows_any": 0.25,
+        "lost_standardized_RMS": 0.05625251092271308,
+        "largest_lost_standardized": 2.3509072934069466
+      },
+      "spatial": {
+        "coordinate_fraction": 0.011955492424242424,
+        "rows_any": 0.9375,
+        "lost_standardized_RMS": 0.06220810519948032,
+        "largest_lost_standardized": 3.1946604403179917
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.024366471734892786,
+        "rows_any": 0.4166666666666667,
+        "lost_standardized_RMS": 0.07875714063736272,
+        "largest_lost_standardized": 1.908021434035456
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02882996632996633,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11678542044993118,
+        "largest_lost_standardized": 2.8981237358770207
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.033583959899749376,
+        "rows_any": 0.5714285714285714,
+        "lost_standardized_RMS": 0.1390975947984881,
+        "largest_lost_standardized": 2.4563741205896887
+      },
+      "spatial": {
+        "coordinate_fraction": 0.022456709956709956,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10734025807458913,
+        "largest_lost_standardized": 4.58982326478392
+      }
+    },
+    {
+      "split": "original",
+      "outer": 0,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.021052631578947368,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.0753318143619796,
+        "largest_lost_standardized": 2.5106508625974415
+      },
+      "spatial": {
+        "coordinate_fraction": 0.030735930735930735,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.14138488132823945,
+        "largest_lost_standardized": 3.842987605341634
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.021271929824561404,
+        "rows_any": 0.35,
+        "lost_standardized_RMS": 0.20835970279349458,
+        "largest_lost_standardized": 6.6192326539618564
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023200757575757576,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.13981473902889388,
+        "largest_lost_standardized": 7.22188938461719
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.025828460038986353,
+        "rows_any": 0.5,
+        "lost_standardized_RMS": 0.08670840435994631,
+        "largest_lost_standardized": 2.7932511366106527
+      },
+      "spatial": {
+        "coordinate_fraction": 0.025936447811447813,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1022129200050487,
+        "largest_lost_standardized": 2.81660320315549
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.026803118908382065,
+        "rows_any": 0.5555555555555556,
+        "lost_standardized_RMS": 0.11883503786758504,
+        "largest_lost_standardized": 4.332766365474281
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02925084175084175,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.1069952454987282,
+        "largest_lost_standardized": 2.4603757151061756
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02706766917293233,
+        "rows_any": 0.5142857142857142,
+        "lost_standardized_RMS": 0.1539308213292343,
+        "largest_lost_standardized": 5.222959387090468
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026785714285714284,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.1284143285664209,
+        "largest_lost_standardized": 4.428531184564595
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.01732456140350877,
+        "rows_any": 0.3875,
+        "lost_standardized_RMS": 0.07161896267464617,
+        "largest_lost_standardized": 4.587626494757
+      },
+      "spatial": {
+        "coordinate_fraction": 0.021519886363636363,
+        "rows_any": 0.9875,
+        "lost_standardized_RMS": 0.1312123958748127,
+        "largest_lost_standardized": 7.695042548671716
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.026803118908382065,
+        "rows_any": 0.4722222222222222,
+        "lost_standardized_RMS": 0.10603227746529145,
+        "largest_lost_standardized": 2.3777875192576485
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03330176767676768,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1544621842859969,
+        "largest_lost_standardized": 4.307453003057879
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.04337231968810916,
+        "rows_any": 0.6944444444444444,
+        "lost_standardized_RMS": 0.19088742752085808,
+        "largest_lost_standardized": 3.9788191126518138
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03140782828282828,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.12669195449578,
+        "largest_lost_standardized": 4.121888814457389
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.009523809523809525,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.01940020423431198,
+        "largest_lost_standardized": 0.5347408641690471
+      },
+      "spatial": {
+        "coordinate_fraction": 0.018560606060606062,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.07379804488557104,
+        "largest_lost_standardized": 1.984247925747199
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.01293859649122807,
+        "rows_any": 0.3375,
+        "lost_standardized_RMS": 0.09163550932186806,
+        "largest_lost_standardized": 5.463497269245829
+      },
+      "spatial": {
+        "coordinate_fraction": 0.015672348484848483,
+        "rows_any": 0.9375,
+        "lost_standardized_RMS": 0.10858684939587918,
+        "largest_lost_standardized": 6.309385848268219
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.033625730994152045,
+        "rows_any": 0.5833333333333334,
+        "lost_standardized_RMS": 0.3145558756085881,
+        "largest_lost_standardized": 10.22163647546258
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03530092592592592,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.13710835438565822,
+        "largest_lost_standardized": 3.1484592484224443
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.017042606516290727,
+        "rows_any": 0.34285714285714286,
+        "lost_standardized_RMS": 0.08686397536804374,
+        "largest_lost_standardized": 3.255123615113789
+      },
+      "spatial": {
+        "coordinate_fraction": 0.018127705627705628,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.0852223896322611,
+        "largest_lost_standardized": 3.0621167569799135
+      }
+    },
+    {
+      "split": "original",
+      "outer": 1,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.039097744360902256,
+        "rows_any": 0.6285714285714286,
+        "lost_standardized_RMS": 0.12841699314102556,
+        "largest_lost_standardized": 4.1736935880133
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03533549783549784,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1766848511756226,
+        "largest_lost_standardized": 5.652315829949239
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.0206140350877193,
+        "rows_any": 0.3625,
+        "lost_standardized_RMS": 0.1394092850199499,
+        "largest_lost_standardized": 3.738540901409544
+      },
+      "spatial": {
+        "coordinate_fraction": 0.019081439393939394,
+        "rows_any": 0.9625,
+        "lost_standardized_RMS": 0.09077431311130854,
+        "largest_lost_standardized": 4.08312356996255
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.022417153996101363,
+        "rows_any": 0.4444444444444444,
+        "lost_standardized_RMS": 0.11447695805045126,
+        "largest_lost_standardized": 2.3177940464723688
+      },
+      "spatial": {
+        "coordinate_fraction": 0.0257260101010101,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.09672347480677378,
+        "largest_lost_standardized": 2.3335175014675364
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.038011695906432746,
+        "rows_any": 0.5555555555555556,
+        "lost_standardized_RMS": 0.12966094110594137,
+        "largest_lost_standardized": 3.180878216334977
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02704124579124579,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11301397226025249,
+        "largest_lost_standardized": 3.9391716341527014
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02355889724310777,
+        "rows_any": 0.4,
+        "lost_standardized_RMS": 0.10899687409196819,
+        "largest_lost_standardized": 2.1193017563834355
+      },
+      "spatial": {
+        "coordinate_fraction": 0.027435064935064934,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.10739088778627545,
+        "largest_lost_standardized": 2.936027363390829
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.02412280701754386,
+        "rows_any": 0.425,
+        "lost_standardized_RMS": 0.11787294291035225,
+        "largest_lost_standardized": 2.911570679111811
+      },
+      "spatial": {
+        "coordinate_fraction": 0.018560606060606062,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.08999733021621559,
+        "largest_lost_standardized": 4.338135454310598
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.024366471734892786,
+        "rows_any": 0.5,
+        "lost_standardized_RMS": 0.20868038017096188,
+        "largest_lost_standardized": 6.037513002846199
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026199494949494948,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.15748549757235097,
+        "largest_lost_standardized": 6.163765527756701
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.01705653021442495,
+        "rows_any": 0.4722222222222222,
+        "lost_standardized_RMS": 0.08525695402054773,
+        "largest_lost_standardized": 3.300990552183995
+      },
+      "spatial": {
+        "coordinate_fraction": 0.0211489898989899,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10347800268590078,
+        "largest_lost_standardized": 2.7373703061541237
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.03258145363408521,
+        "rows_any": 0.5714285714285714,
+        "lost_standardized_RMS": 0.08517305276292923,
+        "largest_lost_standardized": 1.7003547776975445
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03403679653679654,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.18515374295871243,
+        "largest_lost_standardized": 7.732108551274227
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.034210526315789476,
+        "rows_any": 0.5625,
+        "lost_standardized_RMS": 0.20867752185293256,
+        "largest_lost_standardized": 6.7601442924972055
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02168560606060606,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.09757601754373944,
+        "largest_lost_standardized": 3.984475376358939
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.03313840155945419,
+        "rows_any": 0.5555555555555556,
+        "lost_standardized_RMS": 0.11512280199296035,
+        "largest_lost_standardized": 2.752357450023294
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03119739057239057,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.130522408928563,
+        "largest_lost_standardized": 4.155769522873737
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.028070175438596492,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.1472829723210617,
+        "largest_lost_standardized": 3.3398913122814022
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023647186147186146,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10112623842386023,
+        "largest_lost_standardized": 3.6647841162885246
+      }
+    },
+    {
+      "split": "original",
+      "outer": 2,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.011528822055137845,
+        "rows_any": 0.2857142857142857,
+        "lost_standardized_RMS": 0.03153107874023525,
+        "largest_lost_standardized": 1.0981898547245097
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023647186147186146,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11113218244172794,
+        "largest_lost_standardized": 3.98011079538573
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.028070175438596492,
+        "rows_any": 0.4875,
+        "lost_standardized_RMS": 0.0865768309124998,
+        "largest_lost_standardized": 3.3935020958786475
+      },
+      "spatial": {
+        "coordinate_fraction": 0.024147727272727272,
+        "rows_any": 0.9875,
+        "lost_standardized_RMS": 0.12102136307826056,
+        "largest_lost_standardized": 4.483187979383738
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.018518518518518517,
+        "rows_any": 0.5277777777777778,
+        "lost_standardized_RMS": 0.1643374014161598,
+        "largest_lost_standardized": 7.291485627589631
+      },
+      "spatial": {
+        "coordinate_fraction": 0.028566919191919192,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11507342923437282,
+        "largest_lost_standardized": 3.197434343726701
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03996101364522417,
+        "rows_any": 0.5833333333333334,
+        "lost_standardized_RMS": 0.17036491320353278,
+        "largest_lost_standardized": 5.55662676756855
+      },
+      "spatial": {
+        "coordinate_fraction": 0.022569444444444444,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.0946885818140217,
+        "largest_lost_standardized": 3.5435951951969784
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02155388471177945,
+        "rows_any": 0.34285714285714286,
+        "lost_standardized_RMS": 0.051712312829893234,
+        "largest_lost_standardized": 1.144615775331305
+      },
+      "spatial": {
+        "coordinate_fraction": 0.0329004329004329,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.13320418749967938,
+        "largest_lost_standardized": 2.9395422733919454
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.019736842105263157,
+        "rows_any": 0.3875,
+        "lost_standardized_RMS": 0.09358216783422428,
+        "largest_lost_standardized": 2.7665628065807475
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02130681818181818,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.11613848497600997,
+        "largest_lost_standardized": 3.755166453850603
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02631578947368421,
+        "rows_any": 0.3888888888888889,
+        "lost_standardized_RMS": 0.0579584557447332,
+        "largest_lost_standardized": 1.5280297826954474
+      },
+      "spatial": {
+        "coordinate_fraction": 0.0186763468013468,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.07626869249081888,
+        "largest_lost_standardized": 2.283628356727114
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02290448343079922,
+        "rows_any": 0.3611111111111111,
+        "lost_standardized_RMS": 0.1683445963789765,
+        "largest_lost_standardized": 4.761372786132632
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03146043771043771,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.14619433390868292,
+        "largest_lost_standardized": 4.100943828339504
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02506265664160401,
+        "rows_any": 0.5714285714285714,
+        "lost_standardized_RMS": 0.07845250253199751,
+        "largest_lost_standardized": 2.093126733425622
+      },
+      "spatial": {
+        "coordinate_fraction": 0.029383116883116882,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.1335702917577276,
+        "largest_lost_standardized": 3.598350020503091
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.02675438596491228,
+        "rows_any": 0.4125,
+        "lost_standardized_RMS": 0.25698138357905764,
+        "largest_lost_standardized": 9.674469525465812
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023745265151515153,
+        "rows_any": 0.9625,
+        "lost_standardized_RMS": 0.12123044411278713,
+        "largest_lost_standardized": 3.70894213290604
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.020955165692007796,
+        "rows_any": 0.4722222222222222,
+        "lost_standardized_RMS": 0.0989560730060825,
+        "largest_lost_standardized": 2.7059892258559857
+      },
+      "spatial": {
+        "coordinate_fraction": 0.017466329966329967,
+        "rows_any": 0.9444444444444444,
+        "lost_standardized_RMS": 0.1348755457518272,
+        "largest_lost_standardized": 6.530205322653872
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03007518796992481,
+        "rows_any": 0.6285714285714286,
+        "lost_standardized_RMS": 0.09646654590541232,
+        "largest_lost_standardized": 3.2599659164665176
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026298701298701297,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10032572645972837,
+        "largest_lost_standardized": 3.0492229679407568
+      }
+    },
+    {
+      "split": "original",
+      "outer": 3,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.019548872180451128,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.05906000643224161,
+        "largest_lost_standardized": 1.326569664613916
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03538961038961039,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.17486169931853945,
+        "largest_lost_standardized": 7.295387276080424
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.01118421052631579,
+        "rows_any": 0.3,
+        "lost_standardized_RMS": 0.0782753140205539,
+        "largest_lost_standardized": 4.9730730624681305
+      },
+      "spatial": {
+        "coordinate_fraction": 0.016169507575757577,
+        "rows_any": 0.9625,
+        "lost_standardized_RMS": 0.09324662009806638,
+        "largest_lost_standardized": 6.130733263577151
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.027777777777777776,
+        "rows_any": 0.5555555555555556,
+        "lost_standardized_RMS": 0.10006962466876689,
+        "largest_lost_standardized": 3.443495322000736
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03345959595959596,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.16234407299446674,
+        "largest_lost_standardized": 4.317495767068118
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.023391812865497075,
+        "rows_any": 0.5555555555555556,
+        "lost_standardized_RMS": 0.10984491474811939,
+        "largest_lost_standardized": 4.045721744193269
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02556818181818182,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.10776334293091934,
+        "largest_lost_standardized": 3.692090871556941
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.03759398496240601,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.2976669421379234,
+        "largest_lost_standardized": 6.737626886260145
+      },
+      "spatial": {
+        "coordinate_fraction": 0.022186147186147188,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.0970019930638177,
+        "largest_lost_standardized": 3.1961860752822275
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.017105263157894738,
+        "rows_any": 0.3875,
+        "lost_standardized_RMS": 0.07108950097022702,
+        "largest_lost_standardized": 3.9128677270410823
+      },
+      "spatial": {
+        "coordinate_fraction": 0.018394886363636363,
+        "rows_any": 0.95,
+        "lost_standardized_RMS": 0.10222094652584233,
+        "largest_lost_standardized": 6.327530270905602
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.025341130604288498,
+        "rows_any": 0.4444444444444444,
+        "lost_standardized_RMS": 0.06767870974700588,
+        "largest_lost_standardized": 1.9651869870517875
+      },
+      "spatial": {
+        "coordinate_fraction": 0.030776515151515152,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11674060026410173,
+        "largest_lost_standardized": 3.011678276375451
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.024366471734892786,
+        "rows_any": 0.3888888888888889,
+        "lost_standardized_RMS": 0.657394184203416,
+        "largest_lost_standardized": 14.37262993246984
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02046506734006734,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.07704843878874935,
+        "largest_lost_standardized": 2.0932568281034483
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.028070175438596492,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.0833058392718207,
+        "largest_lost_standardized": 2.2013597181876916
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03317099567099567,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1619836066204848,
+        "largest_lost_standardized": 7.302171891187641
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.009649122807017544,
+        "rows_any": 0.3375,
+        "lost_standardized_RMS": 0.033837025706065935,
+        "largest_lost_standardized": 1.4550074984074404
+      },
+      "spatial": {
+        "coordinate_fraction": 0.014535984848484848,
+        "rows_any": 0.9375,
+        "lost_standardized_RMS": 0.07449152239925654,
+        "largest_lost_standardized": 4.368145713714822
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.020955165692007796,
+        "rows_any": 0.5,
+        "lost_standardized_RMS": 0.20087375889628187,
+        "largest_lost_standardized": 8.252084304533224
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03577441077441077,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.19386576585010779,
+        "largest_lost_standardized": 5.651455519314369
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.019548872180451128,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.04379920927831367,
+        "largest_lost_standardized": 1.0153262360708184
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023484848484848483,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.099882819076783,
+        "largest_lost_standardized": 3.533634350039011
+      }
+    },
+    {
+      "split": "original",
+      "outer": 4,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03258145363408521,
+        "rows_any": 0.6,
+        "lost_standardized_RMS": 0.1224563419879343,
+        "largest_lost_standardized": 2.66391839121994
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02408008658008658,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11093038868332404,
+        "largest_lost_standardized": 3.635775789906646
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.01162280701754386,
+        "rows_any": 0.325,
+        "lost_standardized_RMS": 0.07234399541643352,
+        "largest_lost_standardized": 2.424400342962195
+      },
+      "spatial": {
+        "coordinate_fraction": 0.01796875,
+        "rows_any": 0.925,
+        "lost_standardized_RMS": 0.0994752884839106,
+        "largest_lost_standardized": 5.124114528715523
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.021442495126705652,
+        "rows_any": 0.3888888888888889,
+        "lost_standardized_RMS": 0.35221329911702864,
+        "largest_lost_standardized": 8.856542621129083
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02251683501683502,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.0875463136323855,
+        "largest_lost_standardized": 3.998330055662645
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.020955165692007796,
+        "rows_any": 0.4166666666666667,
+        "lost_standardized_RMS": 0.08227403925364662,
+        "largest_lost_standardized": 2.3849641032132753
+      },
+      "spatial": {
+        "coordinate_fraction": 0.032512626262626264,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.14517229335627105,
+        "largest_lost_standardized": 5.083984775565704
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02857142857142857,
+        "rows_any": 0.6285714285714286,
+        "lost_standardized_RMS": 0.09825245337340832,
+        "largest_lost_standardized": 3.364532355924875
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03062770562770563,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.15792409438147348,
+        "largest_lost_standardized": 5.500182257978339
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.0206140350877193,
+        "rows_any": 0.4,
+        "lost_standardized_RMS": 0.07668717369184236,
+        "largest_lost_standardized": 2.7038841351039933
+      },
+      "spatial": {
+        "coordinate_fraction": 0.020052083333333335,
+        "rows_any": 0.9625,
+        "lost_standardized_RMS": 0.10433073096087378,
+        "largest_lost_standardized": 5.305863490594927
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.022417153996101363,
+        "rows_any": 0.5277777777777778,
+        "lost_standardized_RMS": 0.07638373887632677,
+        "largest_lost_standardized": 2.4210720992818895
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03840488215488216,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1757491664824438,
+        "largest_lost_standardized": 4.587000875750104
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.043859649122807015,
+        "rows_any": 0.6944444444444444,
+        "lost_standardized_RMS": 0.1398621344123607,
+        "largest_lost_standardized": 2.5456279851717745
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02046506734006734,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.08881420594683806,
+        "largest_lost_standardized": 3.261611158250106
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02055137844611529,
+        "rows_any": 0.6285714285714286,
+        "lost_standardized_RMS": 0.1682873493497534,
+        "largest_lost_standardized": 7.243982505966747
+      },
+      "spatial": {
+        "coordinate_fraction": 0.025974025974025976,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.09698526246380887,
+        "largest_lost_standardized": 3.8840310008263645
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.018421052631578946,
+        "rows_any": 0.425,
+        "lost_standardized_RMS": 0.2994850228563375,
+        "largest_lost_standardized": 11.300886112659368
+      },
+      "spatial": {
+        "coordinate_fraction": 0.01877367424242424,
+        "rows_any": 0.9625,
+        "lost_standardized_RMS": 0.10971370693063222,
+        "largest_lost_standardized": 5.792735456262443
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.03898635477582846,
+        "rows_any": 0.6111111111111112,
+        "lost_standardized_RMS": 0.16574042474416295,
+        "largest_lost_standardized": 3.5986736248932845
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02988215488215488,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11712778766867367,
+        "largest_lost_standardized": 3.3096887474910397
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02556390977443609,
+        "rows_any": 0.4,
+        "lost_standardized_RMS": 0.0808829511174402,
+        "largest_lost_standardized": 1.8811248623683565
+      },
+      "spatial": {
+        "coordinate_fraction": 0.031006493506493506,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.16856125316561682,
+        "largest_lost_standardized": 7.266513906554034
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 0,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02205513784461153,
+        "rows_any": 0.4,
+        "lost_standardized_RMS": 0.0900490352568404,
+        "largest_lost_standardized": 2.593782633852658
+      },
+      "spatial": {
+        "coordinate_fraction": 0.024404761904761905,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1055842623061305,
+        "largest_lost_standardized": 3.064568260576801
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.019517543859649124,
+        "rows_any": 0.4375,
+        "lost_standardized_RMS": 0.21260551930685995,
+        "largest_lost_standardized": 7.902697137230759
+      },
+      "spatial": {
+        "coordinate_fraction": 0.018418560606060605,
+        "rows_any": 0.95,
+        "lost_standardized_RMS": 0.08465271711184509,
+        "largest_lost_standardized": 3.287659511228016
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03216374269005848,
+        "rows_any": 0.5,
+        "lost_standardized_RMS": 0.2948243430635681,
+        "largest_lost_standardized": 8.19583228001622
+      },
+      "spatial": {
+        "coordinate_fraction": 0.022622053872053873,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10441996469686278,
+        "largest_lost_standardized": 3.2408394130192493
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.036062378167641324,
+        "rows_any": 0.5833333333333334,
+        "lost_standardized_RMS": 0.09985671273447355,
+        "largest_lost_standardized": 2.292659060074151
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03561658249158249,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.14897894052191057,
+        "largest_lost_standardized": 6.45783146520519
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02155388471177945,
+        "rows_any": 0.5142857142857142,
+        "lost_standardized_RMS": 0.07056689600698592,
+        "largest_lost_standardized": 2.232010200519144
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02462121212121212,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.13750055814357082,
+        "largest_lost_standardized": 4.632186785996779
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.030921052631578946,
+        "rows_any": 0.5125,
+        "lost_standardized_RMS": 0.090281643395014,
+        "largest_lost_standardized": 2.5370503917230818
+      },
+      "spatial": {
+        "coordinate_fraction": 0.015482954545454546,
+        "rows_any": 0.9625,
+        "lost_standardized_RMS": 0.0789026222336602,
+        "largest_lost_standardized": 4.678275610390643
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.018031189083820662,
+        "rows_any": 0.3888888888888889,
+        "lost_standardized_RMS": 0.10117666395394918,
+        "largest_lost_standardized": 2.568928728456035
+      },
+      "spatial": {
+        "coordinate_fraction": 0.021675084175084174,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.09777233943208623,
+        "largest_lost_standardized": 2.894904470599799
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.024853801169590642,
+        "rows_any": 0.5,
+        "lost_standardized_RMS": 0.07038400621923942,
+        "largest_lost_standardized": 2.008483556883246
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02904040404040404,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.12910687194770648,
+        "largest_lost_standardized": 7.243419802989305
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.0431077694235589,
+        "rows_any": 0.5714285714285714,
+        "lost_standardized_RMS": 0.1485770858906218,
+        "largest_lost_standardized": 2.8912710325579782
+      },
+      "spatial": {
+        "coordinate_fraction": 0.029924242424242423,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.14504327779234963,
+        "largest_lost_standardized": 3.5459815280303366
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.026973684210526316,
+        "rows_any": 0.4625,
+        "lost_standardized_RMS": 0.12379383193693241,
+        "largest_lost_standardized": 3.7435647944728285
+      },
+      "spatial": {
+        "coordinate_fraction": 0.018323863636363635,
+        "rows_any": 0.9375,
+        "lost_standardized_RMS": 0.08647163461377273,
+        "largest_lost_standardized": 3.1665907870371055
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.030214424951267055,
+        "rows_any": 0.5833333333333334,
+        "lost_standardized_RMS": 0.07529596525283618,
+        "largest_lost_standardized": 1.9982182967183604
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023200757575757576,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10315149765399663,
+        "largest_lost_standardized": 3.5715325212108455
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03609022556390978,
+        "rows_any": 0.6,
+        "lost_standardized_RMS": 0.12170741553306769,
+        "largest_lost_standardized": 2.3113891130157795
+      },
+      "spatial": {
+        "coordinate_fraction": 0.029058441558441558,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.11647008216740808,
+        "largest_lost_standardized": 3.9758425513392743
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 1,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02706766917293233,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.6996962483109972,
+        "largest_lost_standardized": 16.29559607516995
+      },
+      "spatial": {
+        "coordinate_fraction": 0.029166666666666667,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.16317051503937716,
+        "largest_lost_standardized": 5.184485139796593
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.0206140350877193,
+        "rows_any": 0.3375,
+        "lost_standardized_RMS": 0.13961632295625281,
+        "largest_lost_standardized": 4.31204769330642
+      },
+      "spatial": {
+        "coordinate_fraction": 0.01955492424242424,
+        "rows_any": 0.9875,
+        "lost_standardized_RMS": 0.09906630388247674,
+        "largest_lost_standardized": 4.638619848817054
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.040448343079922025,
+        "rows_any": 0.6111111111111112,
+        "lost_standardized_RMS": 0.20696500992169625,
+        "largest_lost_standardized": 6.111458160808566
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03540614478114478,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1442223345532062,
+        "largest_lost_standardized": 3.9733481210350314
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.028265107212475632,
+        "rows_any": 0.5277777777777778,
+        "lost_standardized_RMS": 0.10477306975476214,
+        "largest_lost_standardized": 2.3982287651081093
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03172348484848485,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.14382415419260683,
+        "largest_lost_standardized": 6.6838098707389655
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.01904761904761905,
+        "rows_any": 0.4,
+        "lost_standardized_RMS": 0.05661654089831626,
+        "largest_lost_standardized": 1.499836308917951
+      },
+      "spatial": {
+        "coordinate_fraction": 0.015151515151515152,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.0660874644943036,
+        "largest_lost_standardized": 2.2478139062725164
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.016666666666666666,
+        "rows_any": 0.3625,
+        "lost_standardized_RMS": 0.13497479790822786,
+        "largest_lost_standardized": 6.038205465059674
+      },
+      "spatial": {
+        "coordinate_fraction": 0.015838068181818182,
+        "rows_any": 0.9375,
+        "lost_standardized_RMS": 0.08389573705496849,
+        "largest_lost_standardized": 3.610597859472575
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03070175438596491,
+        "rows_any": 0.5833333333333334,
+        "lost_standardized_RMS": 0.08511142840176444,
+        "largest_lost_standardized": 2.1680814639280066
+      },
+      "spatial": {
+        "coordinate_fraction": 0.0333543771043771,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.1793554208491852,
+        "largest_lost_standardized": 7.880951699277116
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.028752436647173488,
+        "rows_any": 0.5555555555555556,
+        "lost_standardized_RMS": 0.09259895478252836,
+        "largest_lost_standardized": 2.906973468757593
+      },
+      "spatial": {
+        "coordinate_fraction": 0.022622053872053873,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.11259691562888284,
+        "largest_lost_standardized": 3.930287463120984
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02406015037593985,
+        "rows_any": 0.5714285714285714,
+        "lost_standardized_RMS": 0.14609390549614643,
+        "largest_lost_standardized": 3.547424538932812
+      },
+      "spatial": {
+        "coordinate_fraction": 0.029112554112554114,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11318284848000604,
+        "largest_lost_standardized": 2.7497162350794646
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.017543859649122806,
+        "rows_any": 0.3,
+        "lost_standardized_RMS": 0.20456968718233332,
+        "largest_lost_standardized": 9.327810199044391
+      },
+      "spatial": {
+        "coordinate_fraction": 0.017850378787878787,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.0857193484932459,
+        "largest_lost_standardized": 2.7141295603130158
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.025341130604288498,
+        "rows_any": 0.4722222222222222,
+        "lost_standardized_RMS": 0.13017179416329097,
+        "largest_lost_standardized": 3.4021556169422666
+      },
+      "spatial": {
+        "coordinate_fraction": 0.021675084175084174,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.09202684833657185,
+        "largest_lost_standardized": 3.4315303682151903
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.019548872180451128,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.09520990870960587,
+        "largest_lost_standardized": 3.321666917657771
+      },
+      "spatial": {
+        "coordinate_fraction": 0.025108225108225107,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.10334810904390238,
+        "largest_lost_standardized": 3.2261958857905917
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 2,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03308270676691729,
+        "rows_any": 0.5714285714285714,
+        "lost_standardized_RMS": 0.10102553169433048,
+        "largest_lost_standardized": 2.333497524580502
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03495670995670996,
+        "rows_any": 0.9428571428571428,
+        "lost_standardized_RMS": 0.1774451468792079,
+        "largest_lost_standardized": 5.378966287933521
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.02543859649122807,
+        "rows_any": 0.425,
+        "lost_standardized_RMS": 0.066967520929677,
+        "largest_lost_standardized": 2.1748333172585044
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02099905303030303,
+        "rows_any": 0.9,
+        "lost_standardized_RMS": 0.13583346160854365,
+        "largest_lost_standardized": 4.59485841036082
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.01364522417153996,
+        "rows_any": 0.4444444444444444,
+        "lost_standardized_RMS": 0.03999118794283862,
+        "largest_lost_standardized": 1.3394947541875042
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03319654882154882,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.15615768785298156,
+        "largest_lost_standardized": 5.127395487897852
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.028265107212475632,
+        "rows_any": 0.5,
+        "lost_standardized_RMS": 0.13938410819117258,
+        "largest_lost_standardized": 2.893579432905594
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023411195286195285,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10068882591417415,
+        "largest_lost_standardized": 3.8885771980119435
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.04110275689223058,
+        "rows_any": 0.6857142857142857,
+        "lost_standardized_RMS": 0.13089671019724564,
+        "largest_lost_standardized": 3.746740869956834
+      },
+      "spatial": {
+        "coordinate_fraction": 0.024458874458874458,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10216183095487283,
+        "largest_lost_standardized": 2.5892323349396196
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.016885964912280702,
+        "rows_any": 0.4125,
+        "lost_standardized_RMS": 0.05555570407197208,
+        "largest_lost_standardized": 2.0286750870678145
+      },
+      "spatial": {
+        "coordinate_fraction": 0.020265151515151514,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.12092640221781506,
+        "largest_lost_standardized": 5.5467100261838045
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.011695906432748537,
+        "rows_any": 0.3333333333333333,
+        "lost_standardized_RMS": 0.04664200714861652,
+        "largest_lost_standardized": 1.4226981891866297
+      },
+      "spatial": {
+        "coordinate_fraction": 0.018834175084175085,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10159111099023996,
+        "largest_lost_standardized": 5.017901139973078
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.04580896686159844,
+        "rows_any": 0.6666666666666666,
+        "lost_standardized_RMS": 0.39207035122882417,
+        "largest_lost_standardized": 9.212102477070939
+      },
+      "spatial": {
+        "coordinate_fraction": 0.031092171717171716,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.12240877772435471,
+        "largest_lost_standardized": 3.530887650928379
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02957393483709273,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.23076631320079657,
+        "largest_lost_standardized": 5.235692777563364
+      },
+      "spatial": {
+        "coordinate_fraction": 0.030194805194805194,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1288870615187253,
+        "largest_lost_standardized": 5.860710043050796
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.01732456140350877,
+        "rows_any": 0.3375,
+        "lost_standardized_RMS": 0.07079984972821772,
+        "largest_lost_standardized": 2.3569231309763654
+      },
+      "spatial": {
+        "coordinate_fraction": 0.025047348484848485,
+        "rows_any": 0.95,
+        "lost_standardized_RMS": 0.15532568057896654,
+        "largest_lost_standardized": 7.966230014038356
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.012670565302144249,
+        "rows_any": 0.3888888888888889,
+        "lost_standardized_RMS": 0.025967921582421515,
+        "largest_lost_standardized": 0.5827793484375056
+      },
+      "spatial": {
+        "coordinate_fraction": 0.020780723905723907,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.08507835854200009,
+        "largest_lost_standardized": 3.065963473771406
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.031578947368421054,
+        "rows_any": 0.5142857142857142,
+        "lost_standardized_RMS": 0.1512971644755887,
+        "largest_lost_standardized": 4.193957718614385
+      },
+      "spatial": {
+        "coordinate_fraction": 0.025432900432900432,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.09006015673600033,
+        "largest_lost_standardized": 2.5578426748085725
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 3,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03859649122807018,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.3756605581068731,
+        "largest_lost_standardized": 11.156730489055985
+      },
+      "spatial": {
+        "coordinate_fraction": 0.037554112554112555,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.13906822445980563,
+        "largest_lost_standardized": 3.1252112681989974
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.014692982456140351,
+        "rows_any": 0.3875,
+        "lost_standardized_RMS": 0.18546331487618745,
+        "largest_lost_standardized": 9.874386611209767
+      },
+      "spatial": {
+        "coordinate_fraction": 0.014370265151515151,
+        "rows_any": 0.9875,
+        "lost_standardized_RMS": 0.07541328049817753,
+        "largest_lost_standardized": 2.83481613558772
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.04239766081871345,
+        "rows_any": 0.6944444444444444,
+        "lost_standardized_RMS": 0.18239096357999732,
+        "largest_lost_standardized": 2.9020127379458827
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026304713804713806,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.15008112647017405,
+        "largest_lost_standardized": 6.58563198816417
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.015594541910331383,
+        "rows_any": 0.4444444444444444,
+        "lost_standardized_RMS": 0.04874282083946983,
+        "largest_lost_standardized": 1.4156103880035942
+      },
+      "spatial": {
+        "coordinate_fraction": 0.032407407407407406,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.14463382386014426,
+        "largest_lost_standardized": 6.838120019300743
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.017042606516290727,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.03042322925774033,
+        "largest_lost_standardized": 0.5806359388463901
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02288961038961039,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1062526041949567,
+        "largest_lost_standardized": 4.063787462608052
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.016666666666666666,
+        "rows_any": 0.3875,
+        "lost_standardized_RMS": 0.05140353002669208,
+        "largest_lost_standardized": 1.4072912338205732
+      },
+      "spatial": {
+        "coordinate_fraction": 0.017945075757575757,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.0805592718409548,
+        "largest_lost_standardized": 3.6943318375624123
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.031189083820662766,
+        "rows_any": 0.6388888888888888,
+        "lost_standardized_RMS": 0.2257447031158045,
+        "largest_lost_standardized": 8.556400597895816
+      },
+      "spatial": {
+        "coordinate_fraction": 0.032880892255892254,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.14526686902742297,
+        "largest_lost_standardized": 3.9626000317487406
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.06189083820662768,
+        "rows_any": 0.6944444444444444,
+        "lost_standardized_RMS": 0.16757554721482082,
+        "largest_lost_standardized": 4.127678751315836
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03151304713804714,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.14964416554835025,
+        "largest_lost_standardized": 4.555542236410788
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.012030075187969926,
+        "rows_any": 0.3142857142857143,
+        "lost_standardized_RMS": 0.09396923236702309,
+        "largest_lost_standardized": 2.6620035755664375
+      },
+      "spatial": {
+        "coordinate_fraction": 0.019859307359307358,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.0828175624487541,
+        "largest_lost_standardized": 2.4036136582650887
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.010526315789473684,
+        "rows_any": 0.2875,
+        "lost_standardized_RMS": 0.0711789051001938,
+        "largest_lost_standardized": 2.1969529210551078
+      },
+      "spatial": {
+        "coordinate_fraction": 0.01278409090909091,
+        "rows_any": 0.9625,
+        "lost_standardized_RMS": 0.060031581178779735,
+        "largest_lost_standardized": 2.5347796140720273
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.026803118908382065,
+        "rows_any": 0.4722222222222222,
+        "lost_standardized_RMS": 0.11221437900378084,
+        "largest_lost_standardized": 2.8415807259402794
+      },
+      "spatial": {
+        "coordinate_fraction": 0.027619949494949496,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.12501380618276045,
+        "largest_lost_standardized": 5.335381450620651
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02305764411027569,
+        "rows_any": 0.5714285714285714,
+        "lost_standardized_RMS": 0.06488352121649457,
+        "largest_lost_standardized": 1.394450595472223
+      },
+      "spatial": {
+        "coordinate_fraction": 0.021807359307359307,
+        "rows_any": 0.9428571428571428,
+        "lost_standardized_RMS": 0.08667576691637863,
+        "largest_lost_standardized": 2.0116536272900403
+      }
+    },
+    {
+      "split": "20261031",
+      "outer": 4,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.047619047619047616,
+        "rows_any": 0.6,
+        "lost_standardized_RMS": 0.12532230881004736,
+        "largest_lost_standardized": 2.4120117564449166
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03674242424242424,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.1738682430141021,
+        "largest_lost_standardized": 4.229657313081563
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.01381578947368421,
+        "rows_any": 0.2625,
+        "lost_standardized_RMS": 0.07414175295538321,
+        "largest_lost_standardized": 2.233159868274374
+      },
+      "spatial": {
+        "coordinate_fraction": 0.017992424242424244,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.11204163172657403,
+        "largest_lost_standardized": 6.954350567439515
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.04434697855750487,
+        "rows_any": 0.6666666666666666,
+        "lost_standardized_RMS": 0.08167088092706598,
+        "largest_lost_standardized": 1.743795513759556
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03214436026936027,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11739011561534918,
+        "largest_lost_standardized": 2.4856507769159415
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.01705653021442495,
+        "rows_any": 0.3611111111111111,
+        "lost_standardized_RMS": 0.03141755206232231,
+        "largest_lost_standardized": 0.6550824458571424
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02751473063973064,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11324105902307316,
+        "largest_lost_standardized": 4.04384985403973
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02556390977443609,
+        "rows_any": 0.42857142857142855,
+        "lost_standardized_RMS": 0.22594810097444412,
+        "largest_lost_standardized": 4.2553037857383655
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02213203463203463,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.08759352834541645,
+        "largest_lost_standardized": 3.1096396153625006
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.016666666666666666,
+        "rows_any": 0.3375,
+        "lost_standardized_RMS": 0.06902503724036532,
+        "largest_lost_standardized": 2.41109309414443
+      },
+      "spatial": {
+        "coordinate_fraction": 0.017353219696969697,
+        "rows_any": 0.9875,
+        "lost_standardized_RMS": 0.09916436917068164,
+        "largest_lost_standardized": 4.866159683847869
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.014619883040935672,
+        "rows_any": 0.4722222222222222,
+        "lost_standardized_RMS": 0.05002048110677531,
+        "largest_lost_standardized": 1.4451632691055671
+      },
+      "spatial": {
+        "coordinate_fraction": 0.04292929292929293,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.22609562479875644,
+        "largest_lost_standardized": 6.450591391149712
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.017543859649122806,
+        "rows_any": 0.5,
+        "lost_standardized_RMS": 0.16936798895582475,
+        "largest_lost_standardized": 6.305578783124789
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026252104377104377,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10970795026241165,
+        "largest_lost_standardized": 2.851374170617459
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.05112781954887218,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.19862526619915238,
+        "largest_lost_standardized": 7.08662253384756
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02288961038961039,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.14074669783144395,
+        "largest_lost_standardized": 5.776870879629696
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.014912280701754385,
+        "rows_any": 0.425,
+        "lost_standardized_RMS": 0.03608711089302744,
+        "largest_lost_standardized": 1.0881015725177647
+      },
+      "spatial": {
+        "coordinate_fraction": 0.015222537878787879,
+        "rows_any": 0.95,
+        "lost_standardized_RMS": 0.09696073303033335,
+        "largest_lost_standardized": 5.6081273945170595
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.024853801169590642,
+        "rows_any": 0.5833333333333334,
+        "lost_standardized_RMS": 0.06822780884522454,
+        "largest_lost_standardized": 1.7685602480707105
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023937289562289563,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1087735956006743,
+        "largest_lost_standardized": 4.022780291430995
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.045112781954887216,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.4448404420953103,
+        "largest_lost_standardized": 10.339925271127104
+      },
+      "spatial": {
+        "coordinate_fraction": 0.029004329004329005,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.14689979643765957,
+        "largest_lost_standardized": 6.42274403765121
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 0,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.016040100250626566,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.045765252939693996,
+        "largest_lost_standardized": 1.3648452020107495
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03014069264069264,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.12379112669610406,
+        "largest_lost_standardized": 3.645389028748826
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.01118421052631579,
+        "rows_any": 0.3125,
+        "lost_standardized_RMS": 0.05009455504661581,
+        "largest_lost_standardized": 1.5807394266428179
+      },
+      "spatial": {
+        "coordinate_fraction": 0.020004734848484848,
+        "rows_any": 0.9875,
+        "lost_standardized_RMS": 0.09002960893962157,
+        "largest_lost_standardized": 3.600810179505306
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03898635477582846,
+        "rows_any": 0.5555555555555556,
+        "lost_standardized_RMS": 0.3665104200118731,
+        "largest_lost_standardized": 11.490689088063498
+      },
+      "spatial": {
+        "coordinate_fraction": 0.021727693602693603,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.08657865298665987,
+        "largest_lost_standardized": 2.8068076652831557
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.018031189083820662,
+        "rows_any": 0.3888888888888889,
+        "lost_standardized_RMS": 0.1006986019856442,
+        "largest_lost_standardized": 3.2143325789894304
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03214436026936027,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.1351403459263447,
+        "largest_lost_standardized": 4.707300217782857
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.017042606516290727,
+        "rows_any": 0.45714285714285713,
+        "lost_standardized_RMS": 0.11721993711455281,
+        "largest_lost_standardized": 4.206393799656762
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026352813852813853,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.09959005805121926,
+        "largest_lost_standardized": 2.744832003877317
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.012280701754385965,
+        "rows_any": 0.2625,
+        "lost_standardized_RMS": 0.04636212100835784,
+        "largest_lost_standardized": 2.3366365479233426
+      },
+      "spatial": {
+        "coordinate_fraction": 0.017329545454545455,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.0789743722958885,
+        "largest_lost_standardized": 3.1943400695155812
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.018031189083820662,
+        "rows_any": 0.4166666666666667,
+        "lost_standardized_RMS": 0.054234683690806154,
+        "largest_lost_standardized": 1.2993767252492454
+      },
+      "spatial": {
+        "coordinate_fraction": 0.021201599326599326,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.09077524729669631,
+        "largest_lost_standardized": 2.5714819075778172
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.025341130604288498,
+        "rows_any": 0.6111111111111112,
+        "lost_standardized_RMS": 0.12333973370757821,
+        "largest_lost_standardized": 3.784139819467934
+      },
+      "spatial": {
+        "coordinate_fraction": 0.04413930976430976,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.18450389941331904,
+        "largest_lost_standardized": 4.1426284442206835
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.03508771929824561,
+        "rows_any": 0.5714285714285714,
+        "lost_standardized_RMS": 0.1605541137323393,
+        "largest_lost_standardized": 3.9566360024478926
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02267316017316017,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.09560459594287278,
+        "largest_lost_standardized": 3.335600893785737
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.007236842105263158,
+        "rows_any": 0.2625,
+        "lost_standardized_RMS": 0.021160350426538795,
+        "largest_lost_standardized": 0.6888334059215055
+      },
+      "spatial": {
+        "coordinate_fraction": 0.014583333333333334,
+        "rows_any": 0.9875,
+        "lost_standardized_RMS": 0.07055040670890364,
+        "largest_lost_standardized": 3.104365882109895
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.018518518518518517,
+        "rows_any": 0.4166666666666667,
+        "lost_standardized_RMS": 0.13383389699013254,
+        "largest_lost_standardized": 5.596786353009917
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03640572390572391,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.17021140149147576,
+        "largest_lost_standardized": 6.271298807331555
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.0406015037593985,
+        "rows_any": 0.6,
+        "lost_standardized_RMS": 0.15432997351293795,
+        "largest_lost_standardized": 5.571944293149782
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03133116883116883,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.152598864015669,
+        "largest_lost_standardized": 3.9684478519211175
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 1,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.021052631578947368,
+        "rows_any": 0.5714285714285714,
+        "lost_standardized_RMS": 0.0922052504810497,
+        "largest_lost_standardized": 2.1327114345250036
+      },
+      "spatial": {
+        "coordinate_fraction": 0.016612554112554113,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.08931921909749567,
+        "largest_lost_standardized": 2.918128796283317
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.018859649122807017,
+        "rows_any": 0.5,
+        "lost_standardized_RMS": 0.04487749041244479,
+        "largest_lost_standardized": 1.4468430044043017
+      },
+      "spatial": {
+        "coordinate_fraction": 0.020336174242424242,
+        "rows_any": 0.9875,
+        "lost_standardized_RMS": 0.10419707400774501,
+        "largest_lost_standardized": 3.3277057002070807
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.018518518518518517,
+        "rows_any": 0.4444444444444444,
+        "lost_standardized_RMS": 0.06277388736794086,
+        "largest_lost_standardized": 1.3933810728459095
+      },
+      "spatial": {
+        "coordinate_fraction": 0.027567340067340067,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.12379401935101447,
+        "largest_lost_standardized": 5.997044410059449
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.0341130604288499,
+        "rows_any": 0.6388888888888888,
+        "lost_standardized_RMS": 0.26094850101966555,
+        "largest_lost_standardized": 6.687921278938587
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03256523569023569,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.17993242269326967,
+        "largest_lost_standardized": 7.18059952664599
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.02305764411027569,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.1585062672508395,
+        "largest_lost_standardized": 4.338314430316602
+      },
+      "spatial": {
+        "coordinate_fraction": 0.01948051948051948,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.08661825620387449,
+        "largest_lost_standardized": 2.122518461900917
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.010526315789473684,
+        "rows_any": 0.35,
+        "lost_standardized_RMS": 0.06509037413358934,
+        "largest_lost_standardized": 2.536498457003669
+      },
+      "spatial": {
+        "coordinate_fraction": 0.021543560606060608,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.109936010027232,
+        "largest_lost_standardized": 3.2993865941821974
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.028752436647173488,
+        "rows_any": 0.4722222222222222,
+        "lost_standardized_RMS": 0.05251878803184494,
+        "largest_lost_standardized": 0.9105391572241869
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03035563973063973,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.13269452298386936,
+        "largest_lost_standardized": 4.599353020539501
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02631578947368421,
+        "rows_any": 0.5277777777777778,
+        "lost_standardized_RMS": 0.283584421681831,
+        "largest_lost_standardized": 9.474236700467943
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026725589225589225,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11470894056672865,
+        "largest_lost_standardized": 3.771336954489148
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.021052631578947368,
+        "rows_any": 0.5142857142857142,
+        "lost_standardized_RMS": 0.10669770533540682,
+        "largest_lost_standardized": 3.81131916351346
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023268398268398268,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10240043322450612,
+        "largest_lost_standardized": 2.630653273278675
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.018859649122807017,
+        "rows_any": 0.4625,
+        "lost_standardized_RMS": 0.05491863812830472,
+        "largest_lost_standardized": 2.3421220229475805
+      },
+      "spatial": {
+        "coordinate_fraction": 0.017518939393939392,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.09381704937886357,
+        "largest_lost_standardized": 4.244050654198391
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.030214424951267055,
+        "rows_any": 0.5833333333333334,
+        "lost_standardized_RMS": 0.14568823649767423,
+        "largest_lost_standardized": 3.454343129298627
+      },
+      "spatial": {
+        "coordinate_fraction": 0.025936447811447813,
+        "rows_any": 0.9444444444444444,
+        "lost_standardized_RMS": 0.12088924299981621,
+        "largest_lost_standardized": 3.2729693055345113
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.022556390977443608,
+        "rows_any": 0.4,
+        "lost_standardized_RMS": 0.04620128147110023,
+        "largest_lost_standardized": 1.0075779884469467
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02878787878787879,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.15310776505812076,
+        "largest_lost_standardized": 6.799440234729997
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 2,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.034085213032581455,
+        "rows_any": 0.5428571428571428,
+        "lost_standardized_RMS": 0.2616852485067406,
+        "largest_lost_standardized": 6.244608159765524
+      },
+      "spatial": {
+        "coordinate_fraction": 0.028625541125541127,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1411395315218043,
+        "largest_lost_standardized": 5.3223523176402985
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.024342105263157894,
+        "rows_any": 0.375,
+        "lost_standardized_RMS": 0.15910787380315936,
+        "largest_lost_standardized": 5.957827966716365
+      },
+      "spatial": {
+        "coordinate_fraction": 0.017163825757575756,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.10402237228471933,
+        "largest_lost_standardized": 4.476424684146825
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03216374269005848,
+        "rows_any": 0.5277777777777778,
+        "lost_standardized_RMS": 0.12101587699538963,
+        "largest_lost_standardized": 3.1862145210706414
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03161826599326599,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.17065497627009119,
+        "largest_lost_standardized": 5.960160428071128
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02290448343079922,
+        "rows_any": 0.6111111111111112,
+        "lost_standardized_RMS": 0.07598981289667776,
+        "largest_lost_standardized": 2.0394479179956626
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026252104377104377,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11593091211914147,
+        "largest_lost_standardized": 3.706086749187
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.016040100250626566,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.03952102934709535,
+        "largest_lost_standardized": 1.0582339211017469
+      },
+      "spatial": {
+        "coordinate_fraction": 0.024891774891774892,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10780281868654439,
+        "largest_lost_standardized": 4.697403490558236
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.024342105263157894,
+        "rows_any": 0.375,
+        "lost_standardized_RMS": 0.15438387045029517,
+        "largest_lost_standardized": 7.004654419049082
+      },
+      "spatial": {
+        "coordinate_fraction": 0.01484375,
+        "rows_any": 0.9375,
+        "lost_standardized_RMS": 0.0934316024256881,
+        "largest_lost_standardized": 3.7847442545683614
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02046783625730994,
+        "rows_any": 0.4444444444444444,
+        "lost_standardized_RMS": 0.2084086465026417,
+        "largest_lost_standardized": 7.025691106685049
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02251683501683502,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.09313226422177012,
+        "largest_lost_standardized": 2.677420955439361
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.04580896686159844,
+        "rows_any": 0.5833333333333334,
+        "lost_standardized_RMS": 0.14336105434619567,
+        "largest_lost_standardized": 3.3530591748248297
+      },
+      "spatial": {
+        "coordinate_fraction": 0.03766835016835017,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.17226673099442413,
+        "largest_lost_standardized": 6.968463414357835
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.015538847117794486,
+        "rows_any": 0.37142857142857144,
+        "lost_standardized_RMS": 0.09069085592386371,
+        "largest_lost_standardized": 2.5329040976757873
+      },
+      "spatial": {
+        "coordinate_fraction": 0.022023809523809525,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.0942284674438148,
+        "largest_lost_standardized": 2.728293922391321
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.026096491228070177,
+        "rows_any": 0.35,
+        "lost_standardized_RMS": 0.2587495194874676,
+        "largest_lost_standardized": 7.201631100827016
+      },
+      "spatial": {
+        "coordinate_fraction": 0.018892045454545453,
+        "rows_any": 0.9625,
+        "lost_standardized_RMS": 0.10533109027474462,
+        "largest_lost_standardized": 4.079831041958118
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.023391812865497075,
+        "rows_any": 0.5,
+        "lost_standardized_RMS": 0.13037562159821026,
+        "largest_lost_standardized": 3.2216823226374838
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02709385521885522,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11024717569939387,
+        "largest_lost_standardized": 2.823164150143859
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.01904761904761905,
+        "rows_any": 0.4857142857142857,
+        "lost_standardized_RMS": 0.1011476671127825,
+        "largest_lost_standardized": 3.4463944169708545
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02867965367965368,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.121183153330486,
+        "largest_lost_standardized": 3.3762750329180706
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 3,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.028070175438596492,
+        "rows_any": 0.42857142857142855,
+        "lost_standardized_RMS": 0.1666753558705751,
+        "largest_lost_standardized": 3.7661492025261603
+      },
+      "spatial": {
+        "coordinate_fraction": 0.022023809523809525,
+        "rows_any": 0.9714285714285714,
+        "lost_standardized_RMS": 0.0932369018343851,
+        "largest_lost_standardized": 2.9587399793200677
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 0,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.023464912280701754,
+        "rows_any": 0.5375,
+        "lost_standardized_RMS": 0.3447053340192677,
+        "largest_lost_standardized": 11.954440419704362
+      },
+      "spatial": {
+        "coordinate_fraction": 0.023958333333333335,
+        "rows_any": 0.975,
+        "lost_standardized_RMS": 0.12086229766906872,
+        "largest_lost_standardized": 4.1582830810492375
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02387914230019493,
+        "rows_any": 0.5277777777777778,
+        "lost_standardized_RMS": 0.07935499828666148,
+        "largest_lost_standardized": 1.571109723031751
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02793560606060606,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.1030821103161717,
+        "largest_lost_standardized": 2.9178679637066427
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.020955165692007796,
+        "rows_any": 0.4166666666666667,
+        "lost_standardized_RMS": 0.08067544165963526,
+        "largest_lost_standardized": 1.9103116555824393
+      },
+      "spatial": {
+        "coordinate_fraction": 0.026357323232323232,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.11015103995529191,
+        "largest_lost_standardized": 3.4604542196513335
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 0,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.03508771929824561,
+        "rows_any": 0.5142857142857142,
+        "lost_standardized_RMS": 0.1686649818930947,
+        "largest_lost_standardized": 3.2354499122102447
+      },
+      "spatial": {
+        "coordinate_fraction": 0.028950216450216452,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.13860128612282874,
+        "largest_lost_standardized": 4.560760393950587
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 1,
+      "stage": "full_honest_B",
+      "n_train": 107,
+      "physics": {
+        "coordinate_fraction": 0.023903508771929826,
+        "rows_any": 0.4625,
+        "lost_standardized_RMS": 0.11840615661515305,
+        "largest_lost_standardized": 3.565672831012891
+      },
+      "spatial": {
+        "coordinate_fraction": 0.021780303030303032,
+        "rows_any": 0.95,
+        "lost_standardized_RMS": 0.11020618225574433,
+        "largest_lost_standardized": 4.9018094202253195
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.0297270955165692,
+        "rows_any": 0.5555555555555556,
+        "lost_standardized_RMS": 0.3040468828582044,
+        "largest_lost_standardized": 10.00503345497113
+      },
+      "spatial": {
+        "coordinate_fraction": 0.027304292929292928,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.13877484844634205,
+        "largest_lost_standardized": 5.968098627110297
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.02046783625730994,
+        "rows_any": 0.6111111111111112,
+        "lost_standardized_RMS": 0.07836219015705868,
+        "largest_lost_standardized": 2.6526889376581373
+      },
+      "spatial": {
+        "coordinate_fraction": 0.027356902356902357,
+        "rows_any": 0.9722222222222222,
+        "lost_standardized_RMS": 0.17875127842394073,
+        "largest_lost_standardized": 8.60616912141854
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 1,
+      "stage": "inner_B_train",
+      "n_train": 72,
+      "physics": {
+        "coordinate_fraction": 0.03508771929824561,
+        "rows_any": 0.6285714285714286,
+        "lost_standardized_RMS": 0.10320637807818003,
+        "largest_lost_standardized": 2.057437121552083
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02775974025974026,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.12619742942324158,
+        "largest_lost_standardized": 3.34754618563715
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 2,
+      "stage": "full_honest_B",
+      "n_train": 106,
+      "physics": {
+        "coordinate_fraction": 0.02543859649122807,
+        "rows_any": 0.4625,
+        "lost_standardized_RMS": 0.11383081249923874,
+        "largest_lost_standardized": 5.434651699650917
+      },
+      "spatial": {
+        "coordinate_fraction": 0.022585227272727274,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1085779730278101,
+        "largest_lost_standardized": 4.886885662716356
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 70,
+      "physics": {
+        "coordinate_fraction": 0.019005847953216373,
+        "rows_any": 0.5555555555555556,
+        "lost_standardized_RMS": 0.32936580522737696,
+        "largest_lost_standardized": 9.939795209693289
+      },
+      "spatial": {
+        "coordinate_fraction": 0.0226746632996633,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.09532232653753345,
+        "largest_lost_standardized": 2.5618983352713447
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.028070175438596492,
+        "rows_any": 0.6285714285714286,
+        "lost_standardized_RMS": 0.059004698700512864,
+        "largest_lost_standardized": 1.3232636344581956
+      },
+      "spatial": {
+        "coordinate_fraction": 0.039502164502164504,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.1723551814805518,
+        "largest_lost_standardized": 3.940599309274146
+      }
+    },
+    {
+      "split": "20261101",
+      "outer": 4,
+      "block": 2,
+      "stage": "inner_B_train",
+      "n_train": 71,
+      "physics": {
+        "coordinate_fraction": 0.03308270676691729,
+        "rows_any": 0.42857142857142855,
+        "lost_standardized_RMS": 0.28356335162645213,
+        "largest_lost_standardized": 9.140721690698562
+      },
+      "spatial": {
+        "coordinate_fraction": 0.02564935064935065,
+        "rows_any": 1.0,
+        "lost_standardized_RMS": 0.10696705189992678,
+        "largest_lost_standardized": 2.9806594846651104
+      }
+    }
+  ],
+  "mechanism": "MinMax(clip=True) followed by StandardScaler equals train-standardization with each coordinate saturated at training extrema. In528 spatial dimensions even rare coordinate violations may affect many rows. Smaller inner training sets have narrower estimated support. Existing spatial142 audit explicitly noted missing clipfrequency and possible amplitude loss.",
+  "training_size_context": "127 reported all base learners improve from213/214 to320, with CNN/DINO complementary errors.118 halves harmed residual learning;119 pooled residual scheme failed. Do not infer500 accuracy or reopen those schemes. Current audit targets train-extrema prediction transform, not sample pooling, epoch count or new features.",
+  "interpretation": "Clipping frequency and residual associations are descriptive, not proof of an error cause. No optimized base weights or region rule fitted. Public019 result supplies status only.",
+  "limits": "Historically reused400 IDs; correlated models and overlapping partitions; no independent validation.",
+  "source_sha256": "76e8597d8ed6c6361f410f4254121881e350d524eeafc43edcd746d82876baaf",
+  "cost": 0
+}

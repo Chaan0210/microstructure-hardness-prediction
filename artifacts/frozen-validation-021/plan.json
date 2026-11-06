@@ -1,0 +1,133 @@
+{
+  "primary": "mean3_d4",
+  "reference": "candidate003",
+  "feature_panel": "run-012",
+  "feature_count": 26,
+  "outer_split_seeds": [
+    20261031,
+    20261101
+  ],
+  "outer_folds": 5,
+  "extra_feature_run": null,
+  "extra_feature_policy": "Optional CLI-frozen secondary panel; independent inner3 KRR and fixed baseline50/mean3D4_25/kernel25. No primary replacement or panel selection.",
+  "cnn_base_seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "cnn_seed_rule": "base_seed + outer_fold_index",
+  "cnn": {
+    "architecture": "TinyCNN",
+    "image_size": 128,
+    "epochs": 80,
+    "average_last_epochs": 5,
+    "batch_size": 32,
+    "optimizer": "AdamW",
+    "lr": 0.002,
+    "weight_decay": 0.01,
+    "cosine_T_max": 80,
+    "cosine_eta_min": 0.0001,
+    "augmentation": "one uniform D4 transform per training batch",
+    "normalization": "fit separately on each outer-training subset",
+    "validation_checkpoint_selection": false
+  },
+  "kernel": {
+    "inner_folds": 3,
+    "inner_seed_plus_fold": 20261005,
+    "bandwidths": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "alphas": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "normalization": "refit within each inner training subset, then outer training"
+  },
+  "baseline_component_weights": {
+    "base_et": 0.375,
+    "base_ridge": 0.375,
+    "morph_ridge": 0.25
+  },
+  "ensemble_weights": {
+    "baseline": 0.5,
+    "compact_kernel": 0.25,
+    "cnn": 0.25
+  },
+  "recipes": {
+    "candidate003": "fresh baseline50 + compact kernel25 + first-seed identity CNN25",
+    "mean3_identity": "same baseline/kernel + equal three-seed identity prediction mean25",
+    "mean3_d4": "same baseline/kernel + equal three-seed/eight-D4-view prediction mean25"
+  },
+  "D4_view_order": [
+    {
+      "rotation_quarter_turns": 0,
+      "horizontal_flip": false
+    },
+    {
+      "rotation_quarter_turns": 0,
+      "horizontal_flip": true
+    },
+    {
+      "rotation_quarter_turns": 1,
+      "horizontal_flip": false
+    },
+    {
+      "rotation_quarter_turns": 1,
+      "horizontal_flip": true
+    },
+    {
+      "rotation_quarter_turns": 2,
+      "horizontal_flip": false
+    },
+    {
+      "rotation_quarter_turns": 2,
+      "horizontal_flip": true
+    },
+    {
+      "rotation_quarter_turns": 3,
+      "horizontal_flip": false
+    },
+    {
+      "rotation_quarter_turns": 3,
+      "horizontal_flip": true
+    }
+  ],
+  "identity_reload_atol": 0.0001,
+  "identity_reload_rtol": 0.0,
+  "old_oof_prediction_reuse": false,
+  "n_development": 400,
+  "decision_context": {
+    "parent_selected_primary": "mean3_d4",
+    "exploratory_original_fold_rmse": {
+      "candidate003": 13.705696,
+      "mean3_identity": 13.612514,
+      "mean3_d4": 13.585047
+    },
+    "limitation": "D4 alone improved only 2/5 original folds; new splits must assess this uncertainty.",
+    "native_panel": "Excluded before this validation; native-feature models did not improve compact three-seed baseline.",
+    "metric_values_source": "Parent-provided development summaries; no new data-independent evidence claimed"
+  },
+  "device": "mps",
+  "source_sha256": {
+    "frozen_multiseed.py": "f43be55edf91c1b0376d0bd8994fdcfa4cd1c8244bd32732bde51eb63c00c2b5",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+    "cnn_ensemble_inference.py": "c88a3f988e8187c21f77124644a897defcef72915df463c286f687c2aae9eef1",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "candidate_features.py": "47c239d8836c2f6cc79c9fbde644702f2ca3c5a59f63fec339656b1178495a4e",
+    "grain_features.py": "0b2dcc4d9a528718c418ee784ccb0dee836f8887fbe12989139aab4a0ed705e0",
+    "latent_features.py": "9b003e8da3f1e488d88af97b9395a80ffb5bc82785adbad1b378f0d869a9978a"
+  },
+  "packages": {
+    "torch": "2.14.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "Pillow": "12.3.0",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "caveat": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. The original CNN seed, compact panel, averaging and D4 hypotheses were explored on reused development data. These new partitions evaluate robustness, not independent confirmation. Primary recipe is fixed before training. Do not select the best split, initialization seed, or secondary endpoint."
+}

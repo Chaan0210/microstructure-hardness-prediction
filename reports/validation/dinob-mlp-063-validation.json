@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "results": {
+    "original": {
+      "scores": {
+        "controlS": {
+          "rmse": 14.049242890525278,
+          "fold_rmse": [
+            14.446117130508892,
+            13.952434285579072,
+            14.94415012517497,
+            13.1480280957738,
+            13.687481162436942
+          ]
+        },
+        "baseB": {
+          "rmse": 13.615777507504738,
+          "fold_rmse": [
+            13.650648366415224,
+            12.80647915614849,
+            14.045068523498623,
+            13.407892313668881,
+            14.126760079518114
+          ]
+        },
+        "reference003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.680453686399362,
+            12.991004741250547,
+            14.032386512109253
+          ]
+        },
+        "reference007": {
+          "rmse": 13.241596955038409,
+          "fold_rmse": [
+            13.200972349680994,
+            12.726138894776982,
+            14.308109808709345,
+            12.375441992213231,
+            13.513163828337742
+          ]
+        },
+        "primary": {
+          "rmse": 13.232540256094351,
+          "fold_rmse": [
+            13.119153240033091,
+            12.542326934894586,
+            14.192991337031799,
+            12.571463448229109,
+            13.660006044849125
+          ]
+        },
+        "control007": {
+          "rmse": 13.241596955038409,
+          "fold_rmse": [
+            13.200972349680994,
+            12.726138894776982,
+            14.308109808709345,
+            12.375441992213231,
+            13.513163828337742
+          ]
+        }
+      },
+      "comparisons": {
+        "primary": {
+          "gain": 0.009056698944057473,
+          "fold_gains": [
+            0.08181910964790262,
+            0.18381195988239618,
+            0.11511847167754574,
+            -0.1960214560158775,
+            -0.14684221651138252
+          ],
+          "positive_folds": 3,
+          "bootstrap_sd": 0.09300178059368959,
+          "conditional_ci95": [
+            -0.17290442718122784,
+            0.19406972007782616
+          ]
+        }
+      },
+      "reload_max_error": 0.0,
+      "train_rmse_pooled": {
+        "controlS": 0.6013408249223603,
+        "baseB": 0.5059661954706801
+      },
+      "foldtrain_quantile_diagnostics": {
+        "0": {
+          "n": 81,
+          "reference007_rmse": 16.82315911331556,
+          "primary_rmse": 16.907653674027177
+        },
+        "1": {
+          "n": 236,
+          "reference007_rmse": 8.449790530238666,
+          "primary_rmse": 8.428246004568308
+        },
+        "2": {
+          "n": 83,
+          "reference007_rmse": 19.12586343275207,
+          "primary_rmse": 19.049821056505003
+        }
+      },
+      "prediction_sha256": "8c25f64af2173168658b682c3f0aabd9b4259b90206b112722153e677d370344"
+    }
+  },
+  "models_verified": 30,
+  "full100epoch_replays": [
+    {
+      "split": "original",
+      "arm": "controlS",
+      "seed": 20261128,
+      "parameter_hash_exact": true,
+      "prediction_error": 0.0
+    },
+    {
+      "split": "original",
+      "arm": "baseB",
+      "seed": 20261128,
+      "parameter_hash_exact": true,
+      "prediction_error": 0.0
+    }
+  ],
+  "confirmed_for_final_fit": false,
+  "selected_recipe": null,
+  "protected_files_verified": 18,
+  "source_sha256": "77c42195e7ffa355dde3cfba6133234de0e8fbff4252743d2d66c8ad5b78c462",
+  "seconds": 2.033106916991528,
+  "limitations": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "scope": "Development400 only; no holdout labels/images or test inspected; no new installs/cost/upload."
+}

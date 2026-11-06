@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "fold": 0,
+      "arm": "control",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 3.0517578125e-05,
+      "MPS_prediction_max_error": 0.0
+    },
+    {
+      "fold": 0,
+      "arm": "contrast",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 1.52587890625e-05,
+      "MPS_prediction_max_error": 0.0
+    },
+    {
+      "fold": 1,
+      "arm": "control",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 1.52587890625e-05,
+      "MPS_prediction_max_error": 0.0
+    },
+    {
+      "fold": 1,
+      "arm": "contrast",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 1.52587890625e-05,
+      "MPS_prediction_max_error": 0.0
+    },
+    {
+      "fold": 2,
+      "arm": "control",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 1.52587890625e-05,
+      "MPS_prediction_max_error": 0.0
+    },
+    {
+      "fold": 2,
+      "arm": "contrast",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 1.52587890625e-05,
+      "MPS_prediction_max_error": 0.0
+    },
+    {
+      "fold": 3,
+      "arm": "control",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 1.52587890625e-05,
+      "MPS_prediction_max_error": 0.0
+    },
+    {
+      "fold": 3,
+      "arm": "contrast",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 1.52587890625e-05,
+      "MPS_prediction_max_error": 0.0
+    },
+    {
+      "fold": 4,
+      "arm": "control",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 3.0517578125e-05,
+      "MPS_prediction_max_error": 0.0
+    },
+    {
+      "fold": 4,
+      "arm": "contrast",
+      "normalization_train_only_exact": true,
+      "calibration_recomputed_exact": true,
+      "checkpoint_average_exact": true,
+      "sample_order_D4_LR_replayed": true,
+      "CPU_prediction_max_error": 1.52587890625e-05,
+      "MPS_prediction_max_error": 0.0
+    }
+  ],
+  "poison_replays": [
+    {
+      "arm": "control",
+      "validation_targets": "NaN",
+      "full80epoch_state_predictions_and_streams_exact": true
+    },
+    {
+      "arm": "contrast",
+      "validation_targets": "1e30",
+      "full80epoch_state_predictions_and_streams_exact": true
+    }
+  ],
+  "main_models": 10,
+  "verification_retrain_fits": 2,
+  "OOF_SHA256": "2af7d6ce94813b2afa3728e94bc33e3a4dd22a5d8a58cd270e2522ac282378ff",
+  "raw_data_access": {
+    "raw_data_attempts": 0,
+    "outside_writes": 0
+  },
+  "max_CPU_prediction_error": 3.0517578125e-05,
+  "max_MPS_prediction_error": 0.0,
+  "performance_scores_computed": false
+}

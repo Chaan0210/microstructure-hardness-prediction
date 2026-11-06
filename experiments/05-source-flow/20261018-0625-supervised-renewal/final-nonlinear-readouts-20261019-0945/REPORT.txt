@@ -1,0 +1,36 @@
+추가 상세 검토 및 Public 제출 결과 — 2026-10-19
+
+새 최고는 #62 candidate-source-flow38-boostedreadout.csv, 실제 Public RMSE8.8196272229입니다. 이전 최고 #59의8.8625701284보다0.0429429055, 083의8.9179249297보다0.0982977068 낮습니다. 이는 Public에서 직접 확인한 개선이며 Private 성능을 보장하지 않습니다.
+
+검토한 내용:
+1. source 모델의 학습/추론 경로, 두 encoder 및 세 TabPFN seed의 평균, raw/log 예측의 역변환, 기존 보정의 차감, ID 정렬과 실패 fallback을 대조했습니다. 계산 오류를 수정한 결과는 아닙니다.
+2. 앞선 전체 블록 교체는 검증과 Public 모두 충분하지 않았습니다. 이번에는 기존 강한 앙상블과 source TabPFN 보정은 유지하면서, 새38개 연속 특징을 읽는 추가 raw/log 선형 보정기만 바꿨습니다.
+3. 두 비선형 가설과 설정을 먼저 고정하고, 두 후보를 모두 학습·생성한 뒤 첫 Public 점수를 확인했습니다. 첫 결과를 보고 두 번째 파일이나 계수를 수정하지 않았습니다.
+
+고정 후보:
+- #61 선형+RBF 커널 회귀. 학습 행만으로 median imputation 및 StandardScaler를 적합합니다. K(A,B)=A@B.T/d+exp(-squared_distance/(2*d)), alpha=100/d, 원래hardness를 학습합니다. Public8.8646993203으로 기존 최고보다0.0021291919 악화했습니다.
+- #62 작은 HistGradientBoostingRegressor. squared_error, learning_rate0.05,300iterations, 최대7leaves/depth3, min_samples_leaf20, L2=10,max_bins63,early_stopping=False,seed2026101951입니다. Public8.8196272229로 개선했습니다.
+
+각 방식은 동일한500개 제공 학습 행으로 P104control 하나와 P104+sourceF38 두 encoder의 head를 각각 학습했습니다. 잔차를 학습하거나 별도 calibration을 적합하지 않았습니다. 이미지 encoder는 기존 두 고정 모델을 그대로 재사용했습니다.
+
+정확한 구성:
+  current_source
+  - eligible*.128*((mean_source_raw-control_raw)+(mean_source_log-control_log))
+  + eligible*.256*(mean_source_newhead-control_newhead)
+즉 기존 source에서 추가한 raw/log 선형 차이만 제거하고, 동일한 고정총량0.256에 새 readout 차이를 넣습니다. 기존 ensemble과 source TabPFN, 실패 fallback은 유지됩니다. 세부 레시피는 frozen-recipe.json입니다.
+
+검증/보존:
+-500개 학습 ID와 실제 제공 라벨의 정확한 일치를 확인했습니다. 두 후보의 모든 head를 학습한 후에만 테스트 특징/예측을 읽었습니다.
+-각 CSV의1000개 고유 ID, 제출순서, ID/hardness 스키마, 유한값과 fallback 보존을 검증했습니다.
+-저장 모델을 다시 로드한 예측이 최대차이0, CSV바이트동일이었습니다.
+-별도 디렉터리·새 프로세스에서 head학습부터 다시 실행해도 두CSV가 모두바이트동일이었습니다. fresh-refit-reproduction.json을 참조하세요.
+-기존 sourceCSV와 source predictioncache 및 물리특징cache의 보호hash도 일치했습니다. 모델상태, 코드, 레시피, 입력의존성, 실패후보와 Public증거를 preservation.json에 보존했습니다.
+
+추천은 새 Public 최고 #62입니다. 최종 제출 선택 설정은 변경하지 않았으며 화면의0/1상태가 유지됐습니다. 오늘 제출한도5/5를 모두 사용했고 추가 제출은 예정하지 않습니다. 비용, 새 약관동의, 소프트웨어 설치, 환경변경은 없었습니다.
+
+새 최고 CSV SHA256:
+4e97c57b57eb77b0056552e8649f41bba5a927993b705c4602ffa272c1f3e597
+Submission UUID:
+f01cfa7c-3954-497c-a76b-4f3ded1e9189
+
+재현: 이폴더의 build.py와 frozen-recipe.json을 experiments/supervised-renewal-20261018-0625 안의 새 sibling폴더에 복사하고, 프로젝트루트에서 .venv/bin/python <새폴더>/build.py를 실행합니다. 기존 출력폴더/CSV를 덮어쓰지 않습니다. 실제 재현 결과는 ../final-nonlinear-readouts-reproduction-20261019에 있습니다. 모델버전과 상태hash는 fit-complete.json, 전체계보는 기존 source-candidate-preservation.json 및 current-best-protection.json을 참조하세요.

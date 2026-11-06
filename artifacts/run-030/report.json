@@ -1,0 +1,481 @@
+{
+  "hypothesis": "Positive minimum Hessian curvature can capture dark pores attached to long boundaries, unlike whole-component shape filtering.",
+  "novelty": "Native28 squared LoG tile energies lack minimum-eigenvalue local curvature and blob extrema. This is not watershed, closed-network counting or noise variance subtraction.",
+  "scales": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "absolute_response_threshold_floor": 0.01,
+  "peak_threshold": "max(.01,3*imageHHnoise*discrete normalized-dxx-kernel L2 norm); no noise variance subtraction",
+  "models": [
+    "fixed compact26+porecurvature22 nested KRR"
+  ],
+  "primary_ensemble": {
+    "baseline": 0.5,
+    "original_single_CNN": 0.25,
+    "new_kernel": 0.25
+  },
+  "inner_grid": {
+    "width": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "alpha": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "folds": 3
+  },
+  "source_sha256": {
+    "pore_curvature_features.py": "f3b5252e0f8d8097f7388f5c4dea03ae8a9c6ef637e482cfc7757c93603e83d6",
+    "pore_curvature_experiment.py": "12996d3824189a3cad96f9b86d2d197640886afb352ae140013a89fda23d8a05",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3"
+  },
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  },
+  "input_sha256": {
+    "artifacts/run-001/split_manifest.json": "35293da0fda17e745939c316619f58281f50636c34696988e1b869bd9cc46193",
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/run-012/development_oof.csv": "14e598de255e25aa6e291499f101a61b4c51ba78aeaee49d05d88859cdcd2fac",
+    "artifacts/run-009/development_oof.csv": "2d6489eded8da556c061254fba5b8fa60af5f57cccf4a13610ae78e1d47220bf",
+    "artifacts/run-030/qa-engineering.json": "d686d36dba691df25cd30ba5b088e61a2d2f2ed53c3c0049c74200fcd779fc95",
+    "artifacts/run-030/qa-review.json": "76d952f42ceb803a19a385f92c571cf81e417ae2616b62d130b7ec8df1fe94e5"
+  },
+  "scope": "Development400 only. No synthetic training, external data, holdout/test reads, manual target correction or Public-score tuning.",
+  "features": [
+    "inverse_sqrt_grain_diameter",
+    "grain_size_cv",
+    "phase_dark",
+    "phase_light",
+    "pore_fraction15",
+    "pore_fraction30",
+    "pore_diameter",
+    "grain_aspect",
+    "grain_alignment",
+    "within_grain_contrast",
+    "grain_scale_sensitivity",
+    "boundary_fraction",
+    "intercept_median_gap_mean",
+    "intercept_sensitivity_gap_mean",
+    "intercept_median_gap_cv",
+    "intercept_sensitivity_gap_cv",
+    "intercept_median_gap_inv_sqrt_mean",
+    "intercept_sensitivity_gap_inv_sqrt_mean",
+    "intercept_median_directional_cv",
+    "intercept_sensitivity_directional_cv",
+    "intercept_median_uncensored_coverage",
+    "intercept_sensitivity_uncensored_coverage",
+    "intercept_median_crossings_per_pixel",
+    "intercept_sensitivity_crossings_per_pixel",
+    "image_mean",
+    "image_std",
+    "porecurve_s1_peak_density",
+    "porecurve_s1_peak_strength_density",
+    "porecurve_s1_peak_roundness_median",
+    "porecurve_s1_response_q995",
+    "porecurve_s1_positive_response_mean",
+    "porecurve_s2_peak_density",
+    "porecurve_s2_peak_strength_density",
+    "porecurve_s2_peak_roundness_median",
+    "porecurve_s2_response_q995",
+    "porecurve_s2_positive_response_mean",
+    "porecurve_s4_peak_density",
+    "porecurve_s4_peak_strength_density",
+    "porecurve_s4_peak_roundness_median",
+    "porecurve_s4_response_q995",
+    "porecurve_s4_positive_response_mean",
+    "porecurve_s8_peak_density",
+    "porecurve_s8_peak_strength_density",
+    "porecurve_s8_peak_roundness_median",
+    "porecurve_s8_response_q995",
+    "porecurve_s8_positive_response_mean",
+    "porecurve_noise_sigma",
+    "porecurve_smooth_variance_share"
+  ],
+  "blocks": [
+    "size",
+    "size",
+    "phase",
+    "phase",
+    "phase",
+    "phase",
+    "phase",
+    "shape",
+    "shape",
+    "intensity",
+    "size",
+    "shape",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intercepts",
+    "intensity",
+    "intensity",
+    "porecurve_density",
+    "porecurve_strength",
+    "porecurve_shape",
+    "porecurve_strength",
+    "porecurve_strength",
+    "porecurve_density",
+    "porecurve_strength",
+    "porecurve_shape",
+    "porecurve_strength",
+    "porecurve_strength",
+    "porecurve_density",
+    "porecurve_strength",
+    "porecurve_shape",
+    "porecurve_strength",
+    "porecurve_strength",
+    "porecurve_density",
+    "porecurve_strength",
+    "porecurve_shape",
+    "porecurve_strength",
+    "porecurve_strength",
+    "porecurve_nuisance",
+    "porecurve_nuisance"
+  ],
+  "scores": {
+    "candidate003": {
+      "rmse": 13.705696031698212,
+      "fold_rmse": [
+        13.53939448345915,
+        13.218378105383424,
+        14.68045368639936,
+        12.991004741250551,
+        14.032386512109257
+      ]
+    },
+    "old_kernel_control": {
+      "rmse": 14.482935938822393,
+      "fold_rmse": [
+        14.199103888352033,
+        13.644960947898369,
+        15.405654089395055,
+        14.65008366609084,
+        14.457473056960023
+      ]
+    },
+    "pore_kernel": {
+      "rmse": 14.25397591717558,
+      "fold_rmse": [
+        13.633491928542943,
+        13.576138709113472,
+        15.276287129300984,
+        14.314813173280147,
+        14.401967857887009
+      ]
+    },
+    "pore_blend": {
+      "rmse": 13.698556680879785,
+      "fold_rmse": [
+        13.449276860102904,
+        13.238757574285014,
+        14.673831894061426,
+        12.950550980320559,
+        14.109089707594057
+      ]
+    }
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.01,
+        "inner_rmse": 14.684067522182437
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 17.855619070540875
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 17.866515956035354
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 17.967419656342603
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 17.79542541489694
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.686680506066121
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 14.934408036624244
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.684067522182437
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.71281585870337
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.451920508775242
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.1,
+        "inner_rmse": 14.914517642989157
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 17.883375161726406
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 17.905745316402246
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 18.04542962152623
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 17.970589831446862
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.852759609772487
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.13253931918759
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.920378608344688
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.914517642989157
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.640982502829226
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.1,
+        "inner_rmse": 14.294088343319238
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 17.71906514526687
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 17.725607304740016
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 17.794188133672407
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 18.00586218312813
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.476622621092162
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 14.707886605645974
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.4038028123402
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.294088343319238
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.193577418948767
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.01,
+        "inner_rmse": 14.722646791598933
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 17.73221205951667
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 17.738894511446116
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 17.807926805303378
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 17.482873135091435
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.408710808799285
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.059404239479214
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 14.722646791598933
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 14.904897112755455
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.553538248375887
+        }
+      ]
+    },
+    {
+      "fold": 4,
+      "selected": {
+        "bandwidth": 4.0,
+        "alpha": 0.1,
+        "inner_rmse": 15.000449290036668
+      },
+      "inner_scores": [
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.01,
+          "inner_rmse": 18.028240076924423
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 0.1,
+          "inner_rmse": 18.041445412906825
+        },
+        {
+          "bandwidth": 0.25,
+          "alpha": 1.0,
+          "inner_rmse": 18.13296643113595
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.01,
+          "inner_rmse": 17.837869860624597
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.875660504126305
+        },
+        {
+          "bandwidth": 1.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.250971770774976
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.01,
+          "inner_rmse": 15.127078177411184
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 0.1,
+          "inner_rmse": 15.000449290036668
+        },
+        {
+          "bandwidth": 4.0,
+          "alpha": 1.0,
+          "inner_rmse": 15.825005659365306
+        }
+      ]
+    }
+  ],
+  "feature_seconds": 9.40767629200127,
+  "elapsed_seconds": 10.135787959035952,
+  "feature_cache_sha256": "685fd9fa0b9bf6db34b52dfba7334a490e4124180aed1d633ffcc7b3b4b0ccca",
+  "control_max_abs_difference": 0.0,
+  "conditional_improvement_ci95": [
+    -0.061203648782379536,
+    0.0773446736171441
+  ],
+  "residual_corr_vs003": 0.998511451559402,
+  "limits": "No ground truth pore labels; Hessian also responds to dark phase, junctions and noise. Fixed small panel and reused400 still allow selection optimism. Synthetic QA only."
+}

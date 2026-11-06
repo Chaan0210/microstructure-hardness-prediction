@@ -1,0 +1,65 @@
+{
+  "status": "validated local experimental candidates; official references preserved",
+  "primary_review_candidate": "073 plus noise-calibrated auxiliary residual CNN mean2",
+  "lowest_observed_local_candidate": "replace normal-row 021 contribution with the same residual CNN branch",
+  "primary_reason": "Retains021 and changes only noisy, non-fallback predictions; four original folds improved and one was unchanged.",
+  "replacement_caveat": "Lower pooled local RMSE, but one fold worsens and most test rows change.",
+  "primary_oof_rmse": 9.319649642914404,
+  "replacement_oof_rmse": 9.25878745398302,
+  "scored_scope": {
+    "unique_images": 400,
+    "outer_folds": 5,
+    "partition": "original",
+    "source_restricted_augmentation": true
+  },
+  "final_refit": {
+    "n_images": 500,
+    "seeds": [
+      2026101501,
+      2026201501
+    ],
+    "production_coefficients": {
+      "addition": [
+        0.0,
+        0.5467904360508202
+      ],
+      "replacement": [
+        0.0,
+        0.6196114728365577
+      ]
+    }
+  },
+  "official_models_replaced": false,
+  "uploaded": false,
+  "limitations": [
+    "Noise-regime hypothesis was added after outer residual analysis.",
+    "Same400 development images have been reused by earlier research.",
+    "Current-round simultaneous intervals narrowly include zero; no independent new partition was scored.",
+    "Full500 coefficients are a fixed mean of internal calibration vectors, not a new globally scored OOF fit."
+  ],
+  "next_highest_value": "Fully nested confirmation on another frozen partition, rather than further tuning on these400 outcomes.",
+  "outputs": {
+    "addition": {
+      "file": "experiments/rmse-research-20261015/round4-full073/final500/candidate-aux-noise-addition.csv",
+      "sha256": "379d2dd017916daaedfbcd28925da10cd2a171deaedece02341e298650b07dd9",
+      "n_rows": 1000,
+      "prediction_range": [
+        154.29148487750442,
+        272.5542241841774
+      ],
+      "delta_rms_vs073": 1.0087622088160992,
+      "changed_rows": 318
+    },
+    "replacement": {
+      "file": "experiments/rmse-research-20261015/round4-full073/final500/candidate-aux-noise-replacement.csv",
+      "sha256": "2b16d1b95dad5127b7039b1ce192a867cc3def8f2ad1242f39a0a473404bbef0",
+      "n_rows": 1000,
+      "prediction_range": [
+        151.99651128150666,
+        280.40188884123006
+      ],
+      "delta_rms_vs073": 1.8149556626030117,
+      "changed_rows": 999
+    }
+  }
+}

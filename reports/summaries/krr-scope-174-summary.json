@@ -1,0 +1,191 @@
+{
+  "study": 174,
+  "status": "completed_original_only_no_promotion",
+  "created_UTC": "2026-10-05T17:48:42.458217+00:00",
+  "purpose": "Audit selection-scope sensitivity of frozen018; not Public optimization.",
+  "RMSE": {
+    "all_current018": 12.811945280526919,
+    "subset80_all_levels": 12.80273750987562,
+    "subset80_top_only": 12.808300723335378
+  },
+  "gain_all_minus_subset80_all_levels": 0.009207770651299185,
+  "gain_all_minus_subset80_top_only": 0.003644557191540443,
+  "folds": [
+    {
+      "fold": 0,
+      "n": 80,
+      "all": 12.805516135869311,
+      "subset80_all_levels": 12.809110298581368,
+      "subset80_top_only": 12.805516135869311
+    },
+    {
+      "fold": 1,
+      "n": 80,
+      "all": 12.262774212459604,
+      "subset80_all_levels": 12.25651654725791,
+      "subset80_top_only": 12.262774212459604
+    },
+    {
+      "fold": 2,
+      "n": 80,
+      "all": 13.808573167119736,
+      "subset80_all_levels": 13.848378975700625,
+      "subset80_top_only": 13.808573167119736
+    },
+    {
+      "fold": 3,
+      "n": 80,
+      "all": 12.166967188386574,
+      "subset80_all_levels": 12.158464507049775,
+      "subset80_top_only": 12.166967188386574
+    },
+    {
+      "fold": 4,
+      "n": 80,
+      "all": 12.94839955320084,
+      "subset80_all_levels": 12.870472982592151,
+      "subset80_top_only": 12.930358801294714
+    }
+  ],
+  "prediction_difference_RMS": {
+    "all_levels": 0.3962561309399998,
+    "top_only": 0.34757580843260827
+  },
+  "selection_changes_by_level": {
+    "outer": {
+      "changed": 1,
+      "total": 5
+    },
+    "middle": {
+      "changed": 8,
+      "total": 15
+    },
+    "deep": {
+      "changed": 27,
+      "total": 45
+    }
+  },
+  "chosen_setting_counts": {
+    "all": {
+      "(4.0, 0.1)": 46,
+      "(4.0, 1.0)": 1,
+      "(1.0, 1.0)": 4,
+      "(4.0, 0.01)": 13,
+      "(1.0, 0.1)": 1
+    },
+    "subset80": {
+      "(4.0, 0.1)": 35,
+      "(1.0, 1.0)": 15,
+      "(1.0, 0.1)": 2,
+      "(4.0, 0.01)": 12,
+      "(4.0, 1.0)": 1
+    }
+  },
+  "conditional_paired_ID_bootstrap": {
+    "draws": 10000,
+    "seed": 20261005174,
+    "gain95_intervals": {
+      "all_levels": [
+        -0.03096880224904277,
+        0.051443500471254296
+      ],
+      "top_only": [
+        -0.03406700212852929,
+        0.04562659293315143
+      ]
+    },
+    "specified_after_results": true,
+    "used_for_decision": false,
+    "limits": "Fixed predictions, same adaptively reused400 IDs; excludes model refitting, subset variability and research-selection uncertainty. Not independent generalization evidence."
+  },
+  "top_only": {
+    "plan": "artifacts/krr-scope-174/attribution-plan.json",
+    "independent_formula_max_error": 8.526512829121202e-14,
+    "interpretation": "Historical production400/500 exception affects top KRR only. NestedA/C use all their training rows. Top-only is structurally closer; fixedlocal80% cohort still differs from actual historic400 subset.",
+    "reuse_justification": "Middle/deep predictions feeding affine and residual training are identical; no affected training target is reused stale."
+  },
+  "expansion": {
+    "performed": false,
+    "frozen_gate_passed": false,
+    "reason": "Gain0.00920777 is below prespecified >0.01 resource gate; 3/5folds improve. Retain original gate; do not reinterpret as no effect or proven harm.",
+    "practically_negligible": false,
+    "clear_harm": false,
+    "limitation": "No resplit result; partition stability remains unmeasured for174."
+  },
+  "validation": {
+    "passed": true,
+    "split": "original",
+    "KRR_fits_independently_recomputed": 3640,
+    "residual_models_independently_verified": 600,
+    "affine_fits": 40,
+    "KRR_max_error": 2.376054908381775e-11,
+    "residual_max_error": 6.128431095930864e-14,
+    "affine_max_error": 1.7053025658242404e-13,
+    "poison": {
+      "all": {
+        "outer80_labels_changed": true,
+        "all13_KRR_selections_fullfits_downstream_recomputed": true,
+        "predictions_exact": true
+      },
+      "subset80": {
+        "outer80_labels_changed": true,
+        "all13_KRR_selections_fullfits_downstream_recomputed": true,
+        "predictions_exact": true
+      },
+      "anchorB_four_nodes_exact": {
+        "middle-0": true,
+        "deep-0-0": true,
+        "deep-0-1": true,
+        "deep-0-2": true
+      },
+      "selection_complement_labels_excluded": {
+        "changed": 64,
+        "inner_predictions_scores_chosen_exact": true
+      },
+      "residual_inner_H_exact": true
+    },
+    "subset_no_labels_hash_rule_group_integrity": true,
+    "all_final_KRR_stats_use_fullU": true,
+    "control018_max_error": 0.0,
+    "report_sha256": "3feead88e2df7255b720e41bf6122aaec7574f7b9a1c6b006103a6d5a133b140",
+    "source_sha256": "16f4ba2061ef719afe58c9f357e3ba9714744ec4708422520f4d502e66145def",
+    "upstream_NN_scope_certificate": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+    "fresh_neural_retraining": false,
+    "seconds": 14.175399792000462
+  },
+  "execution_seconds": {
+    "original_paired_fit": 7.8583962920001795,
+    "independent_validation": 14.175399792000462
+  },
+  "new_neural_fits": 0,
+  "raw_holdout_test_read": false,
+  "full_retraining_performed": false,
+  "new_CSV": false,
+  "upload": false,
+  "cost": 0,
+  "protected_hashes": {
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16",
+    "artifacts/submission-candidate-019.csv": "77fa34cf57395c58a4289588bfad5ef65e0c984ef9ceb679bfbcee5b6784d51c",
+    "artifacts/submission-candidate-020.csv": "f1e99e053bb1d425e5ce46afe7f7b2ee399bfee2a38941b0a7cbf96d64e9426b",
+    "deliverables/reproduction-018-v155.zip": "613638cb56740157023a389dc9a2985ddc6479e0bd1bb0e35126bd633373df53",
+    "deliverables/reproduction-011-014-015-v136.zip": "4427867a93a8e9ffb0526c467eaa570c5b6952a0f18a45adcb40df30cffad2ef",
+    "reports/candidate018-summary.json": "7098a5a41d2b810c5b1c12b3f478c05f31c31b24fad206a7ea70a8e538dc20c2",
+    "artifacts/final-model-145/fit.json": "f3db9ed96fbffe64f12973fe3d4bdf3d50799a34b571ee2b99f085a3432a657a"
+  },
+  "evidence": {
+    "krr_scope_174.py": "eb3eaecfc1b018a2f2604f4b57c2461920f2a178ff01a2dbc46f3151ee6885f6",
+    "validate_krr_scope_174.py": "16f4ba2061ef719afe58c9f357e3ba9714744ec4708422520f4d502e66145def",
+    "finalize_krr_scope_174.py": "c3aec20b639c400ea31380679e2a857cbd41bba475f67ed98a709cea127a759d",
+    "artifacts/krr-scope-174/plan.json": "5bd68e64b25ace2e8e7ac19501fdc34d336bedc8719c868d8db6912f94f7da17",
+    "artifacts/krr-scope-174/attribution-plan.json": "7274611ea2af8c42ca478da7ddb801b1279d79b4ed191b8f10891cbe13d75aae",
+    "artifacts/krr-scope-174/original/report.json": "3feead88e2df7255b720e41bf6122aaec7574f7b9a1c6b006103a6d5a133b140",
+    "artifacts/krr-scope-174/original/predictions.npz": "9f4b7c0f2299b35a036376700a27ad59c37d841420ee08b87a456ea41662fdc7",
+    "artifacts/krr-scope-174/original/top-only-attribution.npz": "d1f049c3be328daa797622819ae472d2144d16da076acadcc6a75b14f205b8da",
+    "artifacts/krr-scope-174/validation-original.json": "56ff8871e58c63361c9d68d9dcd98a25966338111d5dc60b773edfd680ab166a"
+  },
+  "retraining_plan": {
+    "path": "reports/retraining-018-plan-174.json",
+    "sha256": "10fef8d6f88c1f1e70a79fa054d0f99c97390eefe28036d23e89eb2ee47914a1"
+  },
+  "validation_scope_note": "Independent algebra covers all5folds/botharms. Full outer80 label-poison replay uses representative originalfold0 for botharms; anchorB/selection-complement/residual-inner poison probes also use fold0. Unchanged neural caches rely on prior certificates; no fresh neural retraining."
+}

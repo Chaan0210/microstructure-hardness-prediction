@@ -1,0 +1,338 @@
+{
+  "study": "080 ViT-B14 finalattention rank4 adapters only",
+  "duplicate_audit": {
+    "043": "ViT-S14 lastblock fullparameters,8epochs1e-6 with fixed singlelayerRidge/MSE+anchor.",
+    "059": "ViT-S043 adaptedfeatures then unchangedMLP; no jointbackprop or newbackbone fit.",
+    "080": "ViT-B14 finalblock qkv/proj rank4 adapters trained through existing3MLPmean; no prior equivalentB experiment found."
+  },
+  "config": {
+    "rank": 4,
+    "alpha": 4,
+    "epochs": 8,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "lr": 0.0001,
+    "weight_decay": 0.1,
+    "anchor_weight": 1.0,
+    "clip": 1.0,
+    "seed": 20270201
+  },
+  "control": "Same existing3seedBMLP, foldtrainStandardScaler/targetstats, original pretrainedBweights frozen. All009 affine slopes/centers andweights unchanged; only B representation receives the adapter. No077or079calibration extension.",
+  "resources": {
+    "microbenchmark": {
+      "trainable_parameters": 18432,
+      "median_step_seconds": 0.05219545803265646,
+      "projected_original5fold_train_seconds": 334.05093140900135,
+      "rss_peak_bytes": 1171521536,
+      "mps_driver_bytes": 1528479744,
+      "warm_control_max_error": 8.608274129073834e-06,
+      "frozen_parameters_unchanged": true,
+      "training_ids": [
+        "TRAIN_000001",
+        "TRAIN_000002"
+      ],
+      "resource_pass": true
+    },
+    "full_fold_benchmark": {
+      "first_fold_seconds": 79.99995737499557,
+      "projected_original5fold_seconds": 399.9997868749779,
+      "rss_peak_bytes": 2897625088,
+      "mps_driver_bytes": 1192919040,
+      "first_fold_reused": true,
+      "fold_report_sha256": "6b53019e21bba2db695a76f312226b559abc61aac403fc17e84a829084b2a17d",
+      "resource_pass": true
+    },
+    "prefix_cache": {
+      "shape": [
+        400,
+        1297,
+        768
+      ],
+      "sha256": "a4775c87ff828dbaa3eee169af6498f5c78f6276b09fdef3f84c3d6dd03cf113",
+      "frozen_B_tail_descriptor_max_error": 0.0,
+      "all400_frozen_descriptor_exact": true,
+      "seconds": 51.90147691697348,
+      "weights_unchanged": true
+    }
+  },
+  "results": {
+    "original": {
+      "zero_adapter_numeric_control": {
+        "zero_adapter_009_RMSE": 13.105157896764707,
+        "zero_adapter_gain_vs_exact009": 1.595686072164426e-08,
+        "max_prediction_difference": 1.7642991281263676e-06,
+        "purpose": "Quantify CPU/MPS floating-point control differences separately from learned adapter gain."
+      },
+      "scores": {
+        "reference009": {
+          "rmse": 13.105157912721568,
+          "fold_rmse": [
+            13.025386023375454,
+            12.507824306370592,
+            14.197984111621984,
+            12.181376909479603,
+            13.51483530810461
+          ]
+        },
+        "frozenB": {
+          "rmse": 13.615777507504738,
+          "fold_rmse": [
+            13.650648366415224,
+            12.80647915614849,
+            14.045068523498623,
+            13.407892313668881,
+            14.126760079518114
+          ]
+        },
+        "adaptedB": {
+          "rmse": 13.628670149268476,
+          "fold_rmse": [
+            13.644909772140881,
+            12.84149629315753,
+            14.03926207660083,
+            13.417948801285664,
+            14.158864034990883
+          ]
+        },
+        "primary": {
+          "rmse": 13.10413742660317,
+          "fold_rmse": [
+            13.022136537716314,
+            12.506331297055734,
+            14.197201444500285,
+            12.180615553418216,
+            13.515909212552927
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0010204861183975567,
+        "fold_gains": [
+          0.00324948565913985,
+          0.0014930093148581847,
+          0.0007826671216992764,
+          0.000761356061387275,
+          -0.001073904448317009
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.0010019235802045006,
+        "conditional_ci95": [
+          -0.000928339851328408,
+          0.0030460946933190684
+        ]
+      },
+      "train_RMSE_before_pooled": 0.5059661954706801,
+      "train_RMSE_after_pooled": 0.38520389613665645,
+      "adapter_up_L2": [
+        0.15910461621406,
+        0.1614916187760051,
+        0.15009486543918796,
+        0.1497470986857589,
+        0.1672903906320059
+      ],
+      "total_folds_seconds": 390.8717249999754,
+      "max_RSS_bytes": 2909978624,
+      "max_MPS_driver_bytes": 1192919040
+    },
+    "20261031": {
+      "zero_adapter_numeric_control": {
+        "zero_adapter_009_RMSE": 13.082283261846532,
+        "zero_adapter_gain_vs_exact009": -1.7673849939114916e-08,
+        "max_prediction_difference": 1.5750926820601308e-06,
+        "purpose": "Quantify CPU/MPS floating-point control differences separately from learned adapter gain."
+      },
+      "scores": {
+        "reference009": {
+          "rmse": 13.082283244172682,
+          "fold_rmse": [
+            13.381109119932207,
+            14.258282229743807,
+            13.602704776447293,
+            11.723700529909848,
+            12.284105569029235
+          ]
+        },
+        "frozenB": {
+          "rmse": 13.967093172617764,
+          "fold_rmse": [
+            13.502110276748768,
+            13.956975680280312,
+            14.804788899095918,
+            13.138042313219065,
+            14.3702601307972
+          ]
+        },
+        "adaptedB": {
+          "rmse": 13.980048358931326,
+          "fold_rmse": [
+            13.528195418483007,
+            13.958986506447953,
+            14.813503914339096,
+            13.159668785010114,
+            14.377990272326743
+          ]
+        },
+        "primary": {
+          "rmse": 13.081449590263393,
+          "fold_rmse": [
+            13.381857154553895,
+            14.25568989266731,
+            13.602641433356888,
+            11.724159814164071,
+            12.281491944372723
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0008336539092894668,
+        "fold_gains": [
+          -0.000748034621688376,
+          0.0025923370764981968,
+          6.334309040489927e-05,
+          -0.00045928425422303576,
+          0.002613624656511604
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.0007381837041360899,
+        "conditional_ci95": [
+          -0.0006385062108988926,
+          0.002276819869854487
+        ]
+      },
+      "train_RMSE_before_pooled": 0.47177619760927114,
+      "train_RMSE_after_pooled": 0.36777509607152237,
+      "adapter_up_L2": [
+        0.15419993192037917,
+        0.17079330889287556,
+        0.14407256194183568,
+        0.14304454004922754,
+        0.16517381414997018
+      ],
+      "total_folds_seconds": 388.04460558498977,
+      "max_RSS_bytes": 2860777472,
+      "max_MPS_driver_bytes": 1192919040
+    },
+    "20261101": {
+      "zero_adapter_numeric_control": {
+        "zero_adapter_009_RMSE": 13.3051052728143,
+        "zero_adapter_gain_vs_exact009": 9.287626667742188e-09,
+        "max_prediction_difference": 1.53799604163396e-06,
+        "purpose": "Quantify CPU/MPS floating-point control differences separately from learned adapter gain."
+      },
+      "scores": {
+        "reference009": {
+          "rmse": 13.305105282101927,
+          "fold_rmse": [
+            13.849200001634694,
+            12.960759057914057,
+            12.948923572726505,
+            13.74037731629103,
+            12.995188583092828
+          ]
+        },
+        "frozenB": {
+          "rmse": 14.02485574576349,
+          "fold_rmse": [
+            14.677079552637498,
+            13.389320447678788,
+            13.47112184163994,
+            14.835679788209715,
+            13.682975142551932
+          ]
+        },
+        "adaptedB": {
+          "rmse": 14.032559793477807,
+          "fold_rmse": [
+            14.698476993028127,
+            13.389549525577829,
+            13.484216726676262,
+            14.82145632050504,
+            13.701778759801822
+          ]
+        },
+        "primary": {
+          "rmse": 13.303706910124971,
+          "fold_rmse": [
+            13.85099566441845,
+            12.95759347548424,
+            12.94690225276677,
+            13.73778685786814,
+            12.994026030679338
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0013983719769559144,
+        "fold_gains": [
+          -0.0017956627837563133,
+          0.0031655824298173485,
+          0.0020213199597343134,
+          0.0025904584228886307,
+          0.0011625524134899479
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.0008434989518041375,
+        "conditional_ci95": [
+          -0.00021456820718110948,
+          0.0030578932906989652
+        ]
+      },
+      "train_RMSE_before_pooled": 0.4745569998910041,
+      "train_RMSE_after_pooled": 0.3693896181599627,
+      "adapter_up_L2": [
+        0.16496669435403633,
+        0.16888229209028088,
+        0.14495323412530164,
+        0.14909938636772802,
+        0.15472333407531055
+      ],
+      "total_folds_seconds": 391.15667108196067,
+      "max_RSS_bytes": 2617294848,
+      "max_MPS_driver_bytes": 1192919040
+    }
+  },
+  "verification": {
+    "passed": true,
+    "folds_verified": 15,
+    "frozen_heads_verified": 45,
+    "trainable_adapter_parameters": 18432,
+    "only_rank4_adapters_changed": true,
+    "max_MPS_reload_error": 0.0,
+    "max_frozen_control_error": 1.2330400579685374e-05,
+    "max_CPU_MPS_error": 1.8272680307518385e-05,
+    "prefix_rows_independently_rebuilt": 3,
+    "prefix_max_error": 0.0,
+    "development400_image_hashes_verified": true,
+    "leakage_replay": {
+      "outer_validation_labels_perturbed_in_memory": true,
+      "full8epoch_adapter_replay_max_error": 0.0,
+      "adapter_and_all_frozen_states_exact": true
+    },
+    "unchanged009_formula_and_coefficients": true,
+    "eligible_for_candidate": true,
+    "best009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "protected009_files_verified": 60,
+    "holdout_test_selection_access": false,
+    "cost": 0,
+    "seconds": 116.80383587500546,
+    "source_sha256": "be9a0df7eb67b6232048bc1e8ecab866a4676bcfedfcf4197b0535fcbb775c80"
+  },
+  "decision": "Eligible for locked final500 candidate procedure.",
+  "interpretation": "Training fit improvement alone is not evidence of improved generalization. The frozen B heads already closely interpolate training targets; the adapter fits the remaining small training residual under anchoring. This tests one tightly constrained adaptation recipe, not all possible B fine-tuning. Failure does not establish a model capacity ceiling.",
+  "next_hypothesis_judgment": "A distinct future question is joint head/adapter training with a matched frozen-backbone head trained under the identical schedule, rather than adapting an already near-interpolating fixed head. It would need a separate preregistered budget and outertrain-only epoch policy; not executed or claimed superior here. Repeating adapter rank/lr/anchor sweeps after this result is not supported by this single-control study.",
+  "scope": {
+    "protected009_files_verified": 60,
+    "best009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "cost": 0,
+    "new_install_or_download": false,
+    "holdout_test_selection_access": false,
+    "candidate_created": false,
+    "uploaded": false
+  },
+  "evidence_sha256": {
+    "artifacts/dinob-adapter-080/plan.json": "2b7feffcb18b0192f927fe51ccab93985404ae2351bd6e23041fb4ce4124be92",
+    "reports/dinob-adapter-080-validation.json": "7aa490921e5adaa086a8640267e2f703a1d3860b7ee4e298f86dc6eebfb19327"
+  },
+  "source_sha256": "3a9fa7f8823a40d6ebe451c4ba403dcfa83c98ea48fa38481b46e8e0bc05e48f",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

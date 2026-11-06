@@ -1,0 +1,23 @@
+{
+  "status": "Not executed; follow-up design only, not a validated candidate",
+  "utc": "2026-10-04T12:52:05.410788+00:00",
+  "priority": "If another study is authorized/requested, first audit feasibility of honest anchor-specific CNN-minus-KRR disagreement as one residual input. Do not restart154 or tune global base weights.",
+  "development_evidence": {
+    "mean_remaining018_residual_times_CNN_minus_KRR_by_partition": {
+      "original": 6.678223161228796,
+      "20261031": 12.849012156209113,
+      "20261101": 7.426300852122726
+    },
+    "interpretation": "Positive signed alignment in all3 partitions. This is descriptive reuse of400IDs, not an optimized mixture or causal result."
+  },
+  "specific_hypothesis": "Current585 morphology/spatial inputs cannot directly observe which base branch disagrees for an image. One signed disagreement input may condition residual correction on the relationship between image structure and branch prediction.",
+  "proposed_single_control": "Append exactly one feature p_CNNmean3_identity_A(x)-p_compactKRR_A(x) to018 residual inputs. For each honest B and outer V, both predictions must come from the SAME A-only models. Retain018 outer mixture, affine/shortB, three honest blocks, five residual candidates,512bootstrap rule; train-local scaling for the added feature. No seed/view/weight search.",
+  "training_size_safeguard": "Never train the feature using A-model predictions on B but query using fullT predictions on V. Use A for both. InnerI/H subsets ofB share A-only features whose models excluded ALL ofB; do not construct features from global400OOF caches. Full500analog A333/334 predictsB166/167 andtest.",
+  "related_failed_studies": "125 learned one global simplex of4 baseweights via middle/deepOOF and failed;112 learned one convex attention mixture and failed. Proposed input is inside honest residual models, retaining fixed baseweights and potentially interacting with spatial features. This is related ensemble work, not proof that a new mechanism is established.148/149/154 are not reopened.",
+  "preconditions": "Verify full duplicate audit and exact A-only checkpoint lineage, compare feature scale across142/213/320 train sizes descriptively without candidate fitting, and lock criterion before any candidate scores. If duplicate or input lineage cannot be demonstrated, do not execute.",
+  "no_execution_in_this_turn": true,
+  "no_candidate_CSV": true,
+  "holdout_or_test_used_for_proposal": false,
+  "cost": 0,
+  "evidence_SHA256": "4de1e319c3e72f2c2b5d225160de9fccbf53a67e8c43bf701fab470bfc4b5b8b"
+}

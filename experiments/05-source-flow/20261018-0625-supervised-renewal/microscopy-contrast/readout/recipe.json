@@ -1,0 +1,14 @@
+{
+  "kernel": "Equal linear/RBFsum;equal geometry/photometryblockweight;per-training-blockRMSfloorstandardization;RBFexp(-distance\u00b2/2)",
+  "alpha_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "selection": "Inner3fold refitsallnormalizationandhead;outeroriginal5folds.",
+  "primary_combination": "Complete083+.16*(newimageprediction-matchedG021),existingfailedmaskrowsunchanged.",
+  "secondary": "fixed25%blend",
+  "scope": "Newimagepredictorend-to-endhasnoevaluation-imagelearning;full083comparisonconditionalonitshistoricalauxiliaryrepresentations."
+}

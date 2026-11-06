@@ -1,0 +1,94 @@
+{
+  "study": "151 fixedCNN8viewgroupmean inside018",
+  "utc": "2026-10-04T12:20:58.248156+00:00",
+  "evidence": {
+    "study": "150 existingCNNview-averaging remaining-residual diagnostic",
+    "utc": "2026-10-04T12:16:46.774146+00:00",
+    "results": {
+      "original": {
+        "remaining018_error_times_frozen_D4_difference": 0.671234899965884,
+        "difference_MSE": 0.35674953420444977,
+        "CNNidentityRMSE": 14.316237784821688,
+        "CNND4RMSE": 14.101785259882034
+      },
+      "20261031": {
+        "remaining018_error_times_frozen_D4_difference": -0.016639705258853377,
+        "difference_MSE": 0.45553521241244455,
+        "CNNidentityRMSE": 13.918648305036763,
+        "CNND4RMSE": 13.868946937891785
+      },
+      "20261101": {
+        "remaining018_error_times_frozen_D4_difference": 0.3870786064386391,
+        "difference_MSE": 0.3284240684697106,
+        "CNNidentityRMSE": 14.307111794139066,
+        "CNND4RMSE": 14.162930650575309
+      }
+    },
+    "scope": "Development400onlyexistingcaches; noparameterfit/newinference/test/holdout. Frozenaffine intervention isdiagnostic,notpropernewpipelinevalidation.",
+    "distinct_scope": "020/021alreadytestedthree-seedD4 underbaseline50/KRR25/CNN25;candidate004alsousedphysics57KRR. Current018hasfourwaybase/affine/shortB/spatialbootstrapresidual andusesidentityCNN. Fullnested018D4transportuntested, notclaimD4isnewmethod.",
+    "decision": "Positivepooledresidualalignment,standaloneD4CNN lowerRMSEall3 butensemblealignmentonepartitionnegative. Motivatesonefixedfull8viewmean,notviewselection/rotation-weightgrid. Refitallnestedaffines/residuals; nopartialouterOOFblend.",
+    "failures_preserved": [
+      "148directionalenergy",
+      "149colocatedintensity"
+    ],
+    "sources": {
+      "artifacts/cnn-seed-mean-133/original/pipeline-fold-0/report.json": "a19820461be64d1396e6e4ed515519ac3156ab86594ab84966b5591e0a97a5f4",
+      "artifacts/cnn-seed-mean-133/original/pipeline-fold-1/report.json": "658b7d7010946fe52194da9a0d53eabe43689d3d8fe9efa790f5251d8b34439f",
+      "artifacts/cnn-seed-mean-133/original/pipeline-fold-2/report.json": "923d8be9a773b7b872fd808111d0131d5f1aebe8c1d0c5029f48f68243d3c6c1",
+      "artifacts/cnn-seed-mean-133/original/pipeline-fold-3/report.json": "12bb5f50536d3ef1562ba04bb626a1f752b8776efb73292d26ec7244f38caaa7",
+      "artifacts/cnn-seed-mean-133/original/pipeline-fold-4/report.json": "438deaafbfdcdf00173e03ceb48196876f78754cbe124672ea45a1a7aca80cc1",
+      "artifacts/run-020/development_oof.csv": "142d9355604a39da887b249cfbf19518311949796de3443000d54b56d8211493",
+      "artifacts/bootstrap-selector-144/original/predictions.npz": "ec2ac0b3d80a62c63f542f5d6c537c911045f93846fdd21df945a85fc22957ef",
+      "artifacts/cnn-seed-mean-133/20261031/pipeline-fold-0/report.json": "cd765918328bb15fcef8a15c17ced0ecc5fa9833dac08c2d08ac9bc33fb6eebf",
+      "artifacts/cnn-seed-mean-133/20261031/pipeline-fold-1/report.json": "a041f2842d86211829aea6a05727e2cad8649a2d3cd0d79297758d25daa53a3a",
+      "artifacts/cnn-seed-mean-133/20261031/pipeline-fold-2/report.json": "12671da40725dc383f873a26090ab34295a073a0c8c3556baa751f7261bf2ea1",
+      "artifacts/cnn-seed-mean-133/20261031/pipeline-fold-3/report.json": "93427119ba3dd6e3d2a57ca79b2f6a6c0d9f74978bd264275ceedfd4cd7694b6",
+      "artifacts/cnn-seed-mean-133/20261031/pipeline-fold-4/report.json": "2a797050acaf818ea019db09f7d4ff77d238d97969d09281e0f6486e3314962c",
+      "artifacts/frozen-validation-021/seed-20261031/development_oof.csv": "e1ae1f11749581ed731cea96b5c7f47a6748777aefaf9b6e3f2d99f7962e8cf1",
+      "artifacts/bootstrap-selector-144/20261031/predictions.npz": "bf886dfa0c9c799b73e7c3f1c596bca4f88d67ea5db5faf7f718eb0f31386501",
+      "artifacts/cnn-seed-mean-133/20261101/pipeline-fold-0/report.json": "230b967c38d6342460c6195a2b5124e9ad52665632446ae1b07941b4eb8f1b6a",
+      "artifacts/cnn-seed-mean-133/20261101/pipeline-fold-1/report.json": "9769e7abdcc8b8fc1b4f5a0a7d29191958303e5d28c6c43e257e491453553049",
+      "artifacts/cnn-seed-mean-133/20261101/pipeline-fold-2/report.json": "fefc8ded342cf573c4c33d8a08ec6bf841c041ff1fb23520e313098d866c9905",
+      "artifacts/cnn-seed-mean-133/20261101/pipeline-fold-3/report.json": "181769cedd2b78173b4a5ca9424f7764c4079cb3aa246cf11f20aee2423c4ab7",
+      "artifacts/cnn-seed-mean-133/20261101/pipeline-fold-4/report.json": "24aba103f45c859eb910aaad9a1f3a547982ccf4008b8e440bd4d6231bf65f51",
+      "artifacts/frozen-validation-021/seed-20261101/development_oof.csv": "5fa1104eb044c56a204f53adfe03907e1720fb6cd94cafb66938a04327835a75",
+      "artifacts/bootstrap-selector-144/20261101/predictions.npz": "dc919a907efa6c9ff4242320701c0d21c09c389982b92ba58a3df3d9bc12ee1f"
+    },
+    "cost": 0
+  },
+  "recipe": "Exactly018 exceptCNNcomponent uses equalmean3seeds x8D4views; same3checkpoints,fullgroupuniformweight,noseed/viewsubset. D4CNNtrainingalreadyfixed. RefitouteraffinefromD4middleOOF,anchorA-affinefromD4deepOOF,thenentire585featurebootstrapresidualcandidateprocedure onnewhonestresiduals. DINO/shortB/physics/spatialfeatures unchanged;no148/149features.",
+  "duplicate_distinction": "D4itselfwasalreadytested020/021/004underolderbaseline/KRRensemble.151testsfullnestedcurrent018procedure. Reusesall45outerD4CNNpredictions; computesonlymissing180nestednodes*3models fromexisting074/112/133checkpoints. No newCNN/backbonefit andno claimnewaugmentationmethod.",
+  "nested": "Everymiddle/deepcache readexacttrain/validationindices andchecktrainIDs/scalers; sameA/B/V/C/Das146audit. No replacingonlyouterCNNwhilekeepingidentitycalibration/anchors. NewresidualinnerfitsBminusH excludeHlabels throughA-onlyanchor. NewbootstrapweightsfromBinnerOOFonly.",
+  "criterion": "All3existingpartitions,onefixedrecipe. AdvanceonlypooleduntrimmedMSE below018 andindependentvalidationpasses. Noearlyperformancegate,perfold/CIrequirement orposthocidentityD4weight. Ifnegativepreserve018 andstopthisdirection.",
+  "validation": "AllnewnestedcheckpointtrainIDs/normalization andidentityview match133cachedseedpredictions<=1e-4; each24viewmean serializedandrecomputed. CPU/MPS8viewchecks onmiddle0/deep0perpartition,token-independentD4 closure fixture. Exact018controlcache; independentOLS/900residualmodels/bootstrapweights; outerlabelpoisoncompleteonefoldperpartition. Existingupstreamtrainingpoison146certificate reused.",
+  "resources": "CPU2/MPSexistinguv. Firstnestednode projected180nodes<1800sec,RSS<3GB. No newpackages/cost. No holdout/testbeforepositivefinaldecision. Full500same24viewformulaatnested/all500levels,existingcheckpointsreused; testonlyafterlockandtrainingvalidation.",
+  "uncertainty": "10000paired400IDclusterbootstrapseed20271210; same400historicaladaptivebias,overlappingpartitions. D4trainedCNN doesnotproveallphysicalorientationinvariance; itsgroupmean isfixedinductiveassumption.",
+  "hashes": {
+    "cnn_view_mean_151.py": "a49677cb6881a678ac05be428bf1bb22fb2c1f4900f65388e0ac2296d5dfb00d",
+    "cnn_ensemble_inference.py": "c88a3f988e8187c21f77124644a897defcef72915df463c286f687c2aae9eef1",
+    "directional_energy_148.py": "63d606f90d837cbe6aadecef90a9f0c583b45e20a6832dd4d293d7e131bf0000",
+    "cnn_seed_mean_133.py": "0253abea611ec28ddd90995bb896526d3432f01793a8d62b387a9745b3bd6b5b",
+    "reports/cnn-view-150-diagnostic.json": "d08fd9ff1e672341f469e183c3b20031339172f409a70a256dc9ccab2f34d1ed",
+    "reports/directional-energy-148-summary.json": "53a6121df39ebfc5a971ff000c897076a02e804941f754f32a425ccad15b2ca2",
+    "reports/colocated-intensity-149-summary.json": "8c84299ec927863edf1243e6b904e9c8e8a9b52f677e38241778a744f0b4a2d3",
+    "reports/nested-selector-146-audit.json": "b73616c804cfd75cb78b615cb81680bba8fe7e18e2faa5ef116041871d240a3b",
+    "reports/candidate018-public-submission.json": "acafec9f89062fc0368d84ccdd4c9fbd18c9c2ae8ae8f51f7fcc57d3b75e0c31",
+    "artifacts/run-020/development_oof.csv": "142d9355604a39da887b249cfbf19518311949796de3443000d54b56d8211493",
+    "artifacts/bootstrap-selector-144/original/report.json": "1d6d0fc65062dd04c1762abad44b757c1d4cd07fcb4336dec13aaaa3dc087625",
+    "artifacts/bootstrap-selector-144/original/predictions.npz": "ec2ac0b3d80a62c63f542f5d6c537c911045f93846fdd21df945a85fc22957ef",
+    "artifacts/cnn-seed-mean-133/validation-original.json": "8f016bf4eeaa93769932515eb9460d55058082770290eaec2c1a810d3b3bacd4",
+    "artifacts/frozen-validation-021/seed-20261031/development_oof.csv": "e1ae1f11749581ed731cea96b5c7f47a6748777aefaf9b6e3f2d99f7962e8cf1",
+    "artifacts/bootstrap-selector-144/20261031/report.json": "b348271c8e759ed750d167357ad69f0d731a11dca7070e5c14c4079b5140e2b8",
+    "artifacts/bootstrap-selector-144/20261031/predictions.npz": "bf886dfa0c9c799b73e7c3f1c596bca4f88d67ea5db5faf7f718eb0f31386501",
+    "artifacts/cnn-seed-mean-133/validation-20261031.json": "2d9659e184fb1a79ab82cc182ea0c87001c89702618dc0420195a080124886a8",
+    "artifacts/frozen-validation-021/seed-20261101/development_oof.csv": "5fa1104eb044c56a204f53adfe03907e1720fb6cd94cafb66938a04327835a75",
+    "artifacts/bootstrap-selector-144/20261101/report.json": "f60fac49edcf5970e936d98d7a3f0166c4a5538836a8211c414285b2100345dd",
+    "artifacts/bootstrap-selector-144/20261101/predictions.npz": "dc919a907efa6c9ff4242320701c0d21c09c389982b92ba58a3df3d9bc12ee1f",
+    "artifacts/cnn-seed-mean-133/validation-20261101.json": "47290ac6869d45c35ab3ac60f47e322453192a51d0ca20cf4da05b804b77c81a"
+  },
+  "protected": {
+    "artifacts/submission-candidate-017.csv": "4256a5d2636053f8f1d115f39b0265a66a10c3169bd4016309ecdd2b63c3be20",
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16"
+  },
+  "cost": 0
+}

@@ -1,0 +1,58 @@
+{
+ "candidate": "030",
+ "date": "2026-10-09",
+ "change": "vs 029: + 8 segmentation-free structure-tensor coherence columns computed from the raw image (pre-smoothing sigma 1.5/3, window sigma 8/32, global and local-median coherence). Motivation: image-based coherence correlated with the 029 harness residual in the noisy tercile (rho 0.12) while it is ~0 in the clean tercile. Same TabPFN v2+v3.5 mean, fixed W=0.75.",
+ "harness": {
+  "cfg029_seeds012": [
+   10.909,
+   10.945,
+   10.934
+  ],
+  "cfg030_seeds01": [
+   10.883,
+   10.895
+  ]
+ },
+ "dev_fixed_w075": {
+  "cfg029": {
+   "original": 10.8043,
+   "p20261031": 10.8387,
+   "p20261101": 10.8935,
+   "pooled": 10.8456
+  },
+  "cfg030": {
+   "original": 10.713,
+   "p20261031": 10.7894,
+   "p20261101": 10.8349,
+   "pooled": 10.7792
+  }
+ },
+ "inputs": {
+  "train_features": "experiments/push-300/feat-a1s250n4vstd-stcoh-train.npz",
+  "train_sha256": "32190b616dfbefafaea2331e5a759aaf7fedeade5b73263d4638633cfb5537a3",
+  "test_features": "experiments/push-300/feat-a1s250n4vstd-stcoh-test.npz",
+  "test_sha256": "69f87aef4631cce36db20f902459b1c85b17c81eb5f31428381a185f8dda488c",
+  "provenance": [
+   "experiments/push-300/feat-a1s250n4vstd-stcoh-train.provenance.json",
+   "experiments/push-300/feat-a1s250n4vstd-stcoh-test.provenance.json"
+  ],
+  "dev_results": [
+   "experiments/push-300/dev-a1s250n4vstd-stcoh-v2.json",
+   "experiments/push-300/dev-a1s250n4vstd-stcoh-v35.json"
+  ],
+  "stcoh_columns": [
+   "stcoh_s1.5_w8_glob",
+   "stcoh_s1.5_w8_locmed",
+   "stcoh_s1.5_w32_glob",
+   "stcoh_s1.5_w32_locmed",
+   "stcoh_s3_w8_glob",
+   "stcoh_s3_w8_locmed",
+   "stcoh_s3_w32_glob",
+   "stcoh_s3_w32_locmed"
+  ]
+ },
+ "adv_auc_stcoh_train_vs_test": 0.476,
+ "weight_rule": "fixed W=0.75",
+ "adopt": true,
+ "caveat": "dev has now been consulted for several feature additions (vstd, stcoh, rejected ones); improvements of ~0.07 carry some selection optimism."
+}

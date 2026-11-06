@@ -1,0 +1,155 @@
+{
+  "model": "convnext_tiny",
+  "passed": true,
+  "CPU_absolute_tolerance": 0.002,
+  "warmhead_checks": [
+    {
+      "fold": 0,
+      "CPU_reload_exact": true,
+      "CPU_MPS_maxabs": 6.4562055968053755e-06,
+      "passed": true,
+      "poisoned_validation_features_labels_train_stats_exact": true
+    },
+    {
+      "fold": 1,
+      "CPU_reload_exact": true,
+      "CPU_MPS_maxabs": 1.9437144175071808e-05,
+      "passed": true,
+      "poisoned_validation_features_labels_train_stats_exact": true
+    },
+    {
+      "fold": 2,
+      "CPU_reload_exact": true,
+      "CPU_MPS_maxabs": 1.1778108728321968e-05,
+      "passed": true,
+      "poisoned_validation_features_labels_train_stats_exact": true
+    },
+    {
+      "fold": 3,
+      "CPU_reload_exact": true,
+      "CPU_MPS_maxabs": 5.897148099620608e-06,
+      "passed": true,
+      "poisoned_validation_features_labels_train_stats_exact": true
+    },
+    {
+      "fold": 4,
+      "CPU_reload_exact": true,
+      "CPU_MPS_maxabs": 6.443340339501447e-06,
+      "passed": true,
+      "poisoned_validation_features_labels_train_stats_exact": true
+    }
+  ],
+  "adapted_checks": [
+    {
+      "fold": 0,
+      "arm": "head_only112",
+      "CPU_maxabs": 9.482551968176267e-05,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    },
+    {
+      "fold": 0,
+      "arm": "last_stage112",
+      "CPU_maxabs": 9.415299828674506e-05,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    },
+    {
+      "fold": 1,
+      "arm": "head_only112",
+      "CPU_maxabs": 0.00010366476888634679,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    },
+    {
+      "fold": 1,
+      "arm": "last_stage112",
+      "CPU_maxabs": 0.00011662286499358743,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    },
+    {
+      "fold": 2,
+      "arm": "head_only112",
+      "CPU_maxabs": 6.852717805827524e-05,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    },
+    {
+      "fold": 2,
+      "arm": "last_stage112",
+      "CPU_maxabs": 6.852717805827524e-05,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    },
+    {
+      "fold": 3,
+      "arm": "head_only112",
+      "CPU_maxabs": 7.076577725229072e-05,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    },
+    {
+      "fold": 3,
+      "arm": "last_stage112",
+      "CPU_maxabs": 6.218810727887103e-05,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    },
+    {
+      "fold": 4,
+      "arm": "head_only112",
+      "CPU_maxabs": 8.161564434772117e-05,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    },
+    {
+      "fold": 4,
+      "arm": "last_stage112",
+      "CPU_maxabs": 9.879788527200617e-05,
+      "CPU_tolerance": 0.002,
+      "passed": true,
+      "fresh_MPS_reload_exact": true,
+      "train_stats_seed_orders_LR_updates_scope_frozen_buffers_verified": true
+    }
+  ],
+  "CPU_maxabs": 0.00011662286499358743,
+  "warmhead_CPU_MPS_maxabs": 1.9437144175071808e-05,
+  "CPU_failures": [],
+  "tail_parameters": 14290944,
+  "batchnorm_modules": 0,
+  "label_poison_replays": [
+    {
+      "arm": "head_only112",
+      "head100_rebuilt_exact": true,
+      "full12_epoch_weights_predictions_gradient_LR_feature_traces_exact": true
+    },
+    {
+      "arm": "last_stage112",
+      "head100_rebuilt_exact": true,
+      "full12_epoch_weights_predictions_gradient_LR_feature_traces_exact": true
+    }
+  ],
+  "audit_complete": true,
+  "structural_checks_passed": true,
+  "network_attempts": 0,
+  "seconds": 112.80820829200093
+}

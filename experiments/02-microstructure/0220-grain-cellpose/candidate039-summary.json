@@ -1,0 +1,74 @@
+{
+ "candidate": "039",
+ "weight": 0.75,
+ "n_train": 500,
+ "test_failed_segmentations": 1,
+ "pred_stats": {
+  "mean": 193.65445345133026,
+  "std": 13.329771476219824,
+  "min": 159.53994325562644,
+  "max": 265.3321652300299
+ },
+ "corr_best021_vs_grain_test": 0.792697453488405,
+ "rms_change_vs_021": 6.619820690836843,
+ "rms_change_vs_023": 5.781548156998371,
+ "csv": "artifacts/submission-candidate-039.csv",
+ "csv_sha256": "bfc64992b9a48711b860f07df5bd94759748517b24e8ddd5c3341b1281554497",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "uploaded": false,
+ "formula": "0.25*best021 + 0.75*mean over components (fallback best021 if n_obj<20)",
+ "components": [
+  {
+   "component": "v3.5@../push-700/feat-u1dm1szH2Z-angh-train.npz@../push-700/feat-u1dm1szH2Z-angh-test.npz",
+   "train_sha256": "92d9843d914137f01760a03e1afafda385c02f2aeab3740c3850937b92645414",
+   "test_sha256": "ff6bbe0e1c9fdddeced8f923c5e82e3402df534ec54e505d098e4bf42e9fbd27",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-700/feat-u1dm2szH2Z-angh-train.npz@../push-700/feat-u1dm2szH2Z-angh-test.npz",
+   "train_sha256": "6630c0471d5ad2f1a08a578f3455203a0a14a232e5914d4a2bca79eca8ea7e1f",
+   "test_sha256": "7edd228be8519e5cfadbc8772e983fb3f2c48861205d27b70b1de0402ee4299b",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-700/feat-u1dmavgH2Z-angh-train.npz@../push-700/feat-u1dmavgH2Z-angh-test.npz",
+   "train_sha256": "311b8a9484e5172ae55b0a6093147d4e1873d04a49e7b6f4c54fe40b9ca5df83",
+   "test_sha256": "fa75c843d3bced27736e528d2815626fc4999cd497f01e6f8c3703a36393f76c",
+   "n_train_rows": 500
+  },
+  {
+   "component": "v3.5@../push-700/feat-u1dmavg4H2Z-angh-train.npz@../push-700/feat-u1dmavg4H2Z-angh-test.npz",
+   "train_sha256": "0fd832f92d5340c2ba3d1b729d83763b22d501518d02a092a1be1058789254e1",
+   "test_sha256": "260863e9daa3a31e6b65270962f0dc1c56202309ee272c4beecdf0c984379503",
+   "n_train_rows": 500
+  }
+ ],
+ "component_corr": [
+  [
+   1.0,
+   0.9973802849897769,
+   0.9986692520830477,
+   0.998622844273952
+  ],
+  [
+   0.9973802849897769,
+   1.0,
+   0.9986780738880692,
+   0.9986810769750021
+  ],
+  [
+   0.9986692520830477,
+   0.9986780738880693,
+   1.0,
+   0.9994202893769977
+  ],
+  [
+   0.9986228442739519,
+   0.998681076975002,
+   0.9994202893769977,
+   1.0
+  ]
+ ],
+ "dev_evidence": "../push-700/evidence-039.json",
+ "device": "cpu"
+}

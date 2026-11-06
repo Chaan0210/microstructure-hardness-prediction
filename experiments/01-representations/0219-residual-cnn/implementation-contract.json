@@ -1,0 +1,18 @@
+{
+  "stage": "CPU units only",
+  "legacy_protocol_sha256": "03fc904ab3bdcb7173aaa2f61cd8a8d97083dab026f3eaaa3b155f7088adaf04",
+  "inference_device": "CPU for all frozen predictor objects; main CNN fitting remains planned MPS. Tested CPU replay tolerance2e-4 versus legacy cached MPS predictions. This numerical change must remain fixed in any future main study.",
+  "current_CPU_threads": 1,
+  "future_CPU_threads_max": 2,
+  "main_train_hard_disabled": true,
+  "retention": "New deep base nodes, long heads, short heads and complete paired bundles saved under unique training-ID hash; no shared cache writes",
+  "main_models": {
+    "CNN": 145,
+    "CNN_validation": 34,
+    "new_long_heads": 285,
+    "new_short_heads": 15,
+    "KRR": 1260,
+    "nonzero_classical_residual": 240
+  },
+  "pending_before_main": "Explicit parent instruction plus changing hard training gate under new recorded code lock; discarded8-update resource probe and complete neural poison/replay verification not run. Source implementation does not imply MPS train equivalence has been measured."
+}

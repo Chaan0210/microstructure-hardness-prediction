@@ -1,0 +1,62 @@
+{
+  "frozen_utc": "2026-10-19T00:45:36.085945+00:00",
+  "status": "two_user_authorized_exploratory_public_trials",
+  "rationale": "The newly added continuous-flow fields are read linearly by the .256 paired correction. Test nonlinear feature interactions while retaining the existing strong ensemble, fixed source Tab heads and failure fallback. Earlier physical-only kernels do not test these newly learned source-local flow fields.",
+  "hypotheses_fixed_before_either_public_score": [
+    "hybridkernel",
+    "boostedreadout"
+  ],
+  "submission_order": [
+    "hybridkernel",
+    "boostedreadout"
+  ],
+  "formula": "current_source - eligible*.128*((mean_source_raw-control_raw)+(mean_source_log-control_log)) + eligible*.256*(mean_source_newhead-control_newhead)",
+  "weights": {
+    "remove_raw_delta": 0.128,
+    "remove_log_delta": 0.128,
+    "new_head_delta": 0.256,
+    "encoder_mean": [
+      0.5,
+      0.5
+    ]
+  },
+  "training": "Each arm fits raw hardness on all500provided original training rows; pairedP104controls and P104+sourceF38 heads, two frozen source encoders. No residual-target fitting, calibration, hyperparameter search or new image-model learning.",
+  "hybridkernel": {
+    "imputer": "training median,keep_empty_features=True",
+    "scaler": "train StandardScaler",
+    "kernel": "K(A,B)=A@B.T/d + exp(-squared_euclidean(A,B)/(2*d))",
+    "alpha": "100/d",
+    "target": "raw_y centered by training mean",
+    "hyperparameters_searched": false
+  },
+  "boostedreadout": {
+    "model": "HistGradientBoostingRegressor",
+    "loss": "squared_error",
+    "learning_rate": 0.05,
+    "max_iter": 300,
+    "max_leaf_nodes": 7,
+    "max_depth": 3,
+    "min_samples_leaf": 20,
+    "l2_regularization": 10.0,
+    "max_bins": 63,
+    "early_stopping": false,
+    "random_state": 2026101951,
+    "preprocessing": "native missing-value handling; no scaling",
+    "hyperparameters_searched": false
+  },
+  "source_directory": "candidate-source-flow38-v1",
+  "source_csv_sha256": "0134d548df303294cb610454a62c1126c134727c8c67f1d537f902e9ead0d75b",
+  "source_recipe_sha256": "192b118e0638e4351f7435b005904bf304cf4748769f7543a7ef56ac61e96084",
+  "controls": "candidate-flow46-v1/test-predictions.npz",
+  "controls_sha256": "420c2a272ceb80327e1216b52cfb93e3751eac8a28bc143692a68e5b57054356",
+  "training_context": "candidate-flow46-v1/training-context.npz",
+  "training_context_sha256": "2b205f7f6d993e920821fbfbc410ff942a7c1a7aa35c59e74878976106c3a2eb",
+  "encoder_tags": [
+    "full500-sourceflow38-s1811",
+    "full500-sourceflow38-s1823"
+  ],
+  "public_score_use": "Evaluate two precommitted independent candidates only. No coefficient fit, hidden-target inference, or adaptation after either Public score.",
+  "test_policy": "Read test features/predictions only after this recipe freeze and training of allheads; inference only.",
+  "no_new_terms": true,
+  "no_final_selection_change": true
+}

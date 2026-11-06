@@ -1,0 +1,207 @@
+{
+  "status": "097 image audit and098 fixed measurementpilot completed",
+  "recorded_utc": "2026-10-02T15:45:08.300370+00:00",
+  "097": {
+    "status": "image_review_completed",
+    "selection_label_free": true,
+    "selected12": [
+      "TRAIN_000351",
+      "TRAIN_000193",
+      "TRAIN_000470",
+      "TRAIN_000071",
+      "TRAIN_000210",
+      "TRAIN_000319",
+      "TRAIN_000115",
+      "TRAIN_000041",
+      "TRAIN_000481",
+      "TRAIN_000002",
+      "TRAIN_000120",
+      "TRAIN_000175"
+    ],
+    "pair_diagnostic_only": [
+      "TRAIN_000396",
+      "TRAIN_000497"
+    ],
+    "all14_cached_features_match_exactly": true,
+    "weak_strong_function_AST_identical_except_docstrings": true,
+    "weak_vs_strong": "Only marker h changes .1/.2 to .3/.6; TV denoised images are identical at matching TVfactor.",
+    "range_definition": "Absolute max-min across4 TV/h configurations, not standard error or coefficient of variation.",
+    "boundary_definition": "Fraction of watershed pixels labeled0; not measured true physical boundary thickness.",
+    "interior_definition": "Area>=16 and bounding box strictly away from all four frame edges.",
+    "all400_label_free_feature_summary": {
+      "grain_count": {
+        "weak_median400": 515.0,
+        "strong_median400": 90.0,
+        "rank_rho": 0.18868756633059705
+      },
+      "boundary_fraction": {
+        "weak_median400": 0.16352462768554688,
+        "strong_median400": 0.053287506103515625,
+        "rank_rho": -0.11108318383229465
+      },
+      "interior_area_fraction": {
+        "weak_median400": 0.6515693664550781,
+        "strong_median400": 0.3050956726074219,
+        "rank_rho": 0.2953424271744067
+      }
+    },
+    "matched48_config_support_transitions": {
+      "lost_interior_pixels_total": 1140937,
+      "lost_to_border_pixels": 1136210,
+      "fraction_lost_to_border": 0.9958569140977985,
+      "maximum_partition_error": 0.0
+    },
+    "visual_findings": [
+      "Weak settings can fragment within visibly broader regions, especially high-noise images; some extra basins may be texture or real substructure, so raw visual inspection cannot assign all to noise.",
+      "At h=.6, many visible narrow interfaces disappear even on low-noise images193/351/470. Large merged frame-connected regions dominate; high-noise175/481/002 retain mainly strong dark objects. This is not successful denoising by itself.",
+      "Strong h=.3 and h=.6 can produce very different partitions; the median descriptor is not a segmentation that can be overlaid.",
+      "Pair396/497 show different arrangements and apparent region scales; similar scalar summaries do not establish morphology equality."
+    ],
+    "pair_metadata": {
+      "TRAIN_000396": {
+        "mode": "L",
+        "size": [
+          256,
+          256
+        ],
+        "info": {},
+        "format": "PNG"
+      },
+      "TRAIN_000497": {
+        "mode": "L",
+        "size": [
+          256,
+          256
+        ],
+        "info": {},
+        "format": "PNG"
+      }
+    },
+    "pair_comparison_summary": {
+      "raw_RMSE_0_255": 32.468464972205986,
+      "raw_pearson": 0.03573063260776677,
+      "smooth_pearson": 0.08943986445667135,
+      "best_bounded_geometry_match": {
+        "scale": 1.3333333333333333,
+        "rot90": 3,
+        "flip": true,
+        "max_center128_template_NCC": 0.4223291873931885,
+        "location_yx": [
+          176,
+          159
+        ]
+      }
+    },
+    "pair_limit": "No physical pixel calibration or source-crop metadata; 24 fixed D4/scale template searches do not establish source identity or physical magnification. No label correction.",
+    "next_fixed_hypothesis": "Replace TV with existing skimage noise-aware nonlocal-means while keeping watershed weak settings and measure noise fragmentation versus true boundary preservation on fixed synthetic fixtures first. No NLM experiment found in existing project code; existing stronger-h025, connected-ridge, inverse-formation049, denoisedDINO071/072 are distinct and preserved. If the prespecified fidelity gate fails, do not run a hardness regression for it.",
+    "groundtruth_limit": "Real images have no geometric labels. Visual assessments and synthetic fixtures are diagnostic, not validation of true grain counts or hardness improvement.",
+    "cost": 0,
+    "holdout_test_images_accessed": false,
+    "label_file_accessed": false
+  },
+  "098": {
+    "fixed_hypothesis": "Existing skimage noise-aware NLM substitution for TV; same weakwatershed h.1/.2. No parameter search.",
+    "fidelity_gate_pass": false,
+    "mean_relative_count_error": {
+      "tv": 1.6605902777777777,
+      "nlm": 1.695746527777778
+    },
+    "cases_improved_count_error": 5,
+    "cases_total": 6,
+    "critical_failure_case": {
+      "layout": 0,
+      "noise_sigma": 0.075,
+      "true_count": 16,
+      "arms": {
+        "tv": {
+          "configs": [
+            {
+              "count": 205.0,
+              "boundary_precision": 0.477455854620264,
+              "boundary_recall": 0.997612551159618,
+              "interior_support": 0.3300933837890625
+            },
+            {
+              "count": 73.0,
+              "boundary_precision": 0.9062271062271062,
+              "boundary_recall": 0.9962482946793997,
+              "interior_support": 0.2466583251953125
+            }
+          ],
+          "median_count": 139.0,
+          "relative_count_error": 7.6875,
+          "seconds": 0.1439270419650711
+        },
+        "nlm": {
+          "configs": [
+            {
+              "count": 290.0,
+              "boundary_precision": 0.350453528095182,
+              "boundary_recall": 1.0,
+              "interior_support": 0.4772796630859375
+            },
+            {
+              "count": 48.0,
+              "boundary_precision": 0.9250095165588124,
+              "boundary_recall": 0.9965893587994543,
+              "interior_support": 0.23944091796875
+            }
+          ],
+          "median_count": 169.0,
+          "relative_count_error": 9.5625,
+          "seconds": 0.18835799995576963
+        }
+      }
+    },
+    "decision": "Reject this fixed NLM substitution before hardness regression. No devCV/resplits or tuning performed.",
+    "elapsed_seconds": 1.9741302919574082,
+    "rss_peak_bytes": 254099456,
+    "synthetic_limit": "Toy knownboundary fixtures are not true competition geometry; failure identifies a counterexample, not a universal verdict onNLM.",
+    "plan_sha256": "84a8cca159508ef693e9c526d765c66d71ddae96db37559cbc40bf2323e34fd2",
+    "report_sha256": "b4f884a854470ea019517b07e84e0d151077cb756e19c4639a1e2b5e13c6a396"
+  },
+  "validation": {
+    "passed": true,
+    "selected12_reproduced_without_labels": true,
+    "images_verified": 14,
+    "segmentations_and_pixel_overlays_verified": 112,
+    "canonical_alignment_exact": true,
+    "support_partition_and_counts_independently_verified": true,
+    "interior_to_border_loss_fraction": 0.9958569140977985,
+    "NLM_fixture_cases_rerun": 6,
+    "independent_dilation_PR_max_error": 0.0,
+    "NLM_gate_reproduced": false,
+    "protected011_files_verified": 20,
+    "real_hardness_labels_accessed": false,
+    "holdout_test_images_accessed": false,
+    "seconds": 2.4242457500076853,
+    "source_sha256": "624f5db613a489f103642ed19a803f111684df3055bc47db7aa23606f6eac61d",
+    "audit_assessment_sha256": "7afd403e4a0c54019faed50c05b90b07d383f681c5c738971900814fdc0cdcca",
+    "NLM_report_sha256": "b4f884a854470ea019517b07e84e0d151077cb756e19c4639a1e2b5e13c6a396",
+    "cost": 0
+  },
+  "deliverables": {
+    "review_html": "reports/grain-visual-audit-097-review.html",
+    "overview1": "artifacts/grain-visual-audit-097/overview-1.png",
+    "overview2": "artifacts/grain-visual-audit-097/overview-2.png",
+    "pair_raw": "artifacts/grain-visual-audit-097/pair-raw.png",
+    "locked_selection": "artifacts/grain-visual-audit-097/selection-locked.json",
+    "support_transitions": "artifacts/grain-visual-audit-097/support-transitions.csv",
+    "all14_panels": "artifacts/grain-visual-audit-097/panels/",
+    "NLM_fixture_panel": "artifacts/nlm-measurement-098/fixture-panels.png",
+    "independent_validation": "reports/grain-audit-097-nlm098-validation.json"
+  },
+  "best011_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "protected011_files_verified": 20,
+  "new_installs": false,
+  "existing_environment_unchanged": true,
+  "real_hardness_labels_accessed": false,
+  "labels_changed": false,
+  "holdout_test_images_accessed": false,
+  "candidate_created": false,
+  "uploaded": false,
+  "cost": 0,
+  "active_processes": [],
+  "next_action": "Keep011. Parent can use this artifact to reject the interpretation that stronger watershed is physicallymoreaccurate, and the pair-as-labelerror inference. Any subsequent measurementmethod must first pass fixed geometry/noise fidelity controls; no NLM or prominence sweep is justified fromthisfailedtrial. Combine with ongoing primary-source/generator research before selecting another distinct hypothesis.",
+  "remaining_information_limit": "No real grain geometry annotation, physical pixel size, or originalcrop metadata; hence neither existing extractor can be designated true and no label repair is supported. Overall competition objective remains ongoing."
+}

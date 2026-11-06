@@ -1,0 +1,110 @@
+{
+  "outcome": "Reject fixed final-DINO projected covariance528 Ridge/10% blend; preserve best007",
+  "scores": {
+    "reference007": {
+      "rmse": 13.241596955038409,
+      "fold_rmse": [
+        13.200972349680994,
+        12.726138894776982,
+        14.308109808709345,
+        12.375441992213231,
+        13.513163828337742
+      ]
+    },
+    "cov528": {
+      "rmse": 14.93887483532647,
+      "fold_rmse": [
+        15.645611526855497,
+        13.125063403098391,
+        15.590060958001523,
+        14.843837570503629,
+        15.343009576006512
+      ]
+    },
+    "primary007": {
+      "rmse": 13.27568233638631,
+      "fold_rmse": [
+        13.306522687147243,
+        12.636667263400756,
+        14.326913062961824,
+        12.461710049239478,
+        13.561531870284654
+      ]
+    }
+  },
+  "comparison": {
+    "gain": -0.034085381347901844,
+    "fold_gains": [
+      -0.10555033746624964,
+      0.0894716313762256,
+      -0.01880325425247875,
+      -0.08626805702624729,
+      -0.04836804194691169
+    ],
+    "positive_folds": 1,
+    "bootstrap_sd": 0.03459592963967532,
+    "conditional_ci95": [
+      -0.10353815313600546,
+      0.031037185195048823
+    ],
+    "residual_correlation": 0.8987061211453523
+  },
+  "diagnostics": {
+    "meanstd_CLS_reconstruction_oof_R2_quantiles": [
+      0.32071800282046703,
+      0.6252369948859868,
+      0.7000113283040535,
+      0.7664447458279068,
+      0.9148897851324186
+    ],
+    "meanstd_CLS_reconstruction_R2_median": 0.7000113283040535,
+    "crosschannel_relative_Frobenius_quantiles": [
+      0.782869971230281,
+      0.8195162259059594,
+      0.8332790003931105,
+      0.8452598976060779,
+      0.9035219161624881
+    ],
+    "minimum_eigenvalue_all_images": 0.057983544870871845,
+    "maximum_asymmetry": 0.0,
+    "constant_columns": 0,
+    "interpretation": "Crosschannel magnitude is not independent information or target utility. Reconstruction is descriptive 5fold Ridge1152, all scalers trainfold-only; no feature selection. CLS plusmean/std control includes context.",
+    "position_limit": "Permutation invariant over output tokens. Input arrangement still influences backbone positional/contextual tokens."
+  },
+  "timing_seconds": {
+    "feature_extraction400": 21.758240666007623,
+    "regression": 0.10801308398367837,
+    "validation": 0.8760554170003161
+  },
+  "benchmark": {
+    "seconds3": 0.6528819999657571,
+    "projected400_seconds": 87.05093332876763,
+    "rss_peak_bytes": 766509056,
+    "mps_driver_bytes": 145408000,
+    "cpu_mps_max_abs_difference": 1.5650731711946975e-05,
+    "mps_replay_max_error": 0.0,
+    "resource_pass": true
+  },
+  "validation": {
+    "fixtures": 10,
+    "models": 5,
+    "model_reload_error": 0.0,
+    "raw_feature_replay_error": 0.0,
+    "protected_files": 18,
+    "weights_unchanged": true,
+    "reference_meanstd_difference": 0.0
+  },
+  "repartitions_run": false,
+  "new_candidate": null,
+  "running_work": [],
+  "projection_sha256": "8c11a8b76e4f73c2be4c38a51f54713945ea716253c4feb8caf4b092883222dc",
+  "limits": [
+    "This is R-transpose C R in32dimensions, not the full384channel covariance or uncentered Gram.",
+    "Output-token covariance discards explicit spatial arrangement and higher moments; backbone contextual/positional effects remain.",
+    "Rejects one finalblock/projectedRidge/fixedblend protocol, not all distributional pooling methods.",
+    "All400 development observations have been repeatedly used; conditional bootstrap does not correct historical selection.",
+    "Literature motivation does not demonstrate hardness improvement. Kagglebody unreadable; DOI/publisher fulltext403, only title confirmed."
+  ],
+  "source_review": "Independent read-only audit found no blocking math or leakage issue.",
+  "scope": "Development400 only. No holdout/test, candidateCSV, upload, newdata/packages/cost. Reused development selection bias persists."
+}

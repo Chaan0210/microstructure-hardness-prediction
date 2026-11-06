@@ -1,0 +1,18 @@
+{
+  "retired_utc": "2026-10-18T13:44:03.280198+00:00",
+  "file": "features.npy",
+  "bytes": 4194304128,
+  "sha256": "7ea5bdc65a1f9dc3725e2e2f2bfc503bf17edad394d593c4fc23785aa6773b79",
+  "reason": "Derived prefix tensor from closed CPSAM-tail experiments; reserve disk for validation/final checkpoints. No protected baseline dependency touched.",
+  "retained": [
+    "meta.json",
+    "complete.json",
+    "done-retired.npy",
+    "frozen-descriptors.npy",
+    "frozen-descriptors-retired.npy",
+    "../cpsam_cache.py",
+    "../cpsam-tail-initial.pt",
+    "all trained models, curves and predictions"
+  ],
+  "regeneration": "Run the unchanged cpsam_cache.py with the existing Cellpose environment. The original done marker is archived, so the generator recomputes all500rows instead of skipping a missing tensor."
+}

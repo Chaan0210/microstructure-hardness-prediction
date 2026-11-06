@@ -1,0 +1,62 @@
+{
+  "checked_at_JST": "2026-10-02T22:23:26.820359+09:00",
+  "stage": "Completed and rejected: original gate failed; no resplits. Runner and training process terminated.",
+  "runner_pid": 79428,
+  "training_pid": 79429,
+  "completed_three_arm_folds": 5,
+  "first_three_arm_fold_seconds": 1532.590327666956,
+  "benchmark": {
+    "early_effective16_seconds": 5.289712458499708,
+    "working_memory_conservative_bytes": 5313904640,
+    "projected5fold_with25percent_margin_seconds": 8651.649376261048
+  },
+  "current_memory": {
+    "rss_peak_bytes": 2788130816,
+    "mps_driver_bytes": 2573991936,
+    "conservative_sum_bytes": 5362122752
+  },
+  "fallback010": {
+    "file": "artifacts/submission-candidate-010.csv",
+    "sha256": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5",
+    "existing_verification": "reports/candidate010-verification.json",
+    "011_comparison": {
+      "original": {
+        "010_RMSE": 13.10413742660317,
+        "011_RMSE": 13.0539977718711,
+        "010_worse_by": 0.05013965473207094
+      },
+      "20261031": {
+        "010_RMSE": 13.081449590263393,
+        "011_RMSE": 13.015176056591201,
+        "010_worse_by": 0.06627353367219158
+      },
+      "20261101": {
+        "010_RMSE": 13.303706910124971,
+        "011_RMSE": 13.272377948565081,
+        "010_worse_by": 0.031328961559889734
+      }
+    },
+    "judgment": "Submitted at21:14JST; Public11.8391045562, worse than011. See candidate010-public-submission.json."
+  },
+  "best011_preserved_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+  "deadline_handoff": "reports/submission-deadline-095-fallback010.json",
+  "submission010_completed": {
+    "time_JST": "2026-10-02 21:14",
+    "public_rmse": 11.8391045562,
+    "submission_id": "3b83b003-2258-4c9e-9a37-6e86085e9a31",
+    "remaining_today": 0,
+    "best": "011"
+  },
+  "log_modified_JST": "2026-10-02T22:11:14.462039+09:00",
+  "status": "completed_rejected",
+  "runner_alive": false,
+  "training_alive": false,
+  "finished_JST": "2026-10-02T22:16:59.540048+09:00",
+  "elapsed_seconds": 8492.551937103271,
+  "decision": "Reject this fixed early-adapter direction. The original gate failed; no resplits, late/frozen fallback, configuration search, full500 fit, test inference, candidate CSV, or upload.",
+  "assessment": "reports/early-adapter-095-assessment.json",
+  "assessment_sha256": "9d6b37004640ce3704212d30743924c6aa6ee139ae4466d44417a985d1328a74",
+  "summary": "reports/early-adapter-095-summary.json",
+  "validation": "reports/early-adapter-095-original-validation.json",
+  "next": "No pending095 work; retain best011. No additional submission today."
+}

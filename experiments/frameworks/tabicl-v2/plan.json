@@ -1,0 +1,47 @@
+{
+  "study": 162,
+  "arms": [
+    "compact26",
+    "dinob_pca64",
+    "compact26_dinob_pca64"
+  ],
+  "dino": "official frozen ViT-B6912 existing development cache; StandardScaler then full-SVD PCA64, fitted on fold train only",
+  "parameters": {
+    "n_estimators": 1,
+    "batch_size": 1,
+    "kv_cache": false,
+    "use_amp": false,
+    "n_jobs": 2,
+    "device": "cpu",
+    "model_path": "experiments/tabicl-v2/downloads/tabicl-regressor-v2-20260212.ckpt",
+    "allow_auto_download": false,
+    "random_state": 42,
+    "use_fa3": false,
+    "disk_offload_dir": "experiments/tabicl-v2/offload"
+  },
+  "fixed_blend": "0.8 * saved best018 outer OOF + 0.2 * TabICL outer OOF; no learned weights",
+  "resplit_gate": "original fixed20blend improves overall RMSE and >=3/5 folds; only qualifying arms evaluated on existing 20261031 and 20261101 folds",
+  "continuation_gate": "same fixed20blend improves all three split RMSE; otherwise stop, no full500/test",
+  "benchmark": "original compact26 lowest fold, repeat predict, save/load, independent fresh fit; CPU peak RSS is process lifetime maximum",
+  "holdout_test": "not read; no selection on either",
+  "source_sha256": {
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/dinob-062/development_features.npz": "3ce775f1398f91d4c55a795c89f0ad06ed37c7eba4e8380c9e080475e83998d3",
+    "artifacts/bootstrap-selector-144/original/predictions.npz": "ec2ac0b3d80a62c63f542f5d6c537c911045f93846fdd21df945a85fc22957ef"
+  },
+  "versions": {
+    "tabicl": "2.2.0",
+    "torch": "2.14.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "fold_values": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "limitations": "many adaptive studies on same 400 IDs; resplits not independent samples; TabICL in-context inference rather than gradient training"
+}

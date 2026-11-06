@@ -1,0 +1,88 @@
+{
+  "new_cache_key": "1c504b91609534f02d545a4b520bc3d68e03a7b3a806fa2b2ee75676fc4a8ecc",
+  "new_configuration": {
+    "version": 2,
+    "adaptive_initial_means": [
+      [
+        0.05,
+        0.35
+      ],
+      [
+        0.1,
+        0.75
+      ]
+    ],
+    "adaptive_warm_iterations": 8,
+    "adaptive_refine_iterations": 12,
+    "adaptive_min_gap": 0.1,
+    "adaptive_bright_prior_pseudoimages": 0.5,
+    "adaptive_initialization_selection": "balanced_train_laplace_evidence",
+    "scope": "train400_only",
+    "arms": [
+      "threshold",
+      "image_gmm",
+      "hierarchical"
+    ],
+    "inner_splits": 3,
+    "alpha_ridge": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "blend_new_weight": 0.2,
+    "threshold": 0.5,
+    "pore_exclusion": true,
+    "global_em_iterations": 20,
+    "local_em_iterations": 16,
+    "quadrature_order": 7,
+    "quadrature_orders": [
+      7,
+      15,
+      25,
+      41,
+      61,
+      81,
+      121,
+      161
+    ],
+    "posterior_starts_eta": [
+      "prior",
+      -4.0,
+      4.0
+    ],
+    "beta_concentration": 2.0,
+    "ridge_inputs": [
+      "physical",
+      "x98_augmented"
+    ],
+    "kernel_lengths": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "kernel_alpha": [
+      0.003,
+      0.03,
+      0.3,
+      3.0
+    ],
+    "kernel_uncertainty_scale": [
+      0.25,
+      1.0,
+      4.0
+    ]
+  },
+  "source_hashes": {
+    "measurement_code_sha256": "0ea93836ec252c02d9e87be9f3db7323d1e0801f547b60b80a09a8997f4259e7",
+    "adaptive_fit_code_sha256": "4ac3291537316ea68e818c6f8db858795d74f69e8519f28f7cb204f9f0a922a0",
+    "posterior_code_sha256": "78ffed65aa34f6109e7934dd8e331873d871b896902fc4a77ffb190c105296d3",
+    "fallback_code_sha256": "530ee0b4f474f00f2e9f2813875b958098f5fc7369eb9949bf6b28783dbac8a7"
+  },
+  "attested_old_keys": [
+    "a89e0418a79cf34a84bd8128ba74f24ba24410495d6419a8f599ac36c2cb6a1b",
+    "f90fbd1d0327a530581ee2977dce707b07a1f40cbb647bd44ab0ab344b46dcfc"
+  ],
+  "accepted_caches": 12
+}

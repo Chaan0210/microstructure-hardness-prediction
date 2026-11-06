@@ -1,0 +1,27 @@
+{
+  "scope": "development400 only; two reused partitions, not unseen validation",
+  "hypothesis": "Frozen compact26 plus nonzero-lag autocovariance panel provides new stable morphology information",
+  "feature_count": 62,
+  "feature_sha256": "cb7af495813dab1add7a29eea0a10685b0f6f2072e664e81d037536d5f97d6e3",
+  "feature_report_sha256": "d97a8734871aceca86f96a78ba00ba24af443a32e44e4772e07ede73aea15333",
+  "source_sha256": {
+    "confirm_autocov_034.py": "71275b33fc725eafd156194ab4e96ef8dd153e180479182907176697e2e67672",
+    "autocov_shape_features.py": "9bb71fa2477cb6162f309a767102d7ae4b7d4fdc989204163fb99bf0d704c2e1",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3"
+  },
+  "split_seeds": [
+    20261031,
+    20261101
+  ],
+  "ensemble": {
+    "baseline": 0.5,
+    "cnn_seed20261003_identity": 0.25,
+    "acf_kernel": 0.25
+  },
+  "inner_selection": "same3fold9settingKRR; no outer selection of weights, rounds, or feature thresholds",
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  }
+}

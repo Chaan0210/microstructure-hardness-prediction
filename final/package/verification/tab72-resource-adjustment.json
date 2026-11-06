@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-19T02:43:20.190547+00:00",
+  "change": "Operational peakRSS budget4GiB ->6GiB for fixed72-member TabPFN replay",
+  "basis": "Observed system-wide memory free63%;16GiB machine. One MPS inference task, no optimizer, other local jobs not modified.",
+  "statistical_tolerances_changed": false,
+  "model_parameters_changed": false,
+  "seed_or_feature_selection_changed": false,
+  "original_component_tolerance_HV": 0.001,
+  "checkpoint_resume": true,
+  "reason": "Finish independently recomputing selected readouts in the portable package rather than claim cached component outputs were freshly inferred."
+}

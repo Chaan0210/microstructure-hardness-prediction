@@ -1,0 +1,45 @@
+{
+  "hypothesis": "Adaptive TV denoising and gradient-minima watershed may reduce visually observed noise-driven oversegmentation; no sign assumptions",
+  "panels": [
+    "denoised grains",
+    "compact26+denoised grains"
+  ],
+  "models": [
+    "denoised nested KRR",
+    "combined nested KRR",
+    "combined fixed ET300 minleaf3 maxfeatures0.8",
+    "combined fixed HGB200 leaves7 minleaf20 l2=10 lr0.05"
+  ],
+  "kernel_inner_grid": {
+    "bandwidth": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "alpha": [
+      0.01,
+      0.1,
+      1.0
+    ]
+  },
+  "ensemble_weights": {
+    "baseline": 0.5,
+    "cnn": 0.25,
+    "new_feature_model": 0.25
+  },
+  "cnn_choices": [
+    "original seed20261003",
+    "prespecified equal3seeds andD4 run020"
+  ],
+  "scope": "development400 original folds only; no holdout/test access",
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  },
+  "source_sha256": {
+    "denoised_regression.py": "29f6e65c1935b9bf00f39f56b5f9ae38de664750da179fb77da0a89af8d5dcf4",
+    "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc"
+  }
+}

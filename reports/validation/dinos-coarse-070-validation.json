@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "feature_verification": {
+    "rows_independently_recomputed": 400,
+    "loop_vs_reshape_max_error": 0.0,
+    "token_cache_verified_sha256": "f7e386b7f455c42225312c941d747834aaaee1ccda9ea3740c46f59b547a3e4f",
+    "upstream_tokens_reextracted400_exact": "reports/fisher-067-validation.json"
+  },
+  "results": {
+    "original": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.209632611789585,
+          "fold_rmse": [
+            13.137584839949701,
+            12.597373711388418,
+            14.228655527464698,
+            12.44121172584094,
+            13.56258166849383
+          ]
+        },
+        "reference003": {
+          "rmse": 13.705696031698212,
+          "fold_rmse": [
+            13.539394483459153,
+            13.218378105383424,
+            14.680453686399362,
+            12.991004741250547,
+            14.032386512109253
+          ]
+        },
+        "Smean": {
+          "rmse": 14.049242890525278,
+          "fold_rmse": [
+            14.446117130508892,
+            13.952434285579072,
+            14.94415012517497,
+            13.1480280957738,
+            13.687481162436942
+          ]
+        },
+        "B504mean": {
+          "rmse": 13.615777507504738,
+          "fold_rmse": [
+            13.650648366415224,
+            12.80647915614849,
+            14.045068523498623,
+            13.407892313668881,
+            14.126760079518114
+          ]
+        },
+        "Scoarse": {
+          "rmse": 14.119865606486249,
+          "fold_rmse": [
+            14.264202048902224,
+            13.525699599766368,
+            14.918867317462261,
+            14.013201130474524,
+            13.838302136171322
+          ]
+        },
+        "primary": {
+          "rmse": 13.244428199726574,
+          "fold_rmse": [
+            13.175542177794824,
+            12.565678701657838,
+            14.263775089834265,
+            12.551918423410758,
+            13.585921494513343
+          ]
+        }
+      },
+      "comparison": {
+        "gain": -0.03479558793698878,
+        "fold_gains": [
+          -0.03795733784512301,
+          0.031695009730579926,
+          -0.0351195623695677,
+          -0.11070669756981744,
+          -0.023339826019512344
+        ],
+        "positive_folds": 1,
+        "bootstrap_sd": 0.028069802721800322,
+        "conditional_ci95": [
+          -0.09080658309271174,
+          0.019865492042884823
+        ]
+      },
+      "max_reload_error": 0.0,
+      "train_rmse": 0.4587071601300531,
+      "head_residual_correlation": 0.9576192412593515,
+      "report_sha256": "a4717d700e1b71420da5daa15dd44ea79112e3b2d2da1b684810c64e59d34da0",
+      "predictions_sha256": "45eec305580c5b6d17b14a3388113ffc7eaae54f555978679cf34c6040861dd0"
+    }
+  },
+  "models_verified": 15,
+  "full_replays": [
+    {
+      "split": "original",
+      "seed": 20261128,
+      "full100epoch_state_exact": true,
+      "prediction_error": 0.0
+    }
+  ],
+  "eligible_for_candidate": false,
+  "gate": "All3 pooledOOF strictly improve008, exact reload/replay; no foldcount/bootstrap hard gate.",
+  "protected_files_verified": 39,
+  "best008_sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+  "validation_source_sha256": "4533e5d6b20d8ff37fd4da53e7d2d871eb79ca9d1d63ea83b4f42dac7d784df3",
+  "seconds": 2.6928697919938713,
+  "holdout_test_access": false,
+  "candidate_created": false,
+  "cost": 0,
+  "new_packages": 0,
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

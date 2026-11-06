@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "independent_float64_Ridge_RMSE": {
+    "mse": 14.48258608936919,
+    "rnc": 15.358998043472122
+  },
+  "standalone_decision_unchanged_float64": true,
+  "precision_note": "Original Ridge used float32 transformed features and coefficients. Independent float64 SVD max observed difference0.000215;1e-3 bound used in v2 after diagnostic. Original1e-9 failure preserved; no model change.",
+  "records": [
+    {
+      "fold": 0,
+      "arm": "mse",
+      "independent_Ridge_max_error": 0.0001725993649870361,
+      "reload_prediction_max_error": {
+        "mps": 1.6082035870113032e-05,
+        "cpu": 2.8357312714888394e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    },
+    {
+      "fold": 0,
+      "arm": "rnc",
+      "independent_Ridge_max_error": 0.00015315130008275446,
+      "reload_prediction_max_error": {
+        "mps": 1.71777958257735e-05,
+        "cpu": 5.0712104865624497e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    },
+    {
+      "fold": 1,
+      "arm": "mse",
+      "independent_Ridge_max_error": 0.00016135732403199654,
+      "reload_prediction_max_error": {
+        "mps": 1.4002953179215183e-05,
+        "cpu": 2.795968211444233e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    },
+    {
+      "fold": 1,
+      "arm": "rnc",
+      "independent_Ridge_max_error": 0.00014312601678057035,
+      "reload_prediction_max_error": {
+        "mps": 1.5378060112425374e-05,
+        "cpu": 6.419049182682102e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    },
+    {
+      "fold": 2,
+      "arm": "mse",
+      "independent_Ridge_max_error": 0.000214801504512252,
+      "reload_prediction_max_error": {
+        "mps": 1.311162162664914e-05,
+        "cpu": 2.757286227961231e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    },
+    {
+      "fold": 2,
+      "arm": "rnc",
+      "independent_Ridge_max_error": 0.00016949024734458362,
+      "reload_prediction_max_error": {
+        "mps": 1.1387281858787901e-05,
+        "cpu": 4.269740870199712e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    },
+    {
+      "fold": 3,
+      "arm": "mse",
+      "independent_Ridge_max_error": 0.0001838262154194581,
+      "reload_prediction_max_error": {
+        "mps": 1.6303671117157137e-05,
+        "cpu": 2.8055245195446332e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    },
+    {
+      "fold": 3,
+      "arm": "rnc",
+      "independent_Ridge_max_error": 0.00020901371104287136,
+      "reload_prediction_max_error": {
+        "mps": 2.3852513351130256e-05,
+        "cpu": 5.1021659260186425e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    },
+    {
+      "fold": 4,
+      "arm": "mse",
+      "independent_Ridge_max_error": 0.00014286698734622405,
+      "reload_prediction_max_error": {
+        "mps": 1.551405574673481e-05,
+        "cpu": 2.5567929270664536e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    },
+    {
+      "fold": 4,
+      "arm": "rnc",
+      "independent_Ridge_max_error": 0.00021134049040938407,
+      "reload_prediction_max_error": {
+        "mps": 1.4776321592080421e-05,
+        "cpu": 6.728729439942072e-05
+      },
+      "normalization_group_stream_budget_verified": true
+    }
+  ],
+  "outer80_label_poison": [
+    {
+      "arm": "mse",
+      "state_Ridge_prediction_exact": true
+    },
+    {
+      "arm": "rnc",
+      "state_Ridge_prediction_exact": true
+    }
+  ],
+  "seconds": 34.7776428750949,
+  "source_sha256": "de59ea34c343f5b992ee0b6db640971e788a14692948b85ed48be3879b674556"
+}

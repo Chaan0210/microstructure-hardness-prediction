@@ -1,0 +1,68 @@
+{
+  "study": "100 fixed frame-censoring decomposition on existing6 fixtures",
+  "created_utc": "2026-10-02T16:19:23.698453+00:00",
+  "scope": "Read only098 savedfixture truth,raw and existingTVsegmentations0/1; no newimages,no newsegmentation,no NLMretrial,no hardness model/no realhardnesslabels/no holdout/test. Twoexistingh=.1/.2 atTVweight1*noise. Twelvefixedmeasurements.",
+  "duplicate_audit": "097 independentlyvalidated112overlays and supportpixeltransfers, not knowngeometry sizebias decomposition.098 measured count/PR on sixfixtures, not allvsinterior size/arrangement. Existinglineintercepts account endpointcensoring but do not answer thissamewatershed decomposition.",
+  "reference": "Known finite256 rasterVoronoiregions. Fulluntruncated cells outsideimage are NOT available; sizes are observedin-window geometry, not unbiasedphysicalgrain diameters. Trueboundary pixels are assigned to knownregions incanonical_truth.",
+  "ordered_decomposition": [
+    "A0: all known rastertruth regions, positiveIDs",
+    "A1: same truthlabels restricted to pixels where savedsegmentation>0; isolates area lost aswatershedline",
+    "A2: all positive predictedregions, no minimumarea orframefilter; isolates partition/split/merge discrepancy on identicalforeground",
+    "A3: predictedregions witharea>=16, noframefilter; isolates existingminimumarea exclusion",
+    "A4: A3 minus anyregionlabel on anyframeedge; isolates frame exclusion"
+  ],
+  "metrics": [
+    "count",
+    "covered_area_fraction",
+    "mean_area_px",
+    "mean_diameter_px",
+    "area_weighted_diameter_px",
+    "mean_inverse_sqrt_diameter",
+    "centroid_rms_radius_px",
+    "nearest_centroid_median_px"
+  ],
+  "size_definition": "Equivalentdiameter2sqrt(area/pi) inpx. Reportnumbermean andareaweightedmean separately. Count andarea are populationsummaries, not unbiasedestimators ofwhole-image numberaftercensoring. CentroidRMS aroundimagecenter andmedian nearestcentroiddistance are arrangementproxies. Zeroeligiblepopulation=>nullsizestats, not fabricatedzero.",
+  "error_accounting": "For eachmetric, A4-A0=sum(A1-A0,A2-A1,A3-A2,A4-A3). Reportboundarymask,segmentation,minimumarea,frame contributions separately; accountingdepends onthisfixedorder. Also compare A4 with trueinterior-only target forlike-population errors.",
+  "recoverability": "Assess whether keepingA3 insteadA4 improves absoluteerror versus finitewindow A0. Thisdoesnot validate clippedborderregions asfullgrains. Retaincomplete-only targetcomparison. Nofeature/threshold/parameterselection fromthese results.",
+  "geometry_correspondence": "Contingencytable onpredictedforeground; majoritytruthassignment perpredictedregion withoutnewpuritythreshold. Reportextra majorityfragments,unrepresentedtruthregions,pixelpurity,conditional split/merge entropies. Falsecomplete pixels: retainedA4 pixels whose trueparenttouchesframe. Track trueinteriorpixels discarded byframefilter separately.",
+  "noise_pairing": "Eachlayout has samegeometry atnoise.025/.075; compare fixedh separately, no averagingtochooseh. Keepall12 rows.",
+  "proposal_policy": "Only propose one fixedmeasurementcontrol if evidence supportsrecoverableinformation; reportdiagnostic first. Do not implementregressionorchangeexistingfeatures in100.",
+  "sources": {
+    "frame_censoring_100.py": "2153bdc4f61b7df13251b9d046217f40ebaa94e85970a00d787bcc3659f0c93f",
+    "validate_frame_censoring_100.py": "9e156bbaac91dd4eba5a113d7237c83e3ab619e95bc2c444180ec580add9f294"
+  },
+  "inputs": {
+    "artifacts/nlm-measurement-098/plan.json": "84a8cca159508ef693e9c526d765c66d71ddae96db37559cbc40bf2323e34fd2",
+    "artifacts/nlm-measurement-098/report.json": "b4f884a854470ea019517b07e84e0d151077cb756e19c4639a1e2b5e13c6a396",
+    "reports/grain-audit-097-nlm098-validation.json": "f6743a34f72ac5f3c31cc26c646b5f07a50382db8a99812f743c90120879a23d",
+    "artifacts/nlm-measurement-098/verified-fixtures/case-0.npz": "c772dd9a473071a3f76e21ba9a6f84975934d066628d47e7d001d809e76c41be",
+    "artifacts/nlm-measurement-098/verified-fixtures/case-1.npz": "57debab0bda636abdf9262bb1f37b4b4938abb199015dfe3a321da8412629e5a",
+    "artifacts/nlm-measurement-098/verified-fixtures/case-2.npz": "dcaeedfb970a372cfb069b395c4c46abeeccbf78866a84d738e61901a5fac4a1",
+    "artifacts/nlm-measurement-098/verified-fixtures/case-3.npz": "62d8fca0e006b7ad9db62e64d4bbfbc349523411fa69a63055f3baea810eb4de",
+    "artifacts/nlm-measurement-098/verified-fixtures/case-4.npz": "be06f16a49725f01ae687d07f94454b44ba73ce914daa11bf4fbdb516c44bb98",
+    "artifacts/nlm-measurement-098/verified-fixtures/case-5.npz": "3fdf748069a7ba7b851b2da39f75f06540a232bdeefb7bf7ea1420bc254ffd06"
+  },
+  "protected011": {
+    "artifacts/submission-candidate-011.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/submission-candidate-011.components.csv": "1e5d67fed120150f9a1f665eacdc5e5aca817a29e12bdba4aea27347e3380739",
+    "artifacts/submission-candidate-011.manifest.json": "497cc7377fcc35cb9f6142bc0ee9868fbc3fa50aa40bf10c7a45d6ef3931fe94",
+    "artifacts/submission-candidate-011.reproduced.csv": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "artifacts/final-model-086/decision.json": "83b779a44abf26db1b496b4d7aa2ce6cce0ea4e20cb9e147db331554cabee03f",
+    "artifacts/final-model-086/head/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/head/report.json": "1a46ff5c0e94c7e4797f62986347fd5e378a4829965ad4144a47f6c8afd07053",
+    "artifacts/final-model-086/head/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "artifacts/final-model-086/report.json": "d2d7eb583640ba97d422aa1bc0a53365954c9bba047610b7972815c50bb26608",
+    "artifacts/final-model-086/test_predictions.npz": "eb8b4af03053e3a82c19f3a7d7f2cf569eb46e9b764980cdc0b567bbbe1e1cbc",
+    "artifacts/final-model-086/validation-replay/model.pt": "bb83d3680dfb87399249c02f14862d0b7036319b14d70665d5c4510aa6a9fc49",
+    "artifacts/final-model-086/validation-replay/report.json": "e87d4bce70bf24d7273a3c46693f0c6cfdab1ae252d8b3f6c30b52beb807317b",
+    "artifacts/final-model-086/validation-replay/training_predictions.npz": "f63234fadfc3cc7f0e644fcae6dac84842fb4b6221b3833fe3aee961b5076669",
+    "candidate011_pipeline.py": "ecea7972861238b936c8c640d51c6037d2ead75c901f77204f6eeffa454594b6",
+    "verify_candidate011.py": "12147b31d5a4acdb8837c9a2f9ac9be4b3a102efde9eb357414a9cebb2cb73e9",
+    "finalize_candidate011.py": "9aef57b8930cdf5c0ee7205d08a6ca31f42052c29bb1af49d92b2b31c31fec52",
+    "reports/candidate011-verification.json": "510f883cff8a64f9902b55c964e77830cd69054b751bb8aa7dd0a125c2e4c4bf",
+    "reports/final-candidate011-summary.json": "168316e3c35fcbe00035c880df29f3b9eb3e76b6ff588ddce7a37922e84588ad",
+    "reports/frozen-complement-085-validation.json": "4b6fd511bf16006dcadfc20b281af3f23d2d9adc7b28e4663c59e9ad075dfd9f",
+    "artifacts/frozen-complement-085/plan.json": "47ea467c9f5dacafc2bd1cabad34906c619f5d7f599ee0393a27b68266ab9ce0"
+  },
+  "cost": 0
+}

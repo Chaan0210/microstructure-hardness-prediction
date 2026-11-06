@@ -1,0 +1,44 @@
+{
+  "torch": "2.14.0",
+  "mps_built": true,
+  "mps_available": true,
+  "threads": 2,
+  "image_size": 128,
+  "batch_size": 32,
+  "thermal_before": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+  "no_pretrained_weights": true,
+  "devices": {
+    "cpu": {
+      "measured_steps": 3,
+      "median_step_seconds": 0.06197195901768282,
+      "images_per_second": 516.3625695755278,
+      "first_half_median": 0.0577308339998126,
+      "second_half_median": 0.06243393800104968,
+      "memory": {
+        "process_peak_rss_bytes": 450461696
+      },
+      "finite_losses": true,
+      "loss_first": 0.7920770645141602,
+      "loss_last": 0.6709107160568237
+    },
+    "mps": {
+      "measured_steps": 20,
+      "median_step_seconds": 0.01482954149832949,
+      "images_per_second": 2157.8549818013403,
+      "first_half_median": 0.014856853958917782,
+      "second_half_median": 0.01482954149832949,
+      "memory": {
+        "process_peak_rss_bytes": 614531072,
+        "current_allocated_memory": 3575296,
+        "driver_allocated_memory": 95305728,
+        "recommended_max_memory": 12713115648
+      },
+      "finite_losses": true,
+      "loss_first": 0.789252519607544,
+      "loss_last": 0.03916700929403305
+    }
+  },
+  "parameters": 91905,
+  "thermal_after": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+  "thermal_note": "Temperature sensors unavailable if pmset reports errors; timing alone cannot certify thermal safety."
+}

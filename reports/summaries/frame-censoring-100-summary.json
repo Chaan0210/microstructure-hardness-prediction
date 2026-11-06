@@ -1,0 +1,482 @@
+{
+  "study": "100 fixed frame censoring and segmentation error diagnosis",
+  "completed_utc": "2026-10-02T16:28:41.339538+00:00",
+  "status": "diagnostic_complete_no_regression_started",
+  "execution": {
+    "prepare_exit_code": 0,
+    "run_exit_code": 0,
+    "validation_exit_code": 0,
+    "diagnostic_seconds": 0.2499614580301568,
+    "validation_seconds": 0.3903142499621026,
+    "active_project_processes_at_final_check": 0
+  },
+  "scope": {
+    "existing_fixtures": 6,
+    "existing_TV_measurements": 12,
+    "TV_noise_multiplier": 1.0,
+    "h_multipliers": [
+      0.1,
+      0.2
+    ],
+    "new_segmentation": false,
+    "new_synthetic_data": false,
+    "hardness_labels_accessed": false,
+    "holdout_test_accessed": false,
+    "new_training": false,
+    "uploads": false,
+    "cost": 0
+  },
+  "main_finding_ko": "거친 고잡음 사례의 크기 오차는 프레임 제외보다 과분할이 지배한다. 전체 관측 영역을 유지하면 일부 크기 정보를 보존하지만 과분할을 복구하지는 못한다. 프레임 제외 후에도 실제 프레임 입자의 분리된 조각이 내부 입자로 남는다.",
+  "oracle_frame_censoring": [
+    {
+      "layout": 0,
+      "truth_all": {
+        "count": 16,
+        "covered_area_fraction": 1.0,
+        "mean_diameter_px": 72.13814635669485,
+        "area_weighted_diameter_px": 72.44845464448937,
+        "centroid_rms_radius_px": 101.38976992465047,
+        "nearest_centroid_median_px": 62.027448902536875
+      },
+      "truth_interior": {
+        "count": 4,
+        "covered_area_fraction": 0.251373291015625,
+        "mean_diameter_px": 72.36841789528796,
+        "area_weighted_diameter_px": 72.54888829979251,
+        "centroid_rms_radius_px": 46.14073423168648,
+        "nearest_centroid_median_px": 60.44632202785456
+      },
+      "mean_diameter_relative_shift": 0.0031920911504228658
+    },
+    {
+      "layout": 1,
+      "truth_all": {
+        "count": 64,
+        "covered_area_fraction": 1.0,
+        "mean_diameter_px": 36.083464705823175,
+        "area_weighted_diameter_px": 36.18193362556265,
+        "centroid_rms_radius_px": 103.28227613081938,
+        "nearest_centroid_median_px": 30.64818847426651
+      },
+      "truth_interior": {
+        "count": 36,
+        "covered_area_fraction": 0.55810546875,
+        "mean_diameter_px": 35.94359674217294,
+        "area_weighted_diameter_px": 36.036367772779585,
+        "centroid_rms_radius_px": 76.76206243875743,
+        "nearest_centroid_median_px": 30.583442754385324
+      },
+      "mean_diameter_relative_shift": -0.0038762343026239455
+    },
+    {
+      "layout": 2,
+      "truth_all": {
+        "count": 48,
+        "covered_area_fraction": 1.0,
+        "mean_diameter_px": 41.66128588740319,
+        "area_weighted_diameter_px": 41.792701447022985,
+        "centroid_rms_radius_px": 103.0591653488213,
+        "nearest_centroid_median_px": 23.296189766687824
+      },
+      "truth_interior": {
+        "count": 22,
+        "covered_area_fraction": 0.458984375,
+        "mean_diameter_px": 41.694893392396224,
+        "area_weighted_diameter_px": 41.809419373406946,
+        "centroid_rms_radius_px": 76.81931369033195,
+        "nearest_centroid_median_px": 26.625710627149672
+      },
+      "mean_diameter_relative_shift": 0.0008066842939957699
+    }
+  ],
+  "all_vs_interior_recovery": {
+    "mean_diameter_px": {
+      "measurements": 12,
+      "all_population_lower_absolute_error_count": 12,
+      "median_absolute_relative_error_all": 0.31829990664032254,
+      "median_absolute_relative_error_interior": 0.4126671479702903
+    },
+    "area_weighted_diameter_px": {
+      "measurements": 12,
+      "all_population_lower_absolute_error_count": 10,
+      "median_absolute_relative_error_all": 0.05770076976014292,
+      "median_absolute_relative_error_interior": 0.08131020558111997
+    },
+    "mean_area_px": {
+      "measurements": 12,
+      "all_population_lower_absolute_error_count": 12,
+      "median_absolute_relative_error_all": 0.3971894316620879,
+      "median_absolute_relative_error_interior": 0.5099435517282198
+    },
+    "nearest_centroid_median_px": {
+      "measurements": 12,
+      "all_population_lower_absolute_error_count": 9,
+      "median_absolute_relative_error_all": 0.3595398013482815,
+      "median_absolute_relative_error_interior": 0.3942162549762037
+    }
+  },
+  "coarse_high_noise_both_fixed_h": [
+    {
+      "case": 1,
+      "noise_sigma": 0.075,
+      "h": 0.1,
+      "stages": {
+        "A0_truth_all": {
+          "count": 16,
+          "covered_area_fraction": 1.0,
+          "mean_diameter_px": 72.13814635669485,
+          "area_weighted_diameter_px": 72.44845464448937,
+          "centroid_rms_radius_px": 101.38976992465047,
+          "nearest_centroid_median_px": 62.027448902536875
+        },
+        "A1_truth_same_foreground": {
+          "count": 16,
+          "covered_area_fraction": 0.9083404541015625,
+          "mean_diameter_px": 68.74335465868181,
+          "area_weighted_diameter_px": 69.07512858947284,
+          "centroid_rms_radius_px": 101.71064798559023,
+          "nearest_centroid_median_px": 61.73208389251953
+        },
+        "A2_pred_all_positive": {
+          "count": 388,
+          "covered_area_fraction": 0.9083404541015625,
+          "mean_diameter_px": 8.113577312532858,
+          "area_weighted_diameter_px": 46.38922436595612,
+          "centroid_rms_radius_px": 98.49559715715671,
+          "nearest_centroid_median_px": 5.2910872140028955
+        },
+        "A3_pred_area_ge16": {
+          "count": 205,
+          "covered_area_fraction": 0.8877105712890625,
+          "mean_diameter_px": 12.711351038410047,
+          "area_weighted_diameter_px": 47.389631979048694,
+          "centroid_rms_radius_px": 102.42370405360704,
+          "nearest_centroid_median_px": 8.8780579933983
+        },
+        "A4_pred_interior": {
+          "count": 157,
+          "covered_area_fraction": 0.3300933837890625,
+          "mean_diameter_px": 9.858348104825208,
+          "area_weighted_diameter_px": 32.9340788911784,
+          "centroid_rms_radius_px": 89.34613224645861,
+          "nearest_centroid_median_px": 8.234900755319014
+        }
+      },
+      "oracle_interior": {
+        "count": 4,
+        "covered_area_fraction": 0.251373291015625,
+        "mean_diameter_px": 72.36841789528796,
+        "area_weighted_diameter_px": 72.54888829979251,
+        "centroid_rms_radius_px": 46.14073423168648,
+        "nearest_centroid_median_px": 60.44632202785456
+      },
+      "decomposition": {
+        "count": {
+          "boundarymask": 0.0,
+          "segmentation_partition": 372.0,
+          "small_region_filter": -183.0,
+          "frame_filter": -48.0,
+          "total_interior_minus_truthall": 141.0
+        },
+        "covered_area_fraction": {
+          "boundarymask": -0.0916595458984375,
+          "segmentation_partition": 0.0,
+          "small_region_filter": -0.0206298828125,
+          "frame_filter": -0.5576171875,
+          "total_interior_minus_truthall": -0.6699066162109375
+        },
+        "mean_area_px": {
+          "boundarymask": -375.4375,
+          "segmentation_partition": -3567.137242268041,
+          "small_region_filter": 130.36498617048028,
+          "frame_filter": -146.00043498524158,
+          "total_interior_minus_truthall": -3958.2101910828023
+        },
+        "mean_diameter_px": {
+          "boundarymask": -3.3947916980130373,
+          "segmentation_partition": -60.629777346148956,
+          "small_region_filter": 4.59777372587719,
+          "frame_filter": -2.8530029335848397,
+          "total_interior_minus_truthall": -62.279798251869636
+        },
+        "area_weighted_diameter_px": {
+          "boundarymask": -3.373326055016534,
+          "segmentation_partition": -22.685904223516722,
+          "small_region_filter": 1.0004076130925768,
+          "frame_filter": -14.455553087870292,
+          "total_interior_minus_truthall": -39.51437575331097
+        },
+        "mean_inverse_sqrt_diameter": {
+          "boundarymask": 0.0028873121085713216,
+          "segmentation_partition": 0.3464434311579163,
+          "small_region_filter": -0.11892379171504092,
+          "frame_filter": 0.016293688555170993,
+          "total_interior_minus_truthall": 0.2467006401066177
+        },
+        "centroid_rms_radius_px": {
+          "boundarymask": 0.3208780609397621,
+          "segmentation_partition": -3.215050828433519,
+          "small_region_filter": 3.9281068964503305,
+          "frame_filter": -13.07757180714843,
+          "total_interior_minus_truthall": -12.043637678191857
+        },
+        "nearest_centroid_median_px": {
+          "boundarymask": -0.29536501001734194,
+          "segmentation_partition": -56.44099667851664,
+          "small_region_filter": 3.586970779395405,
+          "frame_filter": -0.6431572380792865,
+          "total_interior_minus_truthall": -53.79254814721786
+        }
+      },
+      "correspondence": {
+        "foreground_pixel_purity": 0.9786490618018109,
+        "split_entropy_bits": 1.8330048677573143,
+        "merge_entropy_bits": 0.07731700252919758,
+        "majority_extra_fragments_all": 372,
+        "truth_regions_without_majority_pred_all": 0,
+        "retained_interior_pixels": 21633,
+        "retained_pixels_from_trueborder": 7374,
+        "falsecomplete_area_share_of_retained": 0.3408681181528221,
+        "interior_regions_majority_trueborder": 102,
+        "trueinterior_pixels_discarded_as_predborder": 0,
+        "trueinterior_total_pixels": 16474,
+        "trueinterior_area_discarded_by_frame_fraction": 0.0,
+        "majority_fragments_per_true": {
+          "1": 14,
+          "2": 24,
+          "3": 45,
+          "4": 18,
+          "5": 17,
+          "6": 39,
+          "7": 18,
+          "8": 32,
+          "9": 23,
+          "10": 42,
+          "11": 21,
+          "12": 18,
+          "13": 17,
+          "14": 21,
+          "15": 27,
+          "16": 12
+        }
+      }
+    },
+    {
+      "case": 1,
+      "noise_sigma": 0.075,
+      "h": 0.2,
+      "stages": {
+        "A0_truth_all": {
+          "count": 16,
+          "covered_area_fraction": 1.0,
+          "mean_diameter_px": 72.13814635669485,
+          "area_weighted_diameter_px": 72.44845464448937,
+          "centroid_rms_radius_px": 101.38976992465047,
+          "nearest_centroid_median_px": 62.027448902536875
+        },
+        "A1_truth_same_foreground": {
+          "count": 16,
+          "covered_area_fraction": 0.9575042724609375,
+          "mean_diameter_px": 70.58996136204486,
+          "area_weighted_diameter_px": 70.88829905241413,
+          "centroid_rms_radius_px": 101.7737053617118,
+          "nearest_centroid_median_px": 62.069365430138625
+        },
+        "A2_pred_all_positive": {
+          "count": 166,
+          "covered_area_fraction": 0.9575042724609375,
+          "mean_diameter_px": 10.503140938607666,
+          "area_weighted_diameter_px": 66.86276241329713,
+          "centroid_rms_radius_px": 89.80575109944533,
+          "nearest_centroid_median_px": 5.749346803083958
+        },
+        "A3_pred_area_ge16": {
+          "count": 73,
+          "covered_area_fraction": 0.9458770751953125,
+          "mean_diameter_px": 19.890269864583857,
+          "area_weighted_diameter_px": 67.6418633930524,
+          "centroid_rms_radius_px": 91.7243654916338,
+          "nearest_centroid_median_px": 14.675006861911383
+        },
+        "A4_pred_interior": {
+          "count": 54,
+          "covered_area_fraction": 0.2466583251953125,
+          "mean_diameter_px": 10.503430598111565,
+          "area_weighted_diameter_px": 63.20946168345304,
+          "centroid_rms_radius_px": 78.44733725196282,
+          "nearest_centroid_median_px": 12.81326472505786
+        }
+      },
+      "oracle_interior": {
+        "count": 4,
+        "covered_area_fraction": 0.251373291015625,
+        "mean_diameter_px": 72.36841789528796,
+        "area_weighted_diameter_px": 72.54888829979251,
+        "centroid_rms_radius_px": 46.14073423168648,
+        "nearest_centroid_median_px": 60.44632202785456
+      },
+      "decomposition": {
+        "count": {
+          "boundarymask": 0.0,
+          "segmentation_partition": 150.0,
+          "small_region_filter": -93.0,
+          "frame_filter": -19.0,
+          "total_interior_minus_truthall": 38.0
+        },
+        "covered_area_fraction": {
+          "boundarymask": -0.0424957275390625,
+          "segmentation_partition": 0.0,
+          "small_region_filter": -0.011627197265625,
+          "frame_filter": -0.69921875,
+          "total_interior_minus_truthall": -0.7533416748046875
+        },
+        "mean_area_px": {
+          "boundarymask": -174.0625,
+          "segmentation_partition": -3543.9194277108436,
+          "small_region_filter": 471.1463112724872,
+          "frame_filter": -549.812531709792,
+          "total_interior_minus_truthall": -3796.6481481481483
+        },
+        "mean_diameter_px": {
+          "boundarymask": -1.5481849946499864,
+          "segmentation_partition": -60.086820423437196,
+          "small_region_filter": 9.38712892597619,
+          "frame_filter": -9.386839266472291,
+          "total_interior_minus_truthall": -61.63471575858328
+        },
+        "area_weighted_diameter_px": {
+          "boundarymask": -1.5601555920752475,
+          "segmentation_partition": -4.025536639116993,
+          "small_region_filter": 0.7791009797552704,
+          "frame_filter": -4.432401709599361,
+          "total_interior_minus_truthall": -9.238992961036331
+        },
+        "mean_inverse_sqrt_diameter": {
+          "boundarymask": 0.001283779917810507,
+          "segmentation_partition": 0.3602844589438479,
+          "small_region_filter": -0.12887297110251267,
+          "frame_filter": 0.04675855249617644,
+          "total_interior_minus_truthall": 0.27945382025532217
+        },
+        "centroid_rms_radius_px": {
+          "boundarymask": 0.38393543706133926,
+          "segmentation_partition": -11.967954262266474,
+          "small_region_filter": 1.9186143921884735,
+          "frame_filter": -13.277028239670983,
+          "total_interior_minus_truthall": -22.942432672687644
+        },
+        "nearest_centroid_median_px": {
+          "boundarymask": 0.041916527601749465,
+          "segmentation_partition": -56.320018627054665,
+          "small_region_filter": 8.925660058827425,
+          "frame_filter": -1.8617421368535236,
+          "total_interior_minus_truthall": -49.21418417747901
+        }
+      },
+      "correspondence": {
+        "foreground_pixel_purity": 0.9792194546700451,
+        "split_entropy_bits": 0.4518499594078742,
+        "merge_entropy_bits": 0.09697662199973364,
+        "majority_extra_fragments_all": 150,
+        "truth_regions_without_majority_pred_all": 0,
+        "retained_interior_pixels": 16165,
+        "retained_pixels_from_trueborder": 921,
+        "falsecomplete_area_share_of_retained": 0.05697494587070832,
+        "interior_regions_majority_trueborder": 30,
+        "trueinterior_pixels_discarded_as_predborder": 20,
+        "trueinterior_total_pixels": 16474,
+        "trueinterior_area_discarded_by_frame_fraction": 0.0012140342357654485,
+        "majority_fragments_per_true": {
+          "1": 1,
+          "2": 9,
+          "3": 21,
+          "4": 11,
+          "5": 4,
+          "6": 19,
+          "7": 8,
+          "8": 18,
+          "9": 9,
+          "10": 23,
+          "11": 9,
+          "12": 5,
+          "13": 4,
+          "14": 7,
+          "15": 17,
+          "16": 1
+        }
+      }
+    }
+  ],
+  "interpretation_ko": [
+    "정답 분할만으로 프레임 접촉 입자를 제외하면 면적의 약44~75%와 배치 범위를 잃지만, 이 비교적 규칙적인 세 기하의 평균 직경 변화는 -0.388~+0.319%에 그친다. 지원 면적 감소 자체를 평균 크기 편향과 동일시할 수 없다.",
+    "거친 고잡음 h=.1에서 실제 전체16개/내부4개에 대해 예측 전체388개, 면적16px 이상205개, 내부157개다. 평균 직경 오차 분해는 경계마스크 -3.395px, 분할 -60.630px, 소영역 제외 +4.598px, 프레임 제외 -2.853px다.",
+    "동 사례의 내부157개 중102개가 실제 프레임 입자를 다수 부모로 가지며, 남긴 픽셀의34.087%가 실제 프레임 입자에서 온다. 내부 전용 통계라는 이름만으로 완전한 입자 통계가 보장되지 않는다.",
+    "면적 가중 직경의 관측창 정답 대비 중앙 절대상대오차는 전체 영역5.77%, 내부 영역8.13%이며12개 중10개에서 전체가 낮다. 이는 측정 보완 가능성에 대한 제한적 근거이며 경도 예측 개선 근거가 아니다."
+  ],
+  "duplicate_audit": {
+    "same_truth_based_ordered_decomposition_found": false,
+    "prior097": "Support transitions and overlays; no same known-geometry size-error decomposition.",
+    "prior098": "Count and boundary precision/recall; no same all-versus-interior size/arrangement decomposition.",
+    "existing_all_region_size_features": "grain_features.py and run006 already contain all/interior area-weighted diameter for the older Gaussian/ridge-distance watershed. Generic all-region size is not a new feature family.",
+    "current_branch_gap": "The compact26 plus TV-denoised31 branch does not include TV all-region area-weighted diameter. TV31 contains interior area-weighted diameter, both counts and support summaries.",
+    "no_claim_of_global_ensemble_novelty": true
+  },
+  "single_followup_proposal_only": {
+    "priority": "low; partial overlap with run006, no evidence yet of hardness benefit",
+    "change": "Preserve the existing compact26 + TV31 branch; add exactly median and range of visible all-region area-weighted equivalent diameter over the same four TV(.5,1.0) x h(.1,.2) configurations, area>=16 and frame regions included. Compare57 versus59 features.",
+    "controls": "Same development400 folds, same fold-train-only scaling, identical existing regression/inner-selection settings and fixed combination weight in both arms. No extra parameter, threshold, support correction, synthetic hardness target or image selection.",
+    "interpretation": "Additional observed-window morphology proxy, not recovery of untruncated physical grain diameter; keep existing interior descriptors.",
+    "implemented": false,
+    "executed": false,
+    "decision": "Report diagnosis first. No regression, resplit, final500 retraining or test inference in100."
+  },
+  "limitations": [
+    "Truth is finite 256x256 observed-window Voronoi geometry. Full cells beyond the frame are unavailable; clipped visible diameter is not unbiased physical grain diameter.",
+    "Six fixtures comprise three paired geometries at two noise levels; twelve fixed measurements are correlated, not twelve independent draws.",
+    "The error decomposition is telescoping accounting in a fixed order, not independent causal effects.",
+    "Low oracle size bias on regular fixtures does not establish absence of censoring bias for heterogeneous real microstructures.",
+    "Diagnostic panel displays fixed h=.2 only for legibility; all numerical conclusions retain both .1 and .2 without selection."
+  ],
+  "validation": {
+    "passed": true,
+    "stage_summaries_independently_verified": 60,
+    "measurements": 12,
+    "metric_max_abs_error": 2.1316282072803006e-14,
+    "telescoping_decomposition_verified": true,
+    "frame_contamination_checks": 12,
+    "region_majority_correspondence_verified": true,
+    "same_geometry_across_noise_verified": true,
+    "reference_limited_to_observed_window": true,
+    "source_sha256": "9e156bbaac91dd4eba5a113d7237c83e3ab619e95bc2c444180ec580add9f294",
+    "report_sha256": "3953df04c614b2db15bdfcf1042d6547a2fbe9641175f28920a6eb741b96b9fc",
+    "seconds": 0.3903142499621026,
+    "new_segmentation": false,
+    "new_synthetic_data": false,
+    "hardness_labels_accessed": false,
+    "holdout_test_accessed": false,
+    "protected011_files_verified": 20,
+    "cost": 0
+  },
+  "environment": {
+    "package_count": 26,
+    "matches_096_environment_plus_previously_authorized_additions": true,
+    "new_installs": false
+  },
+  "protected011": {
+    "files_verified": 20,
+    "submission_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "unchanged": true
+  },
+  "artifacts_sha256": {
+    "artifacts/frame-censoring-100/plan.json": "58a1ee2a84e5d5c229a52c562dc6a703dd4de229f4e5f6fd2501777c873c0f2e",
+    "artifacts/frame-censoring-100/report.json": "3953df04c614b2db15bdfcf1042d6547a2fbe9641175f28920a6eb741b96b9fc",
+    "artifacts/frame-censoring-100/metrics.csv": "eb2fc6f1cc24346fd9e689345dfb637c7aa074f898384c5a46311c6e6476bd50",
+    "artifacts/frame-censoring-100/geometry-decomposition.png": "42cb541efe47448c5be660bb93756aaffb1a49290c6cb8da22d8f7faa3c57115",
+    "reports/frame-censoring-100-validation.json": "0c6bd8f5713ef6a7cf13bc42d0a864b89f8b174d9a38ccc7655ff5b2028a0e68",
+    "grain_features.py": "0b2dcc4d9a528718c418ee784ccb0dee836f8887fbe12989139aab4a0ed705e0",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+    "artifacts/run-006/report.json": "dd41e3ae722df565e6d1dd5e6f54013ca1f2544ae4e9b636d5c93f7430b6643c"
+  },
+  "remaining_blockers": []
+}

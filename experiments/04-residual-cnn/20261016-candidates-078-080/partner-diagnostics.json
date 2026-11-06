@@ -1,0 +1,142 @@
+{
+  "partners": {
+    "ridge": {
+      "weight": 0.128,
+      "dev_change_rms": 0.1186267647800761,
+      "pooled_rmse_before": 9.535198825875396,
+      "pooled_rmse_after": 9.525410443370566,
+      "partition_gains": [
+        0.010388371599539425,
+        0.011732764623056724,
+        0.0072608253848223114
+      ]
+    },
+    "logridge": {
+      "weight": 0.128,
+      "dev_change_rms": 0.13943320012242483,
+      "pooled_rmse_before": 9.535198825875396,
+      "pooled_rmse_after": 9.524358325149464,
+      "partition_gains": [
+        0.010958209249137596,
+        0.013968996133776557,
+        0.0076153146548954
+      ]
+    },
+    "gmm": {
+      "weight": 0.15,
+      "dev_change_rms": 0.12996205490400967,
+      "pooled_rmse_before": 9.535198825875396,
+      "pooled_rmse_after": 9.534792167284124,
+      "partition_gains": [
+        -0.010274308425959333,
+        0.007933559145980595,
+        0.0035384697415032917
+      ]
+    }
+  },
+  "feature_transport": {
+    "p34_sigma1": {
+      "train_low_quantiles": [
+        0.005082124142011833,
+        0.00932689214497575,
+        0.17724263391704828,
+        0.39818957503764835,
+        0.4689509213619001
+      ],
+      "test_low_quantiles": [
+        0.005,
+        0.005,
+        0.15998513844470533,
+        0.4261687536795486,
+        0.6808199379622988
+      ],
+      "clipped_low_ids": [
+        "TEST_000096"
+      ]
+    },
+    "contrast_sigma1": {
+      "train_low_quantiles": [
+        0.07517457059203182,
+        0.08474478517689282,
+        0.2023927438636628,
+        0.3201330927463964,
+        0.36783949890297496
+      ],
+      "test_low_quantiles": [
+        0.038928320983457,
+        0.07793072817298588,
+        0.2064224892353876,
+        0.33798207218253284,
+        0.3928053731723899
+      ],
+      "clipped_low_ids": [
+        "TEST_000059",
+        "TEST_000192",
+        "TEST_000283"
+      ]
+    }
+  },
+  "cv_clipping_mismatch": "h9_partners.py did not clip outer-validation features to each training fold range; final_h9c_partners.py clips test to full500 train range.",
+  "test_delta_rms": 0.49376274293069633,
+  "dev_delta_rms": 0.3498017466015145,
+  "low_rows_clipped_any": 4,
+  "correction_energy_share_clipped": 0.11749890669821364,
+  "largest10_test_corrections": [
+    {
+      "ID": "TEST_000059",
+      "correction": 4.067973260126763,
+      "clipped": true
+    },
+    {
+      "ID": "TEST_000096",
+      "correction": 3.3923829565137,
+      "clipped": true
+    },
+    {
+      "ID": "TEST_000317",
+      "correction": -2.521318224919412,
+      "clipped": false
+    },
+    {
+      "ID": "TEST_000617",
+      "correction": 2.2429236510770068,
+      "clipped": false
+    },
+    {
+      "ID": "TEST_000429",
+      "correction": -2.1472909131155973,
+      "clipped": false
+    },
+    {
+      "ID": "TEST_000601",
+      "correction": 1.8309642193230502,
+      "clipped": false
+    },
+    {
+      "ID": "TEST_000085",
+      "correction": -1.7087811766512857,
+      "clipped": false
+    },
+    {
+      "ID": "TEST_000301",
+      "correction": -1.5700838918401416,
+      "clipped": false
+    },
+    {
+      "ID": "TEST_000084",
+      "correction": 1.550140434117111,
+      "clipped": false
+    },
+    {
+      "ID": "TEST_000393",
+      "correction": -1.524797077329481,
+      "clipped": false
+    }
+  ],
+  "conclusions": [
+    "Public identifies aggregate low-partner deterioration, not which partner or rows caused it.",
+    "Train/test feature summaries and change magnitude are descriptive, not causal failure attribution.",
+    "The CV/production clipping mismatch is real; its effect requires train-only refits to quantify.",
+    "Do not optimize test outliers, thresholds, or weights from these diagnostics."
+  ]
+}

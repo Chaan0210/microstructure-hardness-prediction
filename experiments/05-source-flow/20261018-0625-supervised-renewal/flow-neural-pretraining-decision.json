@@ -1,0 +1,16 @@
+{
+  "optimizer_updates_before_change": 0,
+  "predictive_experiments_before_change": 0,
+  "change": "Retain original orientation in the small learned measurement network. Four encoder views are inverse-aligned before averaging, preserving spatial axes; do not rotate hardness labels or average the new neural readout over orientations.",
+  "reason": "The prior probabilistic grain feature code explicitly retains mean/phase cos2 and sin2. Preserve potentially useful direction information; permission for rotation does not establish hardness-label invariance.",
+  "prior_zero_update_prototypes": [
+    "flow_neural_measurement_c4_prototype.py",
+    "flow_neural_learning_c4_prototype.py"
+  ],
+  "updated_utc": "2026-10-18T11:05:25.191929+00:00",
+  "base_features": 142,
+  "learned_features": 32,
+  "source_base": "P104 + F38, before any predictive probe or optimizer update",
+  "base_reason": "F38 is now the stronger lead and passed the stronger paired component sensitivity checks. Test complementarity to this actual lead.",
+  "superseded_flow46_prototype": "flow_neural_learning_flow46_prototype.py"
+}

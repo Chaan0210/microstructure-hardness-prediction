@@ -1,0 +1,39 @@
+{
+ "candidate": "023",
+ "formula": "0.50*best021 + 0.50*grain (fallback best021 if n_obj<20)",
+ "weight": 0.5,
+ "family": "krr",
+ "family_cv_rmse": {
+  "ridge": 14.57714065446032,
+  "krr": 13.003442623567276,
+  "hgb": 14.124046841643262
+ },
+ "model_params": {
+  "kernelridge__alpha": 0.03,
+  "kernelridge__gamma": 0.005
+ },
+ "n_train": 500,
+ "test_failed_segmentations": 26,
+ "pred_stats": {
+  "mean": 193.7059962871277,
+  "std": 12.04778433197637,
+  "min": 161.43925072180338,
+  "max": 247.53758609981116
+ },
+ "best021_stats": {
+  "mean": 193.61589695803977,
+  "std": 11.91331717331469
+ },
+ "grain_test_stats": {
+  "mean": 193.7960956162156,
+  "std": 13.606680783012763
+ },
+ "corr_best021_vs_grain_test": 0.7820062936935901,
+ "rms_change_vs_best021": 4.288759095669579,
+ "dev_evidence": "validation-v2.json: pooled 3-partition OOF 12.815->12.240 (gain 0.575, conditional CI [0.156,0.990]), all gates passed; same 400 images, not independent.",
+ "csv": "artifacts/submission-candidate-023.csv",
+ "csv_sha256": "668c295987d3913e9d887c1f0ac0c2a5b79363cf2d6811303b4a0af3eaba4b02",
+ "best021_csv_sha256": "7cf4ce3bbef6b98d5a06e5b3b19498379ca5fe4f076bbdc95d9afa55cc893a4b",
+ "weights_sha256": "e1440429eb384f95afe32bcba6510f90d518eaedc917ede549bed6804004abe2",
+ "uploaded": false
+}

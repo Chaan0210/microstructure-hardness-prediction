@@ -1,0 +1,85 @@
+합성 미세구조 생성 후단 진단 — 2026-10-07
+결론: 새 6개 HH 진단 특징은 이번 사전 고정 소규모 비교에서 도움이 되지 않았다.
+best021 보존. 추가 튜닝, 모델 승격, 제출 없음. 남은 실행 차단 없음.
+
+진단 선택 / 중복 점검
+기존 grain_features / denoised_grain_features는 sigma1/2 grain 및 TV watershed 요약,
+median/range와 scalar HH noise를 쓴다. autocov_shape_features는 공간상관, native_texture_features는
+방향성 스펙트럼과 LoG tile 통계까지 이미 제공한다. 183번은 watershed 임계값±5%와 인접그래프
+안정성(16장 중 3장 통과), 102번은 HH lag autocorrelation을 조사했다. 049번은 별도 역렌더링,
+094번은 전체 영상 밝기/잡음/타일 contrast, 218번은 결측 grain validity를 조사했다.
+이들을 다시 실행하거나 Voronoi/centroid seed를 가정하지 않았다. 코드 점검 범위 내 새 항목은:
+1) 부드러운 밝기와 gradient 조건별 Haar HH 제곱에너지 및 tile 균질성.
+2) 네 2x2 raster 시작 위치의 HH 에너지/평균 차이.
+이는 생성 후단/렌더링 후보 흔적 진단이다. 실제 생성기 식별이나 물리적 상 분할이 아니다.
+
+측정 / 사전 고정
+원본 개발400 native256 uint8만 개별 ID allowlist로 열었다. 2x2 유효 support 전체를 사용했다.
+HH=(a-b-c+d)/2. Gaussian sigma2 guide로 gradient 하위50% smooth, 상위25% edge를 정하고,
+smooth 영역의 밝기 quartile 네 그룹을 비교했다. Smooth bright/dark log energy,
+smooth brightness energy CV, edge/smooth log energy, tile HH energy CV,
+네 phase log energy range, 최대 |HH mean|/RMS의 6개를 모두 고정했다.
+상세 수식은 diagnose.py features(). 물리 가정, threshold 탐색, 특정 이미지 선별 없음.
+32개 iid Gaussian과 밝기 의존 분산/격자 분산/2x2 correlated/noiseless tessellation을 공학적
+대조로만 썼다. 실제 데이터를 모사하거나 학습 표본으로 쓴 것이 아니다.
+
+이미지 증거
+- Smooth bright/dark log energy 중앙값 -0.02143 (비율 약0.979), q05~q95 -0.17915~0.04233.
+  전반적으로 강한 밝기 증가형 분산의 증거는 약하다. 음의 차이도 존재하므로 완전 균질 주장 아님.
+- Edge/smooth log energy 중앙값 0.03418 (비율 약1.035), q95 0.26489 (약1.303).
+  56.75%가 32개 iid 대조의 q95보다 컸다. 그러나 무잡음 tessellation 대조도 강한 값을 내므로
+  경계 구조를 포함한 측정이다. 실제 관측잡음의 상관/분산이라는 인과 해석은 불가.
+- Tile HH energy CV 중앙값0.12151, iid 중앙값0.12363; iid q95 초과24/400(6%).
+- Phase log energy range 중앙값0.01800, iid 중앙값0.01680; iid q95 초과26/400(6.5%).
+  강한 2x2 block-correlated rendering 흔적을 지지하지 않는다. Pixel parity 독립분산 대조는
+  2x2 HH에서 상쇄되므로, raster 기반 모든 생성 방식의 부재를 뜻하지 않는다.
+- Phase 평균/RMS의 iid q95 초과48/400(12%)는 별도 남는 차이이나,
+  경도 Spearman 0.0662이며 본 사전 고정 패널의 예측 이득은 없었다.
+- Edge/smooth 지표는 compact57의 개별열 최대 |Spearman|0.7697,
+  compact57->해당 지표 고정 Ridge OOF R2=0.6199. 상당 부분 기존 요약과 겹친다.
+  Phase energy/mean 지표는 기존 패널로 회복 R2 -0.0491/-0.0237이나,
+  경도 연관도 -0.0046/0.0662로 약하다. 정보 회복 실패 자체는 유용한 누락정보의 증명이 아니다.
+
+사전 고정 소규모 예측 비교 (회고적, 모델 후보 아님)
+기존 compact57 vs compact57+6, train-only StandardScaler, Ridge alpha100, 절편 포함.
+원본과 기존 두 재분할 모두 처음부터 고정; feature/alpha/weight/seed 선별 없음.
+검증 fold와 train의 group 중복 없음. 경도 직접 예측이며 잔차CNN/anchor와 중복하지 않음.
+분할         compact57 RMSE  +6 RMSE    gain(양수 개선)
+original     13.931403        14.133450  -0.202047
+20261031     13.918483        14.024100  -0.105617
+20261101     13.888231        14.055695  -0.167464
+세 분할 모두 악화, 15fold 중14개 악화. best021 RMSE12.8과는 다른 단순 진단 learner이다.
+이 결과를 best021 최종 앙상블 악화량으로 해석하면 안 된다. 기존 KRR/DINO/CNN을 재학습하지 않았다.
+
+검증 / 비용
+400개 feature 재추출 exact. 독립 sliding-window HH 및 phase 수식, scalar RMSE 재계산 검증.
+첫 image D4 8변환 최대차2.21e-16. Original fold0 두 조건의 validation label poison 뒤
+계수 exact. 기존 읽은 source/input hash 보존. verification.json 참고.
+CPU thread 상한2, 기존 프로젝트 .venv만 사용. 원 실행3.37초, peakRSS169,754,624 bytes.
+주 비교30fit + feature 회복5fit + poison2fit = 총37개 작은 Ridge fit.
+summary.json fit_count=35는 주 fit 수이며 poison2개 제외, verification.json에 구분 명시.
+외부자료·전송·설치·GPU·test/holdout 이미지/라벨·전체500·제출 접근 없음.
+분할 manifest에서 holdout ID 메타데이터만 자연스럽게 포함되지만 holdout 데이터는 열지 않았다.
+폴더 생성/쓰기에는 샌드박스 승인 도구를 사용했고 승인됨. 기존 파일 변경 없음.
+
+위험 / 제한 / 제안
+동일400장이 오래 재사용됐고, 이번 label 기반 연관 및 예측 비교도 회고적이다.
+세 재분할은 독립1200장이 아니다. 6개 연관과 2개 진단의 다중선택 위험을 보정한 유의성 주장은
+하지 않는다. 최대 상관은 57열 비교의 기술통계일 뿐이다. 이 결과로 일부 특징만 골라 재실험하면
+추가 선택편향이다. iid32는 제한된 공학 대조이고 formal null/p-value가 아니다.
+평탄부 guide 자체가 같은 영상에서 계산돼 조건부 의존을 만들 수 있으며 HH에는 실제 세부
+구조·blur·clipping·quantization가 섞인다. 정확한 noise 식별, 독립성, 생성기, 비가역 성능한계
+주장 없음. 고정 Ridge의 실패는 모든 비선형 표현의 실패가 아니다.
+제안: 이 HH 패널은 중단. 새로 threshold를 구제하거나 대규모 학습으로 확장할 근거 없음.
+Voronoi/power generator 여부는 본 결과로 결정할 수 없으며 기존183의 geometry validity 실패를
+통과할 독립 근거 없이 centroid/neighbor/triple junction을 물리적 진실로 사용하지 않는다.
+
+재현 경로 (프로젝트 루트에서; 모든 출력 이 폴더 안)
+.venv/bin/python -B parallel-morphology-20261007/diagnose.py prepare
+.venv/bin/python -B parallel-morphology-20261007/diagnose.py run
+.venv/bin/python -B parallel-morphology-20261007/verify.py
+prepare/run/verify는 증거 덮어쓰기 방지를 위해 기존 결과가 있으면 중단한다.
+재실행하려면 이 폴더의 결과 JSON/NPZ/log만 별도 archive 하위폴더에 보존한 뒤 실행한다.
+코드/plan source hash가 바뀌면 검증 중단. 정확한 입력 해시와 원본400 이미지 해시는 provenance.json.
+주요 산출물: plan.json, diagnose.py, features.npz, image-measurements.json, fixtures.json,
+summary.json, comparison-predictions.npz, provenance.json, verify.py, verification.json, REPORT.txt.

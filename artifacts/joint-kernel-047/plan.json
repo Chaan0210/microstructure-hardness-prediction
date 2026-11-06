@@ -1,0 +1,44 @@
+{
+  "hypothesis": "Current006 blends morphology and pretrained representations as separate predictions. A jointkernel learns their conditional relationship directly on foldtrain labels; interaction allows pretraineddescriptor coefficients to vary smoothly with morphology. No OOF/residual targets used.",
+  "features": "ExistingfrozenDINO6/9/12 descriptor3456 and existingcompact26 grain/phase/pore/intercepts/intensity panel; no imagefeatureaddition oraugmentation",
+  "kernels": "KD=train-standardizedDINOlinear/p; KM=RBF on fold-minmaxclip/standardized/blockweightedcompact26, gamma=1/medianpositive trainpairdistance; eachkernel train-centered and unitmeantraindiagonal. KI=centeredtrace-normalizedSchurproduct KD*KM.",
+  "inner_choices": {
+    "additive": ".5KD+.5KM",
+    "interaction": ".25KD+.25KM+.5KI",
+    "alpha": [
+      0.1,
+      1.0,
+      10.0
+    ]
+  },
+  "selection": "Jointkind and alpha chosen together among6fixedconditions by pooledinner3foldRMSE. All scaler,clipbounds,bandwidth,kernelcenter/scale,targetmeanstd refit insideeachinnertrain. SameinnerGroupKFold3shuffle seed20261120+outerfold.",
+  "primary_formula": ".75samefold003-.1875samefoldoldMorphKernel+.4375joint =.375oldbaseline+.1875oldCNN+.4375joint. Existing006morph(.1875)+DINO(.25)weightsmerged,not learned/tuned.",
+  "control_formula": ".75samefold003+.25samefoldDINO; freshlyrefitRidge matches006exactly. Oldmorphkernel loadedfromverifiedsamefold037 and validationIDs checked.",
+  "diagnostic_formula": ".75samefold003+.25joint,forinterpretationonly;noteligiblealternativeifprimaryfails.",
+  "screen": "Original primarygain over006>pairedbootstrapSD and>=3/5foldwins. Only then both existingrepartitions. Do not promote diagnostic or tuneweights basedonouterresults.",
+  "confirmation": "If all3partitions improve,recordevidence; assessa prospective train-only repartition before full500candidate. Historical400reuse isnot independentvalidation.",
+  "stopping": "Stop this family if original gate fails or confirmation inconsistent; no fallback sweeps or manualtailrangeexpansion.",
+  "resources": "CachedfeaturesCPU2threads,anticipated<1GBextraRAM,regressionunder1minute; noMPStrainingrequiredforthisstage.",
+  "scope": "development400only,noholdoutselection/testtraining/adaptation/Publicinversion,newpackages/externaldata/cost/upload",
+  "source_sha256": {
+    "joint_kernel_047.py": "482763b91c3d72358a3d0d05a1c4e2cf2ca6d47be5c39802644980aaede83dd3",
+    "joint_experiment_047.py": "d8f3d74c50b90faad746a14c5cf15645fc1f763c18257d3d190e72a84c093a99",
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc"
+  },
+  "input_sha256": {
+    "artifacts/run-012/development_features.npz": "2299e40d31e5e9e8cbb65974fa613353f64b966fd310f3fc22529770ab0df286",
+    "artifacts/run-012/report.json": "201196e863b7ee017f179fba30dcf59637455dd619aaa92f96fcd234e57f7697",
+    "artifacts/dino-multilayer-044/development_features.npz": "6d26b7d78eaf1d094e829984d5665a38dc11b71c918f108384861259b35c4159"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.manifest.json": "ac411a5e58ee57af5c4a653e7e4296c543a89333ee1a929b576d6e67f7b20e68",
+    "artifacts/submission-candidate-006.components.csv": "3a41ca42fa66e10b9899fc2d25ccfa395d5b728e0cf00a9b213be1ad06e410a5",
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+    "artifacts/final-model-045/decision.json": "cae40d328c87ae4104ad70bdf18b9e8002b5a787ab98307c31a74f6e282f49eb",
+    "artifacts/final-model-045/report.json": "2d344e9f074aeebe45dfb99e001175aef8e6b8485bc85c51bc45af0ce4526e7c",
+    "artifacts/dino-multilayer-044/candidate-design.json": "b783348c7b39c8a457ddcf0f5b12f64a1fece8614886fe0d3706ce42411f703e",
+    "reports/dino-044-validation.json": "14ae9c212008ed0c013e392b0ba00425087901c0fb834c54a24da5b14037b13b"
+  }
+}

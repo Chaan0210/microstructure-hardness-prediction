@@ -1,0 +1,127 @@
+{
+  "completed_at_utc": "2026-10-02T03:59:44.603387+00:00",
+  "task": "Single fixed50:50 prediction average complementarity study064",
+  "status": "Completed original and both resplits; pooled improvement in all3, fold-majority criterion not met, no final fit.",
+  "fixed_formula": "0.5*007 + 0.5*(0.75*003 + 0.25*Bmean3) = 0.75*003 + 0.125*Smean3 + 0.125*Bmean3",
+  "no_ratio_search": true,
+  "results": [
+    {
+      "split": "original",
+      "007_rmse": 13.241596955038409,
+      "fixed50_rmse": 13.209632611789585,
+      "gain": 0.03196434324882347,
+      "positive_folds": 3,
+      "fold_gains": [
+        0.06338750973129237,
+        0.12876518338856435,
+        0.07945428124464726,
+        -0.06576973362770921,
+        -0.049417840156088744
+      ],
+      "conditional_ci95": [
+        -0.059124924985042335,
+        0.12356775808613459
+      ],
+      "head_residual_correlation": 0.879390546815892,
+      "whole_prediction_residual_correlation": 0.9917377743516141,
+      "MSE_reduction_from_averaging": 0.7256120359650421
+    },
+    {
+      "split": "20261031",
+      "007_rmse": 13.192251472226435,
+      "fixed50_rmse": 13.180839919990602,
+      "gain": 0.0114115522358329,
+      "positive_folds": 2,
+      "fold_gains": [
+        0.13636440655606386,
+        -0.09398886240837534,
+        -0.009874366263705525,
+        0.0877066941138871,
+        -0.050696462064550474
+      ],
+      "conditional_ci95": [
+        -0.07710197379051453,
+        0.09832545024613223
+      ],
+      "head_residual_correlation": 0.8854923137422851,
+      "whole_prediction_residual_correlation": 0.9919437006797595,
+      "MSE_reduction_from_averaging": 0.7033003705928099
+    },
+    {
+      "split": "20261101",
+      "007_rmse": 13.455677846832414,
+      "fixed50_rmse": 13.393004886763789,
+      "gain": 0.06267296006862466,
+      "positive_folds": 2,
+      "fold_gains": [
+        -0.051283537095718756,
+        0.21440367558310136,
+        -0.08843293827638377,
+        0.23704066306260962,
+        -0.008129917685312904
+      ],
+      "conditional_ci95": [
+        -0.019231296457453383,
+        0.1438363581420925
+      ],
+      "head_residual_correlation": 0.8948024785104827,
+      "whole_prediction_residual_correlation": 0.9924328236814538,
+      "MSE_reduction_from_averaging": 0.6827414341975248
+    }
+  ],
+  "interpretation": "Representation diversity has measurable OOF value: the fixed average improves pooledRMSE in all3 partitions. It would be incorrect to dismiss complementarity from the standalone063 gain. However gains are small, all conditional95% intervals contain0, each resplit improves only2/5folds, and these are repeated partitions of the same400rows rather than independent evidence. No significance or Public/private performance claim.",
+  "previous_0_093002_gate": {
+    "value": 0.09300178059368959,
+    "quantity": "Population standard deviation (numpy.std ddof=0) across3000 paired row-bootstrap RMSE gains: RMSE(y,007)-RMSE(y,Bprimary).",
+    "algorithm": "np.random.default_rng(20270104).integers(0,400,(3000,400)); each bootstrap uses same400 sampled row indices for both fixed OOF residual arrays, with replacement. No refitting.",
+    "previous_rule": "063 originally required gain>bootstrapSD and>=3/5 improving folds before resplits, inherited from057-062 as a conservative compute-allocation heuristic.",
+    "basis_and_limit": "No theoretical or empirical calibration made1SD a valid hard model-selection threshold. It is not a standard error for the whole procedure, not cross-foldSD, not a significance test, and can reject useful ensemble diversity. It omits fitting, historical selection, dependency and repeated400-row exploration uncertainty. This user-authorized study supersedes that gate for the specified mixture only.",
+    "previous_outcome_preserved": "063 remains unchanged and correctly reports failure of its own declared rule;064 tests a different fixed predictor."
+  },
+  "predeclared_current_gate": "Unchanged50:50 average must strictly improve007 pooled RMSE in BOTH existing resplits20261031/20261101, and improve >=3/5 folds in each of all three partitions. All45 B checkpoints reload exactly, fold-only scalers/targets verified, B100epoch replay per split, samefold007 provenance verified. No fallback recipe.",
+  "current_gate_provenance": "Agent-chosen operational confirmation rule, frozen in064 plan before averaging or resplit outcomes; not an explicit user requirement and not statistically calibrated. Fold-majority requirement is the only failed criterion; all3 pooledRMSE and reproducibility conditions passed.",
+  "gate_components": {
+    "all_three_pooled_rmse_improve": true,
+    "all_three_at_least3_positive_folds": false,
+    "reproducibility_pass": true
+  },
+  "final_fit_performed": false,
+  "candidateCSV_created": false,
+  "new_test_inference": false,
+  "holdout_additional_access": false,
+  "uploaded": false,
+  "new_packages": 0,
+  "cost": 0,
+  "validation": {
+    "path": "reports/dinob-complement-064-validation.json",
+    "sha256": "1bf3a72f165e5bf20e1e92d9633d2bf72dd92cee8d713d6de0abed0a38ae7a0f",
+    "B_models_verified": 45,
+    "max_reload_error": 0.0,
+    "full100epoch_replays": 6,
+    "S_control_historical_state_replays": 3,
+    "B_replays": 3
+  },
+  "commands_completed": [
+    ".venv/bin/python -I -B dinob_complement_064.py prepare",
+    ".venv/bin/python -I -B dinob_complement_064.py original",
+    ".venv/bin/python -I -B dinob_complement_064.py 20261031",
+    ".venv/bin/python -I -B dinob_complement_064.py 20261101",
+    ".venv/bin/python -I -B validate_dinob_complement_064.py"
+  ],
+  "best007": {
+    "file": "artifacts/submission-candidate-007.csv",
+    "sha256": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "preserved": true
+  },
+  "running_work": [],
+  "technical_blockers": [],
+  "remaining": "Full500 fit/test1000 CSV not executed because the predeclared operational fold-majority rule failed. The sole50:50 recipe is fully evaluated and reproducible; no other mixtures evaluated.",
+  "deliverables": {
+    "dinob_complement_064.py": "ee5b2f8416238b773af5fef5577bdf026721bc21960c3daa57005ecdaf0ebfbd",
+    "validate_dinob_complement_064.py": "8edde3c22e61bbb036490209db2a60c6425644989fb3a7ff2c3d02ff6f089942",
+    "artifacts/dinob-complement-064/plan.json": "8026eaeb174b4ad345c6d598d950dd141bfc02a9a09c36e8d7ab67377e33af3d",
+    "artifacts/dinob-complement-064/original/report.json": "23f8b746f07069c7fdaced95522e5f0645a0996465cb904e70b503d5da2df44c",
+    "artifacts/dinob-complement-064/20261031/report.json": "0fda923f26e2c61658cb6f1e32d5b56bff800e8c9dd6b637ea5aedcd19ccdd25",
+    "artifacts/dinob-complement-064/20261101/report.json": "e06f681414185b26535e463bdf3954cb94caa42ad5350be488e7fc55d1adb610"
+  }
+}

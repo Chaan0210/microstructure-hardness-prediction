@@ -1,0 +1,20 @@
+{
+  "secondary_candidate": "compact26+denoised31 nested KRR, .5baseline+.25threeSeedD4CNN+.25kernel",
+  "split_seeds": [
+    20261031,
+    20261101
+  ],
+  "same_fold_component_reuse": "Use newly trained run021 CNN/baseline only after asserting exact IDs, targets and fold memberships. Never use old original-fold OOF.",
+  "comparison": "candidate003 and compact26 mean3D4",
+  "selection_policy": "Prefer simpler compact26 unless both new partitions favor denoised extension; report fold variation and selection bias, no arbitrary numeric cutoff.",
+  "original_cv_rmse": 13.53511407926948,
+  "feature_report_sha256": "87e7ff556b67334561a94577eadf788f4721821c5d815b382e49e793223d0df6",
+  "feature_cache_sha256": "3b347d826c0dfa2f95a05d1163c2ab0656473ab2fc41ebcd65089667c81b1c27",
+  "source_sha256": {
+    "confirm_denoised.py": "897d23d0e8ab5800503f034136c407b06d59922dbe822fa81b9d779c4efb5bfb",
+    "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3"
+  },
+  "independent_holdout": false
+}

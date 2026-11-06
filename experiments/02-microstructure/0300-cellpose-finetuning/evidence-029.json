@@ -1,0 +1,68 @@
+{
+ "candidate": "029",
+ "date": "2026-10-09",
+ "change": "vs 028: noisy-half rows use the mean of 4 D4 views (id, T, UD, R90) of the ft-a1s250 segmenter, plus 16 columns = across-view std of key grain features (segmentation/feature-extraction variability indicator; NaN for clean-half rows). Same TabPFN v2+v3.5 mean, same fixed W=0.75.",
+ "harness": {
+  "ft_n1_v2": 11.1298,
+  "ft_n4_v2": 11.0544,
+  "ft_n4_vstd_v2": 10.9092,
+  "ft_n1_v35": 11.1263,
+  "ft_n4_vstd_v35": 10.9746
+ },
+ "dev_fixed_w075": {
+  "cfg028": {
+   "original": 10.8567,
+   "p20261031": 10.865,
+   "p20261101": 10.9639,
+   "pooled": 10.8953
+  },
+  "cfg029": {
+   "original": 10.8043,
+   "p20261031": 10.8387,
+   "p20261101": 10.8935,
+   "pooled": 10.8456
+  }
+ },
+ "dev_note": "4-view mean alone (no std columns) was worse on dev with v3.5 (pooled 10.992 vs 10.893), so the gain comes with the std columns; harness/dev differences < ~0.1 are near evaluation noise.",
+ "weight_rule": "fixed W=0.75 (pre-fixed after the 2026-10-08 review; no data-driven weight selection)",
+ "adv_auc_train_vs_test": 0.473,
+ "adopt": true,
+ "inputs": {
+  "train_features": "experiments/push-300/feat-a1s250n4vstd-train.npz",
+  "train_sha256": "58827d9060e90cbe4bafae7fb4897434109ce84cbf7d9390ce869f0050e620b7",
+  "test_features": "experiments/push-300/feat-a1s250n4vstd-test.npz",
+  "test_sha256": "8e896fd22c77a01a40478fb72da25388d242290c6d318d8de366c9a3824d0bb7",
+  "provenance": [
+   "experiments/push-300/feat-a1s250n4vstd-train.provenance.json",
+   "experiments/push-300/feat-a1s250n4vstd-test.provenance.json"
+  ],
+  "dev_results": [
+   "experiments/push-300/dev-a1s250n4vstd-v2.json",
+   "experiments/push-300/dev-a1s250n4vstd-v35.json"
+  ],
+  "compared_against": [
+   "experiments/push-300/dev-a1s250n1-v2.json",
+   "experiments/push-300/dev-a1s250n1-v35.json"
+  ],
+  "vstd_columns": [
+   "vstd_sp_frac_grains",
+   "vstd_sp_count_frac",
+   "vstd_f_dark_20",
+   "vstd_f_dark_35",
+   "vstd_sizefield_range_s32",
+   "vstd_sizefield_std_s32",
+   "vstd_sizefield_std_s16",
+   "vstd_tile8_logA_std",
+   "vstd_grain_logA_std",
+   "vstd_grain_eqd_mean",
+   "vstd_aw_eqd_mean",
+   "vstd_n_obj",
+   "vstd_solidity_wmean",
+   "vstd_neighbors_std",
+   "vstd_ar_wmean",
+   "vstd_orient_coherence"
+  ],
+  "vstd_definition": "np.nanstd over the 4 D4 views (id, T, UD, R90) of each key feature, noisy-half rows only (NaN elsewhere); a segmentation/feature-extraction variability indicator, not a validated hardness uncertainty"
+ },
+ "harness_note": "harness numbers come from eval_concat.py (v2 n_est 8 seed 0 / v3.5 default) on features-v3 + noisy rows from ftseg-ft-a1s250-train-noisy-n4.npz + the same 16 vstd columns"
+}

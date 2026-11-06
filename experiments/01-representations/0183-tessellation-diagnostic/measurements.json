@@ -1,0 +1,3638 @@
+{
+  "aggregate": {
+    "images": 16,
+    "segmentations": 112,
+    "stability_pass_images": 3,
+    "stability_gate": false,
+    "max_relative_change_medians": {
+      "count": 0.06840132424963748,
+      "median_area": 0.050953051991396575,
+      "areaweighted_aspect": 0.012729095623282706
+    },
+    "minimum_matched_pixel_fraction_median": 0.9575958251953125,
+    "minimum_adjacency_Jaccard_median": 0.8492830132165188,
+    "boundary_proxy_median_precision": 0.5829449110325786,
+    "boundary_proxy_median_recall": 0.9422955062967611,
+    "boundary_proxy_gate": false,
+    "quantitative_gate_pass": false,
+    "visual_review_pending": true,
+    "label_access": false,
+    "model_fit": false,
+    "holdout_test_access": false,
+    "seconds": 236.27066683300654,
+    "existing_baseline_segmentation_exact_first3": true,
+    "boundary_dilation_validation_exact": true,
+    "plan_sha256": "9c09fc5b40478075b193bb8fe7751f8f7fb204c35b93c67325ddb5bbd3e221ca"
+  },
+  "images": [
+    {
+      "ID": "TRAIN_000104",
+      "image_sha256": "b756bf8f4d592d6cb7d39c4cf95961a4aae2357c1b5674ee5b6302f6660161b8",
+      "variant_metrics": {
+        "base": {
+          "count": 236,
+          "allcell_count": 264,
+          "median_area": 173.5,
+          "area_q10_q90": [
+            43.5,
+            491.5
+          ],
+          "areaweighted_aspect": 2.1306185219370377,
+          "interior_count": 172,
+          "interior_area_fraction": 0.6663665771484375,
+          "small_region_area_fraction": 0.0041961669921875,
+          "frame_region_area_fraction": 0.225616455078125,
+          "watershedline_fraction": 0.10382080078125
+        },
+        "h_minus5": {
+          "count": 254,
+          "allcell_count": 287,
+          "median_area": 167.5,
+          "area_q10_q90": [
+            46.0,
+            439.0000000000005
+          ],
+          "areaweighted_aspect": 2.209681603760706,
+          "interior_count": 190,
+          "interior_area_fraction": 0.671173095703125,
+          "small_region_area_fraction": 0.0050506591796875,
+          "frame_region_area_fraction": 0.214813232421875,
+          "watershedline_fraction": 0.1089630126953125
+        },
+        "h_plus5": {
+          "count": 217,
+          "allcell_count": 242,
+          "median_area": 176.0,
+          "area_q10_q90": [
+            47.2,
+            533.0
+          ],
+          "areaweighted_aspect": 2.1928498499999334,
+          "interior_count": 154,
+          "interior_area_fraction": 0.6238555908203125,
+          "small_region_area_fraction": 0.0035858154296875,
+          "frame_region_area_fraction": 0.272857666015625,
+          "watershedline_fraction": 0.099700927734375
+        },
+        "ridge_minus5": {
+          "count": 236,
+          "allcell_count": 258,
+          "median_area": 173.5,
+          "area_q10_q90": [
+            41.0,
+            491.5
+          ],
+          "areaweighted_aspect": 2.127884804964003,
+          "interior_count": 172,
+          "interior_area_fraction": 0.6663970947265625,
+          "small_region_area_fraction": 0.00341796875,
+          "frame_region_area_fraction": 0.22705078125,
+          "watershedline_fraction": 0.1031341552734375
+        },
+        "ridge_plus5": {
+          "count": 240,
+          "allcell_count": 272,
+          "median_area": 169.5,
+          "area_q10_q90": [
+            39.800000000000004,
+            483.0999999999999
+          ],
+          "areaweighted_aspect": 2.135658411418012,
+          "interior_count": 175,
+          "interior_area_fraction": 0.665374755859375,
+          "small_region_area_fraction": 0.004730224609375,
+          "frame_region_area_fraction": 0.225341796875,
+          "watershedline_fraction": 0.10455322265625
+        },
+        "contrast_minus5": {
+          "count": 236,
+          "allcell_count": 264,
+          "median_area": 173.5,
+          "area_q10_q90": [
+            43.5,
+            491.5
+          ],
+          "areaweighted_aspect": 2.1306185219370377,
+          "interior_count": 172,
+          "interior_area_fraction": 0.6663665771484375,
+          "small_region_area_fraction": 0.0041961669921875,
+          "frame_region_area_fraction": 0.225616455078125,
+          "watershedline_fraction": 0.10382080078125
+        },
+        "contrast_plus5": {
+          "count": 236,
+          "allcell_count": 264,
+          "median_area": 173.5,
+          "area_q10_q90": [
+            43.5,
+            491.5
+          ],
+          "areaweighted_aspect": 2.1306185219370377,
+          "interior_count": 172,
+          "interior_area_fraction": 0.6663665771484375,
+          "small_region_area_fraction": 0.0041961669921875,
+          "frame_region_area_fraction": 0.225616455078125,
+          "watershedline_fraction": 0.10382080078125
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9818240948243354,
+          "adjacency_Jaccard": 0.8161764705882353,
+          "base_edges": 707,
+          "probe_edges": 775,
+          "base_allcell_count": 264,
+          "probe_allcell_count": 287,
+          "relative_changes": {
+            "count": 0.07627118644067797,
+            "median_area": 0.0345821325648415,
+            "areaweighted_aspect": 0.03710804210590862
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9166666666666666,
+          "matched_sourcepixel_fraction": 0.9434661865234375,
+          "matched_mean_IoU": 0.9824656095784943,
+          "adjacency_Jaccard": 0.8254397834912043,
+          "base_edges": 707,
+          "probe_edges": 642,
+          "base_allcell_count": 264,
+          "probe_allcell_count": 242,
+          "relative_changes": {
+            "count": 0.08050847457627118,
+            "median_area": 0.01440922190201729,
+            "areaweighted_aspect": 0.02920810432377095
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9772727272727273,
+          "matched_sourcepixel_fraction": 0.997650146484375,
+          "matched_mean_IoU": 0.9970119732340379,
+          "adjacency_Jaccard": 0.9732016925246827,
+          "base_edges": 707,
+          "probe_edges": 692,
+          "base_allcell_count": 264,
+          "probe_allcell_count": 258,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0012830626153336336
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9958685725311537,
+          "adjacency_Jaccard": 0.9510869565217391,
+          "base_edges": 707,
+          "probe_edges": 729,
+          "base_allcell_count": 264,
+          "probe_allcell_count": 272,
+          "relative_changes": {
+            "count": 0.01694915254237288,
+            "median_area": 0.023054755043227664,
+            "areaweighted_aspect": 0.0023654584004987635
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 707,
+          "probe_edges": 707,
+          "base_allcell_count": 264,
+          "probe_allcell_count": 264,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 707,
+          "probe_edges": 707,
+          "base_allcell_count": 264,
+          "probe_allcell_count": 264,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.08050847457627118,
+        "median_area": 0.0345821325648415,
+        "areaweighted_aspect": 0.03710804210590862
+      },
+      "minimum_matched_sourcepixel_fraction": 0.9434661865234375,
+      "minimum_adjacency_Jaccard": 0.8161764705882353,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.5668139570318452,
+        "recall": 0.9750081142486205,
+        "anchor_pixels": 3081,
+        "predicted_pixels": 6563,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 707,
+        "number_of_cells": 264,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000129",
+      "image_sha256": "12d507daf90d08275efc8b5f9bcfdc771430557228851ec3e86d35d13804259c",
+      "variant_metrics": {
+        "base": {
+          "count": 299,
+          "allcell_count": 357,
+          "median_area": 106.0,
+          "area_q10_q90": [
+            24.0,
+            415.5999999999994
+          ],
+          "areaweighted_aspect": 1.7551469688314054,
+          "interior_count": 234,
+          "interior_area_fraction": 0.668701171875,
+          "small_region_area_fraction": 0.0081634521484375,
+          "frame_region_area_fraction": 0.2071380615234375,
+          "watershedline_fraction": 0.115997314453125
+        },
+        "h_minus5": {
+          "count": 328,
+          "allcell_count": 389,
+          "median_area": 93.0,
+          "area_q10_q90": [
+            22.0,
+            389.4000000000001
+          ],
+          "areaweighted_aspect": 1.7796252143065339,
+          "interior_count": 260,
+          "interior_area_fraction": 0.6728973388671875,
+          "small_region_area_fraction": 0.008392333984375,
+          "frame_region_area_fraction": 0.1989288330078125,
+          "watershedline_fraction": 0.119781494140625
+        },
+        "h_plus5": {
+          "count": 274,
+          "allcell_count": 325,
+          "median_area": 110.0,
+          "area_q10_q90": [
+            24.0,
+            499.7000000000004
+          ],
+          "areaweighted_aspect": 1.767852648579896,
+          "interior_count": 209,
+          "interior_area_fraction": 0.66729736328125,
+          "small_region_area_fraction": 0.00714111328125,
+          "frame_region_area_fraction": 0.21478271484375,
+          "watershedline_fraction": 0.11077880859375
+        },
+        "ridge_minus5": {
+          "count": 297,
+          "allcell_count": 355,
+          "median_area": 106.0,
+          "area_q10_q90": [
+            24.0,
+            426.2000000000018
+          ],
+          "areaweighted_aspect": 1.7571296225934003,
+          "interior_count": 232,
+          "interior_area_fraction": 0.6690673828125,
+          "small_region_area_fraction": 0.0081634521484375,
+          "frame_region_area_fraction": 0.2071380615234375,
+          "watershedline_fraction": 0.115631103515625
+        },
+        "ridge_plus5": {
+          "count": 303,
+          "allcell_count": 361,
+          "median_area": 104.0,
+          "area_q10_q90": [
+            24.0,
+            404.20000000000005
+          ],
+          "areaweighted_aspect": 1.7507100793080461,
+          "interior_count": 238,
+          "interior_area_fraction": 0.6688385009765625,
+          "small_region_area_fraction": 0.0081634521484375,
+          "frame_region_area_fraction": 0.20654296875,
+          "watershedline_fraction": 0.116455078125
+        },
+        "contrast_minus5": {
+          "count": 299,
+          "allcell_count": 357,
+          "median_area": 106.0,
+          "area_q10_q90": [
+            24.0,
+            415.5999999999994
+          ],
+          "areaweighted_aspect": 1.7551469688314054,
+          "interior_count": 234,
+          "interior_area_fraction": 0.668701171875,
+          "small_region_area_fraction": 0.0081634521484375,
+          "frame_region_area_fraction": 0.2071380615234375,
+          "watershedline_fraction": 0.115997314453125
+        },
+        "contrast_plus5": {
+          "count": 299,
+          "allcell_count": 357,
+          "median_area": 106.0,
+          "area_q10_q90": [
+            24.0,
+            415.5999999999994
+          ],
+          "areaweighted_aspect": 1.7551469688314054,
+          "interior_count": 234,
+          "interior_area_fraction": 0.668701171875,
+          "small_region_area_fraction": 0.0081634521484375,
+          "frame_region_area_fraction": 0.2071380615234375,
+          "watershedline_fraction": 0.115997314453125
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 0.9943977591036415,
+          "matched_sourcepixel_fraction": 0.9718170166015625,
+          "matched_mean_IoU": 0.983589766004641,
+          "adjacency_Jaccard": 0.8228310502283105,
+          "base_edges": 952,
+          "probe_edges": 1044,
+          "base_allcell_count": 357,
+          "probe_allcell_count": 389,
+          "relative_changes": {
+            "count": 0.09698996655518395,
+            "median_area": 0.12264150943396226,
+            "areaweighted_aspect": 0.013946550294546734
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9047619047619048,
+          "matched_sourcepixel_fraction": 0.945343017578125,
+          "matched_mean_IoU": 0.9864644727472188,
+          "adjacency_Jaccard": 0.8073852295409182,
+          "base_edges": 952,
+          "probe_edges": 859,
+          "base_allcell_count": 357,
+          "probe_allcell_count": 325,
+          "relative_changes": {
+            "count": 0.08361204013377926,
+            "median_area": 0.03773584905660377,
+            "areaweighted_aspect": 0.007239097337216235
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9943977591036415,
+          "matched_sourcepixel_fraction": 0.9971923828125,
+          "matched_mean_IoU": 0.9986394712367697,
+          "adjacency_Jaccard": 0.9884816753926702,
+          "base_edges": 952,
+          "probe_edges": 947,
+          "base_allcell_count": 357,
+          "probe_allcell_count": 355,
+          "relative_changes": {
+            "count": 0.006688963210702341,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0011296226453987404
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9967612463025367,
+          "adjacency_Jaccard": 0.9783057851239669,
+          "base_edges": 952,
+          "probe_edges": 963,
+          "base_allcell_count": 357,
+          "probe_allcell_count": 361,
+          "relative_changes": {
+            "count": 0.013377926421404682,
+            "median_area": 0.018867924528301886,
+            "areaweighted_aspect": 0.002527930482262363
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 952,
+          "probe_edges": 952,
+          "base_allcell_count": 357,
+          "probe_allcell_count": 357,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 952,
+          "probe_edges": 952,
+          "base_allcell_count": 357,
+          "probe_allcell_count": 357,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.09698996655518395,
+        "median_area": 0.12264150943396226,
+        "areaweighted_aspect": 0.013946550294546734
+      },
+      "minimum_matched_sourcepixel_fraction": 0.945343017578125,
+      "minimum_adjacency_Jaccard": 0.8073852295409182,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.6498427027766379,
+        "recall": 0.7564070664344364,
+        "anchor_pixels": 4019,
+        "predicted_pixels": 7311,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 952,
+        "number_of_cells": 357,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000221",
+      "image_sha256": "b7cc11128e1d742d06d5ad1d5d66f330cc75734fb3b4387370452792cdfeb60b",
+      "variant_metrics": {
+        "base": {
+          "count": 279,
+          "allcell_count": 317,
+          "median_area": 150.0,
+          "area_q10_q90": [
+            27.0,
+            443.60000000000014
+          ],
+          "areaweighted_aspect": 2.2274486689354878,
+          "interior_count": 215,
+          "interior_area_fraction": 0.6312103271484375,
+          "small_region_area_fraction": 0.0057220458984375,
+          "frame_region_area_fraction": 0.2470245361328125,
+          "watershedline_fraction": 0.1160430908203125
+        },
+        "h_minus5": {
+          "count": 294,
+          "allcell_count": 339,
+          "median_area": 144.5,
+          "area_q10_q90": [
+            25.3,
+            430.09999999999997
+          ],
+          "areaweighted_aspect": 2.2419239126909556,
+          "interior_count": 229,
+          "interior_area_fraction": 0.6295928955078125,
+          "small_region_area_fraction": 0.006561279296875,
+          "frame_region_area_fraction": 0.24468994140625,
+          "watershedline_fraction": 0.1191558837890625
+        },
+        "h_plus5": {
+          "count": 260,
+          "allcell_count": 296,
+          "median_area": 156.5,
+          "area_q10_q90": [
+            27.0,
+            493.4
+          ],
+          "areaweighted_aspect": 2.207717225953814,
+          "interior_count": 199,
+          "interior_area_fraction": 0.625640869140625,
+          "small_region_area_fraction": 0.005279541015625,
+          "frame_region_area_fraction": 0.2569580078125,
+          "watershedline_fraction": 0.11212158203125
+        },
+        "ridge_minus5": {
+          "count": 279,
+          "allcell_count": 317,
+          "median_area": 150.0,
+          "area_q10_q90": [
+            27.0,
+            443.60000000000014
+          ],
+          "areaweighted_aspect": 2.2274486689354878,
+          "interior_count": 215,
+          "interior_area_fraction": 0.6312103271484375,
+          "small_region_area_fraction": 0.0057220458984375,
+          "frame_region_area_fraction": 0.2470245361328125,
+          "watershedline_fraction": 0.1160430908203125
+        },
+        "ridge_plus5": {
+          "count": 280,
+          "allcell_count": 318,
+          "median_area": 150.0,
+          "area_q10_q90": [
+            27.0,
+            442.79999999999995
+          ],
+          "areaweighted_aspect": 2.2154322530416732,
+          "interior_count": 216,
+          "interior_area_fraction": 0.631103515625,
+          "small_region_area_fraction": 0.0057220458984375,
+          "frame_region_area_fraction": 0.2470245361328125,
+          "watershedline_fraction": 0.11614990234375
+        },
+        "contrast_minus5": {
+          "count": 279,
+          "allcell_count": 317,
+          "median_area": 150.0,
+          "area_q10_q90": [
+            27.0,
+            443.60000000000014
+          ],
+          "areaweighted_aspect": 2.2274486689354878,
+          "interior_count": 215,
+          "interior_area_fraction": 0.6312103271484375,
+          "small_region_area_fraction": 0.0057220458984375,
+          "frame_region_area_fraction": 0.2470245361328125,
+          "watershedline_fraction": 0.1160430908203125
+        },
+        "contrast_plus5": {
+          "count": 278,
+          "allcell_count": 316,
+          "median_area": 150.0,
+          "area_q10_q90": [
+            27.0,
+            444.4000000000001
+          ],
+          "areaweighted_aspect": 2.223877341270614,
+          "interior_count": 214,
+          "interior_area_fraction": 0.6295623779296875,
+          "small_region_area_fraction": 0.0057220458984375,
+          "frame_region_area_fraction": 0.2488861083984375,
+          "watershedline_fraction": 0.1158294677734375
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 0.9968454258675079,
+          "matched_sourcepixel_fraction": 0.9992523193359375,
+          "matched_mean_IoU": 0.9893645532043016,
+          "adjacency_Jaccard": 0.8738170347003155,
+          "base_edges": 859,
+          "probe_edges": 923,
+          "base_allcell_count": 317,
+          "probe_allcell_count": 339,
+          "relative_changes": {
+            "count": 0.053763440860215055,
+            "median_area": 0.03666666666666667,
+            "areaweighted_aspect": 0.006498575683176412
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9337539432176656,
+          "matched_sourcepixel_fraction": 0.960296630859375,
+          "matched_mean_IoU": 0.9825839871656172,
+          "adjacency_Jaccard": 0.8702031602708804,
+          "base_edges": 859,
+          "probe_edges": 798,
+          "base_allcell_count": 317,
+          "probe_allcell_count": 296,
+          "relative_changes": {
+            "count": 0.06810035842293907,
+            "median_area": 0.043333333333333335,
+            "areaweighted_aspect": 0.008858315460577377
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 859,
+          "probe_edges": 859,
+          "base_allcell_count": 317,
+          "probe_allcell_count": 317,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9984929881000719,
+          "adjacency_Jaccard": 0.9850057670126874,
+          "base_edges": 859,
+          "probe_edges": 862,
+          "base_allcell_count": 317,
+          "probe_allcell_count": 318,
+          "relative_changes": {
+            "count": 0.0035842293906810036,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0053946993532996874
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 859,
+          "probe_edges": 859,
+          "base_allcell_count": 317,
+          "probe_allcell_count": 317,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 0.9968454258675079,
+          "matched_sourcepixel_fraction": 0.998077392578125,
+          "matched_mean_IoU": 0.9995276718353834,
+          "adjacency_Jaccard": 0.9953434225844005,
+          "base_edges": 859,
+          "probe_edges": 855,
+          "base_allcell_count": 317,
+          "probe_allcell_count": 316,
+          "relative_changes": {
+            "count": 0.0035842293906810036,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.001603326583763949
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.06810035842293907,
+        "median_area": 0.043333333333333335,
+        "areaweighted_aspect": 0.008858315460577377
+      },
+      "minimum_matched_sourcepixel_fraction": 0.960296630859375,
+      "minimum_adjacency_Jaccard": 0.8702031602708804,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.4608150470219436,
+        "recall": 0.9707046714172605,
+        "anchor_pixels": 2526,
+        "predicted_pixels": 7337,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 859,
+        "number_of_cells": 317,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000242",
+      "image_sha256": "03e474debc0ad2ed0bb9b3e8372b76df1f74563ddb93356bc8a4002911971f43",
+      "variant_metrics": {
+        "base": {
+          "count": 558,
+          "allcell_count": 655,
+          "median_area": 59.0,
+          "area_q10_q90": [
+            21.700000000000003,
+            199.60000000000002
+          ],
+          "areaweighted_aspect": 1.8469077522807809,
+          "interior_count": 470,
+          "interior_area_fraction": 0.6327667236328125,
+          "small_region_area_fraction": 0.014404296875,
+          "frame_region_area_fraction": 0.1728057861328125,
+          "watershedline_fraction": 0.180023193359375
+        },
+        "h_minus5": {
+          "count": 575,
+          "allcell_count": 676,
+          "median_area": 58.0,
+          "area_q10_q90": [
+            22.0,
+            194.0
+          ],
+          "areaweighted_aspect": 1.881033753646441,
+          "interior_count": 487,
+          "interior_area_fraction": 0.63409423828125,
+          "small_region_area_fraction": 0.0149688720703125,
+          "frame_region_area_fraction": 0.16815185546875,
+          "watershedline_fraction": 0.1827850341796875
+        },
+        "h_plus5": {
+          "count": 550,
+          "allcell_count": 644,
+          "median_area": 60.0,
+          "area_q10_q90": [
+            22.0,
+            201.4000000000001
+          ],
+          "areaweighted_aspect": 1.8445069749082301,
+          "interior_count": 462,
+          "interior_area_fraction": 0.6345367431640625,
+          "small_region_area_fraction": 0.013885498046875,
+          "frame_region_area_fraction": 0.1730499267578125,
+          "watershedline_fraction": 0.17852783203125
+        },
+        "ridge_minus5": {
+          "count": 547,
+          "allcell_count": 638,
+          "median_area": 60.0,
+          "area_q10_q90": [
+            22.0,
+            206.2000000000001
+          ],
+          "areaweighted_aspect": 1.846312051250599,
+          "interior_count": 459,
+          "interior_area_fraction": 0.6345062255859375,
+          "small_region_area_fraction": 0.013702392578125,
+          "frame_region_area_fraction": 0.1734771728515625,
+          "watershedline_fraction": 0.178314208984375
+        },
+        "ridge_plus5": {
+          "count": 566,
+          "allcell_count": 668,
+          "median_area": 59.0,
+          "area_q10_q90": [
+            21.0,
+            200.0
+          ],
+          "areaweighted_aspect": 1.867195598155343,
+          "interior_count": 478,
+          "interior_area_fraction": 0.6311187744140625,
+          "small_region_area_fraction": 0.0152130126953125,
+          "frame_region_area_fraction": 0.1720733642578125,
+          "watershedline_fraction": 0.1815948486328125
+        },
+        "contrast_minus5": {
+          "count": 558,
+          "allcell_count": 655,
+          "median_area": 59.0,
+          "area_q10_q90": [
+            21.700000000000003,
+            199.60000000000002
+          ],
+          "areaweighted_aspect": 1.8469077522807809,
+          "interior_count": 470,
+          "interior_area_fraction": 0.6327667236328125,
+          "small_region_area_fraction": 0.014404296875,
+          "frame_region_area_fraction": 0.1728057861328125,
+          "watershedline_fraction": 0.180023193359375
+        },
+        "contrast_plus5": {
+          "count": 558,
+          "allcell_count": 655,
+          "median_area": 59.0,
+          "area_q10_q90": [
+            21.700000000000003,
+            199.60000000000002
+          ],
+          "areaweighted_aspect": 1.8469077522807809,
+          "interior_count": 470,
+          "interior_area_fraction": 0.6327667236328125,
+          "small_region_area_fraction": 0.014404296875,
+          "frame_region_area_fraction": 0.1728057861328125,
+          "watershedline_fraction": 0.180023193359375
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 0.9969465648854962,
+          "matched_sourcepixel_fraction": 0.9834442138671875,
+          "matched_mean_IoU": 0.9911329915628323,
+          "adjacency_Jaccard": 0.8857459789240155,
+          "base_edges": 1662,
+          "probe_edges": 1738,
+          "base_allcell_count": 655,
+          "probe_allcell_count": 676,
+          "relative_changes": {
+            "count": 0.03046594982078853,
+            "median_area": 0.01694915254237288,
+            "areaweighted_aspect": 0.018477371879303282
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.983206106870229,
+          "matched_sourcepixel_fraction": 0.992584228515625,
+          "matched_mean_IoU": 0.9955385514279743,
+          "adjacency_Jaccard": 0.964200477326969,
+          "base_edges": 1662,
+          "probe_edges": 1630,
+          "base_allcell_count": 655,
+          "probe_allcell_count": 644,
+          "relative_changes": {
+            "count": 0.014336917562724014,
+            "median_area": 0.01694915254237288,
+            "areaweighted_aspect": 0.0012998902460536908
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9740458015267176,
+          "matched_sourcepixel_fraction": 0.991912841796875,
+          "matched_mean_IoU": 0.9945926090537649,
+          "adjacency_Jaccard": 0.9540572792362768,
+          "base_edges": 1662,
+          "probe_edges": 1613,
+          "base_allcell_count": 655,
+          "probe_allcell_count": 638,
+          "relative_changes": {
+            "count": 0.01971326164874552,
+            "median_area": 0.01694915254237288,
+            "areaweighted_aspect": 0.0003225396771691294
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9945174717000798,
+          "adjacency_Jaccard": 0.9435158501440922,
+          "base_edges": 1662,
+          "probe_edges": 1710,
+          "base_allcell_count": 655,
+          "probe_allcell_count": 668,
+          "relative_changes": {
+            "count": 0.014336917562724014,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.010984764046557429
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1662,
+          "probe_edges": 1662,
+          "base_allcell_count": 655,
+          "probe_allcell_count": 655,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1662,
+          "probe_edges": 1662,
+          "base_allcell_count": 655,
+          "probe_allcell_count": 655,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.03046594982078853,
+        "median_area": 0.01694915254237288,
+        "areaweighted_aspect": 0.018477371879303282
+      },
+      "minimum_matched_sourcepixel_fraction": 0.9834442138671875,
+      "minimum_adjacency_Jaccard": 0.8857459789240155,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.4807505946612633,
+        "recall": 0.9578207381370826,
+        "anchor_pixels": 3414,
+        "predicted_pixels": 11351,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [
+          109
+        ],
+        "graph_edges": 1662,
+        "number_of_cells": 655,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000257",
+      "image_sha256": "a3fa974f557caf93970e656f9a30a50b509006c1284a2225d4b41a481be3e3bb",
+      "variant_metrics": {
+        "base": {
+          "count": 139,
+          "allcell_count": 158,
+          "median_area": 368.0,
+          "area_q10_q90": [
+            38.2,
+            936.2
+          ],
+          "areaweighted_aspect": 2.0935993847862795,
+          "interior_count": 91,
+          "interior_area_fraction": 0.5697479248046875,
+          "small_region_area_fraction": 0.002471923828125,
+          "frame_region_area_fraction": 0.3446197509765625,
+          "watershedline_fraction": 0.083160400390625
+        },
+        "h_minus5": {
+          "count": 144,
+          "allcell_count": 167,
+          "median_area": 353.5,
+          "area_q10_q90": [
+            35.0,
+            901.3000000000003
+          ],
+          "areaweighted_aspect": 2.098331067021988,
+          "interior_count": 95,
+          "interior_area_fraction": 0.5684814453125,
+          "small_region_area_fraction": 0.002899169921875,
+          "frame_region_area_fraction": 0.34368896484375,
+          "watershedline_fraction": 0.084930419921875
+        },
+        "h_plus5": {
+          "count": 140,
+          "allcell_count": 156,
+          "median_area": 367.0,
+          "area_q10_q90": [
+            35.0,
+            935.6
+          ],
+          "areaweighted_aspect": 2.093661131654926,
+          "interior_count": 91,
+          "interior_area_fraction": 0.5697479248046875,
+          "small_region_area_fraction": 0.00213623046875,
+          "frame_region_area_fraction": 0.3450469970703125,
+          "watershedline_fraction": 0.08306884765625
+        },
+        "ridge_minus5": {
+          "count": 137,
+          "allcell_count": 154,
+          "median_area": 377.0,
+          "area_q10_q90": [
+            45.6,
+            937.4000000000001
+          ],
+          "areaweighted_aspect": 2.093362636550192,
+          "interior_count": 90,
+          "interior_area_fraction": 0.5694732666015625,
+          "small_region_area_fraction": 0.0021514892578125,
+          "frame_region_area_fraction": 0.3456878662109375,
+          "watershedline_fraction": 0.0826873779296875
+        },
+        "ridge_plus5": {
+          "count": 139,
+          "allcell_count": 158,
+          "median_area": 368.0,
+          "area_q10_q90": [
+            38.2,
+            936.2
+          ],
+          "areaweighted_aspect": 2.0935993847862795,
+          "interior_count": 91,
+          "interior_area_fraction": 0.5697479248046875,
+          "small_region_area_fraction": 0.002471923828125,
+          "frame_region_area_fraction": 0.3446197509765625,
+          "watershedline_fraction": 0.083160400390625
+        },
+        "contrast_minus5": {
+          "count": 139,
+          "allcell_count": 158,
+          "median_area": 368.0,
+          "area_q10_q90": [
+            38.2,
+            936.2
+          ],
+          "areaweighted_aspect": 2.0935993847862795,
+          "interior_count": 91,
+          "interior_area_fraction": 0.5697479248046875,
+          "small_region_area_fraction": 0.002471923828125,
+          "frame_region_area_fraction": 0.3446197509765625,
+          "watershedline_fraction": 0.083160400390625
+        },
+        "contrast_plus5": {
+          "count": 139,
+          "allcell_count": 158,
+          "median_area": 368.0,
+          "area_q10_q90": [
+            38.2,
+            936.2
+          ],
+          "areaweighted_aspect": 2.0935993847862795,
+          "interior_count": 91,
+          "interior_area_fraction": 0.5697479248046875,
+          "small_region_area_fraction": 0.002471923828125,
+          "frame_region_area_fraction": 0.3446197509765625,
+          "watershedline_fraction": 0.083160400390625
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9943691745736618,
+          "adjacency_Jaccard": 0.9376443418013857,
+          "base_edges": 409,
+          "probe_edges": 430,
+          "base_allcell_count": 158,
+          "probe_allcell_count": 167,
+          "relative_changes": {
+            "count": 0.03597122302158273,
+            "median_area": 0.03940217391304348,
+            "areaweighted_aspect": 0.002260070513056363
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9873417721518988,
+          "matched_sourcepixel_fraction": 0.999755859375,
+          "matched_mean_IoU": 0.9982758725575284,
+          "adjacency_Jaccard": 0.9853300733496333,
+          "base_edges": 409,
+          "probe_edges": 403,
+          "base_allcell_count": 158,
+          "probe_allcell_count": 156,
+          "relative_changes": {
+            "count": 0.007194244604316547,
+            "median_area": 0.002717391304347826,
+            "areaweighted_aspect": 2.949316335076973e-05
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9746835443037974,
+          "matched_sourcepixel_fraction": 0.9984893798828125,
+          "matched_mean_IoU": 0.9991552468918719,
+          "adjacency_Jaccard": 0.9611650485436893,
+          "base_edges": 409,
+          "probe_edges": 399,
+          "base_allcell_count": 158,
+          "probe_allcell_count": 154,
+          "relative_changes": {
+            "count": 0.014388489208633094,
+            "median_area": 0.024456521739130436,
+            "areaweighted_aspect": 0.00011308191901842966
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 409,
+          "probe_edges": 409,
+          "base_allcell_count": 158,
+          "probe_allcell_count": 158,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 409,
+          "probe_edges": 409,
+          "base_allcell_count": 158,
+          "probe_allcell_count": 158,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 409,
+          "probe_edges": 409,
+          "base_allcell_count": 158,
+          "probe_allcell_count": 158,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.03597122302158273,
+        "median_area": 0.03940217391304348,
+        "areaweighted_aspect": 0.002260070513056363
+      },
+      "minimum_matched_sourcepixel_fraction": 0.9984893798828125,
+      "minimum_adjacency_Jaccard": 0.9376443418013857,
+      "stability_pass": true,
+      "boundary_proxy": {
+        "precision": 0.8319726599582304,
+        "recall": 0.8581323755772191,
+        "anchor_pixels": 3898,
+        "predicted_pixels": 5267,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 409,
+        "number_of_cells": 158,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000265",
+      "image_sha256": "7d077570d3af3959dde8c272f7d0c7b50fa16a6d0ea76d1d98d8fdce4495c08a",
+      "variant_metrics": {
+        "base": {
+          "count": 570,
+          "allcell_count": 680,
+          "median_area": 61.0,
+          "area_q10_q90": [
+            22.0,
+            196.20000000000005
+          ],
+          "areaweighted_aspect": 2.0161599646374087,
+          "interior_count": 478,
+          "interior_area_fraction": 0.6485595703125,
+          "small_region_area_fraction": 0.0153656005859375,
+          "frame_region_area_fraction": 0.1556396484375,
+          "watershedline_fraction": 0.1804351806640625
+        },
+        "h_minus5": {
+          "count": 592,
+          "allcell_count": 709,
+          "median_area": 60.0,
+          "area_q10_q90": [
+            22.0,
+            191.89999999999998
+          ],
+          "areaweighted_aspect": 2.011771810461215,
+          "interior_count": 500,
+          "interior_area_fraction": 0.6459808349609375,
+          "small_region_area_fraction": 0.0159912109375,
+          "frame_region_area_fraction": 0.1541900634765625,
+          "watershedline_fraction": 0.183837890625
+        },
+        "h_plus5": {
+          "count": 558,
+          "allcell_count": 656,
+          "median_area": 62.5,
+          "area_q10_q90": [
+            22.0,
+            200.10000000000008
+          ],
+          "areaweighted_aspect": 2.0168317470994803,
+          "interior_count": 466,
+          "interior_area_fraction": 0.6480255126953125,
+          "small_region_area_fraction": 0.0137786865234375,
+          "frame_region_area_fraction": 0.160736083984375,
+          "watershedline_fraction": 0.177459716796875
+        },
+        "ridge_minus5": {
+          "count": 554,
+          "allcell_count": 658,
+          "median_area": 63.0,
+          "area_q10_q90": [
+            22.0,
+            204.7
+          ],
+          "areaweighted_aspect": 2.0138677797807,
+          "interior_count": 464,
+          "interior_area_fraction": 0.635894775390625,
+          "small_region_area_fraction": 0.0146331787109375,
+          "frame_region_area_fraction": 0.171630859375,
+          "watershedline_fraction": 0.1778411865234375
+        },
+        "ridge_plus5": {
+          "count": 577,
+          "allcell_count": 691,
+          "median_area": 61.0,
+          "area_q10_q90": [
+            22.0,
+            194.39999999999998
+          ],
+          "areaweighted_aspect": 2.014356872057637,
+          "interior_count": 484,
+          "interior_area_fraction": 0.647308349609375,
+          "small_region_area_fraction": 0.0158843994140625,
+          "frame_region_area_fraction": 0.1555938720703125,
+          "watershedline_fraction": 0.18121337890625
+        },
+        "contrast_minus5": {
+          "count": 569,
+          "allcell_count": 679,
+          "median_area": 61.0,
+          "area_q10_q90": [
+            22.0,
+            199.19999999999993
+          ],
+          "areaweighted_aspect": 2.01638091327389,
+          "interior_count": 477,
+          "interior_area_fraction": 0.64874267578125,
+          "small_region_area_fraction": 0.0153656005859375,
+          "frame_region_area_fraction": 0.1556396484375,
+          "watershedline_fraction": 0.1802520751953125
+        },
+        "contrast_plus5": {
+          "count": 570,
+          "allcell_count": 680,
+          "median_area": 61.0,
+          "area_q10_q90": [
+            22.0,
+            196.20000000000005
+          ],
+          "areaweighted_aspect": 2.0161599646374087,
+          "interior_count": 478,
+          "interior_area_fraction": 0.6485595703125,
+          "small_region_area_fraction": 0.0153656005859375,
+          "frame_region_area_fraction": 0.1556396484375,
+          "watershedline_fraction": 0.1804351806640625
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 0.9985294117647059,
+          "matched_sourcepixel_fraction": 0.9928741455078125,
+          "matched_mean_IoU": 0.9888058429453975,
+          "adjacency_Jaccard": 0.875882946518668,
+          "base_edges": 1814,
+          "probe_edges": 1904,
+          "base_allcell_count": 680,
+          "probe_allcell_count": 709,
+          "relative_changes": {
+            "count": 0.03859649122807018,
+            "median_area": 0.01639344262295082,
+            "areaweighted_aspect": 0.002176491078664398
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9647058823529412,
+          "matched_sourcepixel_fraction": 0.9792327880859375,
+          "matched_mean_IoU": 0.991709105252523,
+          "adjacency_Jaccard": 0.9278741865509761,
+          "base_edges": 1814,
+          "probe_edges": 1741,
+          "base_allcell_count": 680,
+          "probe_allcell_count": 656,
+          "relative_changes": {
+            "count": 0.021052631578947368,
+            "median_area": 0.02459016393442623,
+            "areaweighted_aspect": 0.00033319898909533373
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9676470588235294,
+          "matched_sourcepixel_fraction": 0.9764251708984375,
+          "matched_mean_IoU": 0.9911720613825898,
+          "adjacency_Jaccard": 0.9175646551724138,
+          "base_edges": 1814,
+          "probe_edges": 1745,
+          "base_allcell_count": 680,
+          "probe_allcell_count": 658,
+          "relative_changes": {
+            "count": 0.028070175438596492,
+            "median_area": 0.03278688524590164,
+            "areaweighted_aspect": 0.001136906245988781
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.99592871114316,
+          "adjacency_Jaccard": 0.9588235294117647,
+          "base_edges": 1814,
+          "probe_edges": 1849,
+          "base_allcell_count": 680,
+          "probe_allcell_count": 691,
+          "relative_changes": {
+            "count": 0.012280701754385965,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0008943201984947154
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 0.9985294117647059,
+          "matched_sourcepixel_fraction": 0.9988861083984375,
+          "matched_mean_IoU": 0.9995462423823459,
+          "adjacency_Jaccard": 0.9950467804072647,
+          "base_edges": 1814,
+          "probe_edges": 1811,
+          "base_allcell_count": 680,
+          "probe_allcell_count": 679,
+          "relative_changes": {
+            "count": 0.0017543859649122807,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.00010958884233236581
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1814,
+          "probe_edges": 1814,
+          "base_allcell_count": 680,
+          "probe_allcell_count": 680,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.03859649122807018,
+        "median_area": 0.03278688524590164,
+        "areaweighted_aspect": 0.002176491078664398
+      },
+      "minimum_matched_sourcepixel_fraction": 0.9764251708984375,
+      "minimum_adjacency_Jaccard": 0.875882946518668,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.46057363389176387,
+        "recall": 0.9683087543144022,
+        "anchor_pixels": 3187,
+        "predicted_pixels": 11401,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 1814,
+        "number_of_cells": 680,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000270",
+      "image_sha256": "ade038e9f4b9766e510a6571266f104012be92819dd32a10b299f75b3c727ce9",
+      "variant_metrics": {
+        "base": {
+          "count": 566,
+          "allcell_count": 658,
+          "median_area": 69.5,
+          "area_q10_q90": [
+            24.0,
+            185.0
+          ],
+          "areaweighted_aspect": 1.779565428906272,
+          "interior_count": 473,
+          "interior_area_fraction": 0.70159912109375,
+          "small_region_area_fraction": 0.0113525390625,
+          "frame_region_area_fraction": 0.12689208984375,
+          "watershedline_fraction": 0.16015625
+        },
+        "h_minus5": {
+          "count": 591,
+          "allcell_count": 695,
+          "median_area": 66.0,
+          "area_q10_q90": [
+            24.0,
+            174.0
+          ],
+          "areaweighted_aspect": 1.772855598785591,
+          "interior_count": 497,
+          "interior_area_fraction": 0.6998748779296875,
+          "small_region_area_fraction": 0.012969970703125,
+          "frame_region_area_fraction": 0.1233062744140625,
+          "watershedline_fraction": 0.163848876953125
+        },
+        "h_plus5": {
+          "count": 543,
+          "allcell_count": 622,
+          "median_area": 70.0,
+          "area_q10_q90": [
+            24.0,
+            219.0
+          ],
+          "areaweighted_aspect": 1.800051147174466,
+          "interior_count": 450,
+          "interior_area_fraction": 0.6982269287109375,
+          "small_region_area_fraction": 0.0098114013671875,
+          "frame_region_area_fraction": 0.135498046875,
+          "watershedline_fraction": 0.156463623046875
+        },
+        "ridge_minus5": {
+          "count": 559,
+          "allcell_count": 644,
+          "median_area": 70.0,
+          "area_q10_q90": [
+            24.0,
+            191.39999999999992
+          ],
+          "areaweighted_aspect": 1.7803724666500969,
+          "interior_count": 468,
+          "interior_area_fraction": 0.703277587890625,
+          "small_region_area_fraction": 0.010711669921875,
+          "frame_region_area_fraction": 0.1273040771484375,
+          "watershedline_fraction": 0.1587066650390625
+        },
+        "ridge_plus5": {
+          "count": 569,
+          "allcell_count": 666,
+          "median_area": 69.0,
+          "area_q10_q90": [
+            24.0,
+            184.39999999999998
+          ],
+          "areaweighted_aspect": 1.781686201987009,
+          "interior_count": 476,
+          "interior_area_fraction": 0.7005157470703125,
+          "small_region_area_fraction": 0.0121307373046875,
+          "frame_region_area_fraction": 0.1265869140625,
+          "watershedline_fraction": 0.1607666015625
+        },
+        "contrast_minus5": {
+          "count": 566,
+          "allcell_count": 658,
+          "median_area": 69.5,
+          "area_q10_q90": [
+            24.0,
+            185.0
+          ],
+          "areaweighted_aspect": 1.779565428906272,
+          "interior_count": 473,
+          "interior_area_fraction": 0.70159912109375,
+          "small_region_area_fraction": 0.0113525390625,
+          "frame_region_area_fraction": 0.12689208984375,
+          "watershedline_fraction": 0.16015625
+        },
+        "contrast_plus5": {
+          "count": 564,
+          "allcell_count": 656,
+          "median_area": 70.0,
+          "area_q10_q90": [
+            24.0,
+            185.39999999999998
+          ],
+          "areaweighted_aspect": 1.7743082673695216,
+          "interior_count": 471,
+          "interior_area_fraction": 0.70068359375,
+          "small_region_area_fraction": 0.0113525390625,
+          "frame_region_area_fraction": 0.1280975341796875,
+          "watershedline_fraction": 0.1598663330078125
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 0.9984802431610942,
+          "matched_sourcepixel_fraction": 0.9972991943359375,
+          "matched_mean_IoU": 0.9865561850414665,
+          "adjacency_Jaccard": 0.8942598187311178,
+          "base_edges": 1827,
+          "probe_edges": 1935,
+          "base_allcell_count": 658,
+          "probe_allcell_count": 695,
+          "relative_changes": {
+            "count": 0.044169611307420496,
+            "median_area": 0.050359712230215826,
+            "areaweighted_aspect": 0.0037704880144838653
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9422492401215805,
+          "matched_sourcepixel_fraction": 0.95587158203125,
+          "matched_mean_IoU": 0.9867484313635947,
+          "adjacency_Jaccard": 0.8540794979079498,
+          "base_edges": 1827,
+          "probe_edges": 1718,
+          "base_allcell_count": 658,
+          "probe_allcell_count": 622,
+          "relative_changes": {
+            "count": 0.04063604240282685,
+            "median_area": 0.007194244604316547,
+            "areaweighted_aspect": 0.011511640952018676
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9787234042553191,
+          "matched_sourcepixel_fraction": 0.9926605224609375,
+          "matched_mean_IoU": 0.9950625544311947,
+          "adjacency_Jaccard": 0.9619978284473398,
+          "base_edges": 1827,
+          "probe_edges": 1787,
+          "base_allcell_count": 658,
+          "probe_allcell_count": 644,
+          "relative_changes": {
+            "count": 0.012367491166077738,
+            "median_area": 0.007194244604316547,
+            "areaweighted_aspect": 0.0004535027095468837
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9976046511770311,
+          "adjacency_Jaccard": 0.9784830554061323,
+          "base_edges": 1827,
+          "probe_edges": 1851,
+          "base_allcell_count": 658,
+          "probe_allcell_count": 666,
+          "relative_changes": {
+            "count": 0.00530035335689046,
+            "median_area": 0.007194244604316547,
+            "areaweighted_aspect": 0.0011917365027935723
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1827,
+          "probe_edges": 1827,
+          "base_allcell_count": 658,
+          "probe_allcell_count": 658,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 0.9969604863221885,
+          "matched_sourcepixel_fraction": 0.9974822998046875,
+          "matched_mean_IoU": 0.9996088424665514,
+          "adjacency_Jaccard": 0.9923539049699618,
+          "base_edges": 1827,
+          "probe_edges": 1821,
+          "base_allcell_count": 658,
+          "probe_allcell_count": 656,
+          "relative_changes": {
+            "count": 0.0035335689045936395,
+            "median_area": 0.007194244604316547,
+            "areaweighted_aspect": 0.002954182774825727
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.044169611307420496,
+        "median_area": 0.050359712230215826,
+        "areaweighted_aspect": 0.011511640952018676
+      },
+      "minimum_matched_sourcepixel_fraction": 0.95587158203125,
+      "minimum_adjacency_Jaccard": 0.8540794979079498,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.5090981012658228,
+        "recall": 0.9839080459770115,
+        "anchor_pixels": 3480,
+        "predicted_pixels": 10112,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 1827,
+        "number_of_cells": 658,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000331",
+      "image_sha256": "fba2681941b88e91bf9e97b022a6c729c1bf6fd8409b12bfc9d7651c44bc629f",
+      "variant_metrics": {
+        "base": {
+          "count": 150,
+          "allcell_count": 182,
+          "median_area": 131.0,
+          "area_q10_q90": [
+            25.0,
+            1111.1999999999996
+          ],
+          "areaweighted_aspect": 2.294011117532448,
+          "interior_count": 93,
+          "interior_area_fraction": 0.531494140625,
+          "small_region_area_fraction": 0.0038299560546875,
+          "frame_region_area_fraction": 0.3857879638671875,
+          "watershedline_fraction": 0.078887939453125
+        },
+        "h_minus5": {
+          "count": 166,
+          "allcell_count": 201,
+          "median_area": 124.0,
+          "area_q10_q90": [
+            25.5,
+            985.0
+          ],
+          "areaweighted_aspect": 2.2138413461445654,
+          "interior_count": 108,
+          "interior_area_fraction": 0.604949951171875,
+          "small_region_area_fraction": 0.0041961669921875,
+          "frame_region_area_fraction": 0.3076324462890625,
+          "watershedline_fraction": 0.083221435546875
+        },
+        "h_plus5": {
+          "count": 142,
+          "allcell_count": 172,
+          "median_area": 144.5,
+          "area_q10_q90": [
+            27.1,
+            1204.8000000000002
+          ],
+          "areaweighted_aspect": 2.2469016360965632,
+          "interior_count": 87,
+          "interior_area_fraction": 0.5287933349609375,
+          "small_region_area_fraction": 0.0036773681640625,
+          "frame_region_area_fraction": 0.390655517578125,
+          "watershedline_fraction": 0.076873779296875
+        },
+        "ridge_minus5": {
+          "count": 143,
+          "allcell_count": 173,
+          "median_area": 143.0,
+          "area_q10_q90": [
+            27.200000000000003,
+            1172.7999999999997
+          ],
+          "areaweighted_aspect": 2.316649688869848,
+          "interior_count": 87,
+          "interior_area_fraction": 0.532318115234375,
+          "small_region_area_fraction": 0.0036468505859375,
+          "frame_region_area_fraction": 0.3865509033203125,
+          "watershedline_fraction": 0.077484130859375
+        },
+        "ridge_plus5": {
+          "count": 152,
+          "allcell_count": 186,
+          "median_area": 127.0,
+          "area_q10_q90": [
+            25.1,
+            1086.9
+          ],
+          "areaweighted_aspect": 2.298369842985831,
+          "interior_count": 95,
+          "interior_area_fraction": 0.545806884765625,
+          "small_region_area_fraction": 0.004058837890625,
+          "frame_region_area_fraction": 0.3705291748046875,
+          "watershedline_fraction": 0.0796051025390625
+        },
+        "contrast_minus5": {
+          "count": 150,
+          "allcell_count": 182,
+          "median_area": 131.0,
+          "area_q10_q90": [
+            25.0,
+            1111.1999999999996
+          ],
+          "areaweighted_aspect": 2.294011117532448,
+          "interior_count": 93,
+          "interior_area_fraction": 0.531494140625,
+          "small_region_area_fraction": 0.0038299560546875,
+          "frame_region_area_fraction": 0.3857879638671875,
+          "watershedline_fraction": 0.078887939453125
+        },
+        "contrast_plus5": {
+          "count": 148,
+          "allcell_count": 180,
+          "median_area": 131.0,
+          "area_q10_q90": [
+            25.0,
+            1127.6000000000008
+          ],
+          "areaweighted_aspect": 2.316865987835007,
+          "interior_count": 91,
+          "interior_area_fraction": 0.5214996337890625,
+          "small_region_area_fraction": 0.0038299560546875,
+          "frame_region_area_fraction": 0.396209716796875,
+          "watershedline_fraction": 0.078460693359375
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9833995163374516,
+          "adjacency_Jaccard": 0.8129770992366412,
+          "base_edges": 447,
+          "probe_edges": 503,
+          "base_allcell_count": 182,
+          "probe_allcell_count": 201,
+          "relative_changes": {
+            "count": 0.10666666666666667,
+            "median_area": 0.05343511450381679,
+            "areaweighted_aspect": 0.034947420601046254
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.945054945054945,
+          "matched_sourcepixel_fraction": 0.9880218505859375,
+          "matched_mean_IoU": 0.9945698469830087,
+          "adjacency_Jaccard": 0.933184855233853,
+          "base_edges": 447,
+          "probe_edges": 421,
+          "base_allcell_count": 182,
+          "probe_allcell_count": 172,
+          "relative_changes": {
+            "count": 0.05333333333333334,
+            "median_area": 0.10305343511450382,
+            "areaweighted_aspect": 0.020535855766278095
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9505494505494505,
+          "matched_sourcepixel_fraction": 0.991455078125,
+          "matched_mean_IoU": 0.9960960226504345,
+          "adjacency_Jaccard": 0.9185022026431718,
+          "base_edges": 447,
+          "probe_edges": 424,
+          "base_allcell_count": 182,
+          "probe_allcell_count": 173,
+          "relative_changes": {
+            "count": 0.04666666666666667,
+            "median_area": 0.0916030534351145,
+            "areaweighted_aspect": 0.009868553453982794
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.998570800285215,
+          "adjacency_Jaccard": 0.9737991266375546,
+          "base_edges": 447,
+          "probe_edges": 457,
+          "base_allcell_count": 182,
+          "probe_allcell_count": 186,
+          "relative_changes": {
+            "count": 0.013333333333333334,
+            "median_area": 0.030534351145038167,
+            "areaweighted_aspect": 0.0019000454793224658
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 447,
+          "probe_edges": 447,
+          "base_allcell_count": 182,
+          "probe_allcell_count": 182,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 0.989010989010989,
+          "matched_sourcepixel_fraction": 0.9936981201171875,
+          "matched_mean_IoU": 0.9978769659773914,
+          "adjacency_Jaccard": 0.984375,
+          "base_edges": 447,
+          "probe_edges": 442,
+          "base_allcell_count": 182,
+          "probe_allcell_count": 180,
+          "relative_changes": {
+            "count": 0.013333333333333334,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.009962841996660806
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.10666666666666667,
+        "median_area": 0.10305343511450382,
+        "areaweighted_aspect": 0.034947420601046254
+      },
+      "minimum_matched_sourcepixel_fraction": 0.9880218505859375,
+      "minimum_adjacency_Jaccard": 0.8129770992366412,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.739516129032258,
+        "recall": 0.7103301384451545,
+        "anchor_pixels": 3756,
+        "predicted_pixels": 4960,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 447,
+        "number_of_cells": 182,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000390",
+      "image_sha256": "61c751b86c9e1ebc0d85b6d4aa959fc061a11dcaf603b3bdd85fd33311f31542",
+      "variant_metrics": {
+        "base": {
+          "count": 266,
+          "allcell_count": 307,
+          "median_area": 102.0,
+          "area_q10_q90": [
+            27.0,
+            648.0
+          ],
+          "areaweighted_aspect": 1.9606020572674783,
+          "interior_count": 197,
+          "interior_area_fraction": 0.5815582275390625,
+          "small_region_area_fraction": 0.0054931640625,
+          "frame_region_area_fraction": 0.3054962158203125,
+          "watershedline_fraction": 0.107452392578125
+        },
+        "h_minus5": {
+          "count": 288,
+          "allcell_count": 338,
+          "median_area": 94.5,
+          "area_q10_q90": [
+            26.700000000000003,
+            510.50000000000006
+          ],
+          "areaweighted_aspect": 1.9603230833492422,
+          "interior_count": 216,
+          "interior_area_fraction": 0.5838470458984375,
+          "small_region_area_fraction": 0.0066070556640625,
+          "frame_region_area_fraction": 0.297698974609375,
+          "watershedline_fraction": 0.111846923828125
+        },
+        "h_plus5": {
+          "count": 224,
+          "allcell_count": 263,
+          "median_area": 96.5,
+          "area_q10_q90": [
+            27.0,
+            791.6000000000005
+          ],
+          "areaweighted_aspect": 2.042094869557831,
+          "interior_count": 162,
+          "interior_area_fraction": 0.5542755126953125,
+          "small_region_area_fraction": 0.0053253173828125,
+          "frame_region_area_fraction": 0.34320068359375,
+          "watershedline_fraction": 0.097198486328125
+        },
+        "ridge_minus5": {
+          "count": 263,
+          "allcell_count": 302,
+          "median_area": 111.0,
+          "area_q10_q90": [
+            27.0,
+            650.4000000000001
+          ],
+          "areaweighted_aspect": 1.962432619762796,
+          "interior_count": 196,
+          "interior_area_fraction": 0.582000732421875,
+          "small_region_area_fraction": 0.0052642822265625,
+          "frame_region_area_fraction": 0.3057708740234375,
+          "watershedline_fraction": 0.106964111328125
+        },
+        "ridge_plus5": {
+          "count": 268,
+          "allcell_count": 310,
+          "median_area": 102.0,
+          "area_q10_q90": [
+            27.0,
+            646.4000000000001
+          ],
+          "areaweighted_aspect": 1.9418274025594282,
+          "interior_count": 199,
+          "interior_area_fraction": 0.581817626953125,
+          "small_region_area_fraction": 0.005615234375,
+          "frame_region_area_fraction": 0.3047637939453125,
+          "watershedline_fraction": 0.1078033447265625
+        },
+        "contrast_minus5": {
+          "count": 266,
+          "allcell_count": 307,
+          "median_area": 102.0,
+          "area_q10_q90": [
+            27.0,
+            648.0
+          ],
+          "areaweighted_aspect": 1.9606020572674783,
+          "interior_count": 197,
+          "interior_area_fraction": 0.5815582275390625,
+          "small_region_area_fraction": 0.0054931640625,
+          "frame_region_area_fraction": 0.3054962158203125,
+          "watershedline_fraction": 0.107452392578125
+        },
+        "contrast_plus5": {
+          "count": 239,
+          "allcell_count": 280,
+          "median_area": 94.0,
+          "area_q10_q90": [
+            26.0,
+            690.0000000000007
+          ],
+          "areaweighted_aspect": 2.035515047174683,
+          "interior_count": 175,
+          "interior_area_fraction": 0.541839599609375,
+          "small_region_area_fraction": 0.0054931640625,
+          "frame_region_area_fraction": 0.351837158203125,
+          "watershedline_fraction": 0.100830078125
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9797795295948937,
+          "adjacency_Jaccard": 0.8193411264612115,
+          "base_edges": 810,
+          "probe_edges": 902,
+          "base_allcell_count": 307,
+          "probe_allcell_count": 338,
+          "relative_changes": {
+            "count": 0.08270676691729323,
+            "median_area": 0.07352941176470588,
+            "areaweighted_aspect": 0.00014228992426176923
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.8501628664495114,
+          "matched_sourcepixel_fraction": 0.810699462890625,
+          "matched_mean_IoU": 0.9647835438850978,
+          "adjacency_Jaccard": 0.6220043572984749,
+          "base_edges": 810,
+          "probe_edges": 679,
+          "base_allcell_count": 307,
+          "probe_allcell_count": 263,
+          "relative_changes": {
+            "count": 0.15789473684210525,
+            "median_area": 0.05392156862745098,
+            "areaweighted_aspect": 0.041565197786199756
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9837133550488599,
+          "matched_sourcepixel_fraction": 0.9963836669921875,
+          "matched_mean_IoU": 0.9956179876029756,
+          "adjacency_Jaccard": 0.9621489621489622,
+          "base_edges": 810,
+          "probe_edges": 797,
+          "base_allcell_count": 307,
+          "probe_allcell_count": 302,
+          "relative_changes": {
+            "count": 0.011278195488721804,
+            "median_area": 0.08823529411764706,
+            "areaweighted_aspect": 0.0009336736583194957
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9975201284339275,
+          "adjacency_Jaccard": 0.9829476248477467,
+          "base_edges": 810,
+          "probe_edges": 818,
+          "base_allcell_count": 307,
+          "probe_allcell_count": 310,
+          "relative_changes": {
+            "count": 0.007518796992481203,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.009575963994558179
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 810,
+          "probe_edges": 810,
+          "base_allcell_count": 307,
+          "probe_allcell_count": 307,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 0.9087947882736156,
+          "matched_sourcepixel_fraction": 0.8709716796875,
+          "matched_mean_IoU": 0.9781394285539176,
+          "adjacency_Jaccard": 0.718609865470852,
+          "base_edges": 810,
+          "probe_edges": 723,
+          "base_allcell_count": 307,
+          "probe_allcell_count": 280,
+          "relative_changes": {
+            "count": 0.10150375939849623,
+            "median_area": 0.0784313725490196,
+            "areaweighted_aspect": 0.03820917642594548
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.15789473684210525,
+        "median_area": 0.08823529411764706,
+        "areaweighted_aspect": 0.041565197786199756
+      },
+      "minimum_matched_sourcepixel_fraction": 0.810699462890625,
+      "minimum_adjacency_Jaccard": 0.6220043572984749,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.6529036090895589,
+        "recall": 0.7927704194260485,
+        "anchor_pixels": 3624,
+        "predicted_pixels": 6733,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 810,
+        "number_of_cells": 307,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000412",
+      "image_sha256": "f310ebd51ecea8d713c6f6f89112a45b0a039867e02403be2299471ab8501975",
+      "variant_metrics": {
+        "base": {
+          "count": 171,
+          "allcell_count": 239,
+          "median_area": 97.0,
+          "area_q10_q90": [
+            22.0,
+            1046.0
+          ],
+          "areaweighted_aspect": 2.2385797090420225,
+          "interior_count": 123,
+          "interior_area_fraction": 0.517486572265625,
+          "small_region_area_fraction": 0.0085296630859375,
+          "frame_region_area_fraction": 0.39111328125,
+          "watershedline_fraction": 0.0828704833984375
+        },
+        "h_minus5": {
+          "count": 194,
+          "allcell_count": 269,
+          "median_area": 96.5,
+          "area_q10_q90": [
+            21.3,
+            979.9000000000015
+          ],
+          "areaweighted_aspect": 2.190089862734276,
+          "interior_count": 143,
+          "interior_area_fraction": 0.515228271484375,
+          "small_region_area_fraction": 0.00958251953125,
+          "frame_region_area_fraction": 0.3856353759765625,
+          "watershedline_fraction": 0.0895538330078125
+        },
+        "h_plus5": {
+          "count": 153,
+          "allcell_count": 214,
+          "median_area": 102.0,
+          "area_q10_q90": [
+            22.200000000000003,
+            1229.000000000001
+          ],
+          "areaweighted_aspect": 2.158155842274356,
+          "interior_count": 110,
+          "interior_area_fraction": 0.4518890380859375,
+          "small_region_area_fraction": 0.007720947265625,
+          "frame_region_area_fraction": 0.4622955322265625,
+          "watershedline_fraction": 0.078094482421875
+        },
+        "ridge_minus5": {
+          "count": 171,
+          "allcell_count": 237,
+          "median_area": 97.0,
+          "area_q10_q90": [
+            22.0,
+            1046.0
+          ],
+          "areaweighted_aspect": 2.23845569632636,
+          "interior_count": 123,
+          "interior_area_fraction": 0.5176849365234375,
+          "small_region_area_fraction": 0.0084228515625,
+          "frame_region_area_fraction": 0.39111328125,
+          "watershedline_fraction": 0.0827789306640625
+        },
+        "ridge_plus5": {
+          "count": 171,
+          "allcell_count": 240,
+          "median_area": 97.0,
+          "area_q10_q90": [
+            22.0,
+            1046.0
+          ],
+          "areaweighted_aspect": 2.2372742684592004,
+          "interior_count": 123,
+          "interior_area_fraction": 0.517486572265625,
+          "small_region_area_fraction": 0.008697509765625,
+          "frame_region_area_fraction": 0.3907623291015625,
+          "watershedline_fraction": 0.0830535888671875
+        },
+        "contrast_minus5": {
+          "count": 171,
+          "allcell_count": 239,
+          "median_area": 97.0,
+          "area_q10_q90": [
+            22.0,
+            1024.0
+          ],
+          "areaweighted_aspect": 2.231673968115147,
+          "interior_count": 122,
+          "interior_area_fraction": 0.51318359375,
+          "small_region_area_fraction": 0.0085296630859375,
+          "frame_region_area_fraction": 0.395477294921875,
+          "watershedline_fraction": 0.0828094482421875
+        },
+        "contrast_plus5": {
+          "count": 173,
+          "allcell_count": 241,
+          "median_area": 97.0,
+          "area_q10_q90": [
+            22.0,
+            1020.4000000000002
+          ],
+          "areaweighted_aspect": 2.2330900229251025,
+          "interior_count": 124,
+          "interior_area_fraction": 0.5171051025390625,
+          "small_region_area_fraction": 0.0085296630859375,
+          "frame_region_area_fraction": 0.3907318115234375,
+          "watershedline_fraction": 0.0836334228515625
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9781324173204702,
+          "adjacency_Jaccard": 0.7791495198902606,
+          "base_edges": 605,
+          "probe_edges": 692,
+          "base_allcell_count": 239,
+          "probe_allcell_count": 269,
+          "relative_changes": {
+            "count": 0.13450292397660818,
+            "median_area": 0.005154639175257732,
+            "areaweighted_aspect": 0.021660987148184815
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.895397489539749,
+          "matched_sourcepixel_fraction": 0.9225616455078125,
+          "matched_mean_IoU": 0.9809331969530953,
+          "adjacency_Jaccard": 0.7908805031446541,
+          "base_edges": 605,
+          "probe_edges": 534,
+          "base_allcell_count": 239,
+          "probe_allcell_count": 214,
+          "relative_changes": {
+            "count": 0.10526315789473684,
+            "median_area": 0.05154639175257732,
+            "areaweighted_aspect": 0.0359262913189199
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9916317991631799,
+          "matched_sourcepixel_fraction": 0.9998016357421875,
+          "matched_mean_IoU": 0.9998590676594765,
+          "adjacency_Jaccard": 0.9884488448844885,
+          "base_edges": 605,
+          "probe_edges": 600,
+          "base_allcell_count": 239,
+          "probe_allcell_count": 237,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 5.539794502800343e-05
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9995063806598262,
+          "adjacency_Jaccard": 0.9967051070840197,
+          "base_edges": 605,
+          "probe_edges": 607,
+          "base_allcell_count": 239,
+          "probe_allcell_count": 240,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0005831557292997912
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 0.9916317991631799,
+          "matched_sourcepixel_fraction": 0.9929656982421875,
+          "matched_mean_IoU": 0.996184475476252,
+          "adjacency_Jaccard": 0.9453376205787781,
+          "base_edges": 605,
+          "probe_edges": 605,
+          "base_allcell_count": 239,
+          "probe_allcell_count": 239,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.003084876048407859
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.996965823694024,
+          "adjacency_Jaccard": 0.9596774193548387,
+          "base_edges": 605,
+          "probe_edges": 610,
+          "base_allcell_count": 239,
+          "probe_allcell_count": 241,
+          "relative_changes": {
+            "count": 0.011695906432748537,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0024523076371800396
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.13450292397660818,
+        "median_area": 0.05154639175257732,
+        "areaweighted_aspect": 0.0359262913189199
+      },
+      "minimum_matched_sourcepixel_fraction": 0.9225616455078125,
+      "minimum_adjacency_Jaccard": 0.7791495198902606,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.697986577181208,
+        "recall": 0.6594566077552098,
+        "anchor_pixels": 3791,
+        "predicted_pixels": 5215,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 605,
+        "number_of_cells": 239,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000424",
+      "image_sha256": "36d97e30674fc34cbcde857d5f4e6bfebd14bcf77e1944a8cdf618d3ca170173",
+      "variant_metrics": {
+        "base": {
+          "count": 448,
+          "allcell_count": 519,
+          "median_area": 77.5,
+          "area_q10_q90": [
+            24.0,
+            262.6
+          ],
+          "areaweighted_aspect": 1.9116709380930748,
+          "interior_count": 370,
+          "interior_area_fraction": 0.6692352294921875,
+          "small_region_area_fraction": 0.0093841552734375,
+          "frame_region_area_fraction": 0.17645263671875,
+          "watershedline_fraction": 0.144927978515625
+        },
+        "h_minus5": {
+          "count": 480,
+          "allcell_count": 566,
+          "median_area": 73.5,
+          "area_q10_q90": [
+            23.900000000000006,
+            254.20000000000005
+          ],
+          "areaweighted_aspect": 1.9086833435045554,
+          "interior_count": 400,
+          "interior_area_fraction": 0.6778411865234375,
+          "small_region_area_fraction": 0.011688232421875,
+          "frame_region_area_fraction": 0.1602783203125,
+          "watershedline_fraction": 0.1501922607421875
+        },
+        "h_plus5": {
+          "count": 417,
+          "allcell_count": 477,
+          "median_area": 78.0,
+          "area_q10_q90": [
+            24.0,
+            271.40000000000003
+          ],
+          "areaweighted_aspect": 1.918690407463863,
+          "interior_count": 339,
+          "interior_area_fraction": 0.6669464111328125,
+          "small_region_area_fraction": 0.0077362060546875,
+          "frame_region_area_fraction": 0.1867828369140625,
+          "watershedline_fraction": 0.1385345458984375
+        },
+        "ridge_minus5": {
+          "count": 441,
+          "allcell_count": 510,
+          "median_area": 78.0,
+          "area_q10_q90": [
+            24.0,
+            267.0
+          ],
+          "areaweighted_aspect": 1.913386659578418,
+          "interior_count": 363,
+          "interior_area_fraction": 0.6647491455078125,
+          "small_region_area_fraction": 0.00921630859375,
+          "frame_region_area_fraction": 0.1821746826171875,
+          "watershedline_fraction": 0.14385986328125
+        },
+        "ridge_plus5": {
+          "count": 452,
+          "allcell_count": 524,
+          "median_area": 77.0,
+          "area_q10_q90": [
+            24.0,
+            261.4000000000002
+          ],
+          "areaweighted_aspect": 1.9092096497394264,
+          "interior_count": 373,
+          "interior_area_fraction": 0.6689910888671875,
+          "small_region_area_fraction": 0.00946044921875,
+          "frame_region_area_fraction": 0.176177978515625,
+          "watershedline_fraction": 0.1453704833984375
+        },
+        "contrast_minus5": {
+          "count": 448,
+          "allcell_count": 519,
+          "median_area": 77.5,
+          "area_q10_q90": [
+            24.0,
+            262.6
+          ],
+          "areaweighted_aspect": 1.9116709380930748,
+          "interior_count": 370,
+          "interior_area_fraction": 0.6692352294921875,
+          "small_region_area_fraction": 0.0093841552734375,
+          "frame_region_area_fraction": 0.17645263671875,
+          "watershedline_fraction": 0.144927978515625
+        },
+        "contrast_plus5": {
+          "count": 448,
+          "allcell_count": 519,
+          "median_area": 77.5,
+          "area_q10_q90": [
+            24.0,
+            262.6
+          ],
+          "areaweighted_aspect": 1.9116709380930748,
+          "interior_count": 370,
+          "interior_area_fraction": 0.6692352294921875,
+          "small_region_area_fraction": 0.0093841552734375,
+          "frame_region_area_fraction": 0.17645263671875,
+          "watershedline_fraction": 0.144927978515625
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 0.9980732177263969,
+          "matched_sourcepixel_fraction": 0.9953765869140625,
+          "matched_mean_IoU": 0.9784209825467091,
+          "adjacency_Jaccard": 0.8383343539497856,
+          "base_edges": 1433,
+          "probe_edges": 1569,
+          "base_allcell_count": 519,
+          "probe_allcell_count": 566,
+          "relative_changes": {
+            "count": 0.07142857142857142,
+            "median_area": 0.05161290322580645,
+            "areaweighted_aspect": 0.0015628184375181013
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9171483622350675,
+          "matched_sourcepixel_fraction": 0.918548583984375,
+          "matched_mean_IoU": 0.9798037655465537,
+          "adjacency_Jaccard": 0.7819597663854639,
+          "base_edges": 1433,
+          "probe_edges": 1313,
+          "base_allcell_count": 519,
+          "probe_allcell_count": 477,
+          "relative_changes": {
+            "count": 0.06919642857142858,
+            "median_area": 0.0064516129032258064,
+            "areaweighted_aspect": 0.003671902538723735
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9826589595375722,
+          "matched_sourcepixel_fraction": 0.9890289306640625,
+          "matched_mean_IoU": 0.9941861680628508,
+          "adjacency_Jaccard": 0.957960027567195,
+          "base_edges": 1433,
+          "probe_edges": 1408,
+          "base_allcell_count": 519,
+          "probe_allcell_count": 510,
+          "relative_changes": {
+            "count": 0.015625,
+            "median_area": 0.0064516129032258064,
+            "areaweighted_aspect": 0.0008974983356992497
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9968208109541815,
+          "adjacency_Jaccard": 0.9848275862068966,
+          "base_edges": 1433,
+          "probe_edges": 1445,
+          "base_allcell_count": 519,
+          "probe_allcell_count": 524,
+          "relative_changes": {
+            "count": 0.008928571428571428,
+            "median_area": 0.0064516129032258064,
+            "areaweighted_aspect": 0.0012875062881394833
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1433,
+          "probe_edges": 1433,
+          "base_allcell_count": 519,
+          "probe_allcell_count": 519,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1433,
+          "probe_edges": 1433,
+          "base_allcell_count": 519,
+          "probe_allcell_count": 519,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.07142857142857142,
+        "median_area": 0.05161290322580645,
+        "areaweighted_aspect": 0.003671902538723735
+      },
+      "minimum_matched_sourcepixel_fraction": 0.918548583984375,
+      "minimum_adjacency_Jaccard": 0.7819597663854639,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.5315846994535519,
+        "recall": 0.954516938519448,
+        "anchor_pixels": 3188,
+        "predicted_pixels": 9150,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [
+          202
+        ],
+        "graph_edges": 1433,
+        "number_of_cells": 519,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000448",
+      "image_sha256": "fefc49921e9c29df94cf71f6865627baa5470c600dc197fb81cf045388c7c1ba",
+      "variant_metrics": {
+        "base": {
+          "count": 524,
+          "allcell_count": 646,
+          "median_area": 69.0,
+          "area_q10_q90": [
+            24.0,
+            238.7
+          ],
+          "areaweighted_aspect": 1.7765723959286737,
+          "interior_count": 434,
+          "interior_area_fraction": 0.6746063232421875,
+          "small_region_area_fraction": 0.0150299072265625,
+          "frame_region_area_fraction": 0.15069580078125,
+          "watershedline_fraction": 0.15966796875
+        },
+        "h_minus5": {
+          "count": 560,
+          "allcell_count": 702,
+          "median_area": 62.5,
+          "area_q10_q90": [
+            23.0,
+            214.0
+          ],
+          "areaweighted_aspect": 1.7775464199930477,
+          "interior_count": 468,
+          "interior_area_fraction": 0.6846160888671875,
+          "small_region_area_fraction": 0.0171661376953125,
+          "frame_region_area_fraction": 0.132720947265625,
+          "watershedline_fraction": 0.165496826171875
+        },
+        "h_plus5": {
+          "count": 491,
+          "allcell_count": 596,
+          "median_area": 73.0,
+          "area_q10_q90": [
+            25.0,
+            256.0
+          ],
+          "areaweighted_aspect": 1.7605347520505263,
+          "interior_count": 403,
+          "interior_area_fraction": 0.6774749755859375,
+          "small_region_area_fraction": 0.012725830078125,
+          "frame_region_area_fraction": 0.1561431884765625,
+          "watershedline_fraction": 0.153656005859375
+        },
+        "ridge_minus5": {
+          "count": 511,
+          "allcell_count": 629,
+          "median_area": 71.0,
+          "area_q10_q90": [
+            24.0,
+            240.0
+          ],
+          "areaweighted_aspect": 1.7817953362797092,
+          "interior_count": 424,
+          "interior_area_fraction": 0.675323486328125,
+          "small_region_area_fraction": 0.0145721435546875,
+          "frame_region_area_fraction": 0.1520843505859375,
+          "watershedline_fraction": 0.15802001953125
+        },
+        "ridge_plus5": {
+          "count": 540,
+          "allcell_count": 663,
+          "median_area": 68.0,
+          "area_q10_q90": [
+            24.0,
+            231.0
+          ],
+          "areaweighted_aspect": 1.791350225749834,
+          "interior_count": 450,
+          "interior_area_fraction": 0.6802825927734375,
+          "small_region_area_fraction": 0.0151519775390625,
+          "frame_region_area_fraction": 0.14276123046875,
+          "watershedline_fraction": 0.16180419921875
+        },
+        "contrast_minus5": {
+          "count": 524,
+          "allcell_count": 646,
+          "median_area": 69.0,
+          "area_q10_q90": [
+            24.0,
+            238.7
+          ],
+          "areaweighted_aspect": 1.7765723959286737,
+          "interior_count": 434,
+          "interior_area_fraction": 0.6746063232421875,
+          "small_region_area_fraction": 0.0150299072265625,
+          "frame_region_area_fraction": 0.15069580078125,
+          "watershedline_fraction": 0.15966796875
+        },
+        "contrast_plus5": {
+          "count": 524,
+          "allcell_count": 646,
+          "median_area": 69.0,
+          "area_q10_q90": [
+            24.0,
+            238.7
+          ],
+          "areaweighted_aspect": 1.7765723959286737,
+          "interior_count": 434,
+          "interior_area_fraction": 0.6746063232421875,
+          "small_region_area_fraction": 0.0150299072265625,
+          "frame_region_area_fraction": 0.15069580078125,
+          "watershedline_fraction": 0.15966796875
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9774985347618272,
+          "adjacency_Jaccard": 0.8492261607588617,
+          "base_edges": 1773,
+          "probe_edges": 1931,
+          "base_allcell_count": 646,
+          "probe_allcell_count": 702,
+          "relative_changes": {
+            "count": 0.06870229007633588,
+            "median_area": 0.09420289855072464,
+            "areaweighted_aspect": 0.0005482602716366785
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9210526315789473,
+          "matched_sourcepixel_fraction": 0.959320068359375,
+          "matched_mean_IoU": 0.9812478821236538,
+          "adjacency_Jaccard": 0.8479913137893594,
+          "base_edges": 1773,
+          "probe_edges": 1631,
+          "base_allcell_count": 646,
+          "probe_allcell_count": 596,
+          "relative_changes": {
+            "count": 0.06297709923664122,
+            "median_area": 0.057971014492753624,
+            "areaweighted_aspect": 0.009027295434118187
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9736842105263158,
+          "matched_sourcepixel_fraction": 0.984344482421875,
+          "matched_mean_IoU": 0.9916947237318847,
+          "adjacency_Jaccard": 0.9411764705882353,
+          "base_edges": 1773,
+          "probe_edges": 1725,
+          "base_allcell_count": 646,
+          "probe_allcell_count": 629,
+          "relative_changes": {
+            "count": 0.02480916030534351,
+            "median_area": 0.028985507246376812,
+            "areaweighted_aspect": 0.0029398972780421582
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9929182851547874,
+          "adjacency_Jaccard": 0.9438141545110751,
+          "base_edges": 1773,
+          "probe_edges": 1825,
+          "base_allcell_count": 646,
+          "probe_allcell_count": 663,
+          "relative_changes": {
+            "count": 0.030534351145038167,
+            "median_area": 0.014492753623188406,
+            "areaweighted_aspect": 0.00831816922013775
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1773,
+          "probe_edges": 1773,
+          "base_allcell_count": 646,
+          "probe_allcell_count": 646,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1773,
+          "probe_edges": 1773,
+          "base_allcell_count": 646,
+          "probe_allcell_count": 646,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.06870229007633588,
+        "median_area": 0.09420289855072464,
+        "areaweighted_aspect": 0.009027295434118187
+      },
+      "minimum_matched_sourcepixel_fraction": 0.959320068359375,
+      "minimum_adjacency_Jaccard": 0.8479913137893594,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.5391874441243667,
+        "recall": 0.930074074074074,
+        "anchor_pixels": 3375,
+        "predicted_pixels": 10067,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 1773,
+        "number_of_cells": 646,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000457",
+      "image_sha256": "d5e369c5013a708caca8fc1fa63c1ee8681345b584c4ecbfbf9d3bf9b6067f33",
+      "variant_metrics": {
+        "base": {
+          "count": 504,
+          "allcell_count": 535,
+          "median_area": 93.0,
+          "area_q10_q90": [
+            30.0,
+            206.7
+          ],
+          "areaweighted_aspect": 1.83589429535028,
+          "interior_count": 416,
+          "interior_area_fraction": 0.6959228515625,
+          "small_region_area_fraction": 0.0042877197265625,
+          "frame_region_area_fraction": 0.147216796875,
+          "watershedline_fraction": 0.1525726318359375
+        },
+        "h_minus5": {
+          "count": 515,
+          "allcell_count": 553,
+          "median_area": 92.0,
+          "area_q10_q90": [
+            29.0,
+            202.20000000000005
+          ],
+          "areaweighted_aspect": 1.8405580659919216,
+          "interior_count": 427,
+          "interior_area_fraction": 0.69415283203125,
+          "small_region_area_fraction": 0.005157470703125,
+          "frame_region_area_fraction": 0.1459503173828125,
+          "watershedline_fraction": 0.1547393798828125
+        },
+        "h_plus5": {
+          "count": 497,
+          "allcell_count": 525,
+          "median_area": 94.0,
+          "area_q10_q90": [
+            30.0,
+            210.40000000000003
+          ],
+          "areaweighted_aspect": 1.8531642093129572,
+          "interior_count": 409,
+          "interior_area_fraction": 0.697418212890625,
+          "small_region_area_fraction": 0.003936767578125,
+          "frame_region_area_fraction": 0.147216796875,
+          "watershedline_fraction": 0.15142822265625
+        },
+        "ridge_minus5": {
+          "count": 499,
+          "allcell_count": 527,
+          "median_area": 95.0,
+          "area_q10_q90": [
+            30.0,
+            208.39999999999998
+          ],
+          "areaweighted_aspect": 1.8288279881756653,
+          "interior_count": 411,
+          "interior_area_fraction": 0.697479248046875,
+          "small_region_area_fraction": 0.0037994384765625,
+          "frame_region_area_fraction": 0.147216796875,
+          "watershedline_fraction": 0.1515045166015625
+        },
+        "ridge_plus5": {
+          "count": 506,
+          "allcell_count": 541,
+          "median_area": 93.0,
+          "area_q10_q90": [
+            29.5,
+            205.5
+          ],
+          "areaweighted_aspect": 1.8313776469366851,
+          "interior_count": 417,
+          "interior_area_fraction": 0.695281982421875,
+          "small_region_area_fraction": 0.0047149658203125,
+          "frame_region_area_fraction": 0.14697265625,
+          "watershedline_fraction": 0.1530303955078125
+        },
+        "contrast_minus5": {
+          "count": 499,
+          "allcell_count": 530,
+          "median_area": 94.0,
+          "area_q10_q90": [
+            30.0,
+            210.2
+          ],
+          "areaweighted_aspect": 1.8482223451611266,
+          "interior_count": 412,
+          "interior_area_fraction": 0.6952056884765625,
+          "small_region_area_fraction": 0.0042877197265625,
+          "frame_region_area_fraction": 0.148681640625,
+          "watershedline_fraction": 0.151824951171875
+        },
+        "contrast_plus5": {
+          "count": 504,
+          "allcell_count": 535,
+          "median_area": 93.0,
+          "area_q10_q90": [
+            30.0,
+            206.7
+          ],
+          "areaweighted_aspect": 1.83589429535028,
+          "interior_count": 416,
+          "interior_area_fraction": 0.6959228515625,
+          "small_region_area_fraction": 0.0042877197265625,
+          "frame_region_area_fraction": 0.147216796875,
+          "watershedline_fraction": 0.1525726318359375
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9902647619547305,
+          "adjacency_Jaccard": 0.9335038363171355,
+          "base_edges": 1486,
+          "probe_edges": 1538,
+          "base_allcell_count": 535,
+          "probe_allcell_count": 553,
+          "relative_changes": {
+            "count": 0.021825396825396824,
+            "median_area": 0.010752688172043012,
+            "areaweighted_aspect": 0.0025403263431089153
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9813084112149533,
+          "matched_sourcepixel_fraction": 0.98907470703125,
+          "matched_mean_IoU": 0.9953933732968999,
+          "adjacency_Jaccard": 0.9502652519893899,
+          "base_edges": 1486,
+          "probe_edges": 1455,
+          "base_allcell_count": 535,
+          "probe_allcell_count": 525,
+          "relative_changes": {
+            "count": 0.013888888888888888,
+            "median_area": 0.010752688172043012,
+            "areaweighted_aspect": 0.009406812803120715
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9850467289719627,
+          "matched_sourcepixel_fraction": 0.9937591552734375,
+          "matched_mean_IoU": 0.995909000368153,
+          "adjacency_Jaccard": 0.9732441471571907,
+          "base_edges": 1486,
+          "probe_edges": 1464,
+          "base_allcell_count": 535,
+          "probe_allcell_count": 527,
+          "relative_changes": {
+            "count": 0.00992063492063492,
+            "median_area": 0.021505376344086023,
+            "areaweighted_aspect": 0.0038489727826440203
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9983846284770446,
+          "adjacency_Jaccard": 0.9820954907161804,
+          "base_edges": 1486,
+          "probe_edges": 1503,
+          "base_allcell_count": 535,
+          "probe_allcell_count": 541,
+          "relative_changes": {
+            "count": 0.003968253968253968,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0024601897968929776
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 0.9906542056074766,
+          "matched_sourcepixel_fraction": 0.992034912109375,
+          "matched_mean_IoU": 0.9964910206164129,
+          "adjacency_Jaccard": 0.9759519038076152,
+          "base_edges": 1486,
+          "probe_edges": 1472,
+          "base_allcell_count": 535,
+          "probe_allcell_count": 530,
+          "relative_changes": {
+            "count": 0.00992063492063492,
+            "median_area": 0.010752688172043012,
+            "areaweighted_aspect": 0.006715010685565937
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1486,
+          "probe_edges": 1486,
+          "base_allcell_count": 535,
+          "probe_allcell_count": 535,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.021825396825396824,
+        "median_area": 0.021505376344086023,
+        "areaweighted_aspect": 0.009406812803120715
+      },
+      "minimum_matched_sourcepixel_fraction": 0.98907470703125,
+      "minimum_adjacency_Jaccard": 0.9335038363171355,
+      "stability_pass": true,
+      "boundary_proxy": {
+        "precision": 0.49508637633185065,
+        "recall": 0.9833827893175074,
+        "anchor_pixels": 3370,
+        "predicted_pixels": 9667,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 1486,
+        "number_of_cells": 535,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000467",
+      "image_sha256": "1b1847796a023599c56fc9a72f4e00f021c546c2c0940751451129073ea02074",
+      "variant_metrics": {
+        "base": {
+          "count": 183,
+          "allcell_count": 225,
+          "median_area": 132.0,
+          "area_q10_q90": [
+            23.2,
+            823.6000000000001
+          ],
+          "areaweighted_aspect": 1.9517193955955736,
+          "interior_count": 125,
+          "interior_area_fraction": 0.5299224853515625,
+          "small_region_area_fraction": 0.0055084228515625,
+          "frame_region_area_fraction": 0.377655029296875,
+          "watershedline_fraction": 0.0869140625
+        },
+        "h_minus5": {
+          "count": 200,
+          "allcell_count": 246,
+          "median_area": 131.5,
+          "area_q10_q90": [
+            26.700000000000006,
+            818.6999999999999
+          ],
+          "areaweighted_aspect": 1.9019423555731614,
+          "interior_count": 138,
+          "interior_area_fraction": 0.5716552734375,
+          "small_region_area_fraction": 0.005767822265625,
+          "frame_region_area_fraction": 0.3306884765625,
+          "watershedline_fraction": 0.091888427734375
+        },
+        "h_plus5": {
+          "count": 162,
+          "allcell_count": 201,
+          "median_area": 148.0,
+          "area_q10_q90": [
+            28.1,
+            957.2000000000005
+          ],
+          "areaweighted_aspect": 1.9966950063523232,
+          "interior_count": 108,
+          "interior_area_fraction": 0.5113372802734375,
+          "small_region_area_fraction": 0.0051116943359375,
+          "frame_region_area_fraction": 0.40252685546875,
+          "watershedline_fraction": 0.081024169921875
+        },
+        "ridge_minus5": {
+          "count": 181,
+          "allcell_count": 222,
+          "median_area": 134.0,
+          "area_q10_q90": [
+            24.0,
+            825.0
+          ],
+          "areaweighted_aspect": 1.95192238027712,
+          "interior_count": 124,
+          "interior_area_fraction": 0.5303192138671875,
+          "small_region_area_fraction": 0.00531005859375,
+          "frame_region_area_fraction": 0.37786865234375,
+          "watershedline_fraction": 0.0865020751953125
+        },
+        "ridge_plus5": {
+          "count": 186,
+          "allcell_count": 232,
+          "median_area": 128.0,
+          "area_q10_q90": [
+            23.0,
+            810.0
+          ],
+          "areaweighted_aspect": 1.9496102814464134,
+          "interior_count": 128,
+          "interior_area_fraction": 0.5296783447265625,
+          "small_region_area_fraction": 0.0062255859375,
+          "frame_region_area_fraction": 0.3763427734375,
+          "watershedline_fraction": 0.0877532958984375
+        },
+        "contrast_minus5": {
+          "count": 183,
+          "allcell_count": 225,
+          "median_area": 132.0,
+          "area_q10_q90": [
+            23.2,
+            823.6000000000001
+          ],
+          "areaweighted_aspect": 1.962654030493284,
+          "interior_count": 125,
+          "interior_area_fraction": 0.524444580078125,
+          "small_region_area_fraction": 0.0055084228515625,
+          "frame_region_area_fraction": 0.383087158203125,
+          "watershedline_fraction": 0.0869598388671875
+        },
+        "contrast_plus5": {
+          "count": 183,
+          "allcell_count": 225,
+          "median_area": 134.0,
+          "area_q10_q90": [
+            24.799999999999997,
+            811.2000000000004
+          ],
+          "areaweighted_aspect": 1.9308713319114184,
+          "interior_count": 125,
+          "interior_area_fraction": 0.5354461669921875,
+          "small_region_area_fraction": 0.0055084228515625,
+          "frame_region_area_fraction": 0.3719940185546875,
+          "watershedline_fraction": 0.0870513916015625
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9791424239034532,
+          "adjacency_Jaccard": 0.8315629742033384,
+          "base_edges": 574,
+          "probe_edges": 633,
+          "base_allcell_count": 225,
+          "probe_allcell_count": 246,
+          "relative_changes": {
+            "count": 0.09289617486338798,
+            "median_area": 0.003787878787878788,
+            "areaweighted_aspect": 0.025504199084532133
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.8888888888888888,
+          "matched_sourcepixel_fraction": 0.9346160888671875,
+          "matched_mean_IoU": 0.9844579384936912,
+          "adjacency_Jaccard": 0.7799671592775042,
+          "base_edges": 574,
+          "probe_edges": 510,
+          "base_allcell_count": 225,
+          "probe_allcell_count": 201,
+          "relative_changes": {
+            "count": 0.11475409836065574,
+            "median_area": 0.12121212121212122,
+            "areaweighted_aspect": 0.023044096840071186
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9866666666666667,
+          "matched_sourcepixel_fraction": 0.99847412109375,
+          "matched_mean_IoU": 0.9993115428809942,
+          "adjacency_Jaccard": 0.9860627177700348,
+          "base_edges": 574,
+          "probe_edges": 566,
+          "base_allcell_count": 225,
+          "probe_allcell_count": 222,
+          "relative_changes": {
+            "count": 0.01092896174863388,
+            "median_area": 0.015151515151515152,
+            "areaweighted_aspect": 0.00010400300473746898
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.996944415136542,
+          "adjacency_Jaccard": 0.9679054054054054,
+          "base_edges": 574,
+          "probe_edges": 591,
+          "base_allcell_count": 225,
+          "probe_allcell_count": 232,
+          "relative_changes": {
+            "count": 0.01639344262295082,
+            "median_area": 0.030303030303030304,
+            "areaweighted_aspect": 0.0010806441509572946
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 0.9955555555555555,
+          "matched_sourcepixel_fraction": 0.9894256591796875,
+          "matched_mean_IoU": 0.9963431563433884,
+          "adjacency_Jaccard": 0.9708404802744426,
+          "base_edges": 574,
+          "probe_edges": 575,
+          "base_allcell_count": 225,
+          "probe_allcell_count": 225,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.005602565062573283
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 0.9955555555555555,
+          "matched_sourcepixel_fraction": 0.9995269775390625,
+          "matched_mean_IoU": 0.9983519188334988,
+          "adjacency_Jaccard": 0.9793459552495697,
+          "base_edges": 574,
+          "probe_edges": 576,
+          "base_allcell_count": 225,
+          "probe_allcell_count": 225,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.015151515151515152,
+            "areaweighted_aspect": 0.0106818960405901
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.11475409836065574,
+        "median_area": 0.12121212121212122,
+        "areaweighted_aspect": 0.025504199084532133
+      },
+      "minimum_matched_sourcepixel_fraction": 0.9346160888671875,
+      "minimum_adjacency_Jaccard": 0.7799671592775042,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.6986276303751143,
+        "recall": 0.6582406471183013,
+        "anchor_pixels": 3956,
+        "predicted_pixels": 5465,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [
+          77,
+          116
+        ],
+        "graph_edges": 574,
+        "number_of_cells": 225,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000489",
+      "image_sha256": "9f0d0ebe1d980c2f9738e6b33eb259e875990096123a901823eb319b0ee9eeab",
+      "variant_metrics": {
+        "base": {
+          "count": 280,
+          "allcell_count": 350,
+          "median_area": 94.5,
+          "area_q10_q90": [
+            24.900000000000002,
+            494.19999999999993
+          ],
+          "areaweighted_aspect": 2.046989226537558,
+          "interior_count": 213,
+          "interior_area_fraction": 0.650787353515625,
+          "small_region_area_fraction": 0.0088348388671875,
+          "frame_region_area_fraction": 0.2248992919921875,
+          "watershedline_fraction": 0.115478515625
+        },
+        "h_minus5": {
+          "count": 296,
+          "allcell_count": 369,
+          "median_area": 88.5,
+          "area_q10_q90": [
+            24.5,
+            490.5
+          ],
+          "areaweighted_aspect": 2.0814500057573837,
+          "interior_count": 228,
+          "interior_area_fraction": 0.6500701904296875,
+          "small_region_area_fraction": 0.0094451904296875,
+          "frame_region_area_fraction": 0.221649169921875,
+          "watershedline_fraction": 0.11883544921875
+        },
+        "h_plus5": {
+          "count": 261,
+          "allcell_count": 326,
+          "median_area": 97.0,
+          "area_q10_q90": [
+            24.0,
+            505.0
+          ],
+          "areaweighted_aspect": 2.089794272920909,
+          "interior_count": 196,
+          "interior_area_fraction": 0.627105712890625,
+          "small_region_area_fraction": 0.008331298828125,
+          "frame_region_area_fraction": 0.253387451171875,
+          "watershedline_fraction": 0.111175537109375
+        },
+        "ridge_minus5": {
+          "count": 277,
+          "allcell_count": 346,
+          "median_area": 97.0,
+          "area_q10_q90": [
+            25.6,
+            497.80000000000007
+          ],
+          "areaweighted_aspect": 2.0458249870685443,
+          "interior_count": 211,
+          "interior_area_fraction": 0.6506805419921875,
+          "small_region_area_fraction": 0.0087127685546875,
+          "frame_region_area_fraction": 0.2256011962890625,
+          "watershedline_fraction": 0.1150054931640625
+        },
+        "ridge_plus5": {
+          "count": 282,
+          "allcell_count": 353,
+          "median_area": 92.5,
+          "area_q10_q90": [
+            25.1,
+            492.1
+          ],
+          "areaweighted_aspect": 2.048765968949744,
+          "interior_count": 215,
+          "interior_area_fraction": 0.651153564453125,
+          "small_region_area_fraction": 0.0089569091796875,
+          "frame_region_area_fraction": 0.224212646484375,
+          "watershedline_fraction": 0.1156768798828125
+        },
+        "contrast_minus5": {
+          "count": 280,
+          "allcell_count": 350,
+          "median_area": 94.5,
+          "area_q10_q90": [
+            24.900000000000002,
+            494.19999999999993
+          ],
+          "areaweighted_aspect": 2.046989226537558,
+          "interior_count": 213,
+          "interior_area_fraction": 0.650787353515625,
+          "small_region_area_fraction": 0.0088348388671875,
+          "frame_region_area_fraction": 0.2248992919921875,
+          "watershedline_fraction": 0.115478515625
+        },
+        "contrast_plus5": {
+          "count": 280,
+          "allcell_count": 350,
+          "median_area": 94.5,
+          "area_q10_q90": [
+            24.900000000000002,
+            494.19999999999993
+          ],
+          "areaweighted_aspect": 2.046989226537558,
+          "interior_count": 213,
+          "interior_area_fraction": 0.650787353515625,
+          "small_region_area_fraction": 0.0088348388671875,
+          "frame_region_area_fraction": 0.2248992919921875,
+          "watershedline_fraction": 0.115478515625
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 0.9971428571428571,
+          "matched_sourcepixel_fraction": 0.974945068359375,
+          "matched_mean_IoU": 0.9923122857307535,
+          "adjacency_Jaccard": 0.8647058823529412,
+          "base_edges": 921,
+          "probe_edges": 981,
+          "base_allcell_count": 350,
+          "probe_allcell_count": 369,
+          "relative_changes": {
+            "count": 0.05714285714285714,
+            "median_area": 0.06349206349206349,
+            "areaweighted_aspect": 0.016834861059877408
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9314285714285714,
+          "matched_sourcepixel_fraction": 0.9466705322265625,
+          "matched_mean_IoU": 0.9841843744978422,
+          "adjacency_Jaccard": 0.8505747126436781,
+          "base_edges": 921,
+          "probe_edges": 850,
+          "base_allcell_count": 350,
+          "probe_allcell_count": 326,
+          "relative_changes": {
+            "count": 0.06785714285714285,
+            "median_area": 0.026455026455026454,
+            "areaweighted_aspect": 0.020911222115103562
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9885714285714285,
+          "matched_sourcepixel_fraction": 0.995941162109375,
+          "matched_mean_IoU": 0.9968213540356632,
+          "adjacency_Jaccard": 0.9762675296655879,
+          "base_edges": 921,
+          "probe_edges": 911,
+          "base_allcell_count": 350,
+          "probe_allcell_count": 346,
+          "relative_changes": {
+            "count": 0.010714285714285714,
+            "median_area": 0.026455026455026454,
+            "areaweighted_aspect": 0.0005687570085471142
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9991084986162397,
+          "adjacency_Jaccard": 0.989247311827957,
+          "base_edges": 921,
+          "probe_edges": 929,
+          "base_allcell_count": 350,
+          "probe_allcell_count": 353,
+          "relative_changes": {
+            "count": 0.007142857142857143,
+            "median_area": 0.021164021164021163,
+            "areaweighted_aspect": 0.0008679783895058767
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 921,
+          "probe_edges": 921,
+          "base_allcell_count": 350,
+          "probe_allcell_count": 350,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 921,
+          "probe_edges": 921,
+          "base_allcell_count": 350,
+          "probe_allcell_count": 350,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.06785714285714285,
+        "median_area": 0.06349206349206349,
+        "areaweighted_aspect": 0.020911222115103562
+      },
+      "minimum_matched_sourcepixel_fraction": 0.9466705322265625,
+      "minimum_adjacency_Jaccard": 0.8505747126436781,
+      "stability_pass": false,
+      "boundary_proxy": {
+        "precision": 0.6761088848970568,
+        "recall": 0.79201244813278,
+        "anchor_pixels": 3856,
+        "predicted_pixels": 7237,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [
+          338
+        ],
+        "graph_edges": 921,
+        "number_of_cells": 350,
+        "coverage_not_geometry_evidence": true
+      }
+    },
+    {
+      "ID": "TRAIN_000498",
+      "image_sha256": "55fad8f268dc88cd32afb7a55b980f44c3964ed8d06dd1fb189b05c2e4a1d01e",
+      "variant_metrics": {
+        "base": {
+          "count": 342,
+          "allcell_count": 376,
+          "median_area": 145.5,
+          "area_q10_q90": [
+            35.300000000000004,
+            307.0
+          ],
+          "areaweighted_aspect": 2.722559643207283,
+          "interior_count": 261,
+          "interior_area_fraction": 0.6527862548828125,
+          "small_region_area_fraction": 0.003936767578125,
+          "frame_region_area_fraction": 0.1962890625,
+          "watershedline_fraction": 0.1469879150390625
+        },
+        "h_minus5": {
+          "count": 349,
+          "allcell_count": 387,
+          "median_area": 142.0,
+          "area_q10_q90": [
+            33.60000000000001,
+            307.0
+          ],
+          "areaweighted_aspect": 2.723026897743935,
+          "interior_count": 268,
+          "interior_area_fraction": 0.6513519287109375,
+          "small_region_area_fraction": 0.004486083984375,
+          "frame_region_area_fraction": 0.195343017578125,
+          "watershedline_fraction": 0.1488189697265625
+        },
+        "h_plus5": {
+          "count": 337,
+          "allcell_count": 369,
+          "median_area": 148.0,
+          "area_q10_q90": [
+            40.0,
+            307.40000000000003
+          ],
+          "areaweighted_aspect": 2.7319376629118994,
+          "interior_count": 256,
+          "interior_area_fraction": 0.6508636474609375,
+          "small_region_area_fraction": 0.003692626953125,
+          "frame_region_area_fraction": 0.1991424560546875,
+          "watershedline_fraction": 0.14630126953125
+        },
+        "ridge_minus5": {
+          "count": 338,
+          "allcell_count": 368,
+          "median_area": 148.0,
+          "area_q10_q90": [
+            37.10000000000001,
+            309.50000000000006
+          ],
+          "areaweighted_aspect": 2.7218882492558234,
+          "interior_count": 257,
+          "interior_area_fraction": 0.65338134765625,
+          "small_region_area_fraction": 0.00360107421875,
+          "frame_region_area_fraction": 0.196624755859375,
+          "watershedline_fraction": 0.146392822265625
+        },
+        "ridge_plus5": {
+          "count": 346,
+          "allcell_count": 384,
+          "median_area": 143.0,
+          "area_q10_q90": [
+            34.5,
+            306.5
+          ],
+          "areaweighted_aspect": 2.7452057737744484,
+          "interior_count": 265,
+          "interior_area_fraction": 0.653350830078125,
+          "small_region_area_fraction": 0.004486083984375,
+          "frame_region_area_fraction": 0.193817138671875,
+          "watershedline_fraction": 0.148345947265625
+        },
+        "contrast_minus5": {
+          "count": 342,
+          "allcell_count": 376,
+          "median_area": 145.5,
+          "area_q10_q90": [
+            35.300000000000004,
+            307.0
+          ],
+          "areaweighted_aspect": 2.722559643207283,
+          "interior_count": 261,
+          "interior_area_fraction": 0.6527862548828125,
+          "small_region_area_fraction": 0.003936767578125,
+          "frame_region_area_fraction": 0.1962890625,
+          "watershedline_fraction": 0.1469879150390625
+        },
+        "contrast_plus5": {
+          "count": 342,
+          "allcell_count": 376,
+          "median_area": 145.5,
+          "area_q10_q90": [
+            35.300000000000004,
+            307.0
+          ],
+          "areaweighted_aspect": 2.722559643207283,
+          "interior_count": 261,
+          "interior_area_fraction": 0.6527862548828125,
+          "small_region_area_fraction": 0.003936767578125,
+          "frame_region_area_fraction": 0.1962890625,
+          "watershedline_fraction": 0.1469879150390625
+        }
+      },
+      "probe_stability": {
+        "h_minus5": {
+          "matched_cell_fraction": 0.9973404255319149,
+          "matched_sourcepixel_fraction": 0.997283935546875,
+          "matched_mean_IoU": 0.992210133678671,
+          "adjacency_Jaccard": 0.9386792452830188,
+          "base_edges": 1013,
+          "probe_edges": 1042,
+          "base_allcell_count": 376,
+          "probe_allcell_count": 387,
+          "relative_changes": {
+            "count": 0.02046783625730994,
+            "median_area": 0.024054982817869417,
+            "areaweighted_aspect": 0.00017162325086907953
+          }
+        },
+        "h_plus5": {
+          "matched_cell_fraction": 0.9813829787234043,
+          "matched_sourcepixel_fraction": 0.9943695068359375,
+          "matched_mean_IoU": 0.9962004603615804,
+          "adjacency_Jaccard": 0.9647058823529412,
+          "base_edges": 1013,
+          "probe_edges": 991,
+          "base_allcell_count": 376,
+          "probe_allcell_count": 369,
+          "relative_changes": {
+            "count": 0.014619883040935672,
+            "median_area": 0.01718213058419244,
+            "areaweighted_aspect": 0.0034445598751213446
+          }
+        },
+        "ridge_minus5": {
+          "matched_cell_fraction": 0.9787234042553191,
+          "matched_sourcepixel_fraction": 0.9935302734375,
+          "matched_mean_IoU": 0.995380820920731,
+          "adjacency_Jaccard": 0.9465500485908649,
+          "base_edges": 1013,
+          "probe_edges": 990,
+          "base_allcell_count": 376,
+          "probe_allcell_count": 368,
+          "relative_changes": {
+            "count": 0.011695906432748537,
+            "median_area": 0.01718213058419244,
+            "areaweighted_aspect": 0.00024660394608237626
+          }
+        },
+        "ridge_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 0.9960877239090046,
+          "adjacency_Jaccard": 0.9570200573065902,
+          "base_edges": 1013,
+          "probe_edges": 1036,
+          "base_allcell_count": 376,
+          "probe_allcell_count": 384,
+          "relative_changes": {
+            "count": 0.011695906432748537,
+            "median_area": 0.01718213058419244,
+            "areaweighted_aspect": 0.00831795572363933
+          }
+        },
+        "contrast_minus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1013,
+          "probe_edges": 1013,
+          "base_allcell_count": 376,
+          "probe_allcell_count": 376,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        },
+        "contrast_plus5": {
+          "matched_cell_fraction": 1.0,
+          "matched_sourcepixel_fraction": 1.0,
+          "matched_mean_IoU": 1.0,
+          "adjacency_Jaccard": 1.0,
+          "base_edges": 1013,
+          "probe_edges": 1013,
+          "base_allcell_count": 376,
+          "probe_allcell_count": 376,
+          "relative_changes": {
+            "count": 0.0,
+            "median_area": 0.0,
+            "areaweighted_aspect": 0.0
+          }
+        }
+      },
+      "max_relative_changes": {
+        "count": 0.02046783625730994,
+        "median_area": 0.024054982817869417,
+        "areaweighted_aspect": 0.00831795572363933
+      },
+      "minimum_matched_sourcepixel_fraction": 0.9935302734375,
+      "minimum_adjacency_Jaccard": 0.9386792452830188,
+      "stability_pass": true,
+      "boundary_proxy": {
+        "precision": 0.5990758650333119,
+        "recall": 0.9731889662284093,
+        "anchor_pixels": 3879,
+        "predicted_pixels": 9306,
+        "informative": true
+      },
+      "global_partition": {
+        "complete_after_forced_linefill": true,
+        "disconnected_cell_IDs": [],
+        "graph_edges": 1013,
+        "number_of_cells": 376,
+        "coverage_not_geometry_evidence": true
+      }
+    }
+  ]
+}

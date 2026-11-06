@@ -1,0 +1,67 @@
+{
+  "scores": {
+    "reference011": 13.0539977718711,
+    "primary": 13.069100137126018,
+    "head": 14.204061114558165,
+    "control_head": 13.957820652670737
+  },
+  "comparison": {
+    "gain": -0.015102365254918482,
+    "fold_gains": [
+      0.02322698754225705,
+      -0.08750950463700313,
+      -0.013713038591648186,
+      0.08848340873213445,
+      -0.07995854767790256
+    ],
+    "positive_folds": 2,
+    "bootstrap_sd": 0.022809792970400474,
+    "conditional_ci95": [
+      -0.05961910206677409,
+      0.028895948758878912
+    ]
+  },
+  "sample_diagnostics": {
+    "improved_squared_error_rows": 199,
+    "worse_rows": 201,
+    "squared_error_gain_quantiles": [
+      -83.35183666953662,
+      -8.982468085193211,
+      -3.0012954954612905,
+      -0.001116755669315643,
+      3.4532666477593406,
+      9.001153909053858,
+      44.27862686118931
+    ],
+    "absolute_error_gain_mean": -0.00150627426430205,
+    "prediction_difference_RMS": 0.39825278039176953,
+    "prediction_abschange_quantiles": [
+      9.210853318109002e-05,
+      0.11956259350276355,
+      0.2292605227069373,
+      0.4621087947457525,
+      0.797309438179532,
+      1.3865000115372368
+    ],
+    "gain_without_top5_improvement_rows": -0.03404610422544252,
+    "top5_row_IDs_diagnostic_only": [
+      "TRAIN_000491",
+      "TRAIN_000064",
+      "TRAIN_000229",
+      "TRAIN_000418",
+      "TRAIN_000202"
+    ],
+    "residual_correlation": 0.9995476699522136
+  },
+  "advance": false,
+  "pooled_train_RMSE": 4.924678954216233,
+  "fold_report_sha256": {
+    "fold-0/report.json": "f2c78484f953b0881a4d6a730713df42d3cc78a440de61a7ad2f08170edb0752",
+    "fold-1/report.json": "2505769e062f8c1b5ef2d9e06dea4f69ee7e367f191f4b62c1b599984e410b5d",
+    "fold-2/report.json": "fec7d659e322a8cf5663264fac1db8528ece6e1d04bbe88e366762ac87f54cfc",
+    "fold-3/report.json": "24bf218b722edf46f0668eaf67748094ad5a4808259917556cf809c381733e7f",
+    "fold-4/report.json": "05a4c9db9851b235d6f1f787955f9ec5fe5fa39e5af044f96fd9756ee6e1f9f0"
+  },
+  "predictions_sha256": "db91a7904cd0c0926f955ecba6969e47102bd678dccd3c2dcfcdb4f7ed2223fc",
+  "seconds": 29.14718895801343
+}

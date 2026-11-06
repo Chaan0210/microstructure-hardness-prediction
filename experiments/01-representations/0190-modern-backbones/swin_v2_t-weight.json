@@ -1,0 +1,42 @@
+{
+  "url": "https://download.pytorch.org/models/swin_v2_t-b137f0e2.pth",
+  "path": "experiments/modern-backbones-190/weights/swin_v2_t-b137f0e2.pth",
+  "enum": "Swin_V2_T_Weights.IMAGENET1K_V1",
+  "bytes": 113902449,
+  "MiB": 108.62584018707275,
+  "SHA256": "b137f0e2d744bbe1e82ad10ddb8dc938676cf04a4332eae66e45c2048ac09711",
+  "official_filename_hash_prefix_verified": true,
+  "strict_state_dict_verified": true,
+  "tensor_entries": 233,
+  "parameters": 28351570,
+  "official_transform": "ImageClassification(\n    crop_size=[256]\n    resize_size=[260]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BICUBIC\n)",
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "metadata": {
+    "num_params": 28351570,
+    "min_size": [
+      256,
+      256
+    ],
+    "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#swintransformer-v2",
+    "_metrics": {
+      "ImageNet-1K": {
+        "acc@1": 82.072,
+        "acc@5": 96.132
+      }
+    },
+    "_ops": 5.94,
+    "_file_size": 108.626,
+    "_docs": "These weights reproduce closely the results of the paper using a similar training recipe."
+  },
+  "seconds_download_and_validation": 3.5817435839999234,
+  "UTC": "2026-10-06T08:51:02.075624+00:00"
+}

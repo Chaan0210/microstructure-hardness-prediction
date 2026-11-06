@@ -1,0 +1,20 @@
+{
+  "recorded_utc": "2026-10-18T19:42:07.910420+00:00",
+  "failure": "Inference provenance check referenced nonexistent train_ids; trainer records full train indices and auxiliary source_ids. Stopped on training split before model inference/test access.",
+  "frozen_recipe_sha256": "192b118e0638e4351f7435b005904bf304cf4748769f7543a7ef56ac61e96084",
+  "original_inference_sha256": "3341540a3531b9c30b0a746b6cf1f3a41d419cf86deb312721eb711a4e70a25e",
+  "new_inference_sha256": "55cf7bc3908031b8a804278c334f465d87862c3b508c463c36a46813cff15270",
+  "original_workflow_sha256": "a3ca39dca7764d2988b9198ece90763686366a01e38cfb902d3af823f0092fca",
+  "new_workflow_sha256": "781551a6400aa75302d20b8c32e1906573535360a0dd599f6a9dba0ac9b28afb",
+  "change": "Replace nonexistent train_ids assertion with pinned data.npz hash and exact source_ids-to-indices assertion. Existing train==range500/query==[]/seed/initial-weight/aux-code/model-hash checks retained. Register repair code hashes without modifying frozen recipe or original sources.",
+  "learning_changes": false,
+  "model_forward_or_descriptors_changed": false,
+  "model_weights_changed": false,
+  "test_inputs_read_before_repair": false,
+  "first_model_sha256": "9344a88d6c31bceda4fc9cdb14e6667f6eacac726b6e077a703a7642edfa94c4",
+  "preserved_failure_logs": {
+    "full500-sourceflow38-s1811-train-features.log": "308284b5578ef1d8ac67191f407809eefd5a29c3ee4e2ccba112dea7b8e793b7",
+    "source-final-dispatch-decision.json": "1ee870889ccc06020ba2f6ab3e5376bd773ac735348837e82c97863866f7880b",
+    "source-candidate-full-fit.log": "a5446de99bb868a09d82ac1fcfd9b5e9e1222eb73a967718054041d270e818b1"
+  }
+}

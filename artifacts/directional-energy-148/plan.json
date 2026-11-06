@@ -1,0 +1,37 @@
+{
+  "study": "148 one directional joint-token anisotropy scalar",
+  "utc": "2026-10-04T12:10:13.147487+00:00",
+  "motivation": "147twooldbankalternatives have negative pooledalignment withremaining018error andinconsistentpartitions; nooldbankblend pursued.140/018 graphenergykeepsH+V only; H-V encodesdirection-dependentchannelchanges thatsumcannotrecover. Thisisrepresentationalmissinginformation,notprovenresidualsignal.",
+  "formula": "Samefixed140B768->QR32 tokenmap36x36. H=meanouterproduct(horizontalneighbor differences); V=meanouterproduct(verticalneighbor differences),1260each. scalar=FrobeniusNormSquared(H-V)/trace(H+V)^2,zeroiftrace<=1e-12. PSDmatrices imply0<=scalar<=1. No directionlabel,lag/rank/epsilon/seedsearch. Appendonefixedblock directional_energy ofwidth1 to585=>586.",
+  "distinction": "042averagesmarginalH/V and070coarseregionalvariance;140hascrosschannelH+V,notdifference.092learnedXYpooling. Rawphysics57alignmentproxiesalreadyexist; thissemanticjoint-tokenanisotropy isnotclaimedindependentof them orphysicalcausality.",
+  "control": "Exact018bootstrap144 with585features; addonecomputedscalaronly. Same5none/ridge1/ridge01/rbf1/rbf01,train-localMinMaxclip/StandardScaler/blockweights,alphalambda*n,innerGroupKFold3,512groupbootstrapselectionfrequencies,sameseedsandmean3honestblocks. No137curve,changedbaseweightsornewneuralfit.",
+  "nested": "Useexactverified015/017honestanchorA213/214onB106/107,excludingV80; recomputeallnewinnercandidates onlyBtrainandfullcandidatesonlyB. WeightsfromBinnerOOFonly,notglobalOOF. A-onlydeepbase/calibration/shortB retained. Full500usesA333/334,B166/167 onlyaftervalidatedlock.",
+  "criterion": "Runall3existingpartitions; advanceonlyifpooleduntrimmedMSE strictlybelow018 andallindependentchecks pass. Noeachpartition/fold/CIgate. Ifnegativeclose thisscalar withouttryingsigneddirection,scale,lag,projectionorblendchanges.",
+  "validation": "Syntheticconstant,one-directionanddiagonalfixtures,sameH+Vdifferentanisotropy;D4oncomputedmaps; independentlyexplicitneighborouterproducts on3cachedimages;all900modelsindependentrawscaling/kernel/linearvalidation,weightsgrouploop,outerlabelpoison. Exact018controlfromcachedmodelsandpredictions; upstream146lineageauditreused.",
+  "resources": "ExistingCPU2,400tokencache reused; noimages/holdout/testduringdevelopment. CPU20fitsperblock*45=900includingzero; noinstall/cost. Positivecandidate:full500additional100featureextractandtest1000afterlock usingofficialexistingBweightsMPS.",
+  "limits": "Boundedstatisticneednotbeuseful. D4aggregationinvarianceisnotwholeDINOimageinvariance. Same400adaptivehistory; report10000IDclusterconditionalCIseed20271207,notsignificanceproof.",
+  "hashes": {
+    "directional_energy_148.py": "63d606f90d837cbe6aadecef90a9f0c583b45e20a6832dd4d293d7e131bf0000",
+    "bootstrap_selector_144.py": "d9f55f8e50cd7327efb8d45d433b8c16f3ede19265c436dffcd024e69b45abc3",
+    "reports/complementary-bank-147-diagnostic.json": "2e18c988a0da8fc77553e260889eead3501e62635f8229789f598fadeb7270de",
+    "reports/candidate018-public-submission.json": "acafec9f89062fc0368d84ccdd4c9fbd18c9c2ae8ae8f51f7fcc57d3b75e0c31",
+    "reports/candidate018-verification.json": "b0278049923656e5e8fec33fa11d5629387c55f3934b2866f2b23909f37e19ac",
+    "artifacts/spatial-joint-140/features.npz": "e4bbdc20e08a924d00e60c391443f26d5a298287b66bf20b8866d8c3f648f867",
+    "artifacts/spatial-joint-140/extraction.json": "8e35e8c7b0604c3cd48003d8d424be5267d78e8d1aff48bd59604a12c8fc5537",
+    "artifacts/patch-attention-092/cache.json": "bd57c6eed406a5a7bf5103cb6c49a09def1a81158c66dc79887cb35eebbb5aec",
+    "artifacts/bootstrap-selector-144/original/report.json": "1d6d0fc65062dd04c1762abad44b757c1d4cd07fcb4336dec13aaaa3dc087625",
+    "artifacts/bootstrap-selector-144/original/predictions.npz": "ec2ac0b3d80a62c63f542f5d6c537c911045f93846fdd21df945a85fc22957ef",
+    "artifacts/bootstrap-selector-144/validation-original.json": "9cb3c3a727b629e4d677333ce6e63c3f317de2a89bc0c7b5635aec7c119599df",
+    "artifacts/bootstrap-selector-144/20261031/report.json": "b348271c8e759ed750d167357ad69f0d731a11dca7070e5c14c4079b5140e2b8",
+    "artifacts/bootstrap-selector-144/20261031/predictions.npz": "bf886dfa0c9c799b73e7c3f1c596bca4f88d67ea5db5faf7f718eb0f31386501",
+    "artifacts/bootstrap-selector-144/validation-20261031.json": "44be855488a748d43236a52cda3c3aba8e4d73475d77044eb9977453547c3412",
+    "artifacts/bootstrap-selector-144/20261101/report.json": "f60fac49edcf5970e936d98d7a3f0166c4a5538836a8211c414285b2100345dd",
+    "artifacts/bootstrap-selector-144/20261101/predictions.npz": "dc919a907efa6c9ff4242320701c0d21c09c389982b92ba58a3df3d9bc12ee1f",
+    "artifacts/bootstrap-selector-144/validation-20261101.json": "73eee032bfd1de09b25356115ca27da206786c9a59c8fea707660d6b7b209691"
+  },
+  "protected": {
+    "artifacts/submission-candidate-017.csv": "4256a5d2636053f8f1d115f39b0265a66a10c3169bd4016309ecdd2b63c3be20",
+    "artifacts/submission-candidate-018.csv": "6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16"
+  },
+  "cost": 0
+}

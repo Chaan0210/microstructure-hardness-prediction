@@ -1,0 +1,133 @@
+{
+  "completed_utc": "2026-10-18T22:09:35.021511+00:00",
+  "execution_outcome": "Completed with a modest user-reported Public improvement and a separate exploratory source candidate. A substantial breakthrough and full end-to-end confirmation were not demonstrated.",
+  "best_public": {
+    "candidate": "candidate-flow38-v1.csv",
+    "csv_sha256": "67181d539493940ee55c901d54c1e44217e8d98a6c4085a0cb318f24a5f7a997",
+    "public_rmse": 8.8706337276,
+    "source": "User reported actual Public RMSE after their manual submission in this conversation. Not independently checked in the competition UI.",
+    "reported_date_kst": "2026-10-19",
+    "recorded_utc": "2026-10-18T15:51:57.431234+00:00",
+    "previous_best": "083",
+    "previous_public_rmse": 8.9179249297,
+    "public_rmse_gain": 0.04729120210000026,
+    "agent_uploaded": false,
+    "final_selection_status": "Not reported; no change made by agent.",
+    "research_policy": "Record outcome only. No coefficient, calibration, feature, hyperparameter, or recipe tuning from this Public feedback."
+  },
+  "matched_original400_conditional_rmse": {
+    "076": 9.4924399566,
+    "082": 9.2567387466,
+    "083": 9.201706802567655,
+    "global_flow38": 9.006878064271838,
+    "source_flow38_two_encoders": 8.977661203129443
+  },
+  "source_increment_vs_current_best": {
+    "gain": 0.029216861142394634,
+    "ci95": [
+      0.004010148546927051,
+      0.05444599631399245
+    ],
+    "positive_folds": 4,
+    "positive_images": 216,
+    "top10_positive_removed_gain": 0.006070833308122303,
+    "diagnostic_groups": {
+      "noise_low": {
+        "n": 203,
+        "current_best_rmse": 7.829634172915112,
+        "source_candidate_rmse": 7.79766795744066
+      },
+      "noise_mid": {
+        "n": 71,
+        "current_best_rmse": 7.627405027974667,
+        "source_candidate_rmse": 7.636847118202899
+      },
+      "noise_high": {
+        "n": 126,
+        "current_best_rmse": 11.22440947856979,
+        "source_candidate_rmse": 11.182257230273434
+      },
+      "target_low": {
+        "n": 134,
+        "current_best_rmse": 9.817863232379226,
+        "source_candidate_rmse": 9.79075039080365
+      },
+      "target_mid": {
+        "n": 136,
+        "current_best_rmse": 6.8556561409949985,
+        "source_candidate_rmse": 6.829192728911142
+      },
+      "target_high": {
+        "n": 130,
+        "current_best_rmse": 10.054168427840372,
+        "source_candidate_rmse": 10.019800093110247
+      },
+      "morph_coarse": {
+        "n": 139,
+        "current_best_rmse": 10.896813822600297,
+        "source_candidate_rmse": 10.854733105725233
+      },
+      "morph_mid": {
+        "n": 128,
+        "current_best_rmse": 8.876856925048138,
+        "source_candidate_rmse": 8.86260492372487
+      },
+      "morph_fine": {
+        "n": 131,
+        "current_best_rmse": 6.662309947927724,
+        "source_candidate_rmse": 6.633264056160607
+      },
+      "morph_missing": {
+        "n": 2,
+        "current_best_rmse": 4.678139647351956,
+        "source_candidate_rmse": 4.678139647351956
+      }
+    }
+  },
+  "source_encoder_seed_rmse": [
+    8.97729558138976,
+    8.979504256453374
+  ],
+  "full_system_confirmation_passed": false,
+  "uncertainty": "All500 labels have influenced research. Source encoders and eligibility exclude outer-query originals; inherited P104/083 features remain globally trained. Original400 comparisons and all500 partial-block stress tests are conditional. Bootstrap intervals do not account for adaptive search or imply a Private improvement probability.",
+  "recommendation": "Keep globalflow38 as the best recorded Public result. Treat the source candidate as exploratory; the small conditional gain does not establish a reliable replacement or substantial improvement. No final selection was changed.",
+  "artifacts": {
+    "reported_public_best": "candidate-flow38-v1/candidate-flow38-v1.csv",
+    "source_candidate": "candidate-source-flow38-v1/candidate-source-flow38.csv",
+    "source_csv_sha256": "0134d548df303294cb610454a62c1126c134727c8c67f1d537f902e9ead0d75b",
+    "source_recipe": "candidate-source-flow38-v1/frozen-recipe.json",
+    "source_reproduction": "candidate-source-flow38-v1/REPRODUCE.txt",
+    "source_preservation": "source-candidate-preservation.json",
+    "experiment_record": "EXPERIMENTS.md",
+    "report": "FINAL-REPORT.txt",
+    "environment_records": [
+      "environment-core.json",
+      "environment-cellpose.json",
+      "environment-tabpfn.json"
+    ]
+  },
+  "verification": {
+    "rows": 1000,
+    "unique_ordered_ids_schema_finite_fallback": true,
+    "saved_state_replay_max_difference": 0.0,
+    "independent_directory_reproduction_max_difference": 0.0,
+    "byte_identical": true,
+    "six_training_image_feature_checks_max_difference": 0.0,
+    "protected_boundaries_matched": 52,
+    "existing_full_manifest_reused": true
+  },
+  "resources": {
+    "local_only": true,
+    "external_spending": 0,
+    "environment_changes": false,
+    "remaining_disk_GiB": 22.27783203125
+  },
+  "external_actions": {
+    "agent_submission_uploads": 0,
+    "agent_submission_attempts": 0,
+    "agent_final_selection_changes": 0,
+    "user_manually_submitted_global_flow38": true
+  },
+  "deadline_kst": "2026-10-19 10:00",
+  "review_target_kst": "2026-10-19 08:00"
+}

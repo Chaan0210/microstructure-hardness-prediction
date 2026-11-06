@@ -1,0 +1,43 @@
+This candidate was frozen on October 19 at 04:07 KST, before test inference. It has no Public score. Global flow38 remains the user's reported Public best at 8.8706337276.
+
+Matched conditional validation on the original 400 images:
+  083:                   9.2017068026
+  Global flow38:         9.0068780643
+  Two source encoders:   8.9776612031
+The increment over global flow38 is 0.0292168611, with 4/5 folds improving, a paired image-ID interval of [0.0040101, 0.0544460], and gain 0.0060708 after removing the ten largest positive contributors as a sensitivity check. All rows remain in the primary metric. These labels have been reused extensively. The new encoders exclude validation sources, but inherited P104/083 representations have historical global exposure. The original all-500, complete end-to-end confirmation protocol has not passed.
+
+Exact prediction formula:
+  p083 + eligible * [
+    .384 * (mean_encoder(mean3 TabPFN(P104+sourceF38)) - mean3 TabPFN(P104))
+    + .128 * (mean_encoder(Ridge100(P104+sourceF38)) - Ridge100(P104))
+    + .128 * (mean_encoder(exp(log-Ridge100(P104+sourceF38))) - exp(log-Ridge100(P104)))
+  ]
+Encoder predictions are averaged equally. Log predictions are exponentiated before averaging. Failed-segmentation rows retain 083 exactly. The coefficients are inherited fixed block weights; none was fitted to Public scores or test predictions.
+
+Both encoders start from the eligible original CPSAM weights, SHA256:
+  e1440429eb384f95afe32bcba6510f90d518eaedc917ede549bed6804004abe2
+Training seeds are 2026101811 and 2026101823. Each final encoder uses the 250 lower-noise originals selected within the 500 training images, with fixed original-image weak annotations. Settings: 300 updates, effective batch 4 / microbatch 1, learning rate 2e-5, warmup 15, cosine floor .05, AdamW weight decay .1, foreach=False, dropout .4, and gradient checkpointing. The permitted original-image transformations and covariant annotation transforms are implemented in source_h300_v2.py. Auxiliary training uses no hardness labels, test images, or separately rendered images.
+
+Inference uses image-local 1st/99th percentiles, one grayscale channel, float32 MPS, and two-view batches over 0/90/180/270 degrees. The 38 declared flow/confidence/spatial descriptors are averaged across views. Heads use all 500 provided labels: local TabPFN 3.5 on CPU, eight estimators, seeds 0/100/200; and Ridge alpha 100 on raw and natural-log targets with train-median imputation and StandardScaler. The log inverse is ordinary exp. The identical P104 controls are pinned from ../candidate-flow46-v1.
+
+Exact fields, inputs, seeds, coefficients and source hashes are in frozen-recipe.json. Encoder states, recipes and curves are preserved in:
+  ../source-h300/full500-sourceflow38-s1811/
+  ../source-h300/full500-sourceflow38-s1823/
+Readout states are in models/<encoder-tag>/; train/test features and provenance are in features/.
+
+One metadata check required repair. It referenced a train_ids field that the trainer does not write. Inference stopped on the training split before processing images. The v2 helper checks the pinned data hash and source_ids/index correspondence instead. The original code, recipe, weights and failure logs are preserved. No learning, model-forward, descriptor or prediction rule changed. metadata-repair.json pins this repair.
+
+From ., reproduce from saved states in a NEW directory:
+  .venv/bin/python experiments/supervised-renewal-20261018-0625/reproduce_source_flow38.py --mode states --output-dir experiments/supervised-renewal-20261018-0625/replay-source-flow38-v1
+
+The helper refuses an existing output directory. Other modes require a different new directory name:
+  --mode heads     Refit heads from the preserved training features.
+  --mode features  Regenerate test features from the saved encoders.
+  --mode full      Retrain both encoders under fresh tags, extract features, fit heads, and run inference/replay. Requires at least 32 GiB free and existing MPS support.
+These modes keep the learning settings and seeds fixed. Existing grain-cellpose-220 and tabpfn-v2 environments are used; no installation, download, paid service or submission is needed. Fresh MPS training can show platform numerical variation. Saved-state replay is the exact numerical check.
+
+To resume the original production workflow after an interrupted stage:
+  experiments/grain-cellpose-220/.venv/bin/python experiments/supervised-renewal-20261018-0625/fit_source_flow38_v2.py --candidate experiments/supervised-renewal-20261018-0625/candidate-source-flow38-v1
+Use the fresh-directory helper for retraining; do not invoke the raw trainer with a protected final encoder tag.
+
+csv-verification.json and replay-verification.json are written after completion. They check 1,000 unique IDs in sample order, the ID/hardness schema, finite predictions, unchanged fallback and saved-state replay. Baseline preservation is recorded in ../baseline-protection.json and ../current-best-protection.json. No agent upload or final-selection change was made.

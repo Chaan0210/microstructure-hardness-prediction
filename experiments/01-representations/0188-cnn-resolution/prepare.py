@@ -1,0 +1,28 @@
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[3]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+from pathlib import Path
+import json,hashlib,datetime,shutil
+R=Path(__file__).resolve().parent;P=_RepoPath(__file__).resolve().parents[3];D=_repo_path(P, 'experiments/cnn-scale-floor-187');B=_repo_path(P, 'experiments/pretrained-cnn-185')
+def read(p):return json.loads(p.read_text())
+def sha(p):
+ h=hashlib.sha256()
+ with p.open('rb') as f:
+  for b in iter(lambda:f.read(1048576),b''):h.update(b)
+ return h.hexdigest()
+def write(p,x):
+ with p.open('x') as f:json.dump(x,f,indent=2)
+old=read(_repo_path(D, 'plan.json'));protected=read(_repo_path(D, 'preservation.json'))
+for p in D.rglob('*'):
+ if p.is_file() and not any(v in p.parts for v in ['cache','tmp','__pycache__']):protected[str(p.relative_to(P))]=sha(p)
+for n,h in protected.items():assert sha(_repo_path(P, n))==h,n
+choices={str(k):read(_repo_path(D, 'resnet50', f'fold-{k}/selection.json'))['winner'] for k in range(5)}
+p={'study':188,'created_UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'authorization':'Parentexplicitlyauthorizesnative256versuswhole224singleinputaxisResNet5outerfitswith187innerselsettingslocked;shortsmokefirst;nootherresolutionsweep,installation,download,cost,holdout,test,resplit,full500,newCSV,upload.','models':['resnet50'],'IDs':old['IDs'],'folds':old['folds'],'input_sha256':old['input_sha256'],'recipes':old['recipes'],'locked_outer_recipes':choices,'smoke_IDs':[old['IDs'][i] for i in [0,133,266]],'only_change':'Nativewhole256withoutresize versus185/187whole256->224PILbicubic. SameRGBImageNetnormalization;no cropping,augmentationornewactivation/unfreezing.','scaler_policy':old['scaler_policy'],'warmstart':'Refittrain-onlyRMSscalerand100epochheadat256; same187untrainedweights/headseed/order/loss/optimizer/dropout. Do notcarry224trainedheadorscalervaluesoverto256features.','adaptation':'Exact187train() reused bysourcehash:tail layer4,BNaffine/statsfixed,prefixcached,headGELU64dropout.25,12epochs,240outerupdates,micro8/effective16,SmoothL1beta1,globalclip1,shareddecoupledWD.01,cosinefactor.1..1. Eachfold187innerselectedoptimizer/LR/headseed202710185+k/adaptationseed202710186+100*k+99 locked.','selection_limit':'No256innerretuning. SettingspreviouslychosenusingonlyeachoutertraininnerOOF at224. Resolutioncomparisonconditionedon224selectedrecipe. ResNetchosenafterreused400showedbetterstandalonerepresentationthanB0; thisarchitecturalchoiceandlongresearchhistorycanbiasoptimism. Noindependenttestclaim.','control224':{'report':str((_repo_path(D, 'resnet50/report.json')).relative_to(P)),'report_sha256':sha(_repo_path(D, 'resnet50/report.json')),'OOF':str((_repo_path(D, 'resnet50/OOF.npz')).relative_to(P)),'OOF_sha256':sha(_repo_path(D, 'resnet50/OOF.npz')),'validation_sha256':sha(_repo_path(D, 'resnet50/validation.json'))},'evaluation':'All400original5foldOOF primary:standaloneandfixed.9best021+.1CNN,paired256vs224gains/folds/groupbootstrap,021residualcorrelation. Noouterearlystoporconfigurationselection. PositiveconsistentwholeOOFimprovementrequiredforconsideringfutureexpansion; noexpansionexecutedin188.','boundary_proxy':'Label-freefinecontrast=mean(abs(GaussianLaplacian(raw256,sigma1)))/std(raw256),interior3pxexcluded; highfinegroup usesperoutertrainq75 threshold. Gaussian-gradient sigma1 rawtop10%interiorpseudo-boundaries:measuremean-gradientretentionafter224bicubicthen256bicubicroundtrip;roundtripisdiagnosticandNOTtheactual224modelinput. ReportnRMSEandpairedraw/roundtripproxyvalues. Proxiesmayreflectnoise/contrast,nottruegrainboundariesorphysicalscale. Nochoicebasedonsubgroupoutcome.','failure_groups':'Useunchanged166persistent_large33posthocmaskand187sparse-labelmask;descriptiveonly,alongsidecomplementsandall400. Neverselectmodelonfailure33.','audit':'CPU/MPSfeaturemaxabs<.001smoke;exactsmoke/extractandinputSHAs;all5trainedmodelsCPUabserror<.002,MPSreloadexact;train-onlyRMS/targetstats,officialBN/prefix/initialweights/order/LR/updates/ID/finiteverified;oneouterfull100+12epochheldoutlabelpoisonreplayexact.','resources':{'CPU_threads':2,'max_RSS_plus_MPS':6000000000,'swap_growth':0,'feature_smoke_seconds':300,'extract_seconds':600,'training_seconds':900,'audit_seconds':600},'training_smoke':'Firstouterfoldfull12epochfitservesasstrictlyreusabletrainingbenchmark; beforeother4fits requirefinite/reload/BNpassand5*firstfitseconds+60<900. Noaccuracythresholdortuning.','cost':0,'no_download':True}
+write(_repo_path(R, 'plan.json'),p);write(_repo_path(R, 'preservation.json'),protected)
+for n in ['cache','config','tmp']:(_repo_path(R, n)).mkdir()
+s=(_repo_path(D, 'common.py')).read_text().replace("if p.is_relative_to(P/'data'):raise RuntimeError('Holdout/test/rawlabel access forbidden '+str(p))", "if p.is_relative_to(P/'data') and p not in allowed:raise RuntimeError('Nondevelopment image/rawlabel access forbidden '+str(p))").replace("np.asarray(im.resize((224,224),Image.Resampling.BICUBIC),dtype=np.float32)","np.asarray(im,dtype=np.float32)")
+(_repo_path(R, 'common.py')).write_text(s)
+s=(_repo_path(D, 'launch.py')).read_text().replace("['run.py','probe.py','validate.py','summarize.py']","['features.py','study.py','validate.py','summarize.py']");(_repo_path(R, 'launch.py')).write_text(s)
+shutil.copyfile(_repo_path(B, 'features.py'),_repo_path(R, 'features.py'))
+print(json.dumps({'prepared':True,'protected_files':len(protected),'choices':choices,'plan_SHA256':sha(_repo_path(R, 'plan.json'))}))

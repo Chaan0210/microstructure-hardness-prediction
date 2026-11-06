@@ -1,0 +1,153 @@
+{
+  "outcome": "Original fixedprimary failed; noresplits orcandidate. Best007preserved.",
+  "results": {
+    "split": "original",
+    "scores": {
+      "reference007": {
+        "rmse": 13.241596955038409,
+        "fold_rmse": [
+          13.200972349680994,
+          12.726138894776982,
+          14.308109808709345,
+          12.375441992213231,
+          13.513163828337742
+        ]
+      },
+      "adapted_mlp": {
+        "rmse": 14.093416817235806,
+        "fold_rmse": [
+          14.49008688873312,
+          14.000266462337432,
+          15.008308867174023,
+          13.25873649146048,
+          13.642158203882525
+        ]
+      },
+      "primary": {
+        "rmse": 13.248855404164779,
+        "fold_rmse": [
+          13.20456816357259,
+          12.739022435159736,
+          14.318591999484035,
+          12.398544048971049,
+          13.500798614542395
+        ]
+      },
+      "reference003": {
+        "rmse": 13.705696031698212,
+        "fold_rmse": [
+          13.539394483459153,
+          13.218378105383424,
+          14.680453686399362,
+          12.991004741250547,
+          14.032386512109253
+        ]
+      }
+    },
+    "comparison": {
+      "gain": -0.007258449126370081,
+      "fold_gains": [
+        -0.0035958138915965776,
+        -0.012883540382754077,
+        -0.010482190774689926,
+        -0.023102056757817735,
+        0.012365213795346719
+      ],
+      "positive_folds": 1,
+      "bootstrap_sd": 0.005027486587682948,
+      "conditional_ci95": [
+        -0.017106873186489447,
+        0.0024596657145319356
+      ],
+      "adapted_frozen_mlp_residual_correlation": 0.9996196363924945
+    },
+    "train_rmse_pooled": 0.5894399312672497,
+    "seconds": 18.438553582993336,
+    "extraction_seconds": 7.729500667017419,
+    "MLP_fit_seconds": 6.44132116594119,
+    "rss_peak_bytes": 2468462592,
+    "predictions_sha256": "bbd5dc516d5ae6a9afedbb562fd3aeb65675f80200610c0c0a8d95bb774fff9c",
+    "new_candidate": null
+  },
+  "validation": {
+    "passed": true,
+    "experiment": "059",
+    "results": {
+      "original": {
+        "scores": {
+          "reference007": {
+            "rmse": 13.241596955038409,
+            "fold_rmse": [
+              13.200972349680994,
+              12.726138894776982,
+              14.308109808709345,
+              12.375441992213231,
+              13.513163828337742
+            ]
+          },
+          "adapted_mlp": {
+            "rmse": 14.093416817235806,
+            "fold_rmse": [
+              14.49008688873312,
+              14.000266462337432,
+              15.008308867174023,
+              13.25873649146048,
+              13.642158203882525
+            ]
+          },
+          "primary": {
+            "rmse": 13.248855404164779,
+            "fold_rmse": [
+              13.20456816357259,
+              12.739022435159736,
+              14.318591999484035,
+              12.398544048971049,
+              13.500798614542395
+            ]
+          },
+          "reference003": {
+            "rmse": 13.705696031698212,
+            "fold_rmse": [
+              13.539394483459153,
+              13.218378105383424,
+              14.680453686399362,
+              12.991004741250547,
+              14.032386512109253
+            ]
+          }
+        },
+        "comparison": {
+          "gain": -0.007258449126370081,
+          "fold_gains": [
+            -0.0035958138915965776,
+            -0.012883540382754077,
+            -0.010482190774689926,
+            -0.023102056757817735,
+            0.012365213795346719
+          ],
+          "positive_folds": 1,
+          "bootstrap_sd": 0.005027486587682948,
+          "conditional_ci95": [
+            -0.017106873186489447,
+            0.0024596657145319356
+          ],
+          "adapted_frozen_mlp_residual_correlation": 0.9996196363924945
+        },
+        "train_rmse": 0.5894399312672497,
+        "model_reload_max_error": 0.0,
+        "standalone_labelrange_exceedances": 0,
+        "seconds": 18.438553582993336
+      }
+    },
+    "models_verified": 15,
+    "feature_reproduction_max_error": 4.76837158203125e-07,
+    "independent100epoch_replay_error": 0.0,
+    "protected_files": 18,
+    "043_historical_anchor_files_verified": 37,
+    "seconds": 2.68300195899792,
+    "scope": "Development400only,noholdout/test/candidateCSV/upload/install/cost; no alternative hyperparameters selected.",
+    "bias": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+  },
+  "scope": "Development400only,cost0,noinstall/holdout/test/CSV/upload",
+  "remaining_interpretation": "Two-stageRidge-adaptedfeatures+MLP ineffective; this doesnot test jointMLP-backboneend-to-end adaptation."
+}

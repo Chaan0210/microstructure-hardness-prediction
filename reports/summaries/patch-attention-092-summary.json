@@ -1,0 +1,353 @@
+{
+  "study": "092 one fixed local gatedattention pooling pilot with matchedmeancontrol",
+  "decision": "No validated materialimprovement. Terminate this patchattention direction as requested; no alternative gate,width,temperature,seed,epoch,blend ormean-onlycandidate. Best011 remains unchanged.",
+  "results": {
+    "original": {
+      "scores": {
+        "mean": {
+          "rmse": 14.595534378382094,
+          "fold_rmse": [
+            15.920105123907328,
+            14.08949012731469,
+            13.807270607273196,
+            14.250477295044325,
+            14.81444615872174
+          ]
+        },
+        "attention": {
+          "rmse": 14.231527644939877,
+          "fold_rmse": [
+            15.210503818679866,
+            13.841099884600784,
+            13.433301582133593,
+            13.885211564944248,
+            14.713725956060713
+          ]
+        },
+        "reference011": {
+          "rmse": 13.0539977718711,
+          "fold_rmse": [
+            13.063217512187048,
+            12.38751393690129,
+            14.122591032877722,
+            12.1470942497908,
+            13.451269815048137
+          ]
+        },
+        "mean_blend": {
+          "rmse": 13.05229149492242,
+          "fold_rmse": [
+            13.197937048139162,
+            12.30815531301493,
+            13.976808377401316,
+            12.216843760939838,
+            13.473414300331175
+          ]
+        },
+        "attention_blend": {
+          "rmse": 13.012539733759176,
+          "fold_rmse": [
+            13.126070954853478,
+            12.267292710541563,
+            13.945128558782159,
+            12.182270587097218,
+            13.452747499196468
+          ]
+        }
+      },
+      "comparisons": {
+        "attention_vs_mean": {
+          "gain": 0.364006733442217,
+          "fold_gains": [
+            0.7096013052274621,
+            0.24839024271390642,
+            0.37396902513960306,
+            0.36526573010007723,
+            0.10072020266102655
+          ],
+          "positive_folds": 5,
+          "bootstrap_sd": 0.09406902037040792,
+          "conditional_ci95": [
+            0.18335812008976862,
+            0.5444852534570991
+          ]
+        },
+        "attentionblend_vs_meanblend": {
+          "gain": 0.039751761163243415,
+          "fold_gains": [
+            0.07186609328568316,
+            0.040862602473367815,
+            0.03167981861915692,
+            0.034573173842620264,
+            0.020666801134707313
+          ],
+          "positive_folds": 5,
+          "bootstrap_sd": 0.009634288028669388,
+          "conditional_ci95": [
+            0.02178899462879267,
+            0.058687424785591885
+          ]
+        },
+        "attentionblend_vs011": {
+          "gain": 0.041458038111922946,
+          "fold_gains": [
+            -0.06285344266643023,
+            0.12022122635972643,
+            0.17746247409556304,
+            -0.03517633730641734,
+            -0.0014776841483303826
+          ],
+          "positive_folds": 2,
+          "bootstrap_sd": 0.035409929998848504,
+          "conditional_ci95": [
+            -0.027125127771971156,
+            0.11163227550673081
+          ]
+        }
+      },
+      "sample_diagnostics": {
+        "improved_squared_error_rows": 209,
+        "worse_rows": 191,
+        "squared_error_gain_quantiles": [
+          -120.0554610983711,
+          -14.48240898324919,
+          -5.188421164045039,
+          0.27462013571900845,
+          6.344449810551289,
+          17.735655013868563,
+          104.86306399380419
+        ],
+        "absolute_error_gain_mean": 0.033389432441660316,
+        "prediction_difference_RMS": 0.6907017070761784,
+        "prediction_abschange_quantiles": [
+          0.001318868502778514,
+          0.2036254683808707,
+          0.41311483536797766,
+          0.7355949302225611,
+          1.3387912972888343,
+          2.4931538350828646
+        ],
+        "gain_without_top5_improvement_rows": 0.0008897187676009111,
+        "top5_row_IDs_diagnostic_only": [
+          "TRAIN_000438",
+          "TRAIN_000331",
+          "TRAIN_000227",
+          "TRAIN_000071",
+          "TRAIN_000168"
+        ],
+        "residual_correlation": 0.9986035478031389
+      },
+      "advance": false,
+      "material_gate": false,
+      "report_sha256": "ac4fd3bc846d0ad89541379a4a2071c035cb06e88523b1112b892b1182bc7d63",
+      "predictions_sha256": "f91201375901dae1dacd30af1310450bfbbfc55ac7958019d039eab3882f83df",
+      "training_and_weight_diagnostics": {
+        "mean": {
+          "parameters_each": 12913,
+          "pooled_train_RMSE": 9.639842705692441,
+          "effective_patch_count_quantiles": [
+            1296.0,
+            1296.0,
+            1296.0,
+            1296.0,
+            1296.0,
+            1296.0,
+            1296.0
+          ],
+          "max_weight_quantiles": [
+            0.0007716049440205097,
+            0.0007716049440205097,
+            0.0007716049440205097,
+            0.0007716049440205097,
+            0.0007716049440205097,
+            0.0007716049440205097,
+            0.0007716049440205097
+          ],
+          "initial_loss_mean": 0.3781435408441939,
+          "final_loss_mean": 0.14504610438061719,
+          "total_fit_seconds": 89.64478579099523,
+          "max_RSS_bytes": 3688267776,
+          "max_MPS_bytes": 53084160
+        },
+        "attention": {
+          "parameters_each": 12913,
+          "pooled_train_RMSE": 9.179719201095596,
+          "effective_patch_count_quantiles": [
+            720.8403930664062,
+            895.5128479003906,
+            980.8673553466797,
+            1066.4950561523438,
+            1116.3875427246094,
+            1168.5614990234376,
+            1259.730712890625
+          ],
+          "max_weight_quantiles": [
+            0.0011113981017842889,
+            0.0014455691212788226,
+            0.0016077359323389828,
+            0.0017667464562691748,
+            0.0020109929027967155,
+            0.0023348445538431406,
+            0.003526147920638323
+          ],
+          "initial_loss_mean": 0.37847827262054123,
+          "final_loss_mean": 0.13626481780647737,
+          "total_fit_seconds": 89.2935127489618,
+          "max_RSS_bytes": 3688267776,
+          "max_MPS_bytes": 53100544
+        }
+      }
+    }
+  },
+  "config": {
+    "hidden": 16,
+    "epochs": 20,
+    "dropout": 0.25,
+    "lr": 0.001,
+    "min_lr": 1e-05,
+    "weight_decay": 0.1,
+    "clip": 1.0,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "seed": 20270322,
+    "blend_new": 0.1
+  },
+  "architecture": "FrozenofficialB504 lastnormalized1296patchtokens x768,plusfixed(x,y)coordinates in[-1,1]. Foldtrainchannelstandardization. Shared Linear770->16 GELU; g=tanh(Vh)*sigmoid(Uh),V/U16->16. Values=concat(h,g)32. Attention score=sum(g)/sqrt16,softmax across1296patches; mean usesuniformweights. BothsameDropout.25 andLinear32->1. Exactly12913trainableparameters each; allweights are active inbotharms. No unusedattention-only parameters or artificialpadding. The sameg also contributesvaluefeatures.",
+  "position_policy": "NoD4/crop/rotation/reflectionaugmentation, no labelinvariance assumed. Fixedabsolutegridcoordinates andfrozenDINOpositionalinformation retained. Pooling iscommutative onlyover token-coordinatepairs; rotatingtheinput isnot assumed to preserveprediction/label.",
+  "weak_hypothesis": "Hardness-relevant localpatterns mayneed label-trained importance weighting instead offixedglobalstatistics. Evidence isweak: previous spatial/Fisher/covariancevariants failed, and nolocalgroundtruth establishes the missingcue. User authorized onefixedfeasibility/comparison,not abroadsearch.",
+  "screen": "Resourcepass first. Original5fold pilot usesfixed20epochendpoint. Advance onlyif attentionstandalone beatsmean,attentionblend beatsmeanblend,andattentionblend beats011 with>=3/5foldgains. No firstfoldperformance selection. Onfailure terminate thisdirection, noarchitecture/rank/temperature/epoch/ratio changes.",
+  "confirmation": "Samecomparison inbothknownresplits. Promotionrequiresall3screenpasses and materialgain>=.03vs011,conditionalpaired95%lower>0,andgainpositiveafterremovingtop5improvementrows inall3;independentvalidationpasses. No automaticupload.",
+  "resource_benchmark": {
+    "arms": {
+      "mean": {
+        "parameters": 12913,
+        "initial_state_sha256": "6829589ccf25983fd257e7af6570b082674b89090cd9197d1c72dcb72e581cb1",
+        "median_microstep_seconds": 0.007576625037472695,
+        "first_parameter_gradient_norms": {
+          "project.weight": 1.307174801826477,
+          "project.bias": 0.12908516824245453,
+          "gate_v.weight": 0.10020098835229874,
+          "gate_v.bias": 0.17480969429016113,
+          "gate_u.weight": 0.01295778900384903,
+          "gate_u.bias": 0.014573564752936363,
+          "readout.weight": 0.5641302466392517,
+          "readout.bias": 0.7146974802017212
+        },
+        "rss_peak_bytes": 2224963584,
+        "mps_driver_bytes": 53084160
+      },
+      "attention": {
+        "parameters": 12913,
+        "initial_state_sha256": "6829589ccf25983fd257e7af6570b082674b89090cd9197d1c72dcb72e581cb1",
+        "median_microstep_seconds": 0.005603292025625706,
+        "first_parameter_gradient_norms": {
+          "project.weight": 1.3090144395828247,
+          "project.bias": 0.1296546757221222,
+          "gate_v.weight": 0.10093376785516739,
+          "gate_v.bias": 0.176213338971138,
+          "gate_u.weight": 0.013512247242033482,
+          "gate_u.bias": 0.015087231062352657,
+          "readout.weight": 0.544238269329071,
+          "readout.bias": 0.7199348211288452
+        },
+        "rss_peak_bytes": 2224963584,
+        "mps_driver_bytes": 53100544
+      }
+    },
+    "projected_paired5fold_seconds_with25pct_overhead": 263.598341261968,
+    "resource_pass": true
+  },
+  "first_full_pair": {
+    "first_pair_seconds": 36.818262166983914,
+    "projected5fold_seconds": 184.09131083491957,
+    "rss_peak_bytes": 2912501760,
+    "mps_driver_bytes": 53100544,
+    "resource_pass": true,
+    "pair_reused": true,
+    "fold_report_sha256": "d577385bde40217c6ec1757dc36b2c1316e41cbea11794fe4e1c7986a08b4734"
+  },
+  "cache": {
+    "shape": [
+      400,
+      1296,
+      768
+    ],
+    "dtype": "float32",
+    "token_sha256": "cbb4169b58b8961321696d9326f082912d571a8c33a63ce38593e3bfa6a3945e",
+    "moments_sha256": "807909870269d2767855a2a27d16043b01e2d91bd74f62759c9df9747c837616",
+    "source_prefix_sha256": "a4775c87ff828dbaa3eee169af6498f5c78f6276b09fdef3f84c3d6dd03cf113",
+    "all400_pooled_descriptor_exact": true,
+    "frozen_weights_unchanged": true,
+    "seconds": 10.311586041992996,
+    "rss_peak_bytes": 2413035520,
+    "mps_driver_bytes": 1453998080
+  },
+  "validation": {
+    "passed": true,
+    "eligible_for_candidate": false,
+    "models_verified": 10,
+    "parameters_each": 12913,
+    "all400_token_moments_exact": true,
+    "raw_image_lasttokens_reextracted_exact": 3,
+    "raw_reextraction_indices": [
+      0,
+      199,
+      399
+    ],
+    "max_MPS_reload_error": 0.0,
+    "max_CPU_MPS_error": 4.282948623313132e-06,
+    "identical_initial_states_orders_rng_seed_streams": true,
+    "all_parameters_active_in_both_arms": true,
+    "train_only_normalizers_targets": true,
+    "position_coordinates_retained": true,
+    "label_invariance_assumed": false,
+    "replay": [
+      {
+        "split": "original",
+        "outer_validation_labels_and_normalizer_moments_changed_only_in_memory": true,
+        "both20epoch_states_exact": true,
+        "prediction_errors": {
+          "mean": 0.0,
+          "attention": 0.0
+        }
+      }
+    ],
+    "same_sample_consistency": {
+      "partitions": 1,
+      "same400_not_independent": true,
+      "improved_in_n_partitions": {
+        "0": 191,
+        "1": 209
+      }
+    },
+    "protected011_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "holdout_test_selection_access": false,
+    "cost": 0,
+    "seconds": 51.03167445899453,
+    "limits": "Weak exploratory hypothesis and historicallyreused400. Resplits notindependent. Fixedarchitecture/seed andtinyset mayunderfit/overfit. Attentionweights aremodelweights,notprovenphysicalimportance. ConditionalCIs omit fitting/adaptiveselection.",
+    "source_sha256": "12623013e9c69df71d8c2bb0c41fbf3fcc8c33c59054df24f890db9cc0aa11ab"
+  },
+  "interpretation": "Matchedparameter comparison isolates learned spatial weighting from modelsize andnonlinear tokenencoding. Gatingfeatures contributevalues inbotharms; no dormantparameter padding. Nonuniform learnedweights indicateanactiveweightingmechanism, not verifiedphysicalimportance. Failure tests thisonecompactmodel andschedule,not allattentionmodels or thedata ceiling.",
+  "limits": "Weak exploratory hypothesis and historicallyreused400. Resplits notindependent. Fixedarchitecture/seed andtinyset mayunderfit/overfit. Attentionweights aremodelweights,notprovenphysicalimportance. ConditionalCIs omit fitting/adaptiveselection.",
+  "best011": {
+    "CSV": "artifacts/submission-candidate-011.csv",
+    "sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5",
+    "public_rmse_parent_reported": 11.7352685854,
+    "protected_files": 20
+  },
+  "scope": {
+    "cost": 0,
+    "new_install_or_download": false,
+    "external_data": false,
+    "holdout_test_selection_access": false,
+    "new_candidate_created": false,
+    "uploaded": false,
+    "010_unsubmitted": true
+  },
+  "evidence_sha256": {
+    "artifacts/patch-attention-092/plan.json": "515146a057cf5ec45e8fa5ca3f2b62afbd408b71cd4d0805adc59f39d79acd83",
+    "reports/patch-attention-092-validation.json": "6becc891c0a749acff9a97720ffbcb8b1edc0d82dfb937ca97571fd4ac5d7b31",
+    "artifacts/patch-attention-092/cache.json": "bd57c6eed406a5a7bf5103cb6c49a09def1a81158c66dc79887cb35eebbb5aec"
+  },
+  "source_sha256": "298edf1a2243f314580a386b44c50434d16c057c915986eeb38550b0fc500bea"
+}

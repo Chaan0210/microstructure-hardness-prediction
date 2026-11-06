@@ -1,0 +1,6620 @@
+{
+  "definitions": {
+    "inventory": "Every saved standalone and fixed-ensemble candidate/control from studies205 through217. Historical studies001-204 not exhaustively reanalysed. Baseline021 independently checked on all3partitions.",
+    "residual": "r=y-p021; delta=candidate-p021",
+    "A_gain": "2mean(r*delta)",
+    "P": "mean(delta^2)",
+    "MSE_change": "-lambda*A_gain+lambda^2*P",
+    "lambda_range": [
+      0,
+      1
+    ],
+    "lambda_grid": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "oracle": "clip(A_gain/(2P),0,1), retrospective only; never deploy or select weights",
+    "paired_losses": "all400 per candidate, plus matched standalone controls; no ranking-based omissions"
+  },
+  "coverage": [
+    {
+      "study": 205,
+      "split": "original",
+      "file": "experiments/micronet-frozen-205/OOF.npz",
+      "sha256": "9146afa4734080df11ee7c1daf1d76143957f891e037fbbf6e4fb1f8e06126ee",
+      "all_float_prediction_columns": [
+        "imagenet",
+        "micronet"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 206,
+      "split": "original",
+      "file": "experiments/contrast-augmentation-206/OOF.npz",
+      "sha256": "2af7d6ce94813b2afa3728e94bc33e3a4dd22a5d8a58cd270e2522ac282378ff",
+      "all_float_prediction_columns": [
+        "control",
+        "contrast"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 207,
+      "split": "original",
+      "file": "experiments/checkpoint-averaging-207/OOF.npz",
+      "sha256": "99a0a36911d7b9c77ce8a3b8eb1248f1984046b0622bcd24ef7fdeb2d411164b",
+      "all_float_prediction_columns": [
+        "uniform",
+        "tail_ema",
+        "fixed_uniform",
+        "fixed_tail_ema"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 208,
+      "split": "original",
+      "file": "experiments/update-ema-208/OOF.npz",
+      "sha256": "aef3b3e95036e24f563df868e44c972d4e032a6258c6a527a3beae9b38d134a3",
+      "all_float_prediction_columns": [
+        "last5_uniform",
+        "update_ema"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 209,
+      "split": "20261031",
+      "file": "experiments/ema-repartition-209/20261031/OOF.npz",
+      "sha256": "b7f27b8f0276110c29858e79d2f6ab755d81563a44445a0feba6bc35e472f5ef",
+      "all_float_prediction_columns": [
+        "last5_uniform",
+        "update_ema"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 209,
+      "split": "20261101",
+      "file": "experiments/ema-repartition-209/20261101/OOF.npz",
+      "sha256": "ee39557cfcb969e93e9666cad9f61a71b9a0f65d10d45d336d23e591aac2fd06",
+      "all_float_prediction_columns": [
+        "last5_uniform",
+        "update_ema"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 210,
+      "split": "original",
+      "file": "experiments/convnext-llrd-210/OOF.npz",
+      "sha256": "faeaeb8d7daf43c1938559d734db467e3db1cca30ff31bad93f3d9b3202f38f4",
+      "all_float_prediction_columns": [
+        "prediction"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 211,
+      "split": "original",
+      "file": "experiments/huber-loss-211/OOF.npz",
+      "sha256": "b645549827268dda01514a7984e5ad95118eb25bf4d2f1e9516a28840a627cb9",
+      "all_float_prediction_columns": [
+        "control",
+        "huber"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 212,
+      "split": "20261031",
+      "file": "experiments/huber-repartition-212/20261031/OOF.npz",
+      "sha256": "abf43f0d6770a21676427823fa36156806c073582b0f15d51a4583ea9541e18c",
+      "all_float_prediction_columns": [
+        "control",
+        "huber"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 212,
+      "split": "20261101",
+      "file": "experiments/huber-repartition-212/20261101/OOF.npz",
+      "sha256": "481564fce90a808436dea89fe0d8d3b6fa94a7497aa5f258e661a9df9accc5f6",
+      "all_float_prediction_columns": [
+        "control",
+        "huber"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 213,
+      "split": "original",
+      "file": "experiments/brightness-augmentation-213/OOF.npz",
+      "sha256": "7df0c567b5d371fa6b11118cba64dcfa489d3a6ad6267cc55dac01093f67c35a",
+      "all_float_prediction_columns": [
+        "control",
+        "brightness"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 214,
+      "split": "original",
+      "file": "experiments/gamma-augmentation-214/OOF.npz",
+      "sha256": "ca71ff4a6fddd5e15a2c7955e128506e1eed6a80523373c42a1f647e4ec9e3a8",
+      "all_float_prediction_columns": [
+        "control",
+        "gamma"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 215,
+      "split": "original",
+      "file": "experiments/blur-augmentation-215/OOF.npz",
+      "sha256": "4fdea24c0f778a3ca4cb8093b013a0ddc6468be5c5273a609c49905ccbd7f419",
+      "all_float_prediction_columns": [
+        "control",
+        "blur"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 216,
+      "split": "original",
+      "file": "experiments/resolution-216/OOF.npz",
+      "sha256": "ba9d3aafc6a497f89550d04d2d1bb214359b4d186fc680fd66605dd236dd4cce",
+      "all_float_prediction_columns": [
+        "control",
+        "native"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 217,
+      "split": "20261031",
+      "file": "experiments/resolution-repartition-217/20261031/OOF.npz",
+      "sha256": "e7277400d7b8410a7addd1a8545b461a4c9637f4c91084bd021d8e3c0588de02",
+      "all_float_prediction_columns": [
+        "control",
+        "native"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    },
+    {
+      "study": 217,
+      "split": "20261101",
+      "file": "experiments/resolution-repartition-217/20261101/OOF.npz",
+      "sha256": "050f942e39c4eac6768b1254c157c978f5b2ce6b5684cddd7b8f539ab137d360",
+      "all_float_prediction_columns": [
+        "control",
+        "native"
+      ],
+      "ID_y_fold_exact": true,
+      "manifest_exact": true
+    }
+  ],
+  "candidates": [
+    {
+      "key": "c000",
+      "name": "205:imagenet",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/micronet-frozen-205/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.469000798387578,
+      "A_gain": -15.026751886200822,
+      "A_MSE_linear": 15.026751886200822,
+      "P": 60.77630353650704,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 7.555206942581895,
+          "RMSE": 13.078307888270162
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 22.70745182722717,
+          "RMSE": 13.64530622980059
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 45.456734653935825,
+          "RMSE": 14.454883774411453
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 75.80305542270786,
+          "RMSE": 15.469000798387578
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -41.20925325308927,
+          "P": 62.72547610936283,
+          "RMSE_gain": -3.5585404538771908
+        },
+        {
+          "fold": 1,
+          "A_gain": 2.607271547895979,
+          "P": 63.61045731066447,
+          "RMSE_gain": -2.2890616263348864
+        },
+        {
+          "fold": 2,
+          "A_gain": -20.537229867856183,
+          "P": 60.61760630597215,
+          "RMSE_gain": -2.6861187180762833
+        },
+        {
+          "fold": 3,
+          "A_gain": -11.151808217624604,
+          "P": 68.00407225568583,
+          "RMSE_gain": -2.9144935387705626
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.842739640330031,
+          "P": 48.923905700849915,
+          "RMSE_gain": -1.929209289770549
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c001",
+      "name": "205:micronet",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/micronet-frozen-205/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.874501014170376,
+      "A_gain": -19.120277451711477,
+      "A_MSE_linear": 19.120277451711477,
+      "P": 69.39257471937715,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 9.117105282888941,
+          "RMSE": 13.13788550569294
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 26.908282405700028,
+          "RMSE": 13.798377175722793
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 53.37353136843326,
+          "RMSE": 14.726182860681886
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 88.51285217108862,
+          "RMSE": 15.874501014170376
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 1.1437823158267661,
+          "P": 63.79559284289186,
+          "RMSE_gain": -2.2460191679526673
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.6555717669984802,
+          "P": 53.013710582857,
+          "RMSE_gain": -2.0333756236225167
+        },
+        {
+          "fold": 2,
+          "A_gain": -50.93188713000191,
+          "P": 60.13774167723161,
+          "RMSE_gain": -3.5715840803288117
+        },
+        {
+          "fold": 3,
+          "A_gain": -22.47595849190849,
+          "P": 103.73269158939051,
+          "RMSE_gain": -4.405176532939706
+        },
+        {
+          "fold": 4,
+          "A_gain": -22.681752185475272,
+          "P": 66.28313690451479,
+          "RMSE_gain": -3.0669581853232835
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c002",
+      "name": "205:imagenet:fixed10percent",
+      "split": "original",
+      "kind": "historically_fixed_addition_10percent",
+      "source": "experiments/micronet-frozen-205/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.868464108113013,
+      "A_gain": -1.5026751886201162,
+      "A_MSE_linear": 1.5026751886201162,
+      "P": 0.6077630353650696,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.4136539868653459,
+          "RMSE": 12.802366354103174
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.9032783531513255,
+          "RMSE": 12.821474510794731
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 1.4688730988579388,
+          "RMSE": 12.843512112217033
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 2.1104382239851858,
+          "RMSE": 12.868464108113013
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -4.1209253253089,
+          "P": 0.6272547610936277,
+          "RMSE_gain": -0.18380723173200053
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.26072715478957537,
+          "P": 0.6361045731066431,
+          "RMSE_gain": -0.015399338703529608
+        },
+        {
+          "fold": 2,
+          "A_gain": -2.0537229867857354,
+          "P": 0.6061760630597222,
+          "RMSE_gain": -0.09629342817353326
+        },
+        {
+          "fold": 3,
+          "A_gain": -1.115180821762487,
+          "P": 0.6800407225568549,
+          "RMSE_gain": -0.07382055531656029
+        },
+        {
+          "fold": 4,
+          "A_gain": -0.484273964033035,
+          "P": 0.4892390570085004,
+          "RMSE_gain": -0.03747444743642525
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c003",
+      "name": "205:micronet:fixed10percent",
+      "split": "original",
+      "kind": "historically_fixed_addition_10percent",
+      "source": "experiments/micronet-frozen-205/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.887702811989909,
+      "A_gain": -1.9120277451711598,
+      "A_MSE_linear": 1.9120277451711598,
+      "P": 0.6939257471937711,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.5213772954924006,
+          "RMSE": 12.806572827001771
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 1.1294953093840228,
+          "RMSE": 12.830293277520655
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 1.8243540416748663,
+          "RMSE": 12.85734359498425
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 2.605953492364931,
+          "RMSE": 12.887702811989909
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.11437823158270248,
+          "P": 0.6379559284289188,
+          "RMSE_gain": -0.020397292629057873
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.06555717669985768,
+          "P": 0.5301371058285682,
+          "RMSE_gain": -0.024428484416736396
+        },
+        {
+          "fold": 2,
+          "A_gain": -5.093188713000261,
+          "P": 0.6013774167723167,
+          "RMSE_gain": -0.2053435155938299
+        },
+        {
+          "fold": 3,
+          "A_gain": -2.2475958491908723,
+          "P": 1.0373269158939025,
+          "RMSE_gain": -0.13474040426260459
+        },
+        {
+          "fold": 4,
+          "A_gain": -2.2681752185475106,
+          "P": 0.6628313690451497,
+          "RMSE_gain": -0.1125013656332694
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c004",
+      "name": "205:matched:imagenet->micronet",
+      "split": "original",
+      "kind": "matched_standalone_control",
+      "source": "experiments/micronet-frozen-205/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 15.469000798387578,
+      "candidate_RMSE": 15.874501014170376,
+      "A_gain": 37.982658872367296,
+      "A_MSE_linear": -37.982658872367296,
+      "P": 50.69245562074806,
+      "lambda_nonnegative_oracle": 0.37463818242039615,
+      "unconstrained_beneficial_upper": 0.7492763648407923,
+      "oracle_RMSE_gain": 0.23170745085381306,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 15.469000798387578
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -6.32738624179507,
+          "RMSE": 15.263112377844843
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -6.318215530996632,
+          "RMSE": 15.26341279562074
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.027512132395315803,
+          "RMSE": 15.469890039457644
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 12.709796748380768,
+          "RMSE": 15.874501014170376
+        },
+        {
+          "lambda": 0.37463818242039615,
+          "MSE_change": -7.114877141718807,
+          "RMSE": 15.237293347533765
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 110.5458642262284,
+          "P": 69.2629453908414,
+          "RMSE_gain": 1.3125212859245234
+        },
+        {
+          "fold": 1,
+          "A_gain": 48.10433186758801,
+          "P": 40.77042845467499,
+          "RMSE_gain": 0.25568600271236974
+        },
+        {
+          "fold": 2,
+          "A_gain": 15.477561923517921,
+          "P": 45.39235455692309,
+          "RMSE_gain": -0.8854653622525284
+        },
+        {
+          "fold": 3,
+          "A_gain": 2.957317986546556,
+          "P": 50.010087594535136,
+          "RMSE_gain": -1.490682994169143
+        },
+        {
+          "fold": 4,
+          "A_gain": 12.828218357955581,
+          "P": 48.02646210676569,
+          "RMSE_gain": -1.1377488955527344
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c005",
+      "name": "206:control",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/contrast-augmentation-206/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.032317843077909,
+      "A_gain": -4.174270442114894,
+      "A_MSE_linear": 4.174270442114894,
+      "P": 58.30937901539593,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.68790379899097,
+          "RMSE": 12.9682240139812
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.66447997490643,
+          "RMSE": 13.42204940583643
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 35.929728527746384,
+          "RMSE": 14.121496337341664
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.48364945751083,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -9.546196862234861,
+          "P": 58.54135783901112,
+          "RMSE_gain": -2.425298915897825
+        },
+        {
+          "fold": 1,
+          "A_gain": -7.232548996682286,
+          "P": 50.915427014546694,
+          "RMSE_gain": -2.1900596462379145
+        },
+        {
+          "fold": 2,
+          "A_gain": -11.562320707752665,
+          "P": 38.78525412246517,
+          "RMSE_gain": -1.7214045241357319
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.406614672176547,
+          "P": 91.9777658497377,
+          "RMSE_gain": -2.9282955521614706
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.936900316081176,
+          "P": 51.327090251219,
+          "RMSE_gain": -2.012781273645148
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c006",
+      "name": "206:contrast",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/contrast-augmentation-206/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.04905152563361,
+      "A_gain": -4.819412378455438,
+      "A_MSE_linear": 4.819412378455438,
+      "P": 58.16760916491219,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.840328667420872,
+          "RMSE": 12.974099542751649
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.951608480455768,
+          "RMSE": 13.43274129722833
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 36.333839439104686,
+          "RMSE": 14.135797455994917
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.98702154336763,
+          "RMSE": 15.04905152563361
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -6.463723739757397,
+          "P": 55.93326519010734,
+          "RMSE_gain": -2.237562370923591
+        },
+        {
+          "fold": 1,
+          "A_gain": -9.654822573460358,
+          "P": 50.64784865878245,
+          "RMSE_gain": -2.2648346929032375
+        },
+        {
+          "fold": 2,
+          "A_gain": -8.74649061431342,
+          "P": 40.94093615820651,
+          "RMSE_gain": -1.7000736695443681
+        },
+        {
+          "fold": 3,
+          "A_gain": 8.91176848474042,
+          "P": 93.28947951386817,
+          "RMSE_gain": -3.087135837142256
+        },
+        {
+          "fold": 4,
+          "A_gain": -8.143793449486433,
+          "P": 50.026516303596495,
+          "RMSE_gain": -2.076262573292855
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c007",
+      "name": "206:fixed_control",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/contrast-augmentation-206/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.786200775750695,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c008",
+      "name": "206:fixed_contrast",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/contrast-augmentation-206/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.78877738844605,
+      "A_gain": -0.05598112187256388,
+      "A_MSE_linear": 0.05598112187256388,
+      "P": 0.009915691548732005,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.01461501118993672,
+          "RMSE": 12.786772277983118
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.03046948382346494,
+          "RMSE": 12.787392218964394
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.04756341790058466,
+          "RMSE": 12.788060591649863
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.06589681342129589,
+          "RMSE": 12.78877738844605
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.2711108126939959,
+          "P": 0.008482941262678225,
+          "RMSE_gain": 0.01024356023122408
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.20516969832712567,
+          "P": 0.0075553938777754405,
+          "RMSE_gain": -0.008729140895781029
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.25353287460243223,
+          "P": 0.005269756257604773,
+          "RMSE_gain": 0.009021996710083968
+        },
+        {
+          "fold": 3,
+          "A_gain": -0.31621248199469826,
+          "P": 0.014347815153355873,
+          "RMSE_gain": -0.013626560542199684
+        },
+        {
+          "fold": 4,
+          "A_gain": -0.28316711633742375,
+          "P": 0.01392255119224571,
+          "RMSE_gain": -0.011447650147673016
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c009",
+      "name": "206:matched:control->contrast",
+      "split": "original",
+      "kind": "matched_standalone_control",
+      "source": "experiments/contrast-augmentation-206/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 15.032317843077909,
+      "candidate_RMSE": 15.04905152563361,
+      "A_gain": 0.7642352058222085,
+      "A_MSE_linear": -0.7642352058222085,
+      "P": 1.2676072916790144,
+      "lambda_nonnegative_oracle": 0.30144793692766536,
+      "unconstrained_beneficial_upper": 0.6028958738553307,
+      "oracle_RMSE_gain": 0.003831852391513735,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.11183334572561372,
+          "RMSE": 15.028597618859617
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -0.06521577999135064,
+          "RMSE": 15.030148500774272
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.13985269720278926,
+          "RMSE": 15.036968857868972
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.5033720858568059,
+          "RMSE": 15.04905152563361
+        },
+        {
+          "lambda": 0.30144793692766536,
+          "MSE_change": -0.11518856306129722,
+          "RMSE": 15.028485990686395
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 6.787173693759714,
+          "P": 1.0966079223784617,
+          "RMSE_gain": 0.18773654497423387
+        },
+        {
+          "fold": 1,
+          "A_gain": -1.1015771779614523,
+          "P": 1.0531180430523819,
+          "RMSE_gain": -0.07477504666532298
+        },
+        {
+          "fold": 2,
+          "A_gain": 1.3101802408795102,
+          "P": 0.6500321831816109,
+          "RMSE_gain": 0.021330854591363746
+        },
+        {
+          "fold": 3,
+          "A_gain": -3.053955489963438,
+          "P": 1.752604361603153,
+          "RMSE_gain": -0.15884028498078528
+        },
+        {
+          "fold": 4,
+          "A_gain": -0.1206452376032889,
+          "P": 1.7856739481794648,
+          "RMSE_gain": -0.06348129964770699
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c010",
+      "name": "207:uniform",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/checkpoint-averaging-207/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.032317843077909,
+      "A_gain": -4.174270442114894,
+      "A_MSE_linear": 4.174270442114894,
+      "P": 58.30937901539593,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.68790379899097,
+          "RMSE": 12.9682240139812
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.66447997490643,
+          "RMSE": 13.42204940583643
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 35.929728527746384,
+          "RMSE": 14.121496337341664
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.48364945751083,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -9.546196862234861,
+          "P": 58.54135783901112,
+          "RMSE_gain": -2.425298915897825
+        },
+        {
+          "fold": 1,
+          "A_gain": -7.232548996682286,
+          "P": 50.915427014546694,
+          "RMSE_gain": -2.1900596462379145
+        },
+        {
+          "fold": 2,
+          "A_gain": -11.562320707752665,
+          "P": 38.78525412246517,
+          "RMSE_gain": -1.7214045241357319
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.406614672176547,
+          "P": 91.9777658497377,
+          "RMSE_gain": -2.9282955521614706
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.936900316081176,
+          "P": 51.327090251219,
+          "RMSE_gain": -2.012781273645148
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c011",
+      "name": "207:tail_ema",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/checkpoint-averaging-207/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.02213635358757,
+      "A_gain": -3.533518806051436,
+      "A_MSE_linear": 3.533518806051436,
+      "P": 58.64413154191812,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.548637922882742,
+          "RMSE": 12.962853397330793
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.42779228850525,
+          "RMSE": 13.413229386181126
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 35.63746309686752,
+          "RMSE": 14.11114429713888
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.17765034796956,
+          "RMSE": 15.02213635358757
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -6.9528414102792455,
+          "P": 59.79045252539297,
+          "RMSE_gain": -2.3811597289111255
+        },
+        {
+          "fold": 1,
+          "A_gain": -6.662547500534544,
+          "P": 50.9745762187282,
+          "RMSE_gain": -2.172274253642744
+        },
+        {
+          "fold": 2,
+          "A_gain": -10.513383397326573,
+          "P": 38.516840905422114,
+          "RMSE_gain": -1.6788087251329884
+        },
+        {
+          "fold": 3,
+          "A_gain": 11.925258506534707,
+          "P": 92.0060547502205,
+          "RMSE_gain": -2.9452169302776916
+        },
+        {
+          "fold": 4,
+          "A_gain": -5.464080228651513,
+          "P": 51.93273330982686,
+          "RMSE_gain": -2.0505371402999515
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c012",
+      "name": "207:fixed_uniform",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/checkpoint-averaging-207/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.786200775750695,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c013",
+      "name": "207:fixed_tail_ema",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/checkpoint-averaging-207/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.784042309279304,
+      "A_gain": 0.05614271928795978,
+      "A_MSE_linear": -0.05614271928795978,
+      "P": 0.0009502069235853134,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 59.084729751413,
+      "oracle_RMSE_gain": 0.002158466471390952,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.013976291889265864,
+          "RMSE": 12.785654225964285
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -0.027833807913083562,
+          "RMSE": 12.785112297899248
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -0.0415725480714531,
+          "RMSE": 12.784574992143314
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -0.05519251236437447,
+          "RMSE": 12.784042309279304
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -0.05519251236437447,
+          "RMSE": 12.784042309279304
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.22809175497977843,
+          "P": 0.003298727527893186,
+          "RMSE_gain": 0.00876734189072792
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.04827986241179648,
+          "P": 0.0005714783297268028,
+          "RMSE_gain": 0.0019585650454914116
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.09444465140477606,
+          "P": 0.00034201506884821146,
+          "RMSE_gain": 0.003419037226164434
+        },
+        {
+          "fold": 3,
+          "A_gain": -0.043552940443598455,
+          "P": 0.0001788121918126539,
+          "RMSE_gain": -0.0018036163252990178
+        },
+        {
+          "fold": 4,
+          "A_gain": -0.04654973191295357,
+          "P": 0.0003600014996457136,
+          "RMSE_gain": -0.0018082276530577701
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c014",
+      "name": "207:matched:uniform->tail_ema",
+      "split": "original",
+      "kind": "matched_standalone_control",
+      "source": "experiments/checkpoint-averaging-207/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 15.032317843077909,
+      "candidate_RMSE": 15.02213635358757,
+      "A_gain": 0.42925769522666335,
+      "A_MSE_linear": -0.42925769522666335,
+      "P": 0.12325858568539844,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 3.4825784576361114,
+      "oracle_RMSE_gain": 0.010181489490339146,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.09961076220132843,
+          "RMSE": 15.029004257538727
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -0.18381420119198205,
+          "RMSE": 15.026202631873648
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -0.2526103169719609,
+          "RMSE": 15.023913252490063
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -0.3059991095412649,
+          "RMSE": 15.02213635358757
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -0.3059991095412649,
+          "RMSE": 15.02213635358757
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 1.770694313660556,
+          "P": 0.4264335480867885,
+          "RMSE_gain": 0.044139186986699386
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.5905085150546256,
+          "P": 0.07965622308838646,
+          "RMSE_gain": 0.017785392595170535
+        },
+        {
+          "fold": 2,
+          "A_gain": 1.3595385891206937,
+          "P": 0.04218806165154092,
+          "RMSE_gain": 0.04259579900274346
+        },
+        {
+          "fold": 3,
+          "A_gain": -0.48780292333641195,
+          "P": 0.021842142788227648,
+          "RMSE_gain": -0.016921378116220964
+        },
+        {
+          "fold": 4,
+          "A_gain": -1.0866500183661465,
+          "P": 0.046172952812048605,
+          "RMSE_gain": -0.03775586665480368
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c015",
+      "name": "208:last5_uniform",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/update-ema-208/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.032317843077909,
+      "A_gain": -4.174270442114894,
+      "A_MSE_linear": 4.174270442114894,
+      "P": 58.30937901539593,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.68790379899097,
+          "RMSE": 12.9682240139812
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.66447997490643,
+          "RMSE": 13.42204940583643
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 35.929728527746384,
+          "RMSE": 14.121496337341664
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.48364945751083,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -9.546196862234861,
+          "P": 58.54135783901112,
+          "RMSE_gain": -2.425298915897825
+        },
+        {
+          "fold": 1,
+          "A_gain": -7.232548996682286,
+          "P": 50.915427014546694,
+          "RMSE_gain": -2.1900596462379145
+        },
+        {
+          "fold": 2,
+          "A_gain": -11.562320707752665,
+          "P": 38.78525412246517,
+          "RMSE_gain": -1.7214045241357319
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.406614672176547,
+          "P": 91.9777658497377,
+          "RMSE_gain": -2.9282955521614706
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.936900316081176,
+          "P": 51.327090251219,
+          "RMSE_gain": -2.012781273645148
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c016",
+      "name": "208:update_ema",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/update-ema-208/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 14.864210255122755,
+      "A_gain": -3.0052708981869385,
+      "A_MSE_linear": 3.0052708981869385,
+      "P": 54.452545332501835,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.154601807828099,
+          "RMSE": 12.947645812487915
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 15.115771782218928,
+          "RMSE": 13.364232191189535
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 32.88350992317248,
+          "RMSE": 14.013223761896478
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 57.45781623068877,
+          "RMSE": 14.864210255122755
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -8.943269181081892,
+          "P": 52.73320420246457,
+          "RMSE_gain": -2.213624794356779
+        },
+        {
+          "fold": 1,
+          "A_gain": -4.627541081345808,
+          "P": 48.26396549508919,
+          "RMSE_gain": -2.0059893160627915
+        },
+        {
+          "fold": 2,
+          "A_gain": -13.1613398771536,
+          "P": 35.966623047719565,
+          "RMSE_gain": -1.6819730838333804
+        },
+        {
+          "fold": 3,
+          "A_gain": 14.263158874317062,
+          "P": 88.06625868065888,
+          "RMSE_gain": -2.7354398412752516
+        },
+        {
+          "fold": 4,
+          "A_gain": -2.5573632256704655,
+          "P": 47.232675236576924,
+          "RMSE_gain": -1.7951585688175928
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c017",
+      "name": "208:last5_uniform",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/update-ema-208/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.786200775750695,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c018",
+      "name": "208:update_EMA",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/update-ema-208/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.78239607719176,
+      "A_gain": 0.10155895187583322,
+      "A_MSE_linear": -0.10155895187583322,
+      "P": 0.0042781482754753715,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 23.73899765420084,
+      "oracle_RMSE_gain": 0.00380469855893395,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.025122353701741096,
+          "RMSE": 12.785218336974381
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -0.049709938869047766,
+          "RMSE": 12.784256737837307
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -0.07376275550192002,
+          "RMSE": 12.783315983042339
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -0.09728080360035785,
+          "RMSE": 12.78239607719176
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -0.09728080360035785,
+          "RMSE": 12.78239607719176
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.05302891773524102,
+          "P": 0.00519520836340766,
+          "RMSE_gain": 0.0018651006369765355
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.2206475326540655,
+          "P": 0.003914551930363925,
+          "RMSE_gain": 0.00890004236102726
+        },
+        {
+          "fold": 2,
+          "A_gain": -0.1439731493413375,
+          "P": 0.003853712043904349,
+          "RMSE_gain": -0.005369288549951889
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.1679794813867125,
+          "P": 0.0028602942633117524,
+          "RMSE_gain": 0.006812384771958335
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.21011197694448452,
+          "P": 0.005566974776389176,
+          "RMSE_gain": 0.007887536077237911
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c019",
+      "name": "208:matched:last5_uniform->update_ema",
+      "split": "original",
+      "kind": "matched_standalone_control",
+      "source": "experiments/update-ema-208/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 15.032317843077909,
+      "candidate_RMSE": 14.864210255122755,
+      "A_gain": 5.5770306927031825,
+      "A_MSE_linear": -5.5770306927031825,
+      "P": 0.5511974658811232,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 10.118026728929086,
+      "oracle_RMSE_gain": 0.1681075879551539,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -1.3598078315582254,
+          "RMSE": 14.98702011421084
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -2.6507159798813102,
+          "RMSE": 14.94389051604157
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -3.872724444969255,
+          "RMSE": 14.902947872496544
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -5.025833226822059,
+          "RMSE": 14.864210255122755
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -5.025833226822059,
+          "RMSE": 14.864210255122755
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 7.082676991099386,
+          "P": 0.6715956733998609,
+          "RMSE_gain": 0.21167412154104603
+        },
+        {
+          "fold": 1,
+          "A_gain": 5.802104160795286,
+          "P": 0.545634726001299,
+          "RMSE_gain": 0.18407033017512298
+        },
+        {
+          "fold": 2,
+          "A_gain": 1.694972952572882,
+          "P": 0.4753610472282162,
+          "RMSE_gain": 0.03943144030235146
+        },
+        {
+          "fold": 3,
+          "A_gain": 6.117440051500447,
+          "P": 0.3493886802811176,
+          "RMSE_gain": 0.192855710886219
+        },
+        {
+          "fold": 4,
+          "A_gain": 7.187959307547905,
+          "P": 0.7140072024951223,
+          "RMSE_gain": 0.21762270482755497
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c020",
+      "name": "209:last5_uniform",
+      "split": "20261031",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/ema-repartition-209/20261031/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 14.270187155168609,
+      "A_gain": 17.413718518603822,
+      "A_MSE_linear": -17.413718518603822,
+      "P": 61.73953926949755,
+      "lambda_nonnegative_oracle": 0.1410256597687884,
+      "unconstrained_beneficial_upper": 0.2820513195375768,
+      "oracle_RMSE_gain": 0.04873535165892662,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.4947084253073588,
+          "RMSE": 12.602289961246647
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 6.728025558072476,
+          "RMSE": 12.885668250064406
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 21.668201950139505,
+          "RMSE": 13.452903873988877
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 44.325820750893726,
+          "RMSE": 14.270187155168609
+        },
+        {
+          "lambda": 0.1410256597687884,
+          "MSE_change": -1.2278905715570363,
+          "RMSE": 12.573167068049656
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 10.278474161880103,
+          "P": 53.28851993186519,
+          "RMSE_gain": -1.5994083420366838
+        },
+        {
+          "fold": 1,
+          "A_gain": -17.648607719342376,
+          "P": 49.07865798811707,
+          "RMSE_gain": -2.396817858520267
+        },
+        {
+          "fold": 2,
+          "A_gain": 44.227404915691814,
+          "P": 99.21144314147566,
+          "RMSE_gain": -1.8925948054313508
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.86784362616477,
+          "P": 54.09842792949613,
+          "RMSE_gain": -1.644772582445583
+        },
+        {
+          "fold": 4,
+          "A_gain": 37.34347760862479,
+          "P": 53.020647356533644,
+          "RMSE_gain": -0.6178066075126232
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c021",
+      "name": "209:update_ema",
+      "split": "20261031",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/ema-repartition-209/20261031/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 14.214429148258626,
+      "A_gain": 16.414006835993785,
+      "A_MSE_linear": -16.414006835993785,
+      "P": 59.15158215421282,
+      "lambda_nonnegative_oracle": 0.13874528996706445,
+      "unconstrained_beneficial_upper": 0.2774905799341289,
+      "oracle_RMSE_gain": 0.04518831690515057,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.4065278243601451,
+          "RMSE": 12.605788070100388
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 6.580892120556312,
+          "RMSE": 12.879957795474397
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 20.962259834749375,
+          "RMSE": 13.42664070150813
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 42.73757531821903,
+          "RMSE": 14.214429148258626
+        },
+        {
+          "lambda": 0.13874528996706445,
+          "MSE_change": -1.138683068990668,
+          "RMSE": 12.576714102803432
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 8.36404258981722,
+          "P": 51.27335574760802,
+          "RMSE_gain": -1.5958722632388085
+        },
+        {
+          "fold": 1,
+          "A_gain": -18.919845861450405,
+          "P": 48.88439494267915,
+          "RMSE_gain": -2.432394074382797
+        },
+        {
+          "fold": 2,
+          "A_gain": 40.43868142102847,
+          "P": 92.83737202506006,
+          "RMSE_gain": -1.8088209137076863
+        },
+        {
+          "fold": 3,
+          "A_gain": 14.42705630700427,
+          "P": 49.82417761129171,
+          "RMSE_gain": -1.424577322506817
+        },
+        {
+          "fold": 4,
+          "A_gain": 37.76009972356934,
+          "P": 52.93861044442512,
+          "RMSE_gain": -0.5986083175830537
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c022",
+      "name": "209:last5_uniform",
+      "split": "20261031",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/ema-repartition-209/20261031/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 12.621902419708583,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c023",
+      "name": "209:update_EMA",
+      "split": "20261031",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/ema-repartition-209/20261031/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 12.625775745924525,
+      "A_gain": -0.09212493177603796,
+      "A_MSE_linear": 0.09212493177603796,
+      "P": 0.005667561954532869,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.023385455566167796,
+          "RMSE": 12.622828769662194
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.047479356376652196,
+          "RMSE": 12.623783111612068
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.07228170243145321,
+          "RMSE": 12.624765439210222
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.09779249373057083,
+          "RMSE": 12.625775745924525
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -0.1763646974911528,
+          "P": 0.003954287119970535,
+          "RMSE_gain": -0.00712753071042016
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.11653331743842392,
+          "P": 0.006107998032690731,
+          "RMSE_gain": -0.0048193019883076005
+        },
+        {
+          "fold": 2,
+          "A_gain": -0.35309505621307624,
+          "P": 0.007738082341033672,
+          "RMSE_gain": -0.013279163372573066
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.14830872958047606,
+          "P": 0.0070000642698705125,
+          "RMSE_gain": 0.006034488189518683
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.037059682681987005,
+          "P": 0.003537378009098895,
+          "RMSE_gain": 0.0013540881152369622
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c024",
+      "name": "209:matched:last5_uniform->update_ema",
+      "split": "20261031",
+      "kind": "matched_standalone_control",
+      "source": "experiments/ema-repartition-209/20261031/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 14.270187155168609,
+      "candidate_RMSE": 14.214429148258626,
+      "A_gain": 2.2491414511166816,
+      "A_MSE_linear": -2.2491414511166816,
+      "P": 0.6608960184419993,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 3.403169921372537,
+      "oracle_RMSE_gain": 0.05575800690998278,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 14.270187155168609
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.5209793616265455,
+          "RMSE": 14.251921347029409
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -0.959346720947841,
+          "RMSE": 14.236533802951872
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -1.3151020779638867,
+          "RMSE": 14.224033864047682
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -1.5882454326746824,
+          "RMSE": 14.214429148258626
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -1.5882454326746824,
+          "RMSE": 14.214429148258626
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.5666668026597719,
+          "P": 0.4659341904654866,
+          "RMSE_gain": 0.0035360787978753194
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.3501122036028065,
+          "P": 0.7268628930673003,
+          "RMSE_gain": -0.03557621586253035
+        },
+        {
+          "fold": 2,
+          "A_gain": 3.4762618506396423,
+          "P": 0.8909142288874137,
+          "RMSE_gain": 0.08377389172366456
+        },
+        {
+          "fold": 3,
+          "A_gain": 6.607174966363765,
+          "P": 0.7737119673198322,
+          "RMSE_gain": 0.22019525993876599
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.9457158395230361,
+          "P": 0.4470568124699639,
+          "RMSE_gain": 0.019198289929569512
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c025",
+      "name": "209:last5_uniform",
+      "split": "20261101",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/ema-repartition-209/20261101/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 14.553099889755208,
+      "A_gain": 17.429892228686622,
+      "A_MSE_linear": -17.429892228686622,
+      "P": 59.37787614689717,
+      "lambda_nonnegative_oracle": 0.14677093018253257,
+      "unconstrained_beneficial_upper": 0.29354186036506513,
+      "oracle_RMSE_gain": 0.04916643314392566,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.6463557979905823,
+          "RMSE": 13.007627634776139
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 6.129522922380982,
+          "RMSE": 13.265528840018533
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 20.327636161114697,
+          "RMSE": 13.790299802545888
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 41.947983918210554,
+          "RMSE": 14.553099889755208
+        },
+        {
+          "lambda": 0.14677093018253257,
+          "MSE_change": -1.2791007476928156,
+          "RMSE": 12.983282779608926
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 11.41070556059518,
+          "P": 59.34764746521694,
+          "RMSE_gain": -1.706376840357926
+        },
+        {
+          "fold": 1,
+          "A_gain": -10.605276777251422,
+          "P": 40.61682147102124,
+          "RMSE_gain": -1.8681349088748416
+        },
+        {
+          "fold": 2,
+          "A_gain": 45.50819239618429,
+          "P": 97.56381065458945,
+          "RMSE_gain": -1.8998481582230884
+        },
+        {
+          "fold": 3,
+          "A_gain": 34.8464669569202,
+          "P": 56.82689102265207,
+          "RMSE_gain": -0.773529536747791
+        },
+        {
+          "fold": 4,
+          "A_gain": 5.989373006984841,
+          "P": 42.53421012100618,
+          "RMSE_gain": -1.3766887093771878
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c026",
+      "name": "209:update_ema",
+      "split": "20261101",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/ema-repartition-209/20261101/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 14.45673244654157,
+      "A_gain": 15.82602498017266,
+      "A_MSE_linear": -15.82602498017266,
+      "P": 54.97840552807803,
+      "lambda_nonnegative_oracle": 0.14392946492500722,
+      "unconstrained_beneficial_upper": 0.28785892985001443,
+      "oracle_RMSE_gain": 0.04376887834861165,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.5203558995382882,
+          "RMSE": 13.012470041596414
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 5.831588891933177,
+          "RMSE": 13.25429445028726
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 19.055834374414395,
+          "RMSE": 13.744110260667908
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 39.152380547905366,
+          "RMSE": 14.45673244654157
+        },
+        {
+          "lambda": 0.14392946492500722,
+          "MSE_change": -1.1389156536430247,
+          "RMSE": 12.98868033440424
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 8.468891727237736,
+          "P": 53.64934003736634,
+          "RMSE_gain": -1.6135856294162814
+        },
+        {
+          "fold": 1,
+          "A_gain": -10.990207152546784,
+          "P": 38.884852364913684,
+          "RMSE_gain": -1.8220679884724262
+        },
+        {
+          "fold": 2,
+          "A_gain": 44.17987686171203,
+          "P": 89.4790765154748,
+          "RMSE_gain": -1.6674075573936769
+        },
+        {
+          "fold": 3,
+          "A_gain": 28.67983542090453,
+          "P": 50.77383076971701,
+          "RMSE_gain": -0.7774198738660036
+        },
+        {
+          "fold": 4,
+          "A_gain": 8.791728043555782,
+          "P": 42.10492795291832,
+          "RMSE_gain": -1.2604675538119796
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c027",
+      "name": "209:last5_uniform",
+      "split": "20261101",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/ema-repartition-209/20261101/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 13.032449212752852,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c028",
+      "name": "209:update_EMA",
+      "split": "20261101",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/ema-repartition-209/20261101/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 13.038450437218287,
+      "A_gain": -0.15015102287327467,
+      "A_MSE_linear": 0.15015102287327467,
+      "P": 0.006306297942011168,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.03793189933969437,
+          "RMSE": 13.033904418182688
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.07665208592214012,
+          "RMSE": 13.035389697623335
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.11616055974733729,
+          "RMSE": 13.03690504079591
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.15645732081528585,
+          "RMSE": 13.038450437218287
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -0.274361134031554,
+          "P": 0.00566983015612196,
+          "RMSE_gain": -0.010608417214463373
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.03397637358104137,
+          "P": 0.005452827235093455,
+          "RMSE_gain": -0.0015430812789993809
+        },
+        {
+          "fold": 2,
+          "A_gain": -0.11904771116500781,
+          "P": 0.00801221335652392,
+          "RMSE_gain": -0.00498176197488398
+        },
+        {
+          "fold": 3,
+          "A_gain": -0.5661835555388045,
+          "P": 0.00669222221527889,
+          "RMSE_gain": -0.02070914862295048
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.2428136599500343,
+          "P": 0.0057043967470376085,
+          "RMSE_gain": 0.00942430061024524
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c029",
+      "name": "209:matched:last5_uniform->update_ema",
+      "split": "20261101",
+      "kind": "matched_standalone_control",
+      "source": "experiments/ema-repartition-209/20261101/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 14.553099889755208,
+      "candidate_RMSE": 14.45673244654157,
+      "A_gain": 3.5761929558882595,
+      "A_MSE_linear": -3.5761929558882595,
+      "P": 0.7805895855830749,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 4.581399780291663,
+      "oracle_RMSE_gain": 0.09636744321363722,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 14.553099889755208
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.8452613898731227,
+          "RMSE": 14.524030260617055
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -1.592949081548361,
+          "RMSE": 14.49826773513459
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -2.243063075025715,
+          "RMSE": 14.475829970200925
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -2.7956033703051846,
+          "RMSE": 14.45673244654157
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -2.7956033703051846,
+          "RMSE": 14.45673244654157
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 3.4083549607735035,
+          "P": 0.6518613662803545,
+          "RMSE_gain": 0.09279121094164466
+        },
+        {
+          "fold": 1,
+          "A_gain": 2.0469323880059456,
+          "P": 0.699893657193752,
+          "RMSE_gain": 0.046066920402415334
+        },
+        {
+          "fold": 2,
+          "A_gain": 7.75391861523093,
+          "P": 0.9975000105885556,
+          "RMSE_gain": 0.23244060082941154
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.6803032121717735,
+          "P": 0.7938744952523848,
+          "RMSE_gain": -0.003890337118212628
+        },
+        {
+          "fold": 4,
+          "A_gain": 3.9914556032591433,
+          "P": 0.7598183986003277,
+          "RMSE_gain": 0.11622115556520818
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c030",
+      "name": "210:prediction",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/convnext-llrd-210/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 16.768129052196088,
+      "A_gain": -36.214390389661176,
+      "A_MSE_linear": 36.214390389661176,
+      "P": 81.46883124363366,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 14.145399550142397,
+          "RMSE": 13.3278779191569
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 38.474403005739006,
+          "RMSE": 14.211310048111212
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 72.98701036678982,
+          "RMSE": 15.377709213162976
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 117.68322163329483,
+          "RMSE": 16.768129052196088
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -67.06859198381235,
+          "P": 75.55910402083552,
+          "RMSE_gain": -4.6996963392022035
+        },
+        {
+          "fold": 1,
+          "A_gain": -11.193184214848447,
+          "P": 72.14375718593932,
+          "RMSE_gain": -3.041264562494895
+        },
+        {
+          "fold": 2,
+          "A_gain": -63.38524679955269,
+          "P": 92.38565906687725,
+          "RMSE_gain": -4.816246160873003
+        },
+        {
+          "fold": 3,
+          "A_gain": 6.777068741692565,
+          "P": 90.55733390938276,
+          "RMSE_gain": -3.067482702269574
+        },
+        {
+          "fold": 4,
+          "A_gain": -46.20199769178496,
+          "P": 76.69830203513348,
+          "RMSE_gain": -4.0922053002940615
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c031",
+      "name": "210:uniform_blend",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/convnext-llrd-210/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.95863858063985,
+      "A_gain": -3.6265265399127986,
+      "A_MSE_linear": 3.6265265399127986,
+      "P": 0.8128570459271264,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.957435200348645,
+          "RMSE": 12.823586295500816
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 2.016477531438181,
+          "RMSE": 12.8648127778544
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 3.1771269932686073,
+          "RMSE": 12.909843425505837
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 4.439383585839925,
+          "RMSE": 12.95863858063985
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -6.696249872589901,
+          "P": 0.7576642532382116,
+          "RMSE_gain": -0.2873966705873148
+        },
+        {
+          "fold": 1,
+          "A_gain": -1.142520561621729,
+          "P": 0.7202841875805348,
+          "RMSE_gain": -0.07622876041510729
+        },
+        {
+          "fold": 2,
+          "A_gain": -6.332571487082842,
+          "P": 0.9181108548496489,
+          "RMSE_gain": -0.26093332016780124
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.6454087306700146,
+          "P": 0.9045542928427803,
+          "RMSE_gain": -0.010683954254679051
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.606699508939533,
+          "P": 0.7636716411244557,
+          "RMSE_gain": -0.2053995459693514
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c032",
+      "name": "210:LLRD_blend",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/convnext-llrd-210/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.95851294050402,
+      "A_gain": -3.621439038966146,
+      "A_MSE_linear": 3.621439038966146,
+      "P": 0.8146883124363381,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.9562777792688076,
+          "RMSE": 12.823541166818021
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 2.0143915975921574,
+          "RMSE": 12.86473170631241
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 3.1743414549700497,
+          "RMSE": 12.909735540776106
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 4.436127351402484,
+          "RMSE": 12.95851294050402
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -6.7068591983812045,
+          "P": 0.7555910402083541,
+          "RMSE_gain": -0.28772218194722754
+        },
+        {
+          "fold": 1,
+          "A_gain": -1.1193184214848633,
+          "P": 0.721437571859395,
+          "RMSE_gain": -0.07532926507320603
+        },
+        {
+          "fold": 2,
+          "A_gain": -6.338524679955376,
+          "P": 0.9238565906687757,
+          "RMSE_gain": -0.2613504114989631
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.6777068741692053,
+          "P": 0.905573339093832,
+          "RMSE_gain": -0.009394890872211903
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.620199769178489,
+          "P": 0.7669830203513344,
+          "RMSE_gain": -0.20603751015583605
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c033",
+      "name": "211:control",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/huber-loss-211/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.032317843077909,
+      "A_gain": -4.174270442114894,
+      "A_MSE_linear": 4.174270442114894,
+      "P": 58.30937901539593,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.68790379899097,
+          "RMSE": 12.9682240139812
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.66447997490643,
+          "RMSE": 13.42204940583643
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 35.929728527746384,
+          "RMSE": 14.121496337341664
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.48364945751083,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -9.546196862234861,
+          "P": 58.54135783901112,
+          "RMSE_gain": -2.425298915897825
+        },
+        {
+          "fold": 1,
+          "A_gain": -7.232548996682286,
+          "P": 50.915427014546694,
+          "RMSE_gain": -2.1900596462379145
+        },
+        {
+          "fold": 2,
+          "A_gain": -11.562320707752665,
+          "P": 38.78525412246517,
+          "RMSE_gain": -1.7214045241357319
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.406614672176547,
+          "P": 91.9777658497377,
+          "RMSE_gain": -2.9282955521614706
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.936900316081176,
+          "P": 51.327090251219,
+          "RMSE_gain": -2.012781273645148
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c034",
+      "name": "211:huber",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/huber-loss-211/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 14.592981343199096,
+      "A_gain": 5.363189655240895,
+      "A_MSE_linear": -5.363189655240895,
+      "P": 54.83136386039009,
+      "lambda_nonnegative_oracle": 0.048906221527668735,
+      "unconstrained_beneficial_upper": 0.09781244305533747,
+      "oracle_RMSE_gain": 0.0051294745208725345,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 2.086162827464157,
+          "RMSE": 12.867520860883491
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 11.026246137477075,
+          "RMSE": 13.210343538882126
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 26.820249930038756,
+          "RMSE": 13.795186849327065
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 49.4681742051492,
+          "RMSE": 14.592981343199096
+        },
+        {
+          "lambda": 0.048906221527668735,
+          "MSE_change": -0.1311466706870562,
+          "RMSE": 12.781071301229822
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 9.264135522318664,
+          "P": 54.30393756303035,
+          "RMSE_gain": -1.6499012227906835
+        },
+        {
+          "fold": 1,
+          "A_gain": -13.49610635802075,
+          "P": 55.95139640983299,
+          "RMSE_gain": -2.5779750961229997
+        },
+        {
+          "fold": 2,
+          "A_gain": -14.702057456122997,
+          "P": 37.28911163955962,
+          "RMSE_gain": -1.7743854999711353
+        },
+        {
+          "fold": 3,
+          "A_gain": 17.01254803618056,
+          "P": 78.41362142610717,
+          "RMSE_gain": -2.3120525763170168
+        },
+        {
+          "fold": 4,
+          "A_gain": 28.737428531849,
+          "P": 48.198752263420374,
+          "RMSE_gain": -0.7297008977784234
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c035",
+      "name": "211:fixed_control",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/huber-loss-211/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.786200775750695,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c036",
+      "name": "211:fixed_huber",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/huber-loss-211/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.758757466235842,
+      "A_gain": 0.846271047679627,
+      "A_MSE_linear": -0.846271047679627,
+      "P": 0.14523285210081854,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 5.826994618904529,
+      "oracle_RMSE_gain": 0.027443309514852743,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.2024907086636056,
+          "RMSE": 12.778279992594623
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -0.38682731081460886,
+          "RMSE": 12.771065067839606
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -0.5530098064530098,
+          "RMSE": 12.764557198405068
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -0.7010381955788085,
+          "RMSE": 12.758757466235842
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -0.7010381955788085,
+          "RMSE": 12.758757466235842
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 1.6544132899759074,
+          "P": 0.13145115180472916,
+          "RMSE_gain": 0.05951612703511344
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.530531392737941,
+          "P": 0.08664411405587893,
+          "RMSE_gain": -0.025308482279390532
+        },
+        {
+          "fold": 2,
+          "A_gain": -0.28269691596938834,
+          "P": 0.11065176501439608,
+          "RMSE_gain": -0.014282377628592968
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.41674326789259675,
+          "P": 0.11667828669310251,
+          "RMSE_gain": 0.012382740231442924
+        },
+        {
+          "fold": 4,
+          "A_gain": 2.9734269892369607,
+          "P": 0.280738942935986,
+          "RMSE_gain": 0.10422090177590349
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c037",
+      "name": "211:matched:control->huber",
+      "split": "original",
+      "kind": "matched_standalone_control",
+      "source": "experiments/huber-loss-211/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 15.032317843077909,
+      "candidate_RMSE": 14.592981343199096,
+      "A_gain": 31.611146159008037,
+      "A_MSE_linear": -31.611146159008037,
+      "P": 18.59567090664641,
+      "lambda_nonnegative_oracle": 0.8499598190810548,
+      "unconstrained_beneficial_upper": 1.6999196381621096,
+      "oracle_RMSE_gain": 0.4536869848597451,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -6.740557108086609,
+          "RMSE": 14.80641829164744
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -11.156655352842415,
+          "RMSE": 14.656531799251693
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -13.248294734267423,
+          "RMSE": 14.585002056943669
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -13.015475252361625,
+          "RMSE": 14.592981343199096
+        },
+        {
+          "lambda": 0.8499598190810548,
+          "MSE_change": -13.434102035127625,
+          "RMSE": 14.578630858218164
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 40.04072361378739,
+          "P": 16.9929709532531,
+          "RMSE_gain": 0.7753976931071414
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.7774716517497324,
+          "P": 12.076998408374493,
+          "RMSE_gain": -0.3879154498850852
+        },
+        {
+          "fold": 2,
+          "A_gain": 12.005463654701751,
+          "P": 13.649057920166523,
+          "RMSE_gain": -0.0529809758354034
+        },
+        {
+          "fold": 3,
+          "A_gain": 32.42248290834633,
+          "P": 14.252405120711774,
+          "RMSE_gain": 0.6162429758444539
+        },
+        {
+          "fold": 4,
+          "A_gain": 72.80958896645497,
+          "P": 36.00692213072616,
+          "RMSE_gain": 1.2830803758667244
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c038",
+      "name": "212:control",
+      "split": "20261031",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/huber-repartition-212/20261031/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 14.270187155168609,
+      "A_gain": 17.413718518603822,
+      "A_MSE_linear": -17.413718518603822,
+      "P": 61.73953926949755,
+      "lambda_nonnegative_oracle": 0.1410256597687884,
+      "unconstrained_beneficial_upper": 0.2820513195375768,
+      "oracle_RMSE_gain": 0.04873535165892662,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.4947084253073588,
+          "RMSE": 12.602289961246647
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 6.728025558072476,
+          "RMSE": 12.885668250064406
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 21.668201950139505,
+          "RMSE": 13.452903873988877
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 44.325820750893726,
+          "RMSE": 14.270187155168609
+        },
+        {
+          "lambda": 0.1410256597687884,
+          "MSE_change": -1.2278905715570363,
+          "RMSE": 12.573167068049656
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 10.278474161880103,
+          "P": 53.28851993186519,
+          "RMSE_gain": -1.5994083420366838
+        },
+        {
+          "fold": 1,
+          "A_gain": -17.648607719342376,
+          "P": 49.07865798811707,
+          "RMSE_gain": -2.396817858520267
+        },
+        {
+          "fold": 2,
+          "A_gain": 44.227404915691814,
+          "P": 99.21144314147566,
+          "RMSE_gain": -1.8925948054313508
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.86784362616477,
+          "P": 54.09842792949613,
+          "RMSE_gain": -1.644772582445583
+        },
+        {
+          "fold": 4,
+          "A_gain": 37.34347760862479,
+          "P": 53.020647356533644,
+          "RMSE_gain": -0.6178066075126232
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c039",
+      "name": "212:huber",
+      "split": "20261031",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/huber-repartition-212/20261031/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 14.586564770097263,
+      "A_gain": 8.318773544855187,
+      "A_MSE_linear": -8.318773544855187,
+      "P": 61.7742246444524,
+      "lambda_nonnegative_oracle": 0.06733207573817966,
+      "unconstrained_beneficial_upper": 0.13466415147635932,
+      "oracle_RMSE_gain": 0.011099092899465646,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 1.7811956540644784,
+          "RMSE": 12.6922660051982
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 11.284169388685507,
+          "RMSE": 13.061262958892257
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 28.508921203863085,
+          "RMSE": 13.704792661565826
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 53.45545109959721,
+          "RMSE": 14.586564770097263
+        },
+        {
+          "lambda": 0.06733207573817966,
+          "MSE_change": -0.2800601451854774,
+          "RMSE": 12.610803326809117
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -1.198729844420192,
+          "P": 51.03260000094764,
+          "RMSE_gain": -1.9194729532894357
+        },
+        {
+          "fold": 1,
+          "A_gain": -32.3453975123939,
+          "P": 56.108516325718846,
+          "RMSE_gain": -3.0990593178891146
+        },
+        {
+          "fold": 2,
+          "A_gain": 33.76884721819461,
+          "P": 84.56899589067383,
+          "RMSE_gain": -1.7567938799522338
+        },
+        {
+          "fold": 3,
+          "A_gain": 8.265721339001356,
+          "P": 63.15426003038715,
+          "RMSE_gain": -2.146639591486762
+        },
+        {
+          "fold": 4,
+          "A_gain": 33.10342652389406,
+          "P": 54.00675097453454,
+          "RMSE_gain": -0.8173325208523465
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c040",
+      "name": "212:fixed_control",
+      "split": "20261031",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/huber-repartition-212/20261031/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 12.621902419708583,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c041",
+      "name": "212:fixed_huber",
+      "split": "20261031",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/huber-repartition-212/20261031/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 12.663155130774568,
+      "A_gain": -0.8388344547104668,
+      "A_MSE_linear": 0.8388344547104668,
+      "P": 0.20424271870640104,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.22247378359676676,
+          "RMSE": 12.630712350308757
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.4704779070318337,
+          "RMSE": 12.640526041256244
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.7440123703052006,
+          "RMSE": 12.651341156689696
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 1.0430771734168678,
+          "RMSE": 12.663155130774568
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -1.057323563899592,
+          "P": 0.20436300950987912,
+          "RMSE_gain": -0.04978716820985696
+        },
+        {
+          "fold": 1,
+          "A_gain": -1.3472421991992367,
+          "P": 0.2329661744797673,
+          "RMSE_gain": -0.061956615780342617
+        },
+        {
+          "fold": 2,
+          "A_gain": -0.9746990043763211,
+          "P": 0.16598995489526175,
+          "RMSE_gain": -0.04193472370283935
+        },
+        {
+          "fold": 3,
+          "A_gain": -0.43774330350852003,
+          "P": 0.36699324244576315,
+          "RMSE_gain": -0.03430661270440538
+        },
+        {
+          "fold": 4,
+          "A_gain": -0.37716420256866445,
+          "P": 0.05090121220133401,
+          "RMSE_gain": -0.01727811901467824
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c042",
+      "name": "212:matched:control->huber",
+      "split": "20261031",
+      "kind": "matched_standalone_control",
+      "source": "experiments/huber-repartition-212/20261031/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 14.270187155168609,
+      "candidate_RMSE": 14.586564770097263,
+      "A_gain": 14.452568411819378,
+      "A_MSE_linear": -14.452568411819378,
+      "P": 23.58219876052288,
+      "lambda_nonnegative_oracle": 0.306429620040632,
+      "unconstrained_beneficial_upper": 0.612859240081264,
+      "oracle_RMSE_gain": 0.07779856409569597,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 14.270187155168609
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -2.1392546804221646,
+          "RMSE": 14.195033876786521
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -1.3307345157789694,
+          "RMSE": 14.223484345537846
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 2.425560493929586,
+          "RMSE": 14.354922568146046
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 9.1296303487035,
+          "RMSE": 14.586564770097263
+        },
+        {
+          "lambda": 0.306429620040632,
+          "MSE_change": -2.2143475235225263,
+          "RMSE": 14.192388591072913
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 14.85883719759713,
+          "P": 24.080121272979888,
+          "RMSE_gain": -0.3200646112527519
+        },
+        {
+          "fold": 1,
+          "A_gain": 5.9967510359610925,
+          "P": 27.7233991666144,
+          "RMSE_gain": -0.7022414593688477
+        },
+        {
+          "fold": 2,
+          "A_gain": 23.294931042792594,
+          "P": 19.11104148948798,
+          "RMSE_gain": 0.13580092547911704
+        },
+        {
+          "fold": 3,
+          "A_gain": 26.905539411273583,
+          "P": 40.563493799327986,
+          "RMSE_gain": -0.5018670090411792
+        },
+        {
+          "fold": 4,
+          "A_gain": 1.2067833714724951,
+          "P": 6.43293807420414,
+          "RMSE_gain": -0.19952591333972336
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c043",
+      "name": "212:control",
+      "split": "20261101",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/huber-repartition-212/20261101/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 14.553099889755208,
+      "A_gain": 17.429892228686622,
+      "A_MSE_linear": -17.429892228686622,
+      "P": 59.37787614689717,
+      "lambda_nonnegative_oracle": 0.14677093018253257,
+      "unconstrained_beneficial_upper": 0.29354186036506513,
+      "oracle_RMSE_gain": 0.04916643314392566,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.6463557979905823,
+          "RMSE": 13.007627634776139
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 6.129522922380982,
+          "RMSE": 13.265528840018533
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 20.327636161114697,
+          "RMSE": 13.790299802545888
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 41.947983918210554,
+          "RMSE": 14.553099889755208
+        },
+        {
+          "lambda": 0.14677093018253257,
+          "MSE_change": -1.2791007476928156,
+          "RMSE": 12.983282779608926
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 11.41070556059518,
+          "P": 59.34764746521694,
+          "RMSE_gain": -1.706376840357926
+        },
+        {
+          "fold": 1,
+          "A_gain": -10.605276777251422,
+          "P": 40.61682147102124,
+          "RMSE_gain": -1.8681349088748416
+        },
+        {
+          "fold": 2,
+          "A_gain": 45.50819239618429,
+          "P": 97.56381065458945,
+          "RMSE_gain": -1.8998481582230884
+        },
+        {
+          "fold": 3,
+          "A_gain": 34.8464669569202,
+          "P": 56.82689102265207,
+          "RMSE_gain": -0.773529536747791
+        },
+        {
+          "fold": 4,
+          "A_gain": 5.989373006984841,
+          "P": 42.53421012100618,
+          "RMSE_gain": -1.3766887093771878
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c044",
+      "name": "212:huber",
+      "split": "20261101",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/huber-repartition-212/20261101/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 14.591697091702706,
+      "A_gain": 17.142340232744868,
+      "A_MSE_linear": -17.142340232744868,
+      "P": 60.21523176576759,
+      "lambda_nonnegative_oracle": 0.14234222579618386,
+      "unconstrained_beneficial_upper": 0.2846844515923677,
+      "oracle_RMSE_gain": 0.046892118390658766,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.5221330728257425,
+          "RMSE": 13.012401754101997
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 6.482637825069464,
+          "RMSE": 13.278831662011983
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 21.014312693685618,
+          "RMSE": 13.815174453356283
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 43.07289153302273,
+          "RMSE": 14.591697091702706
+        },
+        {
+          "lambda": 0.14234222579618386,
+          "MSE_change": -1.2200394320421881,
+          "RMSE": 12.985557094362193
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -15.146878908930892,
+          "P": 41.193399842457644,
+          "RMSE_gain": -1.9857562907893556
+        },
+        {
+          "fold": 1,
+          "A_gain": -1.7575262052025054,
+          "P": 54.394571335614515,
+          "RMSE_gain": -2.035512506005473
+        },
+        {
+          "fold": 2,
+          "A_gain": 36.989797537665275,
+          "P": 95.80796913103971,
+          "RMSE_gain": -2.1288640794065206
+        },
+        {
+          "fold": 3,
+          "A_gain": 62.558146981799425,
+          "P": 68.6444481971009,
+          "RMSE_gain": -0.21845488443028138
+        },
+        {
+          "fold": 4,
+          "A_gain": 3.0681617583930114,
+          "P": 41.035770322625176,
+          "RMSE_gain": -1.4275509985553025
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c045",
+      "name": "212:fixed_control",
+      "split": "20261101",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/huber-repartition-212/20261101/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 13.032449212752852,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c046",
+      "name": "212:fixed_huber",
+      "split": "20261101",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/huber-repartition-212/20261101/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 13.04056687488393,
+      "A_gain": -0.0336210471687842,
+      "A_MSE_linear": 0.0336210471687842,
+      "P": 0.1780308881687832,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.019532192302745,
+          "RMSE": 13.033198558883587
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0613182456265879,
+          "RMSE": 13.0348015224095
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.12535815997152872,
+          "RMSE": 13.037257788467405
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.2116519353375674,
+          "RMSE": 13.04056687488393
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -2.4768287202873243,
+          "P": 0.1470685941470315,
+          "RMSE_gain": -0.09906914483606677
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.7809580591227827,
+          "P": 0.20681636812129237,
+          "RMSE_gain": 0.022490472849293397
+        },
+        {
+          "fold": 2,
+          "A_gain": -0.7634446668645949,
+          "P": 0.12329725292787505,
+          "RMSE_gain": -0.03472685243885465
+        },
+        {
+          "fold": 3,
+          "A_gain": 2.544322201643608,
+          "P": 0.3643044698260375,
+          "RMSE_gain": 0.07909180197306753
+        },
+        {
+          "fold": 4,
+          "A_gain": -0.2531121094583923,
+          "P": 0.04866775582167981,
+          "RMSE_gain": -0.011984542857160108
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c047",
+      "name": "212:matched:control->huber",
+      "split": "20261101",
+      "kind": "matched_standalone_control",
+      "source": "experiments/huber-repartition-212/20261101/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 14.553099889755208,
+      "candidate_RMSE": 14.591697091702706,
+      "A_gain": 20.575709004533792,
+      "A_MSE_linear": -20.575709004533792,
+      "P": 21.700616619345965,
+      "lambda_nonnegative_oracle": 0.4740812062038522,
+      "unconstrained_beneficial_upper": 0.9481624124077044,
+      "oracle_RMSE_gain": 0.16854435510247257,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 14.553099889755208
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -3.787638712424325,
+          "RMSE": 14.42238113796639
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -4.862700347430405,
+          "RMSE": 14.385062254080191
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -3.2251849050182386,
+          "RMSE": 14.441867313341955
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 1.124907614812173,
+          "RMSE": 14.591697091702706
+        },
+        {
+          "lambda": 0.4740812062038522,
+          "MSE_change": -4.877278471684422,
+          "RMSE": 14.384555534652735
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 8.505165185538328,
+          "P": 16.908502032305115,
+          "RMSE_gain": -0.27937945043142953
+        },
+        {
+          "fold": 1,
+          "A_gain": 21.615764585752935,
+          "P": 26.545763878297294,
+          "RMSE_gain": -0.16737759713063127
+        },
+        {
+          "fold": 2,
+          "A_gain": 8.58763838214826,
+          "P": 15.350191717117559,
+          "RMSE_gain": -0.22901592118343217
+        },
+        {
+          "fold": 3,
+          "A_gain": 59.11026508208418,
+          "P": 43.21614223165379,
+          "RMSE_gain": 0.5550746523175096
+        },
+        {
+          "fold": 4,
+          "A_gain": 5.059711787145247,
+          "P": 6.482483237356064,
+          "RMSE_gain": -0.05086228917811475
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c048",
+      "name": "213:control",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/brightness-augmentation-213/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.032317843077909,
+      "A_gain": -4.174270442114894,
+      "A_MSE_linear": 4.174270442114894,
+      "P": 58.30937901539593,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.68790379899097,
+          "RMSE": 12.9682240139812
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.66447997490643,
+          "RMSE": 13.42204940583643
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 35.929728527746384,
+          "RMSE": 14.121496337341664
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.48364945751083,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -9.546196862234861,
+          "P": 58.54135783901112,
+          "RMSE_gain": -2.425298915897825
+        },
+        {
+          "fold": 1,
+          "A_gain": -7.232548996682286,
+          "P": 50.915427014546694,
+          "RMSE_gain": -2.1900596462379145
+        },
+        {
+          "fold": 2,
+          "A_gain": -11.562320707752665,
+          "P": 38.78525412246517,
+          "RMSE_gain": -1.7214045241357319
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.406614672176547,
+          "P": 91.9777658497377,
+          "RMSE_gain": -2.9282955521614706
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.936900316081176,
+          "P": 51.327090251219,
+          "RMSE_gain": -2.012781273645148
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c049",
+      "name": "213:brightness",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/brightness-augmentation-213/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 14.83530291390481,
+      "A_gain": -1.7145772492949072,
+      "A_MSE_linear": 1.7145772492949072,
+      "P": 54.88470502020996,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 3.858938376086849,
+          "RMSE": 12.936223121680243
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 14.578464879699943,
+          "RMSE": 13.344114626212846
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 32.15857951083928,
+          "RMSE": 13.987333905667903
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 56.59928226950486,
+          "RMSE": 14.83530291390481
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -6.380264252606157,
+          "P": 52.936685968836834,
+          "RMSE_gain": -2.134966613025007
+        },
+        {
+          "fold": 1,
+          "A_gain": -10.828709167781259,
+          "P": 50.17482232946067,
+          "RMSE_gain": -2.289073573368114
+        },
+        {
+          "fold": 2,
+          "A_gain": -8.825746652470276,
+          "P": 40.86870072201383,
+          "RMSE_gain": -1.700300675634388
+        },
+        {
+          "fold": 3,
+          "A_gain": 18.061690706719794,
+          "P": 82.63096948481716,
+          "RMSE_gain": -2.4213827095385394
+        },
+        {
+          "fold": 4,
+          "A_gain": -0.5998568803366524,
+          "P": 47.81234659592129,
+          "RMSE_gain": -1.7484272058058963
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c050",
+      "name": "213:fixed_control",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/brightness-augmentation-213/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.786200775750695,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c051",
+      "name": "213:fixed_brightness",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/brightness-augmentation-213/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.77899632453308,
+      "A_gain": 0.2229753659737986,
+      "A_MSE_linear": -0.2229753659737986,
+      "P": 0.03879215059613072,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 5.7479506175158805,
+      "oracle_RMSE_gain": 0.0072044512176141495,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.05331933208119148,
+          "RMSE": 12.784115571510078
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -0.10178964533786662,
+          "RMSE": 12.782219706782925
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -0.14541093977002542,
+          "RMSE": 12.780513265829258
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -0.18418321537766788,
+          "RMSE": 12.77899632453308
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -0.18418321537766788,
+          "RMSE": 12.77899632453308
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.2784512722826386,
+          "P": 0.056672086135780245,
+          "RMSE_gain": 0.008649756863604807
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.30459940797512947,
+          "P": 0.04547546195549001,
+          "RMSE_gain": -0.014361947907900685
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.24639678665788783,
+          "P": 0.013537170360402861,
+          "RMSE_gain": 0.008462054120428775
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.5116693361729145,
+          "P": 0.03280448597462183,
+          "RMSE_gain": 0.019767273597715018
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.38295884273068187,
+          "P": 0.045471548554358684,
+          "RMSE_gain": 0.013016547791897537
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c052",
+      "name": "213:matched:control->brightness",
+      "split": "original",
+      "kind": "matched_standalone_control",
+      "source": "experiments/brightness-augmentation-213/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 15.032317843077909,
+      "candidate_RMSE": 14.83530291390481,
+      "A_gain": 10.91912543518087,
+      "A_MSE_linear": -10.91912543518087,
+      "P": 5.034758247174905,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 2.1687487063172877,
+      "oracle_RMSE_gain": 0.1970149291730987,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -2.415108968346786,
+          "RMSE": 14.951771492601527
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -4.2008731557967085,
+          "RMSE": 14.89193427931784
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -5.357292562349768,
+          "RMSE": 14.853056492620254
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -5.884367188005966,
+          "RMSE": 14.83530291390481
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -5.884367188005966,
+          "RMSE": 14.83530291390481
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 16.096726011215345,
+          "P": 7.326121531412355,
+          "RMSE_gain": 0.29033230287281775
+        },
+        {
+          "fold": 1,
+          "A_gain": 3.4830987623569065,
+          "P": 6.338654248369858,
+          "RMSE_gain": -0.09901392713019952
+        },
+        {
+          "fold": 2,
+          "A_gain": 2.3229573251466644,
+          "P": 1.6698298694129334,
+          "RMSE_gain": 0.021103848501343947
+        },
+        {
+          "fold": 3,
+          "A_gain": 19.008983209350752,
+          "P": 4.007110809886944,
+          "RMSE_gain": 0.5069128426229312
+        },
+        {
+          "fold": 4,
+          "A_gain": 13.68386186783467,
+          "P": 5.8320747767924335,
+          "RMSE_gain": 0.2643540678392515
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c053",
+      "name": "214:control",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/gamma-augmentation-214/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.032317843077909,
+      "A_gain": -4.174270442114894,
+      "A_MSE_linear": 4.174270442114894,
+      "P": 58.30937901539593,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.68790379899097,
+          "RMSE": 12.9682240139812
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.66447997490643,
+          "RMSE": 13.42204940583643
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 35.929728527746384,
+          "RMSE": 14.121496337341664
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.48364945751083,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -9.546196862234861,
+          "P": 58.54135783901112,
+          "RMSE_gain": -2.425298915897825
+        },
+        {
+          "fold": 1,
+          "A_gain": -7.232548996682286,
+          "P": 50.915427014546694,
+          "RMSE_gain": -2.1900596462379145
+        },
+        {
+          "fold": 2,
+          "A_gain": -11.562320707752665,
+          "P": 38.78525412246517,
+          "RMSE_gain": -1.7214045241357319
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.406614672176547,
+          "P": 91.9777658497377,
+          "RMSE_gain": -2.9282955521614706
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.936900316081176,
+          "P": 51.327090251219,
+          "RMSE_gain": -2.012781273645148
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c054",
+      "name": "214:gamma",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/gamma-augmentation-214/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 14.9635362264882,
+      "A_gain": -3.5089557524622204,
+      "A_MSE_linear": 3.5089557524622204,
+      "P": 56.91153037115484,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.434209586312733,
+          "RMSE": 12.958438943951561
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 15.98236046901982,
+          "RMSE": 13.396614898802888
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 34.644452648121266,
+          "RMSE": 14.075914994270494
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 60.42048612361706,
+          "RMSE": 14.9635362264882
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -14.490372636841201,
+          "P": 44.53415880226205,
+          "RMSE_gain": -2.1251895781861574
+        },
+        {
+          "fold": 1,
+          "A_gain": -1.3798685866397762,
+          "P": 59.51390659000283,
+          "RMSE_gain": -2.285280391417688
+        },
+        {
+          "fold": 2,
+          "A_gain": -12.188883803221078,
+          "P": 41.87562305657653,
+          "RMSE_gain": -1.8409625991538139
+        },
+        {
+          "fold": 3,
+          "A_gain": 15.007091048209228,
+          "P": 89.08051098259035,
+          "RMSE_gain": -2.7445339124358767
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.4927447838182575,
+          "P": 49.553452424342424,
+          "RMSE_gain": -1.9385875904365744
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c055",
+      "name": "214:fixed_control",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/gamma-augmentation-214/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.786200775750695,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c056",
+      "name": "214:fixed_gamma",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/gamma-augmentation-214/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.785088509501396,
+      "A_gain": 0.05579435893766389,
+      "A_MSE_linear": -0.05579435893766389,
+      "P": 0.02735227691461561,
+      "lambda_nonnegative_oracle": 1.0,
+      "unconstrained_beneficial_upper": 2.039843304885903,
+      "oracle_RMSE_gain": 0.0011122662492990543,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.012239072427252497,
+          "RMSE": 12.785722162059537
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -0.021059110240178043,
+          "RMSE": 12.785377239939676
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -0.02646011343877664,
+          "RMSE": 12.785166020211427
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -0.028442082023048283,
+          "RMSE": 12.785088509501396
+        },
+        {
+          "lambda": 1.0,
+          "MSE_change": -0.028442082023048283,
+          "RMSE": 12.785088509501396
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -0.4348519708350557,
+          "P": 0.08674775708114202,
+          "RMSE_gain": -0.02032029680176528
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.4957295846535235,
+          "P": 0.017513778677614427,
+          "RMSE_gain": 0.01964638678659547
+        },
+        {
+          "fold": 2,
+          "A_gain": -0.05641474714117761,
+          "P": 0.007418246894975888,
+          "RMSE_gain": -0.0023187649399734056
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.2352902088195093,
+          "P": 0.012650567123300625,
+          "RMSE_gain": 0.009186427708808509
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.03921871919152007,
+          "P": 0.012431034796045069,
+          "RMSE_gain": 0.0010326969088225724
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c057",
+      "name": "214:matched:control->gamma",
+      "split": "original",
+      "kind": "matched_standalone_control",
+      "source": "experiments/gamma-augmentation-214/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 15.032317843077909,
+      "candidate_RMSE": 14.9635362264882,
+      "A_gain": 5.605154971185271,
+      "A_MSE_linear": -5.605154971185271,
+      "P": 3.541991637291503,
+      "lambda_nonnegative_oracle": 0.7912433942773833,
+      "unconstrained_beneficial_upper": 1.5824867885547667,
+      "oracle_RMSE_gain": 0.07394029693699089,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -1.1799142654655987,
+          "RMSE": 14.99302055857501
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -1.9170795762697597,
+          "RMSE": 14.968416755256673
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -2.2114959324124825,
+          "RMSE": 14.9585789366138
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -2.0631633338937676,
+          "RMSE": 14.9635362264882
+        },
+        {
+          "lambda": 0.7912433942773833,
+          "MSE_change": -2.2175209224256913,
+          "RMSE": 14.958377546140918
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 20.27709096791288,
+          "P": 11.21406770577014,
+          "RMSE_gain": 0.3001093377116675
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.3046191785334852,
+          "P": 2.4411799868801607,
+          "RMSE_gain": -0.0952207451797733
+        },
+        {
+          "fold": 2,
+          "A_gain": -2.8018803670740553,
+          "P": 0.9150516625057208,
+          "RMSE_gain": -0.11955807501808202
+        },
+        {
+          "fold": 3,
+          "A_gain": 7.043014541025189,
+          "P": 1.5452832978451625,
+          "RMSE_gain": 0.1837616397255939
+        },
+        {
+          "fold": 4,
+          "A_gain": 3.8121688925958184,
+          "P": 1.594375533456332,
+          "RMSE_gain": 0.07419368320857345
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c058",
+      "name": "215:control",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/blur-augmentation-215/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.032317843077909,
+      "A_gain": -4.174270442114894,
+      "A_MSE_linear": 4.174270442114894,
+      "P": 58.30937901539593,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.68790379899097,
+          "RMSE": 12.9682240139812
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.66447997490643,
+          "RMSE": 13.42204940583643
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 35.929728527746384,
+          "RMSE": 14.121496337341664
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.48364945751083,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -9.546196862234861,
+          "P": 58.54135783901112,
+          "RMSE_gain": -2.425298915897825
+        },
+        {
+          "fold": 1,
+          "A_gain": -7.232548996682286,
+          "P": 50.915427014546694,
+          "RMSE_gain": -2.1900596462379145
+        },
+        {
+          "fold": 2,
+          "A_gain": -11.562320707752665,
+          "P": 38.78525412246517,
+          "RMSE_gain": -1.7214045241357319
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.406614672176547,
+          "P": 91.9777658497377,
+          "RMSE_gain": -2.9282955521614706
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.936900316081176,
+          "P": 51.327090251219,
+          "RMSE_gain": -2.012781273645148
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c059",
+      "name": "215:blur",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/blur-augmentation-215/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.111212408720336,
+      "A_gain": -6.391456919305088,
+      "A_MSE_linear": 6.391456919305088,
+      "P": 58.470353264350706,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 5.252261308848191,
+          "RMSE": 12.989965034081342
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 17.81331677574022,
+          "RMSE": 13.464778017239938
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 37.683166400676086,
+          "RMSE": 14.183444457482244
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 64.86181018365579,
+          "RMSE": 15.111212408720336
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -11.413933862895215,
+          "P": 61.33547594084496,
+          "RMSE_gain": -2.5773922715046886
+        },
+        {
+          "fold": 1,
+          "A_gain": -7.475282262233063,
+          "P": 50.505202294453696,
+          "RMSE_gain": -2.1842308346402906
+        },
+        {
+          "fold": 2,
+          "A_gain": -14.452337942495149,
+          "P": 38.33162338877247,
+          "RMSE_gain": -1.7998765396687588
+        },
+        {
+          "fold": 3,
+          "A_gain": 5.304947267787767,
+          "P": 91.61414335903348,
+          "RMSE_gain": -3.150499496534451
+        },
+        {
+          "fold": 4,
+          "A_gain": -3.920677796689759,
+          "P": 50.565321338648914,
+          "RMSE_gain": -1.9533299703128737
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c060",
+      "name": "215:fixed_control",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/blur-augmentation-215/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.786200775750695,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c061",
+      "name": "215:fixed_blur",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/blur-augmentation-215/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.794829553348206,
+      "A_gain": -0.19957374988701382,
+      "A_MSE_linear": 0.19957374988701382,
+      "P": 0.021159271537979692,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.051215891942877186,
+          "RMSE": 12.788203398826223
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.10507669282800183,
+          "RMSE": 12.790309103795565
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.16158240265537394,
+          "RMSE": 12.792517839755513
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.22073302142499351,
+          "RMSE": 12.794829553348206
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -0.16427189338822606,
+          "P": 0.05654257337374038,
+          "RMSE_gain": -0.008606338996751006
+        },
+        {
+          "fold": 1,
+          "A_gain": -0.02055982088249946,
+          "P": 0.01480500975731521,
+          "RMSE_gain": -0.0014516237964610212
+        },
+        {
+          "fold": 2,
+          "A_gain": -0.26021256711546353,
+          "P": 0.006765191504635923,
+          "RMSE_gain": -0.009695500501997856
+        },
+        {
+          "fold": 3,
+          "A_gain": -0.6425564261785881,
+          "P": 0.023816460608585843,
+          "RMSE_gain": -0.027453985482118526
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.08973195812970804,
+          "P": 0.0038671224456211183,
+          "RMSE_gain": 0.003310481645071306
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c062",
+      "name": "215:matched:control->blur",
+      "split": "original",
+      "kind": "matched_standalone_control",
+      "source": "experiments/blur-augmentation-215/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 15.032317843077909,
+      "candidate_RMSE": 15.111212408720336,
+      "A_gain": 0.3443773088477974,
+      "A_MSE_linear": -0.3443773088477974,
+      "P": 2.722538034992758,
+      "lambda_nonnegative_oracle": 0.0632456377875201,
+      "unconstrained_beneficial_upper": 0.1264912755750402,
+      "oracle_RMSE_gain": 0.00036222998319423994,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.08406429997509804,
+          "RMSE": 15.035113702107264
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.5084458543242909,
+          "RMSE": 15.049220099049743
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 1.2731446630475785,
+          "RMSE": 15.074605281677066
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 2.378160726144961,
+          "RMSE": 15.111212408720336
+        },
+        {
+          "lambda": 0.0632456377875201,
+          "MSE_change": -0.010890181268814367,
+          "RMSE": 15.031955613094715
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 2.6475240377468916,
+          "P": 7.309379140241072,
+          "RMSE_gain": -0.15209335560686377
+        },
+        {
+          "fold": 1,
+          "A_gain": 2.231106291203363,
+          "P": 2.063614836661145,
+          "RMSE_gain": 0.00582881159762394
+        },
+        {
+          "fold": 2,
+          "A_gain": -1.6018901812144783,
+          "P": 0.834496319835307,
+          "RMSE_gain": -0.07847201553302696
+        },
+        {
+          "fold": 3,
+          "A_gain": -3.828833142107311,
+          "P": 2.9092117715772474,
+          "RMSE_gain": -0.2222039443729802
+        },
+        {
+          "fold": 4,
+          "A_gain": 2.2739795386105213,
+          "P": 0.49598810664901977,
+          "RMSE_gain": 0.05945130333227411
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c063",
+      "name": "216:control",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/resolution-216/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 15.032317843077909,
+      "A_gain": -4.174270442114894,
+      "A_MSE_linear": 4.174270442114894,
+      "P": 58.30937901539593,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 4.68790379899097,
+          "RMSE": 12.9682240139812
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 16.66447997490643,
+          "RMSE": 13.42204940583643
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 35.929728527746384,
+          "RMSE": 14.121496337341664
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 62.48364945751083,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -9.546196862234861,
+          "P": 58.54135783901112,
+          "RMSE_gain": -2.425298915897825
+        },
+        {
+          "fold": 1,
+          "A_gain": -7.232548996682286,
+          "P": 50.915427014546694,
+          "RMSE_gain": -2.1900596462379145
+        },
+        {
+          "fold": 2,
+          "A_gain": -11.562320707752665,
+          "P": 38.78525412246517,
+          "RMSE_gain": -1.7214045241357319
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.406614672176547,
+          "P": 91.9777658497377,
+          "RMSE_gain": -2.9282955521614706
+        },
+        {
+          "fold": 4,
+          "A_gain": -4.936900316081176,
+          "P": 51.327090251219,
+          "RMSE_gain": -2.012781273645148
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c064",
+      "name": "216:native",
+      "split": "original",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/resolution-216/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 14.402472476915436,
+      "A_gain": -0.2193784881230863,
+      "A_MSE_linear": 0.2193784881230863,
+      "P": 43.724904682375865,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 2.787651164679263,
+          "RMSE": 12.894750150448319
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 11.04091541465551,
+          "RMSE": 13.210898746582806
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 24.759792749928735,
+          "RMSE": 13.720303313984585
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 43.94428317049895,
+          "RMSE": 14.402472476915436
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 4.275415314107863,
+          "P": 43.53655275542621,
+          "RMSE_gain": -1.4488858029411773
+        },
+        {
+          "fold": 1,
+          "A_gain": 22.49358583720615,
+          "P": 44.01058970313968,
+          "RMSE_gain": -0.8533693794129249
+        },
+        {
+          "fold": 2,
+          "A_gain": -25.180646997791598,
+          "P": 35.50451004340635,
+          "RMSE_gain": -2.0516824633823276
+        },
+        {
+          "fold": 3,
+          "A_gain": -2.892898575210056,
+          "P": 56.32286980469028,
+          "RMSE_gain": -2.2361557716791722
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.2076519810721905,
+          "P": 39.2500011052168,
+          "RMSE_gain": -1.4266117495894726
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c065",
+      "name": "216:fixed_control",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/resolution-216/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.786200775750695,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c066",
+      "name": "216:fixed_native",
+      "split": "original",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/resolution-216/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.786200775750695,
+      "candidate_RMSE": 12.786212437140321,
+      "A_gain": 0.31545596152488575,
+      "A_MSE_linear": -0.31545596152488575,
+      "P": 0.31575417139902834,
+      "lambda_nonnegative_oracle": 0.4995277815763743,
+      "unconstrained_beneficial_upper": 0.9990555631527486,
+      "oracle_RMSE_gain": 0.0030814080265209043,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.786200775750695
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.059129354668782164,
+          "RMSE": 12.783888333489887
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -0.07878943791268579,
+          "RMSE": 12.7831193704782
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -0.05898024973171087,
+          "RMSE": 12.78389416524073
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0002982098741425854,
+          "RMSE": 12.786212437140321
+        },
+        {
+          "lambda": 0.4995277815763743,
+          "MSE_change": -0.07878950832278413,
+          "RMSE": 12.783119367724174
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 1.2156435306912001,
+          "P": 0.39511872121758607,
+          "RMSE_gain": 0.03203104069917195
+        },
+        {
+          "fold": 1,
+          "A_gain": 2.5178419872839397,
+          "P": 0.316945038045918,
+          "RMSE_gain": 0.09068339399433079
+        },
+        {
+          "fold": 2,
+          "A_gain": -1.2261724951486417,
+          "P": 0.23903316445363512,
+          "RMSE_gain": -0.053126266820180845
+        },
+        {
+          "fold": 3,
+          "A_gain": -1.3842947007680304,
+          "P": 0.33006139536783113,
+          "RMSE_gain": -0.07050493366008936
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.4542614855659609,
+          "P": 0.29761253791017134,
+          "RMSE_gain": 0.006040168181170813
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c067",
+      "name": "216:matched:control->native",
+      "split": "original",
+      "kind": "matched_standalone_control",
+      "source": "experiments/resolution-216/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 15.032317843077909,
+      "candidate_RMSE": 14.402472476915436,
+      "A_gain": 59.185213213507886,
+      "A_MSE_linear": -59.185213213507886,
+      "P": 40.64584692649601,
+      "lambda_nonnegative_oracle": 0.7280597857948252,
+      "unconstrained_beneficial_upper": 1.4561195715896504,
+      "oracle_RMSE_gain": 0.7345770107612619,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 15.032317843077909
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -12.255937870470971,
+          "RMSE": 14.618982244494571
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -19.431144875129938,
+          "RMSE": 14.37147991197109
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -21.525621013976906,
+          "RMSE": 14.298425043386477
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -18.539366287011873,
+          "RMSE": 14.402472476915436
+        },
+        {
+          "lambda": 0.7280597857948252,
+          "MSE_change": -21.54518682722381,
+          "RMSE": 14.297740832316647
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 79.90425766341833,
+          "P": 51.0778404034907,
+          "RMSE_gain": 0.9764131129566476
+        },
+        {
+          "fold": 1,
+          "A_gain": 80.80875342601932,
+          "P": 44.17778128072386,
+          "RMSE_gain": 1.3366902668249896
+        },
+        {
+          "fold": 2,
+          "A_gain": 19.147510105838073,
+          "P": 29.48509231681819,
+          "RMSE_gain": -0.33027793924659576
+        },
+        {
+          "fold": 3,
+          "A_gain": 60.67281335663904,
+          "P": 40.31743055897823,
+          "RMSE_gain": 0.6921397804822984
+        },
+        {
+          "fold": 4,
+          "A_gain": 55.392731515624654,
+          "P": 38.171090072469084,
+          "RMSE_gain": 0.5861695240556752
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c068",
+      "name": "217:control",
+      "split": "20261031",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/resolution-repartition-217/20261031/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 14.270187155168609,
+      "A_gain": 17.413718518603822,
+      "A_MSE_linear": -17.413718518603822,
+      "P": 61.73953926949755,
+      "lambda_nonnegative_oracle": 0.1410256597687884,
+      "unconstrained_beneficial_upper": 0.2820513195375768,
+      "oracle_RMSE_gain": 0.04873535165892662,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.4947084253073588,
+          "RMSE": 12.602289961246647
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 6.728025558072476,
+          "RMSE": 12.885668250064406
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 21.668201950139505,
+          "RMSE": 13.452903873988877
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 44.325820750893726,
+          "RMSE": 14.270187155168609
+        },
+        {
+          "lambda": 0.1410256597687884,
+          "MSE_change": -1.2278905715570363,
+          "RMSE": 12.573167068049656
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 10.278474161880103,
+          "P": 53.28851993186519,
+          "RMSE_gain": -1.5994083420366838
+        },
+        {
+          "fold": 1,
+          "A_gain": -17.648607719342376,
+          "P": 49.07865798811707,
+          "RMSE_gain": -2.396817858520267
+        },
+        {
+          "fold": 2,
+          "A_gain": 44.227404915691814,
+          "P": 99.21144314147566,
+          "RMSE_gain": -1.8925948054313508
+        },
+        {
+          "fold": 3,
+          "A_gain": 12.86784362616477,
+          "P": 54.09842792949613,
+          "RMSE_gain": -1.644772582445583
+        },
+        {
+          "fold": 4,
+          "A_gain": 37.34347760862479,
+          "P": 53.020647356533644,
+          "RMSE_gain": -0.6178066075126232
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c069",
+      "name": "217:native",
+      "split": "20261031",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/resolution-repartition-217/20261031/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 14.42316393908315,
+      "A_gain": 4.002503961011776,
+      "A_MSE_linear": -4.002503961011776,
+      "P": 52.71774128203494,
+      "lambda_nonnegative_oracle": 0.037961641220540514,
+      "unconstrained_beneficial_upper": 0.07592328244108103,
+      "oracle_RMSE_gain": 0.0030098421893676175,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 2.29423283987424,
+          "RMSE": 12.712460561689843
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 11.178183340002848,
+          "RMSE": 13.057205062058582
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 26.651851500385824,
+          "RMSE": 13.636871789124925
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 48.71523732102317,
+          "RMSE": 14.42316393908315
+        },
+        {
+          "lambda": 0.037961641220540514,
+          "MSE_change": -0.07597080967586066,
+          "RMSE": 12.618892577519215
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -22.017614527992624,
+          "P": 34.09224458240111,
+          "RMSE_gain": -2.052011982400103
+        },
+        {
+          "fold": 1,
+          "A_gain": -45.83607037248688,
+          "P": 54.431301723786554,
+          "RMSE_gain": -3.468111183127151
+        },
+        {
+          "fold": 2,
+          "A_gain": 34.68772410312919,
+          "P": 77.69839747510376,
+          "RMSE_gain": -1.5007052053488277
+        },
+        {
+          "fold": 3,
+          "A_gain": 20.416302708049013,
+          "P": 43.013506132075086,
+          "RMSE_gain": -0.9279837289242963
+        },
+        {
+          "fold": 4,
+          "A_gain": 32.762177894360185,
+          "P": 54.35325649680821,
+          "RMSE_gain": -0.8433656494834629
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c070",
+      "name": "217:fixed_control",
+      "split": "20261031",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/resolution-repartition-217/20261031/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 12.621902419708583,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c071",
+      "name": "217:fixed_native",
+      "split": "20261031",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/resolution-repartition-217/20261031/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 12.621902419708583,
+      "candidate_RMSE": 12.684554291851866,
+      "A_gain": -1.227549810101233,
+      "A_MSE_linear": 1.227549810101233,
+      "P": 0.35794708019098065,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.3292591450372445,
+          "RMSE": 12.634938853737387
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.7032616750983617,
+          "RMSE": 12.6497305254991
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 1.1220075901833513,
+          "RMSE": 12.666271285695279
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 1.5854968902922137,
+          "RMSE": 12.684554291851866
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 12.621902419708583
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -2.9752381829973062,
+          "P": 0.4441142474351606,
+          "RMSE_gain": -0.13448095369869328
+        },
+        {
+          "fold": 1,
+          "A_gain": -2.5839206867218882,
+          "P": 0.25143879603480607,
+          "RMSE_gain": -0.11095526643257259
+        },
+        {
+          "fold": 2,
+          "A_gain": -0.8890630676826147,
+          "P": 0.5077830845657436,
+          "RMSE_gain": -0.05133399720771514
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.7179920933695862,
+          "P": 0.3708719288646133,
+          "RMSE_gain": 0.014829094327087233
+        },
+        {
+          "fold": 4,
+          "A_gain": -0.40751920647394024,
+          "P": 0.21552734405457957,
+          "RMSE_gain": -0.025140216837137075
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c072",
+      "name": "217:matched:control->native",
+      "split": "20261031",
+      "kind": "matched_standalone_control",
+      "source": "experiments/resolution-repartition-217/20261031/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 14.270187155168609,
+      "candidate_RMSE": 14.42316393908315,
+      "A_gain": 37.39966414371063,
+      "A_MSE_linear": -37.39966414371063,
+      "P": 41.789080713840086,
+      "lambda_nonnegative_oracle": 0.44748129780376183,
+      "unconstrained_beneficial_upper": 0.8949625956075237,
+      "oracle_RMSE_gain": 0.2962680084398368,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 14.270187155168609
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -6.738098491312652,
+          "RMSE": 14.03211113668312
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -8.252561893395294,
+          "RMSE": 13.97804276535681
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -4.543390206247928,
+          "RMSE": 14.110097492125671
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 4.389416570129455,
+          "RMSE": 14.42316393908315
+        },
+        {
+          "lambda": 0.44748129780376183,
+          "MSE_change": -8.367825124226226,
+          "RMSE": 13.973919146728772
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 39.230228984496286,
+          "P": 52.33004232490494,
+          "RMSE_gain": -0.45260364036341905
+        },
+        {
+          "fold": 1,
+          "A_gain": -3.618431604858307,
+          "P": 29.921674783955677,
+          "RMSE_gain": -1.0712933246068843
+        },
+        {
+          "fold": 2,
+          "A_gain": 70.4363218617769,
+          "P": 58.46295700796763,
+          "RMSE_gain": 0.39188960008252316
+        },
+        {
+          "fold": 3,
+          "A_gain": 59.625583042449534,
+          "P": 40.99220216314425,
+          "RMSE_gain": 0.7167888535212867
+        },
+        {
+          "fold": 4,
+          "A_gain": 21.324618434688755,
+          "P": 27.23852728922793,
+          "RMSE_gain": -0.22555904197083976
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c073",
+      "name": "217:control",
+      "split": "20261101",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/resolution-repartition-217/20261101/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 14.553099889755208,
+      "A_gain": 17.429892228686622,
+      "A_MSE_linear": -17.429892228686622,
+      "P": 59.37787614689717,
+      "lambda_nonnegative_oracle": 0.14677093018253257,
+      "unconstrained_beneficial_upper": 0.29354186036506513,
+      "oracle_RMSE_gain": 0.04916643314392566,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -0.6463557979905823,
+          "RMSE": 13.007627634776139
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 6.129522922380982,
+          "RMSE": 13.265528840018533
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 20.327636161114697,
+          "RMSE": 13.790299802545888
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 41.947983918210554,
+          "RMSE": 14.553099889755208
+        },
+        {
+          "lambda": 0.14677093018253257,
+          "MSE_change": -1.2791007476928156,
+          "RMSE": 12.983282779608926
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 11.41070556059518,
+          "P": 59.34764746521694,
+          "RMSE_gain": -1.706376840357926
+        },
+        {
+          "fold": 1,
+          "A_gain": -10.605276777251422,
+          "P": 40.61682147102124,
+          "RMSE_gain": -1.8681349088748416
+        },
+        {
+          "fold": 2,
+          "A_gain": 45.50819239618429,
+          "P": 97.56381065458945,
+          "RMSE_gain": -1.8998481582230884
+        },
+        {
+          "fold": 3,
+          "A_gain": 34.8464669569202,
+          "P": 56.82689102265207,
+          "RMSE_gain": -0.773529536747791
+        },
+        {
+          "fold": 4,
+          "A_gain": 5.989373006984841,
+          "P": 42.53421012100618,
+          "RMSE_gain": -1.3766887093771878
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c074",
+      "name": "217:native",
+      "split": "20261101",
+      "kind": "standalone_direct_vs021_diagnostic",
+      "source": "experiments/resolution-repartition-217/20261101/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 14.396050342129248,
+      "A_gain": 11.302466992955505,
+      "A_MSE_linear": -11.302466992955505,
+      "P": 48.70399996309265,
+      "lambda_nonnegative_oracle": 0.11603222529484632,
+      "unconstrained_beneficial_upper": 0.23206445058969263,
+      "oracle_RMSE_gain": 0.02518173319645456,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.21838324945441423,
+          "RMSE": 13.040824963645395
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 6.52476649429541,
+          "RMSE": 13.280417876606062
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 18.919149734522986,
+          "RMSE": 13.73913688036863
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 37.40153297013714,
+          "RMSE": 14.396050342129248
+        },
+        {
+          "lambda": 0.11603222529484632,
+          "MSE_change": -0.6557251982570885,
+          "RMSE": 13.007267479556397
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -1.0459312946727835,
+          "P": 54.688340461721715,
+          "RMSE_gain": -1.9657811002330234
+        },
+        {
+          "fold": 1,
+          "A_gain": -2.292907242692789,
+          "P": 43.090212596293085,
+          "RMSE_gain": -1.6673877440325722
+        },
+        {
+          "fold": 2,
+          "A_gain": 15.20666895886977,
+          "P": 60.64787221576985,
+          "RMSE_gain": -1.672331437911394
+        },
+        {
+          "fold": 3,
+          "A_gain": 28.2451514444716,
+          "P": 50.16275601103176,
+          "RMSE_gain": -0.7713772354016122
+        },
+        {
+          "fold": 4,
+          "A_gain": 16.39935309880172,
+          "P": 34.93081853064679,
+          "RMSE_gain": -0.715923615655516
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c075",
+      "name": "217:fixed_control",
+      "split": "20261101",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/resolution-repartition-217/20261101/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 13.032449212752852,
+      "A_gain": 0.0,
+      "A_MSE_linear": -0.0,
+      "P": 0.0,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 2,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 3,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.0,
+          "P": 0.0,
+          "RMSE_gain": 0.0
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c076",
+      "name": "217:fixed_native",
+      "split": "20261101",
+      "kind": "saved_fixed_ensemble",
+      "source": "experiments/resolution-repartition-217/20261101/ensemble-OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 13.032449212752852,
+      "candidate_RMSE": 13.06724033639008,
+      "A_gain": -0.5695718089963414,
+      "A_MSE_linear": 0.5695718089963414,
+      "P": 0.33846571700111583,
+      "lambda_nonnegative_oracle": 0.0,
+      "unconstrained_beneficial_upper": 0.0,
+      "oracle_RMSE_gain": 0.0,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": 0.1635470595616551,
+          "RMSE": 13.038722312502253
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": 0.36940233374844966,
+          "RMSE": 13.046613921502043
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": 0.6175658225603837,
+          "RMSE": 13.056121104889572
+        },
+        {
+          "lambda": 1,
+          "MSE_change": 0.9080375259974572,
+          "RMSE": 13.06724033639008
+        },
+        {
+          "lambda": 0.0,
+          "MSE_change": 0.0,
+          "RMSE": 13.032449212752852
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": -1.1617380321889044,
+          "P": 0.22116040048740154,
+          "RMSE_gain": -0.05230573885223677
+        },
+        {
+          "fold": 1,
+          "A_gain": 0.7337019647601357,
+          "P": 0.26137240857956734,
+          "RMSE_gain": 0.018499361196411712
+        },
+        {
+          "fold": 2,
+          "A_gain": -2.7157154429105033,
+          "P": 0.4131635691220551,
+          "RMSE_gain": -0.12211616994925123
+        },
+        {
+          "fold": 3,
+          "A_gain": -0.6060936617086352,
+          "P": 0.5625693907178182,
+          "RMSE_gain": -0.04221371939094176
+        },
+        {
+          "fold": 4,
+          "A_gain": 0.9019861270661984,
+          "P": 0.23406281609873697,
+          "RMSE_gain": 0.02656581866756369
+        }
+      ],
+      "retrospective_only": true
+    },
+    {
+      "key": "c077",
+      "name": "217:matched:control->native",
+      "split": "20261101",
+      "kind": "matched_standalone_control",
+      "source": "experiments/resolution-repartition-217/20261101/OOF.npz",
+      "coverage": 400,
+      "baseline_RMSE": 14.553099889755208,
+      "candidate_RMSE": 14.396050342129248,
+      "A_gain": 46.21152949859412,
+      "A_MSE_linear": -46.21152949859412,
+      "P": 41.665078550520704,
+      "lambda_nonnegative_oracle": 0.5545594909002829,
+      "unconstrained_beneficial_upper": 1.1091189818005658,
+      "oracle_RMSE_gain": 0.44710133364578475,
+      "grid": [
+        {
+          "lambda": 0,
+          "MSE_change": 0.0,
+          "RMSE": 14.553099889755208
+        },
+        {
+          "lambda": 0.25,
+          "MSE_change": -8.948814965240985,
+          "RMSE": 14.242327809594611
+        },
+        {
+          "lambda": 0.5,
+          "MSE_change": -12.689495111666883,
+          "RMSE": 14.110394086967457
+        },
+        {
+          "lambda": 0.75,
+          "MSE_change": -11.222040439277688,
+          "RMSE": 14.162297693591789
+        },
+        {
+          "lambda": 1,
+          "MSE_change": -4.546450948073414,
+          "RMSE": 14.396050342129248
+        },
+        {
+          "lambda": 0.5545594909002829,
+          "MSE_change": -12.813521136231879,
+          "RMSE": 14.105998556109423
+        }
+      ],
+      "folds": [
+        {
+          "fold": 0,
+          "A_gain": 17.629520134758565,
+          "P": 25.426849986531305,
+          "RMSE_gain": -0.2594042598750974
+        },
+        {
+          "fold": 1,
+          "A_gain": 39.387243014658296,
+          "P": 33.548264605371514,
+          "RMSE_gain": 0.2007471648422694
+        },
+        {
+          "fold": 2,
+          "A_gain": 58.052219542552145,
+          "P": 51.43780454104708,
+          "RMSE_gain": 0.22751672031169434
+        },
+        {
+          "fold": 3,
+          "A_gain": 66.79842341873295,
+          "P": 66.73560391956126,
+          "RMSE_gain": 0.002152301346178831
+        },
+        {
+          "fold": 4,
+          "A_gain": 49.19024138226864,
+          "P": 31.176869700092357,
+          "RMSE_gain": 0.6607650937216718
+        }
+      ],
+      "retrospective_only": true
+    }
+  ],
+  "example216": {
+    "key": "c066",
+    "name": "216:fixed_native",
+    "split": "original",
+    "kind": "saved_fixed_ensemble",
+    "source": "experiments/resolution-216/ensemble-OOF.npz",
+    "coverage": 400,
+    "baseline_RMSE": 12.786200775750695,
+    "candidate_RMSE": 12.786212437140321,
+    "A_gain": 0.31545596152488575,
+    "A_MSE_linear": -0.31545596152488575,
+    "P": 0.31575417139902834,
+    "lambda_nonnegative_oracle": 0.4995277815763743,
+    "unconstrained_beneficial_upper": 0.9990555631527486,
+    "oracle_RMSE_gain": 0.0030814080265209043,
+    "grid": [
+      {
+        "lambda": 0,
+        "MSE_change": 0.0,
+        "RMSE": 12.786200775750695
+      },
+      {
+        "lambda": 0.25,
+        "MSE_change": -0.059129354668782164,
+        "RMSE": 12.783888333489887
+      },
+      {
+        "lambda": 0.5,
+        "MSE_change": -0.07878943791268579,
+        "RMSE": 12.7831193704782
+      },
+      {
+        "lambda": 0.75,
+        "MSE_change": -0.05898024973171087,
+        "RMSE": 12.78389416524073
+      },
+      {
+        "lambda": 1,
+        "MSE_change": 0.0002982098741425854,
+        "RMSE": 12.786212437140321
+      },
+      {
+        "lambda": 0.4995277815763743,
+        "MSE_change": -0.07878950832278413,
+        "RMSE": 12.783119367724174
+      }
+    ],
+    "folds": [
+      {
+        "fold": 0,
+        "A_gain": 1.2156435306912001,
+        "P": 0.39511872121758607,
+        "RMSE_gain": 0.03203104069917195
+      },
+      {
+        "fold": 1,
+        "A_gain": 2.5178419872839397,
+        "P": 0.316945038045918,
+        "RMSE_gain": 0.09068339399433079
+      },
+      {
+        "fold": 2,
+        "A_gain": -1.2261724951486417,
+        "P": 0.23903316445363512,
+        "RMSE_gain": -0.053126266820180845
+      },
+      {
+        "fold": 3,
+        "A_gain": -1.3842947007680304,
+        "P": 0.33006139536783113,
+        "RMSE_gain": -0.07050493366008936
+      },
+      {
+        "fold": 4,
+        "A_gain": 0.4542614855659609,
+        "P": 0.29761253791017134,
+        "RMSE_gain": 0.006040168181170813
+      }
+    ],
+    "retrospective_only": true
+  },
+  "provenance_limit": "Checks saved hashes and ID/fold/group alignment plus existing validation artifacts. No training replay in this diagnostic; historical source logs are evidence, not independent refits.",
+  "all_tested_candidates_reported": true
+}

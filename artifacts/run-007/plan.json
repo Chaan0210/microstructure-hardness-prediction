@@ -1,0 +1,25 @@
+{
+  "seed": 20261003,
+  "epochs": 40,
+  "average_last_epochs": 5,
+  "image_size": 128,
+  "batch_size": 32,
+  "lr": 0.002,
+  "weight_decay": 0.01,
+  "device": "mps",
+  "augmentation": "random batch D4 rotations/reflections, training only; no intensity jitter",
+  "normalization": "pixel and target mean/std fit only on fold training rows",
+  "selection": "fixed 40 epochs with last five weight average; no validation checkpoint selection",
+  "blends": [
+    0.25,
+    0.5
+  ],
+  "advance_rule": "at least 0.15 lower OOF RMSE and improvement in >=4 of 5 folds; inspect uncertainty before promotion",
+  "no_holdout_evaluation": true,
+  "no_test_reads": true,
+  "pretrained": false,
+  "baseline_model_sha256": "7667b2b36483ba1b93a8e2874d4de96d12f38492ea6815f9ce24c87d09bab83e",
+  "baseline_csv_sha256": "778b927586c95d50b4ab94a7b7f74515a055de80f6bf6ba6a8652cb92e6a85f0",
+  "torch": "2.14.0",
+  "source_sha256": "054b27a4b4dd806e31ac1dbd653e5d0866712c349afdabf338c1b6e5df417b20"
+}

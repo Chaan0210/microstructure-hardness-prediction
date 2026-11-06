@@ -1,0 +1,22 @@
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[3]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+from pathlib import Path
+import json,hashlib
+R=_RepoPath(__file__).resolve().parents[3];B=_repo_path(R, 'experiments/tabicl-v2');P=_repo_path(B, 'study163')
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def write(p,d):
+ with p.open('x') as f:json.dump(d,f,indent=2,allow_nan=False)
+audit=json.loads((_repo_path(P, 'audit.json')).read_text());assert audit['status']=='passed' and audit['models_reloaded']==15
+arms=['compact26','dinob_pca64','compact26_dinob_pca64'];summary={a:json.loads((_repo_path(P, 'results/original', a, 'summary.json')).read_text()) for a in arms}
+assert not any(d['qualifies_resplits'] for d in summary.values())
+reports=[json.loads(p.read_text()) for p in (_repo_path(P, 'results')).glob('*/*/*/report.json')];assert len(reports)==15
+bench=json.loads((_repo_path(P, 'results/original/compact26/0/report.json')).read_text())
+d={'study':163,'status':'completed_negative','previous_study162_actual_n_estimators':1,'actual_n_estimators':8,'actual_configs_every_fold':{'none':4,'power':4},'inputs':summary,'benchmark':bench,'resource_summary':{'sum_fit_predict_seconds_15_folds':sum(r['fit_seconds']+r['predict_seconds'] for r in reports),'max_fit_predict_seconds':max(r['fit_seconds']+r['predict_seconds'] for r in reports),'max_process_peak_rss_bytes':max(r['process_peak_rss_bytes'] for r in reports),'time_definition':'wall-clock elapsed during CPU fit/predict; not summed CPU core-seconds; excludes extra benchmark/audit replays'},'best_retained':'018','best018_csv_sha256':sha(_repo_path(R, 'artifacts/submission-candidate-018.csv')),'new_downloads_or_installations':False,'resplits_executed':False,'nested_learned_combination_executed':False,'holdout100_test_access':False,'full500_training_or_new_csv':False,'reason':'All fixed20% blends worsen original OOF versus018. No arm passes predeclared >=0.01 RMSE gain and >=3/5 fold gains gate.','audit_sha256':sha(_repo_path(P, 'audit.json')),'plan_sha256':sha(_repo_path(P, 'plan.json')),'validation':{'reloads_exact':15,'validation_label_poison_fresh_fits_exact':3,'benchmark_repeat_reload_fresh_fit_exact':True,'preexisting_files_preserved':len(audit['preserved_files'])},'limitations':['Adaptive reuse of same400 development IDs; no independent validation claim','Small standalone improvements versus one estimator did not translate to best018 complementarity','No post-result ensemble count, normalization or blend adjustment performed']}
+assert d['best018_csv_sha256']=='6d478f08de769ca0c54d640c0711c95b15ad4e6b707d0516022c23260f1cfc16'
+write(_repo_path(P, 'final.json'),d);write(_repo_path(R, 'reports/tabicl-v2-163-summary.json'),d)
+old=(_repo_path(R, 'README.md')).read_bytes()
+with (_repo_path(R, 'reports/README-before-tabicl163.md')).open('xb') as f:f.write(old)
+note='''\n\n## Study163: fixed eight-estimator TabICL comparison (completed negative)\n\nConfirmed study162 actually used one estimator. Reused its isolated environment, official checkpoint, seed42 and fold-local transforms; no new installation/download. Study163 fixed n_estimators8, batch_size1, CPU threads2, AMP/cache off, none4+power4 normalization with Latin feature permutations. First fold fit0.261s, predict1.594s, peakRSS723,501,056 bytes; repeat/reload/fresh fit exact.\n\nOriginal5-fold standalone RMSE compact26/PCA64/combined90: 14.298448 / 14.205829 / 13.725351, modestly improved over162. Fixed20% blends:12.929751 / 12.931244 / 12.900173, all worse than01812.811945. Improving folds:0/5,2/5,1/5. No arm passes frozen >=0.01 RMSE gain + >=3/5 improving folds rule. No resplits, learned nested blend, full500, holdout100, test, CSV or upload. Best018 and prior162 preserved.\n\nAll15 saved models replayed exactly offline, all predictions finite, all fold train-only target/feature scalers and PCA audited; three full validation-label-poison fresh-fit replays exact. Reports:`reports/tabicl-v2-163-summary.json`, `experiments/tabicl-v2/study163/plan.json`, `audit.json`, fold results and logs.\n'''
+(_repo_path(R, 'README.md')).write_bytes(old+note.encode());print(json.dumps({'status':d['status'],'resource_summary':d['resource_summary'],'validation':d['validation']},indent=2))

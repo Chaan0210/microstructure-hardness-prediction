@@ -1,0 +1,44 @@
+{
+  "hypothesis": "Image-local signed-distance Betti curves may encode neck closure and hole/component survival beyond raw counts or granulometry. Hardness improvement unproven.",
+  "references": [
+    "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adts.201900227",
+    "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019WR025171"
+  ],
+  "reference_access": "Wang2020 abstract and Moon2019 abstract/methods read via public publisher pages. Own 2D discrete Betti curves, NOT persistent homology, persistence diagrams/images, or paper performance reproduction. No external training data/code.",
+  "definition": "Raw grayscale image quantiles20/50/80; <= retains ties. SEDT=EDT(mask)-EDT(complement), nearest opposite pixel inside image. Allone +inf/allzero -inf explicitly. Excursion SEDT>=d at -16,-8,-4,-2,-1,0,1,2,4,8,16 pixels. Finite rectangle/no wrap; topological outside is background. Foreground4/background8 or foreground8/background4, beta0=components and beta1=beta0-Euler. Edge-connected background never a hole. Each count divided by original image area65536. 3*11*2*2=132.",
+  "boundary_limit": "Observed-image topology; structures truncated by edges remain censored. Distance does not invent opposite phase outside. d0 and d1 may duplicate because signed pixel distances have magnitude>=1.",
+  "preprocessing": "Raw images no denoise; all X scaler and targetmean/std fit inside each innertrain/outertrain. No residual correction.",
+  "regression": "Ridge alpha12/120/1200, innerGroupKFold3shuffle seed20261223+fold; inner pooled standalone RMSE selects alpha. Primary=.9*samefold007+.1*Betti132.",
+  "diagnostic": "Zero-distance12 counts use same innerRidge grid; standalone and fixed.1 blend only diagnostic, not eligible alternatewinner. No feature/weight tuning.",
+  "screen": "Original gain>conditionalpairedbootstrapSD AND >=3/5 positive folds. Compute allocation only, not significance. Only then both existing repartitions, unchanged design.",
+  "diagnostic_plan": "Feature constants/duplicates; betti curves vs zero counts using foldtrain Ridge reconstruction (alpha120 fixed); image highfrequencyRMS association descriptive only (contains edges,not noise estimate); outertrain feature range and prediction range extrapolation diagnostics. No new features chosen. Granulometry differs: retained intensity/area vs topology; fixture checks equal raw counts but differing erosion connectivity.",
+  "scope": "development400 only; no holdout/test data, candidateCSV/upload, installs/cost. Best007 protected.",
+  "bias": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "resource": "Fixtures then10images; projected400<300s andRSS<2GB before full extraction",
+  "sources": {
+    "betti_features_055.py": "88f58ce16e2e3d64b508d7f4dfc2b96f5a15a68aef6721091484a60ee96d7e7a",
+    "test_betti_055.py": "7ee5cebf16e8ab39119ee17cd3ee38d8dac733ca5f1316fca8bd2cbddac8fb5b",
+    "betti_experiment_055.py": "302d96416134332f581cb16019f26fc1ebae14596edefa7798c6a518601a88e6",
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.manifest.json": "ac411a5e58ee57af5c4a653e7e4296c543a89333ee1a929b576d6e67f7b20e68",
+    "artifacts/submission-candidate-006.components.csv": "3a41ca42fa66e10b9899fc2d25ccfa395d5b728e0cf00a9b213be1ad06e410a5",
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/submission-candidate-007.components.csv": "73e2699df9c3728d4b173ea1e2f74bb28d689befaacce85527928c5193f964f5",
+    "artifacts/submission-candidate-007.csv": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "artifacts/submission-candidate-007.manifest.json": "be282c4a01a0e8f269a82ed9649522563d901a8dc424dcffde5a5533e6d81329",
+    "artifacts/final-model-045/report.json": "2d344e9f074aeebe45dfb99e001175aef8e6b8485bc85c51bc45af0ce4526e7c",
+    "artifacts/final-model-045/train_features.npz": "e46b8746fe9114c75766e329efdb040fb45e33912567e0ef50b5ef637c46faa1",
+    "artifacts/final-model-045/test_features.npz": "08b8e5c2e0f0daa1eb05e223fbcb99b490a481d3667cf07a70ce666ce3aba876",
+    "artifacts/final-model-045/decision.json": "cae40d328c87ae4104ad70bdf18b9e8002b5a787ab98307c31a74f6e282f49eb",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+    "artifacts/final-model-053/verification-test-compact-cnn-inputs.npz": "5693022f148ad26318debf34b554ad003833c0a6378c0be2d4754c82482d5539",
+    "artifacts/final-model-053/report.json": "4636d8307de29d1bb9b12c666e4d95361a32e33aabf0439d81e120ff1de00a0f",
+    "artifacts/final-model-053/mlp-seed-20261219.pt": "d3f5aa1cb9d755385ee04561d12d26610c8440c642aef0fb7466975b05bd9c58",
+    "artifacts/final-model-053/mlp-seed-20261128.pt": "e5f990b7ae6d0bda291cbd0574b65b01796959915ce1afdf696007957a512226",
+    "artifacts/final-model-053/decision.json": "d570d5508b94580a38f2f56951c454f4bdf07db129febda3efe58b91b16c83e6",
+    "artifacts/final-model-053/mlp-seed-20261205.pt": "550b0944dd3dcb1f36ff8e5238d29e5c31f05fada4a6deb1471809f4a10ddc1f",
+    "artifacts/seed-stability-052/candidate-design.json": "f149e8afd8c553dadc1205fadb8229a93f6dac1894f8a5ce50232c800de0f2b4"
+  }
+}

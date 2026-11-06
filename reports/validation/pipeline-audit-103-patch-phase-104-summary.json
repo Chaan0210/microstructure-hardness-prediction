@@ -1,0 +1,316 @@
+{
+  "completed_utc": "2026-10-03T16:32:57.570834+00:00",
+  "outcome": "Completed focused103 end-to-end lineage audit; executed and independentlyvalidated104 patch-phase experiment; no promotion.",
+  "audit103": {
+    "new_numerical_bug_found": false,
+    "scope": "Reviewed current011 entire lineage with existing verification reused. New computation targets previouslyunverified inputhelper equivalence, patchorder andposition interpolation semantics. Doesnotclaim exhaustive proof ofall code.",
+    "new_checks": {
+      "input_route_equivalence": {
+        "dev_vs_production_input_exact_images": 12,
+        "independent_input_max_error": 0.0,
+        "inverse_affine_pixel_error": 5.960464477539063e-08,
+        "native_shape": [
+          256,
+          256
+        ],
+        "DINO_shape": [
+          3,
+          504,
+          504
+        ],
+        "resize": "PIL BICUBIC full frame, no crop",
+        "brightness_contrast": "Fixed ImageNet affine normalization preserves per-image intensity offsets/scales; no per-image standardization",
+        "production_train_test": "Both candidate006 and candidate008 call same path-only input_image helper; split only changes path. Previously raw10 test checks already passed; no new test decode needed."
+      },
+      "patch_and_position_semantics": {
+        "S": {
+          "patch_kernel_stride": [
+            14,
+            14
+          ],
+          "grid": [
+            36,
+            36
+          ],
+          "all504_pixels_covered": true,
+          "flatten_order": "row-major y,x,channels",
+          "patch_embedding_manual_error": 0.0,
+          "position_interpolation_manual_error": 0.0,
+          "pretrained_position_grid": [
+            37,
+            37
+          ],
+          "interpolation_offset": 0.1,
+          "interpolation_antialias": false,
+          "layers_zero_based": [
+            5,
+            8,
+            11
+          ],
+          "population_std_correction": 0,
+          "manual_full_descriptor_error": 0.0,
+          "pooling": "Position-aware tokens then global patch mean/std; pooling does not make orientation or translation invariant."
+        },
+        "B": {
+          "patch_kernel_stride": [
+            14,
+            14
+          ],
+          "grid": [
+            36,
+            36
+          ],
+          "all504_pixels_covered": true,
+          "flatten_order": "row-major y,x,channels",
+          "patch_embedding_manual_error": 0.0,
+          "position_interpolation_manual_error": 0.0,
+          "pretrained_position_grid": [
+            37,
+            37
+          ],
+          "interpolation_offset": 0.1,
+          "interpolation_antialias": false,
+          "layers_zero_based": [
+            5,
+            8,
+            11
+          ],
+          "population_std_correction": 0,
+          "manual_full_descriptor_error": 0.0,
+          "pooling": "Position-aware tokens then global patch mean/std; pooling does not make orientation or translation invariant."
+        }
+      },
+      "full500_vs_OOF_config": {
+        "equal": true,
+        "epochs": 12,
+        "OOF_train_rows": 320,
+        "full_train_rows": 500,
+        "effective_batch": 16,
+        "OOF_updates": 240,
+        "full_updates": 384,
+        "interpretation": "Same epoch-based schedule intentionally gives more full-data updates; not an accidental settings mismatch. Full500 seed20270215 and outerfold seed20270215+k are intentional."
+      }
+    },
+    "reused_verified_items": [
+      "ID/target/group alignment and fold-train statistics",
+      "full500 S/B six-head refit state reproduction",
+      "nested009 affine calibration and heldout-label perturbation",
+      "full500 new011 head exact refit",
+      "full1000 cached component/head reload plus CSV byte reproduction",
+      "raw10 test S/B feature and ensemble spot checks"
+    ],
+    "actual_recipe": {
+      "candidate003": ".5 baseline795 + .25 compact26 kernel + .25 single CNN128 identity prediction",
+      "candidate008": ".75 candidate003 + .125 S_MLP_mean3 + .125 B_MLP_mean3",
+      "candidate009": "Saved train-only affine transform of008",
+      "candidate011": ".9 candidate009 + .1 short frozenB head",
+      "TV31_in_best011": false,
+      "CNN_D4": "Training randomD4; inherited003 inference identity, not3seedD4 inference.",
+      "DINO_D4": "Identity images inbest011;046 D4 mean had alreadyfailed and willnotberepeated.",
+      "rotation_assumption": "Augmentation is an existing empirical assumption, not a verified label symmetry. Official reference distinguishes alignment fromabsoluteangle but gives no complete label equation. No wholeensembleD4invariance claim."
+    },
+    "documentation_issue": "README describes historical004 withTV31/multiseedD4; actualbest011 lineage is above. This is stale documentation, not a numeric inferencebug. Preserve historicalREADME and records; use this scopedcurrentlineage audit.",
+    "remaining_coverage_limit": "Full1000 rawCPU DINO reextraction hasnotbeenperformed; priorraw10 plusallhashes andsamepreprocess path provide bounded coverage. No concretecache corruption evidence; do notspendtestaccess orrepeat all1000 merely tosearchforgain.",
+    "seconds": 3.3468154160073027
+  },
+  "experiment104": {
+    "hypothesis": "The arbitrary14px patch partition may introduce nuisance sensitivity tosmall imageoffsets. Averagingfour fixed origins may improve morphology representation without newbackbone orhead capacity. It also changes edgecontext andposition, so this isnot apurealiasing measurement orprovenlabelinvariance.",
+    "duplicate_audit": "No pixelshift/patch-origin averaging implementation found.039 compares504fullframe with196crops/scales;046 averagesD4 rotations/reflections;042 translation testwasadditivetokenoffset,notspatialtranslation. Thosefailedfamilies are notrerun.",
+    "offsets": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    "formula": ".9 * samefold009 + .1 * newphasehead; compare samefold011. No newweight orcalibration. Keep S/old B/legacy branchesunchanged.",
+    "original_rule": "Evaluate complete original5fold. If pooledRMSE strictly improves011 andindependentverificationpasses, run BOTH existingresplits unchanged. Otherwise recordfailure andstop thisfixedtrial; nooffset/count/weight sweep.",
+    "confirmation_rule": "Bothresplits must strictly improve011 pooledRMSE. Report foldgains andpairedconditionaluncertainty, but noaddedposthoc gates. Positiveall3 isempiricalrobustness onreused400,notindependentsignificance. Tinygains willbeidentified as such.",
+    "scores": {
+      "reference009": {
+        "rmse": 13.105157912721568,
+        "fold_rmse": [
+          13.025386023375454,
+          12.507824306370592,
+          14.197984111621984,
+          12.181376909479603,
+          13.51483530810461
+        ]
+      },
+      "reference011": {
+        "rmse": 13.0539977718711,
+        "fold_rmse": [
+          13.063217512187048,
+          12.38751393690129,
+          14.122591032877722,
+          12.1470942497908,
+          13.451269815048137
+        ]
+      },
+      "phase_head": {
+        "rmse": 14.162364561929463,
+        "fold_rmse": [
+          14.535099174881296,
+          13.591203827695631,
+          14.707549604190026,
+          13.78700050724301,
+          14.159079139158205
+        ]
+      },
+      "primary": {
+        "rmse": 13.070856759152019,
+        "fold_rmse": [
+          13.030862483821021,
+          12.448935442214625,
+          14.138102760552478,
+          12.177930049057172,
+          13.463624379304303
+        ]
+      }
+    },
+    "comparison": {
+      "gain": -0.01685898728091928,
+      "fold_gains": [
+        0.03235502836602677,
+        -0.061421505313335345,
+        -0.01551172767475606,
+        -0.03083579926637192,
+        -0.012354564256165546
+      ],
+      "positive_folds": 1,
+      "conditional_ci95": [
+        -0.05344050416770658,
+        0.018927750795868503
+      ],
+      "CI_limit": "Conditional onobservedpredictions; ignoresadaptiveselectionandrefitting."
+    },
+    "advance": false,
+    "matched_protocol_checks": [
+      {
+        "fold": 0,
+        "config_headinit_batchorder_dropoutseeds_exact": true
+      },
+      {
+        "fold": 1,
+        "config_headinit_batchorder_dropoutseeds_exact": true
+      },
+      {
+        "fold": 2,
+        "config_headinit_batchorder_dropoutseeds_exact": true
+      },
+      {
+        "fold": 3,
+        "config_headinit_batchorder_dropoutseeds_exact": true
+      },
+      {
+        "fold": 4,
+        "config_headinit_batchorder_dropoutseeds_exact": true
+      }
+    ],
+    "features": {
+      "shape": [
+        400,
+        6912
+      ],
+      "views_shape": [
+        400,
+        4,
+        6912
+      ],
+      "identity_all400_exact": true,
+      "weights_unchanged": true,
+      "features_sha256": "d0ae991475e317568f6b32673848da1cf2226b4592440d57573f577b5d8482a6",
+      "seconds": 201.00047775002895,
+      "image_sha256": "400 hashes retained in extraction.json; no rawimage export",
+      "holdout_test_access": false
+    },
+    "benchmark": {
+      "three_images_seconds": 1.8786902500432916,
+      "projected400_seconds": 250.49203333910555,
+      "rss_peak_bytes": 1051164672,
+      "mps_driver_bytes": 1454014464,
+      "three_images_reused": true,
+      "passed": true
+    },
+    "training_seconds": 30.644115082977805,
+    "validation": {
+      "passed": true,
+      "split": "original",
+      "models_verified": 5,
+      "MPS_reload_max_error": 0.0,
+      "independent_head_CPU_MPS_max_error": 3.45549229621156e-05,
+      "raw_reflection_view_feature_max_error": 0.0,
+      "raw_feature_replay_images": 3,
+      "foldtrain_scalers_targets_ids_verified": true,
+      "formula_verified": true,
+      "full_fold_replay": {
+        "full12epoch_state_exact": true,
+        "outer_validation_labels_perturbed": true
+      },
+      "advance": false,
+      "report_sha256": "dc90536d82477826ad226378d7322bddaeb46b7120145d88fa2070d081ca1938",
+      "source_sha256": "c85e04dcdbb7f02d4e0d571ae913434142b10637a58ff08f2bc498ffa654c75e",
+      "seconds": 10.459992458985653,
+      "holdout_test_used": false,
+      "cost": 0
+    }
+  },
+  "decision_ko": "패치 시작 위치4개 평균은 원본 OOF13.07085676으로011의13.05399777보다0.01685899 악화했고5fold 중1개만 개선했다. 사전 고정된 단순 원본 개선 조건에 미달하므로 이 단일 비교는 종료한다. 재분할/전체500/test/후보 생성으로 진행하지 않고 best011을 보존한다.",
+  "interpretation": "The fixed phaseaverage changes featurevalues andedgecontext whilekeepingheadcapacity/settings identical. Failure ofthis protocol doesnotestablishtranslationinvariance, irreduciblenoise, or a performanceceiling. No additionalposthoc gate wasadded. D4repetition/headgrid/TVNLM retrieswereavoided.",
+  "limits": [
+    "Reused development400 andhistoricalfeature/model selection makeobservedCV changes exploratory.",
+    "Conditional95% gaininterval[-.05344,.01893] excludes neither smallhelp norharm andignoresrefitting/adaptiveselection.",
+    "Phaseviews alter absolutepositions/edgecontent; benefit orharm cannot beuniquely attributed topatchaliasing.",
+    "Officialfullrotationlabel invariance remainsunverified; it wasnotrequiredas anewgate or usedtojustifythisshiftcomparison."
+  ],
+  "execution": {
+    "prepare_exit": 0,
+    "feature_extraction_exit": 0,
+    "OOF_training_exit": 0,
+    "independent_validation_exit": 0,
+    "full12epoch_fold0_replay_exact": true,
+    "model_count": 5,
+    "additional_replay_models": 1,
+    "newpackage_count": 0,
+    "existing_packages_unchanged": 26,
+    "cost": 0,
+    "holdout_test_access_for_selection": false,
+    "new_test_raw_checks": false,
+    "rawdata_external_transmission": false,
+    "resplits_run": false,
+    "full500_fit": false,
+    "test_inference": false,
+    "new_submission_csv": false,
+    "uploaded": false
+  },
+  "best011": {
+    "protected_files_verified": 20,
+    "unchanged": true,
+    "CSV_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5"
+  },
+  "artifact_sha256": {
+    "artifacts/pipeline-audit-103/plan.json": "a5e15bbcf87d1eb9bc7c26611522ad92e7edcafe7823226225e07ce1befe541a",
+    "artifacts/pipeline-audit-103/report.json": "71d88c0f691c680f647c68165da8921322c1a6520af925faebcf618b50ef003a",
+    "artifacts/patch-phase-104/plan.json": "e6e32190d29d316eb7f88dffdef9c6b988ed514805badd661d6141a69f68212e",
+    "artifacts/patch-phase-104/benchmark.json": "4d1b00b1add24c171ca1e5d8161edb5a1a3ab861d22468a46e9c35f55ccb9656",
+    "artifacts/patch-phase-104/extraction.json": "1b0f6b34cde1ce2c56d43c939332af190edab9675ba8c0bfede04aa60121bd9a",
+    "artifacts/patch-phase-104/original/report.json": "dc90536d82477826ad226378d7322bddaeb46b7120145d88fa2070d081ca1938",
+    "artifacts/patch-phase-104/original/development_predictions.npz": "a6c4769bf0710866fdeb94eacb3e9f79cc938a39154ffed1e83b45612c231a75",
+    "reports/patch-phase-104-original-validation.json": "74e9973ad7ead859eff7b863fc2eba4d52e9deb04aa93e61cef0c16df235f07d",
+    "pipeline_audit_103.py": "af922c8c322d8b5f6d06a2b78d2bee6603a7ba4342e40f7029112bf3f27661eb",
+    "patch_phase_104.py": "88564771a411157269ff87b688dbd08bcfbaa2ed21cc7ed4633196d26e3f90ff",
+    "validate_patch_phase_104.py": "c85e04dcdbb7f02d4e0d571ae913434142b10637a58ff08f2bc498ffa654c75e"
+  },
+  "remaining_execution_blockers": []
+}

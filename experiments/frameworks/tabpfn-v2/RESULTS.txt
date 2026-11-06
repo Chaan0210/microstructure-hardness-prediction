@@ -1,0 +1,13 @@
+Private TabPFNv2 initial benchmark completed. Keep best021; no further work or submission performed.
+Settings: official tabpfn9.1.0/v2 regressor, CPU1,float32,1estimator,low_memory,1preprocessworker.
+Original development400, each320train/80validation, noholdout/test.
+
+representation | standalone RMSE | .95*021+.05*TabPFN RMSE | gain vs021 | positivefolds
+compact26 | 14.5151823140 | 12.8109353066 | -0.0247345308 | 0/5
+DINO_L_PCA64 | 14.1127539132 | 12.7876280061 | -0.0014272303 | 3/5
+joint90 | 13.5320909541 | 12.7789186400 | 0.0072821358 | 3/5
+
+Summary: summary.json. Prespecified plan: plan.json. Allsourceandmodelhashes recorded.
+Stages were: launch.py run.py benchmark; launch.py run.py compact26; launch.py run.py DINO_L_PCA64; launch.py run.py joint90; launch.py validate.py.
+Do not rerun into these existing output paths. They refuse overwrite; this directory is preserved privatebenchmark evidence.
+Originalenvironment/locks/best021and30protectedartifacts unchanged. No systeminstall, token, fee, extra modeldownload, inference networking or publication.

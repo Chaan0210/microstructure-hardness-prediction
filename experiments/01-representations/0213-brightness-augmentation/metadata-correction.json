@@ -1,0 +1,13 @@
+{
+  "reason": "Fix copied descriptive text; no transform, strength, training, scoring, or gate changes; before validation/scoring",
+  "corrections": {
+    "validate.py": {
+      "before": "'validation_targets':'NaN' if arm=='control' else '1e30'",
+      "after": "'validation_targets':'NaN'"
+    },
+    "score.py": {
+      "before": "brightness 감소 조건",
+      "after": "양방향 brightness 이동 조건"
+    }
+  }
+}

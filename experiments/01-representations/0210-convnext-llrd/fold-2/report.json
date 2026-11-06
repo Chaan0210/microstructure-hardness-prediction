@@ -1,0 +1,69 @@
+{
+  "all_optimizer_parameter_step_counters": 240,
+  "legacy_tail_lr_column": "uniform reference LR; actual five group LRs are in rng-and-groups.npz",
+  "ratio": 0.8,
+  "fold": 2,
+  "RNG_reference_exact_all240": true,
+  "group_LR_mean_and_schedule_exact_all240": true,
+  "effective_decay_fixed_all240": true,
+  "optimizer_has_no_RNG_side_effect_all240": true,
+  "recipe": {
+    "name": "fixed_adamw_low",
+    "optimizer": "AdamW",
+    "head_lr": 0.0001,
+    "tail_lr": 1e-05
+  },
+  "tail_trainable": true,
+  "tail_trainable_parameters": 14290944,
+  "seconds": 45.64224400000239,
+  "updates": 240,
+  "train_n": 320,
+  "prediction_n": 80,
+  "initial_train_RMSE": 5.703037849312143,
+  "final_train_RMSE": 3.661110290190314,
+  "curve": [
+    {
+      "epoch": 0,
+      "train_RMSE": 5.703037849312143
+    },
+    {
+      "epoch": 3,
+      "train_RMSE": 5.3653757740150185,
+      "train_augmented_mean_loss": 0.06439683437347413
+    },
+    {
+      "epoch": 6,
+      "train_RMSE": 4.618017829663539,
+      "train_augmented_mean_loss": 0.043064992147265
+    },
+    {
+      "epoch": 9,
+      "train_RMSE": 3.8396561967689506,
+      "train_augmented_mean_loss": 0.04863156161736697
+    },
+    {
+      "epoch": 12,
+      "train_RMSE": 3.661110290190314,
+      "train_augmented_mean_loss": 0.03790538554312661
+    }
+  ],
+  "gradient_norm_min": 0.958365797996521,
+  "gradient_norm_max": 6.678740501403809,
+  "gradient_clip_fraction": 0.9958333333333333,
+  "head_lr_first_last": [
+    0.0001,
+    1.1533337816991932e-05
+  ],
+  "tail_lr_first_last": [
+    1e-05,
+    1.1533337816991932e-06
+  ],
+  "same_model_reload_exact": true,
+  "BN_eval_affine_stats_unchanged": true,
+  "nontrainable_gradients_none": true,
+  "head_initial": "30be5b1e26059d1e53a14f4a4bf9d84047acc8d7da52130bedd18b3b401091f4",
+  "order_sha256": "a9d4cc3cdcca64c541172af958c0f8d167d9529c75ae27abffc72e1e6d2c231c",
+  "model_sha256": "5fa9e54817e727f06f4bbdd52f34d3b56394d9a405c3f2c51ca3d427029dff8c",
+  "updates_sha256": "723c429e02b89adc8b7136a382833f62ae6292839c6bc7e213fa1e3cb866df62",
+  "predictions_sha256": "497010f9ea1a3f0bc69320f453846c7e2cda60c301f8a8d887eb3472f54f5c59"
+}

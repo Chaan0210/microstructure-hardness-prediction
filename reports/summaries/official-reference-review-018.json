@@ -1,0 +1,19 @@
+{
+  "official_page": "https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai",
+  "reference_pdf": "https://cfiles.dacon.co.kr/competitions/daker_9monthly/%E1%84%86%E1%85%B5%E1%84%89%E1%85%A6%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9_%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC.pdf",
+  "access": "Official page and linked 3-page PDF text read directly with web tool this round; code/data sections inaccessible or rendered generic info",
+  "baseline_search": "No downloadable official baseline source verified in accessible public results. This does not prove none exists. No external source code copied.",
+  "license": "PDF treated as provided competition reference; no code license found, no redistribution or model weights downloaded. New feature/model code authored in project; existing dependency licenses recorded separately.",
+  "takeaways": [
+    "Grain size, dark phase, pores, elongation/alignment, size and spatial heterogeneity described",
+    "Blur/noise/contrast vary",
+    "Synthetic proxy inspired by Hall-Petch, phase mixture and porosity; feature effect signs not guaranteed",
+    "Absolute angle distinguished from alignment; physical length scale unavailable"
+  ],
+  "implementation_comparison": [
+    "Existing baseline already computes native256 FFT bands, axial AC, gradients, GLCM and LBP",
+    "Missing frequency-dependent angular consistency and spatial distribution of native texture energies motivate native28 ablation",
+    "Phase-extended kernel residual correlation0.988 and shared35of40worst errors suggest weak new information, not proven noise ceiling"
+  ],
+  "personal_mac_browser_used": false
+}

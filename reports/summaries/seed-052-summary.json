@@ -1,0 +1,436 @@
+{
+  "gate_all_three_improve006": true,
+  "model_count": 45,
+  "new_model_count": 30,
+  "reused_model_count": 15,
+  "max_reload_error": 0.0,
+  "full_epoch_replays": [
+    {
+      "seed": 20261205,
+      "max_parameter_error": 0.0
+    },
+    {
+      "seed": 20261219,
+      "max_parameter_error": 0.0
+    }
+  ],
+  "three_seeds_equal_weight_all_retained": true,
+  "foldtrain_only_transforms_verified": true,
+  "results": {
+    "original": {
+      "split": "original",
+      "seed_scores": {
+        "20261128": {
+          "standalone_rmse": 14.176614197244191,
+          "blend_rmse": 13.269410644269877,
+          "blend_fold_rmse": [
+            13.284880945104483,
+            12.639271883806234,
+            14.283869709077488,
+            12.451814193791085,
+            13.604059253411839
+          ]
+        },
+        "20261205": {
+          "standalone_rmse": 14.118115624458218,
+          "blend_rmse": 13.227763911966758,
+          "blend_fold_rmse": [
+            13.108275044273778,
+            12.807951195584858,
+            14.287798069891613,
+            12.335047363217956,
+            13.51679085249185
+          ]
+        },
+        "20261219": {
+          "standalone_rmse": 14.066812559542344,
+          "blend_rmse": 13.241808510146765,
+          "blend_fold_rmse": [
+            13.222163873752995,
+            12.7457572447626,
+            14.365867830342516,
+            12.352374533169078,
+            13.434589786205798
+          ]
+        }
+      },
+      "reference006_rmse": 13.423229237711903,
+      "mean3_standalone_rmse": 14.049242890525278,
+      "mean3_blend_rmse": 13.241596955038409,
+      "mean3_train_rmse_pooled": 0.6013408249223603,
+      "comparison": {
+        "gain": 0.18163228267349396,
+        "fold_gains": [
+          0.07130845644099715,
+          0.08440080417042317,
+          0.0004366836285090159,
+          0.3682724882060704,
+          0.39781346242491544
+        ],
+        "positive_folds": 5,
+        "conditional_ci95": [
+          0.04169188866449361,
+          0.3216156686367591
+        ]
+      },
+      "residual_correlations": {
+        "to003_each_seed": [
+          0.7939898477131331,
+          0.7835617879686811,
+          0.7927684446991643
+        ],
+        "to003_mean3": 0.7941143167984507,
+        "between_seeds": [
+          [
+            1.0,
+            0.9842423250522285,
+            0.9854521092510076
+          ],
+          [
+            0.9842423250522284,
+            1.0,
+            0.9850264877010982
+          ],
+          [
+            0.9854521092510075,
+            0.9850264877010984,
+            1.0
+          ]
+        ]
+      },
+      "prediction_seed_std_quantiles": [
+        0.09407081341551447,
+        1.1809779886554725,
+        2.2525488715389526,
+        3.3519579222615112
+      ],
+      "influence_stress": [
+        {
+          "removed_n": 1,
+          "removed_ids": [
+            "TRAIN_000064"
+          ],
+          "remaining_rmse_gain": 0.15780381917803155,
+          "removed_fraction_of_net_squared_error_gain": 0.14093520909033092,
+          "interpretation": "Worst-case removalchosenfromobservedbenefit,diagnosticonly;notunbiasednewvalidation"
+        },
+        {
+          "removed_n": 5,
+          "removed_ids": [
+            "TRAIN_000064",
+            "TRAIN_000453",
+            "TRAIN_000052",
+            "TRAIN_000087",
+            "TRAIN_000484"
+          ],
+          "remaining_rmse_gain": 0.09441955716054551,
+          "removed_fraction_of_net_squared_error_gain": 0.4986943969600974,
+          "interpretation": "Worst-case removalchosenfromobservedbenefit,diagnosticonly;notunbiasednewvalidation"
+        },
+        {
+          "removed_n": 10,
+          "removed_ids": [
+            "TRAIN_000064",
+            "TRAIN_000453",
+            "TRAIN_000052",
+            "TRAIN_000087",
+            "TRAIN_000484",
+            "TRAIN_000356",
+            "TRAIN_000128",
+            "TRAIN_000294",
+            "TRAIN_000209",
+            "TRAIN_000274"
+          ],
+          "remaining_rmse_gain": 0.0508227769686691,
+          "removed_fraction_of_net_squared_error_gain": 0.7388919829386552,
+          "interpretation": "Worst-case removalchosenfromobservedbenefit,diagnosticonly;notunbiasednewvalidation"
+        }
+      ],
+      "sample_squared_error_improvements": 232,
+      "seconds": 7.112121625046711,
+      "peak_rss_bytes": 460570624,
+      "all_seeds_retained": true,
+      "new_candidate": null,
+      "oof_sha256": "0007233266467fc7ae8f880329444d9edf45e40894dfbe6f9d55dcc31b3a34c2",
+      "report_sha256": "03f5617ad1d8c2df5a73778c4a1eb11144471a21efa325417775c47c91343be7"
+    },
+    "20261031": {
+      "split": "20261031",
+      "seed_scores": {
+        "20261128": {
+          "standalone_rmse": 13.995762333405986,
+          "blend_rmse": 13.172286501144717,
+          "blend_fold_rmse": [
+            13.495034779477042,
+            14.413401113540173,
+            13.46748505619754,
+            11.93126402702865,
+            12.407874433621918
+          ]
+        },
+        "20261205": {
+          "standalone_rmse": 14.084318956486616,
+          "blend_rmse": 13.173186043082246,
+          "blend_fold_rmse": [
+            13.517697244723792,
+            14.345286684653521,
+            13.569408802773305,
+            11.875468852149647,
+            12.409397569915134
+          ]
+        },
+        "20261219": {
+          "standalone_rmse": 14.287537806323407,
+          "blend_rmse": 13.243685649013742,
+          "blend_fold_rmse": [
+            13.603867157657806,
+            14.490487758451996,
+            13.602674316263874,
+            11.901611684660212,
+            12.460156559274422
+          ]
+        }
+      },
+      "reference006_rmse": 13.439650797694618,
+      "mean3_standalone_rmse": 14.060492400313716,
+      "mean3_blend_rmse": 13.192251472226435,
+      "mean3_train_rmse_pooled": 0.589518114905552,
+      "comparison": {
+        "gain": 0.24739932546818366,
+        "fold_gains": [
+          -0.0003994165874487976,
+          0.6251875613881683,
+          0.3935596638149583,
+          -0.06507969216176512,
+          0.21046755178620025
+        ],
+        "positive_folds": 3,
+        "conditional_ci95": [
+          0.08612226127637822,
+          0.41124889296295564
+        ]
+      },
+      "residual_correlations": {
+        "to003_each_seed": [
+          0.7933944891468083,
+          0.7865467982693127,
+          0.7958201678413915
+        ],
+        "to003_mean3": 0.7954283283486158,
+        "between_seeds": [
+          [
+            1.0,
+            0.9868633515215105,
+            0.9870430792340794
+          ],
+          [
+            0.9868633515215105,
+            1.0,
+            0.9866675038796965
+          ],
+          [
+            0.9870430792340795,
+            0.9866675038796966,
+            0.9999999999999999
+          ]
+        ]
+      },
+      "prediction_seed_std_quantiles": [
+        0.05873498011626364,
+        1.095823735560716,
+        2.0062933197532318,
+        3.5806129030807683
+      ],
+      "influence_stress": [
+        {
+          "removed_n": 1,
+          "removed_ids": [
+            "TRAIN_000078"
+          ],
+          "remaining_rmse_gain": 0.2155689424921281,
+          "removed_fraction_of_net_squared_error_gain": 0.1371073722444269,
+          "interpretation": "Worst-case removalchosenfromobservedbenefit,diagnosticonly;notunbiasednewvalidation"
+        },
+        {
+          "removed_n": 5,
+          "removed_ids": [
+            "TRAIN_000078",
+            "TRAIN_000064",
+            "TRAIN_000406",
+            "TRAIN_000120",
+            "TRAIN_000453"
+          ],
+          "remaining_rmse_gain": 0.12251160458756516,
+          "removed_fraction_of_net_squared_error_gain": 0.5295363475172652,
+          "interpretation": "Worst-case removalchosenfromobservedbenefit,diagnosticonly;notunbiasednewvalidation"
+        },
+        {
+          "removed_n": 10,
+          "removed_ids": [
+            "TRAIN_000078",
+            "TRAIN_000064",
+            "TRAIN_000406",
+            "TRAIN_000120",
+            "TRAIN_000453",
+            "TRAIN_000497",
+            "TRAIN_000185",
+            "TRAIN_000331",
+            "TRAIN_000376",
+            "TRAIN_000356"
+          ],
+          "remaining_rmse_gain": 0.062295863836080656,
+          "removed_fraction_of_net_squared_error_gain": 0.7712192786182724,
+          "interpretation": "Worst-case removalchosenfromobservedbenefit,diagnosticonly;notunbiasednewvalidation"
+        }
+      ],
+      "sample_squared_error_improvements": 232,
+      "seconds": 4.6805481250048615,
+      "peak_rss_bytes": 456441856,
+      "all_seeds_retained": true,
+      "new_candidate": null,
+      "oof_sha256": "689d4747a0deb3cda19333b753b9fe710b6b0b191a88011685eb5ad989109a4e",
+      "report_sha256": "5a509e81d89b6352563f4017f7b885765a20f5a42f0dec9bb62b2c445550aa89"
+    },
+    "20261101": {
+      "split": "20261101",
+      "seed_scores": {
+        "20261128": {
+          "standalone_rmse": 14.618191036571618,
+          "blend_rmse": 13.440400978398387,
+          "blend_fold_rmse": [
+            13.529822264247052,
+            13.292250030667278,
+            13.051976766618758,
+            14.215546497903075,
+            13.078456757980732
+          ]
+        },
+        "20261205": {
+          "standalone_rmse": 14.821222593069997,
+          "blend_rmse": 13.488036706113672,
+          "blend_fold_rmse": [
+            13.73471822328662,
+            13.328727358340386,
+            13.046347960839539,
+            14.22983941834999,
+            13.063027530935033
+          ]
+        },
+        "20261219": {
+          "standalone_rmse": 14.768785252345209,
+          "blend_rmse": 13.452733588773432,
+          "blend_fold_rmse": [
+            13.651271929698582,
+            13.327639282587679,
+            13.033609725472198,
+            14.185410749210865,
+            13.030585186685334
+          ]
+        }
+      },
+      "reference006_rmse": 13.610797519662416,
+      "mean3_standalone_rmse": 14.667072997232468,
+      "mean3_blend_rmse": 13.455677846832414,
+      "mean3_train_rmse_pooled": 0.5742335870970737,
+      "comparison": {
+        "gain": 0.1551196728300024,
+        "fold_gains": [
+          0.07383042629349745,
+          0.04169871737454578,
+          0.4028919413581118,
+          0.008737175974991018,
+          0.26337213609282095
+        ],
+        "positive_folds": 5,
+        "conditional_ci95": [
+          0.0162568325804164,
+          0.28748700583780235
+        ]
+      },
+      "residual_correlations": {
+        "to003_each_seed": [
+          0.8138361886813705,
+          0.814678257479868,
+          0.8063175396254622
+        ],
+        "to003_mean3": 0.8154215160055739,
+        "between_seeds": [
+          [
+            0.9999999999999999,
+            0.9866226551998669,
+            0.9868804778649796
+          ],
+          [
+            0.9866226551998669,
+            1.0,
+            0.9845083700667774
+          ],
+          [
+            0.9868804778649795,
+            0.9845083700667774,
+            0.9999999999999999
+          ]
+        ]
+      },
+      "prediction_seed_std_quantiles": [
+        0.05358639190278609,
+        1.1590914422395708,
+        2.1072154167104364,
+        3.768020612482977
+      ],
+      "influence_stress": [
+        {
+          "removed_n": 1,
+          "removed_ids": [
+            "TRAIN_000052"
+          ],
+          "remaining_rmse_gain": 0.1385394727345055,
+          "removed_fraction_of_net_squared_error_gain": 0.11362882128133128,
+          "interpretation": "Worst-case removalchosenfromobservedbenefit,diagnosticonly;notunbiasednewvalidation"
+        },
+        {
+          "removed_n": 5,
+          "removed_ids": [
+            "TRAIN_000052",
+            "TRAIN_000331",
+            "TRAIN_000406",
+            "TRAIN_000120",
+            "TRAIN_000087"
+          ],
+          "remaining_rmse_gain": 0.08431250232238163,
+          "removed_fraction_of_net_squared_error_gain": 0.48311345205028283,
+          "interpretation": "Worst-case removalchosenfromobservedbenefit,diagnosticonly;notunbiasednewvalidation"
+        },
+        {
+          "removed_n": 10,
+          "removed_ids": [
+            "TRAIN_000052",
+            "TRAIN_000331",
+            "TRAIN_000406",
+            "TRAIN_000120",
+            "TRAIN_000087",
+            "TRAIN_000376",
+            "TRAIN_000453",
+            "TRAIN_000071",
+            "TRAIN_000038",
+            "TRAIN_000442"
+          ],
+          "remaining_rmse_gain": 0.036312918672861016,
+          "removed_fraction_of_net_squared_error_gain": 0.7849127465060348,
+          "interpretation": "Worst-case removalchosenfromobservedbenefit,diagnosticonly;notunbiasednewvalidation"
+        }
+      ],
+      "sample_squared_error_improvements": 216,
+      "seconds": 4.559803375042975,
+      "peak_rss_bytes": 455344128,
+      "all_seeds_retained": true,
+      "new_candidate": null,
+      "oof_sha256": "3f82ac95a6fd197447db37867ee6761c22c63165393c2d8675a2d97442de0765",
+      "report_sha256": "42dbe20eecf3d1e03aecedbda99733c832bf0d4688aa2ad750691c0a96892a1a"
+    }
+  },
+  "influence_caveat": "Removing greatestSSEbenefitrows is worst-case forSSEgain, not mathematically worst-case RMSEgap;diagnostic only. Top10 contribute~74-78%ofnetSSEgain, but remainingRMSEgainstayspositive inall3.",
+  "selection_bias": "Samehistoricallyreused400,notnewindependentvalidation; one3seedsetnotproofagainstfuturetestshift.",
+  "protected_unchanged": true,
+  "seconds": 1.741516790993046
+}

@@ -1,0 +1,17 @@
+"""Close single fixed-seed study; preserve failures and best011."""
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[2]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import sys,json
+from pathlib import Path
+ROOT=_RepoPath(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+import frozen_seed_088 as s
+fv=s.fv
+
+def main():
+ plan=s.check();v=json.loads((_repo_path(ROOT, 'reports/frozen-seed-088-validation.json')).read_text());assert v['passed'];diag=json.loads((s.diag.OUT/'report.json').read_text());pub=s.diag.check_best();results={}
+ for split,x in v['results'].items():
+  r=json.loads((s.OUT/split/'report.json').read_text());assert fv.sha(s.OUT/split/'report.json')==x['report_sha256'];results[split]={'reference011_RMSE':x['scores']['reference011'],'fixed3seed_blend_RMSE':x['scores']['primary'],'comparison':x['comparison'],'advance':x['advance'],'individual_head_RMSE_diagnostic_only':r['individual_head_scores_diagnostic_only'],'head_mean3_RMSE':x['scores']['head_mean3'],'seed_averaging_MSE_identity':{'mean_individual_MSE':r['head_average_individual_MSE'],'mean3_MSE':r['head_mean3_MSE'],'reduction_equal_seed_variance':r['seed_prediction_variance_mean']}}
+ eligible=v['eligible_for_candidate'];out={'study':'087 diagnosis and088 fixed three-seed follow-up','decision':'Eligible for separate candidate lock.' if eligible else 'Rejected: the single predeclared seed bundle failed the all-partition011 improvement gate. No replacement seeds, reduced subset, weights, epochs, joint training or alternate experiment. No new candidate CSV/full500/test inference. Best011 preserved.','results':results,'diagnostic_conclusions':diag['causal_conclusions'],'diagnostic_results':diag['results'],'seed_only_test':{'seeds':list(s.SEEDS),'settings_unchanged':True,'all_seeds_equally_retained':True,'Public_used_for_tuning':False,'new_development_models':30,'existing_models_reused':15},'validation':{k:x for k,x in v.items() if k!='results'},'interpretation':'Averaging reduces MSE relative to the mean individual-seed MSE by an exact diversity identity. That does not guarantee improvement over the existing selected single seed or preserve complementarity with009. This test measures seed robustness of one fixed recipe; it does not identify separate effects of dropout,width,weight decay and training length, or prove a performance ceiling.','selection_bias':plan['selection_bias'],'best011':{'public_rmse_parent_reported':pub['public_rmse'],'submission_id':pub['submission_id'],'CSV':'artifacts/submission-candidate-011.csv','sha256':pub['sha256'],'protected_files':len(pub['protected_sha256']),'remaining_submission_reported_by_parent':1},'scope':{'cost':0,'new_install_or_download':False,'holdout_test_selection_access':False,'new_candidate_created':False,'uploaded':False,'010_unsubmitted':True},'evidence_sha256':{n:fv.sha(_repo_path(ROOT, n)) for n in ['artifacts/frozen-head-diagnostics-087/report.json','artifacts/frozen-seed-088/plan.json','reports/frozen-seed-088-validation.json','reports/candidate011-public-submission.json']},'source_sha256':fv.sha(Path(__file__))};fv.write(_repo_path(ROOT, 'reports/frozen-head-087-seed-088-summary.json'),out);print(json.dumps({'eligible':eligible,'decision':out['decision'],'results':results}),flush=True)
+if __name__=='__main__':main()

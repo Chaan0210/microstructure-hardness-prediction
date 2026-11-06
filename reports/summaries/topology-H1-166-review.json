@@ -1,0 +1,80 @@
+{
+  "request_status": "Reviewonly; no installation, newdataset extraction or topology model fit",
+  "primary_sources": [
+    {
+      "url": "https://arxiv.org/pdf/2204.00629",
+      "finding": "TopTemp uses intensity-filtration H1 and10x10persistenceimages for SEM temper classification, not hardness regression. Its reported limited-sample results justify investigating representation, not assuming transfer."
+    },
+    {
+      "url": "https://arxiv.org/html/2501.18637v2#S3.SS2",
+      "finding": "149grayscaleSEM hardness study uses ViT representations/PCA/SVR with nested10fold; supports existing path, no new repetition proposed."
+    }
+  ],
+  "existing": {
+    "055": "3grayquantiles; signed-distance Betti0/1 curves at11distances; records holes but not intensitybirth/death pairings.",
+    "107": "ExactfiniteH0 lower/uppergraylevel4neighbor graph diagrams and16x16persistenceimages. Not H1. Failed due tiny-tail feature standardization amplification.",
+    "109": "Train-only variancefloor repair retained sameH0 descriptors; repairedblend13.12086 vs01113.05400; failed0/5fold gains. Do not repeat merepersistenceimage/scaler repair.",
+    "159": "Thresholded component-pairC2 at3quantiles andselectedlags; not holebirth/death pairing."
+  },
+  "novelty_scope": "Full grayscale H1 pairing with explicit complex/connectivity and boundary conventions was not implemented. Topologyasafamily is notnew; only a narrowlydefined H1 extension may be distinct. Existingupper/lowerH0 andBetti1 already overlap with its information.",
+  "case_evidence": "Visualclosed boundaries and darkspots occur in both largeerror and lowerror controls. Existing6Betti1 snapshot associations below do not establish intensity-lifetime information explains failure. No topological cause inferred from holes being visible.",
+  "existing_snapshot_diagnostics": [
+    {
+      "name": "betti_q20_d0_c1_b1",
+      "spearman_abs_error": 0.030006264959935493,
+      "large33_median_holes": 145.0,
+      "other367_median_holes": 150.0
+    },
+    {
+      "name": "betti_q20_d0_c2_b1",
+      "spearman_abs_error": 0.113653366654646,
+      "large33_median_holes": 684.0,
+      "other367_median_holes": 599.0
+    },
+    {
+      "name": "betti_q50_d0_c1_b1",
+      "spearman_abs_error": 0.15581506018626684,
+      "large33_median_holes": 864.0,
+      "other367_median_holes": 656.0
+    },
+    {
+      "name": "betti_q50_d0_c2_b1",
+      "spearman_abs_error": 0.12414411470144887,
+      "large33_median_holes": 2741.0,
+      "other367_median_holes": 1875.0
+    },
+    {
+      "name": "betti_q80_d0_c1_b1",
+      "spearman_abs_error": 0.09894649022353434,
+      "large33_median_holes": 2019.0,
+      "other367_median_holes": 1700.0
+    },
+    {
+      "name": "betti_q80_d0_c2_b1",
+      "spearman_abs_error": 0.11255356912501552,
+      "large33_median_holes": 3928.0,
+      "other367_median_holes": 3312.0
+    }
+  ],
+  "implementation_fixture": {
+    "both_lower_upper_finite_H0_diagrams_equal": true,
+    "central_bright_patch_sublevel_H1": 1,
+    "edge_touching_bright_patch_sublevel_H1": 0,
+    "same_bright_pixel_count": true,
+    "meaning": "Boundary-aware hole information is not identical to implemented finite4neighbor lower/upperH0 encoding. Not proof of new information beyond055 or equality ofS2/C2, not a complete persistentH1 implementation."
+  },
+  "possible_second_hypothesis_not_executed": {
+    "cause": "Grayscale holebirth/death pairing might separate closedregions withsimilar thresholdcounts but different contrast persistence, if correlatedwithsynthetic proxy residuals. This link remains unverified.",
+    "first_step": "Before fitting, implement/validate boundary-awareH1 with existingnumpy/scipy/skimage only, against handcalculated ring/openboundary/merge fixtures. Demonstrate distinction from existing055/107 on outcomes-blind sample. No newdependency authorized.",
+    "intervention_if_justified": "One fixedH1persistenceimage appended to existing honest018 residual bank, with same-sizeH0 persistence control and immutable018; fitalltransforms withinhonestinnerfolds. No sigma/bin/thresholdsweep or propertysign constraints.",
+    "failure": "Stop if implementation/independence check fails, or heldout improvements do not exceed both018 andmatchedH0. This is a proposal, not a second executed candidate."
+  },
+  "metadata_sha256": {
+    "artifacts/betti-055/development_features.npz": "db30f068f7ab02c2a2ea667698c22ad21c701e191216250266389ad6eed8b83c",
+    "persistence_features_107.py": "64e529d7cd63affdf4b6f481f4dadae0816ee134ec3ee6002813ca4b63bedbcb",
+    "persistence_study_107.py": "eddde73cceaf3e9dca57fdc87dec337322b3586c2c9812e44325f7df0077743f",
+    "reports/persistence-repair-109-summary.json": "fe55e5369cd6d3ad0e1d3ec13b7f96ab3c48bb6389d8c75c3ef083e0b8f0bc6b",
+    "betti_features_055.py": "88f58ce16e2e3d64b508d7f4dfc2b96f5a15a68aef6721091484a60ee96d7e7a",
+    "cluster_pair_features_159.py": "fdaab978425c29770075b1c316fa236b7cb05afb02df513a41a443a0e43b746e"
+  }
+}

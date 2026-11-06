@@ -1,0 +1,646 @@
+{
+  "mean": {
+    "fold_rmse": [
+      17.97756632565263,
+      17.726972545819198,
+      18.3895855843078,
+      18.236275325708135,
+      18.13213309574019
+    ],
+    "oof_rmse": 18.093928777093804,
+    "fit_seconds": [
+      0.0008091669878922403,
+      0.0001656670356169343,
+      0.00014329201076179743,
+      0.00012770801549777389,
+      0.00012137502199038863
+    ],
+    "params": {
+      "constant": "None",
+      "quantile": "None",
+      "strategy": "mean"
+    }
+  },
+  "ridge_100": {
+    "fold_rmse": [
+      13.499114254148276,
+      13.628966809400376,
+      15.492554988551152,
+      13.842352209172745,
+      15.140440688313642
+    ],
+    "oof_rmse": 14.344599966054824,
+    "fit_seconds": [
+      0.008892249956261367,
+      0.003393624967429787,
+      0.002439500007312745,
+      0.0036952500231564045,
+      0.0023675840348005295
+    ],
+    "params": {
+      "memory": "None",
+      "steps": "[('standardscaler', StandardScaler()), ('ridge', Ridge(alpha=100))]",
+      "transform_input": "None",
+      "verbose": "False",
+      "standardscaler": "StandardScaler()",
+      "ridge": "Ridge(alpha=100)",
+      "standardscaler__copy": "True",
+      "standardscaler__with_mean": "True",
+      "standardscaler__with_std": "True",
+      "ridge__alpha": "100",
+      "ridge__copy_X": "True",
+      "ridge__fit_intercept": "True",
+      "ridge__max_iter": "None",
+      "ridge__positive": "False",
+      "ridge__random_state": "None",
+      "ridge__solver": "auto",
+      "ridge__tol": "0.0001"
+    }
+  },
+  "et_leaf2": {
+    "fold_rmse": [
+      14.29945998034554,
+      14.191268254373622,
+      15.702144544835038,
+      13.40921912407392,
+      14.927359837954837
+    ],
+    "oof_rmse": 14.52623298004824,
+    "fit_seconds": [
+      2.035858958028257,
+      2.018625167023856,
+      2.0311452080495656,
+      2.021276959043462,
+      2.0380378749687225
+    ],
+    "params": {
+      "bootstrap": "False",
+      "ccp_alpha": "0.0",
+      "criterion": "squared_error",
+      "max_depth": "None",
+      "max_features": "0.8",
+      "max_leaf_nodes": "None",
+      "max_samples": "None",
+      "min_impurity_decrease": "0.0",
+      "min_samples_leaf": "2",
+      "min_samples_split": "2",
+      "min_weight_fraction_leaf": "0.0",
+      "monotonic_cst": "None",
+      "n_estimators": "400",
+      "n_jobs": "2",
+      "oob_score": "False",
+      "random_state": "20260930",
+      "verbose": "0",
+      "warm_start": "False"
+    }
+  },
+  "et_leaf4": {
+    "fold_rmse": [
+      14.39949210557975,
+      14.294890124051486,
+      15.755969877478973,
+      13.498685422006776,
+      14.774854675422342
+    ],
+    "oof_rmse": 14.563314747264997,
+    "fit_seconds": [
+      1.7200689999735914,
+      1.6980263330042362,
+      1.8139389159623533,
+      1.698860542033799,
+      1.7375308749615215
+    ],
+    "params": {
+      "bootstrap": "False",
+      "ccp_alpha": "0.0",
+      "criterion": "squared_error",
+      "max_depth": "None",
+      "max_features": "1.0",
+      "max_leaf_nodes": "None",
+      "max_samples": "None",
+      "min_impurity_decrease": "0.0",
+      "min_samples_leaf": "4",
+      "min_samples_split": "2",
+      "min_weight_fraction_leaf": "0.0",
+      "monotonic_cst": "None",
+      "n_estimators": "400",
+      "n_jobs": "2",
+      "oob_score": "False",
+      "random_state": "20260930",
+      "verbose": "0",
+      "warm_start": "False"
+    }
+  },
+  "hgb_leaf8": {
+    "fold_rmse": [
+      14.302369720804338,
+      14.460236158739535,
+      16.27725314437188,
+      13.88969465195808,
+      14.594460059935006
+    ],
+    "oof_rmse": 14.727708995554837,
+    "fit_seconds": [
+      1.070919457997661,
+      1.0709089589654468,
+      1.0842400830006227,
+      1.0682509579928592,
+      1.0468801250099204
+    ],
+    "params": {
+      "categorical_features": "from_dtype",
+      "early_stopping": "False",
+      "interaction_cst": "None",
+      "l2_regularization": "10.0",
+      "learning_rate": "0.05",
+      "loss": "squared_error",
+      "max_bins": "255",
+      "max_depth": "None",
+      "max_features": "1.0",
+      "max_iter": "250",
+      "max_leaf_nodes": "8",
+      "min_samples_leaf": "15",
+      "monotonic_cst": "None",
+      "n_iter_no_change": "10",
+      "quantile": "None",
+      "random_state": "20260930",
+      "scoring": "loss",
+      "tol": "1e-07",
+      "validation_fraction": "0.1",
+      "verbose": "0",
+      "warm_start": "False"
+    }
+  },
+  "svr_c10_g0.001": {
+    "oof_rmse": 15.302976733054585,
+    "fold_rmse": [
+      13.85654753995964,
+      15.131491254238616,
+      16.18851529910804,
+      14.919330976317516,
+      16.287574490617878
+    ],
+    "fit_predict_seconds": [
+      0.024489416973665357,
+      0.021129874978214502,
+      0.020928959012962878,
+      0.02110945904860273,
+      0.02019254199694842
+    ],
+    "params": {
+      "check_inverse": "True",
+      "func": "None",
+      "inverse_func": "None",
+      "regressor__memory": "None",
+      "regressor__steps": "[('standardscaler', StandardScaler()), ('svr', SVR(C=10.0, epsilon=0.05, gamma=0.001))]",
+      "regressor__transform_input": "None",
+      "regressor__verbose": "False",
+      "regressor__standardscaler": "StandardScaler()",
+      "regressor__svr": "SVR(C=10.0, epsilon=0.05, gamma=0.001)",
+      "regressor__standardscaler__copy": "True",
+      "regressor__standardscaler__with_mean": "True",
+      "regressor__standardscaler__with_std": "True",
+      "regressor__svr__C": "10.0",
+      "regressor__svr__cache_size": "200",
+      "regressor__svr__coef0": "0.0",
+      "regressor__svr__degree": "3",
+      "regressor__svr__epsilon": "0.05",
+      "regressor__svr__gamma": "0.001",
+      "regressor__svr__kernel": "rbf",
+      "regressor__svr__max_iter": "-1",
+      "regressor__svr__shrinking": "True",
+      "regressor__svr__tol": "0.001",
+      "regressor__svr__verbose": "False",
+      "regressor": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('svr', SVR(C=10.0, epsilon=0.05, gamma=0.001))])",
+      "transformer__copy": "True",
+      "transformer__with_mean": "True",
+      "transformer__with_std": "True",
+      "transformer": "StandardScaler()"
+    }
+  },
+  "svr_c10_g0.003": {
+    "oof_rmse": 15.299672211612553,
+    "fold_rmse": [
+      14.711279369863265,
+      14.400718947234626,
+      16.81127975603102,
+      15.176097293036639,
+      15.286083407311612
+    ],
+    "fit_predict_seconds": [
+      0.01913962501566857,
+      0.019605541951023042,
+      0.021734166948590428,
+      0.023738750023767352,
+      0.02531804097816348
+    ],
+    "params": {
+      "check_inverse": "True",
+      "func": "None",
+      "inverse_func": "None",
+      "regressor__memory": "None",
+      "regressor__steps": "[('standardscaler', StandardScaler()), ('svr', SVR(C=10.0, epsilon=0.05, gamma=0.003))]",
+      "regressor__transform_input": "None",
+      "regressor__verbose": "False",
+      "regressor__standardscaler": "StandardScaler()",
+      "regressor__svr": "SVR(C=10.0, epsilon=0.05, gamma=0.003)",
+      "regressor__standardscaler__copy": "True",
+      "regressor__standardscaler__with_mean": "True",
+      "regressor__standardscaler__with_std": "True",
+      "regressor__svr__C": "10.0",
+      "regressor__svr__cache_size": "200",
+      "regressor__svr__coef0": "0.0",
+      "regressor__svr__degree": "3",
+      "regressor__svr__epsilon": "0.05",
+      "regressor__svr__gamma": "0.003",
+      "regressor__svr__kernel": "rbf",
+      "regressor__svr__max_iter": "-1",
+      "regressor__svr__shrinking": "True",
+      "regressor__svr__tol": "0.001",
+      "regressor__svr__verbose": "False",
+      "regressor": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('svr', SVR(C=10.0, epsilon=0.05, gamma=0.003))])",
+      "transformer__copy": "True",
+      "transformer__with_mean": "True",
+      "transformer__with_std": "True",
+      "transformer": "StandardScaler()"
+    }
+  },
+  "svr_c100_g0.001": {
+    "oof_rmse": 15.914698076893897,
+    "fold_rmse": [
+      15.0144418705319,
+      14.983917570821415,
+      16.882675344023472,
+      15.762960851858109,
+      16.820854982782233
+    ],
+    "fit_predict_seconds": [
+      0.023554125044029206,
+      0.02448708302108571,
+      0.02378745801979676,
+      0.024447916948702186,
+      0.023714458977337927
+    ],
+    "params": {
+      "check_inverse": "True",
+      "func": "None",
+      "inverse_func": "None",
+      "regressor__memory": "None",
+      "regressor__steps": "[('standardscaler', StandardScaler()), ('svr', SVR(C=100.0, epsilon=0.05, gamma=0.001))]",
+      "regressor__transform_input": "None",
+      "regressor__verbose": "False",
+      "regressor__standardscaler": "StandardScaler()",
+      "regressor__svr": "SVR(C=100.0, epsilon=0.05, gamma=0.001)",
+      "regressor__standardscaler__copy": "True",
+      "regressor__standardscaler__with_mean": "True",
+      "regressor__standardscaler__with_std": "True",
+      "regressor__svr__C": "100.0",
+      "regressor__svr__cache_size": "200",
+      "regressor__svr__coef0": "0.0",
+      "regressor__svr__degree": "3",
+      "regressor__svr__epsilon": "0.05",
+      "regressor__svr__gamma": "0.001",
+      "regressor__svr__kernel": "rbf",
+      "regressor__svr__max_iter": "-1",
+      "regressor__svr__shrinking": "True",
+      "regressor__svr__tol": "0.001",
+      "regressor__svr__verbose": "False",
+      "regressor": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('svr', SVR(C=100.0, epsilon=0.05, gamma=0.001))])",
+      "transformer__copy": "True",
+      "transformer__with_mean": "True",
+      "transformer__with_std": "True",
+      "transformer": "StandardScaler()"
+    }
+  },
+  "svr_c100_g0.003": {
+    "oof_rmse": 15.313819945432424,
+    "fold_rmse": [
+      14.811617013988387,
+      14.371907079093836,
+      16.806603344348755,
+      15.210165663564238,
+      15.258395703975527
+    ],
+    "fit_predict_seconds": [
+      0.026331666973419487,
+      0.019431166001595557,
+      0.019902249972801656,
+      0.02099599997745827,
+      0.020230250025633723
+    ],
+    "params": {
+      "check_inverse": "True",
+      "func": "None",
+      "inverse_func": "None",
+      "regressor__memory": "None",
+      "regressor__steps": "[('standardscaler', StandardScaler()), ('svr', SVR(C=100.0, epsilon=0.05, gamma=0.003))]",
+      "regressor__transform_input": "None",
+      "regressor__verbose": "False",
+      "regressor__standardscaler": "StandardScaler()",
+      "regressor__svr": "SVR(C=100.0, epsilon=0.05, gamma=0.003)",
+      "regressor__standardscaler__copy": "True",
+      "regressor__standardscaler__with_mean": "True",
+      "regressor__standardscaler__with_std": "True",
+      "regressor__svr__C": "100.0",
+      "regressor__svr__cache_size": "200",
+      "regressor__svr__coef0": "0.0",
+      "regressor__svr__degree": "3",
+      "regressor__svr__epsilon": "0.05",
+      "regressor__svr__gamma": "0.003",
+      "regressor__svr__kernel": "rbf",
+      "regressor__svr__max_iter": "-1",
+      "regressor__svr__shrinking": "True",
+      "regressor__svr__tol": "0.001",
+      "regressor__svr__verbose": "False",
+      "regressor": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('svr', SVR(C=100.0, epsilon=0.05, gamma=0.003))])",
+      "transformer__copy": "True",
+      "transformer__with_mean": "True",
+      "transformer__with_std": "True",
+      "transformer": "StandardScaler()"
+    }
+  },
+  "krr_a0.1": {
+    "oof_rmse": 30.669595161083965,
+    "fold_rmse": [
+      19.4226902764619,
+      17.789024988619563,
+      56.889847988097586,
+      19.548447296165314,
+      19.769507664659244
+    ],
+    "fit_predict_seconds": [
+      0.02491899998858571,
+      0.003916874993592501,
+      0.003549333952832967,
+      0.003890958963893354,
+      0.004030249954666942
+    ],
+    "params": {
+      "memory": "None",
+      "steps": "[('standardscaler', StandardScaler()), ('kernelridge', KernelRidge(alpha=0.1, gamma=0.001, kernel='rbf'))]",
+      "transform_input": "None",
+      "verbose": "False",
+      "standardscaler": "StandardScaler()",
+      "kernelridge": "KernelRidge(alpha=0.1, gamma=0.001, kernel='rbf')",
+      "standardscaler__copy": "True",
+      "standardscaler__with_mean": "True",
+      "standardscaler__with_std": "True",
+      "kernelridge__alpha": "0.1",
+      "kernelridge__coef0": "1",
+      "kernelridge__degree": "3",
+      "kernelridge__gamma": "0.001",
+      "kernelridge__kernel": "rbf",
+      "kernelridge__kernel_params": "None"
+    }
+  },
+  "krr_a1": {
+    "oof_rmse": 34.598539734880866,
+    "fold_rmse": [
+      23.767378763688072,
+      22.495245219173555,
+      60.90684660889945,
+      24.692523221555327,
+      24.39273951970614
+    ],
+    "fit_predict_seconds": [
+      0.0033309999853372574,
+      0.0039837080403231084,
+      0.0032866669935174286,
+      0.004513791995123029,
+      0.0033682089997455478
+    ],
+    "params": {
+      "memory": "None",
+      "steps": "[('standardscaler', StandardScaler()), ('kernelridge', KernelRidge(alpha=1.0, gamma=0.001, kernel='rbf'))]",
+      "transform_input": "None",
+      "verbose": "False",
+      "standardscaler": "StandardScaler()",
+      "kernelridge": "KernelRidge(alpha=1.0, gamma=0.001, kernel='rbf')",
+      "standardscaler__copy": "True",
+      "standardscaler__with_mean": "True",
+      "standardscaler__with_std": "True",
+      "kernelridge__alpha": "1.0",
+      "kernelridge__coef0": "1",
+      "kernelridge__degree": "3",
+      "kernelridge__gamma": "0.001",
+      "kernelridge__kernel": "rbf",
+      "kernelridge__kernel_params": "None"
+    }
+  },
+  "ridge10": {
+    "oof_rmse": 18.753544769884854,
+    "fold_rmse": [
+      17.181625933710095,
+      16.538025111039882,
+      23.450541163987754,
+      17.7346916352913,
+      18.036504500548272
+    ],
+    "fit_predict_seconds": [
+      0.0027836249792017043,
+      0.0026442500529810786,
+      0.002399749995674938,
+      0.002666875021532178,
+      0.002453959023114294
+    ],
+    "params": {
+      "memory": "None",
+      "steps": "[('standardscaler', StandardScaler()), ('ridge', Ridge(alpha=10.0))]",
+      "transform_input": "None",
+      "verbose": "False",
+      "standardscaler": "StandardScaler()",
+      "ridge": "Ridge(alpha=10.0)",
+      "standardscaler__copy": "True",
+      "standardscaler__with_mean": "True",
+      "standardscaler__with_std": "True",
+      "ridge__alpha": "10.0",
+      "ridge__copy_X": "True",
+      "ridge__fit_intercept": "True",
+      "ridge__max_iter": "None",
+      "ridge__positive": "False",
+      "ridge__random_state": "None",
+      "ridge__solver": "auto",
+      "ridge__tol": "0.0001"
+    }
+  },
+  "ridge1000": {
+    "oof_rmse": 14.302661750103445,
+    "fold_rmse": [
+      14.047186392600043,
+      13.72920913622404,
+      15.198178194716807,
+      13.563792322397555,
+      14.901508448181982
+    ],
+    "fit_predict_seconds": [
+      0.0026530419709160924,
+      0.0024457499966956675,
+      0.0024138339795172215,
+      0.0022875419817864895,
+      0.003468374954536557
+    ],
+    "params": {
+      "memory": "None",
+      "steps": "[('standardscaler', StandardScaler()), ('ridge', Ridge(alpha=1000.0))]",
+      "transform_input": "None",
+      "verbose": "False",
+      "standardscaler": "StandardScaler()",
+      "ridge": "Ridge(alpha=1000.0)",
+      "standardscaler__copy": "True",
+      "standardscaler__with_mean": "True",
+      "standardscaler__with_std": "True",
+      "ridge__alpha": "1000.0",
+      "ridge__copy_X": "True",
+      "ridge__fit_intercept": "True",
+      "ridge__max_iter": "None",
+      "ridge__positive": "False",
+      "ridge__random_state": "None",
+      "ridge__solver": "auto",
+      "ridge__tol": "0.0001"
+    }
+  },
+  "pca_svr": {
+    "oof_rmse": 16.371647320354672,
+    "fold_rmse": [
+      15.708371147098088,
+      15.652290048183861,
+      17.725896604939816,
+      15.50501701292149,
+      17.140423245734645
+    ],
+    "fit_predict_seconds": [
+      0.025019457971211523,
+      0.014421458006836474,
+      0.01342416601255536,
+      0.014089917007368058,
+      0.013577333011198789
+    ],
+    "params": {
+      "check_inverse": "True",
+      "func": "None",
+      "inverse_func": "None",
+      "regressor__memory": "None",
+      "regressor__steps": "[('standardscaler', StandardScaler()), ('pca', PCA(n_components=30, random_state=20260930)), ('svr', SVR(C=10, epsilon=0.05, gamma=0.003))]",
+      "regressor__transform_input": "None",
+      "regressor__verbose": "False",
+      "regressor__standardscaler": "StandardScaler()",
+      "regressor__pca": "PCA(n_components=30, random_state=20260930)",
+      "regressor__svr": "SVR(C=10, epsilon=0.05, gamma=0.003)",
+      "regressor__standardscaler__copy": "True",
+      "regressor__standardscaler__with_mean": "True",
+      "regressor__standardscaler__with_std": "True",
+      "regressor__pca__copy": "True",
+      "regressor__pca__iterated_power": "auto",
+      "regressor__pca__n_components": "30",
+      "regressor__pca__n_oversamples": "10",
+      "regressor__pca__power_iteration_normalizer": "auto",
+      "regressor__pca__random_state": "20260930",
+      "regressor__pca__svd_solver": "auto",
+      "regressor__pca__tol": "0.0",
+      "regressor__pca__whiten": "False",
+      "regressor__svr__C": "10",
+      "regressor__svr__cache_size": "200",
+      "regressor__svr__coef0": "0.0",
+      "regressor__svr__degree": "3",
+      "regressor__svr__epsilon": "0.05",
+      "regressor__svr__gamma": "0.003",
+      "regressor__svr__kernel": "rbf",
+      "regressor__svr__max_iter": "-1",
+      "regressor__svr__shrinking": "True",
+      "regressor__svr__tol": "0.001",
+      "regressor__svr__verbose": "False",
+      "regressor": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('pca', PCA(n_components=30, random_state=20260930)),\n                ('svr', SVR(C=10, epsilon=0.05, gamma=0.003))])",
+      "transformer__copy": "True",
+      "transformer__with_mean": "True",
+      "transformer__with_std": "True",
+      "transformer": "StandardScaler()"
+    }
+  },
+  "selected_svr": {
+    "oof_rmse": 15.50119408085111,
+    "fold_rmse": [
+      15.477467615046665,
+      15.269916531565775,
+      15.864274594245567,
+      14.060889845451252,
+      16.71313565306415
+    ],
+    "fit_predict_seconds": [
+      0.015116499969735742,
+      0.01362275000428781,
+      0.014541375043336302,
+      0.01544933399418369,
+      0.013622500002384186
+    ],
+    "params": {
+      "check_inverse": "True",
+      "func": "None",
+      "inverse_func": "None",
+      "regressor__memory": "None",
+      "regressor__steps": "[('selectpercentile', SelectPercentile(percentile=40,\n                 score_func=<function f_regression at 0x10df79a80>)), ('standardscaler', StandardScaler()), ('svr', SVR(C=10, epsilon=0.05, gamma=0.003))]",
+      "regressor__transform_input": "None",
+      "regressor__verbose": "False",
+      "regressor__selectpercentile": "SelectPercentile(percentile=40,\n                 score_func=<function f_regression at 0x10df79a80>)",
+      "regressor__standardscaler": "StandardScaler()",
+      "regressor__svr": "SVR(C=10, epsilon=0.05, gamma=0.003)",
+      "regressor__selectpercentile__percentile": "40",
+      "regressor__selectpercentile__score_func": "<function f_regression at 0x10df79a80>",
+      "regressor__standardscaler__copy": "True",
+      "regressor__standardscaler__with_mean": "True",
+      "regressor__standardscaler__with_std": "True",
+      "regressor__svr__C": "10",
+      "regressor__svr__cache_size": "200",
+      "regressor__svr__coef0": "0.0",
+      "regressor__svr__degree": "3",
+      "regressor__svr__epsilon": "0.05",
+      "regressor__svr__gamma": "0.003",
+      "regressor__svr__kernel": "rbf",
+      "regressor__svr__max_iter": "-1",
+      "regressor__svr__shrinking": "True",
+      "regressor__svr__tol": "0.001",
+      "regressor__svr__verbose": "False",
+      "regressor": "Pipeline(steps=[('selectpercentile',\n                 SelectPercentile(percentile=40,\n                                  score_func=<function f_regression at 0x10df79a80>)),\n                ('standardscaler', StandardScaler()),\n                ('svr', SVR(C=10, epsilon=0.05, gamma=0.003))])",
+      "transformer__copy": "True",
+      "transformer__with_mean": "True",
+      "transformer__with_std": "True",
+      "transformer": "StandardScaler()"
+    }
+  },
+  "et_leaf1": {
+    "oof_rmse": 14.578230375484141,
+    "fold_rmse": [
+      14.344864965429307,
+      14.13845916480729,
+      16.001856709811843,
+      13.420038517680611,
+      14.859205025664615
+    ],
+    "fit_predict_seconds": [
+      3.47221666702535,
+      3.3414365829667076,
+      3.6893588340026326,
+      3.928142749995459,
+      3.572100582998246
+    ],
+    "params": {
+      "bootstrap": "False",
+      "ccp_alpha": "0.0",
+      "criterion": "squared_error",
+      "max_depth": "None",
+      "max_features": "0.6",
+      "max_leaf_nodes": "None",
+      "max_samples": "None",
+      "min_impurity_decrease": "0.0",
+      "min_samples_leaf": "1",
+      "min_samples_split": "2",
+      "min_weight_fraction_leaf": "0.0",
+      "monotonic_cst": "None",
+      "n_estimators": "600",
+      "n_jobs": "2",
+      "oob_score": "False",
+      "random_state": "20260930",
+      "verbose": "0",
+      "warm_start": "False"
+    }
+  }
+}

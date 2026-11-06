@@ -1,0 +1,22 @@
+"""Summarize paired fresh-head study without selecting extra settings."""
+from pathlib import Path as _RepoPath
+import sys as _repo_sys
+_repo_sys.path.insert(0, str(_RepoPath(__file__).resolve().parents[2]))
+from research_paths import resolve as _repo_path, io_path as _repo_io, study_sources as _study_sources, STUDIES as _STUDY_ROOT
+import sys,json
+from pathlib import Path
+ROOT=_RepoPath(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+import dinob_joint_084 as e
+import numpy as np
+fv=e.fv
+
+def main():
+ plan=e.check();v=json.loads((_repo_path(ROOT, 'reports/dinob-joint-084-validation.json')).read_text());assert v['passed'];results={}
+ for split,r in v['results'].items():
+  out=e.OUT/split;assert fv.sha(out/'report.json')==r['report_sha256'];folds=[json.loads((out/f'fold-{k}/report.json').read_text()) for k in range(5)];arms={}
+  for arm in e.ARMS:
+   records=[f['arms'][arm] for f in folds];arms[arm]={'pooled_endpoint_train_RMSE':float(np.sqrt(np.mean([a['curve'][-1]['train_RMSE']**2 for a in records]))),'pooled_epoch1_train_RMSE':float(np.sqrt(np.mean([a['curve'][0]['train_RMSE']**2 for a in records]))),'first_update_training_loss_range':[min(a['first_update_gradients']['train_loss_standardized'] for a in records),max(a['first_update_gradients']['train_loss_standardized'] for a in records)],'first_update_head_gradient_norms':[a['first_update_gradients']['head'] for a in records],'first_update_block_gradient_norms':[a['first_update_gradients']['block'] for a in records],'lastblock_delta_L2':[a['lastblock_delta_L2'] for a in records],'total_seconds':sum(a['seconds'] for a in records),'max_RSS_bytes':max(a['rss_peak_bytes'] for a in records),'max_MPS_driver_bytes':max(a['mps_driver_bytes'] for a in records)}
+  with np.load(_repo_io(out/'development_predictions.npz'),allow_pickle=False) as z:fp=z['frozen'];jp=z['joint'];y=z['y'];disagreement=float(np.sqrt(np.mean((fp-jp)**2)));correlation=float(np.corrcoef(y-fp,y-jp)[0,1])
+  results[split]={'scores':r['scores'],'comparisons':r['comparisons'],'advance':r['advance'],'training_diagnostics':arms,'frozen_joint_prediction_difference_RMS':disagreement,'frozen_joint_residual_correlation':correlation}
+ eligible=v['eligible_for_candidate'];r={'study':'084: fresh regularized head + frozen versus jointlytrained last B block','duplicate_audit':plan['duplicate_audit'],'config':e.CFG,'matched_control':plan['pairing'],'single_blend':plan['single_blend'],'selection':plan['selection'],'results':results,'benchmark':json.loads((e.OUT/'benchmark.json').read_text()),'validation':{k:val for k,val in v.items() if k!='results'},'decision':'Eligible for separatelylockedfull500candidate.' if eligible else 'Fixedjointprotocol didnotpassallpreregisteredgates. Preserve009andunsubmitted010. No alternateepochs,lrs,seed,headsize,blendweight ornewcalibration evaluated.','interpretation':'Freshheads restore substantial residuallearning signal, unlike nearlyinterpolatingfixedheads in080/083. Pairedstandalone comparison tests whether jointupdates help underthis12epochprotocol; fixedblend comparison independently checks usefulness beyond009. Lackofgain doesnotshowalljointfinetuningisuseless orprove12epochsoptimal. No outervalidation epochselection. No predictionpreservationpenalty.','unselected_control_observation':'The preregistered frozen-head blend is reported transparently as a control. An original-only gain does not establish robustness. The plan expressly excludes promoting the frozen arm as a fallback candidate; no resplit, calibration or blend search was triggered by its score.','submission_decision':'010 remains on hold per user; best009 retained. No upload in this study.','scope':{'holdout_test_selection_access':False,'new_install_or_download':False,'cost':0,'uploaded':False,'new_candidate_created':False,'protected009_sha256':fv.sha(_repo_path(ROOT, 'artifacts/submission-candidate-009.csv')),'protected010_sha256':fv.sha(_repo_path(ROOT, 'artifacts/submission-candidate-010.csv'))},'evidence_sha256':{n:fv.sha(_repo_path(ROOT, n)) for n in ['artifacts/dinob-joint-084/plan.json','reports/dinob-joint-084-validation.json','reports/adapter-diagnostics-082-lastblock-083-summary.json']},'source_sha256':fv.sha(Path(__file__)),'limits':plan['bias']};fv.write(_repo_path(ROOT, 'reports/dinob-joint-084-summary.json'),r);print(json.dumps({'eligible':eligible,'results':results,'decision':r['decision']}),flush=True)
+if __name__=='__main__':main()

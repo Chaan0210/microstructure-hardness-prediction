@@ -1,0 +1,8 @@
+{
+  "study": "220-v6 second-phase refinement (written before running)",
+  "synthetic_finding": "On 160 synthetic Voronoi images with known truth (phase_synth_test.py), the existing z>0.3 count estimator already correlates 0.951 with the true fraction; new estimators 0.89-0.92, GMM 0.77, CV-linear combination 0.956. Little measurement headroom expected.",
+  "arm": "P_tabpfn_v3_phase: TabPFN v2 (n_estimators=8) on 64 v3 features + 10 phase estimators [ph_count_z12, ph_count_z18, ph_count_z25, ph_area_z12, ph_area_z18, ph_area_z25, ph_mirror_count_15, ph_mirror_area_15, ph_gmm_count, ph_gmm_area] computed on masks-v3.",
+  "baseline": "arm C (TabPFN on v3 features) blend 0.5 with best021 (oof-v4-tabpfn.npz)",
+  "adoption_rule": "better in all three partitions AND pooled gain >= 0.05 vs arm C blend; otherwise close the second-phase branch.",
+  "blend": "fixed 0.5 with best021; fallback best021 if n_obj<20"
+}

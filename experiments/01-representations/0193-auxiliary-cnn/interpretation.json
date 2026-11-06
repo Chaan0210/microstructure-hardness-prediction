@@ -1,0 +1,21 @@
+{
+  "study": 193,
+  "headline": "CNN 대조에서 개선 관측, best021 채택 기준 미달",
+  "decision_code_scope": "reject_fixed_CE_hypothesis_keep_best021 means failure of the preregistered best021 integration/promotion hypothesis, not proof that CE cannot improve the standalone CNN.",
+  "paired_gate_passed": true,
+  "best021_gate_passed": false,
+  "evidence": [
+    "True CE standalone improves detach by0.3073196901 and shuffled by0.2957519906 RMSE, both4/5fold.",
+    "True CE fixed10%blend improves paired detach by0.0320407921 and shuffled by0.0246857381, both4/5fold.",
+    "All four paired conditional95%CIs contain zero; top5removed gains remain positive. No statistically secure or independent generalization claim.",
+    "Against best021, true CE blend worsens0.0070245751 with2/5positivefolds; CI[-0.0875905665,0.0716938150], top5removed gain-0.0477488130.",
+    "Pooled training RMSE nearly unchanged: detach9.8856852,true9.8817703,shuffled9.6562942. Training fit alone does not explain OOF result."
+  ],
+  "methodological_limits": [
+    "Only one fixed base seed per fold and reused400 development images.",
+    "Permuted-label auxiliary changes target informativeness and optimization difficulty/gradient distribution; cannot perfectly isolate regularization.",
+    "No global gradient clipping contamination: main and auxiliary separately clipped and optimized; exact plain-regression/detach update audits passed."
+  ],
+  "next_action": "Report193 only; no coefficient/seed/epoch/blend search, resplits, full500, test or submission. Pooling remains officialformula-verification pending.",
+  "training_and_scoring_code_modified": false
+}

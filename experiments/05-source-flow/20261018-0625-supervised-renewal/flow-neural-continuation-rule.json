@@ -1,0 +1,9 @@
+{
+  "frozen_utc": "2026-10-18T12:58:37.039155+00:00",
+  "scope": "Training-budget decision uses innerA213/B107 only, before inspecting any outer validation result. The full-system confirmation protocol remains unchanged.",
+  "trigger": "Inner200 must be the selected best checkpoint and improve inner100 RMSE by at least0.03.",
+  "if_triggered": "One bounded continuation from innercheckpoint200 to400, retaining the original200-step cosine schedule for its first200steps and holding the terminal0.1\u00d7learning rate afterward. Select among0/25/50/100/200/300/400 using innerB only; outerrefit follows that fixed choice. No further continuation.",
+  "if_not_triggered": "Retain original0/25/50/100/200 selection and refit; no additional optimizer updates.",
+  "weights": "Samearchitecture, seed, features, context64/query16, MSE, regularization, optimizer and fixedensembleweights.",
+  "no_outer_result_used": true
+}

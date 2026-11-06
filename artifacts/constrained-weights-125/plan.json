@@ -1,0 +1,56 @@
+{
+  "study": "125 regularized4way simplex014weights",
+  "created_utc": "2026-10-04T03:33:20.334037+00:00",
+  "duplicate_audit": {
+    "074": "Oneaffineonfixedaggregate;noindividualweightlearning.",
+    "077": "UnregularizedOLS legacy003-vs-equalS/Bcontrast;not4remainingcomponentssimplex. Original00913.105158->12.902927butresplitfailureand078size-mismatchwarningretained.",
+    "079": "Inner3->5affinecrossfit-only;notweights.",
+    "112": "Oneboundedalpha betweencomplete011 andnewattentionbranch;no4way014baseweights orpriorpenalty.",
+    "125_distinction": "Same014surviving4branches,nonnegativeunit-sumweightswithfixedridge-to-prior,noattentionornewbaselearner. Refitaffineandhonestphysicsresiduals afterlearnedmixture."
+  },
+  "hypothesis": "014inheritedrenormalized.3KRR/.3CNN/.2S/.2B isnotoptimizedforremainingbranches. A smallregularizedtrain-onlyweightadjustmentmayimproveconditionalcomplementarity whileboundingcollinearweights.",
+  "candidates": [
+    "kernel",
+    "cnn",
+    "Smean",
+    "Bmean"
+  ],
+  "fixed_short_head": ".1Bshort unchanged;.9newaffine(mixtureremaining4). LearningshortBweightwouldrequiredeepcrossfitshortBpredictionsnotavailableinexistingdeep008caches;donotusein-sampleorwrong-scopeproxy.",
+  "objective": "min_w mean(((P-columnmean)/std(y) @ w -(y-mean(y))/std(y))^2) + 1*sum((w-[.3,.3,.2,.2])^2); w>=0,sumw=1. Allstatistics trainmeta rows only. Columncenteringonly,nopercomponentvarianceequalization. Lambda1 fixed,no grid/innerselector. Thenfitexistingaffineon sameOOFmixture;wholeproceduretestedouter.",
+  "solver": "Enumerate15nonemptyactivesets,solveequalityQPexactly,choosefeasibleminimum;strictconvexlambdaI makesunique. IndependentscipySLSQPandKKTverification.",
+  "nested_scope": "Outer320weights+affine use074componentOOF from213/214 fits. EachresidualanchorA213/214 weights+affine use112deepcomponentOOF from142/143 fits;applytoheldoutB106/107 componentpredictions fromA. Fit115residualselectoronlyB,anchorAexcludesallB. NeverfitweightsonglobalouterOOF. CacheIDs/hashesfrom121/122reverified.",
+  "control": "Fixed014wholepipeline preserved. Reconstructallfixedweightaffine/anchors exactlywithin1e-10 andrefitonefull014outerfoldascontrol;newlearnerusesidenticalbasepredictions/residualchoices/CVseeds.",
+  "comparison": "Runexactlyonelearnedprocedureversusfixed014acrossall3partitions;pooleduntrimmedMSEprimary. No allpartition/fold/CIgate,lambda/weightsearch orposthocblend. Headweights/stability/conditionalCI diagnostic.",
+  "limits": [
+    "Same400adaptivehistory;124diagnosticand122results motivatedthisstudy.",
+    "Training-size mismatch142->213->320 andfinal222->333->500 remains;constraintsdonotproveweighttransport.",
+    "Weightobjectivefitscenteredunscaledmixturebeforeaffine;bestcenteredrawMSEneednotgivebestcalibrated/residualpipeline.",
+    "Fourweights3freeparametersplusaffine2;regularizationlimitsinstabilitybutcannotcreateindependentlabels.",
+    "Thisassessesonefixedlambda1;failuredoesnotjustifyautomaticlambdaorbasecandidateexpansion."
+  ],
+  "resource": "CPU2existingpackages;60smallQP/affinefits,45residualblocks720serializedmodelsincludingnone. No newneuralfit.",
+  "sources": {
+    "constrained_weights_125.py": "2131ea102e02b90dd5ce3408af82591c060815aaf8fd82ef0c7323d5b8191885",
+    "validate_constrained_weights_125.py": "7b1276524cbc57944b3a2d3739b9081f3bf5bf44150ce28b42dd06573cd23f34",
+    "component_ablation_121.py": "49979a38b2ebb96ec86d97d27e92d57e960be8a904e7ec9168b6e7cedbb4e858",
+    "component_single_ablation_122.py": "0fc37e9b9039d412c528f08f51fe8150f7305eae42c4cce00d83ca9dcbba565a"
+  },
+  "inputs": {
+    "artifacts/baseline-diagnostics-124/report.json": "5ae33b88d3ae3afa07d4c84fcccb0d971093b81848c39529ea08959044173456",
+    "reports/candidate014-summary.json": "8d665f1548b8a4cca36c28c4e6bb2aebee20b32c61fd38607010966b138daffc",
+    "reports/candidate014-verification.json": "11c584b84474c55c8cf52d8b68d9536e04c9c398107311c046956d0d899b50ca",
+    "reports/component-single-ablation-122-summary.json": "39d9ed643a75f3180db40e8cbbcece05fac3121ee369b988c2b0ccf152efa818",
+    "artifacts/component-single-ablation-122/original/predictions.npz": "541fe2d3c3085f0b4ce855a20b8c50d248d489b7692bf454b67111b9c626b400",
+    "artifacts/component-single-ablation-122/20261031/predictions.npz": "8171bc261689d24b962a1240b978e2fd67284dd0a7e3b2a13284f9c9de31296e",
+    "artifacts/component-single-ablation-122/20261101/predictions.npz": "c0ab721e0cdcf710be090659f981940a11acaaa3e97c1cc7f90134ec0d37c7ba"
+  },
+  "protected014": {
+    "artifacts/submission-candidate-014.csv": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "artifacts/submission-candidate-014.manifest.json": "fabc00e409a9c11a5380af65b6d4f93be9e92fe4c89634565894294b99ac8c2f",
+    "artifacts/final-model-123/decision.json": "97ebc3dfa93a5d7572fca56ecb8ab69badcc462103109538694ac96676305204",
+    "artifacts/final-model-123/fit.json": "e0d30e1c673fbc0ef347d5f771e20c406be3917f3f6a4657af6c93adb3d772eb",
+    "reports/candidate014-preservation.json": "996f8faaeefbd2856d7b4d48a22da304a3f5265245784b3aa2078691f5747872"
+  },
+  "cost": 0,
+  "scope": "Development400only;no test/holdoutfit ordecoding,nonewinstall,014preserved,noupload."
+}

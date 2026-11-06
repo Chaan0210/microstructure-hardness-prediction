@@ -1,0 +1,252 @@
+{
+  "study": "101 TV all-region area-weighted diameter median/range fixed control",
+  "completed_utc": "2026-10-02T16:41:36.228164+00:00",
+  "status": "rejected_at_original_gate_independently_validated",
+  "duplicate_audit": {
+    "identical": false,
+    "run006": "Gaussian sigma1/2 -> closing blackhat/Otsu -> distance-transform h-maxima1.5 -> ridge watershed; all and interior area-weighted diameters kept separately per sigma. No TV, no four-configuration median/range.",
+    "proposed": "Existing canonicalD4 TV noise*.5/1 -> Gaussian gradient sigma.7 -> h-minima*.1/.2 q90 with existing dark-ridge exclusion; all area>=16 including frame; median/range over four configurations. Same geometric statistic but different fixed segmenter and aggregation.",
+    "novelty_limit": "Partial feature-family overlap; no claim of entirely new physical information."
+  },
+  "plan_frozen_before_results": true,
+  "plan_sha256": "a842ca04630e89793df178ddb69635b30a0966797f7eda90cac23b9e5b521bf8",
+  "actual_command_exit_codes": {
+    "prepare": 0,
+    "extract": 0,
+    "original": 0,
+    "independent_validation": 0
+  },
+  "comparison": {
+    "control": "Existing compact26 + TV31 =57",
+    "extension": "Same57 plus two TV all-region area-weighted diameter median/range =59",
+    "fixed_blend": ".9 * same-fold verified011 + .1 * arm; only this weight; no replacement or fitted calibration.",
+    "same_regression_and_inner_grid": true,
+    "threshold_marker_label_selection": false,
+    "original_gate": {
+      "minimum_extension_blend_gain_vs011": 0.02,
+      "minimum_positive_folds_vs011": 3,
+      "extension_standalone_strictly_better_than_control": true,
+      "extension_blend_strictly_better_than_control_blend": true,
+      "fixed395_extension_blend_gain_vs011_strictly_positive": true
+    },
+    "resplit_gate": "Only if original gate passes and independent validation passes, evaluate BOTH existing seeds20261031/20261101 unchanged. Each must satisfy same entire original gate. No fallback weight, feature subset, threshold search or repeat. Allthree required before any consideration of full500 fit/test."
+  },
+  "scores": {
+    "reference011": {
+      "rmse": 13.0539977718711,
+      "fold_rmse": [
+        13.063217512187048,
+        12.38751393690129,
+        14.122591032877722,
+        12.1470942497908,
+        13.451269815048137
+      ]
+    },
+    "control57": {
+      "rmse": 14.13237462297155,
+      "fold_rmse": [
+        13.878807760948273,
+        12.917385915123866,
+        15.920152707524373,
+        13.499576215620271,
+        14.263592760669267
+      ]
+    },
+    "control57_blend": {
+      "rmse": 13.076997203485996,
+      "fold_rmse": [
+        13.076195159529611,
+        12.391215447055307,
+        14.167729868251222,
+        12.18075469912928,
+        13.469032056326746
+      ]
+    },
+    "extension59": {
+      "rmse": 14.1283399981132,
+      "fold_rmse": [
+        13.877698928070044,
+        12.90921491950881,
+        15.887589060283101,
+        13.52497043482721,
+        14.26433618237539
+      ]
+    },
+    "extension59_blend": {
+      "rmse": 13.07734081347264,
+      "fold_rmse": [
+        13.07618412990744,
+        12.390593696562448,
+        14.165940858926254,
+        12.18443648002904,
+        13.469834351304815
+      ]
+    }
+  },
+  "gate": {
+    "advance": false,
+    "checks": {
+      "gain_ge_002": false,
+      "positive_folds_ge3": false,
+      "standalone_beats57": true,
+      "blend_beats57blend": false,
+      "fixed395_positive": false
+    },
+    "extension_blend_vs011": {
+      "gain": -0.02334304160154055,
+      "fold_gains": [
+        -0.012966617720392648,
+        -0.0030797596611584765,
+        -0.04334982604853188,
+        -0.03734223023823979,
+        -0.018564536256677755
+      ],
+      "positive_folds": 0
+    },
+    "extension_vs57": {
+      "gain": 0.0040346248583507105,
+      "fold_gains": [
+        0.001108832878228938,
+        0.008170995615055077,
+        0.03256364724127181,
+        -0.025394219206939184,
+        -0.0007434217061224047
+      ],
+      "positive_folds": 3
+    },
+    "extensionblend_vs57blend": {
+      "gain": -0.0003436099866434006,
+      "fold_gains": [
+        1.1029622170255493e-05,
+        0.0006217504928596185,
+        0.0017890093249679495,
+        -0.0036817808997611223,
+        -0.0008022949780688293
+      ],
+      "positive_folds": 3
+    },
+    "fixed395_gain_vs011": -0.015034318245097822
+  },
+  "decision_ko": "고정 결합은011보다 RMSE0.023343 악화하며5개fold 모두 악화했다. 59특징 단독은57특징보다0.004035 개선했지만 011과 결합한 경우57통제 결합보다도0.000344 악화했다. 사전고정 기준 미충족으로 이 단일 비교를 종료하고 best011을 유지한다.",
+  "extraction": {
+    "shape": [
+      400,
+      59
+    ],
+    "old31_all400_max_error": 0.0,
+    "old57_exact": true,
+    "features_sha256": "66f61e37805aaf03463576a258741262bf1a24472897666433bd66f7fa29bb01",
+    "seconds": 177.4532696250244,
+    "peak_rss_bytes": 362676224,
+    "labels_used": false,
+    "holdout_test_access": false
+  },
+  "validation": {
+    "passed": true,
+    "split": "original",
+    "models_verified": 10,
+    "reload_error": 0.0,
+    "independent_kernel_prediction_max_error": 1.9667822925839573e-11,
+    "independent_inner_rmse_max_error": 6.075140390748857e-13,
+    "inner_selection_recomputed": true,
+    "foldtrain_scalers_targets_ids_verified": true,
+    "outer_validation_label_perturbation_replay": {
+      "control57": true,
+      "extension59": true
+    },
+    "independent_regionprops_feature_max_error": 0.0,
+    "old57_unchanged": true,
+    "all400_old31_verified_at_extraction": true,
+    "gate_recomputed": {
+      "advance": false,
+      "checks": {
+        "gain_ge_002": false,
+        "positive_folds_ge3": false,
+        "standalone_beats57": true,
+        "blend_beats57blend": false,
+        "fixed395_positive": false
+      },
+      "extension_blend_vs011": {
+        "gain": -0.02334304160154055,
+        "fold_gains": [
+          -0.012966617720392648,
+          -0.0030797596611584765,
+          -0.04334982604853188,
+          -0.03734223023823979,
+          -0.018564536256677755
+        ],
+        "positive_folds": 0
+      },
+      "extension_vs57": {
+        "gain": 0.0040346248583507105,
+        "fold_gains": [
+          0.001108832878228938,
+          0.008170995615055077,
+          0.03256364724127181,
+          -0.025394219206939184,
+          -0.0007434217061224047
+        ],
+        "positive_folds": 3
+      },
+      "extensionblend_vs57blend": {
+        "gain": -0.0003436099866434006,
+        "fold_gains": [
+          1.1029622170255493e-05,
+          0.0006217504928596185,
+          0.0017890093249679495,
+          -0.0036817808997611223,
+          -0.0008022949780688293
+        ],
+        "positive_folds": 3
+      },
+      "fixed395_gain_vs011": -0.015034318245097822
+    },
+    "report_sha256": "dfee7bf8a80c4a893fc11e289f1c54dd9845bd265f357172ef9aabe2ca0d4aa3",
+    "seconds": 2.1287076250300743,
+    "protected011_verified": 20,
+    "holdout_test_access": false,
+    "cost": 0,
+    "source_sha256": "db9e4dd8d226c03e4e94567d87b57d0a37a344c545ca678d4ce35ff892d24f8b"
+  },
+  "not_executed": [
+    "two_resplits",
+    "full500_fit",
+    "test_inference",
+    "new_submission_csv",
+    "upload",
+    "alternative_weights_or_threshold_search"
+  ],
+  "limitations": [
+    "Same development400 repeatedly used for prior research, feature hypotheses and split evaluation. Nested inner CV does not remove historical adaptive selection bias.",
+    "Known-geometry measurement recovery is not evidence of incremental hardness prediction performance.",
+    "This result evaluates one fixed representation and combination recipe; it is not a proof that border information is universally useless or that more training will improve performance."
+  ],
+  "scope": {
+    "development_raw_images_read": 400,
+    "additional_holdout_access": false,
+    "test_access": false,
+    "raw_data_external_transmission": false,
+    "new_installs": false,
+    "cost": 0
+  },
+  "environment": {
+    "packages": 26,
+    "matches_previously_authorized_environment": true
+  },
+  "protected011": {
+    "files_verified": 20,
+    "unchanged": true,
+    "submission_sha256": "b7d18f0b74f9259a5c9a1a0f78d79935f41fda74b55aaa57669e44e0372a1ab5"
+  },
+  "artifact_sha256": {
+    "artifacts/frame-features-101/plan.json": "a842ca04630e89793df178ddb69635b30a0966797f7eda90cac23b9e5b521bf8",
+    "artifacts/frame-features-101/extraction.json": "a71faa2869e5afc403a7f776ef1f92855f76dd61a70bd83ddafdcb91e605c368",
+    "artifacts/frame-features-101/development_features.npz": "66f61e37805aaf03463576a258741262bf1a24472897666433bd66f7fa29bb01",
+    "artifacts/frame-features-101/original/report.json": "dfee7bf8a80c4a893fc11e289f1c54dd9845bd265f357172ef9aabe2ca0d4aa3",
+    "artifacts/frame-features-101/original/development_predictions.npz": "ab5ed793cc1a73accaf927f1878b75d3644867985c122b1bf42369a9659512f8",
+    "reports/frame-features-101-original-validation.json": "ca9b897de25da91360bb6ad3e203883badfbe63024d99990a06e01edf2ce5477",
+    "frame_features_101.py": "cfd4e37dc24cd534facd50b58d71f04079343d68f84ae621f952292813e903c2",
+    "validate_frame_features_101.py": "db9e4dd8d226c03e4e94567d87b57d0a37a344c545ca678d4ce35ff892d24f8b"
+  },
+  "remaining_blockers": []
+}

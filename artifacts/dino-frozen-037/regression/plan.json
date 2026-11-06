@@ -1,0 +1,46 @@
+{
+  "arms": [
+    "cls_ridge",
+    "all_ridge",
+    "all_pca64_rbf"
+  ],
+  "grids": {
+    "cls_ridge": [
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "all_ridge": [
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "all_pca64_rbf": [
+      0.01,
+      0.1,
+      1.0
+    ]
+  },
+  "features": "FrozenCLS384 versusCLS+patchmean+patchstd1152 from full252RGB; no backbone adaptation;noTTA",
+  "preprocessing": "StandardScaler then optionalPCA64(whitenFalse,fullSVD); all scaler/PCA/Ridge/kernel/targetmeanstd fit innertrain for selection and outertrain for finalfit",
+  "kernel_bandwidth": "gamma=1/(2*median squared distance between training PCA features), recomputed inside each fit",
+  "inner": "GroupKFold3shuffle,seed20261120+outerfold; pooled innerOOFRMSE chooses alpha",
+  "screening": "Only originalCV. Eligible if fixedblend improves003 and>=3/5folds improve; choose lowest blendRMSE; at most one arm repeated on both predefined repartitions. If noeligiblearm stop.",
+  "ensemble": "0.75*fresh003+0.25*DINO prediction; fixed weights, nopublic tuning",
+  "reference": "003 baseline+compactkernel+Tiny128CNN freshly refit everyfold; compare against saved003 to check drift",
+  "data_scope": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation.",
+  "source_sha256": {
+    "dino_regression_037.py": "319bdfca9f73e4e0e645965ea919abad2d26ca784648672ac4ca815ce8b874e5",
+    "dino_frozen_037.py": "0ecb3610b77e0381623ac59af105659f4eb0344da44578298b273df799ddd353",
+    "cnn_structure_experiment.py": "11906ac8964fd99db073ed5b1f206980ed51da3e86e07d6f58259f21f4d4a720",
+    "cnn_controls.py": "b1c91dc51bd27871afee412a25c862e7d7e7dd9e5a8871f4ebe078337603ff64",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "compact_regression.py": "fbc2b66311f1c2102acc6e91bdb0285d4fbebc7d48d1a1e8c7fced5cacebbebc"
+  },
+  "feature_sha256": "2db591f9772e6ec4427f70ac2bdbd90b2733faa67ce779f877490b6ba4246326",
+  "protected": {
+    "artifacts/submission-candidate-003.csv": "5ab625d8aa5987ba9f46e3e52b5690cb39e8514e5ae557966522787ccc98c693",
+    "artifacts/final-model-017/report.json": "3def006c4f352e0adbb0c002d58c3e6ed87e22bec0b79e9a3bd67996e4a2eac9"
+  },
+  "preflight_note": "Before first model fit, set stable import path for serialized regressor; no statistical settings changed."
+}

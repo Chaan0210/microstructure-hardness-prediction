@@ -1,0 +1,114 @@
+{
+  "scope": "40 fixed original fold0 training images; no hardness labels, holdout/test, model fitting, upload or external data. Synthetic fixtures only algorithm checks.",
+  "ids": [
+    "TRAIN_000006",
+    "TRAIN_000008",
+    "TRAIN_000030",
+    "TRAIN_000077",
+    "TRAIN_000093",
+    "TRAIN_000096",
+    "TRAIN_000101",
+    "TRAIN_000147",
+    "TRAIN_000154",
+    "TRAIN_000177",
+    "TRAIN_000183",
+    "TRAIN_000199",
+    "TRAIN_000204",
+    "TRAIN_000215",
+    "TRAIN_000216",
+    "TRAIN_000222",
+    "TRAIN_000233",
+    "TRAIN_000238",
+    "TRAIN_000244",
+    "TRAIN_000272",
+    "TRAIN_000277",
+    "TRAIN_000280",
+    "TRAIN_000315",
+    "TRAIN_000325",
+    "TRAIN_000328",
+    "TRAIN_000338",
+    "TRAIN_000343",
+    "TRAIN_000365",
+    "TRAIN_000375",
+    "TRAIN_000390",
+    "TRAIN_000399",
+    "TRAIN_000456",
+    "TRAIN_000458",
+    "TRAIN_000462",
+    "TRAIN_000465",
+    "TRAIN_000467",
+    "TRAIN_000488",
+    "TRAIN_000490",
+    "TRAIN_000493",
+    "TRAIN_000496"
+  ],
+  "seed": 20261126,
+  "selection": "Sorted original development fold!=0 IDs, numpy default_rng choice40 without replacement; no label file opened.",
+  "hypothesis": "Joint piecewise-constant latent region field + sparse dark layer, bounded isotropic Gaussian blur, affine contrast/offset and bounded separable AR1 residual likelihood may separate imaging nuisance from morphology better than sequential TV watershed.",
+  "model": "Own approximate continuous Potts-like log-gradient prior, not a reproduction of either referenced paper, not a known competition generator. Two blur initializations,100 fixed Adam steps, summarize median; no objective-based start selection.",
+  "nonidentifiability": "Unknown regions/blur/contrast/noise trade off; constraints and two starts do not identify true generator. Grain/phase/pore/alignment are proxies. Isotropic blur and separable Gaussian AR noise may be wrong.",
+  "references": [
+    "https://arxiv.org/abs/1405.5850",
+    "https://www.jmlr.org/beta/papers/v15/wipf14a.html"
+  ],
+  "duplicate_audit": {
+    "denoised_grain_features.py": "TV .5/1 noise followed by gradient watershed; no joint rendering likelihood",
+    "strong_denoised_grain_features.py": "Same denoise with larger marker prominence",
+    "connected_grain_features.py": "TV + local dark ridge + closing/connected complement",
+    "autocov_shape_features.py": "Nonzero-lag covariance and separate noise indicators; no inverse model",
+    "simple_noise_variance_subtraction": "Excluded; previous audit found harmful shortcut"
+  },
+  "nuisance_calibration": "Same40 train images only: robust HH noise, q98-q2 contrast; blur indicator gradient-energy ratio sigma1/sigma0. No claim identifies true blur. Fixed perturbations: affine span0.9 +offset0.05; extra blur0.5px; Gaussian-correlated noise sigma0.5px with std=.5*image HH noise. Record train quantiles and added-noise bounds. These are mild synthetic probes, not estimated true generator distribution.",
+  "variants": [
+    "identity",
+    "affine",
+    "blur",
+    "correlated_noise"
+  ],
+  "stability_gate": {
+    "min_reduction_each_descriptor": 0.3,
+    "definition": "Per descriptor median over40 images of RMS difference over3 perturbations vs identity, normalized by baseline identity cross-image IQR; candidate/baseline ratio<=.70 for all4. Nearzero baseline sensitivity has no evidence of30% improvement and fails.",
+    "floor_scale": [
+      1.0,
+      0.02,
+      0.001,
+      0.02
+    ]
+  },
+  "preservation_gate": {
+    "fixture_boundary_recall_min": 0.8,
+    "fixture_boundary_precision_min": 0.6,
+    "boundary_tolerance_px": 2,
+    "fixture_pore_recall_min": 0.75,
+    "fixture_pore_precision_min": 0.5,
+    "fixture_max_relative_grain_error": 0.3,
+    "fixture_max_abs_phase_error": 0.1,
+    "fixture_max_abs_alignment_error": 0.15,
+    "require_all_six_fixtures": true,
+    "real_image_interquartile_range_ratio_min": 0.5,
+    "real_boundary_anchor_recall_median_min": 0.8,
+    "real_pore_anchor_recall_median_min": 0.75,
+    "real_start_disagreement_normalized_median_max": 0.5,
+    "real_degenerate_fraction_max": 0.1,
+    "degenerate_definition": "latent std<.02 OR noise near upperbound>1.95*n0 OR blur>1.72 OR boundary fraction<.002 OR >.35",
+    "no_anchor_policy": "Empty anchors uninformative, never scored perfect; require>=10 images with pore anchors and >=30 with boundary anchors."
+  },
+  "fixtures": "Three analytic non-Voronoi rectangular/elongated/wavy region layouts at256px, alternating intensity phases, known thin1px boundaries and disk radius3/5/7 isolated+attached pores; two fixed noise/blur severities. Deterministic fixtures are not training data.",
+  "resource_gate": {
+    "seconds_per_image_two_starts_max": 10,
+    "rss_bytes_max": 3000000000,
+    "estimated_full_minutes_max": 30
+  },
+  "failure_policy": "Any gate failure rejects this family without residual regression, CV, parameter tuning or candidate creation. Only all-gates pass permits separately implemented inner-crossfit residual study.",
+  "sources": {
+    "formation_model_049.py": "87a4de67ede77305c50e14f2d13efa176eddd271c7ad3d2df20745449e575515",
+    "formation_pilot_049.py": "ee462a2645f82f5b8655bafda5939ad1ee584fab243a04003a0c5676f5268360",
+    "denoised_grain_features.py": "8c0b9b703137b73387d52ee1ab179313b7a944de3b4754853c0e6c3dbda542ab",
+    "phase_features.py": "fe3b525c2a8101b1b5822f285a175ec47aa54f074fe7151225b23db9cde6a04b"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/dino-multilayer-044/candidate-design.json": "b783348c7b39c8a457ddcf0f5b12f64a1fece8614886fe0d3706ce42411f703e",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b"
+  }
+}

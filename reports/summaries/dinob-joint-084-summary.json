@@ -1,0 +1,287 @@
+{
+  "study": "084: fresh regularized head + frozen versus jointlytrained last B block",
+  "duplicate_audit": "063/064 newheads onfrozenB only;043S/080B/083B fine-tuned withalreadyfit frozenheads;059 two-stageSadaptedfeatures thenhead.047jointkernel is not neuralbackbone/headjointtraining. No matchedfreshhead+B lastblock experiment found.",
+  "config": {
+    "hidden": 32,
+    "dropout": 0.5,
+    "epochs": 12,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "head_lr": 0.0003,
+    "head_min_lr": 1e-05,
+    "head_weight_decay": 0.1,
+    "block_lr": 1e-06,
+    "block_min_lr": 1e-07,
+    "block_weight_decay": 0.0,
+    "clip_head": 1.0,
+    "clip_block": 1.0,
+    "seed": 20270215,
+    "prediction_anchor": 0.0,
+    "blend_new": 0.1
+  },
+  "matched_control": "Samefoldtrain-only StandardScaler onfrozenB features andtargetmean/std, heldconstantduringjointtraining. Identicalheadinit, NumPytrainingorders, effectivebatch16/micro2. Reset torchseed per epoch+microbatch identically inbotharms to pair dropoutmasks. Bothuseidentityimageaugmentation;none additional. Jointprefixsameimmutable080cache. Frozenarm usesexactmatchingcachedBdescriptors.",
+  "single_blend": "Eacharmblend=.9*verifiedsamefold009+.1*itsrawtargetprediction. 009calibrator alreadyfitstrictlyinsideoutertrain; neverfit newcalibration orweights onouterOOF. Reference009 values enteronlyheldoutcomparison/linearcombination,nevertraininputs/targets.",
+  "selection": "Originaljoint standaloneRMSE muststrictlybeatmatchedfrozenhead; jointblend muststrictlybeatfrozenblend,009,and010. Thenbothknownresplits unchanged. Candidateeligibleonlyif all3partitions meetthesecriteria andstrictverificationpasses. No fallbackfrozenheadcandidate orweight/epoch/lr/headseedsearch. CI/foldcountsdiagnosticonly.",
+  "results": {
+    "original": {
+      "scores": {
+        "reference009": {
+          "rmse": 13.105157912721568,
+          "fold_rmse": [
+            13.025386023375454,
+            12.507824306370592,
+            14.197984111621984,
+            12.181376909479603,
+            13.51483530810461
+          ]
+        },
+        "reference010": {
+          "rmse": 13.10413742660317,
+          "fold_rmse": [
+            13.022136537716314,
+            12.506331297055734,
+            14.197201444500285,
+            12.180615553418216,
+            13.515909212552927
+          ]
+        },
+        "frozen": {
+          "rmse": 13.957820652670737,
+          "fold_rmse": [
+            14.931247692185186,
+            13.009438626394363,
+            14.460333930204607,
+            13.162435979579374,
+            14.126753255852853
+          ]
+        },
+        "joint": {
+          "rmse": 14.428876619557684,
+          "fold_rmse": [
+            14.672940797343541,
+            13.52596270294531,
+            15.366408151237444,
+            13.926894500601053,
+            14.581860441212141
+          ]
+        },
+        "frozen_blend": {
+          "rmse": 13.0539977718711,
+          "fold_rmse": [
+            13.063217512187048,
+            12.38751393690129,
+            14.122591032877722,
+            12.1470942497908,
+            13.451269815048137
+          ]
+        },
+        "joint_blend": {
+          "rmse": 13.105018679465305,
+          "fold_rmse": [
+            13.046756086838172,
+            12.440563471382998,
+            14.202272338931241,
+            12.213728738456176,
+            13.521922932222063
+          ]
+        }
+      },
+      "comparisons": {
+        "joint_vs_frozen": {
+          "gain": -0.4710559668869472,
+          "fold_gains": [
+            0.2583068948416454,
+            -0.5165240765509473,
+            -0.9060742210328367,
+            -0.7644585210216785,
+            -0.45510718535928874
+          ],
+          "positive_folds": 1,
+          "bootstrap_sd": 0.16543415179299523,
+          "conditional_ci95": [
+            -0.7884579795119283,
+            -0.1423050189237176
+          ]
+        },
+        "jointblend_vs_frozenblend": {
+          "gain": -0.05102090759420541,
+          "fold_gains": [
+            0.016461425348875736,
+            -0.05304953448170835,
+            -0.07968130605351931,
+            -0.06663448866537536,
+            -0.07065311717392575
+          ],
+          "positive_folds": 1,
+          "bootstrap_sd": 0.016178364740494337,
+          "conditional_ci95": [
+            -0.08190502540131486,
+            -0.01880107065036217
+          ]
+        },
+        "jointblend_vs009": {
+          "gain": 0.0001392332562630827,
+          "fold_gains": [
+            -0.021370063462718747,
+            0.06726083498759472,
+            -0.004288227309256598,
+            -0.03235182897657296,
+            -0.007087624117453117
+          ],
+          "positive_folds": 1,
+          "bootstrap_sd": 0.036683895278328126,
+          "conditional_ci95": [
+            -0.07133921353626435,
+            0.07535748221622168
+          ]
+        },
+        "jointblend_vs010": {
+          "gain": -0.000881252862134474,
+          "fold_gains": [
+            -0.024619549121858597,
+            0.06576782567273654,
+            -0.0050708944309558746,
+            -0.033113185037960235,
+            -0.006013719669136108
+          ],
+          "positive_folds": 1,
+          "bootstrap_sd": 0.03637715744501962,
+          "conditional_ci95": [
+            -0.07125585413545217,
+            0.07400955437291033
+          ]
+        }
+      },
+      "advance": false,
+      "training_diagnostics": {
+        "frozen": {
+          "pooled_endpoint_train_RMSE": 5.557531433630174,
+          "pooled_epoch1_train_RMSE": 15.216727587540055,
+          "first_update_training_loss_range": [
+            0.24656503577716649,
+            0.5284439717652276
+          ],
+          "first_update_head_gradient_norms": [
+            5.838530540466309,
+            8.235967636108398,
+            6.060626983642578,
+            8.133715629577637,
+            9.694260597229004
+          ],
+          "first_update_block_gradient_norms": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lastblock_delta_L2": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "total_seconds": 30.246848998998757,
+          "max_RSS_bytes": 2699706368,
+          "max_MPS_driver_bytes": 50987008
+        },
+        "joint": {
+          "pooled_endpoint_train_RMSE": 5.65238639804519,
+          "pooled_epoch1_train_RMSE": 14.95983492706039,
+          "first_update_training_loss_range": [
+            0.24656502110883594,
+            0.5284439774695784
+          ],
+          "first_update_head_gradient_norms": [
+            5.838529109954834,
+            8.235969543457031,
+            6.060626983642578,
+            8.133715629577637,
+            9.694260597229004
+          ],
+          "first_update_block_gradient_norms": [
+            5.207032680511475,
+            7.12931489944458,
+            4.507962703704834,
+            6.825941562652588,
+            10.309351921081543
+          ],
+          "lastblock_delta_L2": [
+            0.054154962093351,
+            0.05420815720386263,
+            0.05229290074984529,
+            0.05084851895795673,
+            0.052491693731908276
+          ],
+          "total_seconds": 904.0334937909502,
+          "max_RSS_bytes": 2699706368,
+          "max_MPS_driver_bytes": 1216987136
+        }
+      },
+      "frozen_joint_prediction_difference_RMS": 3.1299849514682827,
+      "frozen_joint_residual_correlation": 0.9763348012881996
+    }
+  },
+  "benchmark": {
+    "first_paired_fold_seconds": 187.65185895800823,
+    "projected5fold_seconds": 938.2592947900412,
+    "rss_peak_bytes": 2605678592,
+    "mps_driver_bytes": 1216987136,
+    "first_pair_reused": true,
+    "fold_report_sha256": "fe20a3347fa9a10011b8e779778710212cebc62a711929946c36775f0baf4db1",
+    "resource_pass": true
+  },
+  "validation": {
+    "passed": true,
+    "paired_models_verified": 10,
+    "max_MPS_reload_error": 0.0,
+    "max_CPU_MPS_error": 3.4263589043348475e-05,
+    "identical_initial_states_orders_and_dropout_seed_streams": true,
+    "foldtrain_only_scalers_targets_verified": true,
+    "frozen_arm_backbone_unchanged": true,
+    "joint_arm_only_head_and_lastblock_changed": true,
+    "no_prediction_anchor": true,
+    "fixed12epochs_no_outer_validation_selection": true,
+    "fixed_blend_no_OOF_calibrator_fit": true,
+    "leakage_replay": [
+      {
+        "outer_validation_targets_changed_only_in_memory": true,
+        "full12epoch_both_arms_state_exact": true,
+        "prediction_errors": {
+          "frozen": 0.0,
+          "joint": 0.0
+        }
+      }
+    ],
+    "eligible_for_candidate": false,
+    "protected009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "protected010_sha256": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5",
+    "protected010_files_verified": 17,
+    "holdout_test_selection_access": false,
+    "cost": 0,
+    "seconds": 214.4202377499896,
+    "source_sha256": "d02130b368e41bb94ea6cdadc22ca84417c622721f774482c05be76304ac274c",
+    "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Fixedshortschedule mayunderfit andone seed leaves seed uncertainty. Results test thisoneprotocol,not alljointfinetuning."
+  },
+  "decision": "Fixedjointprotocol didnotpassallpreregisteredgates. Preserve009andunsubmitted010. No alternateepochs,lrs,seed,headsize,blendweight ornewcalibration evaluated.",
+  "interpretation": "Freshheads restore substantial residuallearning signal, unlike nearlyinterpolatingfixedheads in080/083. Pairedstandalone comparison tests whether jointupdates help underthis12epochprotocol; fixedblend comparison independently checks usefulness beyond009. Lackofgain doesnotshowalljointfinetuningisuseless orprove12epochsoptimal. No outervalidation epochselection. No predictionpreservationpenalty.",
+  "unselected_control_observation": "The preregistered frozen-head blend is reported transparently as a control. An original-only gain does not establish robustness. The plan expressly excludes promoting the frozen arm as a fallback candidate; no resplit, calibration or blend search was triggered by its score.",
+  "submission_decision": "010 remains on hold per user; best009 retained. No upload in this study.",
+  "scope": {
+    "holdout_test_selection_access": false,
+    "new_install_or_download": false,
+    "cost": 0,
+    "uploaded": false,
+    "new_candidate_created": false,
+    "protected009_sha256": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "protected010_sha256": "06fdadf2188cec99d54e376d2e13cf33695e74908848bbc09bc18221ec402fa5"
+  },
+  "evidence_sha256": {
+    "artifacts/dinob-joint-084/plan.json": "f8e0407dc01ec024e951d0c431b9c970e730a48cf36c4c66cc036f1b8ab21306",
+    "reports/dinob-joint-084-validation.json": "6d1477570b17e1dd9c6df3cc900bc2d68e37b4ac372c6ebd594c79e823ae74f6",
+    "reports/adapter-diagnostics-082-lastblock-083-summary.json": "1d0b991971ad5ef8222780030b70a3c18600e3b1dff398352f817fb992563b14"
+  },
+  "source_sha256": "6d167e04e1f81590ee87c9b83fd6e2ff3698c616deb7503e45297afde081252f",
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Fixedshortschedule mayunderfit andone seed leaves seed uncertainty. Results test thisoneprotocol,not alljointfinetuning."
+}

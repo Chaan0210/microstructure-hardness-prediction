@@ -1,0 +1,383 @@
+{
+  "study": "133 fixedhistoricalthree-seedCNNmean whole014nested control",
+  "status": "completed_positive_pooled_development_control",
+  "utc": "2026-10-04T07:31:14.344445+00:00",
+  "fixed_seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "014_retained": true,
+  "duplicate_audit": "018 original and021 twoexistingrepartitions already trained exactlythreebase seeds20261003/23/43 withsame014CNN80/last5average. Reuseall45outerCNNs. Priorfusionwas003baseline50/KRR25/CNN25,not014DINO/affine/honestphysics. Currentraw4waycached gains original+.112989139,split1+.037192789,split2-.025199414: descriptive,notcomplete014. No claim seedaveraging isnew orpreviousfull014tested.",
+  "cached_outer_seed_scores": {
+    "original": {
+      "CNN_seed_RMSE": [
+        15.032317843077909,
+        14.931024236899864,
+        14.226369371296006
+      ],
+      "CNN_mean3_RMSE": 14.316237784821688,
+      "raw_first_RMSE": 13.065975963657763,
+      "raw_mean3_RMSE": 12.952986825018959,
+      "mean_seed_prediction_variance": 12.143885684030051,
+      "mean_individual_MSE_minus_mean3_MSE": 12.143885684030067,
+      "seed_residual_correlation": [
+        [
+          1.0,
+          0.9148247597548929,
+          0.9163378221788955
+        ],
+        [
+          0.9148247597548927,
+          1.0,
+          0.9195551630120666
+        ],
+        [
+          0.9163378221788955,
+          0.9195551630120666,
+          1.0
+        ]
+      ]
+    },
+    "20261031": {
+      "CNN_seed_RMSE": [
+        14.270187155168609,
+        14.118394516212616,
+        14.943644591390433
+      ],
+      "CNN_mean3_RMSE": 13.918648305036763,
+      "raw_first_RMSE": 12.871728660215116,
+      "raw_mean3_RMSE": 12.834535871278215,
+      "mean_seed_prediction_variance": 15.031168971615324,
+      "mean_individual_MSE_minus_mean3_MSE": 15.031168971615301,
+      "seed_residual_correlation": [
+        [
+          1.0,
+          0.8792665521875724,
+          0.9027015947846782
+        ],
+        [
+          0.8792665521875724,
+          1.0,
+          0.8971125363779021
+        ],
+        [
+          0.902701594784678,
+          0.8971125363779022,
+          1.0
+        ]
+      ]
+    },
+    "20261101": {
+      "CNN_seed_RMSE": [
+        14.553099889755208,
+        14.96118685705814,
+        14.618311992781377
+      ],
+      "CNN_mean3_RMSE": 14.307111794139066,
+      "raw_first_RMSE": 13.169241054400763,
+      "raw_mean3_RMSE": 13.194440468006594,
+      "mean_seed_prediction_variance": 11.74817680710616,
+      "mean_individual_MSE_minus_mean3_MSE": 11.748176807106148,
+      "seed_residual_correlation": [
+        [
+          1.0,
+          0.9072387005085457,
+          0.9238199886746785
+        ],
+        [
+          0.9072387005085457,
+          1.0,
+          0.9257665167931449
+        ],
+        [
+          0.9238199886746785,
+          0.9257665167931449,
+          1.0
+        ]
+      ]
+    }
+  },
+  "seed_variance_identity": {
+    "original": {
+      "seed_prediction_variance_mean": 12.143885684030051,
+      "mean3_vs_first_RMSE_gain": 0.716080058256221,
+      "mean_individual_MSE_minus_mean3_MSE": 12.143885684030067
+    },
+    "20261031": {
+      "seed_prediction_variance_mean": 15.031168971615324,
+      "mean3_vs_first_RMSE_gain": 0.3515388501318455,
+      "mean_individual_MSE_minus_mean3_MSE": 15.031168971615301
+    },
+    "20261101": {
+      "seed_prediction_variance_mean": 11.74817680710616,
+      "mean3_vs_first_RMSE_gain": 0.24598809561614132,
+      "mean_individual_MSE_minus_mean3_MSE": 11.748176807106148
+    }
+  },
+  "new_work_only": "No newseedchoices ornewmainouterfits; explicitreplay/poisonchecks refitoutermodels. Fillmissingextra2seedCNNs atmiddle/deeplevels;refit014affineandhonestphysics57residuals withsamechoices. CachedouterCNNexactweights/IDs/groups/stats/reloadvalidated.",
+  "results": {
+    "original": {
+      "RMSE": {
+        "reference014": 12.968699771878843,
+        "primary": 12.830176114316457,
+        "base": 12.844601873695295,
+        "raw": 12.952986825018959
+      },
+      "fit_seconds": 846.9416935830377,
+      "validation_seconds": 267.8448564580176,
+      "selected_physics_counts": {
+        "rbf01": 5,
+        "ridge1": 6,
+        "none": 1,
+        "ridge01": 1,
+        "rbf1": 2
+      }
+    },
+    "20261031": {
+      "RMSE": {
+        "reference014": 12.668260572562595,
+        "primary": 12.636884322985622,
+        "base": 12.735481957243554,
+        "raw": 12.834535871278215
+      },
+      "fit_seconds": 838.389006165904,
+      "validation_seconds": 261.0588444999885,
+      "selected_physics_counts": {
+        "none": 5,
+        "rbf01": 3,
+        "ridge01": 3,
+        "ridge1": 4
+      }
+    },
+    "20261101": {
+      "RMSE": {
+        "reference014": 13.04585755754465,
+        "primary": 13.107923156289893,
+        "base": 13.130945866640317,
+        "raw": 13.194440468006594
+      },
+      "fit_seconds": 824.0846987500554,
+      "validation_seconds": 260.64623175002635,
+      "selected_physics_counts": {
+        "rbf01": 2,
+        "none": 7,
+        "ridge01": 4,
+        "ridge1": 2
+      }
+    }
+  },
+  "contrasts": {
+    "original": {
+      "RMSE_gain": 0.13852365756238605,
+      "conditional95": [
+        0.030857079313460427,
+        0.25042425397758017
+      ],
+      "positive_folds": 4,
+      "fold_gains": [
+        0.23369051837710408,
+        -0.007385794465374573,
+        0.09423093931734527,
+        0.07305600784251354,
+        0.28959541624120355
+      ]
+    },
+    "20261031": {
+      "RMSE_gain": 0.03137624957697227,
+      "conditional95": [
+        -0.08654552937950974,
+        0.1540400677801737
+      ],
+      "positive_folds": 3,
+      "fold_gains": [
+        0.23257790841991088,
+        0.28449998930980236,
+        -0.28511047726181893,
+        0.08069048936620327,
+        -0.14450410633171273
+      ]
+    },
+    "20261101": {
+      "RMSE_gain": -0.06206559874524231,
+      "conditional95": [
+        -0.17600236010524478,
+        0.05377030088709743
+      ],
+      "positive_folds": 1,
+      "fold_gains": [
+        0.08252421888035677,
+        -0.05560887954343663,
+        -0.25224325789220003,
+        -0.006858312082213658,
+        -0.09244015804437211
+      ]
+    }
+  },
+  "pooled": {
+    "014_MSE": 166.2887997064064,
+    "fixed_mean3_MSE": 165.37397132936573,
+    "MSE_gain": 0.9148283770406636,
+    "014_RMSE": 12.895301458531568,
+    "fixed_mean3_RMSE": 12.859781154023024,
+    "RMSE_gain": 0.0355203045085446,
+    "conditional_IDcluster95": [
+      -0.02680458603553579,
+      0.09978930199665262
+    ]
+  },
+  "decision": {
+    "advance": true,
+    "RMSE": {
+      "reference014": 12.968699771878843,
+      "primary": 12.830176114316457,
+      "base": 12.844601873695295,
+      "raw": 12.952986825018959
+    },
+    "rule": "Originalcompletepipelinefirst. IfnotstrictlylowerRMSEthan014afterindependentvalidation,terminate;no rescue seed/weights. Ifpositive,unchangedtwoexistingrepartitions. No newproductionfull500/test/submissionin133 evenifpositive.",
+    "014_retained": true
+  },
+  "confirmation_decision": {
+    "completed_splits": [
+      "original",
+      "20261031",
+      "20261101"
+    ],
+    "utc": "2026-10-04T07:31:09.401259+00:00",
+    "all_independent_validation_passed": true,
+    "primary_criterion": "pooleduntrimmedMSEover3partitionsx400IDs; noallfold/allpartition/CIgate",
+    "pooled_MSE": {
+      "014": 166.28879970640637,
+      "fixed_mean3": 165.37397132936573
+    },
+    "pooled_RMSE": {
+      "014": 12.895301458531566,
+      "fixed_mean3": 12.859781154023024
+    },
+    "lower_pooled_MSE": true,
+    "scores": {
+      "original": {
+        "014_MSE": 168.18717377313035,
+        "mean3_MSE": 164.61341912437655,
+        "014_RMSE": 12.968699771878843,
+        "mean3_RMSE": 12.830176114316457
+      },
+      "20261031": {
+        "014_MSE": 160.48482593434395,
+        "mean3_MSE": 159.6908453925198,
+        "014_RMSE": 12.668260572562595,
+        "mean3_RMSE": 12.636884322985622
+      },
+      "20261101": {
+        "014_MSE": 170.19439941174485,
+        "mean3_MSE": 171.81764947120078,
+        "014_RMSE": 13.04585755754465,
+        "mean3_RMSE": 13.107923156289893
+      }
+    },
+    "per_partition_wins_diagnostic_only": 2,
+    "criterion_timing": "Parentrequestedpooledruleafterfirstresplitpositivealreadyobserved; priorsequentialrulepreservedandsuperseded. Noactualearlystoporcandidatechange.",
+    "policy_sha256": "cdb4f7b0168e60852940b8daea1d9d33ed80083068036217018ba69fdae87962",
+    "independent_scalar_aggregation_max_error": 0.0,
+    "014_retained": true,
+    "full500_test_submission_authorized_in133": false,
+    "source_sha256": "f02d1ed4df77cf259b9571b72e96feb9d2ce861b8012f715c66230a49b2372ff"
+  },
+  "superseded_sequential_policy": {
+    "utc": "2026-10-04T06:53:32.974719+00:00",
+    "supersedes": "plan.json gate confirmation after original positive; originals preserved",
+    "reason": "User explicitly requests minimum necessary nested validation and stop on failure. Conservative compute screen, not statistical necessity or significance claim.",
+    "timing": "After original positive validation, before any new resplit nested fit or whole014 result. Old outer/raw3partition diagnostics were already known.",
+    "rule": "Run20261031 fixedmean3 completepipeline and independentvalidation. IfprimaryRMSE>=014,stopanddoNOTtrain20261101nestedmodels. Otherwise run20261101unchanged andvalidate. No further seeds/weights.014retainedregardless.",
+    "original_plan_sha256": "6461ac0a3c331de33ab62dffd39fdb6f2dc8b5f4f1d2a462c5100ea89b86b8fd",
+    "new_seeds": 0
+  },
+  "pooled_decision_policy": {
+    "utc": "2026-10-04T07:11:11.256516+00:00",
+    "authority": "Parent explicit follow-up: evaluate both fixed resplits and judge pooledMSE, not every-partition improvement.",
+    "supersedes": "sequential-confirmation-policy.json early termination rule; retain original file and originalplan",
+    "information_known_at_change": {
+      "original": {
+        "reference014": 12.968699771878843,
+        "primary": 12.830176114316457,
+        "base": 12.844601873695295,
+        "raw": 12.952986825018959
+      },
+      "first_resplit": {
+        "reference014": 12.668260572562595,
+        "primary": 12.636884322985622,
+        "base": 12.735481957243554,
+        "raw": 12.834535871278215
+      },
+      "second_resplit_completepipeline_observed": false,
+      "historical_outer_raw_diagnostics_already_known": true
+    },
+    "history": "First resplit result was already observed and positive. No stopping occurred. Both remaining evaluation stages had already been queued unchanged. Criterion clarification/change after first resplit result is explicit; do not claim fully outcome-blind rule setting.",
+    "primary_rule": "After independent validation of all3partitions, compare pooled untrimmed MSE = mean over3partitions and400IDs. Fixed3seed equalmean only. No per-partition/fold win requirement or CI gate. No fallback seed/weight/model.014remains protected and no full500/test/submission.",
+    "candidate_change": false,
+    "seed_or_weight_change": false,
+    "stopped_after_seen_result": false,
+    "unobserved_remaining_partition": "20261101",
+    "old_policy_sha256": "607f7f0d4e92d0e8531394ae9283ce8316c7d6c9679e0b701e9f1b23222d22ef"
+  },
+  "verification": {
+    "all45outer_cached_CNNs_verified": true,
+    "exact_fresh_extra_seed_replay": true,
+    "new_nested_CNNs_verified": 360,
+    "max_CPU_reload_error": 3.0517578125e-05,
+    "independent_OLS_physics_models": 720,
+    "014_control_reconstructed": true,
+    "outer80_and_innerB_label_poison_exact": true,
+    "cached_extra_outer_seeds_poison_replay_exact": true
+  },
+  "execution": {
+    "new_main_CNN_fits": 360,
+    "new_seed_bases": 0,
+    "original_cached_outer_CNNs": 45,
+    "new_replay_CNN_fits": 1,
+    "new_poison_CNN_fits": 102,
+    "recorded_audit_fit_validation_seconds": 3321.2150431650225,
+    "CPU_threads": 2,
+    "device": "MPS",
+    "cost": 0,
+    "new_installs": 0,
+    "full500_training": false,
+    "holdout_test_decode_fit_inference": false,
+    "new_CSV": false,
+    "uploaded": false
+  },
+  "limits": [
+    "Same400historicaladaptiveselection;3partitionsaredependentnotindependentreplication.",
+    "Seedmean3reducesMSEversusaverageindividualseedbyvarianceidentity;notguaranteedtobeatparticularseed orwholeensemble.",
+    "Historical018/021coveredold003fusion;newworktargetscomplete014. Cachedraw4wayisdiagnosticonly,notfull014.",
+    "No bestseedselection,reweighting,2seedsubsetfallback,newseedextension,D4inferenceorRidgechanges.",
+    "Conditionalbootstrapomitsfitandhistoricalselectionuncertainty;onepredeclaredbundle."
+  ],
+  "preservation": {
+    "014_CSV_SHA256": "2c5ce4ca43d75a7f47fbf7dd6c155db9c5c090d86f23b5999a0f6920def4f6a0",
+    "old_reports_verified": 200,
+    "packages_unchanged": 26
+  },
+  "source_sha256": {
+    "cnn_seed_mean_133.py": "0253abea611ec28ddd90995bb896526d3432f01793a8d62b387a9745b3bd6b5b",
+    "validate_cnn_seed_mean_133.py": "39db8ea76ebfa35da54b575fc29e5a772af4e98061c4eb4690edbf4e41ac112a",
+    "summarize_cnn_seed_mean_133.py": "e4e1c51070c1d0f95b5c526d002b507be12564711160c06fc63b0a1f5f2d7d54",
+    "finalize_confirmation_133.py": "f02d1ed4df77cf259b9571b72e96feb9d2ce861b8012f715c66230a49b2372ff"
+  },
+  "artifact_sha256": {
+    "artifacts/cnn-seed-mean-133/plan.json": "6461ac0a3c331de33ab62dffd39fdb6f2dc8b5f4f1d2a462c5100ea89b86b8fd",
+    "artifacts/cnn-seed-mean-133/audit/report.json": "019ee40fad8fa9126e41178dc9b56d4fedfb6c7f74f7bdfeff7115cee5b43100",
+    "artifacts/cnn-seed-mean-133/screen-decision.json": "a9828f7351df3308cb1c6de1c1838b09a69276ebca34cb4622f0c8bf32a7ab4d",
+    "artifacts/cnn-seed-mean-133/sequential-confirmation-policy.json": "607f7f0d4e92d0e8531394ae9283ce8316c7d6c9679e0b701e9f1b23222d22ef",
+    "artifacts/cnn-seed-mean-133/pooled-decision-policy.json": "cdb4f7b0168e60852940b8daea1d9d33ed80083068036217018ba69fdae87962",
+    "artifacts/cnn-seed-mean-133/confirmation-decision.json": "ff62f21f6837610878634142274ea6b3cf31831e24f3a26eb32dec27fcaeaae3",
+    "artifacts/cnn-seed-mean-133/original/report.json": "86ad4b90fa877f0aa4a8bdeaf62ceb64ca05e81bfcc160f5012671983eec35d8",
+    "artifacts/cnn-seed-mean-133/20261031/report.json": "a2f276b30c0f9ad8216a1330df2b64d2e4950a0f6932bd4760cdf084b600305a",
+    "artifacts/cnn-seed-mean-133/20261101/report.json": "4f2222f09c1b95ecc5dcd30baeb44005a89a423503388e7bd17bff088e6fcef6",
+    "artifacts/cnn-seed-mean-133/validation-original.json": "8f016bf4eeaa93769932515eb9460d55058082770290eaec2c1a810d3b3bacd4",
+    "artifacts/cnn-seed-mean-133/validation-20261031.json": "2d9659e184fb1a79ab82cc182ea0c87001c89702618dc0420195a080124886a8",
+    "artifacts/cnn-seed-mean-133/validation-20261101.json": "47290ac6869d45c35ab3ac60f47e322453192a51d0ca20cf4da05b804b77c81a"
+  },
+  "execution_blockers": [],
+  "submission_status": "No action attempted. Parent reportsMaclocked/filechooser10sectimeout,013/014unsubmitted,15:22site0/5;resumeonlywhenuserunlocksMac."
+}

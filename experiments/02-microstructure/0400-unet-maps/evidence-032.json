@@ -1,0 +1,50 @@
+{
+ "candidate": "032",
+ "date": "2026-10-09",
+ "change": "vs 031: drop 12 segmentation-threshold phase columns (now superseded by the pixel-U-Net phase columns): f_dark_20, f_dark_35, f_dark_50, sp_frac_grains, sp_count_frac, z_q50, z_q75, z_q90, vstd_sp_frac_grains, vstd_sp_count_frac, vstd_f_dark_20, vstd_f_dark_35. Same TabPFN v2+v3.5 mean, fixed W=0.75.",
+ "motivation": "with u_ph available, the noisy threshold-on-segment phase columns add variance (noisy-tercile harness 12.72 -> 12.47).",
+ "harness": {
+  "cfg031_seedmean": 10.5491,
+  "cfg032_seedmean": 10.426,
+  "cfg032_terciles": [
+   8.547,
+   9.489,
+   12.467
+  ],
+  "rejected_followups": {
+   "drop_sp_spatial": 10.5997,
+   "drop_intensity_spread": 10.4705,
+   "drop_pores": 10.4142,
+   "add_zmap_cols": 10.4639
+  }
+ },
+ "dev_fixed_w075": {
+  "cfg031": {
+   "original": 10.4385,
+   "p20261031": 10.4157,
+   "p20261101": 10.4381,
+   "pooled": 10.4308
+  },
+  "cfg032": {
+   "original": 10.3893,
+   "p20261031": 10.3596,
+   "p20261101": 10.3977,
+   "pooled": 10.3822
+  }
+ },
+ "inputs": {
+  "train_features": "experiments/push-400/feat-u1phdrop-train.npz",
+  "train_sha256": "d976a9e54de22a6080503f10703e404ef5222d46b865544df1626ccfc4bf2131",
+  "test_features": "experiments/push-400/feat-u1phdrop-test.npz",
+  "test_sha256": "48d7e43c0d4eb34e42be997300f0524f2d683163e83cf4ece379de34bd09cba4",
+  "unet_weights": "experiments/push-400/unet-u1.pt",
+  "unet_sha256": "34d154ca47fe4f003210ebd790422076d2ad815271956afe20a3a49df72f0d24",
+  "dev_results": [
+   "experiments/push-300/dev-u1phdrop-v2.json",
+   "experiments/push-300/dev-u1phdrop-v35.json"
+  ]
+ },
+ "weight_rule": "fixed W=0.75",
+ "adopt": true,
+ "caveat": "column-drop choice was made on the harness (500 rows) and confirmed on dev (same images, different folds); some selection optimism."
+}

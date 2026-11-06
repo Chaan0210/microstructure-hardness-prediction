@@ -1,0 +1,53 @@
+{
+  "model": "018",
+  "CNN_seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "head_seeds": [
+    20261128,
+    20261205,
+    20261219
+  ],
+  "head_config": {
+    "hidden": 64,
+    "dropout": 0.25,
+    "epochs": 100,
+    "batch_size": 64,
+    "lr": 0.0003,
+    "min_lr": 1e-05,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "beta": 1.0,
+    "aux_weight": 0.3,
+    "bins": 7,
+    "seed": 20261128
+  },
+  "effective_aux_weight": 0.0,
+  "CNN": "TinyCNN91905; 80 epochs; batch size 32; D4 training augmentation; AdamW lr 0.002, cosine minimum 0.0001; weight decay 0.01; gradient clip 5; mean of the last 5 checkpoints; identity-view inference.",
+  "short_B": "Hidden size 32; dropout 0.5; 12 epochs; effective batch size 16, microbatch size 2; AdamW lr 0.0003, cosine minimum 0.00001; weight decay 0.1; gradient clip 1; seed 20270215 + offset.",
+  "offsets": "Root: 0; middle: 100 * (j + 1); deep: 100 * (j + 1) + 100 * (ell + 1).",
+  "top_KRR": "Nine combinations: bandwidth multipliers (0.25, 1, 4) and alpha (0.01, 0.1, 1); three grouped folds with seed 20261005 on the fixed 400 development images; refit on all 500 training images.",
+  "nested_KRR": "The same nine combinations on the current training subset; seed 20261005 + offset.",
+  "nested_split": "Three grouped folds; seed 20270110 + offset.",
+  "raw_weights": [
+    0.0,
+    0.3,
+    0.3,
+    0.2,
+    0.2
+  ],
+  "base": "0.9 * affine(raw) + 0.1 * short_B",
+  "residual": "585 features; three training blocks; candidates: none, ridge1, ridge01, rbf1, rbf01; three inner folds with seed 20271013 + j; 512 group bootstrap samples with seed 20271204 + j; mean of three predictions.",
+  "tolerances": {
+    "classical_independent_abs": 1e-08,
+    "CPU_head_predictions_abs": 1e-08,
+    "same_device_reload_abs": 1e-08,
+    "CPU_MPS_reload_abs": 0.001,
+    "fresh_MPS_same_seed_prediction_abs": 0.001,
+    "fresh_pipeline_abs": 0.001
+  },
+  "selection_ids_source": "The 400 development image IDs in development-ids.json.",
+  "no_output_clipping": true
+}

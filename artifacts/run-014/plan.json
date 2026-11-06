@@ -1,0 +1,30 @@
+{
+  "hypothesis": "Add boundary/pore-masked intensity mixture to existing compact panel, comparing identical nested regressors",
+  "outer_folds": "same development 5 folds",
+  "inner_folds": 3,
+  "inner_seed": 20261005,
+  "kernel_bandwidth_multipliers": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "kernel_alpha": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "kernel_formula": "gamma=1/(median train squared distance * bandwidth^2); train-standardized block weights1/sqrt(block columns), standardized target",
+  "other_models": [
+    "fixed additive splines knots4 degree3 Ridgealpha10",
+    "fixed shallow HGB leaves7 minleaf20 l2=10 iter200 lr.05"
+  ],
+  "recipes": [
+    "alone",
+    "baseline75_candidate25",
+    "baseline50_grain25_candidate25",
+    "baseline50_cnn80_25_candidate25"
+  ],
+  "no_test_holdout": true,
+  "provenance": "Parent-transcribed official PDF: Hall-Petch, phase mixture, porosity; direct PDF retrieval403. No effect sign constrained.",
+  "prior_choice_bias": "Existing baseline/CNN/grain and feature hypotheses developed on same400 rows; inner CV controls current kernel hyperparameters, not all historical choices."
+}

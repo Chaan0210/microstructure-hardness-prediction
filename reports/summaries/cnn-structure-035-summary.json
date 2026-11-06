@@ -1,0 +1,35 @@
+{
+  "study": "cnn-structure-035",
+  "status": "completed_no_promotion",
+  "decision": "Preserve candidate003. Covariance improvement reverses on second repartition; morphology fusion is inconsistent; matched256 ensemble is worse on all3partitions.",
+  "new_candidate": null,
+  "submission_performed": false,
+  "validation_report": "reports/cnn-structure-035-validation.json",
+  "training_seconds": 1296.5045695409644,
+  "fold_wins": {
+    "cov128": [
+      4,
+      3,
+      2
+    ],
+    "covmorph128": [
+      2,
+      0,
+      3
+    ],
+    "tiny256": [
+      1,
+      0,
+      0
+    ]
+  },
+  "source_attribution": "Covariance descriptor and joint head are original project implementations using existing project TinyCNN and installed PyTorch. No external code, pretrained weights or training data were introduced.",
+  "diagnosis": [
+    "Covariance increases train fit substantially; train-vs-validation gap and late validation degradation indicate overfitting under this fixed schedule.",
+    "Covariance errors are less correlated with baseline errors, but complementarity does not consistently offset individual error.",
+    "256px baseline residual correlation around0.91vs0.83-0.85for128px limits fixed-blend diversity. This does not establish that native resolution has no useful information."
+  ],
+  "possible_next_control_not_executed": "If continuing, a single predeclared covariance regularization control (smaller covariance rank/head, shrink covariance toward its diagonal) directly targets the observed generalization gap. Do not select epochs retroactively from these validation curves. This is a testable direction, not evidence of a likely winning model.",
+  "scope": "Development400 only; baseline/kernel/CNNs refit within every outer fold. Three reused partitions do not remove historical model-selection bias. No holdout/test/full500 fitting in this study.",
+  "limits": "This rejects these configurations as replacements for003, not a technical performance ceiling."
+}

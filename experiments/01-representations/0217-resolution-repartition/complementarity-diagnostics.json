@@ -1,0 +1,78 @@
+{
+  "partitions": {
+    "original": {
+      "CNN128_vs256_residual_correlation": 0.9080298423615405,
+      "CNN128_vs_fixed_baseline_residual_correlation": 0.8618467050794975,
+      "CNN256_vs_fixed_baseline_residual_correlation": 0.8884190173296194,
+      "CNN128_vs_removed_firstseed_remainder_residual_correlation": 0.831087929652519,
+      "CNN256_vs_removed_firstseed_remainder_residual_correlation": 0.87067937035005,
+      "CNN128_vs_other_two_seed_mean_residual_correlation": 0.9345396593388213,
+      "CNN256_vs_other_two_seed_mean_residual_correlation": 0.9132959238810981,
+      "replacement_delta_vs_baseline_residual_correlation": -0.01997629225159284,
+      "fixed_MSE_gain_decomposition": {
+        "alignment_minus2mean_r_delta": 0.31545596152488575,
+        "delta_squared_penalty": 0.31575417139902834,
+        "net_MSEgain": -0.00029820987414161946
+      },
+      "standalone_MSE_gain_decomposition": {
+        "alignment": 59.185213213507886,
+        "delta_squared_penalty": 40.64584692649601,
+        "net_MSEgain": 18.539366287011873
+      },
+      "mean_residual128": -0.8207417951751199,
+      "mean_residual256": -0.10427637922053001,
+      "delta_prediction_RMS": 6.375409549707062,
+      "fixed_delta_RMS": 0.5619200756326724
+    },
+    "20261031": {
+      "CNN128_vs256_residual_correlation": 0.8988568259086087,
+      "CNN128_vs_fixed_baseline_residual_correlation": 0.8362851824670182,
+      "CNN256_vs_fixed_baseline_residual_correlation": 0.8641397440725405,
+      "CNN128_vs_removed_firstseed_remainder_residual_correlation": 0.8003161372314278,
+      "CNN256_vs_removed_firstseed_remainder_residual_correlation": 0.8423826679817412,
+      "CNN128_vs_other_two_seed_mean_residual_correlation": 0.9151392348184996,
+      "CNN256_vs_other_two_seed_mean_residual_correlation": 0.8706824698425967,
+      "replacement_delta_vs_baseline_residual_correlation": 0.08186447888389807,
+      "fixed_MSE_gain_decomposition": {
+        "alignment_minus2mean_r_delta": -1.227549810101233,
+        "delta_squared_penalty": 0.35794708019098065,
+        "net_MSEgain": -1.5854968902922146
+      },
+      "standalone_MSE_gain_decomposition": {
+        "alignment": 37.39966414371063,
+        "delta_squared_penalty": 41.789080713840086,
+        "net_MSEgain": -4.38941657012945
+      },
+      "mean_residual128": -0.39096487867121366,
+      "mean_residual256": -0.010408428781076964,
+      "delta_prediction_RMS": 6.464447440720675,
+      "fixed_delta_RMS": 0.5982867875784829
+    },
+    "20261101": {
+      "CNN128_vs256_residual_correlation": 0.9006258248359256,
+      "CNN128_vs_fixed_baseline_residual_correlation": 0.8495635666840265,
+      "CNN256_vs_fixed_baseline_residual_correlation": 0.8751581955861965,
+      "CNN128_vs_removed_firstseed_remainder_residual_correlation": 0.817554155666491,
+      "CNN256_vs_removed_firstseed_remainder_residual_correlation": 0.8563997284327705,
+      "CNN128_vs_other_two_seed_mean_residual_correlation": 0.9329071599000837,
+      "CNN256_vs_other_two_seed_mean_residual_correlation": 0.9111508445961238,
+      "replacement_delta_vs_baseline_residual_correlation": 0.03756204364639715,
+      "fixed_MSE_gain_decomposition": {
+        "alignment_minus2mean_r_delta": -0.5695718089963414,
+        "delta_squared_penalty": 0.33846571700111583,
+        "net_MSEgain": -0.9080375259974567
+      },
+      "standalone_MSE_gain_decomposition": {
+        "alignment": 46.21152949859412,
+        "delta_squared_penalty": 41.665078550520704,
+        "net_MSEgain": 4.546450948073414
+      },
+      "mean_residual128": -0.04133883344416283,
+      "mean_residual256": -0.003927143685862049,
+      "delta_prediction_RMS": 6.454849227559131,
+      "fixed_delta_RMS": 0.581778065073887
+    }
+  },
+  "meaning": "Residual correlations and exact MSE identities; algebraic remainder holds fitted downstream fixed, not an independently trained non-CNN model; no OOF weight optimization",
+  "downstream_assessment": "현재 근거로 전체 후단 재학습을 다음 우선 실험으로 권하지 않는다. 후단 적응이 효과를 회복한다는 근거는 없고, 실제 전체 파이프라인 효과를 주장하려면 별도승인된 nested 재학습 대조가 필요하다."
+}

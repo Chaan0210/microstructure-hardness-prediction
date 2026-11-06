@@ -1,0 +1,44 @@
+{
+  "UTC": "2026-10-07T14:09:10.288654+00:00",
+  "inputs_SHA256": {
+    "experiments/dinol-177/original/predictions.npz": "d47307a0594458197c986a668da95a8609691363d42d2faab4157c3dc458cb33",
+    "experiments/dinol-177/20261031/predictions.npz": "bccc5ca678ca6bc2469920c74f26ba9557632a3ca17a9e9a83acece685235f2c",
+    "experiments/dinol-177/20261101/predictions.npz": "91d0226a32cf27e62655f830b23523ac3d35d314425fcba0c843972872516495"
+  },
+  "context_SHA256": {
+    "docs/records/roadmap-audit/roadmap-30-after-215.md": "1673d890f1a5d5ae076121781354a3da18120e2a623ed2b9ab4841544851c675",
+    "docs/records/roadmap-audit/audit.md": "c3253d7d2fa27d73012a22d814b3aad0fbdeb335ac7c73bf74dcce6b46f1735d",
+    "docs/records/parallel-audit-20261007/mean-only-control/target-balance-readonly.json": "508cbaa726a9104d5cbdde0e7e26b87c2c449757160668d09e5011376b55a9b9",
+    "reports/layout-dependency-160-summary.json": "7fa147dc0c1fd201a41a6fd1c6f51f5b2effb3429b5bac78c3d499ac1170b6f1",
+    "reports/failure-review-166-167-summary.json": "240070ad69af0b321e18ee6121458a85b8ba77237714eb0a5722e7ca00ecea97",
+    "docs/records/diagnostics/l1-l4-20261007/L3.json": "8360a1772cd2d977739cf2ecb3639106bc72af6dfe366c4c853218fdf86e4398",
+    "frozen_validation.py": "3282f2abea4944e4a44ae4baad92d5d52998398367c15239c47dc4fa6b7d01f3",
+    "src/microstructure/pipeline.py": "14a53e06da58f63f260d3c3abdc92d3304bb6733519532eef157fb2934876bf6",
+    "experiments/dinol-177/readout.py": "dbf755c80ebc374743b7c274be186c01469731621a302941ad0faae4204f7c82"
+  },
+  "same_ID_y_groups_all3": true,
+  "each_partition_five80_validation320_training": true,
+  "no_group_crosses_fold": true,
+  "unique_development_IDs": 400,
+  "unique_exact_D4_groups": 400,
+  "source_family_independence_proven": false,
+  "new_split_count": 0,
+  "model_fit_count": 0,
+  "raw_data_read": false,
+  "holdout_test_read": false,
+  "network_install_cost": false,
+  "CPU_thread_env_max": 2,
+  "prior_target_balance_exact": true,
+  "formulas": {
+    "MSE": "mean_i((y_i-p_si)^2), then sqrt for RMSE; do not average fold RMSE",
+    "quintile_poststratification": "mean_b mean_{i in fold and quintile b} SE_si; all5 bins present; diagnostic only",
+    "fixed_ID_difficulty": "d_i = mean_{s=1..3} SE_si; foldMSE=mean_i_in_fold(d_i)+mean_i_in_fold(SE_si-d_i)",
+    "other_two_runs_difficulty": "mean_{other2 s} SE_si; avoids current SE in that descriptor but remains correlated/retrospective",
+    "composition_only_expected_MSE": "sum_b fold_count_b/80 * mean_{all3runs, i in bin b} SE_si; diagnostic, no fitted prediction or causal attribution"
+  },
+  "output_SHA256": {
+    "results.json": "51f75fc5eb5ea19071758fbf48b833e49c72efe36263894f25c6545426845cd6",
+    "fold-metrics.csv": "a2ed7ec08bdde7fc1bbe6d170180e52c3fe6a84df2e688e243a7a2106a4f1b32",
+    "REPORT.md": "23321606951106059f3519af1381e5c95bc8bf9e668c75c4d5dc35d1b95acbbe"
+  }
+}

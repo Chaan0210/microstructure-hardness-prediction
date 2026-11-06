@@ -1,0 +1,290 @@
+{
+  "candidate": "010",
+  "locked_at_utc": "2026-10-02T07:43:18.056791+00:00",
+  "formula": "candidate009 + preserved009_slope*.125*(adapted_B_mean3 - frozen_B_mean3)",
+  "recipe": "Same080 rank4 adapters on finalB qkv/proj; sameCFG8fixedepochs, all500rows, seed20270201. Retain alreadyall500trained threeBheads, scalers and originalbackbone, S/legacy models and009 affine coefficients unchanged. No new fit or selection of calibration/weights.",
+  "config": {
+    "rank": 4,
+    "alpha": 4,
+    "epochs": 8,
+    "microbatch": 2,
+    "effective_batch": 16,
+    "lr": 0.0001,
+    "weight_decay": 0.1,
+    "anchor_weight": 1.0,
+    "clip": 1.0,
+    "seed": 20270201
+  },
+  "validation_sha256": "7aa490921e5adaa086a8640267e2f703a1d3860b7ee4e298f86dc6eebfb19327",
+  "development_results": {
+    "original": {
+      "scores": {
+        "reference009": {
+          "rmse": 13.105157912721568,
+          "fold_rmse": [
+            13.025386023375454,
+            12.507824306370592,
+            14.197984111621984,
+            12.181376909479603,
+            13.51483530810461
+          ]
+        },
+        "frozenB": {
+          "rmse": 13.615777507504738,
+          "fold_rmse": [
+            13.650648366415224,
+            12.80647915614849,
+            14.045068523498623,
+            13.407892313668881,
+            14.126760079518114
+          ]
+        },
+        "adaptedB": {
+          "rmse": 13.628670149268476,
+          "fold_rmse": [
+            13.644909772140881,
+            12.84149629315753,
+            14.03926207660083,
+            13.417948801285664,
+            14.158864034990883
+          ]
+        },
+        "primary": {
+          "rmse": 13.10413742660317,
+          "fold_rmse": [
+            13.022136537716314,
+            12.506331297055734,
+            14.197201444500285,
+            12.180615553418216,
+            13.515909212552927
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0010204861183975567,
+        "fold_gains": [
+          0.00324948565913985,
+          0.0014930093148581847,
+          0.0007826671216992764,
+          0.000761356061387275,
+          -0.001073904448317009
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.0010019235802045006,
+        "conditional_ci95": [
+          -0.000928339851328408,
+          0.0030460946933190684
+        ]
+      },
+      "report_sha256": "3514729b50a376d2ff6051d4fb8a73182c1a3c9dfd4aac48adafabe2de955465",
+      "predictions_sha256": "4e37a7a1fbfef92e6d778c0e0acd48601bbfe0a9cafb792178bb75552bd414d5"
+    },
+    "20261031": {
+      "scores": {
+        "reference009": {
+          "rmse": 13.082283244172682,
+          "fold_rmse": [
+            13.381109119932207,
+            14.258282229743807,
+            13.602704776447293,
+            11.723700529909848,
+            12.284105569029235
+          ]
+        },
+        "frozenB": {
+          "rmse": 13.967093172617764,
+          "fold_rmse": [
+            13.502110276748768,
+            13.956975680280312,
+            14.804788899095918,
+            13.138042313219065,
+            14.3702601307972
+          ]
+        },
+        "adaptedB": {
+          "rmse": 13.980048358931326,
+          "fold_rmse": [
+            13.528195418483007,
+            13.958986506447953,
+            14.813503914339096,
+            13.159668785010114,
+            14.377990272326743
+          ]
+        },
+        "primary": {
+          "rmse": 13.081449590263393,
+          "fold_rmse": [
+            13.381857154553895,
+            14.25568989266731,
+            13.602641433356888,
+            11.724159814164071,
+            12.281491944372723
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0008336539092894668,
+        "fold_gains": [
+          -0.000748034621688376,
+          0.0025923370764981968,
+          6.334309040489927e-05,
+          -0.00045928425422303576,
+          0.002613624656511604
+        ],
+        "positive_folds": 3,
+        "bootstrap_sd": 0.0007381837041360899,
+        "conditional_ci95": [
+          -0.0006385062108988926,
+          0.002276819869854487
+        ]
+      },
+      "report_sha256": "d6e32e64cb03fceb4a4a7d58632970e7e2bb63b7964e45aab4918a2864004406",
+      "predictions_sha256": "2a7807d133ac435b5901c732850930e8f046da73d93489ce534bd10742391b81"
+    },
+    "20261101": {
+      "scores": {
+        "reference009": {
+          "rmse": 13.305105282101927,
+          "fold_rmse": [
+            13.849200001634694,
+            12.960759057914057,
+            12.948923572726505,
+            13.74037731629103,
+            12.995188583092828
+          ]
+        },
+        "frozenB": {
+          "rmse": 14.02485574576349,
+          "fold_rmse": [
+            14.677079552637498,
+            13.389320447678788,
+            13.47112184163994,
+            14.835679788209715,
+            13.682975142551932
+          ]
+        },
+        "adaptedB": {
+          "rmse": 14.032559793477807,
+          "fold_rmse": [
+            14.698476993028127,
+            13.389549525577829,
+            13.484216726676262,
+            14.82145632050504,
+            13.701778759801822
+          ]
+        },
+        "primary": {
+          "rmse": 13.303706910124971,
+          "fold_rmse": [
+            13.85099566441845,
+            12.95759347548424,
+            12.94690225276677,
+            13.73778685786814,
+            12.994026030679338
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.0013983719769559144,
+        "fold_gains": [
+          -0.0017956627837563133,
+          0.0031655824298173485,
+          0.0020213199597343134,
+          0.0025904584228886307,
+          0.0011625524134899479
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.0008434989518041375,
+        "conditional_ci95": [
+          -0.00021456820718110948,
+          0.0030578932906989652
+        ]
+      },
+      "report_sha256": "5947f9a2effebd6b6c23cbb7b55bb01643abd271058e3c1085f3e37460e52161",
+      "predictions_sha256": "7714d254683d11e34f697afe1406d609dec5cc9299ddfd5fc7528bbe81bce88d"
+    }
+  },
+  "authorization": "User authorized candidate preparation after consistent development improvement. Formerholdout includedonlyafterlock forfull500fit; no subgroup evaluation. Testonlyaftermodelcomplete. Uploadreservedforparent.",
+  "sources": {
+    "candidate010_pipeline.py": "f061ad8154b138e86b8017c5b4a9555bbcbe2062af6ba5e8b6b1cb1c81e7c8ba",
+    "verify_candidate010.py": "b6ad7ff9883c584bf1e4bd2a934b0ee28ce329b508a303f9a696d12eead66bca",
+    "dinob_adapter_080.py": "e3cf765f5a253098edc69f434e29756ff21ed6328db659bc5eabda8b186d2a5e",
+    "validate_dinob_adapter_080.py": "be9a0df7eb67b6232048bc1e8ecab866a4676bcfedfcf4197b0535fcbb775c80",
+    "candidate006_pipeline.py": "55ff99ad014351d9d574010e815542e94579a7afb988c60b212fe50ef075985e",
+    "candidate_pipeline.py": "7495e2b0c6ff14d163cc6bc539798b94f20605f4c02d3cb3305363422ecc1b28"
+  },
+  "protected": {
+    "artifacts/final-model-075/calibration_training.npz": "3862528c60e5913bd25712c03bf9bea23c13f7300f1935d794ed7f80cb445576",
+    "artifacts/final-model-075/calibrator.json": "7fa1f81d572bbb54159ea96f425c8a7b98f610c1fba7ca4480dad5afd36a9ac7",
+    "artifacts/final-model-075/decision.json": "ec9829507a01da3df0541d7212438a46919944fd8dadce8eb8d8b214df2365f7",
+    "artifacts/final-model-075/inner-0/B-20261128.pt": "90afe6c08d513a1dbb03cf1e608bb8604dd569ca62449367d7ddbdb6e7c0367b",
+    "artifacts/final-model-075/inner-0/B-20261205.pt": "97897e83938e06437c144f6cccc0450ad1ac1174eab3ced85314d86179007cef",
+    "artifacts/final-model-075/inner-0/B-20261219.pt": "d7397ae626e699bbeffe939f0e45cdfdde83c97dac2ac5cfd73786c6aedfad66",
+    "artifacts/final-model-075/inner-0/S-20261128.pt": "c22651304a3ef319331d4764c023b8b1513ffa23d80289c293c4503cb4db94fd",
+    "artifacts/final-model-075/inner-0/S-20261205.pt": "79f1ff1a60fc1e0f5bc7ccb5062b00877c00ca47d33c18359209d83404e39fa3",
+    "artifacts/final-model-075/inner-0/S-20261219.pt": "07f8ec08f286c877210335e8f23d988806bf468de9d2a3804b950044373f54ff",
+    "artifacts/final-model-075/inner-0/baseline.joblib": "18b5c8c124720f166cca740278635000487f21e48ed10b5ff24f21ca3cdc2ae8",
+    "artifacts/final-model-075/inner-0/cnn.pt": "2579699762d600b93bc5d43b463458fcf81ed5d71de21e0bf15008bbeff883f1",
+    "artifacts/final-model-075/inner-0/kernel.joblib": "2cd62fe51c9ce43a8855f9c959f69707926bd223620f6734728613a6e7ee641b",
+    "artifacts/final-model-075/inner-0/predictions.npz": "c6258e8c96b2f3fe77a705ed62f6351c3147a9a14303121f8c4d11b7cbdb8238",
+    "artifacts/final-model-075/inner-0/report.json": "6e88f9012acea63d2bdc4172511d76656038567b5f92463dc798cd2caee230f2",
+    "artifacts/final-model-075/inner-1/B-20261128.pt": "65771064a990f763f4fd47235743a05a6ac5044dbcc3e235de5e4dc67b10f15a",
+    "artifacts/final-model-075/inner-1/B-20261205.pt": "25021d3aa061dc46992e02da225d9b79d806086cd0d6613862da368a02a8e21f",
+    "artifacts/final-model-075/inner-1/B-20261219.pt": "58210fc0571d8dafa3accad6b431fd3a3420ce70f3097fc63d03c110c9a9286c",
+    "artifacts/final-model-075/inner-1/S-20261128.pt": "08947791ea58cd1eee3744881db4b0cfd4cbcf1cb36d99d487b1582a0e47a337",
+    "artifacts/final-model-075/inner-1/S-20261205.pt": "3074166b8c1a056a71b5476b36fc4f5cbf0a9100bd84e4a4ddee47df81a18d16",
+    "artifacts/final-model-075/inner-1/S-20261219.pt": "7e7f9a357a11ab1871b4cd0d6bf38c0675b09fba94676333d895e5eaa1cf4917",
+    "artifacts/final-model-075/inner-1/baseline.joblib": "65224d24d5c65d134b5597d249442fe5ebb5343ede3534d030dd6d06d6fcb92b",
+    "artifacts/final-model-075/inner-1/cnn.pt": "14d3578c1a1a8a32f5eeaf00584a6df7818749a5f3407786df872f0011dc9542",
+    "artifacts/final-model-075/inner-1/kernel.joblib": "2a766704c1421406cab8b150a65fb6c68df8e092048841d118b47105e6b99e7a",
+    "artifacts/final-model-075/inner-1/predictions.npz": "3d332dc65b33cef50954296e86ebf5ce10d773cc36b600f241dc3e2059abf0de",
+    "artifacts/final-model-075/inner-1/report.json": "b870c9162bd98b3ac11f1074cacdaff9a012bf9ec6868109fe98758ff65ebf85",
+    "artifacts/final-model-075/inner-2/B-20261128.pt": "c3882d0aa9c18d5c7648016cda7462806af834b1ca26e29c6489a70f6eb67fc6",
+    "artifacts/final-model-075/inner-2/B-20261205.pt": "c7967564a1cd5f3d708a996b46da0a85aa504183e4d378593f6346cf35f2803c",
+    "artifacts/final-model-075/inner-2/B-20261219.pt": "e27c11f5806e8a7e8b5b0dbd8e3fb2881ec11c342d722b7f04921024bc4d8f08",
+    "artifacts/final-model-075/inner-2/S-20261128.pt": "a935f0c3ebdc03fb3d7a2416211cab1024c3d84cf742bdc3bff3d2ef2a8c0470",
+    "artifacts/final-model-075/inner-2/S-20261205.pt": "e8562c71a7d871faddd551ec5ae8935333a4706cd77408174518dfa00526b5f9",
+    "artifacts/final-model-075/inner-2/S-20261219.pt": "63dfbdca425af9f624c1ab92ef1c531e32e9ea55f7ee903c9b531ec7c76cd08a",
+    "artifacts/final-model-075/inner-2/baseline.joblib": "e0b005e20a3748ba3ea8f3ab0d3d716bf301da87cdd79da7f355e6aa46970f8b",
+    "artifacts/final-model-075/inner-2/cnn.pt": "1d7ef3a6c317a91c1d6bc015b2b4142ce8f8efd41a7e0cb2819e50f812e5c282",
+    "artifacts/final-model-075/inner-2/kernel.joblib": "925d988a6a7e9918b0b6c7e8675799522a618031f1efca0e46220ac6dad98c4e",
+    "artifacts/final-model-075/inner-2/predictions.npz": "55227c2a1a0404ceb448237159fa99ff94cdd0eaa948f823593214c290c947fe",
+    "artifacts/final-model-075/inner-2/report.json": "0dc0217ae499a888e676f194b86c2a76f5b45dd7ef03f1d02e3462206774b95d",
+    "artifacts/final-model-075/report.json": "89518af430efc46034bf27260fda37ff07f3b38cea2b1c674a5b044e0a976649",
+    "artifacts/final-model-075/training-inputs.npz": "9d7eb19f1fcb62a5230a8e577fb75d432d68c1459997415d41c688a123643d72",
+    "artifacts/final-model-075/validation-replay/B-20261128.pt": "90afe6c08d513a1dbb03cf1e608bb8604dd569ca62449367d7ddbdb6e7c0367b",
+    "artifacts/final-model-075/validation-replay/B-20261205.pt": "97897e83938e06437c144f6cccc0450ad1ac1174eab3ced85314d86179007cef",
+    "artifacts/final-model-075/validation-replay/B-20261219.pt": "d7397ae626e699bbeffe939f0e45cdfdde83c97dac2ac5cfd73786c6aedfad66",
+    "artifacts/final-model-075/validation-replay/S-20261128.pt": "c22651304a3ef319331d4764c023b8b1513ffa23d80289c293c4503cb4db94fd",
+    "artifacts/final-model-075/validation-replay/S-20261205.pt": "79f1ff1a60fc1e0f5bc7ccb5062b00877c00ca47d33c18359209d83404e39fa3",
+    "artifacts/final-model-075/validation-replay/S-20261219.pt": "07f8ec08f286c877210335e8f23d988806bf468de9d2a3804b950044373f54ff",
+    "artifacts/final-model-075/validation-replay/baseline.joblib": "18b5c8c124720f166cca740278635000487f21e48ed10b5ff24f21ca3cdc2ae8",
+    "artifacts/final-model-075/validation-replay/cnn.pt": "2579699762d600b93bc5d43b463458fcf81ed5d71de21e0bf15008bbeff883f1",
+    "artifacts/final-model-075/validation-replay/kernel.joblib": "2cd62fe51c9ce43a8855f9c959f69707926bd223620f6734728613a6e7ee641b",
+    "artifacts/final-model-075/validation-replay/predictions.npz": "f95abac16b960a3ab9d34efda45272b73058ccf05640e1641e625182a5c90f8f",
+    "artifacts/final-model-075/validation-replay/report.json": "ac363b3f352163221ea33de23c25b39f7daff05b1fe6b947d335aeb3fe126a7b",
+    "artifacts/submission-candidate-009.components.csv": "5948a7ffc08f5964bb5d444b3eac6ded1f33e82641c3aeffa41ecfab8c0c63d4",
+    "artifacts/submission-candidate-009.csv": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "artifacts/submission-candidate-009.manifest.json": "a29078bfc7797c216921791c14990f3d7d278d377d2c014e62963d0aa1f89654",
+    "artifacts/submission-candidate-009.reproduced.csv": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "candidate009_pipeline.py": "46d65ec53837ae031990eae5eafe32c0706226eb799d390dcfdb33c7c117cd71",
+    "nested_calibration_074.py": "6f795743f2625ff1224f5f693fb906f43f13ff708439a37132761c28dbd275b7",
+    "reports/bias-calibration-073-075-summary.json": "d71c21a880c4da32c8fe905d297b267a22179ae5678f3c2a8cc0c7ebd390fce8",
+    "reports/candidate009-verification.json": "f3d7b199c6a33854532efb310162edafd23e3a19e1322e53c72761a6585a6665",
+    "reports/nested-calibration-074-validation.json": "024454780fbb26efa882fb3fba8bea5eb9a8182d4d934dd98010243bf7605f69",
+    "validate_nested_calibration_074_v2.py": "58aad31e577ee8024e00f2214749d8ba5c622f123198ef4b14b77da0f04b334a",
+    "verify_candidate009.py": "4ad9324a7db6978f07eb6dcfa210da1d8384ae0b8a67fd99dff00063cd10e7ea"
+  },
+  "base_assets": {
+    "artifacts/final-model-065/report.json": "1a1f741158576b8ad40f6b12f351a7cdf7e1ada96610b83813b160d250bf9b9f",
+    "artifacts/final-model-075/calibrator.json": "7fa1f81d572bbb54159ea96f425c8a7b98f610c1fba7ca4480dad5afd36a9ac7",
+    "artifacts/submission-candidate-009.csv": "581a50d62ad3f32d4c1de14d3d2817580530287a3e6eb0c02bdb92d49a3f1c64",
+    "artifacts/submission-candidate-008.components.csv": "3f8d68d7dc508ded78107e3ca26052a188a20bd48289f4635d87c902a71bd6d9",
+    "artifacts/submission-candidate-008.manifest.json": "a0a5b79eec6fd86771d56487b35c05f79c17a70561042f546239a23747ab8227",
+    "reports/candidate008-verification.json": "3d7477531fc44818be3f743cffcdea439a89dd7b2854205308156a5867d4e319",
+    "reports/candidate009-verification.json": "f3d7b199c6a33854532efb310162edafd23e3a19e1322e53c72761a6585a6665"
+  },
+  "cost": 0,
+  "uploaded": false,
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation. Gains are only0.0008..0.0014RMSE and eachconditionalCIincludeszero; this is an exploratory candidate, not a reliable Public improvement forecast."
+}

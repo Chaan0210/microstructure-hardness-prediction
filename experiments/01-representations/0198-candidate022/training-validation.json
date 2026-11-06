@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "rows": 500,
+  "full_fits": 3,
+  "updates_per_fit": 1280,
+  "detach_original500_weights_predictions_exact": true,
+  "true_repeat_weights_optimizer_RNG_traces_predictions_exact": true,
+  "train_only_all500_normalization_and_quartiles_verified": true,
+  "all500_used_no_holdout_subgroup_scores": true,
+  "test_read": false,
+  "no_selection_changed": true,
+  "records": [
+    {
+      "fit": "detach",
+      "MPS_reload_max_abs": 0.0,
+      "CPU_MPS_max_abs": 3.0517578125e-05,
+      "average_last5_order_LR_optimizer_updates_verified": true
+    },
+    {
+      "fit": "true",
+      "MPS_reload_max_abs": 0.0,
+      "CPU_MPS_max_abs": 1.52587890625e-05,
+      "average_last5_order_LR_optimizer_updates_verified": true
+    },
+    {
+      "fit": "true-repeat",
+      "MPS_reload_max_abs": 0.0,
+      "CPU_MPS_max_abs": 1.52587890625e-05,
+      "average_last5_order_LR_optimizer_updates_verified": true
+    }
+  ],
+  "max_CPU_MPS_difference": 3.0517578125e-05,
+  "input_SHA256": "8e8595fb661f0f6394b41fc29705c98303091758c7eabc6cacef8ffd99489709",
+  "primary_model_SHA256": "ef0f19c4ffa3395e51787ae7746edb838332f1a8633d14cb43ba48f1598d7e65",
+  "original_CNN_SHA256": "6ea68ef42062eea2851a3b5769ccdea9793c7ae046d679af471b9567d9be42c3",
+  "target_range_for_fixed_format_guard": [
+    151.9798276392398,
+    264.1213029015716
+  ],
+  "inference_precision": "batch32; CPU numpy float32 de-normalization before float64 concatenation, same as legacy",
+  "code_lock_SHA256": "43d167f544f08d4a65af8db79f3fcd6aaa627b341e6332ef09e396295246ad86"
+}

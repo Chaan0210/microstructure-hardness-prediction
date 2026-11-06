@@ -1,0 +1,215 @@
+{
+  "candidate": "009",
+  "locked_at_utc": "2026-10-02T06:01:17.631498+00:00",
+  "formula": "target_center+slope*(candidate008-prediction_center)",
+  "recipe": "Generatefull500train-onlyOOF with3foldGroupKFoldseed20270110andentire008pipeline,thenfitoneOLSaffinecalibrator onall500pairs. Unchangedunderlying008modelsalreadytrainedall500areretainedverbatim. No model/weight/strength selection.",
+  "authorization": "Delegateduserauthorizedtrainingandverificationofimprovementcandidates;074passesall3developmentpartitions. Uploadreservedforparent.",
+  "model_scope": "Newcalibratorfitwithall500labels. Underlyingfull500008modelsnotneedlesslyretrained;innerOOFmodelsfreshfit333/334trainingrows,notusedasfinalinferenceensemble.",
+  "no_holdout_score": "Former100 includedonlyinlocked500fit;nosubgroupmetrics/selection. Full500OOFisusedtofitcalibrator,notpresentedasnewvalidationevidence.",
+  "test": "Aftermodelcomplete,useunchangedverified008testpredictionsasfixedbaseinferencecache;applynewcalibrator. No testfit/tuning/clipping/selection.",
+  "validation_sha256": "024454780fbb26efa882fb3fba8bea5eb9a8182d4d934dd98010243bf7605f69",
+  "results": {
+    "original": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.209632611789585,
+          "fold_rmse": [
+            13.137584839949701,
+            12.597373711388418,
+            14.228655527464698,
+            12.44121172584094,
+            13.56258166849383
+          ]
+        },
+        "primary": {
+          "rmse": 13.105157912721568,
+          "fold_rmse": [
+            13.025386023375454,
+            12.507824306370592,
+            14.197984111621984,
+            12.181376909479603,
+            13.51483530810461
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.10447469906801743,
+        "fold_gains": [
+          0.11219881657424757,
+          0.08954940501782538,
+          0.030671415842713046,
+          0.2598348163613373,
+          0.047746360389220754
+        ],
+        "positive_folds": 5,
+        "bootstrap_sd": 0.058228307971680125,
+        "conditional_ci95": [
+          -0.007428976904497592,
+          0.21924617680523412
+        ]
+      },
+      "slopes": [
+        1.0785198262507762,
+        1.0600158910914135,
+        1.1306764890299827,
+        1.1446824379161882,
+        1.0965320520166424
+      ],
+      "predictions_sha256": "662c9d59196e4fc5ca8d6fee16505e65f478eb511334d5974447e82e513eedf8",
+      "report_sha256": "2ee382a7ae8b0297b82780ceec98ae382303c8cf40a8cacb6988aaa11d26a016"
+    },
+    "20261031": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.180839919990602,
+          "fold_rmse": [
+            13.399031053593571,
+            14.50578410243469,
+            13.55291183492863,
+            11.810395013161449,
+            12.472130924914959
+          ]
+        },
+        "primary": {
+          "rmse": 13.082283244172682,
+          "fold_rmse": [
+            13.381109119932207,
+            14.258282229743807,
+            13.602704776447293,
+            11.723700529909848,
+            12.284105569029235
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.09855667581791927,
+        "fold_gains": [
+          0.01792193366136452,
+          0.24750187269088286,
+          -0.04979294151866398,
+          0.08669448325160012,
+          0.1880253558857241
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.0840140744859998,
+        "conditional_ci95": [
+          -0.06824618464099123,
+          0.2670664840620722
+        ]
+      },
+      "slopes": [
+        1.1504800351692415,
+        1.1526596742456843,
+        1.170005132688889,
+        1.1534773508107814,
+        1.0961880257958272
+      ],
+      "predictions_sha256": "88b3147aa606025849e7a8e1cde0bc72c535edd9ae74e4465358fa2f51401891",
+      "report_sha256": "799a2c1b875d749ba7b417633f96d8e1ae139083c6957165336e27df5e41ae09"
+    },
+    "20261101": {
+      "scores": {
+        "reference008": {
+          "rmse": 13.393004886763789,
+          "fold_rmse": [
+            13.68500128247352,
+            13.098019664407973,
+            13.127926748613318,
+            13.968281968272564,
+            13.060251084559912
+          ]
+        },
+        "primary": {
+          "rmse": 13.305105282101927,
+          "fold_rmse": [
+            13.849200001634694,
+            12.960759057914057,
+            12.948923572726505,
+            13.74037731629103,
+            12.995188583092828
+          ]
+        }
+      },
+      "comparison": {
+        "gain": 0.08789960466186209,
+        "fold_gains": [
+          -0.164198719161174,
+          0.13726060649391592,
+          0.17900317588681247,
+          0.2279046519815342,
+          0.06506250146708403
+        ],
+        "positive_folds": 4,
+        "bootstrap_sd": 0.06657474082844127,
+        "conditional_ci95": [
+          -0.04415534590039303,
+          0.2170578633173189
+        ]
+      },
+      "slopes": [
+        1.150919601139202,
+        1.1191894502222395,
+        1.0950232564239748,
+        1.1495551693941954,
+        1.078239399761092
+      ],
+      "predictions_sha256": "461d701dce43db9f1a1eec824c3428c897dd034bb8dcbe78d4a99c5e67cddfdd",
+      "report_sha256": "25204068339a5b5da95e34145acc2e371496865f92f042640ead88e7a9e20311"
+    }
+  },
+  "sources": {
+    "candidate009_pipeline.py": "46d65ec53837ae031990eae5eafe32c0706226eb799d390dcfdb33c7c117cd71",
+    "verify_candidate009.py": "4ad9324a7db6978f07eb6dcfa210da1d8384ae0b8a67fd99dff00063cd10e7ea",
+    "nested_calibration_074.py": "6f795743f2625ff1224f5f693fb906f43f13ff708439a37132761c28dbd275b7",
+    "candidate_pipeline.py": "7495e2b0c6ff14d163cc6bc539798b94f20605f4c02d3cb3305363422ecc1b28",
+    "candidate_features.py": "47c239d8836c2f6cc79c9fbde644702f2ca3c5a59f63fec339656b1178495a4e",
+    "validate_nested_calibration_074_v2.py": "58aad31e577ee8024e00f2214749d8ba5c622f123198ef4b14b77da0f04b334a"
+  },
+  "protected": {
+    "artifacts/submission-candidate-006.manifest.json": "ac411a5e58ee57af5c4a653e7e4296c543a89333ee1a929b576d6e67f7b20e68",
+    "artifacts/submission-candidate-006.components.csv": "3a41ca42fa66e10b9899fc2d25ccfa395d5b728e0cf00a9b213be1ad06e410a5",
+    "artifacts/submission-candidate-006.csv": "1067d401ec27b7328a07812c2f4b24d73254eea63ac9e389f9b6fccbb5379ee2",
+    "artifacts/submission-candidate-007.components.csv": "73e2699df9c3728d4b173ea1e2f74bb28d689befaacce85527928c5193f964f5",
+    "artifacts/submission-candidate-007.csv": "1f39675ba98fd529bcf5941019b5118cd95701c87dc005a36a5cbaa276734c2c",
+    "artifacts/submission-candidate-007.manifest.json": "be282c4a01a0e8f269a82ed9649522563d901a8dc424dcffde5a5533e6d81329",
+    "artifacts/final-model-045/report.json": "2d344e9f074aeebe45dfb99e001175aef8e6b8485bc85c51bc45af0ce4526e7c",
+    "artifacts/final-model-045/train_features.npz": "e46b8746fe9114c75766e329efdb040fb45e33912567e0ef50b5ef637c46faa1",
+    "artifacts/final-model-045/test_features.npz": "08b8e5c2e0f0daa1eb05e223fbcb99b490a481d3667cf07a70ce666ce3aba876",
+    "artifacts/final-model-045/decision.json": "cae40d328c87ae4104ad70bdf18b9e8002b5a787ab98307c31a74f6e282f49eb",
+    "artifacts/final-model-045/dino-regressor.joblib": "93d8412e85eacb6d22205fb8f5e13f0948038bfbc9a36b53c102d0c432048c4b",
+    "artifacts/final-model-053/verification-test-compact-cnn-inputs.npz": "5693022f148ad26318debf34b554ad003833c0a6378c0be2d4754c82482d5539",
+    "artifacts/final-model-053/report.json": "4636d8307de29d1bb9b12c666e4d95361a32e33aabf0439d81e120ff1de00a0f",
+    "artifacts/final-model-053/mlp-seed-20261219.pt": "d3f5aa1cb9d755385ee04561d12d26610c8440c642aef0fb7466975b05bd9c58",
+    "artifacts/final-model-053/mlp-seed-20261128.pt": "e5f990b7ae6d0bda291cbd0574b65b01796959915ce1afdf696007957a512226",
+    "artifacts/final-model-053/decision.json": "d570d5508b94580a38f2f56951c454f4bdf07db129febda3efe58b91b16c83e6",
+    "artifacts/final-model-053/mlp-seed-20261205.pt": "550b0944dd3dcb1f36ff8e5238d29e5c31f05fada4a6deb1471809f4a10ddc1f",
+    "artifacts/seed-stability-052/candidate-design.json": "f149e8afd8c553dadc1205fadb8229a93f6dac1894f8a5ce50232c800de0f2b4",
+    "artifacts/final-model-065/train_B_features.npz": "6887d2c51bf80d5690ab636e80e075e9aa9dc8b5c64dc1e14ecccc9b05ffb80c",
+    "artifacts/final-model-065/S-mlp-seed-20261128.pt": "377d4e7d015a744be682ae61b16917d6417919c8fe4c6eaeb9dd8d18664ad344",
+    "artifacts/final-model-065/train_head_predictions.npz": "f911129ba8932aa5ddf15ea2fc8d72362c48b62c37256077ba0e38b0cca8fb14",
+    "artifacts/final-model-065/report.json": "1a1f741158576b8ad40f6b12f351a7cdf7e1ada96610b83813b160d250bf9b9f",
+    "artifacts/final-model-065/B-mlp-seed-20261128.pt": "6a667c4fae4ece338ea3dae83b5ea59178956076622c04a23b7d208148dbbc78",
+    "artifacts/final-model-065/test_B_features.npz": "b7f89a3ed2826734683dbb03d24df312a50288e525b0e217b8404e01beb68841",
+    "artifacts/final-model-065/S-mlp-seed-20261205.pt": "0375103e593f8732c36c92b62e11482dba88580b1fc28c74bffab08fe44181ba",
+    "artifacts/final-model-065/B-mlp-seed-20261205.pt": "a660027d74ea189be3874d78bbbd5d739eec8147bd3aa1c6a86daf61a14414f4",
+    "artifacts/final-model-065/decision.json": "48c1fddfecd75a5728608c9b6d884ae861f0ddadf716ee39a30d59b1c26111ac",
+    "artifacts/final-model-065/S-mlp-seed-20261219.pt": "5358263fc56122854d669e01ec80669f72907908bc6834a8a9f6b59c6d3e8253",
+    "artifacts/final-model-065/B-mlp-seed-20261219.pt": "49be5fd5ff2e76d1900171fd2cb90e777b3e740534b9d012f0dcd88d02053937",
+    "artifacts/submission-candidate-008.reproduced.csv": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+    "artifacts/submission-candidate-008.csv": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+    "artifacts/submission-candidate-008.manifest.json": "a0a5b79eec6fd86771d56487b35c05f79c17a70561042f546239a23747ab8227",
+    "artifacts/submission-candidate-008.components.csv": "3f8d68d7dc508ded78107e3ca26052a188a20bd48289f4635d87c902a71bd6d9",
+    "reports/candidate008-verification.json": "3d7477531fc44818be3f743cffcdea439a89dd7b2854205308156a5867d4e319",
+    "reports/candidate008-handoff.json": "73116dca2bcfda9de6e710bedd0bcf7992f14387868c3b0a0c0ae08554cf77fa",
+    "reports/candidate008-reproduction.txt": "ac787cbc54bea009c6320407d8353a9345c5638254a6d76c008a0035ae085ca7",
+    "candidate008_pipeline.py": "57204586a6e7f96dee7b5a172ca6e4e163b479ec7d37e6f9988d48029448f2e5",
+    "verify_candidate008.py": "91919a8ba460ab093d4a9033f6ad156b0adb0c3a2b31691b0ec7d9b6e6cfa35b",
+    "reports/candidate008-public-submission.json": "91554d52f6c8bb48dba445fc7fd2a3abf82b8207d8832a24938fdb65757937c6",
+    "reports/nested-calibration-074-validator-repair.json": "2b1f76897bc260576a8a145c4099b11fe9faf791f8982ec8997fd5bffd42d04c"
+  },
+  "best008_sha256": "26390f30d8017f29363ed5834560d985f355b48df74c89d2d1be0aa5bfabb7f9",
+  "cost": 0,
+  "new_packages": 0,
+  "uploaded": false,
+  "limits": "Development-only split robustness, not independent validation. All 400 rows informed historical feature/model/recipe choices. Kernel inner CV controls only current bandwidth/alpha choices. Exact/D4 groups do not verify source family independence. Conditional bootstrap omits fitting/selection uncertainty; the two partitions reuse the same observations. No holdout evaluation."
+}

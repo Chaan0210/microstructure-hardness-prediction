@@ -1,0 +1,201 @@
+{
+  "study": 203,
+  "UTC": "2026-10-06T16:14:16.202184+00:00",
+  "status": "완료·고정 3→6seed 강한 채택기준 미달·best021 유지",
+  "actual_execution": "45 new CNN fits:3fixednewseeds x5folds x3existingpartitions;800updates each,36000updates total.45 oldmodelreloads;0old training reruns. All6equallyretained.",
+  "duplicate_audit": {
+    "018_021": "CNN3seeds20261003/23/43; additional2 over first.",
+    "052": "Frozen DINO-S MLP3seed, not CNN6.",
+    "088": "Short DINO-B fixed3seed, not CNN6; varianceidentity doesnot guarantee finalblendgain.",
+    "133": "Existing3CNN means propagated throughout nested014 downstream. It didnot add seeds beyond3.",
+    "202": "No training; current021 simplification and direct seed-variance calculation.",
+    "conclusion": "No current021 CNN3-to6 comparison found in reviewed source/plans/summaries. This is seed-count expansion with frozen downstream; unlike133 it doesNOT refit nested calibrators/residuals."
+  },
+  "primary_formula": "CNNmean6=(sum old3 + sum new3)/6; primary=P021+.243*stored_fold_slope*(CNNmean6-CNNmean3). Existingcalibrator centers/slopes,residualoutputs,shortB,S/B/L,all weights frozen. No subsequent recalibration.",
+  "new_seeds": [
+    20262003,
+    20262023,
+    20262043
+  ],
+  "old_seeds": [
+    20261003,
+    20261023,
+    20261043
+  ],
+  "results": {
+    "pooled": {
+      "reference_RMSE": 12.814628144604061,
+      "primary_RMSE": 12.809124655423076,
+      "gain": 0.005503489180984644,
+      "conditional_CI95": [
+        -0.025967746697483963,
+        0.036307481893577534
+      ],
+      "influence": {
+        "positive_IDs": 207,
+        "net_SSE_gain": 56.40801852447355,
+        "top_benefit_removal": {
+          "1": {
+            "benefit_sum": 42.73070990305587,
+            "net_fraction": 0.7575290006777395,
+            "gain_after_removal": 0.0013473526067109276
+          },
+          "5": {
+            "benefit_sum": 164.4357766310991,
+            "net_fraction": 2.9151135057111768,
+            "gain_after_removal": -0.011088429115284626
+          },
+          "10": {
+            "benefit_sum": 263.8050319404909,
+            "net_fraction": 4.6767292814236106,
+            "gain_after_removal": -0.021894030989026092
+          }
+        }
+      }
+    },
+    "by_partition": {
+      "original": {
+        "reference_RMSE": 12.786200775750695,
+        "primary_RMSE": 12.74550800303232,
+        "gain": 0.04069277271837457,
+        "positive_folds": 2,
+        "conditional_CI95": [
+          -0.010983085295135097,
+          0.09412558154150426
+        ]
+      },
+      "20261031": {
+        "reference_RMSE": 12.621902419708583,
+        "primary_RMSE": 12.64422148497035,
+        "gain": -0.02231906526176708,
+        "positive_folds": 2,
+        "conditional_CI95": [
+          -0.07278349186667729,
+          0.026038581833017882
+        ]
+      },
+      "20261101": {
+        "reference_RMSE": 13.032449212752852,
+        "primary_RMSE": 13.034443298359745,
+        "gain": -0.0019940856068938473,
+        "positive_folds": 3,
+        "conditional_CI95": [
+          -0.04952209874932993,
+          0.04625122961382155
+        ]
+      }
+    },
+    "criteria": {
+      "technical_validation": true,
+      "pooled_gain_positive": true,
+      "all3_gains_nonnegative": false,
+      "conditional_CI_lower_positive": false,
+      "pooled_top5_removal_positive": false,
+      "acrosspartition_variance_not_increased": true
+    },
+    "strong_development_gate": false,
+    "variance": {
+      "partition_prediction_variance_reference": 3.3703575184754038,
+      "partition_prediction_variance_primary": 3.1878559132942637,
+      "partition_variance_gain": 0.18250160518114045,
+      "conditional_variance_gain_CI95": [
+        0.08263863241942447,
+        0.28567824249801044
+      ],
+      "scope": "Across3overlappingpartitions,descriptive training-membership sensitivity;not independentreplications."
+    },
+    "acrosspartition_variance_reduction_percent": 5.4149034391964275,
+    "seed_summary": {
+      "old3": {
+        "population_seed_variance": 12.974410487583846,
+        "sample_seed_variance": 19.46161573137577,
+        "conditional_raw_mean_variance_proxy": 6.487205243791923,
+        "conditional_final_direct_mean_variance_proxy": 0.4766138434819973
+      },
+      "new3": {
+        "population_seed_variance": 13.28509508244413,
+        "sample_seed_variance": 19.9276426236662,
+        "conditional_raw_mean_variance_proxy": 6.642547541222065,
+        "conditional_final_direct_mean_variance_proxy": 0.4842609146043462
+      },
+      "all6": {
+        "population_seed_variance": 16.41102279950985,
+        "sample_seed_variance": 19.693227359411825,
+        "conditional_raw_mean_variance_proxy": 3.2822045599019707,
+        "conditional_final_direct_mean_variance_proxy": 0.23969369382087313
+      }
+    }
+  },
+  "assessment_ko": [
+    "202의CNN직접분산88%라는진단을근거로현재021의CNN3seed→6seed를실제학습·평가했다. 기존018/021/133의1→3평균을반복하지않았으며새3seed는결과전에고정했다.",
+    "후단calibration과residual을고정하고현재021의CNN평균만치환했다. 따라서그학습된후단이기존3seed에의존한다는한계가남는다. 새로운6seed전체pipeline의nested재학습효과로해석하지않는다.",
+    "분할간예측분산은동일400이미지의세기존재분할에대한조건부민감도다. seed분산/n값은3개또는6개실현seed에서추정한독립draw가정의proxy이며400이미지가독립seed반복400회가되지는않는다.",
+    "개별seed·new3평균은진단전용으로모두기록했다. 좋은seed만남기거나평균비중을바꾸지않았다. 기존및신규6개를항상동일평균했다.",
+    "400ID묶음bootstrap은세분할반복측정을함께재표집했다. 고정된모델의조건부CI이며누적선택·학습재추정·알수없는생성family의존성을보정하지않는다.",
+    "현재범위에서full500/holdout/test/새CSV/제출은실행하지않는다. 강한개발기준통과여부와별개로기존best021을보존하고결과를 정리한다.",
+    "CNN단독 mean6는원본14.31624→14.05384/재분할A13.91865→13.85544/재분할B14.30711→14.24089로모두개선했다. 최종앙상블은두재분할악화여서단독정확도·분산감소만으로최종보완성개선을보증하지않음을확인했다.",
+    "pooled이득.005503의조건부CI는[-.025968,.036307]이다. 상위1수혜가순SSE이득의75.75%이고상위5수혜제외gain은-.011088이다. 동일400재사용하의집중도진단이며표본제거로새후보를만들지않았다."
+  ],
+  "validation": {
+    "old45_MPS_exact": true,
+    "old_max_CPU_error": 3.0517578125e-05,
+    "new45_MPS_reload_exact": true,
+    "new_max_CPU_error": 3.0517578125e-05,
+    "independent_fullensemble_max_error": 8.526512829121202e-14,
+    "all10000bootstrap_count_replay": true,
+    "bootstrap_max_error": 7.105427357601002e-15,
+    "seed_variance_max_error": 8.881784197001252e-14,
+    "heldout_labels_masked_in45trainer_calls": true,
+    "updates_initialization_D4_LR_last5averages_verified": true
+  },
+  "resources": {
+    "study": {
+      "seconds": 615.9191002500011,
+      "maximum_RSS_plus_MPS_driver_bytes": 751255552,
+      "swap_growth_bytes": 0
+    },
+    "validation": {
+      "seconds": 28.787839541997528,
+      "maximum_RSS_plus_MPS_driver_bytes": 640876544,
+      "swap_growth_bytes": 0
+    },
+    "sum45fit_seconds": 605.5967460419342,
+    "maximum_monitor_bytes": 751255552,
+    "CPU_threads": 2,
+    "device": "MPS",
+    "cost": 0,
+    "timing_scope": "Instrumentedexecution;planning/coding/toolapproval/reportingexcluded"
+  },
+  "scope": {
+    "new_model_fits": 45,
+    "old_model_training_replays": 0,
+    "new_packages": 0,
+    "downloads": 0,
+    "externalAI_calls": 0,
+    "network": false,
+    "holdout_test_full500": false,
+    "new_submission_CSV": false,
+    "upload": false,
+    "old_best_preserved": true
+  },
+  "failures_preserved": "Before maintraining: -I scriptdir import fix; originalrun009 lacksvalidationIDs andwasverifiedbyexacttrainIDcomplement/cachedOOF. Both preserve originalsources and failuretrace, no seed/recipe/gatechanges. See amendment files. Pre-score static review cast NumPy boolean to native bool for JSON; no mathematical/selection change, prior source/lock retained.",
+  "remaining_blockers": "No execution blocker after successful validation; independentgeneralization andfrozen-downstreamlimitations remain.",
+  "raw_CNN_RMSE": {
+    "original": {
+      "old3": 14.316237784821688,
+      "new3": 14.035185113816516,
+      "all6": 14.053836679578385
+    },
+    "20261031": {
+      "old3": 13.918648305036763,
+      "new3": 14.028946404634027,
+      "all6": 13.855443774436546
+    },
+    "20261101": {
+      "old3": 14.307111794139066,
+      "new3": 14.390484802796804,
+      "all6": 14.240887943013295
+    }
+  },
+  "seed_proxy_reduction_percent": 49.709036550482224
+}

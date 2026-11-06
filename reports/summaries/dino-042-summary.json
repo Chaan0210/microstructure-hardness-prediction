@@ -1,0 +1,213 @@
+{
+  "study": "042 frozen DINO504 spatial patch semivariograms",
+  "decision": "Preserve candidate005; no candidate006; no upload.",
+  "validation": {
+    "development_rows": 400,
+    "shape": [
+      400,
+      1920
+    ],
+    "global504_columns_exactly_equal": true,
+    "cpu_recompute_max_feature_error": 5.2928924560546875e-05,
+    "regression_models_reloaded": 30,
+    "max_reload_prediction_error": 0.0,
+    "metrics_folds_groups_inner_splits_scaler_target_normalization_checked": true,
+    "protected_artifacts_unchanged": true,
+    "best005_sha256": "473ef271d35b2c18185690471e2ffbada07a01cf31d07be4c2d489bd76e67ff4"
+  },
+  "results": {
+    "original": {
+      "scores": {
+        "control005": 14.543425199587686,
+        "texture": 14.359207315160845,
+        "control005_blend": 13.522452231767831,
+        "texture_blend": 13.555787423428475,
+        "reference003": 13.705696031698212
+      },
+      "comparison": {
+        "gain_vs005": -0.033335191660643915,
+        "fold_gains": [
+          -0.23499199947283778,
+          -0.0031560422596914606,
+          0.02137977622345133,
+          0.01568823939882158,
+          0.031895626984656644
+        ],
+        "conditional_ci95": [
+          -0.1266453400447083,
+          0.05283092212307582
+        ]
+      },
+      "chosen_lambdas": {
+        "control005": [
+          0.1,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "texture": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "mean_train_rmse": {
+        "control005": 10.611280147629214,
+        "texture": 10.947556053593864
+      },
+      "texture_control_residual_correlation": 0.974652887740972,
+      "texture_003_residual_correlation": 0.8838494391477375,
+      "oof_sha256": "8e94ddae4cd6e08744c43b2f7d2b1b65735c442c7744238c94f58f90b5c885ff"
+    },
+    "20261031": {
+      "scores": {
+        "control005": 14.225715205252632,
+        "texture": 14.115242816757045,
+        "control005_blend": 13.484270679649033,
+        "texture_blend": 13.461288647752264,
+        "reference003": 13.63181073293285
+      },
+      "comparison": {
+        "gain_vs005": 0.022982031896768618,
+        "fold_gains": [
+          0.006791642633368511,
+          0.10084457621804965,
+          -0.004632316189194796,
+          0.05472710362005273,
+          -0.05103147356452453
+        ],
+        "conditional_ci95": [
+          -0.018826568955300882,
+          0.06478922477296066
+        ]
+      },
+      "chosen_lambdas": {
+        "control005": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "texture": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "mean_train_rmse": {
+        "control005": 11.570970986553336,
+        "texture": 10.973479641503218
+      },
+      "texture_control_residual_correlation": 0.9913850056133086,
+      "texture_003_residual_correlation": 0.890386259568418,
+      "oof_sha256": "b7d429c430253b870525c1343cdbadfb149a3c1736f92836abd0cdfb0d99f029"
+    },
+    "20261101": {
+      "scores": {
+        "control005": 14.67018389948982,
+        "texture": 14.71304261931633,
+        "control005_blend": 13.651326599763685,
+        "texture_blend": 13.668992053290015,
+        "reference003": 13.729980391208457
+      },
+      "comparison": {
+        "gain_vs005": -0.01766545352633031,
+        "fold_gains": [
+          0.053659853928811785,
+          0.033049526610270163,
+          -0.007900338684692088,
+          -0.13445580380120248,
+          -0.02647523303559396
+        ],
+        "conditional_ci95": [
+          -0.06282143213183562,
+          0.026503326003828088
+        ]
+      },
+      "chosen_lambdas": {
+        "control005": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "texture": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "mean_train_rmse": {
+        "control005": 11.530929215687534,
+        "texture": 10.904411309478418
+      },
+      "texture_control_residual_correlation": 0.9919251715668221,
+      "texture_003_residual_correlation": 0.888066301889016,
+      "oof_sha256": "a0c2d74725cd42ebb80bdb5987dd2fed25d1b062a00d90277c0556114021f357"
+    }
+  },
+  "benchmark": {
+    "cpu": {
+      "median_image_seconds": 0.1599752080219332,
+      "process_peak_rss_bytes": 548634624
+    },
+    "mps": {
+      "median_image_seconds": 0.0504267085052561,
+      "process_peak_rss_bytes": 661389312,
+      "driver_bytes": 145424384
+    }
+  },
+  "timing_seconds": {
+    "extraction": 23.020873999979813,
+    "regression": 1.2325195409939624
+  },
+  "errata": {
+    "smoke_translation_invariance": "Tests additive token-value offset z+7, not spatial translation invariance.",
+    "plan_alignment_magnitude": "Averaging horizontal and vertical semivariograms discards their difference; alignment magnitude is not generally preserved. Interpret as axis-averaged spatial roughness/correlation scale.",
+    "artifact_policy": "Original hashed source and plans retained unchanged; wording corrected here. Numerical computations unchanged."
+  },
+  "limitations": [
+    "All partitions reuse historically inspected development400; repeated model selection can be optimistic.",
+    "Conditional bootstrap intervals omit training and historical selection uncertainty; all include zero.",
+    "No holdout/test access, backbone adaptation, package install, external data, cost or upload in this study.",
+    "Negative result applies to this single fixed spatial pooling panel, not all DINO adaptation methods."
+  ],
+  "best_submission": {
+    "candidate": "artifacts/submission-candidate-005.csv",
+    "sha256": "473ef271d35b2c18185690471e2ffbada07a01cf31d07be4c2d489bd76e67ff4",
+    "public_rmse": 12.2763921367,
+    "previous_best_public_rmse": 12.4479505141,
+    "improvement": 0.17155837740000024,
+    "rank_at_confirmation": 19,
+    "participants_at_confirmation": 38,
+    "daily_used_at_confirmation": 4,
+    "daily_limit": 5,
+    "remaining_at_confirmation": 1,
+    "source": "Parent delegation:verified separate submissionworker; not browser-rechecked here",
+    "submission_id": null,
+    "submitted_at": null,
+    "model_selection_use": false,
+    "url": "https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai",
+    "best_model": "artifacts/final-model-041",
+    "design": "artifacts/dino-spatial-039/candidate-design.json"
+  },
+  "next_unverified_hypothesis": "Small low-learning-rate supervised update of last DINO block with matched frozen control, fold-local target/head normalization, fixed schedule and regularization; benchmark gradients before fixing compute budget. Not run, benefit/time/memory unknown.",
+  "running_work": [],
+  "new_submission_candidate": null,
+  "cost": 0,
+  "source_sha256": {
+    "dino_texture_042.py": "abcc42db466f0fb10502ad57db939c09fac7e7a1103ceffd88dccd7ab8a551b9",
+    "dino_texture_cv_042.py": "9357248a3101dd1501f3107e652683874699866e6188563754f5dc3aed7a3a78",
+    "validate_dino_texture_042.py": "bf345eb03e3477afbb0b9cdc77252d8f3c522008c47c110e5557294a249f8b0a"
+  },
+  "completed_at_utc": "2026-10-01T01:34:05.395158+00:00"
+}
