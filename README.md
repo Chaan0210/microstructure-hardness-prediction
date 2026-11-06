@@ -1,6 +1,6 @@
-# 합성 미세조직 이미지 경도 예측
+# 합성 미세구조 기반 재료 물성 예측 AI 경진대회
 
-합성 미세조직 이미지 한 장(256×256 흑백)으로 경도(HV)를 예측하는 회귀 대회의 **최종 3위 솔루션**이다. [DAKER 합성 미세구조 기반 재료 물성 예측 AI 경진대회](https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai) · 작업 기간 2026-09-30 ~ 10-19
+합성 미세구조 이미지 한 장(256×256 흑백)으로 경도(HV)를 예측하는 회귀 대회의 **최종 3위 솔루션**이다. [DAKER 합성 미세구조 기반 재료 물성 예측 AI 경진대회](https://daker.ai/public/hackathons/synthetic-microstructure-property-prediction-ai) · 작업 기간 2026-09-30 ~ 10-19
 
 | 항목                    | 결과                                                    |
 | ----------------------- | ------------------------------------------------------- |
